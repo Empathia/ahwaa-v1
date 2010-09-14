@@ -1,14 +1,17 @@
 class User < ActiveRecord::Base
+  has_one :profile, :class_name => "UserProfile", :dependent => :destroy
+
   attr_accessible :username, :email, :password, :password_confirmation
   attr_accessor :password
 
+  before_create :build_profile
   before_create :set_password_salt
   before_save :set_encrypted_password, :if => :should_require_password?
 
   validates :password, :confirmation => true, :presence => true
   validates :password_confirmation, :presence => true
   validates :username, :uniqueness => true
-  validates :email, :uniqueness => true
+  validates :email, :uniqueness => true, :email => true
 
   # Encrypts a string with a given salt
   def self.encrypt_password(str, salt)
