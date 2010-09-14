@@ -6,7 +6,9 @@ gem 'mysql2'
 gem 'jquery-rails'
 
 group :test do
+  gem "shoulda"
   gem "rspec-rails", "2.0.0.beta.22"
+  gem "autotest"
   gem "factory_girl_rails"
 end
 

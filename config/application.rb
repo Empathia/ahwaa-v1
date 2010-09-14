@@ -34,7 +34,7 @@ module Lgbt
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.generators do |g|
       g.integration_tool    :rspec
-      g.test_framework      :rspec, :views => false, :controllers => false
+      g.test_framework      :rspec, :views => false
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
