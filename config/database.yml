@@ -1,0 +1,21 @@
+login: &login
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  reconnect: false
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *login
+  database: lgbt_dev
+
+test:
+  <<: *login
+  database: lgbt_test
+
+production:
+  <<: *login
+  database: lgbt
+
