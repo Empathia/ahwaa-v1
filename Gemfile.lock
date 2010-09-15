@@ -30,6 +30,7 @@ GEM
     activesupport (3.0.0)
     arel (1.0.1)
       activesupport (~> 3.0.0)
+    autotest (4.3.2)
     builder (2.1.2)
     diff-lcs (1.1.2)
     erubis (2.6.6)
@@ -80,6 +81,7 @@ GEM
       rspec-expectations (= 2.0.0.beta.22)
     rspec-rails (2.0.0.beta.22)
       rspec (= 2.0.0.beta.22)
+    shoulda (2.11.3)
     thor (0.14.0)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -89,9 +91,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest
   factory_girl_rails
   jquery-rails
   mysql2
   rails (= 3.0.0)
   rails3-generators
   rspec-rails (= 2.0.0.beta.22)
+  shoulda
