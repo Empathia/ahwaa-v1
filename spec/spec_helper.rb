@@ -25,3 +25,8 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 end
+
+# Delegate current_user
+def current_user
+  controller.current_user
+end

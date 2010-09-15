@@ -1,38 +1,18 @@
 class User < ActiveRecord::Base
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  attr_accessible :email, :password, :password_confirmation, :remember_me
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
 
   attr_accessible :username, :email, :password, :password_confirmation
-  attr_accessor :password
 
   before_create :build_profile
-  before_create :set_password_salt
-  before_save :set_encrypted_password, :if => :should_require_password?
 
-  validates :password, :confirmation => true, :presence => true
-  validates :password_confirmation, :presence => true
   validates :username, :uniqueness => true
-  validates :email, :uniqueness => true, :email => true
 
-  # Encrypts a string with a given salt
-  def self.encrypt_password(str, salt)
-    token = salt
-    10.times do |i|
-      token = Digest::SHA1.hexdigest([str, i, token, salt].join)
-    end
-    token
-  end
-
-  private
-
-  def should_require_password?
-    !password.blank? || encrypted_password.blank?
-  end
-
-  def set_password_salt
-    self.password_salt = User.encrypt_password("hey there! #{rand(1000)}", Time.now.to_i)
-  end
-
-  def set_encrypted_password
-    self.encrypted_password = User.encrypt_password(password, password_salt)
+  def self.find_for_authentication(conditions = {})
+    conditions = ["username LIKE ? OR email LIKE ?", conditions[:username], conditions[:email]]
+    super
   end
 end
