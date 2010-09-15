@@ -9,10 +9,11 @@ class User < ActiveRecord::Base
 
   before_create :build_profile
 
-  validates :username, :uniqueness => true
+  validates :username, :uniqueness => true, :presence => true
 
-  def self.find_for_authentication(conditions = {})
-    conditions = ["username LIKE ? OR email LIKE ?", conditions[:username], conditions[:email]]
-    super
+  def self.find_for_database_authentication(conditions)
+    value = conditions[authentication_keys.first]
+    where(["username = :value OR email = :value", { :value => value }]).first
   end
+
 end
