@@ -30,6 +30,17 @@ $.fn.selectText = function(){
                  //console.log('guardado->' + ranges[i].startOffset);
                //console.log(range.startOffset >= ranges[i].startOffset);               
                //console.log(range.startOffset < ranges[i].endOffset);
+            if(range.startContainer == ranges[i].startContainer)
+            {
+                if(range.endContainer == ranges[i].endContainer)
+                {
+                   ranges.push({startOffset: range.startOffset, endOffset: range.endOffset, text: range.toString(), startContainer: range.startContainer, endContainer: range.endContainer});  
+                }
+                else{
+                    //validate other things
+                }
+            }          
+            
             if(range.startOffset >= ranges[i].startOffset && range.startOffset < ranges[i].endOffset){
                 if(range.endOffset > ranges[i].endOffset){                                       
                     console.log('Would you like to extend the highlighted text?');
@@ -55,13 +66,13 @@ $.fn.selectText = function(){
                 break;
             }
             else{          
-               ranges.push({startOffset: range.startOffset, endOffset: range.endOffset, text: range.toString()}); 
+               ranges.push({startOffset: range.startOffset, endOffset: range.endOffset, text: range.toString(), startContainer: range.startContainer, endContainer: range.endContainer}); 
             }
         }
 
  	}
  	else{  
- 	    ranges.push({startOffset: range.startOffset, endOffset: range.endOffset, text: range.toString()});
+ 	    ranges.push({startOffset: range.startOffset, endOffset: range.endOffset, text: range.toString(), startContainer: range.startContainer, endContainer: range.endContainer});
         _parag.data('ranges', ranges);
  	}    
  	addHightlight();
