@@ -1,11 +1,10 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 
-$.fn.selectText = function(){ 
-        var colour = "yellow";
+$.fn.selectText = function(color){ 
         var range, sel;
-        if (window.getSelection) {
-            // Non-IE case
+        if (window.getSelection) { // Non-IE case
+            
             sel = window.getSelection();
             if (sel.getRangeAt) {
                 range = sel.getRangeAt(0);
@@ -16,37 +15,31 @@ $.fn.selectText = function(){
                 sel.addRange(range);
             }
             // Use HiliteColor since some browsers apply BackColor to the whole block
-            if ( !document.execCommand("HiliteColor", false, colour) ) {
-                document.execCommand("BackColor", false, colour);
+            if ( !document.execCommand("HiliteColor", false, color) ) {
+                document.execCommand("BackColor", false, color);
             }
             document.designMode = "off";
-        } else if (document.selection && document.selection.createRange) {
-            // IE case
+        } else if (document.selection && document.selection.createRange) { // IE case
             range = document.selection.createRange();
-            range.execCommand("BackColor", false, colour);
+            range.execCommand("BackColor", false, color);
         }
     }
 
 
 $.fn.comments = function(options){
+    var _parags = $(this);
+    $('input:checkbox').change(function(){
+        $(this).is(':checked') ? _parags.find('span').css('backgroundColor', options.color) : _parags.find('span').css('backgroundColor', 'transparent');
+    });
+    
     return this.each(function(){
         $(this).mouseup(function(){
-            $(this).selectText();
+            $(this).selectText(options.color);
         });
     });       
 }
 
 $(function(){
-    $('p').comments();
-    $('input:checkbox').change(function(){
-        if($(this).is(':checked')) {                  
-               document.execCommand("BackColor", false, 'red');
-        }
-        else{    
-            $('p').each(function(){                            
-
-            });     
-            
-        }
-    });
+    $('p').comments({color: '#FFFF00'});
+    
 });
