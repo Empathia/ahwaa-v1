@@ -1,10 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'home_run'
+gem 'rails', '3.0.0'  
 gem "rails3-generators"
 gem 'mysql2'
 gem 'jquery-rails'
 gem 'devise'
+gem "will_paginate", "~> 3.0.pre2"
 
 group :test do
   gem "shoulda"

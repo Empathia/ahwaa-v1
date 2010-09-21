@@ -1,0 +1,20 @@
+<table border="0" cellspacing="5" cellpadding="5">
+  <tr>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Is Expert</th>
+    <th>Actions</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.email %></td>
+      <td><%= user.is_expert %></td>
+      <th>
+        <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user), :method => :put %>
+      </th>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@users) %>
