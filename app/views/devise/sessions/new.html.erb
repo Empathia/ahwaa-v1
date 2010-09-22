@@ -1,11 +1,11 @@
 <h2><%= t '.title' %></h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email, t('.username_or_email') %><br />
-  <%= f.text_field :email %></p>
+  <p><%= f.label :email, t('.username_or_email') %>
+  <%= f.text_field :email, :required => "true" %></p>
 
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
+  <p><%= f.label :password %>
+  <%= f.password_field :password, :required => "true" %></p>
 
   <% if devise_mapping.rememberable? -%>
     <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>

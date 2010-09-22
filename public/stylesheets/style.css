@@ -1,5 +1,19 @@
-p::selection{}   
+body{font-size: 13px; font-family: Arial, Helvetica;}
+.aligned{width: 960px; margin: 0 auto;}
+p::selection{}                       
 input[type=text],
 input[type=password],
 input[type=email]{border: 1px solid #ccc}
-p .error{border: 1px solid red}
+form > p > label{display: block;}
+input[type=checkbox] + label{display: inline;}
+input.error{border: 1px solid red}
+                                             
+.experts-carrousel{overflow: hidden; padding: 5px 0; background-color: #ccc; position: relative; height: 120px; width: 390px;}
+.experts-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
+.experts-carrousel > ul > li{width: 120px; height: 100%; overflow: hidden; float: left; margin: 0 5px;}
+
+.arrows{margin: 10px 0; overflow: hidden;}
+.arrows span{text-indent:-9999px; float: left; border-style: solid; height: 0px; margin: 0px 5px; width: 0px;}
+.arrows .back{border-color: transparent #999 transparent transparent; border-width: 5px 10px 5px 0px; }
+.arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }
+

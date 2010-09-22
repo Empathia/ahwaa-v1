@@ -33,7 +33,3 @@ $.fn.comments = function(options){
         });
     });       
 }
-
-$(function(){
-    $('p').comments({color: '#FFFF00'});
-});
