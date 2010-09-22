@@ -1,0 +1,5 @@
+p::selection{}   
+input[type=text],
+input[type=password],
+input[type=email]{border: 1px solid #ccc}
+p .error{border: 1px solid red}
