@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
       if current_user
-        I18n.locale = current_user.language
+        I18n.locale = current_user.profile.language
       else
         I18n.locale = params[:locale] rescue  I18n.locale = 'en'
       end
