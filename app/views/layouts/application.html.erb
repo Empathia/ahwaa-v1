@@ -11,6 +11,8 @@
   <![endif]-->
 </head>
 <body>
+  <%= link_to 'en', :locale => 'en'  %>
+  <%= link_to 'ar', :locale => 'ar'  %>
   <% flash.each do |key, msg| %>
     <div class="flash <%= key %>"><%= msg %></div>
   <% end %>
