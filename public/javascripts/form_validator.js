@@ -1,7 +1,7 @@
 $.fn.formValidator = function(options){
-    return this.each(function(){
+    return this.each(function(){   
         var _form = $(this);  
-        _form.submit(function(e){
+        _form.submit(function(e){  
             _form.find('input').each(function(e){
                 var _input = $(this);
                 var value = _input.val();
@@ -21,6 +21,6 @@ $.fn.formValidator = function(options){
     });
 }  
 
-$(function(){
+$(function(){         
     $('form').formValidator();
 });
