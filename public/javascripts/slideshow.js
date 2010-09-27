@@ -63,8 +63,8 @@ $.fn.blockSlider = function(options){
 		    carrousel: function(delta){
 		        var currentItem = slides.filter('.active:first').index();
 		        var next = !delta || (delta > 0) ? (currentItem+1) % size : (currentItem-1 < 0) ? size-1 : currentItem-1;
-    			var left = next * slides.eq(0).outerWidth(true) * -1;
-    			slider.animate({'left' : left}, 1000, function(){
+    			var left = next * slides.eq(0).outerWidth(true) * -1;                              
+    			slider.animate({'left' : (slider.parent().width() > slider.outerWidth() + left) ? 0 : left}, 1000, function(){
     				nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
     				slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
     			}); 
@@ -104,5 +104,12 @@ $.fn.blockSlider = function(options){
 		var nav = options.nav ? (options.navSelector ? wrapper.find(options.navSelector) : animations.addNav()) : false;
 		nav && animations['nav'+options.anim](); 		
 	    options.arrows && animations['arrows'+ options.anim]();
+	    if(options.anim == 'carrousel'){
+	        var width = 0;
+	        slides.each(function(){
+                width += $(this).outerWidth(true);
+    	    });
+    	    slider.width(width);   
+	    }
 	});
 }
