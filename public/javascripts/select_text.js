@@ -29,8 +29,24 @@ $.fn.highlight = function(options){
 
 $.fn.comments = function(options){      
     var _parags = $(this); 
-    $('input:checkbox').change(function(){          
-        $(this).is(':checked') ? _parags.find('.comments').removeClass('hidden') : _parags.find('.comments').addClass('hidden');
+    $('input:checkbox').change(function(){                          
+        if($(this).is(':checked')){
+            _parags.each(function(){       
+                var parag = $(this);
+                var comments = parag.data('comments');
+                for(var i =0; i < comments.length; i++){
+                    var linkOuterHTML = $('#comm_' + comments[i].id).attr('outerHTML');
+                    var chunks = parag.html().split(linkOuterHTML);
+                    parag.html(chunks[0] +  linkOuterHTML).after(comments[i].data + '<p>' + chunks[1] + '</p>');
+                } 
+            });
+            $('.comments').slideDown();     
+        }                           
+        else{
+            
+        }
+       // $(this).is(':checked') ? $('.comments').removeClass('hidden') : $('.comments').addClass('hidden');
+       
     });
     return this.each(function(){
         var parag = $(this);      
@@ -38,7 +54,8 @@ $.fn.comments = function(options){
         parag.mouseup(function(){
             parag.selectText(options.color);
         });    
-        */        
+        */         
+        parag.data('comments', new Array())
         parag.find('.has_comments').live('click', function(e){    
             var link = $(this);
             var id = link.attr('id').split('_')[1];              
@@ -49,16 +66,20 @@ $.fn.comments = function(options){
                  var comments = $('#comments_' + id);
                  if(comments.length){             
                     comments.slideToggle(function(){
-                        //comments.toggleClass('hidden'); 
+                        var paragEnd = comments.next();
+                        parag.append(paragEnd.html());                    
+                        paragEnd.remove()
+                        comments.remove(); 
                     });
                  }
                  else{                                                      
-                     console.log('hola');
-                     console.log($('.comments').length);                    
                     var linkOuterHTML = link.attr('outerHTML');  
                     var chunks = parag.html().split(linkOuterHTML);
                     parag.html(chunks[0] +  linkOuterHTML).after(data + '<p>' + chunks[1] + '</p>');
                     parag.next('.comments').slideToggle();
+                    comments = parag.data('comments');
+                    comments.push({id: id, data: data});
+                    parag.data('comments', comments);
                  } 
                }
             });
