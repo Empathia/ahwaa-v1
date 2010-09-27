@@ -4,7 +4,7 @@ class CreateUserProfiles < ActiveRecord::Migration
       t.belongs_to :user
       t.string :country
       t.string :gender
-      t.date :birthdate
+      t.date   :birthdate
       t.string :language
       t.string :time_zone
       t.timestamps
