@@ -28,63 +28,58 @@ $.fn.highlight = function(options){
 }    
 
 $.fn.comments = function(options){      
-    var _parags = $(this); 
     $('input:checkbox').change(function(){                          
-        if($(this).is(':checked')){
-            _parags.each(function(){       
-                var parag = $(this);
-                var comments = parag.data('comments');
-                for(var i =0; i < comments.length; i++){
-                    var linkOuterHTML = $('#comm_' + comments[i].id).attr('outerHTML');
+        if($(this).is(':checked')){     
+            $('.comments').each(function(){       
+                var comments = $(this);    
+                var id =  comments.attr('id');
+                if($('#' +  id +'_clone').length == 0){
+                    var link = $('#' + comments.attr('id') + '_link');  
+                    var parag = link.parent();
+                    var linkOuterHTML = link.attr('outerHTML');                        
                     var chunks = parag.html().split(linkOuterHTML);
-                    parag.html(chunks[0] +  linkOuterHTML).after(comments[i].data + '<p>' + chunks[1] + '</p>');
+                    parag.html(chunks[0] +  linkOuterHTML).after(comments.attr('outerHTML') + '<p>' + chunks[1] + '</p>');
+                    parag.next('#' + id).attr('id',  id + '_clone').addClass('clon');
                 } 
-            });
-            $('.comments').slideDown();     
+            });                                     
+            $(".comments[id$='clone']").slideDown();
         }                           
-        else{
-            
-        }
-       // $(this).is(':checked') ? $('.comments').removeClass('hidden') : $('.comments').addClass('hidden');
-       
-    });
-    return this.each(function(){
-        var parag = $(this);      
-        /*
-        parag.mouseup(function(){
-            parag.selectText(options.color);
-        });    
-        */         
-        parag.data('comments', new Array())
-        parag.find('.has_comments').live('click', function(e){    
-            var link = $(this);
-            var id = link.attr('id').split('_')[1];              
-            $.ajax({
-               type: "GET", 
-               url: "comments.html?id=" + id, 
-               success: function(data){     
-                 var comments = $('#comments_' + id);
-                 if(comments.length){             
-                    comments.slideToggle(function(){
-                        var paragEnd = comments.next();
-                        parag.append(paragEnd.html());                    
-                        paragEnd.remove()
-                        comments.remove(); 
-                    });
-                 }
-                 else{                                                      
-                    var linkOuterHTML = link.attr('outerHTML');  
-                    var chunks = parag.html().split(linkOuterHTML);
-                    parag.html(chunks[0] +  linkOuterHTML).after(data + '<p>' + chunks[1] + '</p>');
-                    parag.next('.comments').slideToggle();
-                    comments = parag.data('comments');
-                    comments.push({id: id, data: data});
-                    parag.data('comments', comments);
-                 } 
-               }
+        else{                   
+
+            $(".comments[id$='clone']").each(function (){
+                var comments = $(this);
+                comments.slideUp(function(){                 
+                    console.log(1);
+                    var paragEnd = comments.next();
+                    comments.prev().append(paragEnd.html());
+                    paragEnd.remove();
+                    comments.remove();
+                });
             });
-            e.preventDefault();
-            return false;
-        });
-    });       
+        }
+    });
+        
+    $('.has_comments').live('click', function(e){
+        var parag = $(this).parent();
+        var post = parag.parent();
+        var link = $(this);
+        var id = link.attr('id').split('_')[1];
+        var comments = $('#comments_' + id + '_clone');
+        if(comments.length){
+            comments.slideToggle(function(){
+                var paragEnd = comments.next();
+                parag.append(paragEnd.html());
+                paragEnd.remove();
+                comments.remove();
+            });
+        }
+        else{
+            var linkOuterHTML = link.attr('outerHTML');
+            var chunks = parag.html().split(linkOuterHTML);
+            parag.html(chunks[0] +  linkOuterHTML).after($('#comments_' + id).attr('outerHTML') + '<p>' + chunks[1] + '</p>');
+            parag.next('#comments_' + id).attr('id', 'comments_' + id + '_clone').slideToggle().addClass('clon');
+        }
+        e.preventDefault();
+        return false;
+    });
 }
