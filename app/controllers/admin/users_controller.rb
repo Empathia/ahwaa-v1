@@ -7,7 +7,7 @@ class Admin::UsersController < ApplicationController
   def toggle_expert
     @user = User.find(params[:id])
     if @user.toggle!(:is_expert)
-      flash[:notice] = 'succes'
+      flash[:notice] = 'success'
     else
       flash[:error] = 'error'
     end
