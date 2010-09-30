@@ -1,4 +1,6 @@
 Lgbt::Application.routes.draw do
+  get "topics/show"
+
   devise_for :users
 
   resource :user, :path => "/profile", :only => [:show, :destroy, :update]
