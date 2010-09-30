@@ -1,7 +1,7 @@
 $.fn.blockSlider = function(options){
 	return this.each(function(){
 		options = $.extend({
-			auto: true,
+			auto: false,
 			anim: 'carrousel',
 			speed: 1000,
 			pause: 4000,
