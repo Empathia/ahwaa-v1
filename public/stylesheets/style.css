@@ -20,7 +20,10 @@ input.error, input:focus:invalid,#twitter textarea:focus:invalid{background-colo
 
 p > a{font-style: italic}
 
+.add_comments{display: none;}
 .comments{background-color: #ccc; padding: 10px; display: none;}
 .comments > li > ul > li {background-color: #ffffff; padding: 10px; margin: 10px;}
 /*.Apple-style-span:after{font-style: italic; content: "▀"}*/
 .hidden{display: none;}
+.pipe{display: none; padding: 0 5px; font-weight: bold;}
+p:hover .pipe{display: inline;}
