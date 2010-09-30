@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
       if current_user
         I18n.locale = current_user.profile.language
       else
-        I18n.locale = params[:locale] rescue  I18n.locale = 'en'
+        I18n.locale = params[:locale] if params[:locale].present?
       end
     end
 
