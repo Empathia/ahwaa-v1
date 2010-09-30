@@ -3,5 +3,7 @@ class HomeController < ApplicationController
 
   def index
   end
-
+  
+  def topic
+  end
 end

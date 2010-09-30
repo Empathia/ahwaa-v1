@@ -13,4 +13,5 @@ Lgbt::Application.routes.draw do
   end
 
   root :to => "home#index"
+  get 'topic' => 'home#topic'
 end

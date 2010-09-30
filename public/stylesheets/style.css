@@ -1,5 +1,5 @@
 body{font-size: 13px; font-family: Arial, Helvetica;}
-.aligned{width: 960px; margin: 0 auto;}
+.aligned{width: 800px; margin: 0 auto;}
 p::selection{}                       
 input[type=text],
 input[type=password],
@@ -27,3 +27,21 @@ p > a{font-style: italic}
 .hidden{display: none;}
 .pipe{display: none; padding: 0 5px; font-weight: bold;}
 p:hover .pipe{display: inline;}
+                            
+.header-top{overflow: hidden; text-align: center;}
+.sign-up{float: left;}
+.search{float: right;}
+.slogan{text-align: center;}
+.header-tags{overflow: hidden;}
+.header-tags > ul{float: left;}
+.header-tags > ul > li{display: inline;}    
+.header-tags > a{float: right;}
+.tags{display: inline}
+.tags > li{display: inline;}
+.features{overflow: hidden;}
+.features > li{display: inline; width: 200px; float: left;}
+.items{overflow: hidden;}
+.items > section{width: 400px; float: left;}
+footer{display: block;}
+footer > ul{float: right;}
+footer > ul > li{display: inline;}
