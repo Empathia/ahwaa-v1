@@ -12,27 +12,21 @@ class Admin::TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params[:topic])
-    if @topic.save
-      redirect_to admin_topics_path, :notice => "flash.admin.topics.create.success"
-    else
-      render "new"
-    end
+    @topic.save
+    respond_with(@topic, :location => [:admin, :topics])
   end
 
   def edit
   end
 
   def update
-    if @topic.update_attributes(params[:topic])
-      redirect_to admin_topics_path, :notice => "flash.admin.topics.update.success"
-    else
-      render "edit"
-    end
+    @topic.update_attributes(params[:topic])
+    respond_with(@topic, :location => [:admin, :topics])
   end
 
   def destroy
     @topic.destroy
-    redirect_to admin_topics_path, :notice => "flash.admin.topics.destroy.success"
+    respond_with(@topic, :location => [:admin, :topics])
   end
 
   private

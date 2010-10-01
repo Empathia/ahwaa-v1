@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'acts-as-taggable-on'
+gem 'responders'
 
 group :test do
   gem "shoulda"

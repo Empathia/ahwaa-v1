@@ -18,7 +18,8 @@ describe RepliesController do
     context "posting invalid reply" do
       it "should respond with proper error code" do
         post_with_xhr(:reply => Factory.build(:reply, :content => nil).attributes)
-        response.status.should == 409
+        assigns(:reply).should_not be_valid
+        response.status.should == 422
         response.body.should == assigns(:reply).errors.to_json
       end
     end
@@ -27,7 +28,17 @@ describe RepliesController do
   context "requesting with http" do
     it "should respond with html" do
       post_with_http
+      flash[:notice].should_not be_blank
       response.should redirect_to(topic_path(@topic))
+    end
+
+    context "posting invalid reply" do
+      it "should redirect to topic page" do
+        post_with_http(:reply => Factory.build(:reply, :content => nil).attributes)
+        response.should redirect_to(topic_path(@topic))
+        assigns(:reply).should_not be_valid
+        flash[:alert].should_not be_blank
+      end
     end
   end
 
@@ -61,8 +72,12 @@ def post_with_xhr(attrs = {})
   xhr :post, :create, attrs.merge(:format => :json)
 end
 
-def post_with_http
-  post :create, :topic_id => @topic.id, :reply => Factory.build(:reply, :user => nil).attributes
+def post_with_http(attrs = {})
+  attrs.reverse_merge!({
+    :topic_id => @topic.id,
+    :reply => Factory.build(:reply, :user => nil).attributes
+  })
+  post :create, attrs
 end
 
 def create_reply

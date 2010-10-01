@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_filter :get_user
 
   def show
@@ -7,24 +6,16 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.update_attributes(params[:user])
-      flash[:notice] = t('c.users.update_success')
-      redirect_to user_path
-    else
-      flash[:error] = t('c.users.update_error')
-      redirect_to user_path
+    flash[:notice] = t("flash.actions.update.notice") if @user.update_attributes(params[:user])
+    respond_with(@user) do |format|
+      format.html { redirect_to user_path }
     end
   end
 
   def destroy
-    if @user.destroy
-      sign_out @user
-      flash[:notice] = t('c.users.destroy_success')
-      redirect_to '/'
-    else
-      flash[:error] = t('c.users.destroy_error')
-      redirect_to user_path
-    end
+    @user.destroy
+    sign_out @user
+    respond_with(@user, :location => root_path)
   end
 
   protected

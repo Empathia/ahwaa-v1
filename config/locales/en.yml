@@ -3,6 +3,14 @@
 
 en:
   flash:
+    actions:
+      create:
+        notice: '%{resource_name} was successfully created.'
+      update:
+        notice: '%{resource_name} was successfully updated.'
+      destroy:
+        notice: '%{resource_name} was successfully destroyed.'
+        alert: '%{resource_name} could not be destroyed.'
     application:
       should_be_admin: 'You should have admin credentials to access this part of site.'
 
@@ -12,4 +20,4 @@ en:
         categories:
           advice: Advice
           comment: Comment
-          experience: My Experience
+          experience: Experience
