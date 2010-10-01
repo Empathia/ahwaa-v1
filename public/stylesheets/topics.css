@@ -1,0 +1,6 @@
+.article-tags, 
+.article-tags > li{display: inline;}
+.topic-experts,
+.topic-experts > li{display: inline;}
+article{float: left; width: 500px;}
+aside{float: right; width: 300px;}

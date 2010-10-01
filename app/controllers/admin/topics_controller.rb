@@ -1,4 +1,5 @@
 class Admin::TopicsController < ApplicationController
+  layout 'admin'
   before_filter :find_topic, :only => [:edit, :update, :destroy]
 
   def index

@@ -1,15 +1,16 @@
+<% javascript 'form_validator'%>
 <%= form_for [:admin, @topic] do |f| %>
   <p>
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => "true" %>
   </p>
   <p>
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :required => "true" %>
   </p>
   <p>
     <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :username %>
+    <%= f.collection_select :user_id, User.all, :id, :username, :required => "true" %>
   </p>
   <p>
     <%= f.submit %>

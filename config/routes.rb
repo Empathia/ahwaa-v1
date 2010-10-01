@@ -1,10 +1,11 @@
 Lgbt::Application.routes.draw do
-  get "topics/show"
 
   devise_for :users
 
   resource :user, :path => "/profile", :only => [:show, :destroy, :update]
 
+  resources :topics, :only => [:show]
+  
   namespace :admin do
     resources :topics, :except => [:show]
 
@@ -15,7 +16,6 @@ Lgbt::Application.routes.draw do
     end
     root :to => 'users#index'
   end
-
+  
   root :to => "home#index"
-  get 'topic' => 'home#topic'
 end

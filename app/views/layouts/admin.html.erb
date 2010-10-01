@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lgbt</title>
+  <%= javascript_include_tag :defaults, :cache => true %>
+  <%= stylesheet_link_tag 'reset', 'fonts', 'admin' %>
+  <%= csrf_meta_tag %>
+  <%= yield(:head) %>
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag 'html5_ie' %>
+  <![endif]-->
+</head>
+<body>
+  <%= link_to 'en', :locale => 'en'  %>
+  <%= link_to 'ar', :locale => 'ar'  %>
+  <% flash.each do |key, msg| %>
+    <div class="flash <%= key %>"><%= msg %></div>
+  <% end %>
+  <div class="aligned">  
+    <%= yield %>
+  </div>    
+</body>
+</htm

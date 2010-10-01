@@ -3,7 +3,8 @@ body{font-size: 13px; font-family: Arial, Helvetica;}
 p::selection{}                       
 input[type=text],
 input[type=password],
-input[type=email]{border: 1px solid #ccc}
+input[type=email],
+textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
                                              
