@@ -4,7 +4,9 @@ Lgbt::Application.routes.draw do
 
   resource :user, :path => "/profile", :only => [:show, :destroy, :update]
 
-  resources :topics, :only => [:show]
+  resources :topics, :only => [:show] do
+    resources :replies, :only => [:create]
+  end
   
   namespace :admin do
     resources :topics, :except => [:show]

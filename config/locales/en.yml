@@ -2,7 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  c:
+  flash:
     application:
       should_be_admin: 'You should have admin credentials to access this part of site.'
 

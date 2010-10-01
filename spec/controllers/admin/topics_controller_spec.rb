@@ -27,8 +27,10 @@ describe Admin::TopicsController do
     end
 
     it "should create a topic" do
-      post :create, :topic => {:title => "This is my topic for tests",
-        :content => "Lorem Ipsum dolor?", :user => Factory(:user)}
+      lambda do
+        post :create, :topic => {:title => "This is my topic for tests",
+          :content => "Lorem Ipsum dolor?", :user => Factory(:user)}
+      end.should change(Topic, :count).by(1)
       assigns(:topic).new_record?.should be_false
       response.should be_redirect
     end

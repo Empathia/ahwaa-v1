@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-    private
+  private
 
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
@@ -17,10 +17,10 @@ class ApplicationController < ActionController::Base
       end
     end
 
-    #
+    # Validate admin authentication if route is within the /admin path
     def authenticate_admin!
       if self.class.name =~ /Admin/ && !current_user.is_admin?
-        flash[:error] = t('c.application.should_be_admin')
+        flash[:alert] = t('flash.application.should_be_admin')
         (redirect_to :back rescue redirect_to '/')
         false
       else
