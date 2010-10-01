@@ -13,6 +13,11 @@
     <%= f.collection_select :user_id, User.all, :id, :username, :required => "true" %>
   </p>
   <p>
+    <%= f.label :tag_list %>
+    <%= f.text_field :tag_list %>
+    <span class="desc">Comma separated</span>
+  </p>
+  <p>
     <%= f.submit %>
   </p>
 <% end %>
