@@ -1,4 +1,6 @@
 class UserProfile < ActiveRecord::Base
+  # TODO: attr_accessible
+  
   belongs_to :user
   belongs_to :avatar
 

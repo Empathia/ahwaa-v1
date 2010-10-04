@@ -1,8 +1,12 @@
 class Reply < ActiveRecord::Base
   CATEGORIES = %w[advice comment experience]
+  
+  # TODO: attr_accessible
 
   belongs_to :topic
   belongs_to :user
+  has_many :ratings, :dependent => :destroy
+  has_many :raters, :through => :ratings, :source => :user
 
   validates :content, :presence => true
   validates :topic_id, :presence => true

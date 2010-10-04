@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
+
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
+  has_many :ratings, :dependent => :destroy
+  has_many :rated_replies, :through => :ratings, :source => :reply
 
   attr_accessible :username, :email, :password, :password_confirmation
 
