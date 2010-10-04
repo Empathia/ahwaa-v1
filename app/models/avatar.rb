@@ -1,5 +1,7 @@
 class Avatar < ActiveRecord::Base
 
+  # TODO: attr_accessible
+  
   has_many :user_profiles
 
   # [Class Method] gets an array of the avatars the given parameters

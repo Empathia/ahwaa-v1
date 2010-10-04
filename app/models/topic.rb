@@ -1,6 +1,8 @@
 class Topic < ActiveRecord::Base
   acts_as_taggable
 
+  # TODO: attr_accessible
+  
   include Tanker
 
   tankit 'lgbt' do
