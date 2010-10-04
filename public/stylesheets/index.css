@@ -1,0 +1,11 @@
+.features{overflow: hidden;}
+.features > li{display: inline; width: 200px; float: left;}
+.items{overflow: hidden;}
+.items > section{width: 480px; float: left;}
+.features li{background-image: url(''); background-repeat: none; background-color: #ccc; height: 188px; width: 232px; margin: 5px; float: left;}
+.features li:first-child{margin-left: 1px;}
+.features li:last-child{margin-right: 1px;}
+#anonimity{background-position: 0;}
+#community{background-position: 0;}
+#trustworthy{background-position: 0;}
+#join{background-position: 0;}

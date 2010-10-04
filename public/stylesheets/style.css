@@ -1,36 +1,47 @@
 body{font-size: 13px; font-family: Arial, Helvetica;}
-.aligned{width: 800px; margin: 0 auto;}
+.aligned{width: 960px; margin: 0 auto;}              
 p::selection{}                       
 input[type=text],
 input[type=password],
 input[type=email],
 textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
-input[type=checkbox] + label{display: inline;}
-                                             
-.experts-carrousel{overflow: hidden; padding: 5px 0; background-color: #ccc; position: relative; height: 120px; width: 390px;}
-.experts-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
-.experts-carrousel > ul > li{width: 120px; height: 100%; overflow: hidden; float: left; margin: 0 5px;}
-
-.arrows{margin: 10px 0; overflow: hidden;}
-.arrows span{text-indent:-9999px; float: left; border-style: solid; height: 0px; margin: 0px 5px; width: 0px;}
-.arrows .back{border-color: transparent #999 transparent transparent; border-width: 5px 10px 5px 0px; }
-.arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }
-
-input.error, input:focus:invalid,#twitter textarea:focus:invalid{background-color:#fbe2e5;}
-
-p > a{font-style: italic}
-
-.add_comments{display: none;}
-.comments{background-color: #ccc; padding: 10px; display: none;}
-.comments > li > ul > li {background-color: #ffffff; padding: 10px; margin: 10px;}
-/*.Apple-style-span:after{font-style: italic; content: "▀"}*/
-.hidden{display: none;}
-.pipe{display: none; padding: 0 5px; font-weight: bold;}
-p:hover .pipe{display: inline;}
+input[type=checkbox] + label{display: inline;}                                             
+input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-color:#fbe2e5;}
                             
 .header-top{overflow: hidden; text-align: center;}
-.sign-up{float: left;}
+
+.sign-up{float: left; text-align: left; width: 240px;}
+.sign-up > a{padding: 0 10px; height: 34px; line-height: 3; float: left; width: 76px; text-align: center; overflow: hidden;}              
+.sign-up > a:first-child{ 
+  background-image: -moz-linear-gradient(top, #444444, #999999);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #444444),color-stop(1, #999999));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#444444', EndColorStr='#999999');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#444444', EndColorStr='#999999')";  
+        -moz-border-radius: 5px;
+      -webkit-border-radius: 5px;
+              border-radius: 5px;        
+} 
+
+.header-top .sign-up > .active{background: #8ac2de;
+  border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;  
+  border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;   
+}     
+
+.sign-up > .active:first-child{
+  border-bottom-left-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+}
+
 .search{float: right;}
 .slogan{text-align: center;}
 .header-tags{overflow: hidden;}
@@ -39,10 +50,18 @@ p:hover .pipe{display: inline;}
 .header-tags > a{float: right;}
 .tags{display: inline}
 .tags > li{display: inline;}
-.features{overflow: hidden;}
-.features > li{display: inline; width: 200px; float: left;}
-.items{overflow: hidden;}
-.items > section{width: 400px; float: left;}
+
 footer{display: block;}
 footer > ul{float: right;}
 footer > ul > li{display: inline;}
+.over-form, .sign-up-form{position: absolute; top: 0; left: 0; width: 300px; height: 150px; background: #8ac2de; display: none; padding: 10px;
+  -moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+        border-radius: 5px;
+        border-top-left-radius: 0;
+        -moz-border-radius-topleft: 0;
+        -webkit-border-top-left-radius: 0;
+       }
+       
+.over-form.active{display: block;}               
+.over-form{display: none;}

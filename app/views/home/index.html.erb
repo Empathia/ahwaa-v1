@@ -1,4 +1,6 @@
 <% javascript 'comments', 'slideshow', 'sitescript'%>
+<% stylesheet 'index' %>
+
 <div class="aligned">  
   <section>
     <hgroup class="slogan">
@@ -6,10 +8,10 @@
       <h2>Supporting tagline will live here and it should be about this long</h2>
     </hgroup>                                                                    
     <ul class="features">
-      <li><%= link_to 'Mantain your anonymity' %></li>
-      <li><%= link_to 'Support your community' %></li>
-      <li><%= link_to 'Find help from trustworthy people!' %></li>
-      <li><%= link_to 'Join And get Started!' %></li>      
+      <li id="anonymity"><%= link_to 'Mantain your anonymity' %></li>
+      <li id="community"><%= link_to 'Support your community' %></li>
+      <li id="trustworthy"><%= link_to 'Find help from trustworthy people!' %></li>
+      <li id="join"><%= link_to 'Join And get Started!' %></li>      
     </ul>
   </section>       
   <div class="items">

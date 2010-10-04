@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lgbt</title>
-  <%= javascript_include_tag :defaults, :cache => true %>
+  <%= javascript_include_tag :defaults, 'form_validator', :cache => true%>
   <%= stylesheet_link_tag 'reset', 'fonts', 'style' %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
@@ -21,7 +21,8 @@
       <div class="header-top">
         <%= link_to 'LGBT' %>                           
         <div class="sign-up">
-          <a href="#">Sign Up</a> or <a href="#">Login</a>
+          <a href="#" id="sign-up">Sign Up</a>
+          <a href="#" id="login">Login</a>
         </div>
         <form action="#" method="post" class="search">
           <%= search_field :search, :placeholder => "Search Topic", :value => "" %>
@@ -42,6 +43,16 @@
       </div>
     </header>          
   </div>  
-  <%= yield %>
+  <%= yield %> 
+  <form action="#" method="post" class="over-form sign-up-form">
+    <p>Please register and enjoy all the benefits of LGTB!</p>
+    <%= email_field :email, nil, :required => "true", :placeholder => "Email" %>
+    <%= text_field :name_nickname, nil, :required => "true", :placeholder => "Name/Nickname" %>
+    <p>By clicking on Submit, you confirm that you accept the <%= link_to 'Terms of Use' %> and <%= link_to 'Privacy Policy' %> for using LGBT.</p>
+  </form>
+  <form action="#" method="post" class="over-form login-form">
+    <%= email_field :email, nil, :required => "true", :placeholder => "Email" %>
+    <%= password_field :password, nil, :required => "true", :placeholder => "Password" %>
+  </form>  
 </body>
 </html>
