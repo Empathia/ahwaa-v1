@@ -1,6 +1,6 @@
-body{font-size: 13px; font-family: Arial, Helvetica; background-color: #e3ecf0;}
+body{background-color: #e3ecf0;}
 .aligned{width: 960px; margin: 0 auto;}              
-p::selection{}                       
+a{color: #468ac4;}
 input[type=text],
 input[type=password],
 input[type=email],
@@ -8,6 +8,9 @@ textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}                                             
 input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-color:#fbe2e5;}
+
+body > header{background-color: #fcfdfe; margin-bottom: 20px;}
+.header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
                             
 .header-top{overflow: hidden; text-align: center;}
 
@@ -43,10 +46,12 @@ input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-col
 }
 
 .search{float: right;}
-.slogan{text-align: center;}
-.header-tags{overflow: hidden;}
-.header-tags > ul{float: left;}
-.header-tags > ul > li{display: inline;}    
+.search > input{width: 280px; height: 29px; padding: 0 10px;}
+.slogan{text-align: center;}             
+.header-tags{overflow: hidden; height: 100%;}
+.header-tags > ul{float: left; height: 100%;}
+.header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
+.header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left;}
 .header-tags > a{float: right;}
 .tags{display: inline}
 .tags > li{display: inline;}

@@ -1,7 +1,11 @@
-body,ul,h1,h2,h3,p,pre{margin: 0}
+body,ul,h1,h2,h3,p,pre,input{margin: 0}
 ul{list-style-type: none; padding: 0}
 img{border: none}
 input,select,textarea{outline: none}
 header,section,article,section{display: block}
 a{text-decoration: none; cursor: pointer;} 
 a:hover{text-decoration: underline;}
+/*
+a:active{ outline:none; }  
+a:focus{ -moz-outline-style:none; }
+*/

@@ -15,34 +15,36 @@
   <%= link_to 'ar', :locale => 'ar'  %>
   <% flash.each do |key, msg| %>
     <div class="flash <%= key %>"><%= msg %></div>
-  <% end %>
-  <div class="aligned">                            
-    <header>  
-      <div class="header-top">
-        <%= link_to 'LGBT' %>                           
-        <div class="sign-up">
-          <a href="#" id="sign-up">Sign Up</a>
-          <a href="#" id="login">Login</a>
+  <% end %>          
+      <header>               
+        <div class="aligned">
+          <div class="header-top">
+            <%= link_to 'LGBT' %>                           
+            <div class="sign-up">
+              <a href="#" id="sign-up">Sign Up</a>
+              <a href="#" id="login">Login</a>
+            </div>
+            <form action="#" method="post" class="search">
+              <%= text_field :search, nil, :placeholder => "Search topics", :value => "", :class => "border-all" %>
+            </form>   
+          </div>
         </div>
-        <form action="#" method="post" class="search">
-          <%= search_field :search, :placeholder => "Search Topic", :value => "" %>
-        </form>   
-      </div>
-      <div class="header-tags">
-        <ul>
-          <li><%= link_to 'Help' %></li>
-          <li><%= link_to 'Movements' %></li>
-          <li><%= link_to 'LGBT' %></li>
-          <li><%= link_to 'Marriage' %></li>
-          <li><%= link_to 'Youth' %></li>
-          <li><%= link_to 'Gay Rights' %></li>
-          <li><%= link_to 'Transgender' %></li>
-          <li><%= link_to 'Bisexual' %></li>
-        </ul>       
-        <%= link_to 'Request a topic' %>
-      </div>
-    </header>          
-  </div>  
+        <div class="header-wrapper">
+          <div class="header-tags aligned">
+            <ul>
+              <li><%= link_to 'Help' %></li>
+              <li><%= link_to 'Movements' %></li>
+              <li><%= link_to 'LGBT' %></li>
+              <li><%= link_to 'Marriage' %></li>
+              <li><%= link_to 'Youth' %></li>
+              <li><%= link_to 'Gay Rights' %></li>
+              <li><%= link_to 'Transgender' %></li>
+              <li><%= link_to 'Bisexual' %></li>
+            </ul>       
+            <%= link_to 'Request a topic' %>
+          </div>
+        </div>
+      </header>          
   <%= yield %> 
   <form action="#" method="post" class="over-form sign-up-form">
     <p>Please register and enjoy all the benefits of LGTB!</p>
