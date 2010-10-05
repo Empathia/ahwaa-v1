@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-
+gem 'json'
 gem 'home_run'
 gem 'rails', '3.0.0'  
 gem "rails3-generators"
