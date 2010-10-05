@@ -1,4 +1,4 @@
-body{font-size: 13px; font-family: Arial, Helvetica;}
+body{font-size: 13px; font-family: Arial, Helvetica; background-color: #e3ecf0;}
 .aligned{width: 960px; margin: 0 auto;}              
 p::selection{}                       
 input[type=text],
@@ -54,14 +54,39 @@ input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-col
 footer{display: block;}
 footer > ul{float: right;}
 footer > ul > li{display: inline;}
+
 .over-form, .sign-up-form{position: absolute; top: 0; left: 0; width: 300px; height: 150px; background: #8ac2de; display: none; padding: 10px;
   -moz-border-radius: 5px;
--webkit-border-radius: 5px;
-        border-radius: 5px;
-        border-top-left-radius: 0;
-        -moz-border-radius-topleft: 0;
-        -webkit-border-top-left-radius: 0;
-       }
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+}
        
 .over-form.active{display: block;}               
 .over-form{display: none;}
+
+.border-all{
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;  
+}           
+
+.border-right{
+  border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;  
+  border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -webkit-border-bottom-right-radius: 5px;  
+}
+
+.border-left{
+  border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -webkit-border-top-left-radius: 5px;  
+  border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -webkit-border-bottom-left-radius: 5px;  
+}

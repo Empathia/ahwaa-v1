@@ -3,6 +3,7 @@ $.fn.blockSlider = function(options){
 		options = $.extend({
 			auto: false,
 			anim: 'carrousel',
+			circ: false,
 			speed: 1000,
 			pause: 4000,
 			nav: false,
@@ -62,17 +63,24 @@ $.fn.blockSlider = function(options){
     		},                       
 		    carrousel: function(delta){
 		        var currentItem = slides.filter('.active:first').index();
-		        var next = !delta || (delta > 0) ? (currentItem+1) % size : (currentItem-1 < 0) ? size-1 : currentItem-1;
-    			var left = next * slides.eq(0).outerWidth(true) * -1;                              
-    			slider.animate({'left' : (slider.parent().width() > slider.outerWidth() + left) ? 0 : left}, 1000, function(){
-    				nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
-    				slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
-    			}); 
+		        if(!delta || (delta > 0)){               
+                    var next = slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left')) ? (options.circ ? 0 : false) : currentItem+1;
+		        }
+		        else {                                                  
+                    var next = (currentItem-1 < 0) ? ((options.circ) ? size-Math.floor(slider.parent().width() / slides.eq(0).outerWidth(true)) : false) : currentItem-1;
+		        }
+		        if(next !== false){
+    		        var left = next * slides.eq(0).outerWidth(true) * -1;                              
+    			    slider.animate({'left' : left}, 1000, function(){
+                        nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
+    		            slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
+                    });        
+    			 } 
 		    },
     		resetCarr: function(delta){
     		    clearInterval(slider.data('id'));
                 animations.carrousel(delta);                                                
-                animations.start();
+                options.auto && animations.start();
     		},
 			arrowscarrousel: function(){
 				wrapper.find(options.nxt).click(function(){
@@ -86,7 +94,7 @@ $.fn.blockSlider = function(options){
 			    nav.children().each(function(i){
     				$(this).click(function(){
     					clearInterval(slider.data('id'));
-    					animations.start();
+    					options.auto && animations.start();
     				});
     			}).eq(0).addClass('active');
     		},

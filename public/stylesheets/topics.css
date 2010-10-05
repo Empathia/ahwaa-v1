@@ -2,24 +2,32 @@
 .article-tags > li{display: inline;}
 .topic-experts,
 .topic-experts > li{display: inline;}
-.content{float: left; width: 500px;}
+.content{float: left; width: 796px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
+article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px;}
+article > p{margin-bottom: 35px;}
 article > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 80%;}
 article > header > img{float: right;}
-aside{float: right; width: 300px;}
+aside{float: right; width: 134px; padding: 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
 .add_comments{display: none;}
 .comments{background-color: #ccc; padding: 10px; display: none;}
 .comments > li > ul > li {background-color: #ffffff; padding: 10px; margin: 10px;}
 .hidden{display: none;}
 .pipe{display: none; padding: 0 5px; font-weight: bold;}
 p:hover .pipe{display: inline;}
-.experts-carrousel{overflow: hidden; padding: 5px 0; background-color: #ccc; position: relative; height: 120px; width: 390px;}
-.experts-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
-.experts-carrousel > ul > li{width: 120px; height: 100%; overflow: hidden; float: left; margin: 0 5px;}
-.arrows{margin: 10px 0; overflow: hidden;}
+
+.related-content{background-color: #ffffff; padding: 20px;}
+.related-carrousel{overflow: hidden; width: 714px; float: left; background-color: #ccc; position: relative; height: 56px;}
+.related-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
+.related-carrousel > ul > li{width: 210px; height: 54px; overflow: hidden; float: left; margin: 0 14px;}
+
+.arrows{float: left; width: 21px; margin: 19px 0; overflow: hidden;}
+.arrows:last-child{float: right;}
 .arrows span{text-indent:-9999px; float: left; border-style: solid; height: 0px; margin: 0px 5px; width: 0px;}
 .arrows .back{border-color: transparent #999 transparent transparent; border-width: 5px 10px 5px 0px; }
-.arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }
+.arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }    
+.social-bookmarkers{background-image: url("http://www.empowerkit.com/wp-content/themes/empowerkit/images/social-bookmarkers.png"); display: none; height: 102px; left: -44px; padding: 11px 0px 0px 12px; position: fixed; top: 188px; width: 32px;}
+.social-bookmarkers > a{float: left; height: 24px; margin-bottom: 9px; text-indent: -9999px; width: 24px;}
