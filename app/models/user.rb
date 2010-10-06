@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
   has_many :ratings, :dependent => :destroy
   has_many :rated_replies, :through => :ratings, :source => :reply
+  has_many :private_messages, :dependent => :destroy,
+    :foreign_key => :recipient_id, :conditions => {:parent_id => nil}
 
   attr_accessible :username, :email, :password, :password_confirmation
 

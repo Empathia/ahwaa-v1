@@ -62,28 +62,29 @@ describe RepliesController do
     end
 
   end
+
+  def post_with_xhr(attrs = {})
+    attrs.reverse_merge!({
+      :topic_id => @topic.id,
+      :reply => Factory.build(:reply, :user => nil).attributes
+    })
+    xhr :post, :create, attrs.merge(:format => :json)
+  end
+
+  def post_with_http(attrs = {})
+    attrs.reverse_merge!({
+      :topic_id => @topic.id,
+      :reply => Factory.build(:reply, :user => nil).attributes
+    })
+    post :create, attrs
+  end
+
+  def create_reply
+    lambda do
+      post_with_xhr
+    end.should change(Reply, :count).by(1)
+    assigns(:reply).new_record?.should be_false
+    assigns(:reply).topic.should == @topic
+  end
 end
 
-def post_with_xhr(attrs = {})
-  attrs.reverse_merge!({
-    :topic_id => @topic.id,
-    :reply => Factory.build(:reply, :user => nil).attributes
-  })
-  xhr :post, :create, attrs.merge(:format => :json)
-end
-
-def post_with_http(attrs = {})
-  attrs.reverse_merge!({
-    :topic_id => @topic.id,
-    :reply => Factory.build(:reply, :user => nil).attributes
-  })
-  post :create, attrs
-end
-
-def create_reply
-  lambda do
-    post_with_xhr
-  end.should change(Reply, :count).by(1)
-  assigns(:reply).new_record?.should be_false
-  assigns(:reply).topic.should == @topic
-end
