@@ -1,10 +1,5 @@
 .article-tags{clear: both;}
-.article-tags > li{display: inline;}
-.topic-experts{overflow: hidden;}
-.topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px}
-.topic-experts > li > div{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0; margin-bottom: 5px; margin-left: 1px;}
-.topic-experts > li:nth-child(2n+1){margin-right:20px;}
-
+.article-tags > li{display: inline;}     
 .content{float: left; width: 796px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
@@ -36,3 +31,24 @@ p:hover .pipe{display: inline;}
 .arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }    
 .social-bookmarkers{background-image: url("http://www.empowerkit.com/wp-content/themes/empowerkit/images/social-bookmarkers.png"); display: none; height: 102px; left: -44px; padding: 11px 0px 0px 12px; position: fixed; top: 188px; width: 32px;}
 .social-bookmarkers > a{float: left; height: 24px; margin-bottom: 9px; text-indent: -9999px; width: 24px;}
+
+.filter-resposes > li{margin-bottom: 10px;}
+.filter-resposes > li:last-child{margin-bottom: 0;}
+
+.topic-experts{overflow: hidden;}
+.topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px}
+.topic-experts > li > div{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0; margin-bottom: 5px; margin-left: 1px; overflow: hidden;}
+.topic-experts > li:nth-child(2n+1){margin-right:20px;}
+
+.expand-btn{width: 133px; height: 26px; text-align: center; float: left;     
+  border-style: solid;
+  border-width: 1px;
+  border-color: #e1e8f0 #dae1e8 #9da2a8 #dae1e8;
+  line-height: 2;
+  background-image: -moz-linear-gradient(top, #f9fbfc, #eaf2f5);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fbfc),color-stop(1, #eaf2f5));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5')";  
+  }
+
+                                                                                                                           #
