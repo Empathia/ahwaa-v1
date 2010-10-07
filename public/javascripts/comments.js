@@ -21,7 +21,11 @@ $.fn.comments = function(options){
         
     $('.has_comments').live('click', function(e){
         var parag = $(this).parent();
-        var link = $(this);
+        var link = $(this);         
+        
+        var index = $('.topic-content a').index(this);
+        console.log(index);        
+        
         var idAttr = link.attr('id').split('_');
         var id = idAttr[1];
         var comments = parag.next('#comments_' + id + '_clone').length ? parag.next() : parag.next('#comments_add_' + id + '_clone');

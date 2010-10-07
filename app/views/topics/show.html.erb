@@ -11,8 +11,10 @@
         <p class="article-tags">
           <%= linked_tag_list @topic.tags %>
         </p>
-      </header>
-      <%= simple_format @topic.content %>
+      </header>  
+      <div class="topic-content">
+        <%= simple_format @topic.content %>
+      </div>
       <div class="social-bookmarkers">
         <%= link_to t('.icons.social.linked_in'), linked_in_share_url(@topic), :target => "_blank" %>
         <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank" %>

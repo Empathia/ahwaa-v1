@@ -4,8 +4,8 @@
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
 article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px;}
-article > p{margin-bottom: 23px; line-height: 24px;}
-article > p > a{font-style: italic} 
+.topic-content > p{margin-bottom: 23px; line-height: 24px;}
+.topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 80%;}
 article > header > div{float: right;}
