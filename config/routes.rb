@@ -1,8 +1,13 @@
 Lgbt::Application.routes.draw do
-
   devise_for :users
 
-  resource :user, :path => "/profile", :only => [:show, :destroy, :update]
+  resource :user, :path => "profile", :only => [:show, :destroy, :update]
+  
+  resources :users, :only => [] do
+    resource :private_messages, :only => [:create]
+  end
+
+  resources :private_messages, :path => "inbox", :except => [:new, :edit, :update, :create]
 
   resources :topics, :only => [:show] do
     resources :replies, :only => [:create]

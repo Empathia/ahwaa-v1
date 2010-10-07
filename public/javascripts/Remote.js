@@ -1,5 +1,4 @@
 Class('Remote')({
-    table_name: '',
     remote: {
         create: '/create.json',
         update: '/update.json',
