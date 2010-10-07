@@ -16,9 +16,17 @@ $.fn.blockSlider = function(options){
 		var wrapper = options.anim == 'carrousel' ? slider.parent().parent() : slider.parent();
 		var slides = slider.children();
 		var size = slides.length;
-		slides.filter(':first').addClass('active');                                       
+		slides.filter(':first').addClass('active');                             
+		if(options.anim == 'carrousel'){
+	        var width = 0;
+	        slides.each(function(){
+                width += $(this).outerWidth(true);
+    	    });
+    	    slider.width(width);
+    		options.arrows && slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left')) ? $(options.nxt).removeClass('active') : $(options.nxt).addClass('active');
+	    }
 		var animations = { 
-		    start: function(){
+		    start: function(){        
                 slider.data('id', setInterval(animations[options.anim], options.pause));
 		    },
 		    fade: function(){
@@ -61,30 +69,48 @@ $.fn.blockSlider = function(options){
     				});
     			}).eq(0).addClass('active');
     		},                       
-		    carrousel: function(delta){
-		        var currentItem = slides.filter('.active:first').index();
-		        if(!delta || (delta > 0)){               
-                    var next = slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left')) ? (options.circ ? 0 : false) : currentItem+1;
+		    carrousel: function(delta){                          
+		        var currentItem = slides.filter('.active:first').index();       ;
+		        if(!delta || (delta > 0)){
+                    if(slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left'))){
+                        if(!options.circ){ 
+                            return false;
+                        }            
+                        var next = 0;
+                    }else{     
+                        var next = currentItem+1;
+                    }
 		        }
 		        else {                                                  
-                    var next = (currentItem-1 < 0) ? ((options.circ) ? size-Math.floor(slider.parent().width() / slides.eq(0).outerWidth(true)) : false) : currentItem-1;
-		        }
-		        if(next !== false){
-    		        var left = next * slides.eq(0).outerWidth(true) * -1;                              
-    			    slider.animate({'left' : left}, 1000, function(){
-                        nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
-    		            slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
-                    });        
-    			 } 
+                    if(currentItem-1 < 0){
+                        if(!options.circ){ 
+                            return false;
+                        }                                                                                  
+                        var next = size-Math.floor(slider.parent().width() / slides.eq(0).outerWidth(true));
+                    }
+                    else{           
+                        var next = currentItem-1;
+                    }
+		        }                                    
+		        var left = next * slides.eq(0).outerWidth(true) * -1;                              
+			    slider.animate({'left' : left}, 1000, function(){
+                    nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
+		            slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
+		            if(options.arrows){             
+		                slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left')) ? $(options.nxt).removeClass('active') : $(options.nxt).addClass('active');
+		                next == 0 ? $(options.bck).removeClass('active') : $(options.bck).addClass('active');
+		            }
+                });
 		    },
     		resetCarr: function(delta){
     		    clearInterval(slider.data('id'));
-                animations.carrousel(delta);                                                
-                options.auto && animations.start();
+                animations.carrousel(delta);      
+                options.auto && animations.start();                                 
     		},
 			arrowscarrousel: function(){
 				wrapper.find(options.nxt).click(function(){
-				    animations.resetCarr(1);
+				    animations.resetCarr(1);               
+				    console.log($(options.bck).hasClass('active'));
 				});
 				wrapper.find(options.bck).click(function(){
 				    animations.resetCarr(-1);
@@ -112,12 +138,5 @@ $.fn.blockSlider = function(options){
 		var nav = options.nav ? (options.navSelector ? wrapper.find(options.navSelector) : animations.addNav()) : false;
 		nav && animations['nav'+options.anim](); 		
 	    options.arrows && animations['arrows'+ options.anim]();
-	    if(options.anim == 'carrousel'){
-	        var width = 0;
-	        slides.each(function(){
-                width += $(this).outerWidth(true);
-    	    });
-    	    slider.width(width);   
-	    }
 	});
 }

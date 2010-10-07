@@ -34,8 +34,8 @@ $.fn.comments = function(options){
                 link.attr('style', '');
             });
         }
-        else{                                              
-            comments = link.hasClass('pipe') ? $('#add_comments').attr('outerHTML') : $('#comments_' + id).attr('outerHTML');
+        else{                                          
+            comments = link.hasClass('icn-plus') ? $('#add_comments').attr('outerHTML') : $('#comments_' + id).attr('outerHTML');
             var linkOuterHTML = link.css('display', 'inline').attr('outerHTML');
             var chunks = parag.html().split(linkOuterHTML);
             parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
