@@ -5,6 +5,7 @@ class CreateReplies < ActiveRecord::Migration
       t.belongs_to :user
       t.text :content
       t.string :category
+      t.integer :contextual_index
       t.timestamps
     end
 
