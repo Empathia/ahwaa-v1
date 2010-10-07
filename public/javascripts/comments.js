@@ -11,7 +11,7 @@ $.fn.comments = function(options){
                     comments.remove();
                 });
             });  
-            $(this).text('Show all responses');
+            $(this).text(I18n.t('topics.show.sidebar.show_all_responses'));
         }
         else{
             expand();
@@ -64,8 +64,8 @@ $.fn.comments = function(options){
     this.each(function(){                                             
         var parag = $(this);
         var paragHTML= parag.html();
-        paragHTML = paragHTML.replace(/\.((?: [A-Z])|$)/g, ". <a href='#' class='icn-plus has_comments' title='Add Comment'>&nbsp;</a>$1");
-        parag.html(paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn-plus has_comments' title='Add Comment'> </a>"));
+        paragHTML = paragHTML.replace(/\.((?: [A-Z])|$)/g, ". <a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;</a>$1");
+        parag.html(paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>"));
     });                                                           
     
     $('.icn-plus').each(function(i){

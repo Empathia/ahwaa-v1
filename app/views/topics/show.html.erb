@@ -1,38 +1,32 @@
-<% javascript 'comments', 'slideshow', 'sitescript'%>
+<% javascript 'locales', 'comments', 'slideshow', 'sitescript' %>
 <% stylesheet 'topics' %>
 <div class="aligned">
   <div class="content">
     <article class="border-all">
       <header>
-        <h1>How can I tell my religious parents that I am bisexual?</h1>
+      <h1><%= @topic.title %></h1>
         <div class="avatar">
-          <%= image_tag "no-image.jpg", :width => '50' %>      
+          <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
         </div>
         <p class="article-tags">
-          <span><%= link_to 'Help' %>, <%= link_to 'Religion' %>, <%= link_to 'Bisexual' %></span>
-        </p>    
-      </header>    
-      <p>I am nervous about coming out to my parents. they are catholic, and very religious, and tell me it is very bad to be "homosexual".</p>
-      <p>And i currently live with them, so i am scared that they'll treat me differently. Once, my mom eavesdropped on a phone call i had with a boy, and she thought I was gay. I told her no, but that was because she was crying. That day made me want to hide it from her, but i know telling her would be best. -Since i am in a relationship with a boy.</p>
-      <p>So what best way would i be able to "come out" to my parents about being bisexual? Please and thank you.</p>
-      <p>This may seem like a really bad question but please hear me out.</p>
-      <p>I'm 17, I've never had boyfriend and I'm only kind of out of the closet. I'm starting to look for a boyfriend and I'm having trouble finding any gay guys let alone one who would want to date me. I'm afraid that I don't have any traits that would make someone think I'm gay.</p>
-      <p>Everyone who I have come out to is always like "omg really?! I would have never guessed." and although in a lot of situations that is a good thing for safety it doesn't help when I'm looking for a boyfriend. Is there anything I can do to you know, kinda look like I'm gay?</p>
-      <p>I currently wear jeans, tshirt and sneakers. I don't act very feminine. I'm 6 feet tall and rather large. Any help would be great THX.</p>
+          <%= linked_tag_list @topic.tags %>
+        </p>
+      </header>
+      <%= simple_format @topic.content %>
       <div class="social-bookmarkers">
-  			<a href="http://www.linkedin.com/shareArticle?mini=true&url=AQUIVALAURL&title=AQUIVAELTITULO&source=AQUIVALAURLRAIZ" target="_blank">Linked In</a>
-  			<a href="http://www.facebook.com/sharer.php?u=AQUIVALAURL&t=AQUIVAELTITULO" target="_blank">Facebook</a>							
-  			<a href="http://twitter.com/home?status=AQUIVAELTITULO Y LA URL" target="_blank">Twitter</a>
-  		</div>
-    </article>   
+        <%= link_to t('.icons.social.linked_in'), linked_in_share_url(@topic), :target => "_blank" %>
+        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank" %>
+        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank" %>
+      </div>
+    </article>
     <section class="related-content border-all">
-      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5">Related Content</h2>
-      <div class="arrows">                  
-        <span class="back">Back</span>
+      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5"><% t('.related_content.title') %></h2>
+      <div class="arrows">
+        <span class="back"><%= t('.related_content.arrows.back') %></span>
       </div>
       <div class="related-carrousel">
         <ul>
-          <li>        
+          <li>
             <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
             <%= link_to 'How to accept his way son?' %></li>
           <li>
@@ -48,46 +42,36 @@
           </li>
         </ul>
       </div>
-      <div class="arrows">     
-        <span class="next">Next</span>		  
-      </div>      
-    </section>  
+      <div class="arrows">
+        <span class="next"><%= t('.related_content.arrows.next') %></span>
+      </div>
+    </section>
   </div>
-  <aside class="border-right">         
+  <aside class="border-right">
     <section>
-      <%= link_to 'Hide all responses', nil, :class => "expand-btn border-all hide" %>  
+      <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn border-all hide" %>
     </section>
     <section>
-      <h2 class="regular">Filter responses</h2>
+      <h2 class="regular"><%= t('.sidebar.filter_responses.title') %></h2>
       <ul class="filter-resposes">
+        <% Reply::CATEGORIES.each do |category| %>
+          <li>
+            <%= check_box_tag :filter_category, category %>
+            <label><%= t("activemodel.attributes.reply.categories.#{category}") %></label>
+          </li>
+        <% end %>
         <li>
-          <input type="checkbox" name="">
-          <label>Advice</label>
+          <%= check_box_tag :filter_category, :all %>
+          <label><%= t('.sidebar.filter.all') %></label>
         </li>
-        <li>
-          <input type="checkbox" name="">
-          <label>Comments</label>        
-        </li>
-        <li>
-          <input type="checkbox" name="">
-          <label>Experiences</label>        
-        </li>
-        <li>
-          <input type="checkbox" name="">
-          <label>Helpfull</label>
-        </li>
-        <li>
-          <input type="checkbox" name="">
-          <label>All</label>
-        </li>      
-      </ul>               
+      </ul>
     </section>
     <section>
-      <input type="checkbox" name="">
-      <label for="" id="helpful-comms">Show only helpful commentaries</label>
-    </section>      
+      <%= check_box_tag :filter_helpful %>
+      <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
+    </section>
     <section>
-      <h2>Topic experts</h2>
+      <h2><%= t('.sidebar.experts.title') %></h2>
       <ul class="topic-experts">
         <li>
           <div class="avatar">
@@ -111,18 +95,18 @@
           <div class="avatar">
             <%= image_tag "no-image.jpg", :width => '50' %>
           </div>
-          <%= link_to 'chris anderson' %>          
+          <%= link_to 'chris anderson' %>
         </li>
       </ul>
     </section>
     <section>
-      <%= link_to 'Need Help?', '#', :class => "help" %>
-    </section>    
+      <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
+    </section>
   </aside>
-</div>           
+</div>
 <form id="add_comments" class="add_comments" action="#">
   <p>
-    <label>Comment</label>
+    <label><%= t('.reply_form.comment') %></label>
     <textarea></textarea>
   </p>
 </form>

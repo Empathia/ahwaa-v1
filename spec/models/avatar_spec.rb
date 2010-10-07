@@ -7,5 +7,6 @@ describe Avatar do
   end
 
   it { should have_many(:user_profiles) }
+  it { should validate_presence_of(:url) }
 
 end
