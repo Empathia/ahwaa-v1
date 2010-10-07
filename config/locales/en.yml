@@ -21,3 +21,28 @@ en:
           advice: Advice
           comment: Comment
           experience: Experience
+
+  topics:
+    show:
+      icons:
+        social:
+          linked_in: Liked In
+          facebook: Facebook
+          twitter: Twitter
+      related_content:
+        title: Related Content
+        arrows:
+          back: Back
+          next: Next
+      sidebar:
+        hide_all_responses: Hide all responses
+        filter_responses:
+          title: Filter responses
+        filter:
+          all: All
+        filter_helpful: Show only helpful commentaries
+        experts:
+          title: Topic experts
+        need_help: Need help?
+      reply_form:
+        comment: Comment

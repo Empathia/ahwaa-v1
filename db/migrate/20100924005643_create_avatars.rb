@@ -1,6 +1,7 @@
 class CreateAvatars < ActiveRecord::Migration
   def self.up
     create_table :avatars do |t|
+      t.string :url
       t.timestamps
     end
 
