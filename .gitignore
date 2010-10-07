@@ -6,4 +6,5 @@ log/*.log
 tmp/**/*
 .rvmrc
 public/javascripts/locales.js
+public/javascripts/common.js
 
