@@ -29,9 +29,11 @@ p:hover .icn-plus{display: inline;}
 
 .arrows{float: left; width: 21px; margin: 19px 0; overflow: hidden;}
 .arrows:last-child{float: right;}
-.arrows span{text-indent:-9999px; float: left; border-style: solid; height: 0px; margin: 0px 5px; width: 0px;}
-.arrows .back{border-color: transparent #999 transparent transparent; border-width: 5px 10px 5px 0px; }
-.arrows .next{border-color: transparent transparent transparent #999; border-width: 5px 0px 5px 10px; }    
+.arrows span{text-indent:-9999px; float: left; background-image: url('../images/arrows.png'); background-position: no-repeat; width: 18px; height: 18px; overflow: hidden;}
+.arrows .back{background-position: 0 0;}
+.arrows .back.active{background-position: 0 -36px;}
+.arrows .next{background-position: 0 -18px;}
+.arrows .next.active{background-position: 0 -54px;}
 .social-bookmarkers{background-image: url("http://www.empowerkit.com/wp-content/themes/empowerkit/images/social-bookmarkers.png"); display: none; height: 102px; left: -44px; padding: 11px 0px 0px 12px; position: fixed; top: 188px; width: 32px;}
 .social-bookmarkers > a{float: left; height: 24px; margin-bottom: 9px; text-indent: -9999px; width: 24px;}
 
@@ -53,4 +55,3 @@ p:hover .icn-plus{display: inline;}
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 #helpful-comms{float: right; width: 118px;}
 .help{background: url('../images/question-mark.png') no-repeat; height: 19px; padding-left: 22px; float: left;}
-                                                                                                                           #
