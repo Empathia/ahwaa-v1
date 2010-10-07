@@ -38,9 +38,10 @@ describe UsersController do
     end
 
     it "should let the user delete his/her own profile" do
-      delete :destroy
+      lambda do
+        delete :destroy
+      end.should change(User, :count).by(-1)
       response.should redirect_to('/')
-      User.count.should eql(0)
     end
 
   end
