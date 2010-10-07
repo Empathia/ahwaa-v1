@@ -36,14 +36,14 @@ $(function(){
         !$(e.target).hasClass('active') && !$(e.target).closest('.active').length && $('.active').removeClass('active');
     });                                                                                                             
     
-    var posX = Math.ceil(($(window).width() - 960)/2) - 44;
+    var posX = Math.ceil(($(window).width() - 960)/2) - 36;
     $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'}); 
     
     posX = Math.ceil(($(window).width() - 960)/2);
     $('aside').css({'right' : posX + 'px', 'display' : 'block'}); 
         
     $(window).resize(function() {
-        posX = Math.ceil(($(window).width() - 960)/2) - 44;
+        posX = Math.ceil(($(window).width() - 960)/2) - 36;
         $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'});
         
         posX = Math.ceil(($(window).width() - 960)/2);        

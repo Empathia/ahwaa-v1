@@ -66,18 +66,8 @@ $.fn.comments = function(options){
     this.each(function(){                                             
         var parag = $(this);
         var paragHTML= parag.html();
-         
-        /*
-        var str = 'abcabc';
-        var exp = /a/;
-        while(exp.test(str)) {
-            str = str.replace(exp, '-');
-        }         
-        */
-        
         var exp = /\.((?: [A-Z])|$)/;
         var has_comments = "";     
-        
         while(exp.test(paragHTML)){
             paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;</a>$1") :
                         paragHTML.replace(exp, "<a href='#' class='icn-plus no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.</a>$1")            

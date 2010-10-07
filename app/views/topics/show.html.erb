@@ -15,10 +15,9 @@
       <div class="topic-content">
         <%= simple_format @topic.content %>
       </div>
-      <div class="social-bookmarkers">
-        <%= link_to t('.icons.social.linked_in'), linked_in_share_url(@topic), :target => "_blank" %>
-        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank" %>
-        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank" %>
+      <div class="social-bookmarkers border-left">
+        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook' %>
+        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
       </div>
     </article>
     <section class="related-content border-all">

@@ -7,7 +7,7 @@ article{padding: 40px; background-color: #ffffff; display: block; margin-bottom:
 .topic-content > p{margin-bottom: 23px; line-height: 24px;}
 .topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
-article > header > h1{float: left; width: 80%;}
+article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
 .avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
 aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
@@ -70,8 +70,10 @@ p:hover .icn-plus{display: inline;}
 .arrows .back.active{background-position: 0 -36px;}
 .arrows .next{background-position: 0 -18px;}
 .arrows .next.active{background-position: 0 -54px;}
-.social-bookmarkers{background-image: url("http://www.empowerkit.com/wp-content/themes/empowerkit/images/social-bookmarkers.png"); display: none; height: 102px; left: -44px; padding: 11px 0px 0px 12px; position: fixed; top: 188px; width: 32px;}
-.social-bookmarkers > a{float: left; height: 24px; margin-bottom: 9px; text-indent: -9999px; width: 24px;}
+.social-bookmarkers{background-color: #ffffff; display: none; left: -44px; padding: 9px; position: fixed; top: 188px; width: 18px;}
+.social-bookmarkers > a{float: left; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../images/social.png'); background-repeat: none;}
+.facebook{background-position: 0 0;}
+.social-bookmarkers > .twitter{background-position: 0 100%; margin-bottom: 0;}
 
 .filter-resposes > li{margin-bottom: 10px;}
 .filter-resposes > li:last-child{margin-bottom: 0;}
