@@ -64,11 +64,11 @@ $.fn.comments = function(options){
     this.each(function(){                                             
         var parag = $(this);
         var paragHTML= parag.html();
-        paragHTML = paragHTML.replace(/([0-9A-Za-z])\.((?: [A-Z])|$)/g, "$1. <a href='#' class='pipe has_comments'>|</a>$2");
-        parag.html(paragHTML.replace(/([\?\!;]+)/g, "$1<a href='#' class='pipe has_comments'>|</a>"));
+        paragHTML = paragHTML.replace(/\.((?: [A-Z])|$)/g, ". <a href='#' class='icn-plus has_comments' title='Add Comment'>&nbsp;</a>$1");
+        parag.html(paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn-plus has_comments' title='Add Comment'> </a>"));
     });                                                           
     
-    $('.pipe').each(function(i){
+    $('.icn-plus').each(function(i){
        $(this).attr('id', 'add_' + i);
     });
     

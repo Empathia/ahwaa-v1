@@ -26,4 +26,12 @@ module TopicsHelper
     }
     "http://twitter.com/home?#{qs.to_param}"
   end
+
+  # Converts the string array of tags to an array of links
+  def linked_tag_list(tags)
+    tags.map do |tag|
+      # TODO: add topic_tag_url
+      content_tag :span, link_to(tag, "/topics/#{tag}")
+    end.join(", ").html_safe
+  end
 end

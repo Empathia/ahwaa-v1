@@ -8,11 +8,9 @@
         <div class="avatar">
           <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
         </div>
-        <ul class="article-tags">
-          <% @topic.tags.each do |tag| %>
-            <li><%= link_to tag %></li>
-          <% end %>
-        </ul>
+        <p class="article-tags">
+          <%= linked_tag_list @topic.tags %>
+        </p>
       </header>
       <%= simple_format @topic.content %>
       <div class="social-bookmarkers">
