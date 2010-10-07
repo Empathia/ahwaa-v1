@@ -75,30 +75,14 @@
     <section>
       <h2><%= t('.sidebar.experts.title') %></h2>
       <ul class="topic-experts">
-        <li>
-          <div class="avatar">
-            <%= image_tag "no-image.jpg", :width => '50' %>
-          </div>
-          <%= link_to 'Taxxodium' %>
-        </li>
-        <li>
-          <div class="avatar">
-            <%= image_tag "no-image.jpg", :width => '50' %>
-          </div>
-          <%= link_to 'navidsafa' %>
-        </li>
-        <li>
-          <div class="avatar">
-            <%= image_tag "no-image.jpg", :width => '50' %>
-          </div>
-          <%= link_to 'Taxxodium' %>
-        </li>
-        <li>
-          <div class="avatar">
-            <%= image_tag "no-image.jpg", :width => '50' %>
-          </div>
-          <%= link_to 'chris anderson' %>
-        </li>
+        <% @topic.leaderboard.each do |user| %>
+          <li>
+            <div class="avatar">
+              <%= image_tag user.profile.avatar.url, :width => '50' %>
+            </div>
+            <%= link_to user.username %>
+          </li>
+        <% end %>
       </ul>
     </section>
     <section>
