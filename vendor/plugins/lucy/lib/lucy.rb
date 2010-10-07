@@ -1,8 +1,8 @@
 module Lucy
 
-  JAVASCRIPT_DIR = File.join(File.dirname(__FILE__), "..", "..", "..", "..", "public", "javascripts")
-  DEFAULT_NAMESPACE = "Lucy"
-  DEFAULT_GLOBAL = "window"
+  JAVASCRIPT_DIR = File.join(File.dirname(__FILE__), "..", "..", "..", "..", "public", "javascripts") unless defined?(JAVASCRIPT_DIR)
+  DEFAULT_NAMESPACE = "Lucy" unless defined?(DEFAULT_NAMESPACE)
+  DEFAULT_GLOBAL = "window" unless defined?(DEFAULT_GLOBAL)
 
 
   def self.generate(key, content=nil, path=nil)

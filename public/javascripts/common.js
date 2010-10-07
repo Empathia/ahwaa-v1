@@ -1,7 +1,7 @@
 if (!window.Rails) { Rails = {}; }
 
-Rails.authenticityToken = "AhIzD8MLzSB0aVIkfiVFEotnqRwWtNZuMJRr5cFUHlw=";
+Rails.authenticityToken = null;
 
-Rails.env = "development";
+Rails.env = "test";
 
 Rails.version = "3.0.0";
