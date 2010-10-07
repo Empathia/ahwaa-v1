@@ -10,9 +10,11 @@
     <%= javascript_include_tag 'html5_ie' %>
   <![endif]-->
 </head>
-<body>
+<body>  
+  <div style="position: absolute; left: 0; top: 0">
   <%= link_to 'en', :locale => 'en'  %>
-  <%= link_to 'ar', :locale => 'ar'  %>
+  <%= link_to 'ar', :locale => 'ar'  %>          
+  </div>
   <% flash.each do |key, msg| %>
     <div class="flash <%= key %>"><%= msg %></div>
   <% end %>          
@@ -21,8 +23,12 @@
           <div class="header-top">
             <%= link_to 'LGBT' %>                           
             <div class="sign-up">
-              <a href="#" id="sign-up" class="border-all">Sign Up</a>
-              <a href="#" id="login">Login</a>
+              <a href="#" id="sign-up" class="border-all">
+                <span class="sign-up-btn">Sign Up</span>
+              </a>
+              <a href="#" id="login">
+                <span>Login</span>
+              </a>
             </div>
             <form action="#" method="post" class="search">
               <%= text_field :search, nil, :placeholder => "Search topics", :value => "", :class => "border-all" %>
@@ -39,22 +45,44 @@
               <li><%= link_to 'Youth' %></li>
               <li><%= link_to 'Gay Rights' %></li>
               <li><%= link_to 'Transgender' %></li>
-              <li><%= link_to 'Bisexual' %></li>
-            </ul>       
-            <%= link_to 'Request a topic' %>
+              <li class="more">
+                <%= link_to 'More' %>
+                <ul class="more-tags border-all border-menu">
+                  <li><%= link_to 'Lesbian' %></li>
+                  <li><%= link_to 'Middle East' %></li>
+                  <li><%= link_to 'Africa' %></li>
+                  <li><%= link_to 'Friends' %></li>              
+                </ul>
+              </li>
+            </ul> 
+            <a href="#" class="request-topic">              
+              <span>
+                <span>Request a topic</span>
+              </span>
+            </a>       
           </div>
         </div>
-      </header>          
-  <%= yield %> 
+      </header> 
+  <div style="padding-top: 113px">             
+    <%= yield %> 
+  </div>
   <form action="#" method="post" class="over-form sign-up-form">
     <p>Please register and enjoy all the benefits of LGTB!</p>
     <%= email_field :email, nil, :required => "true", :placeholder => "Email" %>
     <%= text_field :name_nickname, nil, :required => "true", :placeholder => "Name/Nickname" %>
-    <p>By clicking on Submit, you confirm that you accept the <%= link_to 'Terms of Use' %> and <%= link_to 'Privacy Policy' %> for using LGBT.</p>
+    <p class="legend">By clicking on Submit, you confirm that you accept the <%= link_to 'Terms of Use' %> and <%= link_to 'Privacy Policy' %> for using LGBT.</p>
+    <input type="submit" class="border-all">
   </form>
   <form action="#" method="post" class="over-form login-form">
     <%= email_field :email, nil, :required => "true", :placeholder => "Email" %>
     <%= password_field :password, nil, :required => "true", :placeholder => "Password" %>
-  </form>  
+  </form>
+  <div class="request-error">
+    <span></span>
+    <div>
+      <p>Anonymous users can't request a topic</p>
+      <a href="#" class="border-all"><span class="sign-up-btn">Sign Up</span></a>
+    </div>
+  </div>
 </body>
 </html>

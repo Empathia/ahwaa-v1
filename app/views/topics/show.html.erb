@@ -5,7 +5,9 @@
     <article class="border-all">
       <header>
         <h1>How can I tell my religious parents that I am bisexual?</h1>
-        <%= image_tag "no-image.jpg", :width => '20' %>      
+        <div class="avatar">
+          <%= image_tag "no-image.jpg", :width => '50' %>      
+        </div>
         <ul class="article-tags">
           <li><%= link_to 'Help' %></li>
           <li><%= link_to 'Religion' %></li>
@@ -26,16 +28,26 @@
   		</div>
     </article>   
     <section class="related-content border-all">
-      <h2 class="regular">Related Content</h2>
+      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5">Related Content</h2>
       <div class="arrows">                  
         <span class="back">Back</span>
       </div>
       <div class="related-carrousel">
         <ul>
-          <li><%= image_tag "no-image.jpg", :width => '20' %><%= link_to 'How to accept his way son?' %></li>
-          <li><%= image_tag "no-image.jpg", :width => '20' %><%= link_to 'Interview with gay son and his parents' %></li>
-          <li><%= image_tag "no-image.jpg", :width => '20' %><%= link_to 'Gallery of some common theme' %></li>
-          <li><%= image_tag "no-image.jpg", :width => '20' %><%= link_to 'History of son run of his home' %></li>
+          <li>        
+            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
+            <%= link_to 'How to accept his way son?' %></li>
+          <li>
+            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
+            <%= link_to 'Interview with gay son and his parents' %>
+          </li>
+          <li>
+            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
+            <%= link_to 'Gallery of some common theme' %></li>
+          <li>
+            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
+            <%= link_to 'History of son run of his home' %>
+          </li>
         </ul>
       </div>
       <div class="arrows">     
@@ -45,7 +57,7 @@
   </div>
   <aside class="border-right">         
     <section>
-      <%= link_to 'Hide all responses', nil, :class => "expand-btn border-all" %>  
+      <%= link_to 'Hide all responses', nil, :class => "expand-btn border-all hide" %>  
     </section>
     <section>
       <h2 class="regular">Filter responses</h2>
@@ -71,39 +83,43 @@
           <label>All</label>
         </li>      
       </ul>               
-    </section>  
-    <section>
-      <%= link_to 'Need Help?' %>  
     </section>
+    <section>
+      <input type="checkbox" name="">
+      <label for="" id="helpful-comms">Show only helpful commentaries</label>
+    </section>      
     <section>
       <h2>Topic experts</h2>
       <ul class="topic-experts">
         <li>
-          <div>
+          <div class="avatar">
             <%= image_tag "no-image.jpg", :width => '50' %>
           </div>
           <%= link_to 'Taxxodium' %>
         </li>
         <li>
-          <div>
+          <div class="avatar">
             <%= image_tag "no-image.jpg", :width => '50' %>
           </div>
           <%= link_to 'navidsafa' %>
         </li>
         <li>
-          <div>
+          <div class="avatar">
             <%= image_tag "no-image.jpg", :width => '50' %>
           </div>
           <%= link_to 'Taxxodium' %>
         </li>
         <li>
-          <div>
+          <div class="avatar">
             <%= image_tag "no-image.jpg", :width => '50' %>
           </div>
           <%= link_to 'chris anderson' %>          
         </li>
       </ul>
     </section>
+    <section>
+      <%= link_to 'Need Help?' %>  
+    </section>    
   </aside>
 </div>           
 <form id="add_comments" class="add_comments" action="#">

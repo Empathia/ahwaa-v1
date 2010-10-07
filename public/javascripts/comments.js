@@ -1,9 +1,7 @@
 $.fn.comments = function(options){      
-    $('input:checkbox').change(function(){                          
-        if($(this).is(':checked')){
-            expand();
-        }
-        else{
+    $('.expand-btn').data('label', $('.expand-btn').text());
+    $('.expand-btn').click(function(){                          
+        if($(this).hasClass('hide')){
             $(".comments[id$='clone']").each(function (){
                 var comments = $(this);
                 comments.slideUp(function(){
@@ -12,7 +10,12 @@ $.fn.comments = function(options){
                     paragEnd.remove();
                     comments.remove();
                 });
-            });
+            });  
+            $(this).text('Show all responses');
+        }
+        else{
+            expand();
+            $(this).text($(this).data('label'));
         }
     });
         
