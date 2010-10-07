@@ -24,6 +24,8 @@ en:
 
   topics:
     show:
+      contextual:
+        add_comment: Add Comment
       icons:
         social:
           linked_in: Liked In
@@ -36,6 +38,7 @@ en:
           next: Next
       sidebar:
         hide_all_responses: Hide all responses
+        show_all_responses: Show all responses
         filter_responses:
           title: Filter responses
         filter:
