@@ -9,11 +9,12 @@ form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}                                             
 input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-color:#fbe2e5;}
 
-body > header{background-color: #fcfdfe; position: fixed; width: 100%;}
-.header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
-                            
-.header-top{overflow: hidden; text-align: center; padding: 5px 0 7px 0;}
-
+body > header{background-color: #fcfdfe; position: fixed; width: 100%;}                                       
+.rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
+.gray{height: 5px; background-color: #e2ecf2; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
+.header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}                            
+.header-top{overflow: hidden; text-align: center; padding: 7px 0 7px 0; background: url('../images/lgbt.png') no-repeat center 0;}
+.lgbt{border: 1px solid red; padding: 20px 80px;}
 .sign-up{float: left; text-align: left; width: 240px;}
 .sign-up > a{height: 32px; float: left; width: 94px; text-align: center; overflow: hidden;}
 .sign-up > a:first-child{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}

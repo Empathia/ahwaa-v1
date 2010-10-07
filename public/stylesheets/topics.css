@@ -52,4 +52,5 @@ p:hover .pipe{display: inline;}
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 #helpful-comms{float: right; width: 118px;}
+.help{background: url('../images/question-mark.png') no-repeat; height: 19px; padding-left: 22px; float: left;}
                                                                                                                            #

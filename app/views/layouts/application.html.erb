@@ -18,10 +18,12 @@
   <% flash.each do |key, msg| %>
     <div class="flash <%= key %>"><%= msg %></div>
   <% end %>          
-      <header>               
-        <div class="aligned">
-          <div class="header-top">
-            <%= link_to 'LGBT' %>                           
+      <header>                  
+        <div class="rainbow"></div>        
+        <div class="gray"></div>
+        <div class="aligned" style="">
+          <div class="header-top" style="position: relative; margin-top: 6px">
+            <%= link_to 'LGBT', '#', :class => 'lgbt' %>                           
             <div class="sign-up">
               <a href="#" id="sign-up" class="border-all">
                 <span class="sign-up-btn">Sign Up</span>

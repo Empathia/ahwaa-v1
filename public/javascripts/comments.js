@@ -64,7 +64,7 @@ $.fn.comments = function(options){
     this.each(function(){                                             
         var parag = $(this);
         var paragHTML= parag.html();
-        paragHTML = paragHTML.replace(/([0-9A-Za-z])+\. ([A-Z])/g, "$1.<a href='#' class='pipe has_comments'>|</a>$2");
+        paragHTML = paragHTML.replace(/([0-9A-Za-z])\.((?: [A-Z])|$)/g, "$1. <a href='#' class='pipe has_comments'>|</a>$2");
         parag.html(paragHTML.replace(/([\?\!;]+)/g, "$1<a href='#' class='pipe has_comments'>|</a>"));
     });                                                           
     
