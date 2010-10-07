@@ -15,10 +15,9 @@
       <div class="topic-content">
         <%= simple_format @topic.content %>
       </div>
-      <div class="social-bookmarkers">
-        <%= link_to t('.icons.social.linked_in'), linked_in_share_url(@topic), :target => "_blank" %>
-        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank" %>
-        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank" %>
+      <div class="social-bookmarkers border-left">
+        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook' %>
+        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
       </div>
     </article>
     <section class="related-content border-all">
@@ -96,21 +95,27 @@
     <textarea></textarea>
   </p>
 </form>
-<ul class="comments" id="comments_1">
-  <li>
+<ul class="comments border-all" id="comments_0">
+  <li>    
+    <div>
+      <span class="avatar">
+        <%= image_tag "no-image.jpg", :width => '50' %>
+      </span>
+      <%= link_to 'GDL-Boy' %>
+    </div>
     <p>These are the comments of the 1st highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     <ul>
-      <li>
+      <li class="border-all">
         <p>This is a nested comment</p>
       </li>
     </ul>
   </li>
 </ul>
-<ul class="comments" id="comments_2">
+<ul class="comments border-all" id="comments_1">
   <li>
     <p>These are the comments of the 2nd highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
     <ul>
-      <li>
+      <li class="border-all">
         <p>This is a nested comment</p>
       </li>
     </ul>
