@@ -14,12 +14,12 @@ aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; overflow: hidden;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none;}
-.comments{display: none;}
-.comments > li{background-color: #f2f9fc; border: 1px solid #daecf3; margin-bottom: 25px;}
-.comments > .expert{background-color: #f9fcf8;}
-.comments > li > div{border: 2px solid #e9f0f3; padding: 10px;}
-.comments > li > div > ul > li {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
-.comments > li > div > ul > li > p{padding: 10px; border: 2px solid #edf5f9;}
+.reply{display: none;}
+.reply > li{background-color: #f2f9fc; border: 1px solid #daecf3; margin-bottom: 25px;}
+.reply > .expert{background-color: #f9fcf8;}
+.reply > li > div{border: 2px solid #e9f0f3; padding: 10px;}
+.reply > li > div > ul > li {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
+.reply > li > div > ul > li > p{padding: 10px; border: 2px solid #edf5f9;}
 .avatar-wrapper{overflow: hidden; margin-bottom: 15px;}
 .avatar{float: left; margin-right: 10px;}
 a.has_comments{padding: 0 6px 2px 6px; background: url('../images/icn-plus-minus.png') no-repeat; font-weight: bold; border: none; text-decoration: none;}
