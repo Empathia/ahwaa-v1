@@ -11,7 +11,6 @@ class Reply < ActiveRecord::Base
   validates :content, :presence => true
   validates :topic_id, :presence => true
   validates :category, :presence => true
-  validates :contextual_index, :presence => true
   validate :type_of_reply, :unless => "category.blank?"
 
   # Returns the internationalized version of the categories
