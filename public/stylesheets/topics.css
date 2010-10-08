@@ -11,7 +11,7 @@ article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
 .avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
 aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
-aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; overflow: hidden;}
+aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none;}
 .comments{display: none;}
@@ -21,7 +21,7 @@ aside section:first-child{border-top: none;}
 .comments > li > div > ul > li {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
 .comments > li > div > ul > li > p{padding: 10px; border: 2px solid #edf5f9;}
 .avatar-wrapper{overflow: hidden; margin-bottom: 15px;}
-.avatar{float: left; margin-right: 10px;}
+.avatar-wrapper > .avatar{float: left; margin-right: 10px;}
 a.has_comments{padding: 0 6px 2px 6px; background: url('../images/icn-plus-minus.png') no-repeat; font-weight: bold; border: none; text-decoration: none;}
 .hidden{display: none;}                                 
 
@@ -81,17 +81,37 @@ p:hover .icn-plus{display: inline;}
 .filter-resposes > li{margin-bottom: 10px;}
 .filter-resposes > li:last-child{margin-bottom: 0;}
 
-.topic-experts{overflow: hidden;}
-.topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px}
+.topic-experts{width: 100%; float: left;}
+.topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
+.topic-experts .private-msg{position: absolute; width: 270px; height: 364px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: 0; top: 0; display: none; text-align: left;}
+.expert-wrapper{overflow: hidden; margin-bottom: 15px;}
+.expert-info{float: left; text-align: left;}
+.expert-wrapper > .avatar{float: right;}
+.expert-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
+.expert-info > p{padding-bottom: 5px;}
+.private-msg > form{display: block; overflow: hidden;}
+.private-msg > form > textarea{width: 269px; height: 126px;}
+.private-msg > form > div{float: right;}
+.private-msg > form > div > input{height: 24px;}
+.private-msg .cancel{margin-right: 10px; color: #939ba5;}
+.private-msg > .avatar{float: right;}          
+.recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
+.recently-topics > p{padding-bottom: 15px;}
+.recently-topics > ul{list-style:disc inside}
+.recently-topics > ul > li{padding-bottom: 9px;}
+.recently-topics > ul > li > a{color: #61656a;}
+.topic-experts > li:hover > .private-msg{display: block;}
 .topic-experts > li > div{margin-bottom: 5px; margin-left: 1px; overflow: hidden;}
 .topic-experts > li:nth-child(2n+1){margin-right:20px;}
 
-.expand-btn{width: 132px; height: 26px; text-align: center; float: left; border-style: solid; border-width: 1px; border-color: #e1e8f0 #dae1e8 #9da2a8 #dae1e8; line-height: 2;
+.expand-btn{width: 132px; height: 26px; line-height: 2;}    
+
+.btn-gradient{text-align: center; float: left; border-style: solid; border-width: 1px; border-color: #e1e8f0 #dae1e8 #9da2a8 #dae1e8; color: #468AC4;
   background-image: -moz-linear-gradient(top, #f9fbfc, #eaf2f5);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fbfc),color-stop(1, #eaf2f5));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5')";  
-  }                               
+}
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 #helpful-comms{float: right; width: 118px;}

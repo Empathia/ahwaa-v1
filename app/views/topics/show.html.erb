@@ -50,7 +50,7 @@
   </div>
   <aside class="border-right">
     <section>
-      <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn border-all hide" %>
+      <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn btn-gradient hide" %>
     </section>
     <section>
       <h2 class="regular"><%= t('.sidebar.filter_responses.title') %></h2>
@@ -80,6 +80,33 @@
               <%= image_tag user.profile.avatar.url, :width => '50' %>
             </div>
             <%= link_to user.username %>
+            <div class="private-msg">
+              <div class="expert-wrapper">
+                <div class="expert-info">
+                  <p><%= link_to 'Taxxodium' %> is an Expert</p>
+                  <p>150 points</p>
+                  <a href="#" class="btn-gradient">Send Private Message</a>
+                </div>  
+                <div class="avatar">
+                  <%= image_tag user.profile.avatar.url, :width => '50' %>  
+                </div>
+              </div>
+              <form action="#" method="post">
+                <textarea class="border-all"></textarea>
+                <div>
+                  <input type="button" class="cancel btn-gradient" value="Cancel">
+                  <input type="submit" class="btn-gradient" value="Submit">
+                </div>
+              </form>   
+              <div class="recently-topics">
+                <p>Recently participated in these topics:</p>
+                <ul>
+                  <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
+                  <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>
+                  <li><%= link_to "How do I make friends in my currently situati..." %></li>
+                </ul>
+              </div>
+            </div>
           </li>
         <% end %>
       </ul>
