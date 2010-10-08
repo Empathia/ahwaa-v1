@@ -13,10 +13,15 @@ topic = Topic.new :title => "This is a topic test",
 topic.user = admin
 topic.save!
 
-topic.replies << Reply.new(:category => "advice", :contextual_index => 1, :content => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget lectus orci, scelerisque aliquet urna. Praesent et dolor massa, vitae aliquam orci. Curabitur orci velit, blandit eu faucibus sit amet, mollis at augue.")
+first_reply = Reply.new(:category => "advice", :contextual_index => 1, :content => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget lectus orci, scelerisque aliquet urna. Praesent et dolor massa, vitae aliquam orci. Curabitur orci velit, blandit eu faucibus sit amet, mollis at augue.")
+topic.replies << first_reply
 
-3.times do
-  reply = Reply.new(:category => "comment", :contextual_index => 2, :content => "This is my humble comment")
+reply_reply = Reply.new(:category => "experience", :content => "Hey! I'm replying to the lorem")
+reply_reply.user = user
+first_reply.replies << reply_reply
+
+3.times do |i|
+  reply = Reply.new(:category => "comment", :contextual_index => 2, :content => "This is my humble comment #{i}")
   reply.user = user
 
   topic.replies << reply

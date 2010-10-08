@@ -73,3 +73,5 @@ en:
         need_help: Need help?
       reply_form:
         comment: Comment
+      replies:
+        anonymous: Anonymous
