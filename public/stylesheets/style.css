@@ -113,7 +113,7 @@ footer > ul > li{display: inline;}
 .login-form > .legend{margin-top: 10px;}
 
 .border-all,
-.reply li{
+.comments li{
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;

@@ -6,7 +6,7 @@ $.fn.comments = function(options){
     $('.expand-btn').data('label', $('.expand-btn').text());
     $('.expand-btn').click(function(e){                          
         if($(this).hasClass('hide')){
-            $(".reply[id$='clone']").each(function (){
+            $(".comments[id$='clone']").each(function (){
                 var comments = $(this);
                 comments.slideUp(function(){
                     var paragEnd = comments.next();
@@ -53,7 +53,7 @@ $.fn.comments = function(options){
     });    
     
     function expand(){
-        $('.reply').each(function(){       
+        $('.comments').each(function(){       
             var comments = $(this);    
             var id =  comments.attr('id').split('_')[1];
             if($('#comments_' +  id +'_clone').length == 0){
@@ -65,7 +65,7 @@ $.fn.comments = function(options){
                 parag.next('#comments_' + id).attr('id',  id + '_clone').addClass('clon');
             } 
         });                                     
-        $(".reply[id$='clone']").slideDown(); 
+        $(".comments[id$='clone']").slideDown(); 
     }
     var i=0;
     this.each(function(){                                             
