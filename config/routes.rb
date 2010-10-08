@@ -13,10 +13,10 @@ Lgbt::Application.routes.draw do
   resources :topics, :only => [:show] do
     resources :replies, :only => [:create]
   end
-  
-  namespace :admin do
-    resources :topics, :except => [:show]
 
+  namespace :admin do
+    resource :bad_words, :only => [:show, :update]
+    resources :topics, :except => [:show]
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do
         put :toggle_expert
@@ -24,6 +24,6 @@ Lgbt::Application.routes.draw do
     end
     root :to => 'users#index'
   end
-  
+
   root :to => "home#index"
 end
