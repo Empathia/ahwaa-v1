@@ -21,7 +21,31 @@ en:
           advice: Advice
           comment: Comment
           experience: Experience
-
+  layouts:
+    application:        
+      header:     
+        auth:
+          sign_up: Sign Up
+          login: Login
+        request_topic: 
+          button: Request a topic
+          legend: Anonymous users can't request a topic
+          sign_up: Sign Up
+        sign_up_form:
+          legend: Please register and enjoy all the benefits of LGTB!
+          email: Email
+          name_nickname: Name/Nickname
+          note_pt1: 'By clicking on Submit, you confirm that you accept the'
+          note_pt2: and
+          terms_of_use: Terms of Use
+          privacy_policy: Privacy Policy
+          note_pt3: for using LGBT.
+        login_form:
+          email: Email
+          password: Password
+          forgot_password: Forgot Password
+          sign_in: Sign In
+        search_topics: Search topics
   topics:
     show:
       contextual:

@@ -3,9 +3,9 @@ $(function(){
     $('.related-content > div > ul').blockSlider();
                                                                                                       
     function toggleSignUp(link){        
-        $('.sign-up > a').add('.over-form').removeClass('active');                                                              
-        link.addClass('active');
-        $('.' + link.attr('id') + '-form').addClass('active').offset({
+        $('.sign-up > a').add('.over-form').removeClass('auth-form-active');                                                              
+        link.addClass('auth-form-active');
+        $('.' + link.attr('id') + '-form').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight()
             }
@@ -16,16 +16,16 @@ $(function(){
     });               
     
     $('.request-error a').click(function(){
-        $(this).addClass('active');
+        $(this).addClass('auth-form-active');
         toggleSignUp($('.sign-up > a:first-child'));
     })
     
 
     $('.request-topic').click(function(){
        var _btn = $(this);               
-       _btn.addClass('active');
+       _btn.addClass('auth-form-active');
        var offset = _btn.offset();
-       $('.request-error').addClass('active').css({'top':offset.top+27, 'left':offset.left-39})
+       $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39})
     });
     
     $('.topic-experts .avatar').click(function(){
@@ -33,7 +33,7 @@ $(function(){
     });
     
     $(document).click(function(e){                 
-        !$(e.target).hasClass('active') && !$(e.target).closest('.active').length && $('.active').removeClass('active');
+        !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active');
     });                                                                                                             
     
     var posX = Math.ceil(($(window).width() - 960)/2) - 36;

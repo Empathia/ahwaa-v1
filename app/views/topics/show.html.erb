@@ -21,7 +21,7 @@
       </div>
     </article>
     <section class="related-content border-all">
-      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5"><% t('.related_content.title') %></h2>
+      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5"><%= t('.related_content.title') %></h2>
       <div class="arrows">
         <span class="back"><%= t('.related_content.arrows.back') %></span>
       </div>
@@ -95,29 +95,61 @@
     <textarea></textarea>
   </p>
 </form>
-<ul class="comments border-all" id="comments_0">
-  <li>    
+<ul class="comments" id="comments_0">
+  <li class="expert">
     <div>
-      <span class="avatar">
-        <%= image_tag "no-image.jpg", :width => '50' %>
-      </span>
-      <%= link_to 'GDL-Boy' %>
+      <div class="avatar-wrapper">
+        <span class="avatar">
+          <%= image_tag "no-image.jpg", :width => '50' %>
+        </span>
+        <%= link_to 'GDL-Boy' %>
+      </div>
+      <p>These are the comments of the 1st highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <ul>
+        <li>
+          <p>This is a nested comment</p>
+        </li>
+        <li>
+          <p>This is a nested comment</p>
+        </li>
+      </ul>
     </div>
-    <p>These are the comments of the 1st highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <ul>
-      <li class="border-all">
-        <p>This is a nested comment</p>
-      </li>
-    </ul>
   </li>
-</ul>
-<ul class="comments border-all" id="comments_1">
   <li>
-    <p>These are the comments of the 2nd highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <ul>
-      <li class="border-all">
-        <p>This is a nested comment</p>
-      </li>
-    </ul>
+    <div>
+      <div class="avatar-wrapper">
+        <span class="avatar">
+          <%= image_tag "no-image.jpg", :width => '50' %>
+        </span>
+        <%= link_to 'GDL-Boy' %>
+      </div>
+      <p>These are the comments of the 1st highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <ul>
+        <li>
+          <p>This is a nested comment</p>
+        </li>
+      </ul>
+    </div>
+  </li>  
+</ul>
+<ul class="comments" id="comments_1">
+  <li>
+    <div>
+      <div class="avatar-wrapper">
+        <span class="avatar">
+          <%= image_tag "no-image.jpg", :width => '50' %>
+        </span>
+        <%= link_to 'GDL-Boy' %>
+      </div>
+      <p>These are the comments of the 2nd highlight, lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <ul>
+        <li>
+          <p>This is a nested comment</p>
+        </li>
+        <li>
+          <p>This is a nested comment</p>
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>
