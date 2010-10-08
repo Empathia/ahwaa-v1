@@ -70,6 +70,11 @@ en:
         filter_helpful: Show only helpful commentaries
         experts:
           title: Topic experts
+          send_msg: Send Private Message
+          cancel: Cancel
+          submit: Submit
+          points: "%{points} points"
+          expert: is an Expert
         need_help: Need help?
       reply_form:
         comment: Comment

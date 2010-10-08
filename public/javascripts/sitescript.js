@@ -20,7 +20,14 @@ $(function(){
         toggleSignUp($('.sign-up > a:first-child'));
     })
     
-
+    $('.send-private-msg').not('.disabled').click(function(){
+        $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+    })                                                               
+    
+    $('.private-msg .cancel').click(function(){
+        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
+    });
+    
     $('.request-topic').click(function(){
        var _btn = $(this);               
        _btn.addClass('auth-form-active');
@@ -28,8 +35,12 @@ $(function(){
        $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39})
     });
     
-    $('.topic-experts .avatar').click(function(){
- 
+    $('.topic-experts .avatar').mouseover(function(){
+        $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
+    });
+    
+    $('.active-avatar').live('mouseleave', function(){
+        $(this).fadeOut('fast');
     });
     
     $(document).click(function(e){                 
