@@ -78,6 +78,8 @@
   <form action="#" method="post" class="over-form login-form">
     <%= email_field :email, nil, :required => "true", :placeholder => "Email" %>
     <%= password_field :password, nil, :required => "true", :placeholder => "Password" %>
+     <p class="legend"><%= link_to "Forgot Password" %></p>
+    <input type="submit" class="border-all" value="Sign In">    
   </form>
   <div class="request-error">
     <span></span>

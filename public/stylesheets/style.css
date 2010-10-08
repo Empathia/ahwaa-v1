@@ -22,9 +22,8 @@ body > header{background-color: #fcfdfe; position: fixed; width: 100%;}
 .sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff;
   background-image: -moz-linear-gradient(top, #5998cc, #3778b7);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5998cc),color-stop(1, #3778b7));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998cc', EndColorStr='#3778b7');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998cc', EndColorStr='#3778b7')";
-  
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998cc', EndColorStr='#3778b7');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998cc', EndColorStr='#3778b7')";
 }
 
 .sign-up > a:last-child{line-height: 2.8; } 
@@ -63,9 +62,9 @@ body > header{background-color: #fcfdfe; position: fixed; width: 100%;}
   box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
 }
 .more-tags{width: 129px; background-color: #f6f9fb; position: absolute; top: 39px; display: none;
-    -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
-    -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
-    box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
+  -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
+  -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
+  box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
 }
 .more-tags > li{height: 36px; border-bottom: 1px solid #eaeef0; padding-left: 21px; line-height: 3;}
 .more-tags > li:last-child{border-bottom: none;}
@@ -82,7 +81,7 @@ footer{display: block;}
 footer > ul{float: right;}
 footer > ul > li{display: inline;}
 
-.over-form{position: absolute; top: 0; left: 0; width: 280px; height: 150px; background: #f6f9fb; display: none; padding: 10px;
+.over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f6f9fb; display: none; padding: 10px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -97,13 +96,10 @@ footer > ul > li{display: inline;}
 .over-form > p:first-child{margin-bottom: 15px; font-size: 12px;}
 .over-form > input[type="text"],
 .over-form > input[type="email"],
-.over-form > input[type="password"]{width: 258px;
+.over-form > input[type="password"]{width: 258px;margin-bottom: 10px; height: 28px; padding: 0 10px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px; 
-  margin-bottom: 10px;
-  height: 28px;
-  padding: 0 10px;
 }                       
 .over-form > input[type="submit"]{border: none;  border-bottom: 1px solid #1e4d88; width: 90px; height: 32px; float: right; color: #ffffff;
   background-image: -moz-linear-gradient(top, #64a2d1, #2f6daf);
@@ -113,6 +109,7 @@ footer > ul > li{display: inline;}
 }
 
 .legend{font-size: 10px; float: left; width: 160px;}
+.login-form > .legend{margin-top: 10px;}
 
 .border-all{
   -moz-border-radius: 3px;
