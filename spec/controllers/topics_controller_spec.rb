@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe TopicsController do
-  include Devise::TestHelpers
-
   before(:each) do
     @topic = Factory(:topic)
   end

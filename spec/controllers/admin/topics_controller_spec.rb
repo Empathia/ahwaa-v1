@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Admin::TopicsController do
-  include Devise::TestHelpers
-
   it "should deny access to regular users" do
     sign_in Factory(:user)
     get :index

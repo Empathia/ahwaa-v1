@@ -1,9 +1,10 @@
 Lgbt::Application.routes.draw do
-  devise_for :users
+  get "login" => "sessions#new"
+  post "login" => "sessions#create"
+  get "logout" => "sessions#destroy"
 
-  resource :user, :path => "profile", :only => [:show, :destroy, :update]
-  
-  resources :users, :only => [] do
+  resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update]
+  resources :users, :except => [:show, :destroy, :update, :edit] do
     resource :private_messages, :only => [:create]
   end
 
