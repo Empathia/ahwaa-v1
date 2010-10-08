@@ -114,7 +114,8 @@ footer > ul > li{display: inline;}
 
 .border-all,
 .comments li,
-.btn-gradient{
+.btn-gradient,
+.new-response{
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
