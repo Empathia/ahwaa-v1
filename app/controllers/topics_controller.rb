@@ -3,6 +3,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.includes(:replies).find(params[:id])
+    @replies = @topic.replies.group_by(&:contextual_index)
   end
 
 end

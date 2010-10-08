@@ -12,7 +12,7 @@ class Topic < ActiveRecord::Base
   end
 
   belongs_to :user
-  has_many :replies, :dependent => :destroy
+  has_many :replies, :dependent => :destroy, :conditions => { :parent_id => nil }
   has_many :topic_experts, :dependent => :destroy
   has_many :experts, :through => :topic_experts
 
