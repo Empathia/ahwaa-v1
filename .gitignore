@@ -8,3 +8,4 @@ tmp/**/*
 public/javascripts/locales.js
 public/javascripts/common.js
 db/development_structure.sql
+public/system/**/*
