@@ -60,7 +60,7 @@ describe BadWord do
 
       it 'should work in arabic' do
         BadWord.create!(:word => 'سيئة')
-        BadWord.search_and_replace('سيئة').should == '****'
+        BadWord.search_and_replace('سيئة').should == '********'
       end
     end
 

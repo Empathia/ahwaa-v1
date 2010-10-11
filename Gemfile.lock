@@ -73,18 +73,18 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     responders (0.6.2)
-    rspec (2.0.0.beta.22)
-      rspec-core (= 2.0.0.beta.22)
-      rspec-expectations (= 2.0.0.beta.22)
-      rspec-mocks (= 2.0.0.beta.22)
-    rspec-core (2.0.0.beta.22)
-    rspec-expectations (2.0.0.beta.22)
+    rspec (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+      rspec-mocks (= 2.0.0)
+    rspec-core (2.0.0)
+    rspec-expectations (2.0.0)
       diff-lcs (>= 1.1.2)
-    rspec-mocks (2.0.0.beta.22)
-      rspec-core (= 2.0.0.beta.22)
-      rspec-expectations (= 2.0.0.beta.22)
-    rspec-rails (2.0.0.beta.22)
-      rspec (= 2.0.0.beta.22)
+    rspec-mocks (2.0.0)
+      rspec-core (= 2.0.0)
+      rspec-expectations (= 2.0.0)
+    rspec-rails (2.0.0)
+      rspec (= 2.0.0)
     shoulda (2.11.3)
     tanker (0.3.0)
       will_paginate (>= 2.3.15)
@@ -98,17 +98,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  acts-as-taggable-on
-  autotest
-  factory_girl_rails
-  home_run
-  jquery-rails
-  json
-  mysql2
+  acts-as-taggable-on (~> 2.0.6)
+  autotest (~> 4.4.1)
+  factory_girl_rails (~> 1.0)
+  home_run (~> 0.9.3)
+  jquery-rails (~> 0.2.2)
+  json (~> 1.4.6)
+  mysql2 (~> 0.2.4)
   rails (= 3.0.0)
-  rails3-generators
-  responders
-  rspec-rails (= 2.0.0.beta.22)
-  shoulda
-  tanker
+  rails3-generators (~> 0.14.0)
+  responders (~> 0.6.2)
+  rspec-rails (~> 2.0.0)
+  shoulda (~> 2.11.3)
+  tanker (~> 0.3.0)
   will_paginate (~> 3.0.pre2)
