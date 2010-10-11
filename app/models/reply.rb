@@ -36,7 +36,10 @@ class Reply < ActiveRecord::Base
   def autor_avatar
     anonymous? ? Avatar.default.url : user.profile.avatar.url
   end
-
+  
+  def i18n_category
+    I18n.t(:"activemodel.attributes.reply.categories.#{category}")
+  end
   private
 
   def set_topic_from_parent
@@ -45,5 +48,5 @@ class Reply < ActiveRecord::Base
 
   def type_of_reply
     errors.add(:category, :invalid) unless CATEGORIES.include?(category)
-  end
+  end  
 end

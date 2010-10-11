@@ -65,8 +65,6 @@ en:
         show_all_responses: Show all responses
         filter_responses:
           title: Filter responses
-        filter:
-          all: All
         filter_helpful: Show only helpful commentaries
         experts:
           title: Topic experts
@@ -74,9 +72,14 @@ en:
           cancel: Cancel
           submit: Submit
           points: "%{points} points"
-          expert: is an Expert
+          expert: is an Expert            
+          recently_participated: 'Recently participated in these topics:'
         need_help: Need help?
       reply_form:
+        cancel: Cancel
         comment: Comment
+        write_response: Click here to write your response.
+        type_response: 'Type of response:'
+        new_response: New Response
       replies:
         anonymous: Anonymous

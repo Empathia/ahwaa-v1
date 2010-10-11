@@ -13,19 +13,59 @@ article > header > div{float: right;}
 aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
-.add_comments{display: none;}
+.new-response,
+.add_comments{border: 1px solid #daecf3;}
+.add_comments{display: none; margin-bottom: 25px;}
+.new-response > div,
+.add_comments > div{border: 2px solid #e9f0f3;}
+.add_comments > div{padding: 10px;}
+.add_comments > div > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
+.add_comments > div > div{overflow: hidden;}
+.cancel-comment{float: right; color: #c4c3c3;}
+.res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;}
+.res-types-wrapper > div{float: right;}                                               
+.res-lbl{float: right; margin-right: 10px; line-height: 1.8; color: #7d96b2;}
+.res-types{float: right;}
+.res-types > li{float: left;}
+.res-type{border: none; border-bottom: 1px solid #bcd0e7; height: 22px; color: #7c99b6; padding: 0 10px; border-left: 1px solid #dee8f2;
+  background-image: -moz-linear-gradient(top, #edf4fb, #e7f1fa);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #edf4fb),color-stop(1, #e7f1fa));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa')";  
+}                            
+.res-type.border-left{border-left: 0;}
 .comments{display: none;}
 .comments > ul > li{background-color: #f2f9fc; border: 1px solid #daecf3; margin-bottom: 25px;}
 .comments > ul > li:last-child{margin-bottom: 5px;}
 .comments > ul > .expert{background-color: #f9fcf8;}
 .comments > ul > li > div{border: 2px solid #e9f0f3; padding: 10px;}
 .comments > ul > li > div > ul > li {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
-.comments > ul > li > div > ul > li > div{padding: 10px; border: 2px solid #edf5f9;}
-.new-response{border-width: 1px; border-style: solid; border-color: #b7bec1 #dfe7ea #e1eaee #dfe7ea; padding: 7px; margin-bottom: 25px;}
+.comments > ul > li > div > ul > li > div{padding: 10px; border: 2px solid #edf5f9;}   
+
+.new-response{margin-bottom: 25px;}
+.new-response > div{padding: 7px;}
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
 .avatar-wrapper{overflow: hidden; margin-bottom: 15px;}
 .avatar-wrapper > .avatar{float: left; margin-right: 10px;}
+.avatar-wrapper > div{overflow: hidden;}
+.res-username{margin-bottom: 5px; float: left;}
+.res-flag-btns{float: right;}                
+.res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5;}
+.useful{margin-right: 10px;}
+
+.res-type-wrapper{background: url('../images/res-type-bg.png') no-repeat; padding-left: 2px; float: left;}
+.res-type-wrapper > div{background: url('../images/res-type-bg.png') no-repeat right -8px; padding-right: 2px;}
+.res-type-wrapper > div > div{background: url('../images/res-type-bg.png') repeat-x right -16px; padding: 3px;}
+
+.topic-res-type{background-image: url('../images/icn-types.png'); background-repeat: no-repeat; padding-left: 18px; color: #6c899b;}
+.topic-res-type.advice{background-position: 0 -44px;}
+.topic-res-type.comment, 
+.topic-res-type.comments{background-position: 0 -60px;}
+.topic-res-type.story,
+.topic-res-type.experience{background-position: 0 -75px;}
+
 a.has_comments{padding: 0 6px 2px 6px; background: url('../images/icn-plus-minus.png') no-repeat; font-weight: bold; border: none; text-decoration: none;}
+a.minus{background-position: 0 -19px;}
 .hidden{display: none;}                                 
 
 a.no_comments{padding: 0 6px; border-width: 1px; border-style: solid; margin-left: 4px; font-weight: bold;
@@ -46,14 +86,6 @@ p:hover a.no_comments{
 
 a.no_comments{
   color: #61656A;
-  /*
-  background: none;          
-  border-radius: 3px;
-  -moz-border-radius: 0px;
-  -webkit-border-radius: 0px;
-  border: none;
-  padding: 0; 
-  */
   opacity: .5;
   background-image: -moz-linear-gradient(top, #f8fbfc, #dee5e9);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8fbfc),color-stop(1, #dee5e9));
@@ -76,13 +108,19 @@ p:hover .icn-plus{display: inline;}
 .arrows .back.active{background-position: 0 -36px;}
 .arrows .next{background-position: 0 -18px;}
 .arrows .next.active{background-position: 0 -54px;}
-.social-bookmarkers{background-color: #ffffff; display: none; left: -44px; padding: 9px; position: fixed; top: 188px; width: 18px;}
-.social-bookmarkers > a{float: left; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../images/social.png'); background-repeat: none;}
+.social-bookmarkers{background-color: #ffffff; display: none; left: -44px; padding: 8px 4px 8px 8px; position: fixed; top: 188px; width: 18px;}
+.social-bookmarkers > a{float: left; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../images/icn-social.png'); background-repeat: none;}
 .facebook{background-position: 0 0;}
-.social-bookmarkers > .twitter{background-position: 0 100%; margin-bottom: 0;}
+.facebook:hover{background-position: 0 -18px;}
+.social-bookmarkers > .twitter{background-position: 0 -36px; margin-bottom: 0;}
+.social-bookmarkers > .twitter:hover{background-position: 0 100%}
 
 .filter-resposes > li{margin-bottom: 10px;}
 .filter-resposes > li:last-child{margin-bottom: 0;}
+.filter-resposes > li > label{background-image: url('../images/icn-types.png'); background-repeat: no-repeat; padding-left: 18px; margin-left: 5px;}
+.advice{background-position: 0 1px;}
+.comment,.comments{background-position: 0 -14px;}
+.story,.experience{background-position: 0 -28px;}
 
 .topic-experts{width: 100%; float: left;}
 .topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
@@ -91,12 +129,11 @@ p:hover .icn-plus{display: inline;}
 .expert-info{float: left; text-align: left;}
 .expert-wrapper > .avatar{float: right;}
 .expert-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
-.expert-info > .btn-gradient.disabled{-moz-opacity:.50; filter:alpha(opacity=50); opacity:.50; }
 .expert-info > p{padding-bottom: 5px;}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
-.private-msg > form > div{float: right;}
-.private-msg > form > div > input{height: 24px;}
+.private-msg-btns{float: right;}
+.private-msg-btns > input{height: 24px;}
 .private-msg .cancel{margin-right: 10px; color: #61656a;}
 .private-msg > .avatar{float: right;}          
 .recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
@@ -115,7 +152,17 @@ p:hover .icn-plus{display: inline;}
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f5')";  
 }
+
+.btn-gradient:hover{
+  background-image: -moz-linear-gradient(top, #fbfeff, #f2fbff);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fbfeff),color-stop(1, #f2fbff));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";  
+}
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 #helpful-comms{float: right; width: 118px;}
 .help{background: url('../images/question-mark.png') no-repeat; height: 19px; padding-left: 22px; float: left;}
+
+.success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
+.success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
