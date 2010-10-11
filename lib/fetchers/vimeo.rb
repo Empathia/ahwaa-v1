@@ -20,7 +20,7 @@ module Fetchers
       end
     end
 
-  # Gets the video id from the url
+    # Gets the video id from the url
     def self.extract_id(url)
       url.scan(/(?:.*#)?(\d+)/).to_s
     end

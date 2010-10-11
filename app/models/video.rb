@@ -11,12 +11,12 @@ class Video < ActiveRecord::Base
 
   # Wether the source url is from vimeo
   def from_vimeo?
-    from(:vimeo)
+    from?(:vimeo)
   end
 
   # Wether the source url is from youtube
   def from_youtube?
-    from(:youtube)
+    from?(:youtube)
   end
 
   private
@@ -40,7 +40,7 @@ class Video < ActiveRecord::Base
   end
 
   # Detects the source of the url
-  def from(source)
+  def from?(source)
     case source_url
     when /^https?:\/\/(?:www\.)?youtube\.com*/
       :youtube == source
