@@ -1,9 +1,6 @@
 require 'spec_helper'
 
 describe Admin::UsersController do
-
-  include Devise::TestHelpers
-  
   it 'should deny acces to regular users' do
     sign_in Factory(:user)
     get :index

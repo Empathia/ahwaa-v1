@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe RepliesController do
-  include Devise::TestHelpers
-
   before(:each) do
     @topic = Factory(:topic)
   end

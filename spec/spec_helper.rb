@@ -30,3 +30,11 @@ end
 def current_user
   controller.current_user
 end
+
+def sign_in(user)
+  session[:current_user] = user.id
+end
+
+def sign_out(user = nil)
+  controller.send(:sign_out_current_user)
+end

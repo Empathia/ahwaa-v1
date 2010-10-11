@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Admin::TopicsController do
-  include Devise::TestHelpers
-
   it "should deny access to regular users" do
     sign_in Factory(:user)
     get :index
@@ -44,7 +42,7 @@ describe Admin::TopicsController do
         get :edit, :id => @topic.id
         assigns(:topic).should == @topic
       end
-      
+
       it "should update a topic" do
         new_title = "Updating title!!!"
         put :update, :id => @topic.id, :topic => {:title => new_title}

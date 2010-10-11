@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe PrivateMessagesController do
-  include Devise::TestHelpers
-
   before(:each) do
     @sender = Factory(:user)
     @recipient = Factory(:user)

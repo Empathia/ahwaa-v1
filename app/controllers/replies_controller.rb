@@ -5,7 +5,7 @@ class RepliesController < ApplicationController
 
   def create
     @reply = @topic.replies.build(params[:reply])
-    @reply.user = current_user if user_signed_in?
+    @reply.user = current_user if logged_in?
     bk = lambda do |format|
       format.html { redirect_to @topic, :alert => t("flash.actions.create.alert") }
     end unless @reply.save

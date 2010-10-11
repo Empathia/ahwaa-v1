@@ -13,8 +13,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    sign_out_current_user
     @user.destroy
-    sign_out @user
     respond_with(@user, :location => root_path)
   end
 

@@ -1,14 +1,11 @@
 require 'spec_helper'
 
 describe UsersController do
-
-  include Devise::TestHelpers
-
   context "as an un-registered user" do
 
     it "should not be able to edit his/her user profile" do
       get :show
-      response.should redirect_to(:controller => 'devise/sessions' ,:action => 'new')
+      response.should redirect_to(login_path)
     end
 
   end

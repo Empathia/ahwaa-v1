@@ -2,16 +2,19 @@ class BadWord < ActiveRecord::Base
   validates_uniqueness_of :word
 
   def self.search_and_replace(text)
-    regexp_string = "#{bad_word_index.join('|')}"
+    regexp_string = "\\b#{bad_word_index.join('\\b|\\b')}\\b"
     regexp = Regexp.new(regexp_string, Regexp::IGNORECASE)
-    text.scan(regexp).uniq.each do |word|
-      text.gsub!(/\b#{word}\b/i, '' + '*' * word.length + '')
-    end
-    text
+    text.gsub(regexp) {|re| '*' * re.size }
   end
 
   def self.get_the_bad_word_index
     self.all.map(&:word)
+  end
+
+  def self.set_bad_word_index(list)
+    list.split(',').each do |word|
+      find_or_create_by_word(word.strip)
+    end
   end
 
   def self.reload_bad_word_cache

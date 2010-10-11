@@ -10,10 +10,10 @@
     <%= javascript_include_tag 'html5_ie' %>
   <![endif]-->
 </head>
-<body>  
+<body>
   <div style="position: absolute; left: 0; top: 0">
   <%= link_to 'en', :locale => 'en'  %>
-  <%= link_to 'ar', :locale => 'ar'  %>          
+  <%= link_to 'ar', :locale => 'ar'  %>
   </div>
   <% flash.each do |key, msg| %>
     <div class="flash <%= key %>"><%= msg %></div>
@@ -61,7 +61,7 @@
                   <li><%= link_to 'Lesbian' %></li>
                   <li><%= link_to 'Middle East' %></li>
                   <li><%= link_to 'Africa' %></li>
-                  <li><%= link_to 'Friends' %></li>              
+                  <li><%= link_to 'Friends' %></li>
                 </ul>
               </li>
             </ul> 
@@ -69,26 +69,26 @@
               <span>
                 <span><%= t('.header.request_topic.button')%></span>
               </span>
-            </a>       
+            </a>
           </div>
         </div>
-      </header> 
+      </header>
   <div class="container">
-    <%= yield %> 
+    <%= yield %>
   </div>
-  <form action="#" method="post" class="over-form sign-up-form">
+  <%= form_for User.new, :url => new_user_path, :html => {:class => "over-form sign-up-form"}, :remote => true do |f| %>
     <p><%= t('.header.sign_up_form.legend') %></p>
-    <%= email_field :email, nil, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
-    <%= text_field :name_nickname, nil, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
+    <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
+    <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
     <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
-    <input type="submit" class="auth-submit border-all">
-  </form>
-  <form action="#" method="post" class="over-form login-form">
-    <%= email_field :email, nil, :required => "true", :placeholder => t('.header.login_form.email') %>
-    <%= password_field :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %>
-     <p class="legend"><%= link_to t('.header.login_form.forgot_password') %></p>
-    <input type="submit" class="auth-submit border-all" value="<%= t('.header.login_form.sign_in') %>">
-  </form>
+    <%= f.submit nil, :class => "auth-submit border-all" %>
+  <% end %>
+  <%= form_tag login_path, :class => "over-form login-form", :remote => true do %>
+    <%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.email') %>
+    <%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %>
+    <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#' %></p>
+    <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
+  <% end %>
   <div class="request-error">
     <span></span>
     <div>
