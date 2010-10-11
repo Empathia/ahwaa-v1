@@ -20,10 +20,15 @@
   <% end %>          
       <header>                  
         <div class="rainbow"></div>        
-        <div class="gray"></div>
-        <div class="aligned" style="">
-          <div class="header-top" style="position: relative; margin-top: 6px">
-            <%= link_to 'LGBT', '#', :class => 'lgbt' %>                           
+        <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
+        <div class="aligned">
+          <div class="header-top <%= current_page?(root_path) ? 'homepage' : 'topic' %>">
+            <div class="links">  
+              <% if !current_page?(root_path) %>
+                <div><%= link_to 'TRANSCEND', '#', :class => 'lgbt' %></div>
+              <% end %>
+              <div><%= link_to 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ', '#', :class => 'lan' %></div>
+            </div>
             <div class="sign-up">
               <a href="#" id="sign-up" class="border-all">
                 <span class="sign-up-btn"><%= t('.header.auth.sign_up') %></span>
@@ -33,7 +38,10 @@
               </a>
             </div>
             <form action="#" method="post" class="search">
-              <%= text_field :search, nil, :placeholder => t('.header.search_topics'), :value => "", :class => "border-all" %>
+              <p class="border-all">
+                <%= text_field :search, nil, :placeholder => t('.header.search_topics'), :value => ""%>
+                <span></span>
+              </p>
             </form>   
           </div>
         </div>
@@ -57,7 +65,7 @@
                 </ul>
               </li>
             </ul> 
-            <a href="#" class="request-topic">              
+            <a href="#" class="request-topic disabled">
               <span>
                 <span><%= t('.header.request_topic.button')%></span>
               </span>
@@ -73,13 +81,13 @@
     <%= email_field :email, nil, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
     <%= text_field :name_nickname, nil, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
     <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
-    <input type="submit" class="border-all">
+    <input type="submit" class="auth-submit border-all">
   </form>
   <form action="#" method="post" class="over-form login-form">
     <%= email_field :email, nil, :required => "true", :placeholder => t('.header.login_form.email') %>
     <%= password_field :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %>
      <p class="legend"><%= link_to t('.header.login_form.forgot_password') %></p>
-    <input type="submit" class="border-all" value="<%= t('.header.login_form.sign_in') %>">
+    <input type="submit" class="auth-submit border-all" value="<%= t('.header.login_form.sign_in') %>">
   </form>
   <div class="request-error">
     <span></span>
