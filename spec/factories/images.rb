@@ -12,3 +12,7 @@ end
 Factory.define :twitpic_image, :parent => :image do |f|
   f.source_url "http://twitpic.com/2wrxo7"
 end
+
+Factory.define :raw_image, :parent => :image do |f|
+  f.source_url "http://www.diamondvues.com/archives/Ruby%20Gemstone.jpg"
+end

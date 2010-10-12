@@ -19,6 +19,11 @@ class Image < ActiveRecord::Base
     from?(:twitpic)
   end
 
+  # Wether or note the url is from a direct link
+  def from_raw?
+    from?(:raw)
+  end
+
   private
 
   # Detects the source of the url
@@ -28,6 +33,8 @@ class Image < ActiveRecord::Base
       :twitpic == source
     when /^https?:\/\/(?:www\.)?flickr\.com*/
       :flickr == source
+    when /\.(jpe?g|png|gif|bmp)(?:[^\/]+)?$/i
+      :raw == source
     end
   end
 
@@ -36,8 +43,10 @@ class Image < ActiveRecord::Base
     if from_flickr?
       flickr_fetcher = Fetchers::Flickr.new(APP_CONFIG['flickr_api_key'])
       fetch(flickr_fetcher)
-    else
+    elsif from_twitpic?
       fetch(Fetchers::Twitpic)
+    elsif from_raw?
+      fetch(Fetchers::Raw)
     end
   end
 
