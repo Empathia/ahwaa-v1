@@ -1,4 +1,6 @@
-body{background-color: #e3ecf0;}
+html{height: 100%;}
+body{background: #e3ecf0 url('../images/bg-noise.png'); height: 100%;}
+body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}              
 a{color: #468ac4;}
 input[type=text],
@@ -9,13 +11,13 @@ form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}                                             
 input.error, input:focus:invalid, #twitter textarea:focus:invalid{background-color:#fbe2e5;}
 
-body > header{background-color: #fcfdfe; position: fixed; width: 100%;}                                       
+body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
 .light{background-color: #e2ecf2;}
 .dark{background-color: #d7e4eb;}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}                            
-.header-top{overflow: hidden; text-align: center; padding: 7px 0 7px 0; position: relative; margin-top: 6px}
+.header-top{overflow: hidden; text-align: center; padding: 10px 0; position: relative; margin-top: 6px}
 .topic{background: url('../images/transcend.png') no-repeat center 0;}
 .homepage{background: url('../images/homepage.png') no-repeat center 0;}
               
@@ -65,7 +67,9 @@ body > header{background-color: #fcfdfe; position: fixed; width: 100%;}
   -moz-border-radius-bottomright: 0;
   -webkit-border-bottom-right-radius: 0;
 }
-
+.logged_opts{float: left; margin-top: 12px;}
+.logged_opts > li{float: left; margin-right: 23px;}
+.logged_opts > li > a{color: #9b9b9b}
 .search{float: right;}                              
 .search > p{border: 1px solid #CCC; width: 280px; height: 29px; padding: 0 10px; margin: 3px 0;}
 .search > p > input{width: 258px; height: 27px; border: none; float: left;}
@@ -97,21 +101,20 @@ body > header{background-color: #fcfdfe; position: fixed; width: 100%;}
 .tags,
 .tags > li{display: inline;}
 
-.container{padding-top: 113px}
+.container{padding-top: 113px; overflow: hidden;}
+.container > .aligned{overflow: hidden; }
 
 footer{display: block;}
 footer > ul{float: right;}
 footer > ul > li{display: inline;}
 
-.over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px;
+.over-form{position: absolute; z-index: 3; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border-top-left-radius: 0;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0; 
-  border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; 
-  color: #797e84;
 }
        
 .over-form.auth-form-active{display: block;}               

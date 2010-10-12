@@ -120,8 +120,10 @@
       <div>
         <ul class="res-types">
            <% Reply::CATEGORIES.each_with_index do |category, i| %>
-              <li>
-                <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
+              <li class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
+                <span class="<%= category %>"></span>                
+                <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="<%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
+
               </li>
             <% end %>
         </ul>
@@ -149,8 +151,10 @@
                   <% end %>       
                 </div>      
                 <div class="res-flag-btns">
-                  <a href="#" class="btn-gradient useful">This was useful!</a>
-                  <a href="#" class="btn-gradient flag">Flag</a>
+                  <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful" %>
+                  <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
+                    <span>Flag</span>
+                  </a>
                 </div>
               </div>
               <div class="res-type-wrapper">

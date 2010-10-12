@@ -28,11 +28,15 @@ $(function(){
         $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
     });
     
-    $('.request-topic').click(function(){
-       var _btn = $(this);               
-       _btn.addClass('auth-form-active');
-       var offset = _btn.offset();
-       $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39})
+    $('.request-topic').click(function(e){
+       var _btn = $(this);
+       if(_btn.hasClass('disabled')){
+           _btn.addClass('auth-form-active');
+           var offset = _btn.offset();
+           $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39})
+           e.preventDefault();
+           return false;
+       }
     });
     
     $('.topic-experts').find('.avatar').mouseover(function(){
