@@ -136,58 +136,61 @@
   <div class="comments" id="comments_<%= index %>">
     <ul>
       <% replies.each do |reply| %>
-        <%= content_tag :li, :class => ("expert" if reply.from_expert?) do %>
+        <%= content_tag :li, :class => "comment-st-level #{("expert" if reply.from_expert?)}" do %>
+          <span class="comm-arrow"></span>                                   
           <div>
-            <div class="avatar-wrapper">
-              <span class="avatar">
-                <%= image_tag reply.autor_avatar, :width => '50' %>
-              </span>                  
-              <div>
-                <div class="res-username">
-                  <% unless reply.anonymous? %>
-                    <%= link_to reply.user.username %>
-                  <% else %>
-                    <%= t(".replies.anonymous") %>
-                  <% end %>       
-                </div>      
-                <div class="res-flag-btns">
-                  <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful" %>
-                  <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
-                    <span>Flag</span>
-                  </a>
-                </div>
-              </div>
-              <div class="res-type-wrapper">
+            <div>
+              <div class="avatar-wrapper">
+                <span class="avatar">
+                  <%= image_tag reply.autor_avatar, :width => '50' %>
+                </span>                  
                 <div>
-                  <div>                                    
-                    <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
+                  <div class="res-username">
+                    <% unless reply.anonymous? %>
+                      <%= link_to reply.user.username %>
+                    <% else %>
+                      <%= t(".replies.anonymous") %>
+                    <% end %>       
+                  </div>      
+                  <div class="res-flag-btns">
+                    <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>                  
+                    <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
+                      <span><%= t(".reply_form.flag") %></span>
+                    </a>
+                  </div>
+                </div>
+                <div class="res-type-wrapper">
+                  <div>
+                    <div>                                    
+                      <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <%= simple_format reply.content %>
-            <% if reply.replies.size > 0 %>
-              <ul>
-              <% reply.replies.each do |reply_reply| %>
-                <li>
-                  <div>
-                    <div class="avatar-wrapper">
-                      <span class="avatar">
-                        <%= image_tag reply_reply.autor_avatar, :width => '50' %>
-                      </span>
-                      <% unless reply_reply.anonymous? %>
-                        <%= link_to reply_reply.user.username %>
-                      <% else %>
-                        <%= t(".replies.anonymous") %>
-                      <% end %>                      
+              <%= simple_format reply.content %>
+              <% if reply.replies.size > 0 %>
+                <ul>
+                <% reply.replies.each do |reply_reply| %>
+                  <li class="comment-nd-level">
+                    <div>
+                      <div class="avatar-wrapper">
+                        <span class="avatar">
+                          <%= image_tag reply_reply.autor_avatar, :width => '50' %>
+                        </span>
+                        <% unless reply_reply.anonymous? %>
+                          <%= link_to reply_reply.user.username %>
+                        <% else %>
+                          <%= t(".replies.anonymous") %>
+                        <% end %>                      
+                      </div>
+                      <%= simple_format reply_reply.content %>
                     </div>
-                    <%= simple_format reply_reply.content %>
-                  </div>
-                </li>
+                  </li>
+                <% end %>
+                </ul>
               <% end %>
-              </ul>
-            <% end %>
-          </div>
+            </div>
+          </div>            
         <% end %>
       <% end %>
     </ul>      

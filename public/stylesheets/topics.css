@@ -5,7 +5,8 @@ body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
 article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px;}
-.topic-content > p{margin-bottom: 23px; line-height: 24px;}
+.topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
+.topic-content > p:first-child{margin-top: 0;}
 .topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
@@ -50,22 +51,30 @@ aside section:first-child{border-top: none;}
 .res-type > .experience{background-position: 0 -74px;}
 
 .res-type.border-left{border-left: 0;}
-.comments{display: none;}
-.comments > ul > li{background-color: #f2f9fc; border: 1px solid #daecf3; margin-bottom: 25px;}
-.comments > ul > li:last-child{margin-bottom: 5px;}
-.comments > ul > .expert{background-color: #f9fcf8;}
-.comments > ul > li > div{border: 2px solid #e9f0f3; padding: 10px;}
-.comments > ul > li > div > ul > li {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
-.comments > ul > li > div > ul > li > div{padding: 10px; border: 2px solid #edf5f9;}   
+.comments{display: none; margin-top: 14px;}
 
-.new-response{margin-bottom: 25px;}
+.comment-st-level{position: relative; padding-top: 10px;}
+.comment-st-level > div{background-color: #f2f9fc; border: 1px solid #daecf3;}
+.comment-st-level:last-child{margin-bottom: 5px;}
+
+.comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat;}
+.comment-st-level > div > div{border: 2px solid #e9f0f3; padding: 10px;}
+.comment-nd-level {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
+.comment-nd-level > div{padding: 10px; border: 2px solid #edf5f9;}   
+
+.comments .expert{background-color: #f9fcf8;}
+.comments .expert{border: 1px solid #e7e8e6;}
+.comments .expert > div{border:2px solid #f2f5f1}
+.expert > .comm-arrow{background-position: 0 -26px;}
+
 .new-response > div{padding: 7px;}
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
 .avatar-wrapper{overflow: hidden; margin-bottom: 15px;}
 .avatar-wrapper > .avatar{float: left; margin-right: 10px;}
 .avatar-wrapper > div{overflow: hidden;}
-.res-username{margin-bottom: 5px; float: left;}
-.res-flag-btns{float: right;}                
+.res-username{margin-bottom: 7px; float: left;}
+.res-flag-btns{float: right; display: none;}
+.comments > ul:hover .res-flag-btns{display: block;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}
 .flag > span{background-image: url('../images/flags.png'); background-repeat: no-repeat; padding-left: 17px; background-position: 0 2px;}
 

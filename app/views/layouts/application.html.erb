@@ -86,17 +86,33 @@
       <%= yield %>
     </div>
     <%= form_for User.new, :url => new_user_path, :html => {:class => "over-form sign-up-form"}, :remote => true do |f| %>
-      <p><%= t('.header.sign_up_form.legend') %></p>
-      <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
-      <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
+      <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
+      <ul>
+        <li>
+          <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
+        </li>                                                               
+        <li>
+          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
+        </li>
+      </ul>
       <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
       <%= f.submit nil, :class => "auth-submit border-all" %>
     <% end %>
     <%= form_tag login_path, :class => "over-form login-form", :remote => true do %>
-      <%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.email') %>
-      <%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %>
-      <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#' %></p>
+      <ul>
+        <li><%= email_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.email') %></li>
+        <li><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
+      </ul>
+      <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
+    <% end %>
+    <%= form_tag nil, :class => "over-form forgot-pass-form", :remote => true do %>
+      <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
+      <ul>
+        <li><%= email_field_tag :login, nil, :required => "true", :placeholder => t('.header.forgot_pass_form.email') %></li>
+      </ul>                                                                          
+      <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all" %>
+      <input type="button" class="cancel-forgot btn-gradient" value="<%= t('.header.forgot_pass_form.cancel') %>">      
     <% end %>
     <div class="request-error">
       <span></span>

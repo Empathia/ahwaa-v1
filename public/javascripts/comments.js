@@ -39,9 +39,11 @@ $.fn.comments = function(options){
             comments = has_comments ? $('#comments_' + index).outerHTML() : $('#add_comments').outerHTML();
             has_comments && link.addClass('minus');
             var linkOuterHTML = link.css('display', 'inline').outerHTML(),
-                chunks = parag.html().split(linkOuterHTML);
-            parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
-            parag.next().attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').slideDown().addClass('clon');
+                chunks = parag.html().split(linkOuterHTML),
+                left = link.position().left;                
+            parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');                                                                                             
+            
+            parag.next().attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').find('.comm-arrow:first').css('left', left + 'px').end().slideDown().addClass('clon');
         }
         e.preventDefault();
         return false;
@@ -56,10 +58,9 @@ $.fn.comments = function(options){
     
     function slideUpComments(comments, parag, link){
         comments.slideToggle(function(){
-            var paragEnd = comments.next();
-            parag.append(paragEnd.html());
-            paragEnd.remove();
-            comments.remove();
+            var paragEnd = comments.next();         
+            paragEnd && parag.append(paragEnd.html()) && paragEnd.remove();
+            comments.data('newResponse') ? comments.replaceWith(comments.data('newResponse')) : comments.remove();
             link && link.attr('style', '').removeClass('minus');
         }); 
     }   
@@ -73,8 +74,9 @@ $.fn.comments = function(options){
                     parag = link.parent(),
                     linkOuterHTML = link.outerHTML(),
                     chunks = parag.html().split(linkOuterHTML);
+                var left = link.position().left;
                 parag.html(chunks[0] +  linkOuterHTML).after(comments.outerHTML() + '<p>' + chunks[1] + '</p>');
-                parag.next('#comments_' + id).attr('id',  id + '_clone').addClass('clon');
+                parag.next('#comments_' + id).attr('id',  id + '_clone').addClass('clon').find('.comm-arrow:first').css('left', left + 'px');
             } 
         });                                     
         $(".comments[id$='clone']").slideDown();    
@@ -101,10 +103,12 @@ $.fn.comments = function(options){
     
     $('.new-response').live('click', function(e){
         var addCommentForm = $('#add_comments').clone(true),
-            id = 'add_comment_clone';
+            id = 'add_comment_clone',
+            newResponse = $(this).clone(true);
         addCommentForm.attr('id', id);
+        
         $(this).replaceWith(addCommentForm);
-        $('#' + id).slideDown().find('textarea').focus(); 
+        $('#' + id).data('newResponse', newResponse).slideDown().find('textarea').focus(); 
         e.preventDefault();
         return false;
     });

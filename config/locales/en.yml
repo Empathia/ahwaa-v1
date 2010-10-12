@@ -32,7 +32,7 @@ en:
           legend: Anonymous users can't request a topic
           sign_up: Sign Up
         sign_up_form:
-          legend: Please register and enjoy all the benefits of LGTB!
+          legend: Please register and enjoy all the benefits of Transcend!
           email: Email
           name_nickname: Name/Nickname
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
@@ -40,11 +40,20 @@ en:
           terms_of_use: Terms of Use
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
+          error_email_invalid: Please enter a valid email address.
+          error_username_empty: The username is empty
+          error_username_not: This username is not available
+          error_password_empty: The password is empty          
         login_form:
           email: Email
           password: Password
           forgot_password: Forgot Password
           sign_in: Sign In
+        forgot_pass_form:
+          legend: "Enter your email address and we'll send you a link to reset your password."
+          email: Email
+          send: Send my Password
+          cancel: Cancel
         logged_in:
           hi: 'Hi %{username}'
           my_account: My Account
@@ -78,6 +87,7 @@ en:
           points: "%{points} points"
           expert: is an Expert            
           recently_participated: 'Recently participated in these topics:'
+          message_sent: Your message was sent successfully!
         need_help: Need help?
       reply_form:
         cancel: Cancel
@@ -86,5 +96,6 @@ en:
         type_response: 'Type of response:'
         new_response: New Response
         useful: This was useful!
+        flag: Flag
       replies:
         anonymous: Anonymous
