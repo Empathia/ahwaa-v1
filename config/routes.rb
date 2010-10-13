@@ -16,6 +16,7 @@ Lgbt::Application.routes.draw do
 
   namespace :admin do
     resource :bad_words, :only => [:show, :update]
+    resources :topic_requests
     resources :topics, :except => [:show]
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do

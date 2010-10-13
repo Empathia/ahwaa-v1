@@ -2,13 +2,16 @@
 
 table th{background-color: #f2f9fc; margin: 0; text-align: left; border-style: solid; border-width: 1px 0; border-color: #e9f0f3;}
 table th,
-table td{padding: 5px;}                                                                                                           
+table td{padding: 5px 10px;}                                                                                                           
 .border-left{border-left: 1px solid #e9f0f3;}
 .border-right{border-right: 1px solid #e9f0f3;}
 .created_at{width: 80px;}
 .updated_at{width: 80px;}
 .edit{width: 40px;}
-.delete{width: 40px;}
+.delete{width: 40px;} 
+.adm-title{overflow: hidden;}
+.adm-title > h1{float: left;}
+.adm-title > a{float: right;}
 
 /*Topics*/
 .title{}
@@ -17,8 +20,8 @@ table td{padding: 5px;}
 /*Users*/
 .username{}
 .email{}
-.is_expert{}
-.actions{}
+.is_expert{width: 56px;}
+.actions{width: 80px;}
 
 input[type=text],
 input[type=password],

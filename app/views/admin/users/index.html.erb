@@ -1,4 +1,3 @@
-<% stylesheet 'admin-users' %>
 <h1>Users</h1>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
@@ -6,7 +5,6 @@
     <th class="email">Email</th>
     <th class="is_expert">Is Expert</th>
     <th class="actions">Actions</th>
-    <th class="edit">Edit</th>
     <th class="delete border-right">Delete</th>    
   </tr>
   <% @users.each do |user| %>
@@ -17,7 +15,6 @@
       <td>
         <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user), :method => :put %>
       </td>
-      <td><%= link_to 'Edit' %></td>
       <td><%= link_to 'Delete' %></td>      
     </tr>
   <% end %>

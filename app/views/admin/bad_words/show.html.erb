@@ -1,10 +1,6 @@
+<h1><%= label_tag :bad_word_list %></h1>
 <%= form_tag admin_bad_words_path, :method => :put do %>
-  <p>
-    <%= label_tag :bad_word_list %>
-    <%= text_area_tag :bad_word_list, @bad_word_list, :required => "true" %>
-    <span class="desc">Comma separated</span>
-  </p>
-  <p>
-    <%= submit_tag %>
-  </p>
+  <p><%= text_area_tag :bad_word_list, @bad_word_list, :required => "true" %></p>                                                                      
+  <p><span class="desc">Comma separated</span></p>
+  <p><%= submit_tag %></p>
 <% end %>
