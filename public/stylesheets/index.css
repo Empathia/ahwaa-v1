@@ -1,3 +1,6 @@
+body > div{background: url('../images/bg-color-text.png') no-repeat 50% 107px;}
+.slogan{height: 300px; font-family: 'GothamBoldRegular';}
+.slogan > h1{color: #ffffff; font-size: 100px;}
 .features{overflow: hidden;}
 .features > li{display: inline; width: 200px; float: left;}
 .items{overflow: hidden;}
