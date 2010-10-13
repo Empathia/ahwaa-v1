@@ -16,13 +16,13 @@ aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .new-response,
-.add_comments{border: 1px solid #daecf3;}
-.add_comments{display: none; margin-bottom: 25px;}
+.add_comments > div{border: 1px solid #daecf3;}
+.add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 .new-response > div,
-.add_comments > div{border: 2px solid #e9f0f3;}
-.add_comments > div{padding: 10px;}
-.add_comments > div > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
-.add_comments > div > div{overflow: hidden;}
+.add_comments > div > div{border: 2px solid #e9f0f3; overflow: hidden;}
+.add_comments > div > div{padding: 10px;}
+.add_comments > div > div > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
+.add_comments_top{overflow: hidden;}
 .cancel-comment{float: right; color: #c4c3c3;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;}
 .res-types-wrapper > div{float: right;}                                               
@@ -58,6 +58,7 @@ aside section:first-child{border-top: none;}
 .comment-st-level:last-child{margin-bottom: 5px;}
 
 .comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat;}
+.add_comments .comm-arrow{background-position: 0 -13px;}
 .comment-st-level > div > div{border: 2px solid #e9f0f3; padding: 10px;}
 .comment-nd-level {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
 .comment-nd-level > div{padding: 10px; border: 2px solid #edf5f9;}   

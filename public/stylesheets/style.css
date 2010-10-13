@@ -1,5 +1,5 @@
 html{height: 100%;}
-body{background: #e3ecf0 url('../images/bg-noise.png'); height: 100%;}
+body{background: #e3ecf0 url('../images/bg-noise-topic.jpg'); height: 100%;}
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}              
 a{color: #468ac4;}
@@ -17,7 +17,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .light{background-color: #e2ecf2;}
 .dark{background-color: #d7e4eb;}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}                            
-.header-top{overflow: hidden; text-align: center; padding: 10px 0; position: relative; margin-top: 6px}
+.header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: 6px}
 .topic{background: url('../images/transcend.png') no-repeat center 0;}
 .homepage{background: url('../images/homepage.png') no-repeat center 0;}
               
@@ -29,9 +29,10 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .lan{font-size: 14px; color: #7194a7;}
                           
 .sign-up{float: left; text-align: left; width: 240px;}
-.sign-up > a{height: 32px; float: left; width: 94px; text-align: center; overflow: hidden;}
-.sign-up > a:first-child{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}
-.sign-up > a > span{float: left; width: 72px; padding: 0 10px; height: 30px;}
+.auth-wrapper{height: 32px; float: left; width: 96px; position: relative;}
+#sign-up{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}
+.auth-wrapper > a{position: absolute; z-index: 1; left: 0; height: 32px; text-align: center;}
+.auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
 .sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff;
   background-image: -moz-linear-gradient(top, #5998cc, #3778b7);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5998cc),color-stop(1, #3778b7));
@@ -46,10 +47,12 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#6eade1', EndColorStr='#5296d6')";  
 }
 
-.sign-up > a:last-child{line-height: 2.8; } 
+#login{line-height: 2.8;} 
 
-.header-top .sign-up > .auth-form-active{border: none;}
-.header-top .sign-up > .auth-form-active > span{background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 #f6f9fb #d4dce2; border-width: 1px; color: #66a8d6;
+.header-top .sign-up > .auth-form-active,
+#sign-up.auth-form-active{border: none;}
+.auth-wrapper .auth-form-active > span,
+.auth-wrapper .auth-form-active > span:hover{background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;  
@@ -108,7 +111,7 @@ footer{display: block;}
 footer > ul{float: right;}
 footer > ul > li{display: inline;}
 
-.over-form{position: absolute; z-index: 3; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
+.over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

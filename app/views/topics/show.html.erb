@@ -113,31 +113,34 @@
   </aside>
 </div>
 <form id="add_comments" class="add_comments border-all" action="#">
+  <span class="comm-arrow"></span>
   <div>
-    <div><%= link_to 'navidsafa', '#'%><%= link_to t('.reply_form.cancel'), '#', :class => 'cancel-comment' %></div>
-    <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>           
-    <div class="res-types-wrapper">
-      <div>
-        <ul class="res-types">
-           <% Reply::CATEGORIES.each_with_index do |category, i| %>
-              <li class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
-                <span class="<%= category %>"></span>                
-                <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="<%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
+    <div>
+      <div class="add_comments_top"><%= link_to 'navidsafa', '#'%><%= link_to t('.reply_form.cancel'), '#', :class => 'cancel-comment' %></div>
+      <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>           
+      <div class="res-types-wrapper">
+        <div>
+          <ul class="res-types">
+             <% Reply::CATEGORIES.each_with_index do |category, i| %>
+                <li class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
+                  <span class="<%= category %>"></span>                
+                  <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="<%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
 
-              </li>
-            <% end %>
-        </ul>
-        <label class="res-lbl"><%= t('.reply_form.type_response') %></label>
+                </li>
+              <% end %>
+          </ul>
+          <label class="res-lbl"><%= t('.reply_form.type_response') %></label>
+        </div>
       </div>
     </div>
-  </div>
+  </div>    
 </form>
 <% @replies.each do |index, replies| %>
   <div class="comments" id="comments_<%= index %>">
     <ul>
       <% replies.each do |reply| %>
         <%= content_tag :li, :class => "comment-st-level #{("expert" if reply.from_expert?)}" do %>
-          <span class="comm-arrow"></span>                                   
+          <span class="comm-arrow"></span>
           <div>
             <div>
               <div class="avatar-wrapper">

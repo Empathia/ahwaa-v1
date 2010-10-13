@@ -3,31 +3,33 @@ $(function(){
     $('.related-content > div > ul').blockSlider();
                                                                                                       
     function toggleSignUp(link, formName){        
-        $('.sign-up > a').add('.over-form').removeClass('auth-form-active');                                                              
+        $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');                                                              
         link.addClass('auth-form-active');         
         if(!formName){
           formName = '.' + link.attr('id') + '-form';  
-        }                                          
-        console.log($(formName).html());
+        }     
         $(formName).addClass('auth-form-active').offset({
             'left': link.offset().left,
-            'top': link.offset().top + link.outerHeight()
+            'top': link.offset().top + link.outerHeight() - 1
             }
         );   
     }                
     
     
-    $('.sign-up > a').click(function(){
+    $('.auth-wrapper > a').click(function(){
         toggleSignUp($(this));
     });               
     
-    $('#forgot-pass').click(function(){   
-        toggleSignUp($('#login'), '.' + $(this).addClass('auth-form-active').attr('id') + '-form');       
+    $('#forgot-pass').click(function(){        
+        $('#forgot-pass').addClass('auth-form-active');
+        toggleSignUp($('#login'), '.' + $(this).attr('id') + '-form');       
     });
     
-    $('.request-error a').click(function(){
-        $(this).addClass('auth-form-active');
-        toggleSignUp($('.sign-up > a:first-child'));
+    $('.request-error').find('a').click(function(){
+        var btn = $(this);
+        btn.addClass('auth-form-active').closest('.request-error').removeClass('auth-form-active');
+        toggleSignUp($('#sign-up'));         
+
     })
     
     $('.send-private-msg').not('.disabled').click(function(){
@@ -39,9 +41,10 @@ $(function(){
     });
     
     $('.request-topic').click(function(e){
-       var _btn = $(this);
+       var _btn = $(this);   
        if(_btn.hasClass('disabled')){
            _btn.addClass('auth-form-active');
+           $('.auth-form-active').removeClass('auth-form-active');
            var offset = _btn.offset();
            $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39})
            e.preventDefault();

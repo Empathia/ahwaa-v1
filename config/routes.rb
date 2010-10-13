@@ -22,7 +22,7 @@ Lgbt::Application.routes.draw do
         put :toggle_expert
       end
     end
-    root :to => 'users#index'
+    root :to => 'topics#index'
   end
 
   root :to => "home#index"

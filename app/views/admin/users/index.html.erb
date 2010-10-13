@@ -1,19 +1,24 @@
+<% stylesheet 'admin-users' %>
 <h1>Users</h1>
-<table border="0" cellspacing="5" cellpadding="5">
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
-    <th>Username</th>
-    <th>Email</th>
-    <th>Is Expert</th>
-    <th>Actions</th>
+    <th class="username border-left">Username</th>
+    <th class="email">Email</th>
+    <th class="is_expert">Is Expert</th>
+    <th class="actions">Actions</th>
+    <th class="edit">Edit</th>
+    <th class="delete border-right">Delete</th>    
   </tr>
   <% @users.each do |user| %>
     <tr>
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td><%= user.is_expert %></td>
-      <th>
+      <td>
         <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user), :method => :put %>
-      </th>
+      </td>
+      <td><%= link_to 'Edit' %></td>
+      <td><%= link_to 'Delete' %></td>      
     </tr>
   <% end %>
 </table>

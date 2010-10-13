@@ -1,4 +1,26 @@
+<% stylesheet 'admin-topics' %>
 <h1>Topics</h1>
-<% @topics.each do |topic| %>
-  <p><%= topic.title %></p>
-<% end %>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <th class="created_at border-left">Created at</th>
+    <th class="updated_at">Updated at</th>
+    <th class="title">Title</th>
+    <th class="user">User</th>
+    <th class="edit">Edit</th>
+    <th class="delete border-right">Delete</th>    
+  </tr>
+  <% @topics.each do |topic| %>
+    <tr>
+      <td><%= topic.created_at %></td>
+      <td><%= topic.updated_at %></td>
+      <td><%= topic.title %></td>     
+      <td><%= topic.user_id %></td>      
+      <td><%= link_to 'Edit' %></td>
+      <td><%= link_to 'Delete' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= will_paginate(@topics) %>
+
+
