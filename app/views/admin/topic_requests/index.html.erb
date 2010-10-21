@@ -1,1 +1,27 @@
-<h1>Topic Requests</h1>
+<div class="adm-title">
+  <h1>Topics Requests</h1>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <th class="created_at border-left">Created at</th>
+    <th class="updated_at">Updated at</th>
+    <th class="title">Title</th>
+    <th class="user">User</th>
+    <th class="votes">Votes</th>
+    <th class="actions border-right">Actions</th>
+  </tr>
+  <% @topic_requests.each do |topic_request| %>
+    <tr>
+      <td><%= topic_request.created_at %></td
+      <td><%= topic_request.updated_at %></td>
+      <td><%= topic_request.title %></td>
+      <td><%= topic_request.user.username %></td>
+      <td><%= topic_request.votes %></td>
+      <td>
+        <%= link_to 'Promote to topic', promote_to_topic_admin_topic_request_path(topic_request), :method => :delete %>
+        <%= link_to 'Delete', admin_topic_request_path(topic_request), :method => :delete %></td>
+      </td>
+    </tr>
+  <% end %>
+</table>
+

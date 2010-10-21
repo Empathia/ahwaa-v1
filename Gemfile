@@ -14,6 +14,7 @@ gem 'paperclip', '~> 2.3.4'
 gem 'rio', '~> 0.4.2'
 
 group :test do
+  gem 'rcov'
   gem "shoulda", '~> 2.11.3'
   gem "rspec-rails", "~> 2.0.0"
   gem "autotest", '~> 4.4.1'

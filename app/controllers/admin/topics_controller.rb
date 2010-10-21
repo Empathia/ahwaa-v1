@@ -7,7 +7,7 @@ class Admin::TopicsController < ApplicationController
   end
 
   def new
-    @topic = Topic.new
+    @topic = Topic.new(params[:topic])
   end
 
   def create

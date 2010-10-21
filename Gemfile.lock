@@ -78,6 +78,7 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
+    rcov (0.9.9)
     responders (0.6.2)
     rio (0.4.2)
     rspec (2.0.0)
@@ -116,6 +117,7 @@ DEPENDENCIES
   paperclip (~> 2.3.4)
   rails (= 3.0.0)
   rails3-generators (~> 0.14.0)
+  rcov
   responders (~> 0.6.2)
   rio (~> 0.4.2)
   rspec-rails (~> 2.0.0)

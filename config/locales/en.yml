@@ -105,3 +105,8 @@ en:
         flag: Flag
       replies:
         anonymous: Anonymous
+  topic_requests:
+    new:
+      submit: Submit
+      title: Request a Topic
+      remain_anonymous: Remain anonymous for topic authoring

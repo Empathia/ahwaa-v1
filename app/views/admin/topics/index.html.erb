@@ -1,8 +1,7 @@
-<% stylesheet 'admin-topics' %>                 
 <div class="adm-title">
   <h1>Topics</h1>
   <%= link_to 'New Topic', new_admin_topic_path %>
-</div>  
+</div>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
     <th class="created_at border-left">Created at</th>
@@ -10,16 +9,16 @@
     <th class="title">Title</th>
     <th class="user">User</th>
     <th class="edit">Edit</th>
-    <th class="delete border-right">Delete</th>    
+    <th class="delete border-right">Delete</th>
   </tr>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= topic.created_at %></td>
+      <td><%= topic.created_at %></td
       <td><%= topic.updated_at %></td>
-      <td><%= topic.title %></td>     
-      <td><%= topic.user_id %></td>      
-      <td><%= link_to 'Edit' %></td>
-      <td><%= link_to 'Delete' %></td>
+      <td><%= topic.title %></td>
+      <td><%= topic.user.username %></td>
+      <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
+      <td><%= link_to 'Delete',admin_topic_path(topic), :method => :delete %></td>
     </tr>
   <% end %>
 </table>
