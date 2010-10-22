@@ -2,7 +2,7 @@ class Topic < ActiveRecord::Base
   acts_as_taggable
 
   # TODO: attr_accessible
-  
+
   include Tanker
 
   tankit 'lgbt' do
@@ -24,7 +24,7 @@ class Topic < ActiveRecord::Base
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
 
   def self.per_page
-    5
+    10
   end
 
   # Finds most active users in the topic
