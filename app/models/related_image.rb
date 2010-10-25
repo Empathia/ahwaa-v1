@@ -1,5 +1,5 @@
 class RelatedImage < ActiveRecord::Base
-  has_attached_file :thumbnail
+  has_attached_file :thumbnail, :styles => { :original => "50x50#" }
 
   belongs_to :topic
 
