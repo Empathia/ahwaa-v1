@@ -1,4 +1,4 @@
-class Image < ActiveRecord::Base
+class RelatedImage < ActiveRecord::Base
   has_attached_file :thumbnail
 
   belongs_to :topic

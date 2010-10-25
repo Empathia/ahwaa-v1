@@ -1,4 +1,4 @@
-class Video < ActiveRecord::Base
+class RelatedVideo < ActiveRecord::Base
   has_attached_file :thumbnail
 
   belongs_to :topic
