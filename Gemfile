@@ -13,6 +13,7 @@ gem 'httparty', '~> 0.6.1'
 gem 'paperclip', '~> 2.3.4'
 gem 'rio', '~> 0.4.2'
 gem 'random_data'
+gem 'nokogiri', '~> 1.4.3.1'
 
 group :test do
   gem 'rcov'
