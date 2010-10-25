@@ -8,7 +8,7 @@ gem 'jquery-rails', '~> 0.2.2'
 gem "will_paginate", "~> 3.0.pre2"
 gem 'acts-as-taggable-on', '~> 2.0.6'
 gem 'responders', '~> 0.6.2'
-gem 'tanker', '~> 0.5.2'
+gem 'tanker', '~> 0.5.5'
 gem 'httparty', '~> 0.6.1'
 gem 'paperclip', '~> 2.3.4'
 gem 'rio', '~> 0.4.2'

@@ -1,5 +1,7 @@
 Lgbt::Application.routes.draw do
 
+  get "search/topics"
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
