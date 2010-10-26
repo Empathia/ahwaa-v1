@@ -4,6 +4,7 @@ class CreateTopicRequests < ActiveRecord::Migration
       t.integer :user_id
       t.string :title
       t.boolean :annonymous_post
+      t.text    :content
 
       t.timestamps
     end

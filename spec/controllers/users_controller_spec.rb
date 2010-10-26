@@ -5,7 +5,7 @@ describe UsersController do
 
     it "should not be able to edit his/her user profile" do
       get :show
-      response.should redirect_to(login_path)
+      response.should redirect_to(root_path)
     end
 
   end

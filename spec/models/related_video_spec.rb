@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Video do
+describe RelatedVideo do
   before(:each) do
-    Factory(:video)
+    Factory(:related_video)
   end
 
   it { should belong_to(:topic) }

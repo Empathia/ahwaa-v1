@@ -2,6 +2,7 @@
 
 Factory.define :topic_request do |f|
   f.user_id 1
-  f.title "MyString"
+  f.sequence(:title) {|n| "title #{n}" }
   f.annonymous_post false
+  f.content 'content'
 end

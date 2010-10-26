@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :private_messages, :dependent => :destroy,
     :foreign_key => :recipient_id, :conditions => {:parent_id => nil}
+  has_many :topic_requests
 
   attr_accessible :username, :email, :password, :password_confirmation
 

@@ -1,7 +1,12 @@
 Lgbt::Application.routes.draw do
+
+  get "search/topics"
+
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   get "logout" => "sessions#destroy"
+
+  resources :topic_requests, :only => [:new, :create]
 
   resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update]
   resources :users, :except => [:show, :destroy, :update, :edit] do
@@ -15,8 +20,12 @@ Lgbt::Application.routes.draw do
   end
 
   namespace :admin do
-    resource :bad_words, :only => [:show, :update]
-    resources :topic_requests
+    resource  :bad_words, :only => [:show, :update]
+    resources :topic_requests, :only => [:index, :destroy] do
+      member do
+        delete :promote_to_topic
+      end
+    end
     resources :topics, :except => [:show]
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do

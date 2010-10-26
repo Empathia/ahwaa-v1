@@ -28,3 +28,24 @@ first_reply.replies << reply_reply
 end
 
 topic.experts << expert
+
+#generate random topics and replies
+users = [user, expert, admin]
+
+25.times do
+  topic = Topic.new :title => Random.grammatical_construct(
+    {
+      :story => [:who, " is ", :what],
+      :who => { :bob => "Bob", :bro => "My Brother", :dad => "My dad"},
+      :what => {:a =>"gay", :b =>"teasing me", :c => 'a great support'}
+    }, :story),
+  :content => Random.paragraphs(Random.number(3..10))
+  topic.user = users[Random.number(0..2)]
+  topic.save!
+
+  if Random.boolean
+    topic.experts << expert
+  end
+end
+
+

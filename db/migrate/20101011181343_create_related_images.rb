@@ -1,6 +1,6 @@
-class CreateVideos < ActiveRecord::Migration
+class CreateRelatedImages < ActiveRecord::Migration
   def self.up
-    create_table :videos do |t|
+    create_table :related_images do |t|
       t.string :title
       t.string :description
       t.string :source_url
@@ -9,12 +9,11 @@ class CreateVideos < ActiveRecord::Migration
       t.integer :thumbnail_file_size
       t.datetime :thumbnail_updated_at
       t.belongs_to :topic
-
       t.timestamps
     end
   end
 
   def self.down
-    drop_table :videos
+    drop_table :related_images
   end
 end

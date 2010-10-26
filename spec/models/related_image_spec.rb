@@ -1,6 +1,7 @@
+# coding: utf-8
 require 'spec_helper'
 
-describe Image do
+describe RelatedImage do
   before(:each) do
     Factory(:twitpic_image)
   end
