@@ -1,7 +1,7 @@
 html{height: 100%;}
-body{background: #e3ecf0 url('../images/bg-noise-topic.jpg'); height: 100%;}
+body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 100%;}
 body > div{height: 100%;}
-.aligned{width: 960px; margin: 0 auto;}              
+.aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4;}
 input[type=text],
 input[type=password],
@@ -107,9 +107,13 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .container{padding-top: 113px; overflow: hidden;}
 .container > .aligned{overflow: hidden; }
 
-footer{display: block;}
-footer > ul{float: right;}
-footer > ul > li{display: inline;}
+
+.footer-shadow{width: 1056px; margin: 0 auto; display: block; background-image: url('../images/divider-footer.png'); background-repeat: repeat-x; background-position: 0 -25px; margin-top: 30px;}
+.footer-shadow.left{background-position: 0 0; background-repeat: no-repeat;}
+.footer-shadow.right{background-position: 0 100%; background-repeat: no-repeat; height: 25px;}
+footer > .aligned{padding: 7px 0 36px 0;}
+footer > div > ul{float: right;}
+footer > div > ul > li{display: inline;}
 
 .over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
   -moz-border-radius: 5px;

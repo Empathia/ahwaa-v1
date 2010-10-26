@@ -1,3 +1,4 @@
+body{background-image: url('../images/bg-noise-topic.jpg');}
 body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px;}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
 .article-tags > li{display: inline;}     
