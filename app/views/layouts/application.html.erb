@@ -75,12 +75,13 @@
                    </div>
                 </div>
               <% end %>
-              <form action="#" method="post" class="search">
+              <div class="search">
                 <p class="border-all">
-                  <%= text_field :search, nil, :placeholder => t('.header.search_topics'), :value => ""%>
+                  <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
                   <span></span>
                 </p>
-              </form>
+                <ul class='search_results'></ul>
+              </div>
             </div>
           </div>
           <div class="header-wrapper">
@@ -122,7 +123,7 @@
       </div>
     </div>
     <footer>
-      <div class="footer-shadow"> 
+      <div class="footer-shadow">
         <div class="footer-shadow left">
           <div class="footer-shadow right">&nbsp;</div>
         </div>
@@ -131,8 +132,8 @@
         <%= link_to t('.footer.all_rights', {:year => '2010'}) %>
         <ul>
           <li><%= link_to t('.footer.about') %> - </li>
-          <li><%= link_to t('.footer.privacy_policy') %></li>      
-        </ul> 
+          <li><%= link_to t('.footer.privacy_policy') %></li>
+        </ul>
       </div>
     </footer>
   </div>
