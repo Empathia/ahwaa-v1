@@ -1,12 +1,6 @@
-class RelatedLink < ActiveRecord::Base
+class RelatedLink < RelatedContent
   has_attached_file :thumbnail, :styles => { :original => "50x50#" }
 
-  belongs_to :topic
-
-  validates :topic_id, :presence => true
-  validates :source_url, :presence => true,
-    :uniqueness => { :scope => :topic_id }
-  
   before_save :scrape_link
 
   private
@@ -15,6 +9,7 @@ class RelatedLink < ActiveRecord::Base
     Fetchers::Link.scrape(source_url) do |response|
       self.title = response.title
       self.description = response.description
+      self.thumbnail = RioUtils.download(response.thumbnail_url)
     end
   end
 end

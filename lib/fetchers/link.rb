@@ -9,7 +9,7 @@ module Fetchers
     def self.scrape(url)
       begin
         doc = Nokogiri::HTML(open(url))
-        yield new(doc)
+        yield new(url, doc)
       rescue SocketError, Errno::ENOENT, URI::InvalidURIError
         raise InvalidLinkAddress
       end
@@ -17,10 +17,39 @@ module Fetchers
 
     private
 
-    def initialize(doc)
+    def initialize(url, doc)
+      @uri = URI(url)
       @doc = doc
       @title = find_title
       @description = find_description
+      @thumbnail_url = thumbnails.first
+    end
+
+    def thumbnails
+      image = @doc.at_css("meta[@property='og:image']") || image_src
+      return [image] if image
+      all_images
+    end
+
+    def all_images
+      @doc.search('img').map do |img|
+        expand_relative_path(img.attribute('src').content) unless img.attribute('src').nil?
+      end.flatten
+    end
+
+    # Url full path generator
+    #
+    # Adds the root of the url if the path relative
+    #
+    def expand_relative_path(path)
+      path = URI(URI.encode path.strip)
+      return path.to_s if path.absolute?
+      URI.join("#{@uri.scheme}://#{@uri.host}", path.path).to_s
+    end
+
+    def image_src
+      tag = @doc.at_css("link[@rel='image_src']")
+      tag['href'] if tag
     end
 
     def find_title

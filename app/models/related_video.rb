@@ -1,11 +1,5 @@
-class RelatedVideo < ActiveRecord::Base
+class RelatedVideo < RelatedContent
   has_attached_file :thumbnail, :styles => { :original => "50x50#" }
-
-  belongs_to :topic
-
-  validates :topic_id, :presence => true
-  validates :source_url, :presence => true,
-    :uniqueness => { :scope => :topic_id }
 
   before_save :fetch_from_source
 

@@ -32,7 +32,7 @@ module Fetchers
     def load(photo)
       @title, @description = photo['title'], photo['description']
       @thumbnail_url = self.class.build_thumbnail_url(photo['farm'],
-                                          photo['sever'],
+                                          photo['server'],
                                           photo['id'], photo['secret'])
       self
     end
