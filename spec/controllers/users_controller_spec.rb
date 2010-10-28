@@ -1,46 +1,129 @@
 require 'spec_helper'
 
 describe UsersController do
-  context "as an un-registered user" do
 
-    it "should not be able to edit his/her user profile" do
-      get :show
-      response.should redirect_to(root_path)
+  before(:each) do
+    @user = Factory(:user)
+  end
+
+  describe "GET show" do
+
+    def do_request(params = {})
+      get :show, params
+    end
+
+    context "when user isn't logged in" do
+
+      it "doesn't render show template" do
+        do_request
+        response.should_not render_template(:show)
+      end
+
+      it "redirects to login path" do
+        do_request
+        response.should redirect_to(login_path)
+      end
+
+    end
+
+    context "when user is logged in" do
+      
+      before(:each) do
+        sign_in @user
+      end
+
+      it "renders show template" do
+        do_request
+        response.should render_template(:show)
+      end
+
     end
 
   end
 
-  context "as a registered user" do
+  describe "PUT update" do
 
-    before(:each) do
-      @user = Factory(:user)
-      sign_in @user
+    def do_request(params = {})
+      put :update, params
     end
 
-    it "should let the user edit his/her own profile" do
-      get :show
-      response.should be_succes
+    context "when user isn't logged in" do
+
+      it "doesn't redirect to update action" do
+        do_request
+        response.should_not redirect_to(:action => :update)
+      end
+
+      it "redirects to login path" do
+        do_request
+        response.should redirect_to(login_path)
+      end
+
     end
 
-    it "should show the user the profile page" do
-      get :show
-      response.should be_succes
-    end
+    context "when user is logged in" do
 
-    it "should let the user edit his/her own profile" do
-      put  :update, :user => { :profile => {:gender => 'male', :language => 'en'}}
-      response.should redirect_to(:action => 'show')
-      @user.reload.profile.gender == 'male'
-      @user.reload.profile.language == 'en'
-    end
+      before(:each) do
+        sign_in @user
+        current_user.stub!(:update_attributes).and_return(true)
+      end
 
-    it "should let the user delete his/her own profile" do
-      lambda do
-        delete :destroy
-      end.should change(User, :count).by(-1)
-      response.should redirect_to('/')
+      it "redirects to show action" do
+        do_request
+        response.should redirect_to(:action => :show)
+      end
+
+      it "updates attributes for user" do
+        current_user.should_receive(:update_attributes).and_return(true)
+        do_request
+      end
+
     end
 
   end
 
+  describe "DELETE destroy" do
+
+    def do_request(params = {})
+      delete :destroy, params
+    end
+
+    context "when user isn't logged in" do
+      
+      it "doesn't redirect to update action" do
+        do_request
+        response.should_not redirect_to(:action => :update)
+      end
+
+      it "redirects to login path" do
+        do_request
+        response.should redirect_to(login_path)
+      end
+
+    end
+
+    context "when user is logged in" do
+
+      before(:each) do
+        sign_in @user
+        @user = current_user
+        @user.stub!(:destroy).and_return(true)
+      end
+
+      it "signs out current user" do
+        do_request
+        current_user.should be_nil
+      end
+
+      it "destroys user" do
+        @user.should_receive(:destroy).and_return(true)
+        do_request
+      end
+
+      it "redirects to root path" do
+        do_request
+        response.should redirect_to(root_path)
+      end
+    end
+  end
 end

@@ -1,136 +1,194 @@
 require 'spec_helper'
 
 describe PrivateMessagesController do
+
   before(:each) do
-    @sender = Factory(:user)
-    @recipient = Factory(:user)
-    sign_in @recipient
+    @user = Factory(:user)
   end
 
-  context "listing income messages" do
-    before(:each) do
-      10.times do
-        Factory(:private_message, :recipient => current_user, :unread => false)
+  describe 'GET index' do
+
+    def do_request(params = {})
+      get :index, params
+    end
+
+    context "when user isn't logged in" do
+
+      it "doesn't redirect to index action" do
+        do_request
+        response.should_not redirect_to(:action => :index)
       end
-    end
 
-    it "should show all user's received messages" do
-      get :index
-      assigns(:private_messages).should_not be_nil
-      assigns(:private_messages).length.should == 10
-    end
-
-    it "should sort messages by date" do
-      sleep(1) # so created_at vary 1 sec
-      unread_pm = Factory(:private_message, :recipient => current_user)
-
-      get :index
-      assigns(:private_messages).first.should == unread_pm
-    end
-
-    it "should group all messages by thread" do
-      create_thread
-      get :index
-      assigns(:private_messages).length.should == 11
-    end
-  end
-
-  context "posting with xhr" do
-    it "should respond with json" do
-      post_with_xhr
-      response.status.should == 201
-      response.should_not be_redirect
-      response.body.should == assigns(:private_message).to_json
-    end
-
-    context "posting invalid pm" do
-      it "should respond with proper error code" do
-        post_with_xhr(:private_message => Factory.build(:private_message, :sender => nil, :recipient => nil, :content => nil).attributes)
-        assigns(:private_message).should_not be_valid
-        response.status.should == 422
-        response.body.should == assigns(:private_message).errors.to_json
+      it "redirects to login path" do
+        do_request
+        response.should redirect_to(login_path)
       end
+
     end
 
-    it "should create a private message" do
-      lambda do
-        post_with_xhr
-      end.should change(PrivateMessage, :count).by(1)
-      assigns(:private_message).should_not be_nil
-      assigns(:private_message).new_record?.should be_false
+    context "when the user is logged in" do
+
+      before(:each) do
+        sign_in @user
+        current_user.stub!(:private_messages).and_return(@private_messages = PrivateMessage.scoped)
+      end
+
+      it "render index template" do
+        do_request
+        response.should render_template(:index)
+      end
+
+      it "should get all private messages of current user" do
+        current_user.should_receive(:private_messages).and_return(@private_messages)
+        do_request
+      end
+
     end
 
-    it "should create a conversation if replying to a private message" do
-      create_thread
-      lambda do
-        post_with_xhr :reply_to => @pm.id, :user_id => @sender.id
-      end.should change(PrivateMessage, :count).by(1)
-      assigns(:private_message).parent.should == @pm
+  end
+
+  describe 'GET show' do
+
+    def do_request(params = {})
+      get :show, params
     end
 
-    it "should not create a conversation if replying to an invalid parent" do
-      create_thread
-      parent = Factory(:private_message)
-      lambda do
-        post_with_xhr :reply_to => parent.id, :user_id => @sender.id
-      end.should_not change(PrivateMessage, :count)
-      response.status.should == 422
+    context "when user isn't logged in" do
+
+      it "doesn't redirect to show action" do
+        do_request :id => 1
+        response.should_not redirect_to(:action => :show)
+      end
+
+      it "redirects to login path" do
+        do_request :id => 1
+        response.should redirect_to(login_path)
+      end
+
     end
-  end
 
-  it "should show the conversation of each private message" do
-    create_thread
-    get :show, :id => @pm.id
-    assigns(:private_message).should == @pm
-    response.should render_template(:show)
-  end
+    context "when user is logged in" do
 
-  it "should destroy a conversation" do
-    create_thread
-    lambda do
-      delete :destroy, :id => @pm.id
-    end.should change(PrivateMessage, :count).by(-6)
-    assigns(:private_message).should == @pm
-    lambda do
-      current_user.private_messages.find(@pm.id)
-    end.should raise_error(ActiveRecord::RecordNotFound)
-  end
+      before(:each) do
+        sign_in @user
+        @private_message = Factory(:private_message)
+        current_user.stub_chain(:private_messages, :find).and_return(@private_message)
+      end
 
-  def post_with_xhr(attrs = {})
-    attrs.reverse_merge!({
-      :user_id => Factory(:user).id,
-      :private_message => Factory.build(:private_message, :recipient => nil, :sender => nil).attributes
-    })
-    xhr :post, :create, attrs.merge(:format => :json)
-  end
+      it "render show template" do
+        do_request :id => 1
+        response.should render_template(:show)
+      end
 
-  def switch_recipient
-    sender = current_user
-    sign_out current_user
-    if sender == @recipient
-      recipient = @recipient
-      sign_in @sender
-    else
-      recipient = @sender
-      sign_in @recipient
+      it "should find a private message of the current user" do
+        current_user.private_messages.should_receive(:find).and_return(@private_mesage)
+        do_request :id => 1
+      end
+
     end
-    recipient
+
   end
 
-  def create_thread
-    @pm = Factory(:private_message, :recipient => current_user, :sender => @sender)
-    5.times do |i|
-      reply = Factory.build(:private_message, :recipient => nil, :sender => nil)
-      post_with_xhr :private_message => reply.attributes,
-        :reply_to => @pm.id, :user_id => switch_recipient.id
-      response.status.should == 201
-      assigns(:private_message).parent.should == @pm
-      assigns(:private_message).read!
+  describe 'POST create' do
+
+    def do_request(params = {})
+      post :create, params.merge(:user_id => 1)
     end
-    @pm.replies.length.should == 5
 
-    sign_out current_user
-    sign_in @recipient
+    context "when user isn't logged in" do
+
+      it "doesn't redirect to create action" do
+        do_request
+        response.should_not redirect_to(:action => :create)
+      end
+
+      it "redirects to login path" do
+        do_request
+        response.should redirect_to(login_path)
+      end
+
+    end
+
+    context "when user is logged in" do
+
+      before(:each) do
+        sign_in @user
+        @private_message = Factory.build :private_message
+        PrivateMessage.stub!(:build_from_params).with(any_args).and_return(@private_message)
+      end
+
+      it "creates a new private message" do
+        PrivateMessage.should_receive(:build_from_params).with(any_args).and_return(@private_message)
+        @private_message.should_receive(:save).and_return(true)
+        do_request
+      end
+
+      it "sets current user as the sender of the message" do
+        @private_message.should_receive(:sender=).with(current_user).and_return(current_user)
+        @private_message.should_receive(:save).and_return(true)
+        do_request
+      end
+
+      context "when messages saves successfully" do
+
+        before(:each) do
+          @private_message.stub!(:save).and_return(true)
+        end
+
+        it "redirects to index action" do
+          do_request
+          response.should redirect_to(:action => :index)
+        end
+
+      end
+
+    end
+
   end
+
+  describe "DELETE destroy" do
+
+    def do_request(params = {})
+      delete :destroy, params
+    end
+
+    context "when user isn't logged in" do
+
+      it "doesn't redirects to destroy action" do
+        do_request :id => 1
+        response.should_not redirect_to(:action => :destroy)
+      end
+
+      it "redirects to login path" do
+        do_request :id => 1
+        response.should redirect_to(login_path)
+      end
+
+    end
+
+    context "when user is logged in" do
+
+      before(:each) do
+        sign_in @user
+        @private_message = Factory(:private_message)
+        current_user.stub_chain(:private_messages, :find).and_return(@private_message)
+        @private_message.stub!(:destroy).and_return(true)
+      end
+
+      it "deletes private message of current user" do
+        current_user.private_messages.should_receive(:find).and_return(@private_message)
+        @private_message.should_receive(:destroy).and_return(true)
+        do_request :id => 1
+      end
+
+      it "redirects to index action" do
+        do_request :id => 1
+        response.should redirect_to(:action => :index)
+      end
+
+    end
+
+  end
+
 end
 

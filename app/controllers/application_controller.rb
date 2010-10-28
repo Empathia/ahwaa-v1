@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     def authenticate_user!
       unless logged_in?
         flash[:alert] = t('flash.application.not_logged_in')
-        redirect_to root_path
+        redirect_to login_path
       end
     end
 

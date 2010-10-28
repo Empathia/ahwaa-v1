@@ -1,88 +1,113 @@
 require 'spec_helper'
 
 describe RepliesController do
+
   before(:each) do
+    @user = Factory(:user)
     @topic = Factory(:topic)
   end
 
-  context "requesting with xhr" do
-    it "should respond with json" do
-      post_with_xhr
-      response.status.should == 201
-      response.should_not be_redirect
-      response.body.should == assigns(:reply).to_json
-    end
+  describe 'POST create' do
 
-    context "posting invalid reply" do
-      it "should respond with proper error code" do
-        post_with_xhr(:reply => Factory.build(:reply, :content => nil).attributes)
-        assigns(:reply).should_not be_valid
-        response.status.should == 422
-        response.body.should == assigns(:reply).errors.to_json
-      end
-    end
-  end
-
-  context "requesting with http" do
-    it "should respond with html" do
-      post_with_http
-      flash[:notice].should_not be_blank
-      response.should redirect_to(topic_path(@topic))
-    end
-
-    context "posting invalid reply" do
-      it "should redirect to topic page" do
-        post_with_http(:reply => Factory.build(:reply, :content => nil).attributes)
-        response.should redirect_to(topic_path(@topic))
-        assigns(:reply).should_not be_valid
-        flash[:alert].should_not be_blank
-      end
-    end
-  end
-
-  context "as a logged in user" do
     before(:each) do
-      sign_in Factory(:user)
+      @reply = Factory.build :reply
+      Topic.stub!(:find).and_return(@topic)
+      @topic.stub_chain(:replies, :build).and_return(@reply)
     end
 
-    it "should create a reply" do
-      create_reply
-      assigns(:reply).anonymous?.should be_false
-      assigns(:reply).user.should == current_user
-    end
-  end
-
-  context "as an anonymouse user" do
-    
-    it "should create an anonymouse reply" do
-      create_reply
-      assigns(:reply).anonymous?.should be_true
+    def do_request(params = {})
+      xhr :post, :create, params.merge(:topic_id => @topic.id, :format => :json)
     end
 
+    context "when user isn't logged in" do
+
+      it "creates a new reply for the topic without author" do
+        @topic.replies.should_receive(:build).and_return(@reply)
+        @reply.should_not_receive(:user=)
+        do_request
+      end
+
+      context "when reply saves successfully" do
+
+        before(:each) do
+          @reply.stub!(:save).and_return(true)
+        end
+
+        it "responds with status 201" do
+          do_request
+          response.status.should == 201
+        end
+
+        it "creates a new reply for the topic" do
+          @reply.should_receive(:save).and_return(true)
+          do_request
+        end
+
+      end
+
+      context "when reply fails to save" do
+
+        before(:each) do
+          @reply.stub!(:save).and_return(false)
+          @reply.stub!(:errors).and_return([{}])
+        end
+
+        it "responds with status 422" do
+          do_request
+          response.status.should == 422
+        end
+        
+      end
+
+    end
+
+    context "when user is logged in" do
+
+      before(:each) do
+        sign_in @user
+      end
+
+      it "creates a new reply for the topic with author" do
+        @topic.replies.should_receive(:build).and_return(@reply)
+        @reply.should_receive(:user=).with(current_user)
+        do_request
+      end
+
+      context "when reply saves successfully" do
+
+        before(:each) do
+          @reply.stub!(:save).and_return(true)
+        end
+
+        it "responds with status 201" do
+          do_request
+          response.status.should == 201
+        end
+
+        it "creates a new reply for the topic" do
+          @reply.should_receive(:save).and_return(true)
+          do_request
+        end
+
+      end
+
+      context "when reply fails to save" do
+
+        before(:each) do
+          @reply.stub!(:save).and_return(false)
+          @reply.stub!(:errors).and_return([{}])
+        end
+
+        it "responds with status 422" do
+          do_request
+          response.status.should == 422
+        end
+        
+      end
+
+    end
+
   end
 
-  def post_with_xhr(attrs = {})
-    attrs.reverse_merge!({
-      :topic_id => @topic.id,
-      :reply => Factory.build(:reply, :user => nil).attributes
-    })
-    xhr :post, :create, attrs.merge(:format => :json)
-  end
-
-  def post_with_http(attrs = {})
-    attrs.reverse_merge!({
-      :topic_id => @topic.id,
-      :reply => Factory.build(:reply, :user => nil).attributes
-    })
-    post :create, attrs
-  end
-
-  def create_reply
-    lambda do
-      post_with_xhr
-    end.should change(Reply, :count).by(1)
-    assigns(:reply).new_record?.should be_false
-    assigns(:reply).topic.should == @topic
-  end
 end
 

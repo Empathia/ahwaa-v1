@@ -15,10 +15,10 @@ gem 'rio', '~> 0.4.2'
 gem 'random_data'
 gem 'nokogiri', '~> 1.4.3.1'
 
-group :test do
+group :development, :test do
   gem 'rcov'
   gem "shoulda", '~> 2.11.3'
-  gem "rspec-rails", "~> 2.0.0"
+  gem "rspec-rails", "~> 2.0.1"
   gem "autotest", '~> 4.4.1'
   gem "factory_girl_rails", '~> 1.0'
 end

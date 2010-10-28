@@ -6,10 +6,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    flash[:notice] = t("flash.actions.update.notice") if @user.update_attributes(params[:user])
-    respond_with(@user) do |format|
-      format.html { redirect_to user_path }
-    end
+    @user.update_attributes(params[:user])
+    respond_with(@user, :location => user_path)
   end
 
   def destroy
