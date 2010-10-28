@@ -1,10 +1,15 @@
 class SearchController < ApplicationController
   skip_before_filter :authenticate_user!
 
-  respond_to :json
+  respond_to :json, :js
 
   def topics
-    respond_with(@results = Topic.search_tank(params[:query]))
+    @results = if Rails.env == 'production'
+      Topic.search_tank(params[:query])
+    else
+      Topic.where("title LIKE :input",{:input => "%#{params[:query]}%"}).paginate(:page => 1)
+    end
+    respond_with(@results)
   end
 
 end

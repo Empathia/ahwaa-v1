@@ -59,6 +59,10 @@ en:
           my_account: My Account
           sign_out: Sign Out
         search_topics: Search topics
+      footer:
+        all_rights: "All Rights Reserved %{year}" 
+        about: About
+        privacy_policy: Privacy Policy
     admin:
       header:             
         logged_in:
