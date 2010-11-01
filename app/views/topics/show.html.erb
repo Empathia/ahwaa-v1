@@ -21,7 +21,7 @@
       </div>
     </article>
     <section class="related-content border-all">
-      <h2 class="regular divide" style="border-bottom: 1px solid #e5e5e5"><%= t('.related_content.title') %></h2>
+      <h2 class="sec-title regular divide" style="border-bottom: 1px solid #e5e5e5"><%= t('.related_content.title') %></h2>
       <div class="arrows">
         <span class="back"><%= t('.related_content.arrows.back') %></span>
       </div>
@@ -53,7 +53,7 @@
       <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn btn-gradient hide" %>
     </section>
     <section>
-      <h2 class="regular"><%= t('.sidebar.filter_responses.title') %></h2>
+      <h2 class="sec-title regular"><%= t('.sidebar.filter_responses.title') %></h2>
       <ul class="filter-resposes">
         <% Reply::CATEGORIES.each do |category| %>
           <li>
@@ -68,7 +68,7 @@
       <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
     </section>
     <section>
-      <h2><%= t('.sidebar.experts.title') %></h2>
+      <h2 class="sec-title"><%= t('.sidebar.experts.title') %></h2>
       <ul class="topic-experts">
         <% @topic.leaderboard.each do |user| %>
           <li>
