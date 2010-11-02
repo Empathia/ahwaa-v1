@@ -4,8 +4,8 @@
 <div class="aligned">  
   <section>
     <hgroup class="slogan">
-      <h1>TRANSCEND</h1>
-      <h2>Supporting tagline will live here and it should be about this long</h2>
+      <h1><%= t('.title') %></h1>
+      <h2><%= t('.legend') %></h2>
     </hgroup>                                                                    
     <ul class="features">
       <li id="anonymity" class="feature-wrapper">
@@ -34,15 +34,15 @@
       </li>
       <li id="join" class="border-all">
          <%= link_to '#' do %>
-             <span class="join-st-line">Join Now</SPAN>
-             <span class="join-nd-line">And Get Started!</span>
+             <span class="join-st-line"><%= t('.join_now') %></SPAN>
+             <span class="join-nd-line"><%= t('.get_started') %></span>
           <% end%>         
       </li>
     </ul>
   </section>       
   <div class="items-wrapper">
     <section class="topics">
-      <h2>Most Popular Topics</h2>
+      <h2><%= t('.popular_topics') %></h2>
       <ul class="items">
         <li>              
           <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>
@@ -120,7 +120,7 @@
       </ul>
     </section>
     <section class="feeds">
-      <h2>What's happening now</h2>
+      <h2><%= t('.feeds') %></h2>
       <ul class="items">
         <li>
           <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          

@@ -69,6 +69,14 @@ en:
           hi: 'Hi %{username}'
           my_account: My Account          
           sign_out: Sign Out
+  home:
+    index:
+      title: TRANSCEND
+      legend: Supporting tagline will live here and it should be about this long
+      popular_topics: Most Popular Topics
+      feeds: What's happening now
+      join_now: Join Now
+      get_started: And Get Started!
   topics:
     show:
       contextual:
