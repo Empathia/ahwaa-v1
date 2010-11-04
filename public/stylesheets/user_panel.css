@@ -32,15 +32,33 @@ input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid
 .panel{background-color: #ffffff;}
 .panel > section{float: right; width: 631px; padding: 20px 25px;}
 .panel > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}
-.options{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px;}       
-.options li{float: left; height: 100%; padding: 0 10px; font-size: 11px; color: #808386; line-height: 2.8; border-left: 1px solid #e1e3e5;}
-.options li:first-child{border-left: 0;}
+.bar{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px; position: relative;}
+.bar > li{float: left; height: 100%; padding: 0 10px; font-size: 11px; color: #808386; line-height: 2.8; border-left: 1px solid #e1e3e5;}
+.bar > li:first-child{border-left: 0;}
+.bar > li > a{background-image: url('../images/icn-messages.png'); background-repeat: no-repeat; padding-left: 13px;}
+.pm-delete{background-position: 0 1px}
+.pm-delete:hover{background-position: 0 -18px}
+.pm-block{background-position: 0 -37px}
+.pm-block:hover{background-position: 0 -56px}
+.pagination{float: left; position: absolute; left: 50%; margin-top: 8px;}
+.pagination > div{position: relative; left: -50%; float: left;}
+.pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;}
+.pagination .arrow.left{float: left; background-position: 0 0;}
+.pagination .arrow.right{float: right; background-position: 0 100%;}
+.pag-numbers{float: left;}
+.pag-numbers > li{float: left; margin: 0 6px;}
+.pag-numbers > li > a{color: #cbcfd2;}
+.pag-numbers .active a{color: #808386;}
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .thumb{margin-right: 10px;}
 .messages > li{background-color: #fbfbfb; margin-bottom: 15px; padding: 14px 11px; border-bottom: 1px solid #e1e3e5; position: relative; overflow: hidden;}
 .messages > li.new{background-color: #f3f9fc; border: 1px solid #c2dcea;}
-.msg-opts{position: absolute; width: 100px; right: 11px; top: 14px; color: #869eac; font-size: 11px;}
+.messages > li:hover .msg-opts{display: block;}
+.msg-opts{position: absolute; width: 108px; right: 11px; top: 12px; font-size: 11px; display: none;}
 .msg-opts > li{float: right; margin-right: 10px;}
+.msg-opts > li > a{display: block; background-image: url('../images/icn-options-user.png'); background-repeat: no-repeat; color: #869eac; }
+.opt-delete{background-position: 0 -13px; padding-left: 12px;}
+.opt-reply{background-position: 0 1px; padding-left: 15px;}
 .from{padding-bottom: 10px; color: #b3b8bc; font-size: 12px;}
-.from b{color: #468ac4;}     
+.from a{color: #468ac4; font-weight: bold;}     
 .msg{color: #838383; font-size: 12px;}
