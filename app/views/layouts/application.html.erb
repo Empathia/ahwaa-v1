@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Lgbt</title>
-  <%= javascript_include_tag :defaults, 'form_validator', :cache => true%>
+  <title>Transcend</title>
+  <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', :cache => true%>
   <%= stylesheet_link_tag 'reset', 'fonts', 'style' %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
@@ -29,7 +29,7 @@
               <% if logged_in? %>
                 <ul class="logged_opts">
                   <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
-                  <li><%= link_to t('.header.logged_in.my_account') %></li>
+                  <li><%= link_to t('.header.logged_in.my_account'), user_path %></li>
                   <li><%= link_to t('.header.logged_in.sign_out'), logout_path %></li>
                 </ul>
               <% else %>

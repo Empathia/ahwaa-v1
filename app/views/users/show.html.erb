@@ -1,2 +1,157 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% javascript 'user_panel' %>
+<% stylesheet 'user_panel' %>
+<div class="aligned panel border-all">
+  <aside class="user-sb border-left">
+    <div class="user-info inner-shadow">
+      <div class="thumb"></div>
+      <div class="user-details">
+        <div class="username">navidsafa</div>
+        <div class="points"><b>is trusthworthy.</b> <span>150 points</span></div>
+        <div><input type="checkbox"> Use avatar</div>
+      </div>
+    </div>
+    <div class="white-area inner-shadow">  
+      <section>
+        <div class="usr-sec-title">
+          <hr>          
+          <h2>My Profile</h2>
+          <%= link_to nil do %>
+            <span class="border-all"><span>Edit Icon</span></span>
+          <% end %>
+        </div>
+        <form>
+          <ul class="user-edit">
+            <li>
+              <div>Gender:</div>
+              <div>
+                <span>Male</span>
+                <%= text_field :username, :required => "true" %>
+              </div>                                                                                                     
+            </li>                                                                                                        
+            <li>             
+              <div>Sexual Orientation:</div>
+              <div>
+                <span>Gay</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+            <li>             
+              <div>Age:</div>
+              <div>
+                <span>34</span>
+                <%= text_field :age, :required => "true" %>
+              </div>
+            </li>
+            <li>             
+              <div>Religion:</div>
+              <div>
+                <span>Judaism</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+            <li>             
+              <div>Place of birth:</div>
+              <div>
+                <span>Iran</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+            <li>             
+              <div>Political view:</div>
+              <div>
+                <span>Social democracy</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+            <li>
+              <input type="submit" class="btn-gradient" value="Save">
+              <input type="button" class="cancel" value="Cancel">
+            </li>
+          </ul>
+        </form>
+      </section>
+      <section>
+        <div class="usr-sec-title">
+          <hr>          
+          <h2>Password</h2>
+          <%= link_to nil do %>
+            <span class="border-all"><span>Edit Icon</span></span>
+          <% end %>
+        </div>
+        <form>
+          <ul class="user-edit">
+            <li>           
+                <div>
+                  <%= text_field :username, :required => "true" %>
+                </div>
+            </li>
+          </ul>
+        </form>
+      </section>
+      <section>
+        <div class="usr-sec-title">
+          <hr>
+          <h2>My Account</h2>
+          <%= link_to nil do %>
+            <span class="border-all"><span>Edit Icon</span></span>
+          <% end %>
+        </div>
+        <form>
+          <ul class="user-edit">
+            <li>
+              <div>Nickname:</div>
+              <div>
+                <span>navidsafa</span>
+                <%= text_field :username, :required => "true" %>
+              </div>                                                                                                     
+            </li>                                                                                                        
+            <li>             
+              <div>Mail:</div>
+              <div>
+                <span>navid@freshout.us</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+            <li>             
+              <div>Language:</div>
+              <div>
+                <span>English</span>
+                <%= text_field :username, :required => "true" %>
+              </div>
+            </li>
+          </ul>
+        </form>
+      </section>
+      <p><%= link_to 'Terminate account', nil, :class => "terminate" %></p>    
+    </div>
+  </aside>
+  <section class="panel"> 
+    <h2 class="regular">Private Messages</h2>
+    <ul>
+      <li>Delete</li>
+      <li>Block</li>
+    </ul>      
+    <ul>
+      <li>
+        <input type="checkbox">
+        <div class="avatar"></div>
+        <ul>
+          <li>Reply</li>
+          <li>Delete</li>
+        </ul>
+        <div class="from">By LGBT admin in June 22, 2010</div>
+        <p>Wellcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
+      </li>
+      <li>    
+        <input type="checkbox">                    
+        <div class="avatar"></div>
+        <ul>
+          <li>Reply</li>
+          <li>Delete</li>
+        </ul>
+        <div class="from">By Zahir00 in May 21, 2010</div>
+        <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis...</p>
+      </li>     
+    </ul>
+  </section>
+</div>
