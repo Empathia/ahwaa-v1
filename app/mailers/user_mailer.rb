@@ -4,6 +4,6 @@ class UserMailer < ActionMailer::Base
   def sign_up_confirmation(user)
     @user = user
     mail :to => @user.email,
-      :subject => "Welcome to Trascends"
+      :subject => "Welcome to Transcend"
   end
 end

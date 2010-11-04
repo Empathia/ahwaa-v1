@@ -25,7 +25,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .topic > .links > div{height: 18px; padding-top: 2px;}
 .homepage > .links > div{padding-top: 5px;}
 
-.lgbt{font-size: 24px; font-family: 'GothamBoldRegular'; visibility: hidden;}
+.lgbt{font-size: 24px; font-family: 'GothamBoldRegular'; text-indent: -9999em; float: left; width: 100%; height: 20px;}
 .lan{font-size: 14px; color: #7194a7;}
 
 .sign-up{float: left; text-align: left; width: 240px;}

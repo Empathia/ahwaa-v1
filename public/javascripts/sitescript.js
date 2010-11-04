@@ -15,11 +15,13 @@ $(function(){
     
     $('.auth-wrapper > a').click(function(){
         toggleSignUp($(this));
+        return false;
     });               
     
     $('#forgot-pass').click(function(){        
         $('#forgot-pass').addClass('auth-form-active');
         toggleSignUp($('#login'), '.' + $(this).attr('id') + '-form');       
+        return false;
     });
     
     $('.request-error').find('a').click(function(){
@@ -99,7 +101,7 @@ $(function(){
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
-                'email': I18n.t('layouts.application.header.sign_up_form.error_email_invalid'),
+                'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
                 'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
             }
         }   
