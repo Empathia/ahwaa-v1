@@ -38,16 +38,17 @@
                     <a href="#" id="sign-up" class="border-all">
                       <span class="sign-up-btn"><%= t('.header.auth.sign_up') %></span>
                     </a>
-                    <%= form_for User.new, :url => new_user_path, :html => {:class => "over-form sign-up-form"}, :remote => true do |f| %>
+                    <%= form_for User.new, :html => {:class => "over-form sign-up-form"} do |f| %>
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
-                        <li>
+                        <li class="email">
                           <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
                         </li>
-                        <li>
-                          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.name_nickname') %>
+                        <li class="username">
+                          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
                         </li>
                       </ul>
+                      <div class="errors"></div>
                       <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
                       <%= f.submit nil, :class => "auth-submit border-all" %>
                     <% end %>
@@ -58,7 +59,7 @@
                     </a>
                     <%= form_tag login_path, :class => "over-form login-form", :remote => true do %>
                       <ul>
-                        <li><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.email') %></li>
+                        <li><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.username_or_email') %></li>
                         <li><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
                       </ul>
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>

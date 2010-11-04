@@ -41,6 +41,30 @@ describe UsersController do
 
   end
 
+  describe "POST create" do
+
+    def do_request(params = {})
+      xhr :post, :create, params.merge(:format => :json)
+    end
+
+    before(:each) do
+      @user = Factory(:user)
+      User.stub!(:new).and_return(@user)
+      @user.stub!(:save).and_return(true)
+    end
+
+    it "responds with status 201" do
+      do_request
+      response.status.should == 201
+    end
+
+    it "should be logged in" do
+      do_request
+      assigns(:user).id.should == session[:current_user]
+    end
+
+  end
+
   describe "PUT update" do
 
     def do_request(params = {})

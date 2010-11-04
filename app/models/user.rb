@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation
 
   before_create :build_profile
+  before_validation :set_temp_password, :on => :create, :if => "password.blank?"
   before_save :set_encrypted_password, :if => :should_require_password?
 
   validates :username, :uniqueness => true, :presence => true
@@ -39,6 +40,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def set_temp_password
+    self.password = User.encrypt_token("temp_password", Time.now.to_i)[0...6]
+  end
 
   def should_require_password?
     !password.blank? ||  encrypted_password.blank?

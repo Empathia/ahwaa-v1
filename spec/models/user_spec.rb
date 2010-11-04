@@ -7,7 +7,6 @@ describe User do
 
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }
-  it { should validate_presence_of(:password) }
   it { should_not allow_mass_assignment_of(:encrypted_password) }
   it { should_not allow_mass_assignment_of(:password_salt) }
   it { should_not allow_mass_assignment_of(:responses_count) }
@@ -28,6 +27,12 @@ describe User do
     it "should not be expert nor admin" do
       @user.is_expert?.should_not be_true
       @user.is_admin?.should_not be_true
+    end
+
+    it "should generate a temporary password if none" do
+      @user = Factory(:user, :password => nil)
+      @user.password.should_not be_blank
+      @user.authenticate!(@user.password).should be_true
     end
 
   end

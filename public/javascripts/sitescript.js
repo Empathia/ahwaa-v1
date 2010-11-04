@@ -50,13 +50,30 @@ $(function(){
     });
     
     $('.sign-up-form').submit(function(){
-        $(this).find('.error').remove(); 
+        var that = $(this);
+        that.find('.error').remove(); 
         
-        //If Ajax request                  
-        if(false){
-            $('<p>').addClass('error').html(I18n.t('layouts.application.header.sign_up_form.error_username_not')).insertAfter('#user_username'); 
-            return false;
-        }
+        $.ajax({
+            url: this.action,
+            dataType: 'json',
+            type: 'post',
+            data: $(this).serialize(),
+            success: function (data) {
+                location.reload();
+            },
+            error: function (data) {
+                data = eval('(' + data.responseText + ')');
+                for (var attr in data) {
+                    var wrapper = that.find('.' + attr);
+                    if(wrapper.length === 0) {
+                        wrapper = that.find('.errors');
+                    }
+                    wrapper.append('<p class="error">' + attr + ' ' + data[attr] + '</p>');
+                }
+            }
+        });
+        
+        return false;
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
@@ -66,6 +83,10 @@ $(function(){
         }
     );
     
+    $('.sign-up-form #user_email').change(function () {
+        $('.sign-up-form #user_username').val($(this).val().replace(/@.*$/, ''));
+    });
+
     $('.login-form').submit(function(){
         $(this).find('.error').remove(); 
         

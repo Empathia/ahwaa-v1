@@ -1,8 +1,18 @@
 class UsersController < ApplicationController
+  respond_to :json, :only => [:create]
   before_filter :get_user
+  skip_before_filter :authenticate_user!, :only => [:create]
 
   def show
+  end
 
+  def create
+    @user = User.new(params[:user])
+    if @user.save
+      UserMailer.sign_up_confirmation(@user).deliver
+      session[:current_user] = @user.id 
+    end
+    respond_with(@user, :location => root_path)
   end
 
   def update
