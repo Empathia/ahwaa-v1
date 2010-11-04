@@ -24,7 +24,7 @@ $(function(){
         return false;
     });
     
-    $('.request-error').find('a').click(function(){
+    $('.sign-up-btn').click(function(){
         var btn = $(this);
         btn.addClass('auth-form-active').closest('.request-error').removeClass('auth-form-active');
         toggleSignUp($('#sign-up'));         

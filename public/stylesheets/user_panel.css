@@ -31,4 +31,16 @@ input[type=password],
 input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; height: 25px; width: 188px;}
 .panel{background-color: #ffffff;}
 .panel > section{float: right; width: 631px; padding: 20px 25px;}
-.panel > .regular{border-bottom: 1px solid #efeff0}
+.panel > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}
+.options{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px;}       
+.options li{float: left; height: 100%; padding: 0 10px; font-size: 11px; color: #808386; line-height: 2.8; border-left: 1px solid #e1e3e5;}
+.options li:first-child{border-left: 0;}
+.messages > li > input{float: left; margin: 20px 10px 0 0;}
+.messages .thumb{margin-right: 10px;}
+.messages > li{background-color: #fbfbfb; margin-bottom: 15px; padding: 14px 11px; border-bottom: 1px solid #e1e3e5; position: relative; overflow: hidden;}
+.messages > li.new{background-color: #f3f9fc; border: 1px solid #c2dcea;}
+.msg-opts{position: absolute; width: 100px; right: 11px; top: 14px; color: #869eac; font-size: 11px;}
+.msg-opts > li{float: right; margin-right: 10px;}
+.from{padding-bottom: 10px; color: #b3b8bc; font-size: 12px;}
+.from b{color: #468ac4;}     
+.msg{color: #838383; font-size: 12px;}
