@@ -33,9 +33,18 @@ input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid
 .panel > section{float: right; width: 631px; padding: 20px 25px;}
 .panel > section > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}
 .bar{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px; position: relative;}
-.bar > li{float: left; height: 100%; padding: 0 10px; font-size: 11px; color: #808386; line-height: 2.8; border-left: 1px solid #e1e3e5;}
-.bar > li:first-child{border-left: 0;}
-.bar > li > a{background-image: url('../images/icn-messages.png'); background-repeat: no-repeat; padding-left: 13px;}
+.opts > li{float: left; height: 100%; padding: 0 10px; font-size: 11px; color: #808386; line-height: 2.8; border-left: 1px solid #e1e3e5;}
+.opts > li:first-child{border-left: 0;}
+.opts > li > a{background-image: url('../images/icn-messages.png'); background-repeat: no-repeat; padding-left: 13px;}
+.bar-wrapper{overflow: hidden;}
+.bar-private{width: 516px; float: left;}
+.back-to-msgs{width: 108px; color: #808386; float: right; font-size: 11px; text-align: center; line-height: 3;}
+.bar-arrow{float: right; padding: 0 10px; border-left: 1px solid #e1e3e5; height: 100%;}
+.bar-arrow > a{text-indent: -9999px; float: left; height: 0; width: 0; margin-top: 11px; border-style: solid;  }
+.bar-arrow.up > a{border-color: transparent transparent #e3e5e6 transparent; border-width: 0 7px 7px 7px;}
+.bar-arrow.down > a{border-color: #e3e5e6 transparent transparent transparent; border-width: 7px 7px 0 7px;  }
+.bar-arrow.up.active > a{border-color: transparent transparent #808386 transparent;}
+.bar-arrow.down.active > a{border-color: #808386 transparent transparent transparent;  }
 .pm-delete{background-position: 0 1px}
 .pm-delete:hover{background-position: 0 -18px}
 .pm-block{background-position: 0 -37px}
@@ -78,3 +87,11 @@ filter: alpha(opacity=50);
 .avatars > li{margin: 10px; float: left; border: 2px solid transparent; position: relative;}
 .avatars > .active{border: 2px solid #468ac4;}
 .checkmark{position: absolute; right: -10px; top: -10px;}
+
+.pm-details{overflow: hidden; font-size: 12px; margin-top: 5px;}
+.pm-user{overflow: hidden; margin-bottom: 22px;}
+.pm-user .thumb{margin-right: 16px;}
+.pm-user-details{color: #b3b8bc; margin-top: 4px;}
+.pm-user-details > div{margin-bottom: 5px;}
+.pm-user-details a{color: #468ac4; font-weight: bold;}
+.pm-message{color: #3f4245; line-height: 18px;}
