@@ -141,6 +141,49 @@ en:
       submit: Submit
       title: Request a Topic
       remain_anonymous: Remain anonymous for topic authoring
+  users:
+    show:
+      sidebar:                   
+        trusthworthy: is trusthworthy.
+        points: '%{points} points'
+        use_avatar: Use avatar
+        buttons:
+          save: Save
+          cancel: Cancel
+        profile:
+          title: My Profile
+          welcome: Welcome to Transcend!
+          welcome_legend: "Please enter your profile information, it's easy and fast! You can still remain anonymous"
+          enter_profile: Enter your profile
+          gender: 
+            label: 'Gender:'  
+            male: 'Male'
+            female: 'Female'
+          sexual_orientation: 'Sexual Orientation:'
+          age: 'Age:'
+          religion: 'Religion:'
+          place_birth: 'Place of birth:'
+          political_view: 'Political view:'
+          edit: Edit Profile
+        password:
+          title: Password
+          edit: Edit Password
+        my_account:
+          title: My Account
+          edit: Edit My Account
+          nickname: 'Nickname:'
+          mail: 'Mail:'
+          language: 'Language:'
+        terminate_account: Terminate account
+      content:
+        avatars: 
+          suggested: Suggested Avatars
+          loading: Loading Avatars...
+        private_messages:
+          title: Private Messages
+          delete: Delete
+          reply: Reply
+          block: Block
   passwords:
     edit:
       submit: Change password

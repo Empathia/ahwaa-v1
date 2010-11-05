@@ -6,66 +6,73 @@
       <div class="thumb"></div>
       <div class="user-details">
         <div class="username">navidsafa</div>
-        <div class="points"><b>is trusthworthy.</b> <span>150 points</span></div>
-        <div><input type="checkbox"> Use avatar</div>
+        <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => 150}) %></span></div>
+        <div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>
       </div>
     </div>
     <div class="white-area inner-shadow">  
       <section>
         <div class="usr-sec-title">
           <hr>          
-          <h2>My Profile</h2>
+          <h2><%= t('.sidebar.profile.title') %></h2>
           <%= link_to nil do %>
-            <span class="border-all"><span>Edit Icon</span></span>
+            <span class="border-all"><span><%= t('.sidebar.profile.edit') %></span></span>
           <% end %>
+        </div>
+        <div class="user-edit"> 
+          <div class="welcome">
+            <p><b><%= t('.sidebar.profile.welcome') %></b></p>
+            <p><%= t('.sidebar.profile.welcome_legend') %></p>
+            <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
+          </div>
         </div>
         <form>
           <ul class="user-edit">
             <li>
-              <div>Gender:</div>
+              <div><%= t('.sidebar.profile.gender.label') %></div>
               <div>
-                <span>Male</span>
+                <span><%= t('.sidebar.profile.gender.male') %></span>
                 <%= text_field :username, :required => "true" %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
-              <div>Sexual Orientation:</div>
+              <div><%= t('.sidebar.profile.sexual_orientation') %></div>
               <div>
                 <span>Gay</span>
                 <%= text_field :username, :required => "true" %>
               </div>
             </li>
             <li>             
-              <div>Age:</div>
+              <div><%= t('.sidebar.profile.age') %></div>
               <div>
                 <span>34</span>
                 <%= text_field :age, :required => "true" %>
               </div>
             </li>
             <li>             
-              <div>Religion:</div>
+              <div><%= t('.sidebar.profile.religion') %></div>
               <div>
                 <span>Judaism</span>
                 <%= text_field :username, :required => "true" %>
               </div>
             </li>
             <li>             
-              <div>Place of birth:</div>
+              <div><%= t('.sidebar.profile.place_birth') %></div>
               <div>
                 <span>Iran</span>
                 <%= text_field :username, :required => "true" %>
               </div>
             </li>
             <li>             
-              <div>Political view:</div>
+              <div><%= t('.sidebar.profile.political_view') %></div>
               <div>
                 <span>Social democracy</span>
                 <%= text_field :username, :required => "true" %>
               </div>
             </li>
             <li>
-              <input type="submit" class="btn-gradient" value="Save">
-              <input type="button" class="cancel" value="Cancel">
+              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
         </form>
@@ -73,9 +80,9 @@
       <section>
         <div class="usr-sec-title">
           <hr>          
-          <h2>Password</h2>
+          <h2><%= t('.sidebar.password.title') %></h2>
           <%= link_to nil do %>
-            <span class="border-all"><span>Edit Icon</span></span>
+            <span class="border-all"><span><%= t('.sidebar.password.edit') %></span></span>
           <% end %>
         </div>
         <form>
@@ -91,29 +98,29 @@
       <section>
         <div class="usr-sec-title">
           <hr>
-          <h2>My Account</h2>
+          <h2><%= t('.sidebar.my_account.title') %></h2>
           <%= link_to nil do %>
-            <span class="border-all"><span>Edit Icon</span></span>
+            <span class="border-all"><span><%= t('.sidebar.my_account.edit') %></span></span>
           <% end %>
         </div>
         <form>
           <ul class="user-edit">
             <li>
-              <div>Nickname:</div>
+              <div><%= t('.sidebar.my_account.nickname') %></div>
               <div>
                 <span>navidsafa</span>
                 <%= text_field :username, :required => "true" %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
-              <div>Mail:</div>
+              <div><%= t('.sidebar.my_account.mail') %></div>
               <div>
                 <span>navid@freshout.us</span>
                 <%= text_field :username, :required => "true" %>
               </div>
             </li>
             <li>             
-              <div>Language:</div>
+              <div><%= t('.sidebar.my_account.language') %></div>
               <div>
                 <span>English</span>
                 <%= text_field :username, :required => "true" %>
@@ -124,10 +131,50 @@
       </section>
       <p><%= link_to 'Terminate account', nil, :class => "terminate" %></p>    
     </div>
-  </aside>
-  <section class="panel"> 
-    <h2 class="regular">Private Messages</h2>
-    <ul class="bar border-all">
+  </aside> 
+  <section class="avatars-wrapper"> 
+    <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
+    <p><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
+    <ul class="avatars suggested">  
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li class="active"><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %><%= image_tag 'checkmark.png', :class => 'checkmark' %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+    </ul>
+    <ul class="avatars opacity">  
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
+    </ul>
+  </section>
+  <section> 
+    <h2 class="regular"><%= t('.content.private_messages.title') %></h2>
+    <ul class="bar opts border-all">
       <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
       <li><%= link_to 'Block', nil, :class => "pm-block" %></li>
     </ul>      
@@ -136,8 +183,8 @@
         <input type="checkbox">
         <%= link_to "", nil, :class => "thumb" %>
         <ul class="msg-opts">
-          <li><%= link_to 'Delete', nil, :class => "opt-delete"  %></li>          
-          <li><%= link_to 'Reply', nil, :class => "opt-reply"  %></li>
+          <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete"  %></li>          
+          <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
         </ul>
         <div class="from"><%= link_to 'By LGBT admin' %> in June 22, 2010</div>
         <div class="msg">
@@ -148,8 +195,8 @@
         <input type="checkbox">                    
         <%= link_to "", nil, :class => "thumb" %>
         <ul class="msg-opts">
-          <li><%= link_to 'Delete', nil, :class => "opt-delete" %></li>          
-          <li><%= link_to 'Reply', nil, :class => "opt-reply"  %></li>
+          <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete" %></li>          
+          <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
         </ul>
         <div class="from"><%= link_to 'By Zahir00' %> in May 21, 2010</div>
         <div class="msg">
@@ -172,6 +219,35 @@
           </ul>
           <a href="#" class="arrow right"></a>
         </div>
+      </div>
+    </div>
+  </section>
+  <section> 
+    <h2 class="regular"><%= t('.content.private_messages.title') %></h2>
+    <div class="bar-wrapper">
+      <div class="bar border-all bar-private">
+        <ul class="opts">
+          <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
+          <li><%= link_to 'Block', nil, :class => "pm-block" %></li>   
+        </ul> 
+        <div class="bar-arrow down"><%= link_to 'Next', nil %></div>
+        <div class="bar-arrow up active"><%= link_to 'Back', nil %></div>
+      </div>
+      <%= link_to 'Back to messages', nil, :class => "bar border-all back-to-msgs" %>
+    </div>
+    <div class="pm-details">
+      <div class="pm-user">
+        <div class="thumb">
+          <%= link_to (image_tag 'no-image.jpg', :width => '55') %>
+        </div>
+        <div class="pm-user-details">
+          <div><%= link_to "By Transcend admin" %></div>
+          <div>in June 22, 2010</div>
+        </div>
+      </div>  
+      <div class="pm-message">
+        <p>Wellcome Yahir najar00 Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench.</p>
+        <p>Then gazing at his quadrant, and handling, one after the other, its numerous cabalistical contrivances, he pondered again, and muttered:  "Foolish toy! babies' plaything of haughty Admirals, and asfefaesfsefcv  sdfs sefsfdfbdbg Commodores, and Captains; the world brags of thee, of thy cunning and might; but what after all canst thou do it lorem</p>
       </div>
     </div>
   </section>
