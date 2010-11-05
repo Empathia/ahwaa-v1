@@ -13,6 +13,9 @@ en:
         alert: '%{resource_name} could not be destroyed.'
     application:
       should_be_admin: 'You should have admin credentials to access this part of site.'
+    passwords:
+      update:
+        notice: Your password has been changed. You can now log in with your new password.
 
   activemodel:
     attributes:
@@ -29,7 +32,7 @@ en:
           login: Login
         request_topic: 
           button: Request a topic
-          legend: Anonymous users can't request a topic
+          legend: "Anonymous users can't request a topic"
           sign_up: Sign Up
           error_login_empty: Sign Up
         sign_up_form:
@@ -54,7 +57,9 @@ en:
           wrong_password: Wrong password
           not_found: Username or Email not found
         forgot_pass_form:
+          not_found: Username or Email not found
           legend: "Enter your email address and we'll send you a link to reset your password."
+          sent: "We've sent you the instructions to your email."
           login: Username or Email
           send: Send my Password
           cancel: Cancel
@@ -78,7 +83,7 @@ en:
       title: TRANSCEND
       legend: Supporting tagline will live here and it should be about this long
       popular_topics: Most Popular Topics
-      feeds: What's happening now
+      feeds: "What's happening now"
       join_now: Join Now
       get_started: And Get Started!
   topics:
@@ -126,3 +131,6 @@ en:
       submit: Submit
       title: Request a Topic
       remain_anonymous: Remain anonymous for topic authoring
+  passwords:
+    edit:
+      submit: Change password

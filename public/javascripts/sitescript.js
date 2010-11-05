@@ -49,6 +49,8 @@ $(function(){
     
     $('.cancel-forgot').click(function(){
         $('.auth-form-active').removeClass('auth-form-active');   
+        toggleSignUp($('#login'));       
+        return false;
     });
     
     $('.sign-up-form').submit(function(){
@@ -128,11 +130,13 @@ $(function(){
             type: 'post',
             data: $(this).serialize(),
             success: function (data) {
-                console.log(data);
+                that.find('.login').append('<p class="success">' + I18n.t('layouts.application.header.forgot_pass_form.sent') + '</p>');
+                that.find('.login input').hide();
             },
             error: function (data) {
-                data = eval('(' + data.responseText + ')');
-                console.log(data);
+                if(data.status == 404) {
+                    that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.forgot_pass_form.not_found') + '</p>');
+                }
             }
         });
         return false;

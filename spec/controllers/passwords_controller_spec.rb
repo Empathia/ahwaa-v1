@@ -69,4 +69,60 @@ describe PasswordsController do
 
   end
 
+  describe "GET edit" do
+
+    def do_request(params = {})
+      get :edit, params
+    end
+
+    before(:each) do
+      User.stub!(:find_by_single_access_token!).and_return(@user)
+    end
+
+    it "finds user by single access token" do
+      User.should_receive(:find_by_single_access_token!).and_return(@user)
+      do_request :id => 1
+    end
+
+    it "renders form to edit user's password" do
+      do_request :id => 1
+      response.should render_template(:edit)
+    end
+
+  end
+
+  describe "PUT update" do
+
+    def do_request(params = {})
+      put :update, params
+    end
+
+    before(:each) do
+      User.stub!(:find_by_single_access_token!).and_return(@user)
+      @user.stub!(:reset_single_access_token!)
+      @user.stub!(:update_attribute).and_return(true)
+    end
+
+    it "finds user by single access token" do
+      User.should_receive(:find_by_single_access_token!).and_return(@user)
+      do_request :id => 1
+    end
+
+    it "resets single access token for user" do
+      @user.should_receive(:reset_single_access_token!)
+      do_request :id => 1
+    end
+
+    it "changes password from params" do
+      @user.should_receive(:update_attribute).and_return(true)
+      do_request :id => 1
+    end
+
+    it "redirects to root path" do
+      do_request :id => 1
+      response.should redirect_to(root_path)
+    end
+
+  end
+
 end

@@ -13,7 +13,7 @@ Lgbt::Application.routes.draw do
     resource :private_messages, :only => [:create]
   end
 
-  resources :passwords, :only => [:create, :edit]
+  resources :passwords, :only => [:create, :edit, :update]
 
   resources :private_messages, :path => "inbox", :except => [:new, :edit, :update, :create]
 
