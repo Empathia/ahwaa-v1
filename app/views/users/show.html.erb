@@ -15,7 +15,7 @@
         <div class="usr-sec-title">
           <hr>          
           <h2><%= t('.sidebar.profile.title') %></h2>
-          <%= link_to nil do %>
+          <%= link_to nil, :class => "edit-profile" do %>
             <span class="border-all"><span><%= t('.sidebar.profile.edit') %></span></span>
           <% end %>
         </div>
@@ -26,7 +26,7 @@
             <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
           </div>
         </div>
-        <form>
+        <form class="hide"><!-- add class "hide" only if the user edits his profile for the 1st time-->
           <ul class="user-edit">
             <li>
               <div><%= t('.sidebar.profile.gender.label') %></div>
@@ -134,43 +134,7 @@
   </aside> 
   <section class="avatars-wrapper"> 
     <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
-    <p><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
-    <ul class="avatars suggested">  
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li class="active"><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %><%= image_tag 'checkmark.png', :class => 'checkmark' %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-    </ul>
-    <ul class="avatars opacity">  
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-      <li><div class="thumb"><%= link_to (image_tag 'no-image.jpg', :width => '55') %></div></li>
-    </ul>
+    <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
   </section>
   <section> 
     <h2 class="regular"><%= t('.content.private_messages.title') %></h2>

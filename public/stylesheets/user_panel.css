@@ -76,6 +76,7 @@ input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid
 .welcome b{color: #5e5e5e;}
 .enter-profile{margin-top: 10px;}
 .enter-profile a{padding: 5px 8px; width: 95px; margin: 0 60px; text-decoration: none;}
+.avatars-wrapper{display: none;}
 .avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin-top: 60px;}
 .avatars{float: left;}
 .avatars.suggested{border-bottom: 1px solid #efeff0;}
@@ -95,3 +96,4 @@ filter: alpha(opacity=50);
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
 .pm-message{color: #3f4245; line-height: 18px;}
+.hide{display: none;}
