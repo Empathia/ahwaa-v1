@@ -57,18 +57,20 @@
                     <a href="#" id="login">
                       <span><%= t('.header.auth.login') %></span>
                     </a>
-                    <%= form_tag login_path, :class => "over-form login-form", :remote => true do %>
+                    <%= form_tag login_path, :class => "over-form login-form" do %>
                       <ul>
-                        <li><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.username_or_email') %></li>
-                        <li><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
+                        <li class="login"><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.login') %></li>
+                        <li class="password"><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
                       </ul>
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
                     <% end %>
-                    <%= form_tag nil, :class => "over-form forgot-pass-form", :remote => true do %>
+                    <%= form_tag passwords_path, :class => "over-form forgot-pass-form" do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
-                        <li><%= email_field_tag :login, nil, :required => "true", :placeholder => t('.header.forgot_pass_form.email') %></li>
+                        <li class="login">
+                          <%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.forgot_pass_form.login') %>
+                        </li>
                       </ul>
                       <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all" %>
                         <input type="button" class="cancel-forgot btn-gradient" value="<%= t('.header.forgot_pass_form.cancel') %>">

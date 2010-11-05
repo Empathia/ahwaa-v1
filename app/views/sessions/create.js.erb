@@ -1,6 +1,0 @@
-<% if @error.nil? %>
-  location.reload();
-<% else %>
-  // Show errors from @errors.to_json
-  alert('<%= escape_javascript @error %>');
-<% end %>

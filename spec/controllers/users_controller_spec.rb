@@ -21,7 +21,7 @@ describe UsersController do
 
       it "redirects to login path" do
         do_request
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
@@ -63,6 +63,12 @@ describe UsersController do
       assigns(:user).id.should == session[:current_user]
     end
 
+    it "should deliver sign up confirmation" do
+      UserMailer.stub_chain(:sign_up_confirmation, :deliver)
+      UserMailer.sign_up_confirmation(@user).should_receive(:deliver)
+      do_request
+    end
+
   end
 
   describe "PUT update" do
@@ -80,7 +86,7 @@ describe UsersController do
 
       it "redirects to login path" do
         do_request
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
@@ -121,7 +127,7 @@ describe UsersController do
 
       it "redirects to login path" do
         do_request
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end

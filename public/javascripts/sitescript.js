@@ -49,6 +49,8 @@ $(function(){
     
     $('.cancel-forgot').click(function(){
         $('.auth-form-active').removeClass('auth-form-active');   
+        toggleSignUp($('#login'));       
+        return false;
     });
     
     $('.sign-up-form').submit(function(){
@@ -90,14 +92,26 @@ $(function(){
     });
 
     $('.login-form').submit(function(){
-        $(this).find('.error').remove(); 
-        
-        //If Ajax request and username is already registered
-        if(false){
-            $('<p>').addClass('error').html(I18n.t('layouts.application.header.login_form.invalid')).insertAfter('#password'); 
-            return false;
-        }
-        
+        var that = $(this);
+        that.find('.error').remove(); 
+        $.ajax({
+            url: this.action,
+            dataType: 'json',
+            type: 'post',
+            data: $(this).serialize(),
+            success: function (data) {
+                location.reload();
+            },
+            error: function (data) {
+                // TODO when login fails it doesn't allow to re-submit the form
+                if(data.status == 401) {
+                    that.find('.password').append('<p class="error">' + I18n.t('layouts.application.header.login_form.wrong_password') + '</p>');
+                } else {
+                    that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.login_form.not_found') + '</p>');
+                }
+            }
+        });
+        return false;
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
@@ -106,6 +120,27 @@ $(function(){
             }
         }   
     );
+
+    $('.forgot-pass-form').submit(function () {
+        var that = $(this);
+        that.find('.error').remove(); 
+        $.ajax({
+            url: this.action,
+            dataType: 'json',
+            type: 'post',
+            data: $(this).serialize(),
+            success: function (data) {
+                that.find('.login').append('<p class="success">' + I18n.t('layouts.application.header.forgot_pass_form.sent') + '</p>');
+                that.find('.login input').hide();
+            },
+            error: function (data) {
+                if(data.status == 404) {
+                    that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.forgot_pass_form.not_found') + '</p>');
+                }
+            }
+        });
+        return false;
+    });
 
     $('.over-form').find('input').keyup(function(){
         var input = $(this);
