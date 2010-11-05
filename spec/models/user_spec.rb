@@ -18,6 +18,11 @@ describe User do
     it { should_not allow_value(email).for(:email) }
   end
 
+  ['bad login', 'bad.login', 'bad*login', 'bad^login', '&badlogin', 'badlogin?',
+    '@badlogin', 'bad#login', 'bad$login'].each do |login|
+    it { should_not allow_value(login).for(:username) }
+  end
+
   context "upon creation" do
     
     it "should have a profile" do

@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   before_validation :set_temp_password, :on => :create, :if => "password.blank?"
   before_save :set_encrypted_password, :if => :should_require_password?
 
-  validates :username, :uniqueness => true, :presence => true
-  # TODO: validates username format (no dots)
+  validates :username, :uniqueness => true, :presence => true,
+    :format => { :with => /^[\w-]+$/ }
   validates :password, :confirmation => true,
     :presence => { :if => :should_require_password? }
   validates :email, :uniqueness => true, :email => true

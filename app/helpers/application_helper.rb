@@ -16,4 +16,5 @@ module ApplicationHelper
     args.map! { |arg| arg.to_s }
     head { stylesheet_link_tag *args }
   end
+
 end
