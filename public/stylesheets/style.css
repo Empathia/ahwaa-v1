@@ -110,7 +110,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .container{padding-top: 113px; overflow: hidden;}
 .container > .aligned{overflow: hidden; }
 
-.footer-shadow{width: 1200px; margin: 0 auto; display: block; background: url('../images/div-footer.png') no-repeat 50% 0; margin-top: 30px; height: 29px;}
+.footer-shadow{display: block; margin: 0 auto; display: block; background: url('../images/div-footer.png') no-repeat 50% 0; margin-top: 30px; height: 29px;}
 
 footer > .aligned{padding: 7px 0 36px 0;}
 footer > div > ul{float: right;}
