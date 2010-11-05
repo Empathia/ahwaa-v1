@@ -21,7 +21,7 @@ describe PrivateMessagesController do
 
       it "redirects to login path" do
         do_request
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
@@ -62,7 +62,7 @@ describe PrivateMessagesController do
 
       it "redirects to login path" do
         do_request :id => 1
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
@@ -104,7 +104,7 @@ describe PrivateMessagesController do
 
       it "redirects to login path" do
         do_request
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
@@ -161,7 +161,7 @@ describe PrivateMessagesController do
 
       it "redirects to login path" do
         do_request :id => 1
-        response.should redirect_to(login_path)
+        response.should redirect_to(root_path)
       end
 
     end
