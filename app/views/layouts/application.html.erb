@@ -90,20 +90,13 @@
           <div class="header-wrapper">
             <div class="header-tags aligned">
               <ul>
-                <li><%= link_to 'Help' %></li>
-                <li><%= link_to 'Movements' %></li>
-                <li><%= link_to 'LGBT' %></li>
-                <li><%= link_to 'Marriage' %></li>
-                <li><%= link_to 'Youth' %></li>
-                <li><%= link_to 'Gay Rights' %></li>
-                <li><%= link_to 'Transgender' %></li>
+                <% Topic.tag_counts.each do |tag| %>
+                  <li><%= link_to tag, topic_tag_path(tag.name) %></li>
+                <% end %>
                 <li class="more">
                   <%= link_to 'More' %>
                   <ul class="more-tags border-all border-menu">
                     <li><%= link_to 'Lesbian' %></li>
-                    <li><%= link_to 'Middle East' %></li>
-                    <li><%= link_to 'Africa' %></li>
-                    <li><%= link_to 'Friends' %></li>
                   </ul>
                 </li>
               </ul>
