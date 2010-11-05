@@ -127,31 +127,52 @@
   </aside>
   <section class="panel"> 
     <h2 class="regular">Private Messages</h2>
-    <ul>
-      <li>Delete</li>
-      <li>Block</li>
+    <ul class="bar border-all">
+      <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
+      <li><%= link_to 'Block', nil, :class => "pm-block" %></li>
     </ul>      
-    <ul>
-      <li>
+    <ul class="messages">
+      <li class="new">
         <input type="checkbox">
-        <div class="avatar"></div>
-        <ul>
-          <li>Reply</li>
-          <li>Delete</li>
+        <%= link_to "", nil, :class => "thumb" %>
+        <ul class="msg-opts">
+          <li><%= link_to 'Delete', nil, :class => "opt-delete"  %></li>          
+          <li><%= link_to 'Reply', nil, :class => "opt-reply"  %></li>
         </ul>
-        <div class="from">By LGBT admin in June 22, 2010</div>
-        <p>Wellcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
+        <div class="from"><%= link_to 'By LGBT admin' %> in June 22, 2010</div>
+        <div class="msg">
+          <p>Wellcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
+        </div>
       </li>
       <li>    
         <input type="checkbox">                    
-        <div class="avatar"></div>
-        <ul>
-          <li>Reply</li>
-          <li>Delete</li>
+        <%= link_to "", nil, :class => "thumb" %>
+        <ul class="msg-opts">
+          <li><%= link_to 'Delete', nil, :class => "opt-delete" %></li>          
+          <li><%= link_to 'Reply', nil, :class => "opt-reply"  %></li>
         </ul>
-        <div class="from">By Zahir00 in May 21, 2010</div>
-        <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis...</p>
+        <div class="from"><%= link_to 'By Zahir00' %> in May 21, 2010</div>
+        <div class="msg">
+          <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis...</p>
+        </div>
       </li>     
     </ul>
+    <div class="bar border-all"> 
+      <div class="pagination">
+        <div>
+          <a href="#" class="arrow left"></a>
+          <ul class="pag-numbers">
+            <li class="active"><%= link_to '1' %></li>
+            <li><%= link_to '2' %></li>
+            <li><%= link_to '3' %></li>
+            <li><%= link_to '4' %></li>
+            <li><%= link_to '5' %></li>
+            <li><%= link_to '...' %></li>
+            <li><%= link_to '20' %></li>
+          </ul>
+          <a href="#" class="arrow right"></a>
+        </div>
+      </div>
+    </div>
   </section>
 </div>
