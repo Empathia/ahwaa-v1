@@ -20,6 +20,7 @@ describe Reply do
   end
 
   context "created by an anonymous user" do
+
     before(:each) do
       @reply = Factory.build(:reply, :user => nil)
     end
@@ -27,6 +28,13 @@ describe Reply do
     it "should have an anonymouse user" do
       @reply.anonymous?.should be_true
     end
+
+  end
+
+  it "gets latest replies" do
+    sleep 1 # so created_at isn't the same as @reply
+    latest = 5.times.map { Factory(:reply) }
+    Reply.latest.map(&:id).sort.should == latest.map(&:id).sort
   end
 
   it "should inherit topic from parent when replying to a reply" do
@@ -34,4 +42,5 @@ describe Reply do
     @reply.replies << new_reply
     new_reply.topic.should == @reply.topic
   end
+
 end

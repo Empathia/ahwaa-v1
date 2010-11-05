@@ -41,6 +41,7 @@ users = [user, expert, admin]
     }, :story),
   :content => Random.paragraphs(Random.number(3..10))
   topic.user = users[Random.number(0..2)]
+  topic.tag_list = 'foo, bar, gay, lesbian, homo, test, another tag, dude'
   topic.save!
 
   if Random.boolean

@@ -3,7 +3,7 @@ class Reply < ActiveRecord::Base
   
   # TODO: attr_accessible
 
-  belongs_to :topic
+  belongs_to :topic, :counter_cache => true
   belongs_to :user
   belongs_to :parent, :class_name => "Reply"
   has_many :ratings, :dependent => :destroy
@@ -17,6 +17,8 @@ class Reply < ActiveRecord::Base
 
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
 
+  scope :latest, order("created_at DESC").limit(5)
+
   # Returns the internationalized version of the categories
   def self.categories
     CATEGORIES.map { |c| I18n.t(:"activemodel.attributes.reply.categories.#{c}") }
@@ -27,19 +29,25 @@ class Reply < ActiveRecord::Base
     user.nil?
   end
 
+  # Gets user's username, or 'anonymous'
+  def author_username
+    anonymous? ? I18n.t('activemodel.attributes.reply.anonymous') : user.username
+  end
+
   # Wether the reply is from an expert user or no
   def from_expert?
     !anonymous? && user.is_expert?
   end
 
   # URL for the avatar of the user, or default image if anonymous
-  def autor_avatar
+  def author_avatar
     anonymous? ? Avatar.default.url : user.profile.avatar.url
   end
   
   def i18n_category
     I18n.t(:"activemodel.attributes.reply.categories.#{category}")
   end
+
   private
 
   def set_topic_from_parent

@@ -24,6 +24,11 @@ en:
           advice: Advice
           comment: Comment
           experience: Experience
+        anonymous: Anonymous
+
+  helpers:
+    ago: %{time} ago
+
   layouts:
     application:        
       header:     
@@ -86,6 +91,11 @@ en:
       feeds: "What's happening now"
       join_now: Join Now
       get_started: And Get Started!
+      popular:
+        by: By
+        response: Response
+      latest:
+        has_left_a_comment: %{author} has left an %{comment} on %{topic}
   topics:
     show:
       contextual:

@@ -43,119 +43,39 @@
     <section class="topics">
       <h2><%= t('.popular_topics') %></h2>
       <ul class="items">
-        <li>              
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>
-          <div class="item-data">
-            <%= link_to 'How can i tell my religious parents that i am bisexual?', nil, :class => 'dark-lk' %>
-            <div>            
-              By <%= link_to 'Youssef' %>
-              <ul class="tags">
-                <li><%= link_to 'Bisexual,' %></li>
-                <li><%= link_to 'Other,' %></li>
-                <li><%= link_to 'HIV/AIDS' %></li>
-              </ul>                                                                         
-              <%= link_to '50 responses', nil, :class => "responses"  %>
+        <% @popular.each do |topic| %>
+          <li>              
+            <%= link_to image_tag(topic.user.profile.avatar.url, :width => '43'), topic, :class => 'item-img' %>
+            <div class="item-data">
+              <%= link_to topic.title, nil, :class => 'dark-lk' %>
+              <div>            
+                <%= t('.popular.by') %> <%= link_to topic.user.username, topic.user %>
+                <ul class="tags">
+                  <% topic.tags.each do |tag| %>
+                    <li><%= link_to tag, topic_tag_path(tag.name) %></li>
+                  <% end %>
+                </ul>                                                                         
+                <%= link_to pluralize(topic.replies.size, t('.popular.response')), nil, :class => "responses"  %>
+              </div>
             </div>
-          </div>
-        </li>
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>
-          <div class="item-data">          
-            <%= link_to 'Should I tell my parents that I am bisexual?', nil, :class => 'dark-lk' %>
-            <div>
-              By <%= link_to 'LGBT' %>
-              <ul class="tags">
-                <li><%= link_to 'Bisexual,' %></li>
-                <li><%= link_to 'Other,' %></li>
-                <li><%= link_to 'HIV/AIDS' %></li>
-              </ul>                               
-              <%= link_to '46 responses', nil, :class => "responses"  %>
-            </div>
-          </div>            
-        </li>
-        <li>              
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <%= link_to 'Should I tell my parents that I am bisexual?', nil, :class => 'dark-lk' %>
-            <div>
-              By <%= link_to 'Shihab' %>
-              <ul class="tags">
-                <li><%= link_to 'Bisexual,' %></li>
-                <li><%= link_to 'Transgender,' %></li>
-                <li><%= link_to 'HIV/AIDS' %></li>
-              </ul>                               
-              <%= link_to '30 responses', nil, :class => "responses"  %>
-            </div>
-          </div>
-        </li>
-        <li>            
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <%= link_to 'My Son, admitted he is a homosexual. How do I react? Should i tell her father?', nil, :class => 'dark-lk' %>
-            <div>
-              By <%= link_to 'Shihab' %>
-              <ul class="tags">
-                <li><%= link_to 'Gay,' %></li>
-                <li><%= link_to 'HIV/AIDS' %></li>
-              </ul>                               
-              <%= link_to '26 responses', nil, :class => "responses"  %>
-            </div>
-          </div>
-        </li>
-        <li>        
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <%= link_to 'Im gay and my best friend isn\'t', nil, :class => 'dark-lk' %>
-            <div>
-              By <%= link_to 'Shihab' %>
-              <ul class="tags">
-                <li><%= link_to 'Gay,' %></li>
-                <li><%= link_to 'Friends' %></li>
-              </ul>                               
-              <%= link_to '20 responses', nil, :class => "responses" %>
-            </div>
-          </div>            
-        </li>      
+          </li>
+        <% end %>
       </ul>
     </section>
     <section class="feeds">
       <h2><%= t('.feeds') %></h2>
       <ul class="items">
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <p><%= link_to 'Youssef', nil, :class => "dark-lk" %> has left a <%= link_to 'ADVICE', nil, :class => "dark-lk" %> on <%= link_to 'How to tell my parent im gay?' %>.</p>
-            <p class="feed-date">15 minutes ago</p>
-          </div>
-        </li>
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <p><%= link_to 'Youssef', nil, :class => "dark-lk" %> has left a <%= link_to 'ADVICE', nil, :class => "dark-lk" %> on <%= link_to 'How to tell my parent im gay?' %>.</p>
-            <p class="feed-date">15 minutes ago</p>            
-          </div>
-        </li>
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img' %>          
-          <div class="item-data">
-            <p><%= link_to 'Youssef', nil, :class => "dark-lk" %> has left a <%= link_to 'ADVICE', nil, :class => "dark-lk" %> on <%= link_to 'How to tell my parent im gay?' %>.</p>
-            <p class="feed-date">15 minutes ago</p>            
-          </div>
-        </li>
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img'%>          
-          <div class="item-data">
-            <p><%= link_to 'Youssef', nil, :class => "dark-lk" %> has left a <%= link_to 'ADVICE', nil, :class => "dark-lk" %> on <%= link_to 'How to tell my parent im gay?' %>.</p>
-            <p class="feed-date">15 minutes ago</p>            
-          </divs>
-        </li>
-        <li>
-          <%= link_to (image_tag "no-image.jpg", :width => '43'), nil, :class => 'item-img'%>          
-          <div class="item-data">          
-            <p><%= link_to 'Youssef', nil, :class => "dark-lk" %> has left a <%= link_to 'ADVICE', nil, :class => "dark-lk" %> on <%= link_to 'How to tell my parent im gay?' %>.</p>
-            <p class="feed-date">15 minutes ago</p>            
-          </div>           
-        </li>      
+        <% @latest.each do |reply| %>
+          <li>
+            <%= link_to_unless reply.anonymous?, image_tag(reply.author_avatar, :width => '43'), reply.user, :class => 'item-img' %>          
+            <div class="item-data">
+              <p>
+                <%= t('.latest.has_left_a_comment', :author => link_to_unless(reply.anonymous?, reply.author_username, reply.user, :class => 'dark-lk'), :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
+              </p>
+              <p class="feed-date"><%= t 'helpers.ago', :time => time_ago_in_words(reply.created_at) %></p>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </section>
   </div>

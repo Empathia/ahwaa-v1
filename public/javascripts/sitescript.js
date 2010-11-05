@@ -28,7 +28,7 @@ $(function(){
         var btn = $(this);
         btn.addClass('auth-form-active').closest('.request-error').removeClass('auth-form-active');
         toggleSignUp($('#sign-up'));         
-
+        return false;
     });
     
     $('.request-topic').click(function(e){

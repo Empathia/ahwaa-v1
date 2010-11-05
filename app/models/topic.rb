@@ -13,6 +13,7 @@ class Topic < ActiveRecord::Base
 
   belongs_to :user
   has_many :replies, :dependent => :destroy, :conditions => { :parent_id => nil }
+  has_many :users, :through => :replies
   has_many :topic_experts, :dependent => :destroy
   has_many :experts, :through => :topic_experts
 
@@ -22,6 +23,8 @@ class Topic < ActiveRecord::Base
 
   after_save :update_tank_indexes, :if => 'Rails.env.production?'
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
+
+  scope :popular, order("replies_count DESC").limit(5)
 
   def self.per_page
     10

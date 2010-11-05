@@ -4,6 +4,7 @@ class CreateTopics < ActiveRecord::Migration
       t.string :title
       t.belongs_to :user
       t.text :content
+      t.integer :replies_count, :default => 0
       t.timestamps
     end
   end

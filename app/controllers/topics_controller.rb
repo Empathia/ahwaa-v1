@@ -6,4 +6,8 @@ class TopicsController < ApplicationController
     @replies = @topic.replies.group_by(&:contextual_index)
   end
 
+  def tag
+    @topics = Topic.tagged_with(params[:tag]).paginate(:page => params[:page])
+  end
+
 end

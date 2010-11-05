@@ -5,6 +5,23 @@ describe TopicsController do
     @user = Factory(:user)
   end
 
+  describe "GET tag" do
+
+    def do_request(params = {})
+      get :tag, params.merge(:tag => "foo")
+    end
+
+    before(:each) do
+      Topic.stub_chain(:tagged_with, :paginate).and_return(@topics = Topic.scoped)
+    end
+
+    it "filters topics by tag" do
+      Topic.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
+      do_request
+    end
+
+  end
+
   describe "GET show" do
 
     def do_request(params = {})

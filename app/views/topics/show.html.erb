@@ -145,7 +145,7 @@
             <div>
               <div class="avatar-wrapper">
                 <span class="avatar">
-                  <%= image_tag reply.autor_avatar, :width => '50' %>
+                  <%= image_tag reply.author_avatar, :width => '50' %>
                 </span>                  
                 <div>
                   <div class="res-username">
@@ -178,7 +178,7 @@
                     <div>
                       <div class="avatar-wrapper">
                         <span class="avatar">
-                          <%= image_tag reply_reply.autor_avatar, :width => '50' %>
+                          <%= image_tag reply_reply.author_avatar, :width => '50' %>
                         </span>
                         <% unless reply_reply.anonymous? %>
                           <%= link_to reply_reply.user.username %>

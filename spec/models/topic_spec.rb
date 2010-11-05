@@ -31,4 +31,13 @@ describe Topic do
     # @topic.leaderboard.should include(user2)
     @topic.leaderboard.should_not include(no_active_user)
   end
+
+  it "returns most popular topics of all time" do
+    4.times { Factory(:topic) }
+    popular_topics = 5.times.map { Factory(:popular_topic) }
+
+    topics = Topic.popular
+    topics.map(&:id).sort.should == popular_topics.map(&:id).sort
+  end
+
 end
