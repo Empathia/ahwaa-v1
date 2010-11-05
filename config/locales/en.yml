@@ -30,6 +30,7 @@ en:
         request_topic: 
           button: Request a topic
           legend: Anonymous users can't request a topic
+          sign_up: Sign Up
           error_login_empty: Sign Up
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
@@ -45,14 +46,16 @@ en:
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
-          username_or_email: Username or Email
+          login: Username or Email
           password: Password
           forgot_password: Forgot Password
           sign_in: Sign In
           invalid: The email address or password is incorrect. Please try again.
+          wrong_password: Wrong password
+          not_found: Username or Email not found
         forgot_pass_form:
           legend: "Enter your email address and we'll send you a link to reset your password."
-          email: Email
+          login: Username or Email
           send: Send my Password
           cancel: Cancel
         logged_in:

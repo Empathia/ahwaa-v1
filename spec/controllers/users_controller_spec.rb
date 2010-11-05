@@ -63,6 +63,12 @@ describe UsersController do
       assigns(:user).id.should == session[:current_user]
     end
 
+    it "should deliver sign up confirmation" do
+      UserMailer.stub_chain(:sign_up_confirmation, :deliver)
+      UserMailer.sign_up_confirmation(@user).should_receive(:deliver)
+      do_request
+    end
+
   end
 
   describe "PUT update" do

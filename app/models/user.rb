@@ -25,6 +25,10 @@ class User < ActiveRecord::Base
     where(["username = :value OR email = :value", { :value => login_value }]).first
   end
 
+  def reset_single_access_token!
+    update_attribute(:single_access_token, User.encrypt_token(Time.now.to_i, "password reset--"))
+  end
+
   # Encrypts a string with a given salt
   def self.encrypt_token(token, salt)
     hash = salt
