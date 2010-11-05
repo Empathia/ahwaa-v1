@@ -15,16 +15,23 @@ class User < ActiveRecord::Base
   before_save :set_encrypted_password, :if => :should_require_password?
 
   validates :username, :uniqueness => true, :presence => true
+  # TODO: validates username format (no dots)
   validates :password, :confirmation => true,
     :presence => { :if => :should_require_password? }
   validates :email, :uniqueness => true, :email => true
 
   accepts_nested_attributes_for :profile
 
+  def to_param
+    username
+  end
+
+  # Finds user by username or email
   def self.find_for_database_authentication(login_value)
     where(["username = :value OR email = :value", { :value => login_value }]).first
   end
 
+  # Resets single access token for user
   def reset_single_access_token!
     update_attribute(:single_access_token, User.encrypt_token(Time.now.to_i, "password reset--"))
   end

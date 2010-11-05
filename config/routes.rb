@@ -40,4 +40,6 @@ Lgbt::Application.routes.draw do
   end
 
   root :to => "home#index"
+
+  get '/:username' => "users#show", :as => :user_profile
 end

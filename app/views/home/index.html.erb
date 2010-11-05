@@ -45,11 +45,11 @@
       <ul class="items">
         <% @popular.each do |topic| %>
           <li>              
-            <%= link_to image_tag(topic.user.profile.avatar.url, :width => '43'), topic, :class => 'item-img' %>
+            <%= link_to image_tag(topic.user.profile.avatar.url, :width => '43'), user_profile_path(topic.user), :class => 'item-img' %>
             <div class="item-data">
-              <%= link_to topic.title, nil, :class => 'dark-lk' %>
+              <%= link_to topic.title, topic, :class => 'dark-lk' %>
               <div>            
-                <%= t('.popular.by') %> <%= link_to topic.user.username, topic.user %>
+                <%= t('.popular.by', :author => link_to(topic.user.username, user_profile_path(topic.user))).html_safe %>
                 <ul class="tags">
                   <% topic.tags.each do |tag| %>
                     <li><%= link_to tag, topic_tag_path(tag.name) %></li>
@@ -67,10 +67,20 @@
       <ul class="items">
         <% @latest.each do |reply| %>
           <li>
-            <%= link_to_unless reply.anonymous?, image_tag(reply.author_avatar, :width => '43'), reply.user, :class => 'item-img' %>          
+            <%# TODO: Refactor this unless %>
+            <% unless reply.anonymous? %>
+              <%= link_to image_tag(reply.author_avatar, :width => '43'), user_profile_path(reply.user), :class => 'item-img' %>          
+            <% else %>
+              <%= image_tag(reply.author_avatar, :width => '43') %>          
+            <% end %>
             <div class="item-data">
               <p>
-                <%= t('.latest.has_left_a_comment', :author => link_to_unless(reply.anonymous?, reply.author_username, reply.user, :class => 'dark-lk'), :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
+                <%# TODO: Refactor this unless %>
+                <% unless reply.anonymous? %>
+                  <%= t('.latest.has_left_a_comment', :author => link_to_unless(reply.anonymous?, reply.author_username, user_profile_path(reply.user), :class => 'dark-lk'), :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
+                <% else %>
+                  <%= t('.latest.has_left_a_comment', :author => reply.author_username, :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
+                <% end %>
               </p>
               <p class="feed-date"><%= t 'helpers.ago', :time => time_ago_in_words(reply.created_at) %></p>
             </div>
