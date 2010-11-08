@@ -109,4 +109,5 @@ filter: alpha(opacity=50);
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
 .pm-message{color: #3f4245; line-height: 18px;}
-.hide{display: none;}
+.hide,
+.passwords{display: none;}

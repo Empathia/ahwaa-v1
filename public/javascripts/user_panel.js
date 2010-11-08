@@ -5,7 +5,7 @@ $(function(){
                return false;
            }
            var form = link.closest('form');
-           form.find('.user-edit span').css('display', 'none').end().find('input').css('display', 'block');
+           form.find('.user-edit span').css('display', 'none').end().find('input, .passwords').css('display', 'block');
            var welcome = form.find('.welcome-wrapper');           
            if(welcome.length && welcome.is(':visible')){
 
@@ -30,7 +30,7 @@ $(function(){
                welcome.find('.enter-profile').children().removeClass('active');
                welcome.fadeIn();
            });
-           form.find('input').css('display', 'none').end().find('span').css('display', 'block');
+           form.find('input, .passwords').css('display', 'none').end().find('span').css('display', 'block');
      });    
      
      $('.edit-profile').click(function(){
