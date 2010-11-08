@@ -88,10 +88,17 @@
           </div>
           <ul class="user-edit">
             <li>           
+                <div><%= t('.sidebar.password.new_password') %></div>
                 <div>
-                  <%= text_field :username, :required => "true" %>
+                  <%= text_field :password, :required => "true" %>
                 </div>
             </li>
+            <li>           
+                <div><%= t('.sidebar.password.confirm_password') %></div>
+                <div>
+                  <%= text_field :confirm_password, :required => "true" %>
+                </div>
+            </li>            
             <li>
               <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
@@ -160,7 +167,7 @@
         </ul>
         <div class="from"><%= link_to 'By LGBT admin' %> in June 22, 2010</div>
         <div class="msg">
-          <p>Wellcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
+          <p>Welcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
         </div>
       </li>
       <li>    
@@ -200,7 +207,8 @@
       <div class="bar border-all bar-private">
         <ul class="opts">
           <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
-          <li><%= link_to 'Block', nil, :class => "pm-block" %></li>   
+          <li><%= link_to 'Block', nil, :class => "pm-block" %></li>
+          <li><%= link_to 'Reply', nil, :class => "pm-reply" %></li><!-- This option will be hidden on the welcome private message -->                
         </ul> 
         <div class="bar-arrow down"><%= link_to 'Next', nil %></div>
         <div class="bar-arrow up active"><%= link_to 'Back', nil %></div>

@@ -60,6 +60,8 @@ input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid
 .pm-delete:hover{background-position: 0 -18px}
 .pm-block{background-position: 0 -37px}
 .pm-block:hover{background-position: 0 -56px}
+.pm-reply{background-position: 0 -75px}
+.pm-reply:hover{background-position: 0 -94px}
 .pagination{float: left; position: absolute; left: 50%; margin-top: 8px;}
 .pagination > div{position: relative; left: -50%; float: left;}
 .pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;}

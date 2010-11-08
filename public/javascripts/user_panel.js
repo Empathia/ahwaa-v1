@@ -9,11 +9,11 @@ $(function(){
            var welcome = form.find('.welcome-wrapper');           
            if(welcome.length && welcome.is(':visible')){
 
-             welcome.fadeOut(function(){               
-                 welcome.next().fadeIn();
-                 (!welcome.find('a').hasClass('active')) && avatars.toggle();
-                 link.addClass('active');
-             });
+                 welcome.fadeOut(function(){               
+                     welcome.next().fadeIn();
+                     (!welcome.find('a').hasClass('active')) && avatars.toggle();
+                     link.addClass('active');
+                 });  
            }
            else{          
              link.addClass('active');
