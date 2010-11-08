@@ -12,22 +12,22 @@
     </div>
     <div class="white-area inner-shadow">  
       <section>
-        <div class="usr-sec-title">
-          <hr>          
-          <h2><%= t('.sidebar.profile.title') %></h2>
-          <%= link_to nil, :class => "edit-profile" do %>
-            <span class="border-all"><span><%= t('.sidebar.profile.edit') %></span></span>
-          <% end %>
-        </div>
-        <div class="user-edit"> 
-          <div class="welcome">
-            <p><b><%= t('.sidebar.profile.welcome') %></b></p>
-            <p><%= t('.sidebar.profile.welcome_legend') %></p>
-            <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
+        <form >
+          <div class="usr-sec-title">
+            <hr>          
+            <h2><%= t('.sidebar.profile.title') %></h2>
+            <%= link_to nil, :class => "edit-lk edit-profile" do %>
+              <span class="border-all"><span><%= t('.sidebar.profile.edit') %></span></span>
+            <% end %>
           </div>
-        </div>
-        <form class="hide"><!-- add class "hide" only if the user edits his profile for the 1st time-->
-          <ul class="user-edit">
+          <div class="user-edit welcome-wrapper"> 
+            <div class="welcome">
+              <p><b><%= t('.sidebar.profile.welcome') %></b></p>
+              <p><%= t('.sidebar.profile.welcome_legend') %></p>
+              <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
+            </div>
+          </div>
+          <ul class="user-edit hide"><!-- add class "hide" only if the user edits his profile for the 1st time-->
             <li>
               <div><%= t('.sidebar.profile.gender.label') %></div>
               <div>
@@ -77,33 +77,37 @@
           </ul>
         </form>
       </section>
-      <section>
-        <div class="usr-sec-title">
-          <hr>          
-          <h2><%= t('.sidebar.password.title') %></h2>
-          <%= link_to nil do %>
-            <span class="border-all"><span><%= t('.sidebar.password.edit') %></span></span>
-          <% end %>
-        </div>
+      <section>  
         <form>
+          <div class="usr-sec-title">
+            <hr>          
+            <h2><%= t('.sidebar.password.title') %></h2>
+            <%= link_to nil, :class => "edit-lk" do %>
+              <span class="border-all"><span><%= t('.sidebar.password.edit') %></span></span>
+            <% end %>
+          </div>
           <ul class="user-edit">
             <li>           
                 <div>
                   <%= text_field :username, :required => "true" %>
                 </div>
             </li>
+            <li>
+              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
+            </li>
           </ul>
         </form>
       </section>
       <section>
-        <div class="usr-sec-title">
-          <hr>
-          <h2><%= t('.sidebar.my_account.title') %></h2>
-          <%= link_to nil do %>
-            <span class="border-all"><span><%= t('.sidebar.my_account.edit') %></span></span>
-          <% end %>
-        </div>
         <form>
+          <div class="usr-sec-title">
+            <hr>
+            <h2><%= t('.sidebar.my_account.title') %></h2>
+            <%= link_to nil, :class => "edit-lk" do %>
+              <span class="border-all"><span><%= t('.sidebar.my_account.edit') %></span></span>
+            <% end %>
+          </div>
           <ul class="user-edit">
             <li>
               <div><%= t('.sidebar.my_account.nickname') %></div>
@@ -125,6 +129,10 @@
                 <span>English</span>
                 <%= text_field :username, :required => "true" %>
               </div>
+            </li>
+            <li>
+              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
         </form>
