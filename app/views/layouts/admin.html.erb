@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Lgbt</title>
-  <%= javascript_include_tag :defaults, 'form_validator', :cache => true%>
+  <%= javascript_include_tag :defaults, 'form_validator', 'Neon', :cache => true%>
   <%= stylesheet_link_tag 'reset', 'fonts', 'style', 'admin' %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
@@ -12,18 +12,15 @@
 </head>
 <body>
   <div>
-    <% flash.each do |key, msg| %>
-      <div class="flash <%= key %>"><%= msg %></div>
-    <% end %>          
-        <header>                  
-          <div class="rainbow"></div>        
+        <header>
+          <div class="rainbow"></div>
           <div class="gray dark"></div>
           <div class="aligned">
             <div class="header-top topic">
-              <div class="links">  
+              <div class="links">
                 <div><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
                 <div><%= link_to 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ', { :locale => 'ar' }, :class => 'lan' %></div>
-              </div>        
+              </div>
               <ul class="logged_opts">
                 <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
                 <li><%= link_to t('.header.logged_in.my_account') %></li>
@@ -38,14 +35,15 @@
                 <li><%= link_to 'Topics Requests', admin_topic_requests_path %></li>
                 <li><%= link_to 'Users', admin_users_path %></li>
                 <li><%= link_to 'Bad Words', admin_bad_words_path %></li>
-                <li><%= link_to 'Tags', nil %></li>                
-              </ul> 
+                <li><%= link_to 'Tags', nil %></li>
+              </ul>
             </div>
           </div>
         </header>
     <div class="container">
       <div class="aligned">
         <div class="admin border-all">
+          <%= print_flash %>
           <%= yield %>
         </div>
       </div>

@@ -8,6 +8,7 @@
     <th class="updated_at">Updated at</th>
     <th class="title">Title</th>
     <th class="user">User</th>
+    <th class="related_content">Related Content</th>
     <th class="edit">Edit</th>
     <th class="delete border-right">Delete</th>
   </tr>
@@ -18,6 +19,7 @@
       <td><%= topic.title %></td>
       <td><%= topic.user.username %></td>
       <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
+      <td><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
       <td><%= link_to 'Delete',admin_topic_path(topic), :method => :delete %></td>
     </tr>
   <% end %>

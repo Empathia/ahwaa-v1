@@ -4,7 +4,7 @@ module Fetchers
   class InvalidLinkAddress < RuntimeError; end
 
   class Link
-    attr_reader :title, :description, :thumbnail_url
+    attr_reader :title, :description, :thumbnail_url, :possible_thumbnails
 
     def self.scrape(url)
       begin
@@ -22,7 +22,8 @@ module Fetchers
       @doc = doc
       @title = find_title
       @description = find_description
-      @thumbnail_url = thumbnails.first
+      @possible_thumbnails = thumbnails
+      @thumbnail_url = @possible_thumbnails.first
     end
 
     def thumbnails
