@@ -3,6 +3,7 @@ body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png');
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4;}
+.dark-lk{color: #5d646a; font-weight: bold;}
 input[type=text],
 input[type=password],
 input[type=email],
@@ -220,8 +221,11 @@ footer > div > ul > li{display: inline;}
   background-image: -moz-linear-gradient(top, #fbfeff, #f2fbff);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fbfeff),color-stop(1, #f2fbff));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";  
-}    
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";
+}
+
+.responses {background:url("../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-left:15px;display:inline!important;white-space:nowrap;}
+.tags{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px; margin: 0 10px;}   
 
 .response-wrapper{border: 1px solid #daecf3;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden;}

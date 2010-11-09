@@ -8,17 +8,21 @@ module Fetchers
 
     def self.scrape(url)
       begin
-        doc = Nokogiri::HTML(open(url))
+        doc = Nokogiri::HTML(open(URI.encode(url)))
         yield new(url, doc)
       rescue SocketError, Errno::ENOENT, URI::InvalidURIError
         raise InvalidLinkAddress
       end
     end
 
+    def self.get_possible_thumbnails(url)
+      scrape(url){ |response| return response.possible_thumbnails}
+    end
+
     private
 
     def initialize(url, doc)
-      @uri = URI(url)
+      @uri = URI(URI.encode(url))
       @doc = doc
       @title = find_title
       @description = find_description
@@ -28,7 +32,7 @@ module Fetchers
 
     def thumbnails
       image = @doc.at_css("meta[@property='og:image']") || image_src
-      return [image] if image
+      return [image[:content]] if image
       all_images
     end
 
