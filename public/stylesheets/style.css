@@ -3,6 +3,7 @@ body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png');
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4;}
+.dark-lk{color: #5d646a; font-weight: bold;}
 input[type=text],
 input[type=password],
 input[type=email],
@@ -222,3 +223,6 @@ footer > div > ul > li{display: inline;}
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";  
 }
+
+.responses {background:url("../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-left:15px;display:inline!important;white-space:nowrap;}
+.tags{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px; margin: 0 10px;}
