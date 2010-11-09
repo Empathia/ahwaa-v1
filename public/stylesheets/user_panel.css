@@ -102,12 +102,16 @@ filter: alpha(opacity=50);
 .avatars > .active{border: 2px solid #468ac4;}
 .checkmark{position: absolute; right: -10px; top: -10px;}
 
-.pm-details{overflow: hidden; font-size: 12px; margin-top: 5px;}
-.pm-user{overflow: hidden; margin-bottom: 22px;}
+.pm-details{overflow: hidden; font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
+.pm-user{overflow: hidden; margin-bottom: 20px;}
+.pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
+.pm-user-response > a{color: #5e5e5e; font-weight: bold;}
 .pm-user .thumb{margin-right: 16px;}
 .pm-user-details{color: #b3b8bc; margin-top: 4px;}
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
-.pm-message{color: #3f4245; line-height: 18px;}
+.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #d5dae1; padding-bottom: 15px;}
+.response{color: #999999}
 .hide,
-.passwords{display: none;}
+.passwords{display: none;}   
+.response-wrapper{margin-top: 4px; width: 100%; float: left;}

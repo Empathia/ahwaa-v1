@@ -221,4 +221,9 @@ footer > div > ul > li{display: inline;}
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fbfeff),color-stop(1, #f2fbff));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";  
-}
+}    
+
+.response-wrapper{border: 1px solid #daecf3;}
+.response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden;}
+.new-response > div{padding: 7px;}
+.new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}

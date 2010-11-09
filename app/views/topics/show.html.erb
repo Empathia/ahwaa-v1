@@ -114,7 +114,7 @@
 </div>
 <form id="add_comments" class="add_comments border-all" action="#">
   <span class="comm-arrow"></span>
-  <div>
+  <div class="response-wrapper">
     <div>
       <div class="add_comments_top"><%= link_to 'navidsafa', '#'%><%= link_to t('.reply_form.cancel'), '#', :class => 'cancel-comment' %></div>
       <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>           
@@ -197,7 +197,7 @@
         <% end %>
       <% end %>
     </ul>      
-    <div class="new-response">
+    <div class="new-response response-wrapper">
       <div>
         <a href="#"><%= t('.reply_form.new_response') %></a>
       </div>
