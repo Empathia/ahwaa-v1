@@ -16,6 +16,7 @@ class Topic < ActiveRecord::Base
   has_many :users, :through => :replies
   has_many :topic_experts, :dependent => :destroy
   has_many :experts, :through => :topic_experts
+  has_many :related_contents
 
   validates :title, :presence => true
   validates :content, :presence => true

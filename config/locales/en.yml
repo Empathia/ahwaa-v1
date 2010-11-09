@@ -168,6 +168,8 @@ en:
         password:
           title: Password
           edit: Edit Password
+          new_password: New Password
+          confirm_password: Confirm Password
         my_account:
           title: My Account
           edit: Edit My Account

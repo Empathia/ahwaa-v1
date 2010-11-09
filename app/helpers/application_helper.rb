@@ -17,4 +17,13 @@ module ApplicationHelper
     head { stylesheet_link_tag *args }
   end
 
+  # small helper to DRY up printing flash messages
+  def print_flash
+    flash.collect do |key, msg|
+      content_tag(:div, {:class => "flash #{key}"}, true) do
+        msg
+      end
+    end.join.html_safe
+  end
+
 end

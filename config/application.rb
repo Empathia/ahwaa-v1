@@ -1,5 +1,6 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'ping'
 require 'home_run'
 require 'rails/all'
 

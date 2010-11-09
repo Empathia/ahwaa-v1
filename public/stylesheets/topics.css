@@ -16,11 +16,8 @@ article > header > div{float: right;}
 aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
-.new-response,
-.add_comments > div{border: 1px solid #daecf3;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
-.new-response > div,
-.add_comments > div > div{border: 2px solid #e9f0f3; overflow: hidden;}
+
 .add_comments > div > div{padding: 10px;}
 .add_comments > div > div > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
 .add_comments_top{overflow: hidden;}
@@ -69,8 +66,7 @@ aside section:first-child{border-top: none;}
 .comments .expert > div{border:2px solid #f2f5f1}
 .expert > .comm-arrow{background-position: 0 -26px;}
 
-.new-response > div{padding: 7px;}
-.new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
+
 .avatar-wrapper{overflow: hidden; margin-bottom: 15px;}
 .avatar-wrapper > .avatar{float: left; margin-right: 10px;}
 .avatar-wrapper > div{overflow: hidden;}

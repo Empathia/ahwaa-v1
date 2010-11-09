@@ -1,5 +1,4 @@
 Lgbt::Application.routes.draw do
-
   get "search/topics"
 
   get "login" => "sessions#new"
@@ -30,7 +29,9 @@ Lgbt::Application.routes.draw do
         delete :promote_to_topic
       end
     end
-    resources :topics, :except => [:show]
+    resources :topics, :except => [:show] do
+      resources :related_contents, :only => [:destroy, :show, :index, :create]
+    end
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do
         put :toggle_expert

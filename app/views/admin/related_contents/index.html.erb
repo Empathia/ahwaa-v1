@@ -1,0 +1,33 @@
+<div class="adm-title">
+  <h1>Related Content for <%= @topic.title %></h1>
+</div>
+<% javascript :form_validator, :form_script, :RelatedContent %>
+<% head do %>
+  <script type="text/javascript" >
+    currentTopicId = <%= @topic.id %>;
+  </script>
+<% end %>
+
+<%= form_for [:admin, @topic, @related_content], :html => { :id => 'related_content_form'} do |f| %>
+  <p>
+    <%= f.label :source_url %>
+    <%= f.text_field :source_url, :required => "true" %>
+  </p>
+  <p>
+    <%= f.submit 'Add Related Content' %>
+  </p>
+<% end %>
+<br/>
+<ul class='related-content'>
+  <% @related_contents.each do |content| %>
+    <li class='<%= content.css_class %>'  >
+      <%= link_to image_tag(content.thumbnail.url), content.source_url, :target => "_blank" %>
+      <div class='related-content-details'>
+        <%= link_to content.source_url, content.source_url, :target => "_blank" %>
+        <br/>
+        <%= link_to 'Delete', admin_topic_related_content_path(@topic, content), :method => :delete %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+

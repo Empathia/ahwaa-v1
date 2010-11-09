@@ -10,13 +10,24 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .user-details span{font-size: 12px; color: #61656a;} 
 .usr-sec-title{overflow: hidden;  margin-bottom: 15px; position: relative; }
 .usr-sec-title > h2{color: #61656a; font-size: 12px; float: left; padding: 5px 10px 0 0;  position: relative; background-color: #ffffff;}
-.usr-sec-title > a{float: right; text-indent: -9999px; width: 25px; height: 22px; padding-left: 10px; background-color: #ffffff; position: relative;}
-.usr-sec-title > a > span{height: 20px; display: block; border: 1px solid #e1e8f0; padding-left: 5px;
+.edit-lk{float: right; text-indent: -9999px; width: 25px; height: 22px; padding-left: 10px; background-color: #ffffff; position: relative;}
+.edit-lk > span{height: 20px; display: block; border: 1px solid #e1e8f0; padding-left: 5px;
   background-image: -moz-linear-gradient(top, #f9fbfc, #eaf2f6);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fbfc),color-stop(1, #eaf2f6));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f6');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f6')";  
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f6')";
 }   
+
+.usr-sec-title > .active > span{
+  border-top: 1px solid #a5aab0;
+  background-image: -moz-linear-gradient(top, #eaf1f5, #f8fbfc);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf1f5),color-stop(1, #f8fbfc));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc')";  
+    
+  
+} 
+
 .usr-sec-title span > span{display: block; height: 100%; background: url('../images/icn-pencil.png') no-repeat 0px 4px;}
 .usr-sec-title > hr{color: #efeff0; background-color: #efeff0; float: left; width: 121px; position: absolute; width: 100%; top: 5px;}                    
 .user-edit{padding-bottom: 20px;}
@@ -49,6 +60,8 @@ input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid
 .pm-delete:hover{background-position: 0 -18px}
 .pm-block{background-position: 0 -37px}
 .pm-block:hover{background-position: 0 -56px}
+.pm-reply{background-position: 0 -75px}
+.pm-reply:hover{background-position: 0 -94px}
 .pagination{float: left; position: absolute; left: 50%; margin-top: 8px;}
 .pagination > div{position: relative; left: -50%; float: left;}
 .pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;}
@@ -89,11 +102,16 @@ filter: alpha(opacity=50);
 .avatars > .active{border: 2px solid #468ac4;}
 .checkmark{position: absolute; right: -10px; top: -10px;}
 
-.pm-details{overflow: hidden; font-size: 12px; margin-top: 5px;}
-.pm-user{overflow: hidden; margin-bottom: 22px;}
+.pm-details{overflow: hidden; font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
+.pm-user{overflow: hidden; margin-bottom: 20px;}
+.pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
+.pm-user-response > a{color: #5e5e5e; font-weight: bold;}
 .pm-user .thumb{margin-right: 16px;}
 .pm-user-details{color: #b3b8bc; margin-top: 4px;}
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
-.pm-message{color: #3f4245; line-height: 18px;}
-.hide{display: none;}
+.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #d5dae1; padding-bottom: 15px;}
+.response{color: #999999}
+.hide,
+.passwords{display: none;}   
+.response-wrapper{margin-top: 4px; width: 100%; float: left;}

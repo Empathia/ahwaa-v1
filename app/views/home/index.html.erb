@@ -70,8 +70,10 @@
             <%# TODO: Refactor this unless %>
             <% unless reply.anonymous? %>
               <%= link_to image_tag(reply.author_avatar, :width => '43'), user_profile_path(reply.user), :class => 'item-img' %>          
-            <% else %>
-              <%= image_tag(reply.author_avatar, :width => '43') %>          
+            <% else %>            
+              <span class="item-img">
+                <%= image_tag(reply.author_avatar, :width => '43') %>          
+              </span>
             <% end %>
             <div class="item-data">
               <p>
