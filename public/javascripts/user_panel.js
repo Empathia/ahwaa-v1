@@ -23,20 +23,67 @@ $(function(){
      });
      
      $('.cancel').click(function(){
-           var form = $(this).closest('form');
-           form.find('.edit-lk').removeClass('active');
-           var welcome = form.find('.welcome-wrapper');
-           welcome.length && welcome.next().fadeOut(function(){
-               welcome.find('.enter-profile').children().removeClass('active');
-               welcome.fadeIn();
-           });
-           form.find('input, .passwords').css('display', 'none').end().find('span').css('display', 'block');
+         closeFormEdit($(this).closest('form')); 
      });    
      
      $('.edit-profile').click(function(){
        // avatars.toggle(); 
      }); 
      
+      
+     $('.edit-form').submit(function(){
+        //Ajax If Success 
+        var form = $(this);
+        if(true){
+            closeFormEdit(form);                                                                                                                               
+            var successMsg = $('<div class="success-validation border-all"><p>' + I18n.t('users.show.sidebar.saved') + '</p></div>').insertAfter(form.find('.usr-sec-title'));
+            setTimeout(function(){
+                successMsg.fadeOut(function(){
+                    $(this).remove();
+                });
+            }, 2000);
+        }             
+        return false; 
+     });          
+     
+     
+     function closeFormEdit(form){
+        form.find('.edit-lk').removeClass('active');
+        var welcome = form.find('.welcome-wrapper');
+        welcome.length && welcome.next().fadeOut(function(){
+            welcome.find('.enter-profile').children().removeClass('active');
+            welcome.fadeIn();
+        });
+        form.find('input, .passwords').css('display', 'none').end().find('span').css('display', 'block');
+     }
+     /*
+     $('.edit-form.profile').find('input[type=submit]').formValidator(
+         {
+             'errors': {  
+                 'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
+                 'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+             }
+         }
+     );
+     
+     $('.edit-form.password').find('input[type=submit]').formValidator(
+          {
+              'errors': {  
+                  'password': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
+                  'confirm_password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+              }
+          }
+     );
+
+     $('.edit-form.account').find('input[type=submit]').formValidator(
+          {
+              'errors': {  
+                  'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
+                  'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+              }
+          }
+     );
+     */     
      var avatars = {
          toggle: function(){
              $(this).hasClass('active') ? avatars.hide() : avatars.show();

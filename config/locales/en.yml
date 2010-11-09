@@ -170,6 +170,9 @@ en:
           edit: Edit Password
           new_password: New Password
           confirm_password: Confirm Password
+          errors:
+             new_password: The new password is to short.
+             confirm_password: "Password doesn't match confirmation"
         my_account:
           title: My Account
           edit: Edit My Account
@@ -177,6 +180,7 @@ en:
           mail: 'Mail:'
           language: 'Language:'
         terminate_account: Terminate account
+        saved: "Information saved successfully!"
       content:
         avatars: 
           suggested: Suggested Avatars
