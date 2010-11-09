@@ -23,7 +23,9 @@
     <li class='<%= content.css_class %>'  >
       <%= link_to image_tag(content.thumbnail.url), content.source_url, :target => "_blank" %>
       <div class='related-content-details'>
-        <%= link_to content.source_url, content.source_url, :target => "_blank" %>
+        <%= link_to content.title, content.source_url, :target => "_blank" %>
+        <br/>
+        <%=  content.description %>
         <br/>
         <%= link_to 'Delete', admin_topic_related_content_path(@topic, content), :method => :delete %>
       </div>
