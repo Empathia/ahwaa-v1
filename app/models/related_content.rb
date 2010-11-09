@@ -17,7 +17,7 @@ class RelatedContent < ActiveRecord::Base
 
   # Detects the content type based on the url.
   def self.detect_type(url)
-    return nil if !(UrlValidator::URL_REGEX =~ url) || !NetRequest.valid_url?(url)
+    return nil if !(UrlValidator::URL_REGEX =~ url)
 
     if is_a_video? url
       RelatedVideo
