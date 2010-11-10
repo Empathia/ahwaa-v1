@@ -89,7 +89,10 @@
           </div>
           <div class="header-wrapper">
             <div class="header-tags aligned">
-              <ul>
+              <ul id="header-tags">
+                <% Topic.tag_counts.each do |tag| %>
+                  <li><%= link_to tag, topic_tag_path(tag.name) %></li>
+                <% end %>
                 <% Topic.tag_counts.each do |tag| %>
                   <li><%= link_to tag, topic_tag_path(tag.name) %></li>
                 <% end %>

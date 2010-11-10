@@ -24,5 +24,20 @@ $(document).ready(function() {
     }
   });
 
+      var maxwidth = 700;
+      var ulwidth = $("#header-tags").width();
+      var ulelements = $("#header-tags").children();
+      var overelement;
+      
+      ulelements.each(function(e) {
+          if (ulwidth > maxwidth){
+              overelement = $("#header-tags li:last-child").prev();
+              $("#header-tags li:last-child").prev().remove();
+              ulwidth = $("#header-tags").width();
+          }
+          else{
+              alert('thats it');
+          }
+        })
 });
 

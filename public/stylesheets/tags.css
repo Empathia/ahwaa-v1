@@ -6,7 +6,7 @@ section.topics{background:white url('../images/bg-gradient2.png') repeat-x 0 0;m
 .order .active {color:#6c6f71;font-weight:bold;}
 .items{overflow:hidden;padding-top:25px;}
 .items > li {line-height:20px;margin-bottom:25px;overflow:hidden;float:left;width:430px;padding:0 25px;}
-.items > li > div {border-bottom:1px solid #f2f7fa;overflow:hidden;padding-bottom:25px;}
+.items > li > div {border-bottom:1px solid #f2f7fa;overflow:hidden;padding-bottom:25px;min-height:80px;}
 .items > li > div.bottom{border:none;padding:0;}
 .item-img > img {border:2px solid #FFFFFF;float:left}
 .item-img {border:1px solid #dadee0;float:left}
