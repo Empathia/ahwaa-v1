@@ -12,7 +12,7 @@
     </div>
     <div class="white-area inner-shadow">  
       <section>
-        <form >
+        <form action="#" method="post" class="edit-form profile">
           <div class="usr-sec-title">
             <hr>          
             <h2><%= t('.sidebar.profile.title') %></h2>
@@ -32,14 +32,14 @@
               <div><%= t('.sidebar.profile.gender.label') %></div>
               <div>
                 <span><%= t('.sidebar.profile.gender.male') %></span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :gender, :required => "true" %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
               <div><%= t('.sidebar.profile.sexual_orientation') %></div>
               <div>
                 <span>Gay</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :sexual_orientation, :required => "true" %>
               </div>
             </li>
             <li>             
@@ -53,21 +53,21 @@
               <div><%= t('.sidebar.profile.religion') %></div>
               <div>
                 <span>Judaism</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :religion, :required => "true" %>
               </div>
             </li>
             <li>             
               <div><%= t('.sidebar.profile.place_birth') %></div>
               <div>
                 <span>Iran</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :place_birth, :required => "true" %>
               </div>
             </li>
             <li>             
               <div><%= t('.sidebar.profile.political_view') %></div>
               <div>
                 <span>Social democracy</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :political_view, :required => "true" %>
               </div>
             </li>
             <li>
@@ -78,25 +78,25 @@
         </form>
       </section>
       <section>  
-        <form>
+        <form action="#" method="post" class="edit-form password">
           <div class="usr-sec-title">
             <hr>          
             <h2><%= t('.sidebar.password.title') %></h2>
             <%= link_to nil, :class => "edit-lk" do %>
               <span class="border-all"><span><%= t('.sidebar.password.edit') %></span></span>
             <% end %>
-          </div>
+          </div>   
           <ul class="user-edit passwords">
             <li>
                 <div><%= t('.sidebar.password.new_password') %></div>
                 <div>
-                  <%= text_field :password, :required => "true" %>
+                  <%= password_field :password, :required => "true" %>
                 </div>
             </li>
             <li>
                 <div><%= t('.sidebar.password.confirm_password') %></div>
                 <div>
-                  <%= text_field :confirm_password, :required => "true" %>
+                  <%= password_field :confirm_password, :required => "true" %>
                 </div>
             </li>            
             <li>
@@ -107,7 +107,7 @@
         </form>
       </section>
       <section>
-        <form>
+        <form action="#" method="post" class="edit-form account">
           <div class="usr-sec-title">
             <hr>
             <h2><%= t('.sidebar.my_account.title') %></h2>
@@ -120,21 +120,21 @@
               <div><%= t('.sidebar.my_account.nickname') %></div>
               <div>
                 <span>navidsafa</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :nickname, :required => "true" %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
               <div><%= t('.sidebar.my_account.mail') %></div>
               <div>
                 <span>navid@freshout.us</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :mail, :required => "true" %>
               </div>
             </li>
             <li>             
               <div><%= t('.sidebar.my_account.language') %></div>
               <div>
                 <span>English</span>
-                <%= text_field :username, :required => "true" %>
+                <%= text_field :language, :required => "true" %>
               </div>
             </li>
             <li>
@@ -144,7 +144,7 @@
           </ul>
         </form>
       </section>
-      <p><%= link_to 'Terminate account', nil, :class => "terminate" %></p>    
+      <p><%= link_to t('.sidebar.terminate_account'), nil, :class => "terminate" %></p>    
     </div>
   </aside> 
   <section class="avatars-wrapper"> 

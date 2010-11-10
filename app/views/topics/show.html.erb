@@ -27,20 +27,7 @@
       </div>
       <div class="related-carrousel">
         <ul>
-          <li>
-            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
-            <%= link_to 'How to accept his way son?' %></li>
-          <li>
-            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
-            <%= link_to 'Interview with gay son and his parents' %>
-          </li>
-          <li>
-            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
-            <%= link_to 'Gallery of some common theme' %></li>
-          <li>
-            <%= link_to image_tag('no-image.jpg', :width => '50'), nil, :class => "avatar" %>
-            <%= link_to 'History of son run of his home' %>
-          </li>
+          <%= render :partial => 'related_content', :collection => @related_contents %>
         </ul>
       </div>
       <div class="arrows">
@@ -82,18 +69,18 @@
                   <p><%= link_to 'Taxxodium' %> <%= t('.sidebar.experts.expert') %></p>
                   <p><%= t('.sidebar.experts.points', {:points => 150})%></p>
                   <a href="#" class="btn-gradient send-private-msg"><%= t('.sidebar.experts.send_msg') %></a>
-                </div>  
-                <div class="avatar">
-                  <%= image_tag user.profile.avatar.url, :width => '50' %>  
                 </div>
-              </div>                              
+                <div class="avatar">
+                  <%= image_tag user.profile.avatar.url, :width => '50' %>
+                </div>
+              </div>
               <form action="#" method="post" class="form-private-msg">
                 <textarea class="border-all"></textarea>
                 <div class="private-msg-btns">
                   <input type="button" class="cancel btn-gradient" value="<%= t('.sidebar.experts.cancel') %>">
                   <input type="submit" class="btn-gradient" value="<%= t('.sidebar.experts.submit') %>">
                 </div>
-              </form>   
+              </form>
               <div class="recently-topics">
                 <p><%= t('.sidebar.experts.recently_participated') %></p>
                 <ul>
@@ -117,13 +104,13 @@
   <div class="response-wrapper">
     <div>
       <div class="add_comments_top"><%= link_to 'navidsafa', '#'%><%= link_to t('.reply_form.cancel'), '#', :class => 'cancel-comment' %></div>
-      <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>           
+      <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>
       <div class="res-types-wrapper">
         <div>
           <ul class="res-types">
              <% Reply::CATEGORIES.each_with_index do |category, i| %>
                 <li class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
-                  <span class="<%= category %>"></span>                
+                  <span class="<%= category %>"></span>
                   <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="<%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
 
                 </li>
@@ -133,7 +120,7 @@
         </div>
       </div>
     </div>
-  </div>    
+  </div>
 </form>
 <% @replies.each do |index, replies| %>
   <div class="comments" id="comments_<%= index %>">
@@ -146,17 +133,17 @@
               <div class="avatar-wrapper">
                 <span class="avatar">
                   <%= image_tag reply.author_avatar, :width => '50' %>
-                </span>                  
+                </span>
                 <div>
                   <div class="res-username">
                     <% unless reply.anonymous? %>
                       <%= link_to reply.user.username %>
                     <% else %>
                       <%= t(".replies.anonymous") %>
-                    <% end %>       
-                  </div>      
+                    <% end %>
+                  </div>
                   <div class="res-flag-btns">
-                    <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>                  
+                    <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>
                     <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
                       <span><%= t(".reply_form.flag") %></span>
                     </a>
@@ -164,7 +151,7 @@
                 </div>
                 <div class="res-type-wrapper">
                   <div>
-                    <div>                                    
+                    <div>
                       <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
                     </div>
                   </div>
@@ -184,7 +171,7 @@
                           <%= link_to reply_reply.user.username %>
                         <% else %>
                           <%= t(".replies.anonymous") %>
-                        <% end %>                      
+                        <% end %>
                       </div>
                       <%= simple_format reply_reply.content %>
                     </div>
@@ -193,10 +180,10 @@
                 </ul>
               <% end %>
             </div>
-          </div>            
+          </div>
         <% end %>
       <% end %>
-    </ul>      
+    </ul>
     <div class="new-response response-wrapper">
       <div>
         <a href="#"><%= t('.reply_form.new_response') %></a>
