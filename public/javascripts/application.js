@@ -23,20 +23,21 @@ $(document).ready(function() {
       return false;
     }
   });
-
+      //function to place the extra topic tags into the "more" vertical list
+      
       var maxwidth = 700;
       var ulwidth = $("#header-tags").width();
       var ulelements = $("#header-tags").children();
       var overelement;
+      var newli;
       
       ulelements.each(function(e) {
           if (ulwidth > maxwidth){
-              overelement = $("#header-tags li:last-child").prev();
-              $("#header-tags li:last-child").prev().remove();
+              overelement = $("#header-tags > li:last-child").prev();
+			  newli = '<li>' + overelement.html() + '</li>';
+		      $("#moretags").prepend(newli);
+			  overelement.remove();
               ulwidth = $("#header-tags").width();
-          }
-          else{
-              alert('thats it');
           }
         })
 });
