@@ -12,12 +12,44 @@ describe TopicsController do
     end
 
     before(:each) do
-      Topic.stub_chain(:tagged_with, :paginate).and_return(@topics = Topic.scoped)
+      @topics = Topic.scoped
+      @topics.stub_chain(:tagged_with, :paginate).and_return(@topics)
     end
 
-    it "filters topics by tag" do
-      Topic.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
-      do_request
+    context "when no param is given" do
+
+      before(:each) do
+        Topic.stub!(:newest).and_return(@topics)
+      end
+
+      it "sorts by newest" do
+        Topic.should_receive(:newest).and_return(@topics)
+        do_request
+      end
+
+      it "filters topics by tag" do
+        @topics.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
+        do_request
+      end
+
+    end
+
+    context "when param :by_response is given" do
+
+      before(:each) do
+        Topic.stub!(:by_replies_count).and_return(@topics)
+      end
+
+      it "sorts by replies count" do
+        Topic.should_receive(:by_replies_count).and_return(@topics)
+        do_request :by_responses => '1'
+      end
+
+      it "filters topics by tag" do
+        @topics.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
+        do_request :by_responses => '1'
+      end
+
     end
 
   end

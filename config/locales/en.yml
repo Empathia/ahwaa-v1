@@ -91,12 +91,18 @@ en:
       feeds: "What's happening now"
       join_now: Join Now
       get_started: And Get Started!
-      popular:
-        by: By %{author}
-        response: Response
       latest:
         has_left_a_comment: %{author} has left an %{comment} on %{topic}
   topics:
+    topic:
+      popular:
+        by: By %{author}
+        response: Response
+    tag:
+      sort_by:
+        label: "Sort by:"
+        newest: Newest
+        responses: Most responses
     show:
       contextual:
         add_comment: Add Comment

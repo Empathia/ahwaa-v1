@@ -14,6 +14,7 @@ gem 'paperclip', '~> 2.3.4'
 gem 'rio', '~> 0.4.2'
 gem 'random_data'
 gem 'nokogiri', '~> 1.4.3.1'
+gem 'friendly_id', '~> 3.1.7'
 
 group :development, :test do
   gem 'rcov'

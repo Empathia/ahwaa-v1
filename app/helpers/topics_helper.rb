@@ -34,4 +34,9 @@ module TopicsHelper
       content_tag :span, link_to(tag, "/topics/#{tag}")
     end.join(", ").html_safe
   end
+
+  # Set active class if currently in the page
+  def active_class(by_responses = false)
+    'active' if !!params[:by_responses] == by_responses
+  end
 end

@@ -8,7 +8,8 @@ class TopicsController < ApplicationController
   end
 
   def tag
-    @topics = Topic.tagged_with(params[:tag]).paginate(:page => params[:page])
+    @topics = params[:by_responses] ? Topic.by_replies_count : Topic.newest
+    @topics = @topics.tagged_with(params[:tag]).paginate(:page => params[:page])
   end
 
 end

@@ -2,6 +2,8 @@ class Topic < ActiveRecord::Base
   acts_as_taggable
 
   # TODO: attr_accessible
+  
+  has_friendly_id :title, :use_slug => true
 
   include Tanker
 
@@ -25,7 +27,9 @@ class Topic < ActiveRecord::Base
   after_save :update_tank_indexes, :if => 'Rails.env.production?'
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
 
-  scope :popular, order("replies_count DESC").limit(5)
+  scope :by_replies_count, order("replies_count DESC")
+  scope :newest, order("created_at DESC")
+  scope :popular, by_replies_count.limit(5)
 
   def self.per_page
     10
