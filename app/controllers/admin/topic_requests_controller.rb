@@ -21,7 +21,7 @@ class Admin::TopicRequestsController < ApplicationController
       :content => @topic_request.content
     }}
 
-    unless @topic_request.annonymous_post
+    unless @topic_request.anonymous_post
       options[:topic][:user_id] = @topic_request.user_id
     end
 

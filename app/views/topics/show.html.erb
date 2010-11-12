@@ -20,20 +20,7 @@
         <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
       </div>
     </article>
-    <section class="related-content border-all">
-      <h2 class="sec-title regular divide" style="border-bottom: 1px solid #e5e5e5"><%= t('.related_content.title') %></h2>
-      <div class="arrows">
-        <span class="back"><%= t('.related_content.arrows.back') %></span>
-      </div>
-      <div class="related-carrousel">
-        <ul>
-          <%= render :partial => 'related_content', :collection => @related_contents %>
-        </ul>
-      </div>
-      <div class="arrows">
-        <span class="next"><%= t('.related_content.arrows.next') %></span>
-      </div>
-    </section>
+    <%= render :partial => 'related_content', :locals => {:related_contents => @related_contents} %>
   </div>
   <aside class="border-right">
     <section>

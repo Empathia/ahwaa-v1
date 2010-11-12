@@ -17,6 +17,15 @@ en:
       update:
         notice: Your password has been changed. You can now log in with your new password.
 
+  activerecord:
+    models:
+      topic_request: Topic Request
+    attributes:
+      topic_request:
+        title: Title
+        content: Content
+        anonymous_post: Remain anonymous for topic authoring
+
   activemodel:
     attributes:
       reply:
@@ -94,6 +103,12 @@ en:
       latest:
         has_left_a_comment: %{author} has left an %{comment} on %{topic}
   topics:
+    related_content:
+      related_content:
+        title: Related Content
+        arrows:
+          back: Back
+          next: Next
     topic:
       popular:
         by: By %{author}
@@ -111,11 +126,6 @@ en:
           linked_in: Liked In
           facebook: Facebook
           twitter: Twitter
-      related_content:
-        title: Related Content
-        arrows:
-          back: Back
-          next: Next
       sidebar:
         hide_all_responses: Hide all responses
         show_all_responses: Show all responses
@@ -146,7 +156,6 @@ en:
     new:
       submit: Submit
       title: Request a Topic
-      remain_anonymous: Remain anonymous for topic authoring
   users:
     show:
       sidebar:                   

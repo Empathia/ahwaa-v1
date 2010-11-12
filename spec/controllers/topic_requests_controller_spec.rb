@@ -24,7 +24,7 @@ describe TopicRequestsController do
       post :create, :topic_request => {
         :title => 'title',
         :content => 'content',
-        :annonymous_post => false
+        :anonymous_post => false
       }
       response.should redirect_to('/')
 

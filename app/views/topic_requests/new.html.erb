@@ -1,4 +1,4 @@
-<h1><%= t('topic_requests.new.title') %></h1>
+<h1><%= t('.title') %></h1>
 <% javascript :form_validator, :form_script %>
 <%= form_for @topic_request do |f| %>
   <p>
@@ -10,11 +10,11 @@
     <%= f.text_area :content, :required => "true" %>
   </p>
   <p>
-    <%= f.check_box :annonymous_post %>
-    <span class="desc"><%= t('topic_requests.new.remain_anonymous') %></span>
+    <%= f.check_box :anonymous_post %>
+    <span class="desc"><%= TopicRequest.human_attribute_name(:anonymous_post) %></span>
   </p>
   <p>
-    <%= f.submit t('topic_requests.new.submit') %>
+    <%= f.submit t('.submit') %>
   </p>
 <% end %>
 

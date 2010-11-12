@@ -3,7 +3,7 @@ class CreateTopicRequests < ActiveRecord::Migration
     create_table :topic_requests do |t|
       t.integer :user_id
       t.string :title
-      t.boolean :annonymous_post
+      t.boolean :anonymous_post
       t.text    :content
 
       t.timestamps
