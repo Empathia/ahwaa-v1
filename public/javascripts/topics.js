@@ -3,21 +3,7 @@ $(function(){
     $('.related-content > div > ul').blockSlider();
 
 
-    $('.send-private-msg').not('.disabled').click(function(){
-        $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
-    })                                                               
-
-    $('.private-msg').find('.cancel').click(function(){
-        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
-    });
-                                                                                                  
-    $('.topic-experts').find('.avatar').mouseover(function(){
-        $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
-    });
-
-    $('.active-avatar').live('mouseleave', function(){
-        $(this).fadeOut('fast');
-    });
+   
 
     /* The Browser Sniff is pending*/
     $('.add_comments > div > textarea').click(function(){

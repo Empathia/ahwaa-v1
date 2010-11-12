@@ -1,1 +1,5 @@
 $('.search_results').html('<%= escape_javascript render(:collection => @results, :partial => 'result') %>');
+
+$('.search_results').find("li").length >= 1 ? $('.search_results').addClass('visible') : $('.search_results').removeClass('visible');
+
+$('.search_results li:last-child').addClass('last');

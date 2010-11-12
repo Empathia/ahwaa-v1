@@ -12,7 +12,6 @@ article{padding: 40px; background-color: #ffffff; display: block; margin-bottom:
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
-.avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
 aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
@@ -147,27 +146,10 @@ p:hover .icn-plus{display: inline;}
 .comment,.comments{background-position: 0 -14px;}
 .story,.experience{background-position: 0 -28px;}
 
-.topic-experts{width: 100%; float: left;}
-.topic-experts > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
-.topic-experts .private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left;}
-.expert-wrapper{overflow: hidden; margin-bottom: 15px;}
-.expert-info{float: left; text-align: left;}
-.expert-wrapper > .avatar{float: right;}
-.expert-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
-.expert-info > p{padding-bottom: 5px;}
-.private-msg > form{display: block; overflow: hidden; display: none;}
-.private-msg > form > textarea{width: 269px; height: 126px;}
-.private-msg-btns{float: right;}
-.private-msg-btns > input{height: 24px;}
-.private-msg .cancel{margin-right: 10px; color: #61656a;}
-.private-msg > .avatar{float: right;}          
-.recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
-.recently-topics > p{padding-bottom: 15px;}
-.recently-topics > ul{list-style:disc inside}
-.recently-topics > ul > li{padding-bottom: 9px;}
-.recently-topics > ul > li > a{color: #61656a;}
-.topic-experts > li > div{margin-bottom: 5px; margin-left: 1px; overflow: hidden;}
-.topic-experts > li:nth-child(2n+1){margin-right:20px;}
+.topic-avatars{width: 100%; float: left;}
+.topic-avatars > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
+.topic-avatars > li > div{margin-bottom: 5px; margin-left: 1px; overflow: hidden;}
+.topic-avatars > li:nth-child(2n+1){margin-right:20px;}
 
 .expand-btn{width: 132px; height: 26px; line-height: 2;}    
   
