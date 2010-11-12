@@ -21,7 +21,12 @@ class Reply < ActiveRecord::Base
 
   # Returns the internationalized version of the categories
   def self.categories
-    CATEGORIES.map { |c| I18n.t(:"activemodel.attributes.reply.categories.#{c}") }
+    categories_hash.values
+  end
+
+  # Returns a hash with raw category name as key, and i18n as value
+  def self.categories_hash
+    Hash[CATEGORIES.map { |category| [category, human_attribute_name(category)] }]
   end
 
   # Wether the user of the reply is null or not
@@ -31,7 +36,7 @@ class Reply < ActiveRecord::Base
 
   # Gets user's username, or 'anonymous'
   def author_username
-    anonymous? ? I18n.t('activemodel.attributes.reply.anonymous') : user.username
+    anonymous? ? Reply.human_attribute_name(:anonymous) : user.username
   end
 
   # Wether the reply is from an expert user or no
@@ -45,7 +50,7 @@ class Reply < ActiveRecord::Base
   end
   
   def i18n_category
-    I18n.t(:"activemodel.attributes.reply.categories.#{category}")
+    Reply.human_attribute_name(category)
   end
 
   private

@@ -119,6 +119,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 footer > .aligned{padding: 7px 0 36px 0;}
 footer > div > ul{float: right;}
 footer > div > ul > li{display: inline;}
+footer > div > span{float: left; color: #898f93;}
 
 .over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
   -moz-border-radius: 5px;

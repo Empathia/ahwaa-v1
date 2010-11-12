@@ -12,9 +12,7 @@
 </head>
 <body>
   <div>
-    <% flash.each do |key, msg| %>
-      <div class="flash <%= key %>"><%= msg %></div>
-    <% end %>
+    <%= print_flash %>
         <header>
           <div class="rainbow"></div>
           <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
@@ -123,7 +121,7 @@
     <footer>
       <div class="footer-shadow"></div>
       <div class="aligned">
-        <%= link_to t('.footer.all_rights', {:year => '2010'}) %>
+        <span><%= t('.footer.all_rights', {:year => '2010'}) %></span>
         <ul>
           <li><%= link_to t('.footer.about') %> - </li>
           <li><%= link_to t('.footer.privacy_policy') %></li>

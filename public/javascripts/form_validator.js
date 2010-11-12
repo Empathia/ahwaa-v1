@@ -15,6 +15,9 @@ $.fn.formValidator = function(options){
     });    
     
     function validateForm(_form, options){
+         var errors = _form.find('.error');
+         errors.filter('p').remove();
+         errors.removeClass('error');
          _form.find('input').each(function(e){
              var _input = $(this);
              var value = _input.val();

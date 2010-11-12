@@ -1,0 +1,34 @@
+<%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border all' } do |f| %>
+  <span class="comm-arrow"></span>
+  <div class="response-wrapper">
+    <div>
+      <div class="add_comments_top"><%= link_to current_username, '#'%><%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %></div>
+      <%= f.text_area :content, :placeholder => t('.form.write_response') %>
+      <div class="res-types-wrapper">
+        <div>
+          <ul class="res-types">
+             <% Reply.categories_hash.each_with_index do |hash, i| %>
+                <li class="res-type <%= response_type_class i %>">
+                  <span class="<%= hash.first %>"></span>
+                  <%= f.submit hash.last, :name => hash.last, :class => response_type_class(i) %>
+                </li>
+              <% end %>
+          </ul>
+          <label class="res-lbl"><%= t('.form.type_response') %></label>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+<% replies.each do |i, i_replies| %>
+  <div class="comments" id="comments_<%= i %>">
+    <ul>
+      <%= render i_replies %>
+    </ul>
+    <div class="new-response response-wrapper">
+      <div>
+        <%= link_to t('.new_response'), '#' %>
+      </div>
+    </div>
+  </div>
+<% end %>

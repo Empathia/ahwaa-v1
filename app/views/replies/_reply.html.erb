@@ -1,0 +1,40 @@
+<%= content_tag :li, :class => "comment-st-level #{("expert" if reply.from_expert?)}" do %>
+  <span class="comm-arrow"></span>
+  <div>
+    <div>
+      <div class="avatar-wrapper">
+        <span class="avatar">
+          <%= image_tag reply.author_avatar, :width => '50' %>
+        </span>
+        <div>
+          <div class="res-username">
+            <% unless reply.anonymous? %>
+              <%= link_to reply.user.username %>
+            <% else %>
+              <%= t(".anonymous") %>
+            <% end %>
+          </div>
+          <div class="res-flag-btns">
+            <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>
+            <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
+              <span><%= t(".flag") %></span>
+            </a>
+          </div>
+        </div>
+        <div class="res-type-wrapper">
+          <div>
+            <div>
+              <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%= simple_format reply.content %>
+      <% if reply.replies.size > 0 %>
+        <ul>
+          <%= render :partial => 'replies/reply_reply', :collection => reply.replies %>
+        </ul>
+      <% end %>
+    </div>
+  </div>
+<% end %>
