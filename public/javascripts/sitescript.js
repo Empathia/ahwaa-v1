@@ -165,15 +165,16 @@ $(function(){
     
     $('.search').find('input').keyup(function(){
         var input = $(this);
-        $.trim(input.val()) ? input.next().addClass('clear') : input.next().removeClass('clear');
+        $.trim(input.val()) ? input.next().addClass('clear') : input.next().removeClass('clear') && $('.search_results').removeClass('visible');
     }).next().click(function(){
         var _magnify = $(this);
         _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val('').focus();
+        $('.search_results').removeClass('visible');
     });  
     
     $('.send-private-msg').not('.disabled').click(function(){
        $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
-    })                                                               
+    });                                                               
 
     $('.private-msg').find('.cancel').click(function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
