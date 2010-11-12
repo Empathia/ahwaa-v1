@@ -30,6 +30,10 @@ en:
         advice: Advice
         comment: Comment
         experience: Experience
+  errors:
+    messages:
+      voted: You have already marked this as useful.
+      flagged: You have already flagged this reply.
 
   helpers:
     ago: %{time} ago

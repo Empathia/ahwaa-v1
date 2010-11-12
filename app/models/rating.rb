@@ -1,12 +1,18 @@
 class Rating < ActiveRecord::Base
-  VOTES = [:not_useful, :useful, :very_useful]
-
   # TODO: attr_accessible
-
+  VOTE_UP = 1
+  FLAG = -1
   belongs_to :user
   belongs_to :reply
 
-  validates :user_id, :presence => true, :uniqueness => { :scope => :reply_id }
+  validates :user_id, :presence => true
   validates :reply_id, :presence => true
-  validates :vote, :inclusion => { :in => (0..2).to_a }
+  validate :unique
+
+  protected
+
+  def unique
+    exists = Rating.find_by_user_id_and_reply_id_and_vote(user_id, reply_id, vote)
+    errors.add(:base, vote == VOTE_UP ? :voted : :flagged) if exists
+  end
 end
