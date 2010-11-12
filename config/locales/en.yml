@@ -33,7 +33,15 @@ en:
 
   helpers:
     ago: %{time} ago
-
+    
+  private_message:
+    send_msg: Send Private Message
+    cancel: Cancel
+    submit: Submit
+    points: "%{points} points"
+    expert: is an Expert            
+    recently_participated: 'Recently participated in these topics:'
+    message_sent: Your message was sent successfully!
   layouts:
     application:        
       header:     
@@ -130,13 +138,6 @@ en:
         filter_helpful: Show only helpful commentaries
         experts:
           title: Topic experts
-          send_msg: Send Private Message
-          cancel: Cancel
-          submit: Submit
-          points: "%{points} points"
-          expert: is an Expert            
-          recently_participated: 'Recently participated in these topics:'
-          message_sent: Your message was sent successfully!
         need_help: Need help?
     replies:
       new_response: New Response

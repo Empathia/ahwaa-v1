@@ -108,8 +108,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 .tags,
 .tags > li{display: inline;}
 
-.container{padding-top: 113px; overflow: hidden;}
-.container > .aligned{overflow: hidden; }
+.container{padding-top: 113px;}
 
 .footer-shadow{display: block; margin: 0 auto; display: block; background: url('../images/div-footer.png') no-repeat 50% 0; margin-top: 30px; height: 29px;}
 
@@ -235,3 +234,24 @@ footer > div > span{float: left; color: #898f93;}
 
 .success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
 .success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
+
+.avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
+.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
+.private-msg > form{display: block; overflow: hidden; display: none;}
+.private-msg > form > textarea{width: 269px; height: 126px;}
+.private-msg-btns{float: right;}
+.private-msg-btns > input{height: 24px;}
+.private-msg .cancel{margin-right: 10px; color: #61656a;}
+.private-msg > .avatar{float: right;}          
+
+.user-wrapper{overflow: hidden; margin-bottom: 15px;}
+.user-wrapper > .avatar{float: right;}
+.user-info{float: left; text-align: left;}
+.user-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
+.user-info > p{padding-bottom: 5px;}
+
+.recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
+.recently-topics > p{padding-bottom: 15px;}
+.recently-topics > ul{list-style:disc inside}
+.recently-topics > ul > li{padding-bottom: 9px;}
+.recently-topics > ul > li > a{color: #61656a;}

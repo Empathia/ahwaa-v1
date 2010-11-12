@@ -43,7 +43,7 @@
     </section>
     <section>
       <h2 class="sec-title"><%= t('.sidebar.experts.title') %></h2>
-      <ul class="topic-experts">
+      <ul class="topic-avatars">
         <% @topic.leaderboard.each do |user| %>
           <li>
             <div class="avatar">
@@ -51,11 +51,11 @@
             </div>
             <%= link_to user.username %>
             <div class="private-msg">
-              <div class="expert-wrapper">
-                <div class="expert-info">
-                  <p><%= link_to 'Taxxodium' %> <%= t('.sidebar.experts.expert') %></p>
-                  <p><%= t('.sidebar.experts.points', {:points => 150})%></p>
-                  <a href="#" class="btn-gradient send-private-msg"><%= t('.sidebar.experts.send_msg') %></a>
+              <div class="user-wrapper">
+                <div class="user-info">
+                  <p><%= link_to 'Taxxodium' %> <%= t('private_message.expert') %></p>
+                  <p><%= t('private_message.points', {:points => 150})%></p>
+                  <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
                 </div>
                 <div class="avatar">
                   <%= image_tag user.profile.avatar.url, :width => '50' %>
@@ -64,12 +64,12 @@
               <form action="#" method="post" class="form-private-msg">
                 <textarea class="border-all"></textarea>
                 <div class="private-msg-btns">
-                  <input type="button" class="cancel btn-gradient" value="<%= t('.sidebar.experts.cancel') %>">
-                  <input type="submit" class="btn-gradient" value="<%= t('.sidebar.experts.submit') %>">
+                  <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">
+                  <input type="submit" class="btn-gradient" value="<%= t('private_message.submit') %>">
                 </div>
               </form>
               <div class="recently-topics">
-                <p><%= t('.sidebar.experts.recently_participated') %></p>
+                <p><%= t('private_message.recently_participated') %></p>
                 <ul>
                   <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
                   <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>

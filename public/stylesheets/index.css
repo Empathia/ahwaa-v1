@@ -4,13 +4,19 @@ body > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
 .slogan > h1{color: #ffffff; font-size: 100px; margin-top: 70px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin-top: 14px; }
 .features{overflow: hidden; margin-bottom: 88px;}
-.items-wrapper{overflow: hidden;}
 .items-wrapper > section{width: 460px; float: left;}
 .items-wrapper > section > h2{font-size: 16px; color: #3b3f42; font-family: 'GothamMediumRegular'; font-weight: normal; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
-.items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; margin-bottom: 10px; line-height: 20px; overflow: hidden;}
+.clear{clear: both;}
+.items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; width: 440px; float: left; margin-bottom: 10px;}
+.avatar{float: left;}
+/*   
+
 .item-img > img{float: left; border: 2px solid #ffffff;}
+
+
 .item-img{border: 1px solid #bfd9e7; float: left;}
-.item-data{float: right; width: 380px;}
+*/
+.item-data{float: right; width: 370px; line-height: 20px;}
 .item-data > div,
 .item-data > div > a{color: #898f93;}
 .topics{margin-right: 20px;}
@@ -32,3 +38,4 @@ body > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
 #join > a{color: #ffffff; font-family: "GothamBoldRegular"; text-decoration: none; text-shadow: 0px -2px 2px #255890; padding: 34px 0; height: 53px; display: block; border: 1px solid #7198c2; overflow: hidden;}
 .join-st-line{font-size: 36px; display: block;}
 .join-nd-line{font-size: 18px; color: #a9d0ef;}
+.avatar-wrapper{float: left; width: 55px; position: relative;}
