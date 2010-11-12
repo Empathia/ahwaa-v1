@@ -51,15 +51,14 @@ en:
           error_login_empty: Sign Up
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
-          email: Email
-          username: Username
+          username: Username or Email
+          password: Password          
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
           note_pt2: and
           terms_of_use: Terms of Use
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
           error_login_empty: Username or Email is empty
-          error_username_empty: The username is empty
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:

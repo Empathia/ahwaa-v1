@@ -81,8 +81,8 @@ $(function(){
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
-                'email': I18n.t('layouts.application.header.sign_up_form.error_email_invalid'),
-                'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
+                'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
+                'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
             }
         }
     );
