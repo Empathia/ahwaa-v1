@@ -40,10 +40,10 @@
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
-                          <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
+                          <%= f.text_field :email, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
                         </li>
-                        <li class="username">
-                          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
+                        <li class="password">
+                          <%= f.password_field :username, :required => "true", :placeholder => t('.header.sign_up_form.password') %>
                         </li>
                       </ul>
                       <div class="errors"></div>
@@ -121,7 +121,7 @@
     <footer>
       <div class="footer-shadow"></div>
       <div class="aligned">
-        <%= link_to t('.footer.all_rights', {:year => '2010'}) %>
+        <span><%= t('.footer.all_rights', {:year => '2010'}) %></span>
         <ul>
           <li><%= link_to t('.footer.about') %> - </li>
           <li><%= link_to t('.footer.privacy_policy') %></li>
