@@ -32,7 +32,7 @@
         <% Reply::CATEGORIES.each do |category| %>
           <li>
             <%= check_box_tag :filter_category, category %>
-            <label class="<%= category %>"><%= t("activemodel.attributes.reply.categories.#{category}") %></label>
+            <%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
           </li>
         <% end %>
       </ul>
@@ -86,95 +86,4 @@
     </section>
   </aside>
 </div>
-<form id="add_comments" class="add_comments border-all" action="#">
-  <span class="comm-arrow"></span>
-  <div class="response-wrapper">
-    <div>
-      <div class="add_comments_top"><%= link_to 'navidsafa', '#'%><%= link_to t('.reply_form.cancel'), '#', :class => 'cancel-comment' %></div>
-      <textarea placeholder="<%= t('.reply_form.write_response') %>"></textarea>
-      <div class="res-types-wrapper">
-        <div>
-          <ul class="res-types">
-             <% Reply::CATEGORIES.each_with_index do |category, i| %>
-                <li class="res-type <%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
-                  <span class="<%= category %>"></span>
-                  <input type="submit" value="<%= t("activemodel.attributes.reply.categories.#{category}") %>" name="<%= category %>" class="<%= i == 0 ? 'border-left' : (i == Reply::CATEGORIES.length-1 ? 'border-right' : '')%>">
-
-                </li>
-              <% end %>
-          </ul>
-          <label class="res-lbl"><%= t('.reply_form.type_response') %></label>
-        </div>
-      </div>
-    </div>
-  </div>
-</form>
-<% @replies.each do |index, replies| %>
-  <div class="comments" id="comments_<%= index %>">
-    <ul>
-      <% replies.each do |reply| %>
-        <%= content_tag :li, :class => "comment-st-level #{("expert" if reply.from_expert?)}" do %>
-          <span class="comm-arrow"></span>
-          <div>
-            <div>
-              <div class="avatar-wrapper">
-                <span class="avatar">
-                  <%= image_tag reply.author_avatar, :width => '50' %>
-                </span>
-                <div>
-                  <div class="res-username">
-                    <% unless reply.anonymous? %>
-                      <%= link_to reply.user.username %>
-                    <% else %>
-                      <%= t(".replies.anonymous") %>
-                    <% end %>
-                  </div>
-                  <div class="res-flag-btns">
-                    <%= link_to t(".reply_form.useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>
-                    <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
-                      <span><%= t(".reply_form.flag") %></span>
-                    </a>
-                  </div>
-                </div>
-                <div class="res-type-wrapper">
-                  <div>
-                    <div>
-                      <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <%= simple_format reply.content %>
-              <% if reply.replies.size > 0 %>
-                <ul>
-                <% reply.replies.each do |reply_reply| %>
-                  <li class="comment-nd-level">
-                    <div>
-                      <div class="avatar-wrapper">
-                        <span class="avatar">
-                          <%= image_tag reply_reply.author_avatar, :width => '50' %>
-                        </span>
-                        <% unless reply_reply.anonymous? %>
-                          <%= link_to reply_reply.user.username %>
-                        <% else %>
-                          <%= t(".replies.anonymous") %>
-                        <% end %>
-                      </div>
-                      <%= simple_format reply_reply.content %>
-                    </div>
-                  </li>
-                <% end %>
-                </ul>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
-    </ul>
-    <div class="new-response response-wrapper">
-      <div>
-        <a href="#"><%= t('.reply_form.new_response') %></a>
-      </div>
-    </div>
-  </div>
-<% end %>
+<%= render :partial => 'replies', :object => @replies %>

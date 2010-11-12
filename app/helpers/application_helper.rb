@@ -20,10 +20,15 @@ module ApplicationHelper
   # small helper to DRY up printing flash messages
   def print_flash
     flash.collect do |key, msg|
-      content_tag(:div, {:class => "flash #{key}"}, true) do
+      content_tag(:div, :class => "flash #{key}") do
         msg
       end
     end.join.html_safe
+  end
+
+  # Returns current user's username or string "Anonymous"
+  def current_username
+    logged_in? ? current_user.username : Reply.human_attribute_name(:anonymous)
   end
 
 end

@@ -39,4 +39,9 @@ module TopicsHelper
   def active_class(by_responses = false)
     'active' if !!params[:by_responses] == by_responses
   end
+
+  # Sets css class for topic's response type, wether it's first or last button
+  def response_type_class(index)
+    index == 0 ? 'border-left' : (index == Reply::CATEGORIES.length-1 ? 'border-right' : '')
+  end
 end

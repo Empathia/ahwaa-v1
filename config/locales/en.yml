@@ -25,15 +25,11 @@ en:
         title: Title
         content: Content
         anonymous_post: Remain anonymous for topic authoring
-
-  activemodel:
-    attributes:
       reply:
-        categories:
-          advice: Advice
-          comment: Comment
-          experience: Experience
         anonymous: Anonymous
+        advice: Advice
+        comment: Comment
+        experience: Experience
 
   helpers:
     ago: %{time} ago
@@ -142,16 +138,17 @@ en:
           recently_participated: 'Recently participated in these topics:'
           message_sent: Your message was sent successfully!
         need_help: Need help?
-      reply_form:
+    replies:
+      new_response: New Response
+      form:
         cancel: Cancel
-        comment: Comment
         write_response: Click here to write your response.
         type_response: 'Type of response:'
-        new_response: New Response
-        useful: This was useful!
-        flag: Flag
-      replies:
-        anonymous: Anonymous
+  replies:
+    reply:
+      anonymous: Anonymous
+      useful: This was useful!
+      flag: Flag
   topic_requests:
     new:
       submit: Submit
