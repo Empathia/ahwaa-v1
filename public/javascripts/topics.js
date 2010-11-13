@@ -39,4 +39,12 @@ $(function(){
         });
         return false;
     });
+    
+    $('.continue').live('click', function(){
+       $(this).closest('.sign-up-or-continue').slideUp(function(){
+           var signUp = $(this);
+           signUp.next().slideDown();
+           signUp.remove();
+       });
+    });
 });

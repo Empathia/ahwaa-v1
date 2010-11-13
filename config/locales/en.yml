@@ -55,14 +55,15 @@ en:
           error_login_empty: Sign Up
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
-          username: Username or Email
-          password: Password          
+          username: Username
+          email: Email          
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
           note_pt2: and
           terms_of_use: Terms of Use
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
-          error_login_empty: Username or Email is empty
+          error_email_empty: Email is empty
+          error_username_empty: Username is empty          
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
@@ -145,6 +146,9 @@ en:
         cancel: Cancel
         write_response: Click here to write your response.
         type_response: 'Type of response:'
+        anonymous_legend: "Anonymous Responses can't be rated."
+        continue: Continue
+        sign_up: Sign Up
   replies:
     reply:
       anonymous: Anonymous

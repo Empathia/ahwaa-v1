@@ -17,10 +17,10 @@ aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float
 aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 
-.add_comments > div > div{padding: 10px;}
-.add_comments > div > div > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
+.response-wrapper > div{padding: 10px;}
+.response > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; resize: none;}
 .add_comments_top{overflow: hidden;}
-.cancel-comment{float: right; color: #c4c3c3;}
+.cancel-comment{float: right; color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;}
 .res-types-wrapper > div{float: right;}                                               
 .res-lbl{float: right; margin-right: 10px; line-height: 1.8; color: #7d96b2;}
@@ -54,7 +54,7 @@ aside section:first-child{border-top: none;}
 .comment-st-level > div{background-color: #f2f9fc; border: 1px solid #daecf3;}
 .comment-st-level:last-child{margin-bottom: 5px;}
 
-.comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat;}
+.comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
 .add_comments .comm-arrow{background-position: 0 -13px;}
 .comment-st-level > div > div{border: 2px solid #e9f0f3; padding: 10px;}
 .comment-nd-level {border: 1px solid #e4eff4; margin: 10px; background-color: #ffffff;}
@@ -156,3 +156,9 @@ p:hover .icn-plus{display: inline;}
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 #helpful-comms{float: right; width: 118px;}
 .help{background: url('../images/question-mark.png') no-repeat; height: 19px; padding-left: 22px; float: left;}
+
+.sign-up-or-continue{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float: left; padding: 5px 15px; font-weight: bold;}               
+.sign-up-or-continue > .sign-up-lk{text-align: center; font-size: 12px; font-weight: none; float: left; margin: 0 10px 0 0; font-weight: normal; text-decoration: none;}
+.sign-up-or-continue > .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px;}
+.continue{color: #5e7587;}
+.legend-text{margin: 7px 10px 0 0; float: left;}

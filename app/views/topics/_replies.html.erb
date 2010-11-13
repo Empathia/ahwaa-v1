@@ -1,20 +1,32 @@
 <%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border all' } do |f| %>
   <span class="comm-arrow"></span>
   <div class="response-wrapper">
-    <div>
-      <div class="add_comments_top"><%= link_to current_username, '#'%><%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %></div>
-      <%= f.text_area :content, :placeholder => t('.form.write_response') %>
-      <div class="res-types-wrapper">
-        <div>
-          <ul class="res-types">
-             <% Reply.categories_hash.each_with_index do |hash, i| %>
-                <li class="res-type <%= response_type_class i %>">
-                  <span class="<%= hash.first %>"></span>
-                  <%= f.submit hash.last, :name => hash.last, :class => response_type_class(i) %>
-                </li>
-              <% end %>
-          </ul>
-          <label class="res-lbl"><%= t('.form.type_response') %></label>
+    <div>                
+      <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>     
+      <% unless logged_in? %>      
+        <div class="sign-up-or-continue border-all">       
+          <span class="legend-text"><%= t('.form.anonymous_legend') %></span>
+          <a href="#" class="sign-up-lk border-all">
+            <span class="sign-up-btn"><%= t('.form.sign_up') %></span>
+          </a>
+          <%= link_to t('.form.continue'), '#', :class => 'continue legend-text' %>
+        </div>
+      <% end %>  
+      <div class="response <%= "hidden" unless logged_in? %>">
+        <div class="add_comments_top"><%= current_username %></div>
+        <%= f.text_area :content, :placeholder => t('.form.write_response') %>
+        <div class="res-types-wrapper">
+          <div>
+            <ul class="res-types">
+               <% Reply.categories_hash.each_with_index do |hash, i| %>
+                  <li class="res-type <%= response_type_class i %>">
+                    <span class="<%= hash.first %>"></span>
+                    <%= f.submit hash.last, :name => hash.last, :class => response_type_class(i) %>
+                  </li>
+                <% end %>
+            </ul>
+            <label class="res-lbl"><%= t('.form.type_response') %></label>
+          </div>
         </div>
       </div>
     </div>

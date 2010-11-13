@@ -24,7 +24,7 @@ $(function(){
         return false;
     });
     
-    $('.sign-up-btn').click(function(){
+    $('.sign-up-btn').live('click', function(){
         var btn = $(this);
         btn.addClass('auth-form-active').closest('.request-error').removeClass('auth-form-active');
         toggleSignUp($('#sign-up'));         
@@ -81,8 +81,8 @@ $(function(){
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
-                'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-                'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+                'email': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+                'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
             }
         }
     );

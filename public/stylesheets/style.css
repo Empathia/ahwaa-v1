@@ -31,7 +31,7 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 
 .sign-up{float: left; text-align: left; width: 240px;}
 .auth-wrapper{height: 32px; float: left; width: 96px; position: relative;}
-#sign-up{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}
+.sign-up-lk{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}
 .auth-wrapper > a{position: absolute; z-index: 1; left: 0; height: 32px; text-align: center;}
 .auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
 .sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff;
@@ -231,7 +231,7 @@ footer > div > span{float: left; color: #898f93;}
 .tags{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px; margin: 0 10px;}   
 
 .response-wrapper{border: 1px solid #daecf3;}
-.response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden;}
+.response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative;}
 .new-response > div{padding: 7px;}
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
 
