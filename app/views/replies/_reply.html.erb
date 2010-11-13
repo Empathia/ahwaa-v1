@@ -15,16 +15,16 @@
             <% end %>
           </div>
           <div class="res-flag-btns">
-            <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' if !logged_in?}" %>
-            <a href="#" class="btn-gradient flag <%= 'disabled' if !logged_in? %>">
+            <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
+            <%= link_to '#', :class => "btn-gradient flag #{'disabled' unless logged_in?}", :'data-value' => reply.id do %>
               <span><%= t(".flag") %></span>
-            </a>
+            <% end %>
           </div>
         </div>
         <div class="res-type-wrapper">
           <div>
             <div>
-              <div class="topic-res-type advice"><%=  reply.i18n_category %></div>
+              <div class="topic-res-type advice"><%= reply.i18n_category %></div>
             </div>
           </div>
         </div>

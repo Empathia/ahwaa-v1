@@ -1,4 +1,7 @@
-<% javascript 'comments', 'slideshow', 'topics'%>
+<% head do %>
+  <script type="text/javascript">var topicId = '<%= @topic.cached_slug %>';</script>
+<% end %>
+<% javascript 'comments', 'slideshow', 'topics', 'Neon', 'Remote', 'Reply' %>
 <% stylesheet 'topics' %>
 <div class="aligned">
   <div class="content">

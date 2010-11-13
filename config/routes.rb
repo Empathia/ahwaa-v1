@@ -17,7 +17,10 @@ Lgbt::Application.routes.draw do
   resources :private_messages, :path => "inbox", :except => [:new, :edit, :update, :create]
 
   resources :topics, :only => [:show] do
-    resources :replies, :only => [:create]
+    resources :replies, :only => [:create] do
+      post :flag, :as => :member
+      post :vote_up, :as => :member
+    end
   end
 
   get '/tag/:tag' => "topics#tag", :as => :topic_tag
