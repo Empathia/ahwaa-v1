@@ -36,5 +36,6 @@ $(document).ready(function() {
             ulwidth = $("#header-tags").width();
         }
     });
+
 });
 

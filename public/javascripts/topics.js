@@ -2,9 +2,6 @@ $(function(){
     $('.topic-content > p').comments({color: '#FFFF00'});
     $('.related-content > div > ul').blockSlider();
 
-
-   
-
     /* The Browser Sniff is pending*/
     $('.add_comments > div > textarea').click(function(){
         $(this).css('color', '#6c6f74');
@@ -56,8 +53,7 @@ $(function(){
         return false;
     });
     
-    $('.comments .flag').live('click', function (e) {
-        e.preventDefault();
+    $('.flag:not(.disabled)').live('click', function () {
         var that = $(this);
         var reply = new Reply({
             id: that.attr('data-value'),
@@ -65,11 +61,27 @@ $(function(){
         });
         reply.flag({
             success: function (r) {
-                // TODO: delegate ratings' errors to reply errors so it does trigger error correctly
-                that.text('flagged');
+                that.addClass('disabled').find('span').text(I18n.t('replies.reply.flagged'));
             },
             error: function () {
-                alert('there was an error');
+                that.addClass('disabled').find('span').text(I18n.t('replies.reply.already_flagged'));
+            }
+        });
+        return false;
+    });
+
+    $('.useful:not(.disabled)').live('click', function () {
+        var that = $(this);
+        var reply = new Reply({
+            id: that.attr('data-value'),
+            topic_id: topicId
+        });
+        reply.vote_up({
+            success: function (r) {
+                that.text(I18n.t('replies.reply.useful')).addClass('disabled');
+            },
+            error: function () {
+                that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
             }
         });
         return false;

@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
         session[:current_user] = @user.id
         respond_with(@user)
     elsif @user
-        respond_with(:status => :unauthorized, :location => root_path)
+        respond_with(@user, :status => :unauthorized, :location => root_path)
     else
-      respond_with(:status => :not_found, :location => root_path)
+      respond_with(@user, :status => :not_found, :location => root_path)
     end
   end
 
