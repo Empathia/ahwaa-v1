@@ -1,7 +1,8 @@
+.container > .aligned{overflow: hidden;}
 aside{overflow: hidden; border-right: 1px solid #e5e9ed;}                          
 .inner-shadow{background: #ffffff url('../images/inner-shadow-right.png') repeat-y right 0;   padding: 23px;}
 .user-sb{width: 276px; float: left;}
-.user-info{background-color: #f9fafb; overflow: hidden; border-bottom: 1px solid #e5e9ed;}  
+.user-profile{background-color: #f9fafb; overflow: hidden; border-bottom: 1px solid #e5e9ed;}  
 .user-details{width: 158px; float: right;}       
 .points{padding-bottom: 3px;}
 .thumb{border: 1px solid #dadee0; width: 55px; height: 55px; background-color: #ffffff; padding: 2px; overflow: hidden; float: left;} 

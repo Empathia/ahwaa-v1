@@ -11,7 +11,7 @@ textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
-
+.clear{clear: both;}
 body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
@@ -31,10 +31,10 @@ body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-i
 
 .sign-up{float: left; text-align: left; width: 240px;}
 .auth-wrapper{height: 32px; float: left; width: 96px; position: relative;}
-.sign-up-lk{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none;}
+.sign-up-lk{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none; float: left; }
 .auth-wrapper > a{position: absolute; z-index: 1; left: 0; height: 32px; text-align: center;}
 .auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
-.sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff;
+.sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff; text-align: center;
   background-image: -moz-linear-gradient(top, #5998cc, #3778b7);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5998cc),color-stop(1, #3778b7));
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998cc', EndColorStr='#3778b7');
@@ -207,8 +207,8 @@ footer > div > span{float: left; color: #898f93;}
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da')";
 }
-.request-error > div > p{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin-bottom: 8px;}
-.request-error > div > a{height: 25px; float: left; width: 83px; text-align: center; overflow: hidden; border: 1px solid #4785bf; line-height: 2;  text-decoration: none; margin: 0 39px;}
+.sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin-bottom: 8px;}
+.request-error > div > a{height: 25px; width: 83px; overflow: hidden; margin: 0 39px;}
 .request-error > div > a > span{float: left; width: 61px; padding: 0 10px; height: 23px; font-size: 12px;}
 
 .disabled{-moz-opacity:.50; filter:alpha(opacity=50); opacity:.50; }
@@ -238,7 +238,7 @@ footer > div > span{float: left; color: #898f93;}
 .success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
 .success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
 
-.avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
+.avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0; float: left;}
 .private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
@@ -258,3 +258,5 @@ footer > div > span{float: left; color: #898f93;}
 .recently-topics > ul{list-style:disc inside}
 .recently-topics > ul > li{padding-bottom: 9px;}
 .recently-topics > ul > li > a{color: #61656a;}
+
+.avatar-wrapper{float: left; width: 56px; position: relative;}

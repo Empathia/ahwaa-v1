@@ -30,11 +30,14 @@ $.fn.comments = function(options){
         var link = $(this), 
             parag = link.parent(), 
             index = $('.topic-content .icn-plus').index(this),
-            comments = parag.next('#comments_' + index + '_clone').length ? parag.next() : parag.next('#comments_add_' + index + '_clone');
-        if(comments.length){   
-            slideUpComments(comments, parag, link);                                               
+            comments = parag.next('#comments_' + index + '_clone').length ? parag.next() : parag.next('#comments_add_' + index + '_clone'),
+            tt = link.find('.tt');
+        if(comments.length){
+            slideUpComments(comments, parag, link);
+            tt.text(I18n.t('topics.show.contextual.reply_here'));
         }
-        else{                       
+        else{
+            tt.text(I18n.t('topics.show.contextual.hide'));
             var has_comments = link.hasClass('has_comments');                                                          
             comments = has_comments ? $('#comments_' + index).outerHTML() : $('#add_comments').outerHTML();
             has_comments && link.addClass('minus');
@@ -48,6 +51,12 @@ $.fn.comments = function(options){
         e.preventDefault();
         return false;
     });    
+    
+    $('.useful').live('click', function(){
+       if($(this).hasClass('disabled')){
+           
+       } 
+    });
     
     $('.cancel-comment').live('click', function(e){   
         var comments = $(this).closest('.add_comments');
@@ -89,8 +98,8 @@ $.fn.comments = function(options){
             exp = /\.((?: [A-Z])|$)/,
             has_comments = "";     
         while(exp.test(paragHTML)){
-            paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;</a>$1") :
-                        paragHTML.replace(exp, "<a href='#' class='icn-plus no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.</a>$1")            
+            paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1") :
+                        paragHTML.replace(exp, "<a href='#' class='icn-plus no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1")            
             i++;
         }
         //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn-plus' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
