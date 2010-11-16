@@ -45,12 +45,33 @@ $(document).ready(function() {
         });
         reply.flag({
             success: function (r) {
-                that.text('flagged');
+                that.addClass('disabled').find('span').text(I18n.t('replies.reply.flagged'));
             },
             error: function () {
-                alert('already flagged');
+                that.addClass('disabled').find('span').text(I18n.t('replies.reply.already_flagged'));
             }
         });
+        return false;
+    });
+
+    $('.comments .useful:not(.disabled)').live('click', function () {
+        var that = $(this);
+        var reply = new Reply({
+            id: that.attr('data-value'),
+            topic_id: topicId
+        });
+        reply.vote_up({
+            success: function (r) {
+                that.text(I18n.t('replies.reply.useful')).addClass('disabled');
+            },
+            error: function () {
+                that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
+            }
+        });
+        return false;
+    });
+
+    $('.comments .disabled').live('click', function () {
         return false;
     });
 });
