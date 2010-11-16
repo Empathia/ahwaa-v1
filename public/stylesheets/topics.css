@@ -135,7 +135,7 @@ a.no_comments{
 .icn-plus:hover > span{display: block;}
 p:hover .icn-plus{display: inline;}
 .related-content{background-color: #ffffff; padding: 20px;}
-.related-carrousel{overflow: hidden; width: 714px; float: left; position: relative; height: 56px;}
+.related-carrousel{overflow: hidden; width: 714px; float: left; position: relative; height: 60px;}
 .related-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
 .related-carrousel > ul > li{width: 210px; height: 100%; overflow: hidden; float: left; margin: 0 14px;}
 .related-carrousel > ul > li > a:first-child{float: left; margin-right: 15px;}

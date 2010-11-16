@@ -1,16 +1,16 @@
 <li>                                                                                            
   <div class="avatar-wrapper">
-    <span class="avatar">
+    <span class="avatar <%= 'expert' if user.is_expert %>">
       <%= image_tag(topic.user.profile.avatar.url, :width => '50') %>
     </span>
     <div class="private-msg">
       <div class="user-wrapper">
         <div class="user-info">
-          <p><%= link_to 'Taxxodium' %> <%= t('private_message.expert') %></p>
+          <p><b>Taxxodium</b> <%= t('private_message.expert') %></p>
           <p><%= t('private_message.points', {:points => 150})%></p>
           <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
         </div>
-        <div class="avatar">
+        <div class="avatar <%= 'expert' if user.is_expert %>">
           <%= image_tag topic.user.profile.avatar.url, :width => '50' %>
         </div>
       </div>

@@ -239,6 +239,7 @@ footer > div > span{float: left; color: #898f93;}
 .success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
 
 .avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0; float: left;}
+.avatar.expert{background-color: #afcaa2;}
 .private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
