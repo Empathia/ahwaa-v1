@@ -130,6 +130,8 @@ en:
     show:
       contextual:
         add_comment: Add Comment
+        reply_here: Reply here
+        hide: Hide
       icons:
         social:
           linked_in: Liked In
