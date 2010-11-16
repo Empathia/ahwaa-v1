@@ -36,23 +36,5 @@ $(document).ready(function() {
             ulwidth = $("#header-tags").width();
         }
     });
-
-    $('.comments .flag').live('click', function () {
-        var that = $(this);
-        var reply = new Reply({
-            id: that.attr('data-value'),
-            topic_id: topicId
-        });
-        reply.flag({
-            success: function (r) {
-                // TODO: delegate ratings' errors to reply errors so it does trigger error correctly
-                that.text('flagged');
-            },
-            error: function () {
-                alert('there was an error');
-            }
-        });
-        return false;
-    });
 });
 

@@ -46,5 +46,32 @@ $(function(){
            signUp.next().slideDown();
            signUp.remove();
        });
+    });  
+    
+    $('.res-flag-btns').find('a').live('click', function(e){
+        var lk = $(this),
+            sign_up = lk.parent().find('.sign-up-tt-wrapper');
+        sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
+        e.preventDefault();
+        return false;
+    });
+    
+    $('.comments .flag').live('click', function (e) {
+        e.preventDefault();
+        var that = $(this);
+        var reply = new Reply({
+            id: that.attr('data-value'),
+            topic_id: topicId
+        });
+        reply.flag({
+            success: function (r) {
+                // TODO: delegate ratings' errors to reply errors so it does trigger error correctly
+                that.text('flagged');
+            },
+            error: function () {
+                alert('there was an error');
+            }
+        });
+        return false;
     });
 });
