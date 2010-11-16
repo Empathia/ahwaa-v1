@@ -25,29 +25,17 @@ Class('Remote')({
             return this.id === null;
         },
         save: function() {
-            var url = this.new_record() ? this.constructor.remote.create : this.constructor.remote.update;
-            var data = {}, attrs = {};
+            var data = {}, attrs = {},
+                action = this.new_record() ? 'create' : 'update';
             for(var attr in this.attributes) {
                 if(this.attributes.hasOwnProperty(attr) && this.attributes[attr] !== null) {
                     attrs[attr] = this.attributes[attr];
                 }
             }
             data[this.constructor.className.toLowerCase()] = attrs;
-            $.ajax({
-                url: this.constructor.url_for(url, this.attributes),
+            this.remote_call(action, {
                 type: this.new_record() ? 'post' : 'put',
                 data: data,
-                dataType: 'json',
-                context: this,
-                success: function(response) {
-                    $.extend(this.attributes, response[this.constructor.className.toLowerCase()]);
-                    $.extend(this, this.attributes);
-                    this.valid = true;
-                },
-                error: function(response) {
-                    this.errors = eval('(' + response.responseText + ')');
-                    this.valid = false;
-                },
                 async: false
             });
             return this.valid;
@@ -75,7 +63,7 @@ Class('Remote')({
                 this.valid = false;
                 $.isFunction(args.onError) && args.onError(this);
             };
-            $.ajax(args);
+            return $.ajax(args);
         }
     }
 });
