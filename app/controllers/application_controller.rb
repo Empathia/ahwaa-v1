@@ -39,7 +39,10 @@ class ApplicationController < ActionController::Base
     def authenticate_user!
       unless logged_in?
         flash[:alert] = t('flash.application.not_logged_in')
-        redirect_to root_path
+        respond_to do |format|
+          format.json { respond_with(:location => root_path, :status => :unauthorized) }
+          format.html { redirect_to root_path }
+        end
       end
     end
 

@@ -24,7 +24,7 @@ $(function(){
         return false;
     });
     
-    $('.sign-up-btn').click(function(){
+    $('.sign-up-btn').live('click', function(){
         var btn = $(this);
         btn.addClass('auth-form-active').closest('.request-error').removeClass('auth-form-active');
         toggleSignUp($('#sign-up'));         
@@ -81,8 +81,8 @@ $(function(){
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
-                'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-                'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+                'email': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+                'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
             }
         }
     );
@@ -173,22 +173,36 @@ $(function(){
     });
     
     //function to place the extra topic tags into the "more" vertical list
-      $("#header-tags").children().each(function(e) {
 
-        var maxwidth = 700;
-        var ulwidth = $("#header-tags").width();
-        var overelement;
-        var newli;
+    var ulwidth = $("#header-tags").width();
 
-        if (ulwidth > maxwidth){
-            overelement = $("#header-tags > li:last-child").prev();
-            newli = '<li>' + overelement.html() + '</li>';
+    $("#header-tags").children().each(function(e) {
+        if (ulwidth > 700){
+            var overelement = $("#header-tags > li:last-child").prev();
+            var newli = '<li>' + overelement.html() + '</li>';
             $("#moretags").prepend(newli);
             overelement.remove();
             ulwidth = $("#header-tags").width();
-            }
-        })
-    $(".request-topic").pageSlide({ width: "556px", direction: "left" });
+        }
+    });
+    
+    $(".request-topic").pageSlide({ width: "556px", direction: "left" }); 
+    
+    $('.send-private-msg').not('.disabled').click(function(){
+       $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+    });                                                               
+
+    $('.private-msg').find('.cancel').click(function(){
+       $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
+    });
+
+    $('.topic-avatars').find('.avatar').mouseover(function(){
+       $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
+    });
+
+    $('.active-avatar').live('mouseleave', function(){
+       $(this).fadeOut('fast');
+    });
 });
 
 

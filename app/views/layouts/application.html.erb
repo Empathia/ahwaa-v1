@@ -33,17 +33,17 @@
               <% else %>
                 <div class="sign-up">
                   <div class="auth-wrapper">
-                    <a href="#" id="sign-up" class="border-all">
+                    <a href="#" id="sign-up" class="sign-up-lk border-all">
                       <span class="sign-up-btn"><%= t('.header.auth.sign_up') %></span>
                     </a>
                     <%= form_for User.new, :html => {:class => "over-form sign-up-form"} do |f| %>
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
-                          <%= f.text_field :email, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
+                          <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
                         </li>
-                        <li class="password">
-                          <%= f.password_field :username, :required => "true", :placeholder => t('.header.sign_up_form.password') %>
+                        <li class="username">
+                          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
                         </li>
                       </ul>
                       <div class="errors"></div>

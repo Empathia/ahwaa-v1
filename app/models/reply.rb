@@ -6,8 +6,10 @@ class Reply < ActiveRecord::Base
   belongs_to :topic, :counter_cache => true
   belongs_to :user
   belongs_to :parent, :class_name => "Reply"
-  has_many :ratings, :dependent => :destroy
-  has_many :raters, :through => :ratings, :source => :user
+  has_many :vote_ups, :class_name => 'Rating', :dependent => :destroy,
+    :conditions => { :vote => Rating::VOTE_UP }
+  has_many :flags, :class_name => 'Rating', :dependent => :destroy,
+    :conditions => { :vote => Rating::FLAG }
   has_many :replies, :foreign_key => :parent_id
 
   validates :content, :presence => true
@@ -27,6 +29,16 @@ class Reply < ActiveRecord::Base
   # Returns a hash with raw category name as key, and i18n as value
   def self.categories_hash
     Hash[CATEGORIES.map { |category| [category, human_attribute_name(category)] }]
+  end
+
+  # Votes up the reply
+  def vote_up!(user)
+    vote_ups.create(:user => user)
+  end
+
+  # Flags reply
+  def flag!(user)
+    flags.create(:user => user)
   end
 
   # Wether the user of the reply is null or not

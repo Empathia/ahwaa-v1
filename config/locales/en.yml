@@ -30,10 +30,22 @@ en:
         advice: Advice
         comment: Comment
         experience: Experience
+  errors:
+    messages:
+      voted: You have already marked this as useful.
+      flagged: You have already flagged this reply.
 
   helpers:
     ago: %{time} ago
-
+    
+  private_message:
+    send_msg: Send Private Message
+    cancel: Cancel
+    submit: Submit
+    points: "%{points} points"
+    expert: is an Expert            
+    recently_participated: 'Recently participated in these topics:'
+    message_sent: Your message was sent successfully!
   layouts:
     application:        
       header:     
@@ -47,14 +59,15 @@ en:
           error_login_empty: Sign Up
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
-          username: Username or Email
-          password: Password          
+          username: Username
+          email: Email          
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
           note_pt2: and
           terms_of_use: Terms of Use
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
-          error_login_empty: Username or Email is empty
+          error_email_empty: Email is empty
+          error_username_empty: Username is empty          
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
@@ -130,13 +143,6 @@ en:
         filter_helpful: Show only helpful commentaries
         experts:
           title: Topic experts
-          send_msg: Send Private Message
-          cancel: Cancel
-          submit: Submit
-          points: "%{points} points"
-          expert: is an Expert            
-          recently_participated: 'Recently participated in these topics:'
-          message_sent: Your message was sent successfully!
         need_help: Need help?
     replies:
       new_response: New Response
@@ -144,6 +150,9 @@ en:
         cancel: Cancel
         write_response: Click here to write your response.
         type_response: 'Type of response:'
+        anonymous_legend: "Anonymous Responses can't be rated."
+        continue: Continue
+        sign_up: Sign Up
   replies:
     reply:
       anonymous: Anonymous
