@@ -12,7 +12,7 @@ form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
-body > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
+header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
 .light{background-color: #e2ecf2;}
@@ -238,3 +238,5 @@ footer > div > span{float: left; color: #898f93;}
 
 .success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
 .success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
+
+.pageslide-slide-wrap{}

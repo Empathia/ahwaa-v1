@@ -1,5 +1,5 @@
 $(function(){        
-       
+    
     function toggleSignUp(link, formName){        
         $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');                                                              
         link.addClass('auth-form-active');         
@@ -170,7 +170,25 @@ $(function(){
         var _magnify = $(this);
         _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val('').focus();
         $('.search_results').removeClass('visible');
-    }); 
+    });
+    
+    //function to place the extra topic tags into the "more" vertical list
+      $("#header-tags").children().each(function(e) {
+
+        var maxwidth = 700;
+        var ulwidth = $("#header-tags").width();
+        var overelement;
+        var newli;
+
+        if (ulwidth > maxwidth){
+            overelement = $("#header-tags > li:last-child").prev();
+            newli = '<li>' + overelement.html() + '</li>';
+            $("#moretags").prepend(newli);
+            overelement.remove();
+            ulwidth = $("#header-tags").width();
+            }
+        })
+    $(".request-topic").pageSlide({ width: "556px", direction: "left" });
 });
 
 
