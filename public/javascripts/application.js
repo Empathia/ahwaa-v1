@@ -37,7 +37,7 @@ $(document).ready(function() {
         }
     });
 
-    $('.comments .flag').live('click', function () {
+    $('.comments .flag:not(.disabled)').live('click', function () {
         var that = $(this);
         var reply = new Reply({
             id: that.attr('data-value'),
@@ -45,11 +45,10 @@ $(document).ready(function() {
         });
         reply.flag({
             success: function (r) {
-                // TODO: delegate ratings' errors to reply errors so it does trigger error correctly
                 that.text('flagged');
             },
             error: function () {
-                alert('there was an error');
+                alert('already flagged');
             }
         });
         return false;

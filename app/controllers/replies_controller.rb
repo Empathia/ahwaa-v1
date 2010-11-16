@@ -12,14 +12,14 @@ class RepliesController < ApplicationController
 
   def flag
     @reply = @topic.all_replies.find(params[:reply_id])
-    @reply.flag!(current_user) if @reply
-    respond_with(@reply, :location => @topic)
+    @flag = @reply.flag!(current_user) if @reply
+    respond_with(@flag, :location => @topic)
   end
 
   def vote_up
     @reply = @topic.all_replies.find(params[:reply_id])
-    @reply.vote_up!(current_user) if @reply
-    respond_with(@reply, :location => @topic)
+    @vote = @reply.vote_up!(current_user) if @reply
+    respond_with(@vote, :location => @topic)
   end
 
   private
