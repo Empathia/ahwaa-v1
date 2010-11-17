@@ -46,6 +46,7 @@ en:
     expert: is an Expert            
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
+    no_activity: No recent activity
   layouts:
     application:        
       header:     

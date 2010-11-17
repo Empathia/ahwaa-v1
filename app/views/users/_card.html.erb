@@ -19,8 +19,12 @@
   <div class="recently-topics">
     <p><%= t('private_message.recently_participated') %></p>
     <ul>
-      <% user.recent_replies.each do |reply| %> 
-        <li><%= link_to truncate(reply.topic.title, :length => 50), reply.topic %></li>
+      <% unless user.recent_replies.empty? %>
+        <% user.recent_replies.each do |reply| %> 
+          <li><%= link_to truncate(reply.topic.title, :length => 50), reply.topic %></li>
+        <% end %>
+      <% else %>
+        <li><%= t 'private_message.no_activity' %></li>
       <% end %>
     </ul>
   </div>

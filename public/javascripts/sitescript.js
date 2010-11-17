@@ -147,6 +147,7 @@ $(function(){
                 if(data.status == 404) {
                     that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.forgot_pass_form.not_found') + '</p>');
                 }
+                inputSubmit.removeAttr('disabled');
             }
         });
         return false;
