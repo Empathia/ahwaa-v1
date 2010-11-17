@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_one :current_prize, :through => :score_board, :class_name => "Prize", :source => :prize
 
   has_many :ratings, :dependent => :destroy
+  has_many :replies, :dependent => :destroy
+  has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :private_messages, :dependent => :destroy,
     :foreign_key => :recipient_id, :conditions => {:parent_id => nil}
@@ -35,6 +37,12 @@ class User < ActiveRecord::Base
   # sets a prize badge or level or whatever reward model for the matter
   def set_reward(reward)
     self.send("current_#{reward.class.to_s.underscore}=",reward)
+  end
+  
+  # updates the scoreboard
+  def update_score_board(by)
+    #self.score_board.increment(:current_points, by)
+    self.score_board.update_attributes!(:current_points => self.score_board.current_points + by)
   end
 
   # Finds user by username or email

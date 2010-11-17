@@ -1,0 +1,31 @@
+<div class="private-msg">
+  <div class="user-wrapper">
+    <div class="user-info">
+      <p><b><%= user.username %></b> <%= t('private_message.expert') if user.is_expert? %></p>
+      <p><%= t('private_message.points', {:points => user.score_board.current_points})%></p>
+      <%= link_to t('private_message.send_msg'), '#', :class => 'btn-gradient send-private-msg' %>
+    </div>
+    <div class="avatar <%= 'expert' if user.is_expert? %>">
+      <%= image_tag user.profile.avatar.url, :width => '50' %>
+    </div>
+  </div>
+  <form action="#" method="post" class="form-private-msg">
+    <textarea class="border-all"></textarea>
+    <div class="private-msg-btns">
+      <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">
+      <input type="submit" class="btn-gradient" value="<%= t('private_message.submit') %>">
+    </div>
+  </form>
+  <div class="recently-topics">
+    <p><%= t('private_message.recently_participated') %></p>
+    <ul>
+      <% unless user.recent_replies.empty? %>
+        <% user.recent_replies.each do |reply| %> 
+          <li><%= link_to truncate(reply.topic.title, :length => 50), reply.topic %></li>
+        <% end %>
+      <% else %>
+        <li><%= t 'private_message.no_activity' %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>

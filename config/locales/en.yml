@@ -46,6 +46,7 @@ en:
     expert: is an Expert            
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
+    no_activity: No recent activity
   layouts:
     application:        
       header:     
@@ -163,7 +164,6 @@ en:
       flag: Flag
       flagged: Flagged
       already_flagged: Already flagged
-      useful: Marked as useful
       already_useful: Already marked as useful
   topic_requests:
     new:
