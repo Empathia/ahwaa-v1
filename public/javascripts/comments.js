@@ -122,6 +122,5 @@ $.fn.comments = function(options){
         return false;
     });
     
-    $()
     //expand();    
 }

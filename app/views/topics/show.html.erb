@@ -8,7 +8,7 @@
     <article class="border-all">
       <header>
       <h1><%= @topic.title %></h1>
-        <div class="avatar <%= 'expert' if user.is_expert %>">
+        <div class="avatar <%= 'expert' if @topic.user.is_expert %>">
           <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
         </div>
         <p class="article-tags">

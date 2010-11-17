@@ -53,7 +53,7 @@
           <li>
             <%# TODO: Refactor this unless %>
             <div class="avatar-wrapper">
-              <span class="avatar <%= 'expert' if user.is_expert %>">
+              <span class="avatar <% 'expert' if reply.from_expert? %>">
               <%= image_tag(reply.author_avatar, :width => '50') %>
               </span>
               <% unless reply.anonymous? %>
@@ -64,7 +64,7 @@
                       <p><%= t('private_message.points', {:points => 150})%></p>
                       <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
                     </div>
-                    <div class="avatar  <%= 'expert' if user.is_expert %>">
+                    <div class="avatar <% 'expert' if reply.from_expert? %>">
                       <%= image_tag reply.author_avatar, :width => '50' %>
                     </div>
                   </div>

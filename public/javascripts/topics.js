@@ -48,11 +48,23 @@ $(function(){
     $('.res-flag-btns').find('a').live('click', function(e){
         var lk = $(this),
             sign_up = lk.parent().find('.sign-up-tt-wrapper');
-        sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
+        if(sign_up.is(':visible') && lk.hasClass('clicked')){    
+            lk.removeClass('clicked');
+            sign_up.fadeOut();
+        }
+        else{     
+            lk.siblings('.clicked').removeClass('clicked');
+            lk.addClass('clicked');            
+            sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
+        }
         e.preventDefault();
         return false;
     });
-    
+
+    $('.comment-st-level, .comment-nd-level').live('mouseleave', function(){
+       $('.sign-up-tt-wrapper').hide();
+    });
+        
     $('.flag:not(.disabled)').live('click', function () {
         var that = $(this);
         var reply = new Reply({
