@@ -238,7 +238,13 @@ footer > div > span{float: left; color: #898f93;}
 .success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
 .success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
 
-.pageslide-slide-wrap{}
+ #pageslide-slide-wrap{background:none white}
+ #pageslide-slide-wrap > div{padding:30px;overflow:hidden;}
+ #pageslide-slide-wrap > div > h2 {float:left;width:458px}
+ #pageslide-slide-wrap > div > a  {float:left;width:68px;height:25px;margin-right:30px;color:#8497a7;font-weight:bold;background:url("../images/back-bg.png") repeat-x scroll 0 -25px transparent;}
+ #pageslide-slide-wrap > div > a > span{background:url("../images/back-bg.png") no-repeat scroll 0 0 transparent;float:right;height:100%;padding-left:3px;text-align:center}
+ #pageslide-slide-wrap > div > a > span > a{background:url("../images/back-bg.png") no-repeat scroll right -50px transparent;float:right;height:100%;line-height:2;padding-right:11px;width:140px}
+ #pageslide-slide-wrap > div > form{float:left}
 
 .avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0;}
 .private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}

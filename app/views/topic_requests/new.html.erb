@@ -1,4 +1,9 @@
-<h1><%= t('.title') %></h1>
+<h2><%= t('.title') %></h2>
+<a href="" class="back">
+    <span>
+		<span><!--<%= t('.back.button')%>-->Back</span>
+	</span>
+</a>
 <% javascript :form_validator, :form_script %>
 <%= form_for @topic_request do |f| %>
   <p>

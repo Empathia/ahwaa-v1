@@ -100,7 +100,7 @@
                   </ul>
                 </li>
               </ul>
-              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %>">
+              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
                 <span>
                   <span><%= t('.header.request_topic.button')%></span>
                 </span>

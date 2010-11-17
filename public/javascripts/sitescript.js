@@ -177,7 +177,7 @@ $(function(){
     var ulwidth = $("#header-tags").width();
 
     $("#header-tags").children().each(function(e) {
-        if (ulwidth > 700){
+        if (ulwidth > 750){
             var overelement = $("#header-tags > li:last-child").prev();
             var newli = '<li>' + overelement.html() + '</li>';
             $("#moretags").prepend(newli);
@@ -186,7 +186,7 @@ $(function(){
         }
     });
     
-    $(".request-topic").pageSlide({ width: "556px", direction: "left" }); 
+    $(".request-topic.active").pageSlide({ width: "556px", direction: "left" }); 
     
     $('.send-private-msg').not('.disabled').click(function(){
        $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
