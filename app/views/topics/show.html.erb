@@ -53,33 +53,7 @@
                 <%= image_tag user.profile.avatar.url, :width => '50' %>
               </div>
               <%= link_to user.username %>
-              <div class="private-msg">
-                <div class="user-wrapper">
-                  <div class="user-info">
-                    <p><b>Taxxodium</b> <%= t('private_message.expert') %></p>
-                    <p><%= t('private_message.points', {:points => 150})%></p>
-                    <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
-                  </div>
-                  <div class="avatar <%= 'expert' if user.is_expert %>">
-                    <%= image_tag user.profile.avatar.url, :width => '50' %>
-                  </div>
-                </div>
-                <form action="#" method="post" class="form-private-msg">
-                  <textarea class="border-all"></textarea>
-                  <div class="private-msg-btns">
-                    <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">
-                    <input type="submit" class="btn-gradient" value="<%= t('private_message.submit') %>">
-                  </div>
-                </form>
-                <div class="recently-topics">
-                  <p><%= t('private_message.recently_participated') %></p>
-                  <ul>
-                    <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
-                    <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>
-                    <li><%= link_to "How do I make friends in my currently situati..." %></li>
-                  </ul>
-                </div>
-              </div>
+              <%= render :partial => 'users/card', :locals => {:user => user} %>
             </li>
           <% end %>
         </ul>
