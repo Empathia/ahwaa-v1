@@ -46,6 +46,44 @@ describe Reply do
 
   describe 'being rated' do
 
+    context "gets marked as useful" do
+
+      it "with positive votes only" do
+        @reply.vote_up!(Factory(:user))
+        @reply.useful?.should be_true
+      end
+
+      it "with more positive votes than negatives" do
+        @reply.vote_up!(Factory(:user))
+        @reply.vote_up!(Factory(:user))
+        @reply.flag!(Factory(:user))
+        @reply.useful?.should be_true
+      end
+
+    end
+
+    context "gets marked as not useful" do
+
+      it "with only negative votes" do
+        @reply.flag!(Factory(:user))
+        @reply.useful?.should be_false
+      end
+
+      it "with equals negative and positive votes" do
+        @reply.vote_up!(Factory(:user))
+        @reply.flag!(Factory(:user))
+        @reply.useful?.should be_false
+      end
+
+      it "with more negatives than positive votes" do
+        @reply.flag!(Factory(:user))
+        @reply.flag!(Factory(:user))
+        @reply.vote_up!(Factory(:user))
+        @reply.useful?.should be_false
+      end
+
+    end
+
     context "not yet rated by user" do
 
       it "votes up" do

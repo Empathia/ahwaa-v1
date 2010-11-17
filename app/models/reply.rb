@@ -10,6 +10,7 @@ class Reply < ActiveRecord::Base
     :conditions => { :vote => Rating::VOTE_UP }
   has_many :flags, :class_name => 'Rating', :dependent => :destroy,
     :conditions => { :vote => Rating::FLAG }
+  has_many :ratings, :dependent => :destroy
   has_many :replies, :foreign_key => :parent_id
 
   validates :content, :presence => true
@@ -29,6 +30,11 @@ class Reply < ActiveRecord::Base
   # Returns a hash with raw category name as key, and i18n as value
   def self.categories_hash
     Hash[CATEGORIES.map { |category| [category, human_attribute_name(category)] }]
+  end
+
+  # Wether or not the reply has been rated more positive
+  def useful?
+    ratings.sum(:vote) > 0
   end
 
   # Votes up the reply

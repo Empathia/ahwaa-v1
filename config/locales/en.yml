@@ -163,7 +163,6 @@ en:
       flag: Flag
       flagged: Flagged
       already_flagged: Already flagged
-      useful: Marked as useful
       already_useful: Already marked as useful
   topic_requests:
     new:
