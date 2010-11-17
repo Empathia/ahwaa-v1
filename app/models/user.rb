@@ -2,6 +2,11 @@ class User < ActiveRecord::Base
   attr_accessor :password
 
   has_one :profile, :class_name => "UserProfile", :dependent => :destroy
+  has_one :score_board,   :dependent => :destroy
+  has_one :current_level, :through => :score_board, :class_name => "Level", :source => :level
+  has_one :current_badge, :through => :score_board, :class_name => "Badge", :source => :badge
+  has_one :current_prize, :through => :score_board, :class_name => "Prize", :source => :prize
+
   has_many :ratings, :dependent => :destroy
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :private_messages, :dependent => :destroy,
@@ -11,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :username, :email, :password, :password_confirmation
 
   before_create :build_profile
+  before_create :build_score_board
   before_validation :set_temp_password, :on => :create, :if => "password.blank?"
   before_save :set_encrypted_password, :if => :should_require_password?
 
@@ -24,6 +30,11 @@ class User < ActiveRecord::Base
 
   def to_param
     username
+  end
+  
+  # sets a prize badge or level or whatever reward model for the matter
+  def set_reward(reward)
+    self.send("current_#{reward.class.to_s.underscore}=",reward)
   end
 
   # Finds user by username or email
