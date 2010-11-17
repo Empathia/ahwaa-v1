@@ -1,0 +1,12 @@
+<% comments.each do |contextual_index, replies| %>
+  <div class="comments" id="comments_<%= contextual_index %>">
+    <ul>
+      <%= render replies %>
+    </ul>
+    <div class="new-response response-wrapper">
+      <div>
+        <%= link_to t('.new_response'), '#' %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -37,42 +37,17 @@ $(document).ready(function() {
         }
     });
 
-    $('.comments .flag:not(.disabled)').live('click', function () {
-        var that = $(this);
-        var reply = new Reply({
-            id: that.attr('data-value'),
-            topic_id: topicId
-        });
-        reply.flag({
-            success: function (r) {
-                that.addClass('disabled').find('span').text(I18n.t('replies.reply.flagged'));
-            },
-            error: function () {
-                that.addClass('disabled').find('span').text(I18n.t('replies.reply.already_flagged'));
-            }
-        });
-        return false;
-    });
+    // $('.add_comments').live('submit', function () {
+    //     var attrs = $.extend($(this).deserialize(), {
+    //         topic_id: topicId
+    //     });
+    //     var reply = new Reply(attrs);
+    //     reply.save();
+    //     return false;
+    // });
 
-    $('.comments .useful:not(.disabled)').live('click', function () {
-        var that = $(this);
-        var reply = new Reply({
-            id: that.attr('data-value'),
-            topic_id: topicId
-        });
-        reply.vote_up({
-            success: function (r) {
-                that.text(I18n.t('replies.reply.useful')).addClass('disabled');
-            },
-            error: function () {
-                that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
-            }
-        });
-        return false;
-    });
-
-    $('.comments .disabled').live('click', function () {
-        return false;
+    $('.add_comments:visible input[type=submit]').live('click', function () {
+        $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
     });
 });
 

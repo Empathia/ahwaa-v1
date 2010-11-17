@@ -146,8 +146,6 @@ en:
         experts:
           title: Topic experts
         need_help: Need help?
-    replies:
-      new_response: New Response
       form:
         cancel: Cancel
         write_response: Click here to write your response.
@@ -155,6 +153,8 @@ en:
         anonymous_legend: "Anonymous Responses can't be rated."
         continue: Continue
         sign_up: Sign Up
+    comments:
+      new_response: New Response
   replies:
     reply:
       anonymous: Anonymous
