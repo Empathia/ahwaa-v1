@@ -4,89 +4,93 @@
 <% javascript 'comments', 'slideshow', 'topics', 'Neon', 'Remote', 'Reply' %>
 <% stylesheet 'topics' %>
 <div class="aligned">
-  <div class="content">
-    <article class="border-all">
-      <header>
-      <h1><%= @topic.title %></h1>
-        <div class="avatar <%= 'expert' if @topic.user.is_expert %>">
-          <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
+  <div class="content article-wrapper">
+    <div class="left-side">
+      <article class="border-all">
+        <header>
+        <h1><%= @topic.title %></h1>
+          <div class="avatar <%= 'expert' if @topic.user.is_expert %>">
+            <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
+          </div>
+          <p class="article-tags">
+            <%= linked_tag_list @topic.tags %>
+          </p>
+        </header>
+        <div class="topic-content">
+          <%= simple_format @topic.content %>
         </div>
-        <p class="article-tags">
-          <%= linked_tag_list @topic.tags %>
-        </p>
-      </header>
-      <div class="topic-content">
-        <%= simple_format @topic.content %>
-      </div>
-      <div class="social-bookmarkers border-left">
-        <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook' %>
-        <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
-      </div>
-    </article>
+        <div class="social-bookmarkers border-left">
+          <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook' %>
+          <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
+        </div>
+      </article>
+    </div>
+    <aside class="border-right">
+      <section>
+        <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn btn-gradient hide" %>
+      </section>
+      <section>
+        <h2 class="sec-title regular"><%= t('.sidebar.filter_responses.title') %></h2>
+        <ul class="filter-resposes">
+          <% Reply::CATEGORIES.each do |category| %>
+            <li>
+              <%= check_box_tag :filter_category, category %>
+              <%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+      <section>
+        <%= check_box_tag :filter_helpful %>
+        <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
+      </section>
+      <section>
+        <h2 class="sec-title"><%= t('.sidebar.experts.title') %></h2>
+        <ul class="topic-avatars">
+          <% @topic.leaderboard.each do |user| %>
+            <li>
+              <div class="avatar <%= 'expert' if user.is_expert %>">
+                <%= image_tag user.profile.avatar.url, :width => '50' %>
+              </div>
+              <%= link_to user.username %>
+              <div class="private-msg">
+                <div class="user-wrapper">
+                  <div class="user-info">
+                    <p><b>Taxxodium</b> <%= t('private_message.expert') %></p>
+                    <p><%= t('private_message.points', {:points => 150})%></p>
+                    <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
+                  </div>
+                  <div class="avatar <%= 'expert' if user.is_expert %>">
+                    <%= image_tag user.profile.avatar.url, :width => '50' %>
+                  </div>
+                </div>
+                <form action="#" method="post" class="form-private-msg">
+                  <textarea class="border-all"></textarea>
+                  <div class="private-msg-btns">
+                    <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">
+                    <input type="submit" class="btn-gradient" value="<%= t('private_message.submit') %>">
+                  </div>
+                </form>
+                <div class="recently-topics">
+                  <p><%= t('private_message.recently_participated') %></p>
+                  <ul>
+                    <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
+                    <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>
+                    <li><%= link_to "How do I make friends in my currently situati..." %></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </section>
+      <section>
+        <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
+      </section>
+    </aside>
+  </div>
+  <div class="left-side">
     <%= render :partial => 'related_content', :locals => {:related_contents => @related_contents} %>
   </div>
-  <aside class="border-right">
-    <section>
-      <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn btn-gradient hide" %>
-    </section>
-    <section>
-      <h2 class="sec-title regular"><%= t('.sidebar.filter_responses.title') %></h2>
-      <ul class="filter-resposes">
-        <% Reply::CATEGORIES.each do |category| %>
-          <li>
-            <%= check_box_tag :filter_category, category %>
-            <%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
-          </li>
-        <% end %>
-      </ul>
-    </section>
-    <section>
-      <%= check_box_tag :filter_helpful %>
-      <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
-    </section>
-    <section>
-      <h2 class="sec-title"><%= t('.sidebar.experts.title') %></h2>
-      <ul class="topic-avatars">
-        <% @topic.leaderboard.each do |user| %>
-          <li>
-            <div class="avatar <%= 'expert' if user.is_expert %>">
-              <%= image_tag user.profile.avatar.url, :width => '50' %>
-            </div>
-            <%= link_to user.username %>
-            <div class="private-msg">
-              <div class="user-wrapper">
-                <div class="user-info">
-                  <p><b>Taxxodium</b> <%= t('private_message.expert') %></p>
-                  <p><%= t('private_message.points', {:points => 150})%></p>
-                  <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
-                </div>
-                <div class="avatar <%= 'expert' if user.is_expert %>">
-                  <%= image_tag user.profile.avatar.url, :width => '50' %>
-                </div>
-              </div>
-              <form action="#" method="post" class="form-private-msg">
-                <textarea class="border-all"></textarea>
-                <div class="private-msg-btns">
-                  <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">
-                  <input type="submit" class="btn-gradient" value="<%= t('private_message.submit') %>">
-                </div>
-              </form>
-              <div class="recently-topics">
-                <p><%= t('private_message.recently_participated') %></p>
-                <ul>
-                  <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
-                  <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>
-                  <li><%= link_to "How do I make friends in my currently situati..." %></li>
-                </ul>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </section>
-    <section>
-      <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
-    </section>
-  </aside>
 </div>
 <%= render :partial => 'replies', :object => @replies %>

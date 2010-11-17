@@ -1,19 +1,20 @@
 .container > .aligned{overflow: hidden;}
+.content{position: relative; overflow: hidden; margin-bottom: 10px;}
 body{background-image: url('../images/bg-noise-topic.jpg');}
-body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px;}
+body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px; background-attachment: fixed;}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
 .article-tags > li{display: inline;}     
-.content{float: left; width: 796px;}
+.left-side{float: left; width: 786px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
-article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px; min-height: 449px;}
+article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px; min-height: 800px;}
 .topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
-aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
+aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}

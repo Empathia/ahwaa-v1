@@ -14,16 +14,18 @@ $(function(){
 
     var posX = Math.ceil(($(window).width() - 960)/2) - 30;
     $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'}); 
+   
 
-    posX = Math.ceil(($(window).width() - 960)/2);
-    $('aside').css({'right' : posX + 'px', 'display' : 'block'}); 
+    var article = $(".article-wrapper"),
+        sidebar = article.find('aside'),
+        posLeft = article.offset().left + 786;
+    sidebar.css('left', posLeft - $(window).scrollLeft());
     
     $(window).resize(function() {
+        var self = $(this);
         posX = Math.ceil(($(window).width() - 960)/2) - 30;
-        $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'});
-    
-        posX = Math.ceil(($(window).width() - 960)/2);        
-        $('aside').css({'right' : posX + 'px', 'display' : 'block'}); 
+        $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'});        
+        sidebar.data("fixed") == "true" && sidebar.css('left', posLeft - self.scrollLeft());
     });
 
     $('.form-private-msg').submit(function(){
@@ -98,4 +100,37 @@ $(function(){
         });
         return false;
     });
+    
+    $(window).scroll(function(e){
+		var selfOffset = article.offset().top-112,
+    		selfHeight = article.outerHeight(),
+    		windowOffset = $(window).scrollTop(),
+    		sidebarHeight = sidebar.outerHeight(true),
+    		sidebarPosX = sidebar.offset().left;
+
+    	if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight && selfOffset - windowOffset < sidebarHeight-selfHeight){
+    	    sidebar.data("fixed", "false").css({
+    	  			"position" : "absolute",
+    	  			"left": "auto",
+    	  			"right" : "0",
+    	  			"bottom" : "0"
+    	  		});
+    	} else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
+    	    sidebar.data("fixed", "true").css({
+    	    		"position": "fixed",
+    	    		"left": sidebarPosX,
+    	    		"right": "auto",
+    	  			"bottom" : "auto"
+    	    	});
+    	} else {                            
+    	    sidebar.data("fixed", "false").css({
+    	    		"position" : "absolute",
+    	    		"right" : "0",
+    	    		"left" : "auto",
+    	    		"bottom": "auto"
+    	    	});
+    	}
+
+        sidebar.data("fixed") == "true1" && sidebar.css('left', posLeft - $(window).scrollLeft());
+    });    
 });
