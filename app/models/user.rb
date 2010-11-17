@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_one :current_prize, :through => :score_board, :class_name => "Prize", :source => :prize
 
   has_many :ratings, :dependent => :destroy
+  has_many :replies, :dependent => :destroy
+  has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :private_messages, :dependent => :destroy,
     :foreign_key => :recipient_id, :conditions => {:parent_id => nil}

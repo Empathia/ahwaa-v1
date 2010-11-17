@@ -19,9 +19,9 @@
   <div class="recently-topics">
     <p><%= t('private_message.recently_participated') %></p>
     <ul>
-      <li><%= link_to "I'm Bisexual will i go to hell? (Christians say th..." %></li>
-      <li><%= link_to "Do you have 1 partner or do you have a seco..." %></li>
-      <li><%= link_to "How do I make friends in my currently situati..." %></li>
+      <% user.recent_replies.each do |reply| %> 
+        <li><%= link_to truncate(reply.topic.title, :length => 50), reply.topic %></li>
+      <% end %>
     </ul>
   </div>
 </div>
