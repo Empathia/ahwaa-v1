@@ -38,6 +38,12 @@ class User < ActiveRecord::Base
   def set_reward(reward)
     self.send("current_#{reward.class.to_s.underscore}=",reward)
   end
+  
+  # updates the scoreboard
+  def update_score_board(by)
+    #self.score_board.increment(:current_points, by)
+    self.score_board.update_attributes!(:current_points => self.score_board.current_points + by)
+  end
 
   # Finds user by username or email
   def self.find_for_database_authentication(login_value)
