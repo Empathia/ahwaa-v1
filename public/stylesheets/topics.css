@@ -1,19 +1,23 @@
 .container > .aligned{overflow: hidden;}
-body{background-image: url('../images/bg-noise-topic.jpg');}
-body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px;}
+.content{position: relative; overflow: hidden; margin-bottom: 10px;}
+body{                                               
+  background: url('../images/topic-bg.jpg') 0 107px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
+  background: url('../images/bg-noise-topic.jpg') repeat fixed top left\9;                                
+}
+body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
 .article-tags > li{display: inline;}     
-.content{float: left; width: 796px;}
+.left-side{float: left; width: 786px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
-article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px; min-height: 449px;}
+article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px; min-height: 800px;}
 .topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
-aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
+aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
@@ -136,7 +140,7 @@ a.no_comments{
 .icn-plus:hover > span{display: block;}
 p:hover .icn-plus{display: inline;}
 .related-content{background-color: #ffffff; padding: 20px;}
-.related-carrousel{overflow: hidden; width: 714px; float: left; position: relative; height: 60px;}
+.related-carrousel{overflow: hidden; width: 704px; float: left; position: relative; height: 60px;}
 .related-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
 .related-carrousel > ul > li{width: 210px; height: 100%; overflow: hidden; float: left; margin: 0 14px;}
 .related-carrousel > ul > li > a:first-child{float: left; margin-right: 15px;}
