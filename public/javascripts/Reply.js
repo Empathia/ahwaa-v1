@@ -1,7 +1,6 @@
 Class('Reply').inherits(Remote)({
     remote: {
-        create: '/topics/:topic_id/replies.json',
-        update: '/topics/:topic_id/replies/:id.json',
+        create: '/topics/:topic_id/replies.js',
         flag: '/topics/:topic_id/replies/:id/flag.json',
         vote_up: '/topics/:topic_id/replies/:id/vote_up.json'
     },

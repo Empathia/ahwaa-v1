@@ -37,5 +37,17 @@ $(document).ready(function() {
         }
     });
 
+    // $('.add_comments').live('submit', function () {
+    //     var attrs = $.extend($(this).deserialize(), {
+    //         topic_id: topicId
+    //     });
+    //     var reply = new Reply(attrs);
+    //     reply.save();
+    //     return false;
+    // });
+
+    $('.add_comments:visible input[type=submit]').live('click', function () {
+        $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
+    });
 });
 
