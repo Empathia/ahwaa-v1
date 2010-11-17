@@ -5,6 +5,11 @@ describe User do
     @user = Factory(:user)
   end
 
+  it { should have_one(:score_board)}
+  it { should have_one(:current_level)}
+  it { should have_one(:current_badge)}
+  it { should have_one(:current_prize)}
+
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }
   it { should_not allow_mass_assignment_of(:encrypted_password) }
@@ -40,6 +45,19 @@ describe User do
       @user.authenticate!(@user.password).should be_true
     end
 
+    it 'should have a scoreboard' do
+      @user.score_board.should_not be_nil
+    end
+
   end
+
+  context 'level badge prize assignation' do
+    it 'should assign a reward' do
+      @level = Factory(:level)
+      @user.set_reward(@level) 
+      @user.reload.current_level.should == @level
+    end
+  end
+
 end
 

@@ -57,7 +57,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.6)
+    mysql2 (0.2.4)
+    no_peeping_toms (1.1.0)
+      activerecord (>= 1.1)
     nokogiri (1.4.3.1)
     paperclip (2.3.5)
       activerecord
@@ -121,6 +123,7 @@ DEPENDENCIES
   jquery-rails (~> 0.2.2)
   json (~> 1.4.6)
   mysql2 (~> 0.2.4)
+  no_peeping_toms
   nokogiri (~> 1.4.3.1)
   paperclip (~> 2.3.4)
   rails (= 3.0.3)
