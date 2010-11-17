@@ -12,20 +12,17 @@ $(function(){
         e.keyCode == '13' && textarea.height(textarea.height() + 13);
     });
 
-    var posX = Math.ceil(($(window).width() - 960)/2) - 30;
-    $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'}); 
-   
-
-    var article = $(".article-wrapper"),
-        sidebar = article.find('aside'),
-        posLeft = article.offset().left + 786;
-    sidebar.css('left', posLeft - $(window).scrollLeft());
     
+    var article = $(".article-wrapper"),
+        socialBookmarkers = $('.social-bookmarkers'),
+        sidebar = article.find('aside'),
+        leftSideWidth = 786;
+    sidebar.css('left', article.offset().left + leftSideWidth - $(window).scrollLeft());
+
     $(window).resize(function() {
         var self = $(this);
-        posX = Math.ceil(($(window).width() - 960)/2) - 30;
-        $('.social-bookmarkers').css({'left' : posX + 'px', 'display' : 'block'});        
-        sidebar.data("fixed") == "true" && sidebar.css('left', posLeft - self.scrollLeft());
+        socialBookmarkers.data("fixed") == true && socialBookmarkers.css('left', article.offset().left - 30); 
+        sidebar.data("fixed") == "true" && sidebar.css('left', article.offset().left + leftSideWidth - self.scrollLeft());
     });
 
     $('.form-private-msg').submit(function(){
@@ -102,35 +99,28 @@ $(function(){
     });
     
     $(window).scroll(function(e){
-		var selfOffset = article.offset().top-112,
-    		selfHeight = article.outerHeight(),
-    		windowOffset = $(window).scrollTop(),
-    		sidebarHeight = sidebar.outerHeight(true),
-    		sidebarPosX = sidebar.offset().left;
-
-    	if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight && selfOffset - windowOffset < sidebarHeight-selfHeight){
-    	    sidebar.data("fixed", "false").css({
-    	  			"position" : "absolute",
-    	  			"left": "auto",
-    	  			"right" : "0",
-    	  			"bottom" : "0"
-    	  		});
-    	} else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
-    	    sidebar.data("fixed", "true").css({
-    	    		"position": "fixed",
-    	    		"left": sidebarPosX,
-    	    		"right": "auto",
-    	  			"bottom" : "auto"
-    	    	});
-    	} else {                            
-    	    sidebar.data("fixed", "false").css({
-    	    		"position" : "absolute",
-    	    		"right" : "0",
-    	    		"left" : "auto",
-    	    		"bottom": "auto"
-    	    	});
-    	}
-
-        sidebar.data("fixed") == "true1" && sidebar.css('left', posLeft - $(window).scrollLeft());
+        sidebar.add(socialBookmarkers).each(function(){
+            var selfOffset = article.offset().top-112,
+        		selfHeight = article.outerHeight(),
+        		windowOffset = $(window).scrollTop(),
+        		fixedElement = $(this);
+        		fixedElementHeight = fixedElement.outerHeight(true),
+        		fixedElementPosX = fixedElement.offset().left;
+                cssProperties = {};
+        	if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight && selfOffset - windowOffset < fixedElementHeight-selfHeight){
+        	    cssProperties = {position : "absolute", bottom: "0"};
+        	    cssProperties = $.extend(fixedElement.hasClass('social-bookmarkers') ? {left: "-30px", right: "auto", top: "auto"} : {left: "auto", right: "0"}, cssProperties);
+        	    fixedElement.data("fixed", "false").css(cssProperties);
+        	} else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
+        	    $(window).scrollLeft() && (fixedElementPosX = article.offset().left + leftSideWidth - $(window).scrollLeft());
+                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto"}
+        	    fixedElement.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
+        	    fixedElement.data("fixed", "true").css(cssProperties);
+        	} else {         
+        	    cssProperties = {position : "absolute", bottom: "auto"};
+        	    cssProperties = $.extend(fixedElement.hasClass('social-bookmarkers') ? {left: "-30px", right: "auto", top: "0"} : {left: "auto", right: "0"}, cssProperties);
+        	    fixedElement.data("fixed", "false").css(cssProperties);
+        	}     
+        });
     });    
 });

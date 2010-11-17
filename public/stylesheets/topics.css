@@ -1,8 +1,7 @@
-.container > .aligned{overflow: hidden;}
-.content{position: relative; overflow: hidden; margin-bottom: 10px;}
+.content{position: relative; margin-bottom: 10px;}
 body{                                               
+  background: url('../images/bg-noise-topic.jpg') repeat fixed top left;                                  
   background: url('../images/topic-bg.jpg') 0 107px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
-  background: url('../images/bg-noise-topic.jpg') repeat fixed top left\9;                                
 }
 body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
@@ -10,7 +9,7 @@ body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .left-side{float: left; width: 786px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
-article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px; min-height: 800px;}
+article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px;}
 .topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content > p > a{font-style: italic} 
@@ -153,7 +152,7 @@ p:hover .icn-plus{display: inline;}
 .arrows .back.active{background-position: 0 -36px;}
 .arrows .next{background-position: 0 -18px;}
 .arrows .next.active{background-position: 0 -54px;}
-.social-bookmarkers{background-color: #ffffff; display: none; left: -44px; padding: 8px 4px 8px 8px; position: fixed; top: 188px; width: 18px;}
+.social-bookmarkers{background-color: #ffffff; padding: 8px 4px 8px 8px; position: absolute; top: 0; margin: 42px 0 20px 0; width: 18px; left: -30px;}
 .social-bookmarkers > a{float: left; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../images/icn-social.png'); background-repeat: none;}
 .facebook{background-position: 0 0;}
 .facebook:hover{background-position: 0 -18px;}

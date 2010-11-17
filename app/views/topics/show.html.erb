@@ -88,10 +88,12 @@
         <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
       </section>
     </aside>
+    <br class="clear">
   </div>
   <div class="left-side">
     <%= render :partial => 'related_content', :locals => {:related_contents => @related_contents} %>
   </div>
+  <br class="clear">  
 </div>
 <%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border all' }, :remote => true do |f| %>
   <%= f.hidden_field :contextual_index, :class => 'contextual_index' %>
