@@ -4,6 +4,7 @@ _form.prepend('<div class="success-validation border-all"><p>' + I18n.t('private
 _form.delay(2000).slideUp(function(){
     _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.success-validation').remove();
 });
+_form[0].reset();
 <% else %>
 _form.prepend('<div class="error-validation border-all"><p><%= escape_javascript @private_message.errors.full_messages.first %></p></div>');
 <% end %>

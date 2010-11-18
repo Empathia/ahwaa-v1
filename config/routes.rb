@@ -16,6 +16,8 @@ Lgbt::Application.routes.draw do
 
   resources :private_messages, :path => "inbox", :except => [:new, :edit, :update, :create]
 
+  resources :bad_words, :only => [:index]
+
   resources :topics, :only => [:show] do
     resources :replies, :only => [:create] do
       post :flag, :as => :member
