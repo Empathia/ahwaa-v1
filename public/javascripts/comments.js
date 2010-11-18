@@ -12,10 +12,10 @@ function slideUpComments(comments, parag, link){
     });
 }
 
-$.fn.comments = function(options){
-    $('.expand-btn').data('label', $('.expand-btn').text());
-    $('.expand-btn').click(function(e){
-        if($(this).hasClass('hide')){
+$.fn.comments = function(options){                         
+    var expandBtn = $('.expand-btn');
+    expandBtn.data('label', expandBtn.text()).click(function(e){
+        if(expandBtn.hasClass('hide')){
             $(".comments[id$='clone']").each(function (){
                 var comments = $(this);
                 comments.slideUp(function(){
@@ -25,21 +25,21 @@ $.fn.comments = function(options){
                     comments.remove();
                 });
             });
-            $(this).text(I18n.t('topics.show.sidebar.show_all_responses')).removeClass('hide');
-            $('.topic-content .icn-plus').removeClass('minus');
+            expandBtn.text(I18n.t('topics.show.sidebar.show_all_responses')).removeClass('hide');
+            $('.topic-content .icn').removeClass('minus');
         }
         else{
-            expand();
-            $(this).text($(this).data('label')).addClass('hide');
+            expandAll();
+            expandBtn.text(expandBtn.data('label')).addClass('hide');
         }
         e.preventDefault();
         return false;
     });
 
-    $('.icn-plus').live('click', function(e){
+    $('.icn').live('click', function(e){
         var link = $(this),
             parag = link.parent(),
-            index = $('.topic-content .icn-plus').index(this),
+            index = $('.topic-content .icn').index(this),
             comments = parag.next('#comments_' + index + '_clone').length ? parag.next() : parag.next('#comments_add_' + index + '_clone'),
             tt = link.find('.tt');
         if(comments.length){
@@ -51,16 +51,9 @@ $.fn.comments = function(options){
             var has_comments = link.hasClass('has_comments');
             comments = has_comments ? $('#comments_' + index).outerHTML() : $('#add_comments').outerHTML();
             has_comments && link.addClass('minus');
-            var linkOuterHTML = link.css('display', 'inline').outerHTML(),
-                chunks = parag.html().split(linkOuterHTML),
-                left = link.position().left;
-            parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
-
-            comments = parag.next();
-            comments.attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone');
-            comments.find('.comm-arrow:first').css('left', left + 'px');
-            comments.slideDown().addClass('clon');
-            comments.find('.contextual_index').val(index);
+            link.css('display', 'inline');
+            comments = cloneComments(link, comments, index, has_comments);
+            comments.slideDown();
         }
         return false;
     });
@@ -121,23 +114,31 @@ $.fn.comments = function(options){
         }
     });
 
-    function expand(){
+    function expandAll(){
+        var allComments = [];
         $('.comments').each(function(){
             var comments = $(this),
                 id =  comments.attr('id').split('_')[1];
-            if($('#comments_' +  id +'_clone').length == 0){
-                var link = $('.topic-content .icn-plus:eq(' + id + ')'),
-                    parag = link.parent(),
-                    linkOuterHTML = link.outerHTML(),
-                    chunks = parag.html().split(linkOuterHTML);
-                var left = link.position().left;
-                parag.html(chunks[0] +  linkOuterHTML).after(comments.outerHTML() + '<p>' + chunks[1] + '</p>');
-                parag.next('#comments_' + id).attr('id',  id + '_clone').addClass('clon').find('.comm-arrow:first').css('left', left + 'px');
-            }
+            $('#comments_' +  id +'_clone').length == 0 && allComments.push(cloneComments($('.topic-content .icn:eq(' + id + ')'), comments.outerHTML(), id, true)[0]);
         });
-        $(".comments[id$='clone']").slideDown();
-        $('.topic-content .icn-plus').addClass('minus');
-    }
+       $(allComments).slideDown();
+       $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
+       $('.topic-content .icn').addClass('minus');
+    } 
+    
+    function cloneComments(link, comments, index, has_comments){
+        var parag = link.parent(),
+            linkOuterHTML = link.outerHTML(),
+            chunks = parag.html().split(linkOuterHTML),
+            left = link.position().left;
+        parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
+        comments = parag.next();
+        comments.attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').addClass('clon');
+        comments.find('.comm-arrow:first').css('left', left);
+        comments.find('.contextual_index').val(index);
+        return comments;
+    }   
+    
     var i=0;
     this.each(function(){
         var parag = $(this),
@@ -145,30 +146,31 @@ $.fn.comments = function(options){
             exp = /\.((?: [A-Z])|$)/,
             has_comments = "";
         while(exp.test(paragHTML)){
-            paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn-plus has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1") :
-                        paragHTML.replace(exp, "<a href='#' class='icn-plus no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1")
+            paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1") :
+                        paragHTML.replace(exp, "<a href='#' class='icn no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1")
             i++;
         }
-        //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn-plus' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
+        //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
         parag.html(paragHTML);
     });
 
-    $('.icn-plus').each(function(i){
+    $('.icn').each(function(i){
        $(this).attr('id', 'add_' + i);
     });
 
     $('.new-response').live('click', function(e){
-        var addCommentForm = $('#add_comments').clone(true),
+        var newResponse = $(this),
+            addCommentForm = $('#add_comments').clone(true),
             id = 'add_comment_clone' + new Date().getTime(),
-            newResponse = $(this).clone(true),
-            index = $(this).parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
+            newResponseClon = newResponse.clone(true),
+            index = newResponse.parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
         addCommentForm.attr('id', id).find('.contextual_index').val(index);
 
         $(this).replaceWith(addCommentForm);
-        $('#' + id).data('newResponse', newResponse).slideDown().find('textarea').focus();
+        $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
         e.preventDefault();
         return false;
     });
 
-    //expand();
+    //expandAll();
 };
