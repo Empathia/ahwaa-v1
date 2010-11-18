@@ -1,4 +1,5 @@
 class Reply < ActiveRecord::Base
+  POINTS_FOR_POSTING = 5
   CATEGORIES = %w[advice comment experience]
   
   # TODO: attr_accessible
@@ -21,6 +22,11 @@ class Reply < ActiveRecord::Base
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
 
   scope :latest, order("created_at DESC").limit(5)
+
+  # returns the amount of points granted this post produces
+  def points_granted
+    self.user ? POINTS_FOR_POSTING : 0
+  end
 
   # Returns the internationalized version of the categories
   def self.categories

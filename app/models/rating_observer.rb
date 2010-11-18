@@ -1,8 +1,10 @@
 class RatingObserver < ActiveRecord::Observer
 
   def after_create(rating)
-    user = rating.reply.user rescue nil
-    user.update_score_board(rating.points_granted) if user
+    rated = rating.reply.user rescue nil
+    rater = rating.user
+    rated.update_score_board(rating.grant_points_to_rated) if rated
+    rater.update_score_board(rating.grant_points_to_rater) if rater
   end
 
 end

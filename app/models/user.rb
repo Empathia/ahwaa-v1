@@ -41,7 +41,6 @@ class User < ActiveRecord::Base
   
   # updates the scoreboard
   def update_score_board(by)
-    #self.score_board.increment(:current_points, by)
     self.score_board.update_attributes!(:current_points => self.score_board.current_points + by)
   end
 
