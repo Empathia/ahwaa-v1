@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "no-reply@trascends.com"
+  default :from => "no-reply@transcend.com"
 
   def sign_up_confirmation(user)
     @user = user
@@ -11,5 +11,12 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail :to => @user.email,
       :subject => "Password reset"
+  end
+
+  def private_message_notification(user, sender)
+    @user = user
+    @sender = sender
+    mail :to => @user.email,
+      :subject => "You've received a private message"
   end
 end

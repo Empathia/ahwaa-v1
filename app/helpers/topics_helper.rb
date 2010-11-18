@@ -41,7 +41,12 @@ module TopicsHelper
   end
 
   # Sets css class for topic's response type, wether it's first or last button
-  def response_type_class(index)
+  def response_type_border_class(index)
     index == 0 ? 'border-left' : (index == Reply::CATEGORIES.length-1 ? 'border-right' : '')
+  end
+
+  # Builds css classes for reply
+  def reply_css_classes(reply)
+    "comment-st-level #{("expert" if reply.from_expert?)} #{reply.category} #{'useful' if reply.useful?}"
   end
 end

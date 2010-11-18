@@ -16,7 +16,7 @@ describe RepliesController do
     end
 
     def do_request(params = {})
-      xhr :post, :create, params.merge(:topic_id => @topic.id, :format => :json)
+      xhr :post, :create, params.merge(:topic_id => @topic.id, :format => :js)
     end
 
     context "when user isn't logged in" do
@@ -33,30 +33,11 @@ describe RepliesController do
           @reply.stub!(:save).and_return(true)
         end
 
-        it "responds with status 201" do
-          do_request
-          response.status.should == 201
-        end
-
         it "creates a new reply for the topic" do
           @reply.should_receive(:save).and_return(true)
           do_request
         end
 
-      end
-
-      context "when reply fails to save" do
-
-        before(:each) do
-          @reply.stub!(:save).and_return(false)
-          @reply.stub!(:errors).and_return([{}])
-        end
-
-        it "responds with status 422" do
-          do_request
-          response.status.should == 422
-        end
-        
       end
 
     end
@@ -79,30 +60,11 @@ describe RepliesController do
           @reply.stub!(:save).and_return(true)
         end
 
-        it "responds with status 201" do
-          do_request
-          response.status.should == 201
-        end
-
         it "creates a new reply for the topic" do
           @reply.should_receive(:save).and_return(true)
           do_request
         end
 
-      end
-
-      context "when reply fails to save" do
-
-        before(:each) do
-          @reply.stub!(:save).and_return(false)
-          @reply.stub!(:errors).and_return([{}])
-        end
-
-        it "responds with status 422" do
-          do_request
-          response.status.should == 422
-        end
-        
       end
 
     end

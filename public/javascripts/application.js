@@ -57,5 +57,30 @@ $(document).ready(function() {
         return false;
     });
 
+    $('.add_comments:visible input[type=submit]').live('click', function () {
+        $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
+    });
+
+    $('.filter-resposes input:checkbox, #filter_helpful').change(filterResponses);
 });
 
+function filterResponses() {
+    var cbs = $('.filter-resposes input:checkbox:checked');
+    var show_useful = $('#filter_helpful').is(':checked');
+    $('.comments.clon li.comment-st-level').hide();
+    if(cbs.length === 0) {
+        if(show_useful) {
+            $('.comments.clon li.comment-st-level.useful').show();
+        } else {
+            $('.comments.clon li.comment-st-level').show();
+        }
+    } else {
+        cbs.each(function () {
+            if(show_useful) {
+                $('.comments.clon li.comment-st-level.useful.' + $(this).val()).show();
+            } else {
+                $('.comments.clon li.comment-st-level.' + $(this).val()).show();
+            }
+        });
+    }
+}

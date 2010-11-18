@@ -14,13 +14,13 @@
   </tr>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= topic.created_at %></td
-      <td><%= topic.updated_at %></td>
-      <td><%= topic.title %></td>
+      <td><%= l topic.created_at, :format => :short %></td
+      <td><%= l topic.updated_at, :format => :short %></td>
+      <td><%= link_to topic.title, topic %></td>
       <td><%= topic.user.username %></td>
-      <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
       <td><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
-      <td><%= link_to 'Delete',admin_topic_path(topic), :method => :delete %></td>
+      <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
+      <td><%= link_to 'Delete', admin_topic_path(topic), :method => :delete, :confirm => "Are you sure?" %></td>
     </tr>
   <% end %>
 </table>

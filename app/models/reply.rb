@@ -1,4 +1,5 @@
 class Reply < ActiveRecord::Base
+  POINTS_FOR_POSTING = 5
   CATEGORIES = %w[advice comment experience]
   
   # TODO: attr_accessible
@@ -10,6 +11,7 @@ class Reply < ActiveRecord::Base
     :conditions => { :vote => Rating::VOTE_UP }
   has_many :flags, :class_name => 'Rating', :dependent => :destroy,
     :conditions => { :vote => Rating::FLAG }
+  has_many :ratings, :dependent => :destroy
   has_many :replies, :foreign_key => :parent_id
 
   validates :content, :presence => true
@@ -21,6 +23,11 @@ class Reply < ActiveRecord::Base
 
   scope :latest, order("created_at DESC").limit(5)
 
+  # returns the amount of points granted this post produces
+  def points_granted
+    self.user ? POINTS_FOR_POSTING : 0
+  end
+
   # Returns the internationalized version of the categories
   def self.categories
     categories_hash.values
@@ -29,6 +36,11 @@ class Reply < ActiveRecord::Base
   # Returns a hash with raw category name as key, and i18n as value
   def self.categories_hash
     Hash[CATEGORIES.map { |category| [category, human_attribute_name(category)] }]
+  end
+
+  # Wether or not the reply has been rated more positive
+  def useful?
+    ratings.sum(:vote) > 0
   end
 
   # Votes up the reply

@@ -18,7 +18,7 @@ class PrivateMessage < ActiveRecord::Base
   # like recipient and parent
   def self.build_from_params(params)
     new(params[:private_message]).tap do |pm|
-      pm.recipient = User.find(params[:user_id])
+      pm.recipient = User.find_by_username(params[:user_id])
       pm.parent = PrivateMessage.find(params[:reply_to]) if params[:reply_to]
     end
   end

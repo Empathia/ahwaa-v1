@@ -1,5 +1,6 @@
 class RepliesController < ApplicationController
-  respond_to :json
+  respond_to :json, :except => [:create]
+  respond_to :js, :only => [:create]
   before_filter :find_topic
   skip_before_filter :authenticate_user!, :except => [:flag, :vote_up]
 
@@ -7,7 +8,6 @@ class RepliesController < ApplicationController
     @reply = @topic.replies.build(params[:reply])
     @reply.user = current_user if logged_in?
     @reply.save
-    respond_with(@reply, :location => @topic)
   end
 
   def flag

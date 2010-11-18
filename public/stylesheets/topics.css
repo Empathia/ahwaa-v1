@@ -1,19 +1,22 @@
-.container > .aligned{overflow: hidden;}
-body{background-image: url('../images/bg-noise-topic.jpg');}
-body > div{background: url('../images/topic-bg.jpg') repeat-x 0 107px;}
+.content{position: relative; margin-bottom: 10px;}
+body{                                               
+  background: url('../images/bg-noise-topic.jpg') repeat fixed top left;                                  
+  background: url('../images/topic-bg.jpg') 0 107px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
+}
+body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
 .article-tags > li{display: inline;}     
-.content{float: left; width: 796px;}
+.left-side{float: left; width: 786px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
-article{padding: 40px; background-color: #ffffff; display: block; margin-bottom: 10px; min-height: 449px;}
+article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px;}
 .topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content > p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
-aside{float: right; width: 134px; padding: 0 20px; margin-top: 20px; background-color: #ffffff; position: fixed;}
+aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
@@ -23,7 +26,8 @@ aside section:first-child{border-top: none;}
 .add_comments_top{overflow: hidden;}
 .cancel-comment{float: right; color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;}
-.res-types-wrapper > div{float: right;}                                               
+.res-types-wrapper > div.error{float: left; color:red; line-height: 23px;}                                               
+.res-types-wrapper > div.buttons{float: right;}                                               
 .res-lbl{float: right; margin-right: 10px; line-height: 1.8; color: #7d96b2;}
 .res-types{float: right;}
 .res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-left: 1px solid #dee8f2; float: left; padding-left: 10px;
@@ -135,7 +139,7 @@ a.no_comments{
 .icn-plus:hover > span{display: block;}
 p:hover .icn-plus{display: inline;}
 .related-content{background-color: #ffffff; padding: 20px;}
-.related-carrousel{overflow: hidden; width: 714px; float: left; position: relative; height: 60px;}
+.related-carrousel{overflow: hidden; width: 704px; float: left; position: relative; height: 60px;}
 .related-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
 .related-carrousel > ul > li{width: 210px; height: 100%; overflow: hidden; float: left; margin: 0 14px;}
 .related-carrousel > ul > li > a:first-child{float: left; margin-right: 15px;}
@@ -148,7 +152,7 @@ p:hover .icn-plus{display: inline;}
 .arrows .back.active{background-position: 0 -36px;}
 .arrows .next{background-position: 0 -18px;}
 .arrows .next.active{background-position: 0 -54px;}
-.social-bookmarkers{background-color: #ffffff; display: none; left: -44px; padding: 8px 4px 8px 8px; position: fixed; top: 188px; width: 18px;}
+.social-bookmarkers{background-color: #ffffff; padding: 8px 4px 8px 8px; position: absolute; top: 0; margin: 42px 0 20px 0; width: 18px; left: -30px;}
 .social-bookmarkers > a{float: left; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../images/icn-social.png'); background-repeat: none;}
 .facebook{background-position: 0 0;}
 .facebook:hover{background-position: 0 -18px;}

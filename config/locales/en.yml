@@ -46,6 +46,7 @@ en:
     expert: is an Expert            
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
+    no_activity: No recent activity
   layouts:
     application:        
       header:     
@@ -147,8 +148,6 @@ en:
         experts:
           title: Topic experts
         need_help: Need help?
-    replies:
-      new_response: New Response
       form:
         cancel: Cancel
         write_response: Click here to write your response.
@@ -156,6 +155,8 @@ en:
         anonymous_legend: "Anonymous Responses can't be rated."
         continue: Continue
         sign_up: Sign Up
+    comments:
+      new_response: New Response
   replies:
     reply:
       anonymous: Anonymous
@@ -163,7 +164,6 @@ en:
       flag: Flag
       flagged: Flagged
       already_flagged: Already flagged
-      useful: Marked as useful
       already_useful: Already marked as useful
   topic_requests:
     new:

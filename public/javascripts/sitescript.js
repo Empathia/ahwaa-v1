@@ -147,6 +147,7 @@ $(function(){
                 if(data.status == 404) {
                     that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.forgot_pass_form.not_found') + '</p>');
                 }
+                inputSubmit.removeAttr('disabled');
             }
         });
         return false;
@@ -188,8 +189,11 @@ $(function(){
     
     $(".request-topic.active").pageSlide({ width: "556px", direction: "left" }); 
     
-    $('.send-private-msg').not('.disabled').click(function(){
-       $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+    $('.send-private-msg').click(function(){
+        if(!$(this).hasClass('disabled')) {
+            $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+        }
+       return false;
     });                                                               
 
     $('.private-msg').find('.cancel').click(function(){

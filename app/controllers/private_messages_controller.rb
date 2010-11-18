@@ -1,6 +1,7 @@
 class PrivateMessagesController < ApplicationController
   before_filter :find_private_message, :only => [:show, :destroy]
-  respond_to :html, :json
+  respond_to :html
+  respond_to :js, :only => [:create]
 
   def index
     @private_messages = current_user.private_messages
@@ -12,7 +13,8 @@ class PrivateMessagesController < ApplicationController
   def create
     @private_message = PrivateMessage.build_from_params(params)
     @private_message.sender = current_user
-    @private_message.save
+    UserMailer.private_message_notification(@private_message.recipient,
+                                            @private_message.sender).deliver if @private_message.save
     respond_with(@private_message)
   end
 
