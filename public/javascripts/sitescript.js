@@ -175,8 +175,6 @@ $(function(){
     
     $(".request-topic.active").pageSlide({ width: "556px", direction: "left" });
     
-    $(".back").pageSlide({ width: "556px", direction: "left" }); 
-    
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
             $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
@@ -213,6 +211,8 @@ $(function(){
         lisIndex = lisIndex-1;
         console.log(lisWidth);
     }
+    
+    $('.items > div:last-child').css("background","none");
     
 });
 

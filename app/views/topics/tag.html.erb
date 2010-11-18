@@ -7,7 +7,7 @@
           <%= link_to t('.sort_by.newest'), nil, :class => active_class %>
           <%= link_to t('.sort_by.responses'), {:by_responses => 1}, :class => active_class(true) %>
         </p>
-        <div class="items">
+        <div class="items topic-avatars">
           <% @topics.each do | group_topics | %>
             <div>
               <% group_topics.each do | topic | %>
@@ -33,6 +33,7 @@
               <% end %>
             </div>
           <% end %>
+          <p class="clear"></p>
         </div>
       </section>
     </div>
