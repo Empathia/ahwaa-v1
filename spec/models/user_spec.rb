@@ -59,5 +59,13 @@ describe User do
     end
   end
 
+  context 'update scoreboard' do
+    it 'should update scoreboard with x amount of points' do
+      lambda do
+        @user.update_score_board(1)
+      end.should change(@user.score_board, :current_points).by(1)
+    end
+  end
+
 end
 
