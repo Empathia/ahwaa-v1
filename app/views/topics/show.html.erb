@@ -1,5 +1,8 @@
 <% head do %>
-  <script type="text/javascript">var topicId = '<%= @topic.cached_slug %>';</script>
+  <script type="text/javascript">
+    var topicId = '<%= @topic.cached_slug %>';
+    var badWords = <%= BadWord.get_the_bad_word_index.inspect.html_safe %>;
+  </script>
 <% end %>
 <% javascript 'comments', 'slideshow', 'deserialize', 'topics', 'Neon', 'Remote', 'Reply' %>
 <% stylesheet 'topics' %>
@@ -86,7 +89,7 @@
       <% end %>  
       <div class="response <%= "hidden" unless logged_in? %>">
         <div class="add_comments_top"><%= current_username %></div>
-        <%= f.text_area :content, :placeholder => t('.form.write_response') %>
+        <%= f.text_area :content, :class => 'comment_content', :placeholder => t('.form.write_response') %>
         <div class="res-types-wrapper">
           <div class="error"></div>
           <div class="buttons">

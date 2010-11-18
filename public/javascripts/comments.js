@@ -117,7 +117,17 @@ $.fn.comments = function(options){
         comments.find('.error').text('');
         e.preventDefault();
         return false;
-    })
+    });
+
+    $('.add_comments.clon:visible textarea.comment_content').live('keyup', function () {
+        for(var i = 0; i < badWords.length; i++) {
+            var reg = new RegExp(badWords[i], 'ig');
+            if(reg.test($(this).val())) {
+                var replacement = $(this).val().replace(reg, ''.padLeft(badWords[i].length, '*'));
+                $(this).val(replacement);
+            }
+        }
+    });
 
     function expandAll(){
         var allComments = [];
