@@ -173,8 +173,11 @@ $(function(){
         $('.search_results').removeClass('visible');
     });  
     
-    $('.send-private-msg').not('.disabled').click(function(){
-       $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+    $('.send-private-msg').click(function(){
+        if(!$(this).hasClass('disabled')) {
+            $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+        }
+       return false;
     });                                                               
 
     $('.private-msg').find('.cancel').click(function(){

@@ -28,17 +28,6 @@ $(function(){
         sidebar.data("fixed") == "true" && sidebar.css('left', posLeft - self.scrollLeft());
     });
 
-    $('.form-private-msg').submit(function(){
-        var _form = $(this);
-        //Aqui va el ajax
-        //If Success
-        _form.prepend('<div class="success-validation border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
-        _form.delay(2000).slideUp(function(){
-            _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.success-validation').remove();
-        });
-        return false;
-    });
-    
     $('.continue').live('click', function(){
        $(this).closest('.sign-up-or-continue').slideUp(function(){
            var signUp = $(this);

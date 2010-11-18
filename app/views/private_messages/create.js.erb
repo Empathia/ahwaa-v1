@@ -1,0 +1,9 @@
+var _form = $('.form-private-msg:visible');
+<% if @private_message.valid? %>
+_form.prepend('<div class="success-validation border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
+_form.delay(2000).slideUp(function(){
+    _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.success-validation').remove();
+});
+<% else %>
+_form.prepend('<div class="error-validation border-all"><p><%= escape_javascript @private_message.errors.full_messages.first %></p></div>');
+<% end %>
