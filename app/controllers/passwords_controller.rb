@@ -10,7 +10,7 @@ class PasswordsController < ApplicationController
       UserMailer.password_reset(@user).deliver 
       respond_with(@user, :location => root_path)
     else
-      respond_with(:status => :not_found, :location => root_path)
+      respond_with(@user, :status => :not_found, :location => root_path)
     end
   end
 

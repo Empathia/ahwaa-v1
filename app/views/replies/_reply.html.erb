@@ -1,23 +1,19 @@
 <%= content_tag :li, :class => "comment-st-level #{("expert" if reply.from_expert?)}" do %>
   <span class="comm-arrow"></span>
-  <div>
+  <div class="comm-wrap">
     <div>
-      <div class="avatar-wrapper">
-        <span class="avatar">
-          <%= image_tag reply.author_avatar, :width => '50' %>
-        </span>
-        <div>
+      <div class="response-user">
+        <div class="avatar-wrapper">
+          <span class="avatar <%= 'expert' if reply.from_expert? %>">
+            <%= image_tag reply.author_avatar, :width => '50' %>
+          </span>
+        </div>
+          <div>
           <div class="res-username">
             <% unless reply.anonymous? %>
               <%= link_to reply.user.username %>
             <% else %>
               <%= t(".anonymous") %>
-            <% end %>
-          </div>
-          <div class="res-flag-btns">
-            <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
-            <%= link_to '#', :class => "btn-gradient flag #{'disabled' unless logged_in?}", :'data-value' => reply.id do %>
-              <span><%= t(".flag") %></span>
             <% end %>
           </div>
         </div>
@@ -36,5 +32,20 @@
         </ul>
       <% end %>
     </div>
+  </div>
+  <div class="res-flag-btns">
+    <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
+    <%= link_to '#', :class => "btn-gradient flag #{'disabled' unless logged_in?}", :'data-value' => reply.id do %>
+      <span><%= t(".flag") %></span>
+    <% end %>            
+    <% unless logged_in? %>
+    <div class="sign-up-tt-wrapper">
+      <div class="sign-up-tt">
+        <p class="sign-up-legend">Anonymous users can't be rated</p>
+        <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn">Sign Up</span></a>
+      </div>                                                                                  
+      <div class="tt-arrow"></div>
+    </div>                 
+    <% end %>
   </div>
 <% end %>

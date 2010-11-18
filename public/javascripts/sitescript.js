@@ -115,7 +115,7 @@ $(function(){
     }).find('input[type=submit]').formValidator(
         {
             'errors': {  
-                'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
+                'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
                 'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
             }
         }   
@@ -138,7 +138,7 @@ $(function(){
                     that.fadeOut(function(){
                         that.css('display', '').removeClass('auth-form-active');
                         success.remove();
-                        inputTxt.show();
+                        inputTxt.val('').show();
                         inputSubmit.removeAttr('disabled');
                     });
                 }, 2000);

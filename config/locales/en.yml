@@ -67,7 +67,7 @@ en:
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
           error_email_empty: Email is empty
-          error_username_empty: Username is empty          
+          error_username_empty: Username is empty
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
@@ -78,6 +78,7 @@ en:
           invalid: The email address or password is incorrect. Please try again.
           wrong_password: Wrong password
           not_found: Username or Email not found
+          error_login_empty: Username or Email is empty          
         forgot_pass_form:
           not_found: Username or Email not found
           legend: "Enter your email address and we'll send you a link to reset your password."
@@ -130,6 +131,8 @@ en:
     show:
       contextual:
         add_comment: Add Comment
+        reply_here: Reply here
+        hide: Hide
       icons:
         social:
           linked_in: Liked In
@@ -158,6 +161,10 @@ en:
       anonymous: Anonymous
       useful: This was useful!
       flag: Flag
+      flagged: Flagged
+      already_flagged: Already flagged
+      useful: Marked as useful
+      already_useful: Already marked as useful
   topic_requests:
     new:
       submit: Submit

@@ -8,7 +8,7 @@
     <article class="border-all">
       <header>
       <h1><%= @topic.title %></h1>
-        <div class="avatar">
+        <div class="avatar <%= 'expert' if @topic.user.is_expert %>">
           <%= image_tag @topic.user.profile.avatar.url, :width => '50' %>
         </div>
         <p class="article-tags">
@@ -49,18 +49,18 @@
       <ul class="topic-avatars">
         <% @topic.leaderboard.each do |user| %>
           <li>
-            <div class="avatar">
+            <div class="avatar <%= 'expert' if user.is_expert %>">
               <%= image_tag user.profile.avatar.url, :width => '50' %>
             </div>
             <%= link_to user.username %>
             <div class="private-msg">
               <div class="user-wrapper">
                 <div class="user-info">
-                  <p><%= link_to 'Taxxodium' %> <%= t('private_message.expert') %></p>
+                  <p><b>Taxxodium</b> <%= t('private_message.expert') %></p>
                   <p><%= t('private_message.points', {:points => 150})%></p>
                   <a href="#" class="btn-gradient send-private-msg"><%= t('private_message.send_msg') %></a>
                 </div>
-                <div class="avatar">
+                <div class="avatar <%= 'expert' if user.is_expert %>">
                   <%= image_tag user.profile.avatar.url, :width => '50' %>
                 </div>
               </div>

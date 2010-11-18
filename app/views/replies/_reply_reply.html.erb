@@ -1,9 +1,11 @@
 <li class="comment-nd-level">
-  <div>
-    <div class="avatar-wrapper">
-      <span class="avatar">
-        <%= image_tag reply_reply.author_avatar, :width => '50' %>
-      </span>
+  <div>         
+    <div class="response-user">
+      <div class="avatar-wrapper">
+        <span class="avatar <%= 'expert' if reply_reply.from_expert? %>">
+          <%= image_tag reply_reply.author_avatar, :width => '50' %>
+        </span>
+      </div>        
       <% unless reply_reply.anonymous? %>
         <%= link_to reply_reply.user.username %>
       <% else %>
