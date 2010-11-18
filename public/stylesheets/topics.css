@@ -127,8 +127,8 @@ a.no_comments{
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9')";
 }
 
-.topic-content .icn-plus{position: relative; text-decoration: none; text-align: center;}
-.icn-plus > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; left: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5;
+.topic-content .icn{position: relative; text-decoration: none; text-align: center;}
+.icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; left: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5;
   background-color: #3c454f; 
   background-color: rgba(60, 69, 79, .92);
 }
@@ -136,8 +136,8 @@ a.no_comments{
   border-color: #3c454f transparent transparent;
   border-color: rgba(60, 69, 79, .92) transparent transparent; 
 }  
-.icn-plus:hover > span{display: block;}
-p:hover .icn-plus{display: inline;}
+.icn:hover > span{display: block;}
+p:hover .icn{display: inline;}
 .related-content{background-color: #ffffff; padding: 20px;}
 .related-carrousel{overflow: hidden; width: 704px; float: left; position: relative; height: 60px;}
 .related-carrousel > ul{height: 100%; width: 2400px; position: absolute; top: 0; left: 0;}
