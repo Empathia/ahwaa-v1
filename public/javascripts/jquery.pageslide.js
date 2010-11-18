@@ -13,10 +13,10 @@
 		
 		var pageslide_slide_wrap_css = {
 		  position: 'fixed',
-      width: '0',
-      top: '0',
-      height: '100%',
-      zIndex:'999'
+          width: '0',
+          top: '0',
+          height: '100%',
+          zIndex:'999'
 		};
 		
 		var pageslide_body_wrap_css = {

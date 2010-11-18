@@ -1,26 +1,21 @@
-<h2><%= t('.title') %></h2>
-<a href="" class="back">
-    <span>
-		<span><!--<%= t('.back.button')%>-->Back</span>
-	</span>
-</a>
-<% javascript :form_validator, :form_script %>
-<%= form_for @topic_request do |f| %>
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title, :required => "true" %>
-  </p>
-  <p>
-    <%= f.label :content %>
-    <%= f.text_area :content, :required => "true" %>
-  </p>
-  <p>
-    <%= f.check_box :anonymous_post %>
-    <span class="desc"><%= TopicRequest.human_attribute_name(:anonymous_post) %></span>
-  </p>
-  <p>
-    <%= f.submit t('.submit') %>
-  </p>
-<% end %>
-
+<div>
+	<h2><%= t('.title') %></h2>
+	<a href="" class="pageslide-close">
+	    <span>
+			<span><!--<%= t('.back.button')%>-->Back</span>
+		</span>
+	</a>
+	<% javascript :form_validator, :form_script %>
+	<%= form_for @topic_request do |f| %>
+		<fieldset>
+	    	<%= f.text_field :title, :value => "Title", :required => "true" %>
+	    	<%= f.text_area :content, :value => "Topic Details", :required => "true" %>
+	    	<label for="topic_request_anonymous_post">
+				<%= f.check_box :anonymous_post %>
+	    		<span class="desc"><%= TopicRequest.human_attribute_name(:anonymous_post) %></span>
+			</label>
+	    	<%= f.submit t('.submit') %>
+		</fieldset>
+	<% end %>
+</div>
 
