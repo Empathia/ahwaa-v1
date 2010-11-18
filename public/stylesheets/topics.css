@@ -10,9 +10,9 @@ body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .related-content{overflow: hidden;}
 .related-content li{width: 150px; float: left;}
 article{padding: 40px; background-color: #ffffff; display: block; min-height: 449px;}
-.topic-content > p{margin-top: 23px; line-height: 24px; position: relative;}
+.topic-content p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
-.topic-content > p > a{font-style: italic} 
+.topic-content p > a{font-style: italic} 
 article > header{overflow: hidden; display: block;}
 article > header > h1{float: left; width: 650px;}
 article > header > div{float: right;}
