@@ -12,7 +12,7 @@
       <div class="user-details">
         <div class="username"><%= current_user.username %></div>
         <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span></div>
-        <div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>
+        <!--<div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>-->
       </div>
     </div>
     <div class="white-area inner-shadow">  
@@ -88,7 +88,7 @@
         <% end %>
       </section>
       <section>  
-        <form action="#" method="post" class="edit-form password">
+        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form password' }, :remote => true do |f| %>
           <div class="usr-sec-title">
             <hr>          
             <h2><%= t('.sidebar.password.title') %></h2>
@@ -100,24 +100,25 @@
             <li>
                 <div><%= t('.sidebar.password.new_password') %></div>
                 <div>
-                  <%= password_field :password, :required => "true" %>
+                  <%= f.password_field :password %>
                 </div>
             </li>
             <li>
                 <div><%= t('.sidebar.password.confirm_password') %></div>
                 <div>
-                  <%= password_field :confirm_password, :required => "true" %>
+                  <%= f.password_field :password_confirmation %>
+                  <p class="error"></p>
                 </div>
             </li>            
             <li>
-              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <%= f.submit t('.sidebar.buttons.save'), :class => 'btn-gradient' %>
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
-        </form>
+        <% end %>
       </section>
       <section>
-        <form action="#" method="post" class="edit-form account">
+        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form account' }, :remote => true do |f| %>
           <div class="usr-sec-title">
             <hr>
             <h2><%= t('.sidebar.my_account.title') %></h2>
@@ -129,22 +130,25 @@
             <li>
               <div><%= t('.sidebar.my_account.nickname') %></div>
               <div>
-                <span>navidsafa</span>
-                <%= text_field :nickname, :required => "true" %>
+                <span><%= current_user.username %></span>
+                <%= f.text_field :username, :readonly => true, :disabled => true %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
               <div><%= t('.sidebar.my_account.mail') %></div>
               <div>
-                <span>navid@freshout.us</span>
-                <%= text_field :mail, :required => "true" %>
+                <span class="user_profile_email"><%= current_user.email %></span>
+                <%= f.email_field :email, :required => true %>
+                <p class="error"></p>
               </div>
             </li>
             <li>             
               <div><%= t('.sidebar.my_account.language') %></div>
               <div>
-                <span>English</span>
-                <%= text_field :language, :required => "true" %>
+                <span class="user_profile_language"><%= current_user.profile.i18n_language %></span>
+                <%= f.fields_for :profile do |p| %>
+                  <%= p.select :language, [[UserProfile.human_attribute_name(:en), 'en'], [UserProfile.human_attribute_name(:ar), 'ar']] %>
+                <% end %>
               </div>
             </li>
             <li>
@@ -152,9 +156,9 @@
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
-        </form>
+        <% end %>
       </section>
-      <p><%= link_to t('.sidebar.terminate_account'), nil, :class => "terminate" %></p>    
+      <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
     </div>
   </aside> 
   <section class="avatars-wrapper"> 

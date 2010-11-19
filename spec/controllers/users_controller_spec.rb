@@ -74,19 +74,14 @@ describe UsersController do
   describe "PUT update" do
 
     def do_request(params = {})
-      put :update, params
+      xhr :put, :update, {:user => {}}.merge(params.merge(:format => :js))
     end
 
     context "when user isn't logged in" do
 
-      it "doesn't redirect to update action" do
+      it "doesn't render update template" do
         do_request
-        response.should_not redirect_to(:action => :update)
-      end
-
-      it "redirects to login path" do
-        do_request
-        response.should redirect_to(root_path)
+        response.should_not render_template(:update)
       end
 
     end
@@ -98,14 +93,50 @@ describe UsersController do
         current_user.stub!(:update_attributes).and_return(true)
       end
 
-      it "redirects to show action" do
+      it "renders js template" do
         do_request
-        response.should redirect_to(:action => :show)
+        response.should render_template(:update)
       end
 
       it "updates attributes for user" do
         current_user.should_receive(:update_attributes).and_return(true)
         do_request
+      end
+
+      context "when submitting profile form" do
+
+        before(:each) do
+          do_request :user => { :profile_attributes => { :religion_id => 1 } }
+        end
+
+        it "assigns submitted_form to profile" do
+          assigns(:submitted_form).should == 'profile'
+        end
+
+      end
+
+      context "when submitting password form" do
+
+        before(:each) do
+          do_request :user => { :password => 'asdasd' }
+        end
+
+        it "assigns submitted_form to password" do
+          assigns(:submitted_form).should == 'password'
+        end
+
+      end
+
+      context "when submitting account form" do
+
+        before(:each) do
+          do_request :user => { :user => { :email => 'new@example.com' } }
+        end
+
+        it "assigns submitted_form to account" do
+          assigns(:submitted_form).should == 'account'
+        end
+
       end
 
     end
