@@ -115,5 +115,5 @@ filter: alpha(opacity=50);
 .hide,
 .passwords{display: none;}   
 .response-wrapper{margin-top: 4px; width: 100%; float: left;}
-.success-validation{margin: 4px 0 20px 0;}
-.success-validation > p{font-size: 12px;}
+.pm-flash.success{margin: 4px 0 20px 0;}
+.pm-flash.success > p{font-size: 12px;}

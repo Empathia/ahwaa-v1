@@ -1,10 +1,11 @@
-var _form = $('.form-private-msg:visible');
+var _form = $('.form-private-msg:visible');   
+_form.find('.pm-flash').remove();
 <% if @private_message.valid? %>
-_form.prepend('<div class="success-validation border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
+_form.prepend('<div class="pm-flash success border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
 _form.delay(2000).slideUp(function(){
-    _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.success-validation').remove();
+    _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.pm-flash.success').remove();
 });
 _form[0].reset();
 <% else %>
-_form.prepend('<div class="error-validation border-all"><p><%= escape_javascript @private_message.errors.full_messages.first %></p></div>');
+    _form.prepend('<div class="pm-flash error border-all"><p><%= escape_javascript @private_message.errors.full_messages.first %></p></div>');
 <% end %>

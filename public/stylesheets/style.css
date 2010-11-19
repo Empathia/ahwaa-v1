@@ -233,9 +233,15 @@ footer > div > span{float: left; color: #898f93;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .new-response > div{padding: 7px;}
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
+        
+.pm-flash{padding: 7px 12px; margin-bottom: 10px;}
+.pm-flash > p{padding-left: 20px;}
 
-.success-validation{background-color: #ebffee; border: 1px solid #a3c9a9; padding: 7px 12px; margin-bottom: 10px;}
-.success-validation > p{background: url('../images/check-mark.png') no-repeat; padding-left: 20px; color: #6fa677;}
+.pm-flash.success{background-color: #ebffee; border: 1px solid #a3c9a9;}
+.pm-flash.success > p{background: url('../images/check-mark.png') no-repeat; color: #6fa677;}
+
+.pm-flash.error{background-color: #ffffff; border: 1px solid #E79090;}
+.pm-flash.error > p{background: url('../images/check-mark.png') no-repeat; color: #D93E3E;}
 
  #pageslide-slide-wrap{background:none white}
  #pageslide-slide-wrap > div{background-image:none;}
