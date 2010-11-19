@@ -1,6 +1,6 @@
 var form = $('.edit-form.<%= @submitted_form %>');
 closeFormEdit(form);                                                                                                                               
-var successMsg = $('<div class="success-validation border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.usr-sec-title'));
+var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.usr-sec-title'));
 <% if @submitted_form == 'profile' %>
 $('.user_profile_religion').text('<%= escape_javascript current_user.profile.religion.to_s %>');
 $('.user_profile_gender').text('<%= escape_javascript current_user.profile.gender.to_s %>');
