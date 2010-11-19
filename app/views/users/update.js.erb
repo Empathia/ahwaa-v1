@@ -8,8 +8,7 @@ $('.user_profile_sexual_orientation').text('<%= escape_javascript current_user.p
 $('.user_profile_age').text('<%= escape_javascript current_user.profile.age.to_s %>');
 $('.user_profile_country').text('<%= escape_javascript current_user.profile.country.to_s %>');
 $('.user_profile_political_view').text('<%= escape_javascript current_user.profile.political_view.to_s %>');
-<% elsif @submitted_form == 'password' %>
-<% else %>
+<% elsif @submitted_form == 'account' %>
 <% end %>
 setTimeout(function(){
   successMsg.fadeOut(function(){

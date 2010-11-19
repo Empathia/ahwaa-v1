@@ -88,7 +88,7 @@
         <% end %>
       </section>
       <section>  
-        <form action="#" method="post" class="edit-form password">
+        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form password' }, :remote => true do |f| %>
           <div class="usr-sec-title">
             <hr>          
             <h2><%= t('.sidebar.password.title') %></h2>
@@ -100,21 +100,22 @@
             <li>
                 <div><%= t('.sidebar.password.new_password') %></div>
                 <div>
-                  <%= password_field :password, :required => "true" %>
+                  <%= f.password_field :password %>
                 </div>
             </li>
             <li>
                 <div><%= t('.sidebar.password.confirm_password') %></div>
                 <div>
-                  <%= password_field :confirm_password, :required => "true" %>
+                  <%= f.password_field :password_confirmation %>
+                  <p class="error"></p>
                 </div>
             </li>            
             <li>
-              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <%= f.submit t('.sidebar.buttons.save'), :class => 'btn-gradient' %>
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
-        </form>
+        <% end %>
       </section>
       <section>
         <form action="#" method="post" class="edit-form account">

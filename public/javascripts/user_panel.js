@@ -33,7 +33,10 @@ $(function(){
      });
      
      $('.cancel').click(function(){
-         closeFormEdit($(this).closest('form')); 
+         var form = $(this).closest('form');
+         form[0].reset();
+         form.find('.error').text('');
+         closeFormEdit(form); 
      });    
      
      $('.edit-profile').click(function(){
@@ -64,6 +67,19 @@ $(function(){
          }
      });
      
+     $('.edit-form.password input[type=submit]').click(function (ev) {
+         if(!$('#user_password').val() && !$('#user_password_confirmation').val()) {
+             ev.preventDefault();
+             return false;
+         }
+         if($('#user_password').val() !== $('#user_password_confirmation').val()) {
+             $('.edit-form.password').find('.error').text(I18n.t('users.show.sidebar.password.errors.confirm_password'));
+             ev.preventDefault();
+             return false;
+         } else {
+             $('.edit-form.password').find('.error').text('');
+         }
+     });
      
      /*
      $('.edit-form.password').find('input[type=submit]').formValidator(
