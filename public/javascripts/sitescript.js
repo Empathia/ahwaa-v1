@@ -173,7 +173,7 @@ $(function(){
         $('.search_results').removeClass('visible');
     });
     
-    $(".request-topic.active").pageSlide({ width: "556px", direction: "left" });
+    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true });
     
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
@@ -209,7 +209,7 @@ $(function(){
     for (var count = 0; count < lisTotal; count++){
         lisWidth = lisWidth + $('#header-tags > li').eq(-lisIndex).width();
         lisIndex = lisIndex-1;
-        console.log(lisWidth);
+        //console.log(lisWidth);
     }
     
     $('.items > div:last-child').css("background","none");

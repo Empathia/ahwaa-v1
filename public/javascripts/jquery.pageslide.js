@@ -35,18 +35,11 @@
 	    zIndex: '1',
 	    display: 'none'
 	  };
-	  
-	    var pageslide_overlay_css = {
-	        backgroundColor: 'black',
-	        position: 'relative',
-            opacity: '0.5',
-            zIndex: '998',
-	    }
 		
 		function _initialize(anchor) {
       
       // Create and prepare elements for pageSlide
-      if ($("#pageslide-body-wrap, #pageslide-content, #pageslide-slide-wrap, #pageslide-overlay").size() == 0) {
+      if ($("#pageslide-body-wrap, #pageslide-content, #pageslide-slide-wrap").size() == 0) {
         
         var psBodyWrap = document.createElement("div");
         $(psBodyWrap).css(pageslide_body_wrap_css);
@@ -55,14 +48,10 @@
   	    
         var psSlideContent = document.createElement("div");
         $(psSlideContent).attr("id","pageslide-content").width( settings.width );
-        
-        var psSlideOverlay = document.createElement('div');
-        $(psSlideOverlay).css(pageslide_overlay_css);
-        $(psSlideOverlay).attr('id','pageslide-overlay').width(  $("body").width() );
 
         var psSlideWrap = document.createElement("div");
         $(psSlideWrap).css(pageslide_slide_wrap_css);
-        $(psSlideWrap).attr("id","pageslide-slide-wrap").append( psSlideContent ).append( psSlideOverlay );
+        $(psSlideWrap).attr("id","pageslide-slide-wrap").append( psSlideContent );
         $("body").append( psSlideWrap );
   	    
       }
@@ -167,7 +156,8 @@
 		    _identifier: $(this)
 		}, options);
 		
-		function _hideBlanket() { if(settings.modal == true && $("#pageslide-blanket").is(":visible")) {
+		function _hideBlanket() { if(//settings.modal == true && //commented to allow to close pageSlide with the 'escape' key even if modal is set to true
+		    $("#pageslide-blanket").is(":visible")) {
       $("#pageslide-blanket").animate({opacity:'0.0'}, 'fast','linear',function(){$(this).hide();});
     }}
     
@@ -193,7 +183,8 @@
 (function($){
   $(document).ready(function(){
     $(document).keyup(function(event){
-      if (!$("#pageslide-blanket").is(":visible") && event.keyCode == 27) $.fn.pageSlideClose();
+      if (//!$("#pageslide-blanket").is(":visible") &&  //commented to allow to close pageSlide with the 'escape' key even if modal is set to true
+            event.keyCode == 27) $.fn.pageSlideClose();
     });
   });
 })(jQuery);

@@ -16,4 +16,3 @@ section.topics{background:white url('../images/bg-gradient2.png') repeat-x 0 0;m
 .item-data, .item-data > div, .item-data > a, .item-data > div > span, .item-data > div > span > a {color:#898F93}
 .item-data > div > span {display:block}
 .tags{margin:0}
-.clear{clear:both}
