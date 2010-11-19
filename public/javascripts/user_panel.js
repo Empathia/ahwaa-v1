@@ -5,7 +5,7 @@
         welcome.find('.enter-profile').children().removeClass('active');
         welcome.fadeIn();
     });
-    form.find('input, select, .passwords').css('display', 'none').end().find('span').css('display', 'block');
+    form.find('input, label, select, .passwords').css('display', 'none').end().find('span').css('display', 'block');
  }
 
 $(function(){ 
@@ -15,7 +15,7 @@ $(function(){
                return false;
            }
            var form = link.closest('form');
-           form.find('.user-edit span').css('display', 'none').end().find('input, select, .passwords').css('display', 'block');
+           form.find('.user-edit span').css('display', 'none').end().find('input, label, select, .passwords').css('display', 'block');
            var welcome = form.find('.welcome-wrapper');           
            if(welcome.length && welcome.is(':visible')){
 
@@ -94,7 +94,7 @@ $(function(){
      $('.edit-form.account').find('input[type=submit]').formValidator(
           {
               'errors': {  
-                  'email': I18n.t('users.show.sidebar.my_account.errors.email_empty')
+                  'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email')
               }
           }
      );
