@@ -26,6 +26,22 @@ $(document).ready(function() {
         }
     });
 
+  $('#related_content_form').submit(function(){
+    var urlType = RelatedContent.detectType($('#related_content_source_url').val());
+
+    if (urlType == "link" && $(".possible-thumbnails").length == 0 ) {
+
+      $.ajax({
+        url: '/admin/topics/'+currentTopicId+'/related_contents.js',
+        data: $(this).serialize(),
+        dataType: 'script',
+        type: 'POST',
+      });
+
+      return false;
+    }
+  });
+
     $('#related_content_form').submit(function(){
         var urlType = RelatedContent.detectType($('#related_content_source_url').val());
 
@@ -42,18 +58,22 @@ $(document).ready(function() {
         }
     });
 
-    //function to place the extra topic tags into the "more" vertical list
-
-    var ulwidth = $("#header-tags").width();
-
-    $("#header-tags").children().each(function(e) {
-        if (ulwidth > 700){
-            var overelement = $("#header-tags > li:last-child").prev();
-            var newli = '<li>' + overelement.html() + '</li>';
-            $("#moretags").prepend(newli);
-            overelement.remove();
-            ulwidth = $("#header-tags").width();
-        }
+    $('.comments .flag').live('click', function () {
+        var that = $(this);
+        var reply = new Reply({
+            id: that.attr('data-value'),
+            topic_id: topicId
+        });
+        reply.flag({
+            success: function (r) {
+                // TODO: delegate ratings' errors to reply errors so it does trigger error correctly
+                that.text('flagged');
+            },
+            error: function () {
+                alert('there was an error');
+            }
+        });
+        return false;
     });
 
     $('.add_comments:visible input[type=submit]').live('click', function () {

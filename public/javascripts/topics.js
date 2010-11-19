@@ -42,10 +42,6 @@ $(function(){
         e.preventDefault();
         return false;
     });
-
-    $('.comment-st-level, .comment-nd-level').live('mouseleave', function(){
-       $('.sign-up-tt-wrapper').hide();
-    });
         
     $('.flag:not(.disabled)').live('click', function () {
         var that = $(this);

@@ -1,4 +1,4 @@
-body > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
+body > div > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
 .container{background: url('../images/bg-color-text.png') no-repeat 50% 107px}
 .slogan{height: 218px; font-family: 'GothamBoldRegular'; text-indent: -9999px;}
 .slogan > h1{color: #ffffff; font-size: 100px; margin-top: 70px; text-shadow: 0px 4px 4px #51839f;}

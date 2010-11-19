@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Transcend</title>
-  <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', :cache => true%>
+  <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', 'jquery.pageslide', :cache => true%>
   <%= stylesheet_link_tag 'reset', 'fonts', 'style' %>
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
@@ -91,16 +91,13 @@
                 <% Topic.tag_counts.each do |tag| %>
                   <li><%= link_to tag, topic_tag_path(tag.name) %></li>
                 <% end %>
-                <% Topic.tag_counts.each do |tag| %>
-                  <li><%= link_to tag, topic_tag_path(tag.name) %></li>
-                <% end %>
                 <li class="more">
                   <%= link_to 'More' %>
                   <ul id="moretags" class="more-tags border-all border-menu">
                   </ul>
                 </li>
               </ul>
-              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %>">
+              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
                 <span>
                   <span><%= t('.header.request_topic.button')%></span>
                 </span>
@@ -117,6 +114,7 @@
         <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
         <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
       </div>
+      <div class="clear"></div>
     </div>
     <footer>
       <div class="footer-shadow"></div>

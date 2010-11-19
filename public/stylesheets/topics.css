@@ -55,9 +55,10 @@ aside section:first-child{border-top: none;}
 .res-type.border-left{border-left: 0;}
 .comments{display: none; margin-top: 14px;}
 
-.comment-st-level{position: relative; padding-top: 10px;}
+.comments-ls > li{position: relative; padding-top: 10px;}
 .comm-wrap{background-color: #f2f9fc; border: 1px solid #daecf3;}
-.comment-st-level:last-child{margin-bottom: 5px;}
+.comments-ls > li:last-child{margin-bottom: 5px;}
+.comments-ls .comments-ls .comm-wrap{background-color: #ffffff;}
 
 .comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
 .add_comments .comm-arrow{background-position: 0 -13px;}
@@ -76,7 +77,6 @@ aside section:first-child{border-top: none;}
 
 .res-username{margin-bottom: 7px; float: left;}
 .res-flag-btns{float: right; display: none; position: absolute; right: 12px; top: 24px;}
-.comments > ul:hover .res-flag-btns{display: block;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}
 .flag > span{background-image: url('../images/flags.png'); background-repeat: no-repeat; padding-left: 17px; background-position: 0 2px;}
 .sign-up-tt-wrapper{ position: absolute; top: 0; left: 0; display: none; z-index: 1; width: 134px; padding-bottom: 10px;}

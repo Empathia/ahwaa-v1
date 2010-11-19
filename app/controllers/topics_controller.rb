@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
 
   def tag
     @topics = params[:by_responses] ? Topic.by_replies_count : Topic.newest
-    @topics = @topics.tagged_with(params[:tag]).paginate(:page => params[:page])
+    @topics = @topics.tagged_with(params[:tag]).in_groups_of(2, false)
   end
 
 end

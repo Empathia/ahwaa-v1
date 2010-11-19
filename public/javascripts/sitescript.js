@@ -1,5 +1,5 @@
 $(function(){        
-       
+    
     function toggleSignUp(link, formName){        
         $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');                                                              
         link.addClass('auth-form-active');         
@@ -171,7 +171,9 @@ $(function(){
         var _magnify = $(this);
         _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val('').focus();
         $('.search_results').removeClass('visible');
-    });  
+    });
+    
+    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true });
     
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
@@ -191,6 +193,27 @@ $(function(){
     $('.active-avatar').live('mouseleave', function(){
        $(this).fadeOut('fast');
     });
+    
+    //function to place the extra topic tags into the "more" vertical list
+    var lisTotal = $('#header-tags').children().length;
+    var lisIndex = lisTotal;
+    var lisWidth = 0;
+    
+    /*$('#header-tags > li').each(function(e){
+        lisWidth = lisWidth + $('#header-tags > li').eq(-lisIndex).width();
+        lisIndex = lisIndex-1;
+        console.log(lisWidth);
+    })*/
+    
+    
+    for (var count = 0; count < lisTotal; count++){
+        lisWidth = lisWidth + $('#header-tags > li').eq(-lisIndex).width();
+        lisIndex = lisIndex-1;
+        //console.log(lisWidth);
+    }
+    
+    $('.items > div:last-child').css("background","none");
+    
 });
 
 

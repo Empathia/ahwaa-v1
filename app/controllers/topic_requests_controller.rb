@@ -2,6 +2,7 @@ class TopicRequestsController < ApplicationController
 
   def new
     @topic_request = TopicRequest.new
+    render :layout => false;
   end
 
   def create
