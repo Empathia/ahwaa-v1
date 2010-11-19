@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     :foreign_key => :recipient_id, :conditions => {:parent_id => nil}
   has_many :topic_requests
 
-  attr_accessible :username, :email, :password, :password_confirmation
+  attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes
 
   before_create :build_profile
   before_create :build_score_board
