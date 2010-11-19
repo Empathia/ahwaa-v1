@@ -8,7 +8,7 @@
 <div class="aligned panel border-all">
   <aside class="user-sb border-left">
     <div class="user-profile inner-shadow">
-      <div class="thumb"><%= image_tag current_user.profile.avatar.url, :width => 50 %></div>
+      <div class="avatar"><%= image_tag current_user.profile.avatar.url, :width => 50 %></div>
       <div class="user-details">
         <div class="username"><%= current_user.username %></div>
         <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span></div>
@@ -171,7 +171,9 @@
     <ul class="messages">
       <li class="new">
         <input type="checkbox">
-        <%= link_to "", nil, :class => "thumb" %>
+        <div class="avatar-wrapper">
+          <div class="avatar"></div>
+        </div>
         <ul class="msg-opts">
           <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete"  %></li>          
           <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
@@ -183,7 +185,9 @@
       </li>
       <li>    
         <input type="checkbox">                    
-        <%= link_to "", nil, :class => "thumb" %>
+        <div class="avatar-wrapper">
+          <div class="avatar"></div>
+        </div>
         <ul class="msg-opts">
           <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete" %></li>          
           <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
@@ -228,8 +232,10 @@
     </div>
     <div class="pm-details">
       <div class="pm-user">
-        <div class="thumb">
-          <%= link_to (image_tag 'no-image.jpg', :width => '55') %>
+        <div class="avatar-wrapper">
+          <div class="avatar">
+            <%= image_tag 'no-image.jpg', :width => '50' %>
+          </div>
         </div>
         <div class="pm-user-details">
           <div><%= link_to "By Transcend admin" %></div>
