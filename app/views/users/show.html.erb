@@ -1,81 +1,91 @@
+<% head do %>
+  <script type="text/javascript">
+    var countries = <%= Country.all.map { |c| [c.id, c.name] }.inspect.html_safe %>;
+  </script>
+<% end %>
 <% javascript 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all">
   <aside class="user-sb border-left">
     <div class="user-profile inner-shadow">
-      <div class="thumb"></div>
+      <div class="thumb"><%= image_tag current_user.profile.avatar.url, :width => 50 %></div>
       <div class="user-details">
-        <div class="username">navidsafa</div>
-        <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => 150}) %></span></div>
+        <div class="username"><%= current_user.username %></div>
+        <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span></div>
         <div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>
       </div>
     </div>
     <div class="white-area inner-shadow">  
       <section>
-        <form action="#" method="post" class="edit-form profile">
+      <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>
+        <%= user.fields_for :profile do |f| %>
           <div class="usr-sec-title">
             <hr>          
             <h2><%= t('.sidebar.profile.title') %></h2>
-            <%= link_to nil, :class => "edit-lk edit-profile" do %>
+            <%= link_to '#', :class => "edit-lk edit-profile" do %>
               <span class="border-all"><span><%= t('.sidebar.profile.edit') %></span></span>
             <% end %>
           </div>
-          <div class="user-edit welcome-wrapper"> 
-            <div class="welcome">
-              <p><b><%= t('.sidebar.profile.welcome') %></b></p>
-              <p><%= t('.sidebar.profile.welcome_legend') %></p>
-              <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
+          <% if current_user.profile.empty? %>
+            <div class="user-edit welcome-wrapper"> 
+              <div class="welcome">
+                <p><b><%= t('.sidebar.profile.welcome') %></b></p>
+                <p><%= t('.sidebar.profile.welcome_legend') %></p>
+                <p class="enter-profile"><a href="#" class="btn-gradient"><%= t('.sidebar.profile.enter_profile') %></a></p>
+              </div>
             </div>
-          </div>
-          <ul class="user-edit hide"><!-- add class "hide" only if the user edits his profile for the 1st time-->
-            <li>
-              <div><%= t('.sidebar.profile.gender.label') %></div>
+          <% end %>
+          <ul class="user-edit <%= 'hide' if current_user.profile.empty? %>">
+            <li>             
+              <div><%= UserProfile.human_attribute_name(:religion_id) %></div>
               <div>
-                <span><%= t('.sidebar.profile.gender.male') %></span>
-                <%= text_field :gender, :required => "true" %>
+                <span class="user_profile_religion"><%= current_user.profile.religion %></span>
+                <%= f.collection_select :religion_id, Religion.all, :id, :name %>
+              </div>
+            </li>
+            <li>
+              <div><%= UserProfile.human_attribute_name(:gender_id) %></div>
+              <div>
+                <span class="user_profile_gender"><%= current_user.profile.gender %></span>
+                <%= f.collection_select :gender_id, Gender.all, :id, :name %>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
-              <div><%= t('.sidebar.profile.sexual_orientation') %></div>
+              <div><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>
               <div>
-                <span>Gay</span>
-                <%= text_field :sexual_orientation, :required => "true" %>
+                <span class="user_profile_sexual_orientation"><%= current_user.profile.sexual_orientation %></span>
+                <%= f.collection_select :sexual_orientation_id, SexualOrientation.all, :id, :name %>
               </div>
             </li>
             <li>             
-              <div><%= t('.sidebar.profile.age') %></div>
+              <div><%= UserProfile.human_attribute_name(:age_id) %></div>
               <div>
-                <span>34</span>
-                <%= text_field :age, :required => "true" %>
+                <span class="user_profile_age"><%= current_user.profile.age %></span>
+                <%= f.collection_select :age_id, Age.all, :id, :range %>
               </div>
             </li>
             <li>             
-              <div><%= t('.sidebar.profile.religion') %></div>
+              <div><%= UserProfile.human_attribute_name(:country_id) %></div>
               <div>
-                <span>Judaism</span>
-                <%= text_field :religion, :required => "true" %>
+                <span class="user_profile_country"><%= current_user.profile.country %></span>
+                <%= text_field_tag :country_birth, current_user.profile.country %>
+                <%= f.hidden_field :country_id, :class => 'country_id' %>
               </div>
             </li>
             <li>             
-              <div><%= t('.sidebar.profile.place_birth') %></div>
+              <div><%= UserProfile.human_attribute_name(:political_view) %></div>
               <div>
-                <span>Iran</span>
-                <%= text_field :place_birth, :required => "true" %>
-              </div>
-            </li>
-            <li>             
-              <div><%= t('.sidebar.profile.political_view') %></div>
-              <div>
-                <span>Social democracy</span>
-                <%= text_field :political_view, :required => "true" %>
+                <span class="user_profile_political_view"><%= current_user.profile.political_view %></span>
+                <%= f.collection_select :political_view_id, PoliticalView.all, :id, :name %>
               </div>
             </li>
             <li>
-              <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
+              <%= f.submit t('.sidebar.buttons.save'), :class => 'btn-gradient' %>
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
-        </form>
+          <% end %>
+        <% end %>
       </section>
       <section>  
         <form action="#" method="post" class="edit-form password">
