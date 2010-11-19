@@ -13,7 +13,7 @@ describe TopicsController do
 
     before(:each) do
       @topics = Topic.scoped
-      @topics.stub_chain(:tagged_with, :paginate).and_return(@topics)
+      @topics.stub_chain(:tagged_with, :in_groups_of).and_return([])
     end
 
     context "when no param is given" do
@@ -28,7 +28,7 @@ describe TopicsController do
       end
 
       it "filters topics by tag" do
-        @topics.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
+        @topics.tagged_with(any_args).should_receive(:in_groups_of).and_return([])
         do_request
       end
 
@@ -46,7 +46,7 @@ describe TopicsController do
       end
 
       it "filters topics by tag" do
-        @topics.tagged_with(any_args).should_receive(:paginate).and_return(@topics)
+        @topics.tagged_with(any_args).should_receive(:in_groups_of).and_return([])
         do_request :by_responses => '1'
       end
 

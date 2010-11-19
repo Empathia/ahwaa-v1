@@ -1,3 +1,13 @@
+ function closeFormEdit(form){
+    form.find('.edit-lk').removeClass('active');
+    var welcome = form.find('.welcome-wrapper');
+    welcome.length && welcome.next().fadeOut(function(){
+        welcome.find('.enter-profile').children().removeClass('active');
+        welcome.fadeIn();
+    });
+    form.find('input, select, .passwords').css('display', 'none').end().find('span').css('display', 'block');
+ }
+
 $(function(){ 
     $('.edit-lk').add('.enter-profile > a').click(function(e){        
            var link = $(this);
@@ -5,7 +15,7 @@ $(function(){
                return false;
            }
            var form = link.closest('form');
-           form.find('.user-edit span').css('display', 'none').end().find('input, .passwords').css('display', 'block');
+           form.find('.user-edit span').css('display', 'none').end().find('input, select, .passwords').css('display', 'block');
            var welcome = form.find('.welcome-wrapper');           
            if(welcome.length && welcome.is(':visible')){
 
@@ -23,49 +33,55 @@ $(function(){
      });
      
      $('.cancel').click(function(){
-         closeFormEdit($(this).closest('form')); 
+         var form = $(this).closest('form');
+         form[0].reset();
+         form.find('.error').text('');
+         closeFormEdit(form); 
      });    
      
      $('.edit-profile').click(function(){
-       // avatars.toggle(); 
+       avatars.toggle(); 
      }); 
      
-      
-     $('.edit-form').submit(function(){
-        //Ajax If Success 
-        var form = $(this);
-        if(true){
-            closeFormEdit(form);                                                                                                                               
-            var successMsg = $('<div class="success-validation border-all"><p>' + I18n.t('users.show.sidebar.saved') + '</p></div>').insertAfter(form.find('.usr-sec-title'));
-            setTimeout(function(){
-                successMsg.fadeOut(function(){
-                    $(this).remove();
-                });
-            }, 2000);
-        }             
-        return false; 
-     });          
-     
-     
-     function closeFormEdit(form){
-        form.find('.edit-lk').removeClass('active');
-        var welcome = form.find('.welcome-wrapper');
-        welcome.length && welcome.next().fadeOut(function(){
-            welcome.find('.enter-profile').children().removeClass('active');
-            welcome.fadeIn();
-        });
-        form.find('input, .passwords').css('display', 'none').end().find('span').css('display', 'block');
-     }
-     /*
-     $('.edit-form.profile').find('input[type=submit]').formValidator(
-         {
-             'errors': {  
-                 'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-                 'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+     $('#country_birth').keyup(function (ev) {
+         var val = $(this).val();
+         if(val && [8, 16, 17, 18, 91, 93, 20].indexOf(ev.which) === -1) {
+             for(var i = 0; i < countries.length; i++) {
+                 if(new RegExp('^' + val, 'ig').test(countries[i][1])) {
+                     $(this).val(countries[i][1])[0].selectionStart = val.length;
+                     $('input:hidden.country_id').val(countries[i][0]);
+                     break;
+                 } else {
+                     $('input:hidden.country_id').val('');
+                 }
              }
          }
-     );
+     }).change(function () {
+         var that = $(this);
+         var grep = $.grep(countries, function(a) { return a[1] == that.val(); });
+         if(grep.length > 0) {
+             $('input:hidden.country_id').val(grep[0][0]);
+         } else {
+             $(this).val('');
+             $('input:hidden.country_id').val('');
+         }
+     });
      
+     $('.edit-form.password input[type=submit]').click(function (ev) {
+         if(!$('#user_password').val() && !$('#user_password_confirmation').val()) {
+             ev.preventDefault();
+             return false;
+         }
+         if($('#user_password').val() !== $('#user_password_confirmation').val()) {
+             $('.edit-form.password').find('.error').text(I18n.t('users.show.sidebar.password.errors.confirm_password'));
+             ev.preventDefault();
+             return false;
+         } else {
+             $('.edit-form.password').find('.error').text('');
+         }
+     });
+     
+     /*
      $('.edit-form.password').find('input[type=submit]').formValidator(
           {
               'errors': {  
@@ -74,16 +90,15 @@ $(function(){
               }
           }
      );
-
+    */
      $('.edit-form.account').find('input[type=submit]').formValidator(
           {
               'errors': {  
-                  'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-                  'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+                  'email': I18n.t('users.show.sidebar.my_account.errors.email_empty')
               }
           }
      );
-     */     
+
      var avatars = {
          toggle: function(){
              $(this).hasClass('active') ? avatars.hide() : avatars.show();

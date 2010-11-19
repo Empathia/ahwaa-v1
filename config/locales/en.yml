@@ -30,6 +30,15 @@ en:
         advice: Advice
         comment: Comment
         experience: Experience
+      user_profile:
+        religion_id: Religion
+        gender_id: Gender
+        sexual_orientation_id: Sexual orientation
+        age_id: Age
+        country_id: Country of birth
+        political_view: Political view
+        en: English
+        ar: Arabic
   errors:
     messages:
       voted: You have already marked this as useful.
@@ -183,15 +192,6 @@ en:
           welcome: Welcome to Transcend!
           welcome_legend: "Please enter your profile information, it's easy and fast! You can still remain anonymous"
           enter_profile: Enter your profile
-          gender: 
-            label: 'Gender:'  
-            male: 'Male'
-            female: 'Female'
-          sexual_orientation: 'Sexual Orientation:'
-          age: 'Age:'
-          religion: 'Religion:'
-          place_birth: 'Place of birth:'
-          political_view: 'Political view:'
           edit: Edit Profile
         password:
           title: Password
@@ -207,7 +207,10 @@ en:
           nickname: 'Nickname:'
           mail: 'Mail:'
           language: 'Language:'
+          errors:
+            email_empty: "Email can't be blank"
         terminate_account: Terminate account
+        confirm_terminate: Are you sure you want to delete your account? This cannot be undo.
         saved: "Information saved successfully!"
       content:
         avatars: 

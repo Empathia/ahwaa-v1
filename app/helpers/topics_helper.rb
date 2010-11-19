@@ -47,6 +47,6 @@ module TopicsHelper
 
   # Builds css classes for reply
   def reply_css_classes(reply)
-    "comment-st-level #{("expert" if reply.from_expert?)} #{reply.category} #{'useful' if reply.useful?}"
+    "#{("expert" if reply.from_expert?)} #{reply.category} #{'useful' if reply.useful?}"
   end
 end

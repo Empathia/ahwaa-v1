@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  respond_to :js, :only => [:update]
   respond_to :json, :only => [:create]
   before_filter :get_user
   skip_before_filter :authenticate_user!, :only => [:create]
@@ -17,7 +18,9 @@ class UsersController < ApplicationController
 
   def update
     @user.update_attributes(params[:user])
-    respond_with(@user, :location => user_path)
+    @submitted_form = params[:user][:profile_attributes] &&
+      params[:user][:profile_attributes][:religion_id] ?
+      'profile' : (params[:user][:password] ? 'password' : 'account')
   end
 
   def destroy
