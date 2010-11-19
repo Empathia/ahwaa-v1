@@ -17,7 +17,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    # TODO: accept_nested_attributes_for :profile
     @user.update_attributes(params[:user])
     @submitted_form = params[:user][:profile_attributes] &&
       params[:user][:profile_attributes][:religion_id] ?

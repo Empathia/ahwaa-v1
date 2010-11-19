@@ -118,7 +118,7 @@
         <% end %>
       </section>
       <section>
-        <form action="#" method="post" class="edit-form account">
+        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form account' }, :remote => true do |f| %>
           <div class="usr-sec-title">
             <hr>
             <h2><%= t('.sidebar.my_account.title') %></h2>
@@ -153,7 +153,7 @@
               <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
             </li>
           </ul>
-        </form>
+        <% end %>
       </section>
       <p><%= link_to t('.sidebar.terminate_account'), nil, :class => "terminate" %></p>    
     </div>
