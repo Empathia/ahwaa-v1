@@ -178,6 +178,8 @@ en:
     new:
       submit: Submit
       title: Request a Topic
+      titleTopic: Title
+      topicDetails: Topic details
   users:
     show:
       sidebar:                   

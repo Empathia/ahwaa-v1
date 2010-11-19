@@ -8,13 +8,13 @@
 	<% javascript :form_validator, :form_script %>
 	<%= form_for @topic_request do |f| %>
 		<fieldset>
-	    	<%= f.text_field :title, :value => "Title", :required => "true" %>
-	    	<%= f.text_area :content, :value => "Topic Details", :required => "true" %>
+	    	<%= f.text_field :title, :required => "true", :placeholder => t('.titleTopic') %>
+	    	<%= f.text_area :content, :required => "true", :placeholder => t('.topicDetails') %>
 	    	<label for="topic_request_anonymous_post">
 				<%= f.check_box :anonymous_post %>
 	    		<span class="desc"><%= TopicRequest.human_attribute_name(:anonymous_post) %></span>
 			</label>
-	    	<%= f.submit t('.submit') %>
+	    	<%= f.submit t('.submit'), :class => "btn-gradient" %>
 		</fieldset>
 	<% end %>
 </div>
