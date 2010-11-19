@@ -5,7 +5,6 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .user-profile{background-color: #f9fafb; overflow: hidden; border-bottom: 1px solid #e5e9ed;}  
 .user-details{width: 158px; float: right;}       
 .points{padding-bottom: 3px;}
-.thumb{border: 1px solid #dadee0; width: 55px; height: 55px; background-color: #ffffff; padding: 2px; overflow: hidden; float: left;} 
 .username{color: #4c5563; font-size: 18px}                
 .user-details b{color: #707b8b;} 
 .user-details span{font-size: 12px; color: #61656a;} 
@@ -73,7 +72,7 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .pag-numbers > li > a{color: #cbcfd2;}
 .pag-numbers .active a{color: #808386;}
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
-.messages .thumb{margin-right: 10px;}
+.messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
 .messages > li{background-color: #fbfbfb; margin-bottom: 15px; padding: 14px 11px; border-bottom: 1px solid #e1e3e5; position: relative; overflow: hidden;}
 .messages > li.new{background-color: #f3f9fc; border: 1px solid #c2dcea;}
 .messages > li:hover .msg-opts{display: block;}
@@ -107,7 +106,7 @@ filter: alpha(opacity=50);
 .pm-user{overflow: hidden; margin-bottom: 20px;}
 .pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
 .pm-user-response > a{color: #5e5e5e; font-weight: bold;}
-.pm-user .thumb{margin-right: 16px;}
+.pm-user .avatar-wrapper{margin-right: 14px;}
 .pm-user-details{color: #b3b8bc; margin-top: 4px;}
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
