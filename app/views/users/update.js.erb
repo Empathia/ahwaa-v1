@@ -9,6 +9,8 @@ $('.user_profile_age').text('<%= escape_javascript current_user.profile.age.to_s
 $('.user_profile_country').text('<%= escape_javascript current_user.profile.country.to_s %>');
 $('.user_profile_political_view').text('<%= escape_javascript current_user.profile.political_view.to_s %>');
 <% elsif @submitted_form == 'account' %>
+$('.user_profile_email').text('<%= escape_javascript current_user.email.to_s %>');
+$('.user_profile_language').text('<%= escape_javascript current_user.profile.i18n_language.to_s %>');
 <% end %>
 setTimeout(function(){
   successMsg.fadeOut(function(){

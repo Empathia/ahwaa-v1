@@ -1,5 +1,5 @@
 <%= content_tag :li, :class => reply_css_classes(reply) do %>
-  <% if reply_counter == 0 %>
+  <% if defined?(reply_counter) && reply_counter == 0 %>
     <span class="comm-arrow"></span>
   <% end %>
   <div class="comm-wrap">

@@ -21,6 +21,10 @@ class UserProfile < ActiveRecord::Base
       !gender && !age && !political_view
   end
 
+  def i18n_language
+    UserProfile.human_attribute_name(language)
+  end
+
   private
 
   # Sets the default avatar for profile

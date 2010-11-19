@@ -90,16 +90,15 @@ $(function(){
               }
           }
      );
-
+    */
      $('.edit-form.account').find('input[type=submit]').formValidator(
           {
               'errors': {  
-                  'text': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-                  'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+                  'email': I18n.t('users.show.sidebar.my_account.errors.email_empty')
               }
           }
      );
-     */     
+
      var avatars = {
          toggle: function(){
              $(this).hasClass('active') ? avatars.hide() : avatars.show();
