@@ -33,7 +33,7 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .user-edit{padding-bottom: 20px;}
 .user-edit > li{padding-bottom: 7px;}
 .user-edit > li > div:first-child{color: #a4a7ab; padding-bottom: 2px;}
-.user-edit > li input, .user-edit > li select{display: none;}
+.user-edit > li input, .user-edit > li select, .user-edit > li label{display: none;}
 .terminate{color: #d56262; text-decoration: underline;}
 .user-edit .btn-gradient{margin-right: 10px;}  
 .cancel{color: #61656a; background: none; border: none; font-size: 11px; padding: 4px 0 0 0; cursor: pointer;}
