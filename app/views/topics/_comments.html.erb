@@ -1,6 +1,6 @@
 <% comments.each do |contextual_index, replies| %>
   <div class="comments" id="comments_<%= contextual_index %>">
-    <ul>
+    <ul class="comments-ls">
       <%= render replies %>
     </ul>
     <div class="new-response response-wrapper">

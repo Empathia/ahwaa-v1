@@ -38,9 +38,9 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .terminate{color: #d56262; text-decoration: underline;}
 .user-edit .btn-gradient{margin-right: 10px;}  
 .cancel{color: #61656a; background: none; border: none; font-size: 11px; padding: 4px 0 0 0;}
-input[type=text],
-input[type=password],
-input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; height: 25px; width: 188px;}
+.edit-form input[type=text],
+.edit-form input[type=password],
+.edit-form input[type=email]{border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; height: 25px; width: 188px;}
 .panel{background: #ffffff url('../images/inner-shadow-top.png') repeat-x}
 .panel > section{float: right; width: 631px; padding: 20px 25px;}
 .panel > section > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}

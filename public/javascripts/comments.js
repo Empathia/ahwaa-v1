@@ -138,24 +138,22 @@ $.fn.comments = function(options){
             var comments = $(this),
                 idChunks =  comments.attr('id').split('_');             
             idChunks.shift();
-            var id = idChunks.join(),
+            var id = idChunks.join('_'),
                 index = idChunks[idChunks.length-1];
             $('#comments_' +  id +'_clone').length == 0 && allComments.push(cloneComments(getLink(idChunks, 1), comments.outerHTML(), id, true)[0]);
         });         
        $(allComments).slideDownComments();
        $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
-       $('.topic-content .icn').addClass('minus');
+       $('.topic-content .has_comments').addClass('minus');
     } 
     
     function getLink(idChunks, level){
         while(idChunks.length){
             var id = idChunks.pop();
             if(idChunks.length > 0){
-                getLink(idChunks, ++level)
+                return getLink(idChunks, ++level)
             }                    
-            else{
-                return $('.topic-content .icn.level_' + level + ':eq(' + id + ')');
-            }
+            return $('.topic-content .icn.level_' + level + ':eq(' + id + ')');
         } 
     }
     
@@ -212,7 +210,18 @@ $.fn.comments = function(options){
         e.preventDefault();
         return false;
     });
-
+    
+    $('.comments-ls > li').live('mouseover mouseout', function(e){             
+        if (event.type == 'mouseover') {
+            $(this).children('.res-flag-btns').show();
+        } else {
+            $('.sign-up-tt-wrapper').hide();
+            $(this).children('.res-flag-btns').hide();
+        }
+        e.stopPropagation();
+        return false;
+    });
+    
     setTimeout(function(){
         expandBtn.trigger('click');
     }, 0);
