@@ -185,10 +185,17 @@ $(function(){
     $('.private-msg').find('.cancel').click(function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
     });
-
+    
     $('.topic-avatars').find('.avatar').mouseover(function(){
-       $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
-    });
+                $(this).siblings('.private-msg').removeClass('inside');
+                if($("body").width() < 1372 && $(this).parent().parent().is(':first-child')) {
+                    $(this).siblings('.private-msg').fadeIn('fast').addClass('inside').addClass('active-avatar');
+                }
+                else{
+                    $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
+                }
+            }
+        )
 
     $('.active-avatar').live('mouseleave', function(){
        $(this).fadeOut('fast');

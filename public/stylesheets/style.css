@@ -254,13 +254,17 @@ footer > div > span{float: left; color: #898f93;}
 .avatar.expert{background-color: #afcaa2;}
 .avatar-wrapper{float: left; width: 56px; position: relative;}
 
-.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
+.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -17px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
 .private-msg-btns{float: right;}
 .private-msg-btns > input{height: 24px;}
 .private-msg .cancel{margin-right: 10px; color: #61656a;}
-.private-msg > .avatar{float: right;}          
+.private-msg > .avatar{float: right;}
+
+.inside{left:-17px}
+.inside .user-info{float:right}
+.inside .user-wrapper > .avatar{float:left}          
 
 .user-wrapper{overflow: hidden; margin-bottom: 15px;}
 .user-wrapper > .avatar{float: right;}
