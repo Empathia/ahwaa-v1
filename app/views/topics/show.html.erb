@@ -72,10 +72,9 @@
   </div>
   <br class="clear">  
 </div>
-<%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border all' }, :remote => true do |f| %>
-  <%= f.hidden_field :contextual_index, :class => 'contextual_index' %>
+<%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
   <span class="comm-arrow"></span>
-  <div class="response-wrapper">
+  <div class="response-wrapper border-all">
     <div>                
       <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>     
       <% unless logged_in? %>      
@@ -105,8 +104,9 @@
             <label class="res-lbl"><%= t('.form.type_response') %></label>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+      </div>              
+    </div>                
+  <%= f.hidden_field :contextual_index, :class => 'contextual_index' %>    
+  </div>  
 <% end %>
 <%= render :partial => 'comments', :object => @replies %>

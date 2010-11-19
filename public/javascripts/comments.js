@@ -127,7 +127,10 @@ $.fn.comments = function(options){
                 $(this).val(replacement);
             }
         }
-    });
+    }).live('keypress', function(e){
+        var textarea = $(this);
+        e.keyCode == '13' && textarea.height(textarea.height() + 13);
+    }); 
 
     function expandAll(){
         var allComments = [];
@@ -203,7 +206,7 @@ $.fn.comments = function(options){
             id = 'add_comment_clone' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
             index = newResponse.parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
-        addCommentForm.attr('id', id).find('.contextual_index').val(index);
+        addCommentForm.attr('id', id).addClass('clon').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
         e.preventDefault();

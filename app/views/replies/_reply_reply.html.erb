@@ -5,12 +5,23 @@
         <span class="avatar <%= 'expert' if reply_reply.from_expert? %>">
           <%= image_tag reply_reply.author_avatar, :width => '50' %>
         </span>
-      </div>        
-      <% unless reply_reply.anonymous? %>
-        <%= link_to reply_reply.user.username %>
-      <% else %>
-        <%= t("replies.reply.anonymous") %>
-      <% end %>
+      </div>  
+      <div>
+        <div class="res-username">
+          <% unless reply_reply.anonymous? %>
+            <%= link_to reply_reply.user.username %>
+          <% else %>
+            <%= t("replies.reply.anonymous") %>
+          <% end %>
+        </div>
+      </div>
+      <div class="res-type-wrapper">
+        <div>
+          <div>
+            <div class="topic-res-type advice"><%= reply_reply.i18n_category %></div>
+          </div>
+        </div>
+      </div>
     </div>
     <%= simple_format reply_reply.content %>
   </div>

@@ -7,12 +7,6 @@ $(function(){
         $(this).css('color', '#6c6f74');
     });                                
 
-    $('.add_comments > div > textarea').live('keypress', function(e){
-        var textarea = $(this);
-        e.keyCode == '13' && textarea.height(textarea.height() + 13);
-    });
-
-    
     var article = $(".article-wrapper"),
         socialBookmarkers = $('.social-bookmarkers'),
         sidebar = article.find('aside'),

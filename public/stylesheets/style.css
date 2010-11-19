@@ -164,7 +164,7 @@ footer > div > span{float: left; color: #898f93;}
 .login-form > .legend{margin-top: 10px;}
 
 .border-all,
-.comments li,
+.comm-wrap,
 .btn-gradient,
 .new-response,
 .items > li,
@@ -230,7 +230,7 @@ footer > div > span{float: left; color: #898f93;}
 .responses {background:url("../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-left:15px;display:inline!important;white-space:nowrap;}
 .tags{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px; margin: 0 10px;}   
 
-.response-wrapper{border: 1px solid #daecf3;}
+.response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .new-response > div{padding: 7px;}
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
