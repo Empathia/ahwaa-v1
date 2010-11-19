@@ -55,14 +55,16 @@ $.fn.comments = function(options){
         var link = $(this),
             parag = link.parent(),             
             index = $('.topic-content .icn.' + getLevel(link.attr('class'))).index(this),
-            comments = parag.next('#comments_' + index + '_clone').length ? parag.next() : parag.next('#comments_add_' + index + '_clone'),
             tt = link.find('.tt');
-         
+            parentComments = link.closest('.comments.clon');                                                                                 
+            parentComments.length && (index = parentComments.attr('id').replace('_clone', '').replace('comments_', '') + '_' + index);
+        var comments = parag.next('#comments_' + index +'_clone');
+        !comments.length && (comments = parag.next('#comments_add_' + index + '_clone'));
         if(comments.length){
             comments.slideUpComments(parag, link);
             tt.text(I18n.t('topics.show.contextual.reply_here'));
         }
-        else{
+        else{       
             tt.text(I18n.t('topics.show.contextual.hide'));
             var has_comments = link.hasClass('has_comments');
             comments = has_comments ? $('#comments_' + index).outerHTML() : $('#add_comments').outerHTML();
@@ -73,6 +75,10 @@ $.fn.comments = function(options){
         }
         return false;
     });                         
+    
+    function getCommentsSelector(link){
+       link.closest('comments') 
+    }   
     
     function getLevel(classes){
         classes = classes.split(' ');
