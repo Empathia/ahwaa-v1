@@ -198,7 +198,10 @@ $(function(){
         )
 
     $('.active-avatar').live('mouseleave', function(){
-       $(this).fadeOut('fast');
+       var pm = $(this) ;
+       pm.fadeOut('fast', function(){
+         pm.find('.pm-flash').remove();
+       });
     });
     
     //function to place the extra topic tags into the "more" vertical list

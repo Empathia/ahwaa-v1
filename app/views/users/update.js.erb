@@ -1,6 +1,6 @@
 var form = $('.edit-form.<%= @submitted_form %>');
 closeFormEdit(form);                                                                                                                               
-var successMsg = $('<div class="success-validation border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.usr-sec-title'));
+var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.usr-sec-title'));
 <% if @submitted_form == 'profile' %>
 $('.user_profile_religion').text('<%= escape_javascript current_user.profile.religion.to_s %>');
 $('.user_profile_gender').text('<%= escape_javascript current_user.profile.gender.to_s %>');
@@ -8,6 +8,7 @@ $('.user_profile_sexual_orientation').text('<%= escape_javascript current_user.p
 $('.user_profile_age').text('<%= escape_javascript current_user.profile.age.to_s %>');
 $('.user_profile_country').text('<%= escape_javascript current_user.profile.country.to_s %>');
 $('.user_profile_political_view').text('<%= escape_javascript current_user.profile.political_view.to_s %>');
+avatars.toggle();
 <% elsif @submitted_form == 'account' %>
 $('.user_profile_email').text('<%= escape_javascript current_user.email.to_s %>');
 $('.user_profile_language').text('<%= escape_javascript current_user.profile.i18n_language.to_s %>');

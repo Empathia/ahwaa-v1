@@ -131,7 +131,7 @@
               <div><%= t('.sidebar.my_account.nickname') %></div>
               <div>
                 <span><%= current_user.username %></span>
-                <%= f.text_field :username, :readonly => true, :disabled => true %>
+                <label><%= current_user.username %></label>
               </div>                                                                                                     
             </li>                                                                                                        
             <li>             
