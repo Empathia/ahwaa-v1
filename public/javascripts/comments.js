@@ -2,15 +2,30 @@ $.fn.outerHTML = function() {
     return $('<div></div>').append( this.clone() ).html();
 }
 
+function calculateArrowsPositions(){
+    $('.comments.clon').each(function(){
+        var comments = $(this),
+            link = comments.prev('p').find('a:last-child');
+        comments.find('.comm-arrow:first').css('left', link.position().left);        
+    })
+}   
 
-function slideUpComments(comments, parag, link){
+$.fn.slideUpComments = function(parag, link){
+    var comments = $(this);
     comments.slideToggle(function(){
         var paragEnd = comments.next();
         paragEnd && parag.append(paragEnd.html()) && paragEnd.remove();
         comments.data('newResponse') ? comments.replaceWith(comments.data('newResponse')) : comments.remove();
         link && link.attr('style', '').removeClass('minus');
+        calculateArrowsPositions();
     });
 }
+
+$.fn.slideDownComments = function(){
+  this.slideDown(function(){
+      calculateArrowsPositions();
+  }); 
+};
 
 $.fn.comments = function(options){                         
     var expandBtn = $('.expand-btn');
@@ -39,11 +54,11 @@ $.fn.comments = function(options){
     $('.icn').live('click', function(e){
         var link = $(this),
             parag = link.parent(),
-            index = $('.topic-content .icn').index(this),
+            index = $('.topic-content .icn.level_1').index(this),
             comments = parag.next('#comments_' + index + '_clone').length ? parag.next() : parag.next('#comments_add_' + index + '_clone'),
             tt = link.find('.tt');
         if(comments.length){
-            slideUpComments(comments, parag, link);
+            comments.slideUpComments(parag, link);
             tt.text(I18n.t('topics.show.contextual.reply_here'));
         }
         else{
@@ -53,11 +68,11 @@ $.fn.comments = function(options){
             has_comments && link.addClass('minus');
             link.css('display', 'inline');
             comments = cloneComments(link, comments, index, has_comments);
-            comments.slideDown();
+            comments.slideDownComments();
         }
         return false;
-    });
-
+    });                         
+    
     $('.useful').live('click', function(){
         var that = $(this);
         if(!that.hasClass('disabled')) {
@@ -98,7 +113,7 @@ $.fn.comments = function(options){
 
     $('.cancel-comment').live('click', function(e){
         var comments = $(this).closest('.add_comments');
-        slideUpComments(comments, comments.prev());
+        comments.slideUpComments(comments.prev());
         comments.find('.error').text('');
         e.preventDefault();
         return false;
@@ -112,19 +127,37 @@ $.fn.comments = function(options){
                 $(this).val(replacement);
             }
         }
-    });
+    }).live('keypress', function(e){
+        var textarea = $(this);
+        e.keyCode == '13' && textarea.height(textarea.height() + 13);
+    }); 
 
     function expandAll(){
         var allComments = [];
         $('.comments').each(function(){
             var comments = $(this),
-                id =  comments.attr('id').split('_')[1];
-            $('#comments_' +  id +'_clone').length == 0 && allComments.push(cloneComments($('.topic-content .icn:eq(' + id + ')'), comments.outerHTML(), id, true)[0]);
-        });
-       $(allComments).slideDown();
+                idChunks =  comments.attr('id').split('_');             
+            idChunks.shift();
+            var id = idChunks.join(),
+                index = idChunks[idChunks.length-1];
+            $('#comments_' +  id +'_clone').length == 0 && allComments.push(cloneComments(getLink(idChunks, 1), comments.outerHTML(), id, true)[0]);
+        });         
+       $(allComments).slideDownComments();
        $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
        $('.topic-content .icn').addClass('minus');
     } 
+    
+    function getLink(idChunks, level){
+        while(idChunks.length){
+            var id = idChunks.pop();
+            if(idChunks.length > 0){
+                getLink(idChunks, ++level)
+            }                    
+            else{
+                return $('.topic-content .icn.level_' + level + ':eq(' + id + ')');
+            }
+        } 
+    }
     
     function cloneComments(link, comments, index, has_comments){
         var parag = link.parent(),
@@ -133,28 +166,37 @@ $.fn.comments = function(options){
             left = link.position().left;
         parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
         comments = parag.next();
-        comments.attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').addClass('clon');
+        comments.attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
-        comments.find('.contextual_index').val(index);
+        comments.find('.contextual_index').val(index);  
+        comments.find('p').addMarkers();
         return comments;
     }   
-    
-    var i=0;
-    this.each(function(){
-        var parag = $(this),
-            paragHTML= parag.html(),
-            exp = /\.((?: [A-Z])|$)/,
-            has_comments = "";
-        while(exp.test(paragHTML)){
-            paragHTML = $('#comments_' + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1") :
-                        paragHTML.replace(exp, "<a href='#' class='icn no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1")
-            i++;
-        }
-        //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
-        parag.html(paragHTML);
-    });
 
-    $('.icn').each(function(i){
+    $.fn.addMarkers = function(){
+        var i=0,
+            parags = this,
+            parents = parags.eq(0).parents('.comments'),
+            selector = parents.length ? parents.eq(0).attr('id').replace(/clone/, '') : 'comments_',
+            level = parents.length + 1;
+        parags.each(function(){
+            var parag = $(this),
+                paragHTML= parag.html(),
+                exp = /\.((?: [A-Z])|$)/,
+                has_comments = "";
+            while(exp.test(paragHTML)){ 
+                paragHTML = $('#' + selector + i).length ? paragHTML.replace(exp, ". <a href='#' class='icn level_" + level + " has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1") :
+                            paragHTML.replace(exp, "<a href='#' class='icn level_" + level + " no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>.<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$1")
+                i++;
+            }
+            //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
+            parag.html(paragHTML);
+       });
+    }
+     
+    $(this).addMarkers();
+    
+    $('.icn.level_1').each(function(i){
        $(this).attr('id', 'add_' + i);
     });
 
@@ -164,13 +206,14 @@ $.fn.comments = function(options){
             id = 'add_comment_clone' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
             index = newResponse.parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
-        addCommentForm.attr('id', id).find('.contextual_index').val(index);
-
-        $(this).replaceWith(addCommentForm);
+        addCommentForm.attr('id', id).addClass('clon').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
+        newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
         e.preventDefault();
         return false;
     });
 
-    //expandAll();
+    setTimeout(function(){
+        expandBtn.trigger('click');
+    }, 0);
 };
