@@ -2,7 +2,7 @@ html{height: 100%;}
 body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 100%;}
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
-a{color: #468ac4;}
+a{color: #468ac4}
 .dark-lk{color: #5d646a; font-weight: bold;}
 input[type=text],
 input[type=password],
@@ -254,19 +254,23 @@ footer > div > span{float: left; color: #898f93;}
  #pageslide-slide-wrap > div > div > form > fieldset{border:none;margin:0;padding:0;}
  #pageslide-slide-wrap > div > div > form input[type="text"]{font-size:12px;height:11px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:20px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
  #pageslide-slide-wrap > div > div > form textarea{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:8px 10px;color:#888;margin-bottom:16px;font-family:Arial, Helvetica, sans-serif;font-size:12px;display:block;width:474px}
- #pageslide-slide-wrap > div > div > form input[type="submit"]{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#e1eaee;border-bottom-color:#929898;padding:8px 19px;line-height:1em;color:#468ac4;margin-left:181px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:12px;background-color:white}
+ #pageslide-slide-wrap > div > div > form input[type="submit"]{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;padding:8px 19px;line-height:1em;float:none!important;margin-left:181px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:12px;background-color:white}
 
 .avatar{width: 50px; height: 50px; padding: 2px; border: 1px solid #dadee0; float: left;}
 .avatar.expert{background-color: #afcaa2;}
 .avatar-wrapper{float: left; width: 56px; position: relative;}
 
-.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -18px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
+.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -17px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
 .private-msg-btns{float: right;}
 .private-msg-btns > input{height: 24px;}
 .private-msg .cancel{margin-right: 10px; color: #61656a;}
-.private-msg > .avatar{float: right;}          
+.private-msg > .avatar{float: right;}
+
+.inside{left:-17px}
+.inside .user-info{float:right}
+.inside .user-wrapper > .avatar{float:left}          
 
 .user-wrapper{overflow: hidden; margin-bottom: 15px;}
 .user-wrapper > .avatar{float: right;}

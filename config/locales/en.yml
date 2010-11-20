@@ -174,10 +174,13 @@ en:
       flagged: Flagged
       already_flagged: Already flagged
       already_useful: Already marked as useful
+      reply_to: "Reply to %{username}"
   topic_requests:
     new:
       submit: Submit
       title: Request a Topic
+      titleTopic: Title
+      topicDetails: Topic details
   users:
     show:
       sidebar:                   
