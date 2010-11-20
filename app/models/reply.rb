@@ -22,6 +22,7 @@ class Reply < ActiveRecord::Base
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
 
   scope :latest, order("created_at DESC").limit(5)
+  scope :flagged, :include => :ratings, :conditions => "ratings.vote = #{Rating::FLAG}"
 
   # returns the amount of points granted this post produces
   def points_granted
