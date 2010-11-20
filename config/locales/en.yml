@@ -219,6 +219,9 @@ en:
         private_messages:
           title: Private Messages
           delete: Delete
+          confirm_delete: Are you sure you want to delete all messages in this thread? This cannot be undo.
+          by: by %{sender}
+          at_date: in %{date}
           reply: Reply
           block: Block
   passwords:

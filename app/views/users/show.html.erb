@@ -168,41 +168,30 @@
   <section> 
     <h2 class="regular"><%= t('.content.private_messages.title') %></h2>
     <ul class="bar opts border-all">
-      <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
-      <li><%= link_to 'Block', nil, :class => "pm-block" %></li>
+      <li><%= link_to 'Delete', '#', :class => "pm-delete" %></li>
+      <!--<li><%= link_to 'Block', nil, :class => "pm-block" %></li>-->
     </ul>      
     <ul class="messages">
-      <li class="new">
-        <input type="checkbox">
-        <div class="avatar-wrapper">
-          <div class="avatar"></div>
-        </div>
-        <ul class="msg-opts">
-          <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete"  %></li>          
-          <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
-        </ul>
-        <div class="from"><%= link_to 'By LGBT admin' %> in June 22, 2010</div>
-        <div class="msg">
-          <p>Welcome navidsaf Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench...</p>
-        </div>
-      </li>
-      <li>    
-        <input type="checkbox">                    
-        <div class="avatar-wrapper">
-          <div class="avatar"></div>
-        </div>
-        <ul class="msg-opts">
-          <li><%= link_to t('.content.private_messages.delete'), nil, :class => "opt-delete" %></li>          
-          <li><%= link_to t('.content.private_messages.reply'), nil, :class => "opt-reply"  %></li>
-        </ul>
-        <div class="from"><%= link_to 'By Zahir00' %> in May 21, 2010</div>
-        <div class="msg">
-          <p>Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis...</p>
-        </div>
-      </li>     
+      <% @private_messages.each do |pm| %>
+        <li class="<%= 'new' if pm.unread? %>">
+          <input type="checkbox">
+          <div class="avatar-wrapper">
+            <div class="avatar"><%= image_tag pm.sender.profile.avatar.url, :width => 50 %></div>
+          </div>
+          <ul class="msg-opts">
+            <li><%= link_to t('.content.private_messages.delete'), pm, :class => "opt-delete", :method => :delete, :confirm => t('.content.private_messages.confirm_delete') %></li>          
+            <li><%= link_to t('.content.private_messages.reply'), {:anchor => {:m => pm.id, :reply => true}}, :class => "opt-reply"  %></li>
+          </ul>
+          <div class="from"><%= link_to t('.content.private_messages.by', :sender => pm.sender.username), :anchor => {:m => pm.id} %> <%= t '.content.private_messages.at_date', :date => l(pm.created_at, :format => :long) %></div>
+          <div class="msg">
+            <p><%= truncate pm.content, :length => 125 %></p>
+          </div>
+        </li>
+      <% end %>
     </ul>
     <div class="bar border-all"> 
-      <div class="pagination">
+      <%= will_paginate @private_messages, :renderer => PrivateMessagesPaginationRenderer %>
+      <!--<div class="pagination">
         <div>
           <a href="#" class="arrow left"></a>
           <ul class="pag-numbers">
@@ -216,7 +205,7 @@
           </ul>
           <a href="#" class="arrow right"></a>
         </div>
-      </div>
+      </div>-->
     </div>
   </section>
   <section> 
