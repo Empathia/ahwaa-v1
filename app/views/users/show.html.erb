@@ -3,7 +3,7 @@
     var countries = <%= Country.all.map { |c| [c.id, c.name] }.inspect.html_safe %>;
   </script>
 <% end %>
-<% javascript 'user_panel' %>
+<% javascript 'ba-bbq', 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all">
   <aside class="user-sb border-left">
@@ -164,90 +164,7 @@
     <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
     <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
   </section>
-  <section> 
-    <h2 class="regular"><%= t('.content.private_messages.title') %></h2>
-    <ul class="bar opts border-all">
-      <li><%= link_to 'Delete', '#', :class => "pm-delete" %></li>
-      <!--<li><%= link_to 'Block', nil, :class => "pm-block" %></li>-->
-    </ul>      
-    <ul class="messages">
-      <% @private_messages.each do |pm| %>
-        <li class="<%= 'new' if pm.unread? %>">
-          <input type="checkbox">
-          <div class="avatar-wrapper">
-            <div class="avatar"><%= image_tag pm.sender.profile.avatar.url, :width => 50 %></div>
-          </div>
-          <ul class="msg-opts">
-            <li><%= link_to t('.content.private_messages.delete'), pm, :class => "opt-delete", :method => :delete, :confirm => t('.content.private_messages.confirm_delete') %></li>          
-            <li><%= link_to t('.content.private_messages.reply'), {:anchor => {:m => pm.id, :reply => true}}, :class => "opt-reply"  %></li>
-          </ul>
-          <div class="from"><%= link_to t('.content.private_messages.by', :sender => pm.sender.username), :anchor => {:m => pm.id} %> <%= t '.content.private_messages.at_date', :date => l(pm.created_at, :format => :long) %></div>
-          <div class="msg">
-            <p><%= truncate pm.content, :length => 125 %></p>
-          </div>
-        </li>
-      <% end %>
-    </ul>
-    <div class="bar border-all"> 
-      <%= will_paginate @private_messages, :renderer => PrivateMessagesPaginationRenderer %>
-      <!--<div class="pagination">
-        <div>
-          <a href="#" class="arrow left"></a>
-          <ul class="pag-numbers">
-            <li class="active"><%= link_to '1' %></li>
-            <li><%= link_to '2' %></li>
-            <li><%= link_to '3' %></li>
-            <li><%= link_to '4' %></li>
-            <li><%= link_to '5' %></li>
-            <li><%= link_to '...' %></li>
-            <li><%= link_to '20' %></li>
-          </ul>
-          <a href="#" class="arrow right"></a>
-        </div>
-      </div>-->
-    </div>
-  </section>
-  <section> 
-    <h2 class="regular"><%= t('.content.private_messages.title') %></h2>
-    <div class="bar-wrapper">
-      <div class="bar border-all bar-private">
-        <ul class="opts">
-          <li><%= link_to 'Delete', nil, :class => "pm-delete" %></li>
-          <li><%= link_to 'Block', nil, :class => "pm-block" %></li>
-          <li><%= link_to 'Reply', nil, :class => "pm-reply" %></li><!-- This option will be hidden on the welcome private message -->
-        </ul> 
-        <div class="bar-arrow down"><%= link_to 'Next', nil %></div>
-        <div class="bar-arrow up active"><%= link_to 'Back', nil %></div>
-      </div>
-      <%= link_to 'Back to messages', nil, :class => "bar border-all back-to-msgs" %>
-    </div>
-    <div class="pm-details">
-      <div class="pm-user">
-        <div class="avatar-wrapper">
-          <div class="avatar">
-            <%= image_tag 'no-image.jpg', :width => '50' %>
-          </div>
-        </div>
-        <div class="pm-user-details">
-          <div><%= link_to "By Transcend admin" %></div>
-          <div>in June 22, 2010</div>
-        </div>
-      </div>  
-      <div class="pm-message">
-        <p>Welcome Yahir najar00 Sticks to cook yer!  What we got to do is to go as near as the ground'll let us, and then drive a trench.</p>
-        <p>Then gazing at his quadrant, and handling, one after the other, its numerous cabalistical contrivances, he pondered again, and muttered:  "Foolish toy! babies' plaything of haughty Admirals, and asfefaesfsefcv  sdfs sefsfdfbdbg Commodores, and Captains; the world brags of thee, of thy cunning and might; but what after all canst thou do it lorem</p>
-      </div>
-    </div>
-    <div class="pm-details"><!-- The welcome private message doesn't have responses-->
-      <div class="pm-user-response"><%= link_to "navidsafa" %> in June 22, 2010</div>
-      <div class="pm-message response">
-        <p>Nulla fringilla, orci ac euismod semper, magna diam porttitor mauris, quis sollicitudin sapien justo in libero. Vestibulum mollis mauris enim. Morbi euismod magna ac lorem rutrum elementum. Donec viverra auctor lobortis. Pellentesque eu est.</p>
-      </div>
-    </div>
-    <div class="new-response response-wrapper"><!-- This div will be hidden on the welcome private message -->
-      <div>
-        <a href="#">New Response</a>
-      </div>
-    </div>
+  <section id="pm-wrapper"> 
+    <%= render :partial => 'inbox', :object => @private_messages %>
   </section>
 </div>

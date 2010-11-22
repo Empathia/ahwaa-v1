@@ -227,6 +227,9 @@ en:
           at_date: in %{date}
           reply: Reply
           block: Block
+  private_messages:
+    private_message:
+      reply: Reply
   passwords:
     edit:
       submit: Change password
