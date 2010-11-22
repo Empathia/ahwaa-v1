@@ -10,7 +10,7 @@ input[type=email],
 textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
-input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
+.container > .aligned input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 body > div > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
@@ -139,8 +139,8 @@ footer > div > span{float: left; color: #898f93;}
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.over-form p.error{color: #d93e3e; margin: 0 0 5px 1px;}
-.over-form p.success{color: green; margin: 0 0 5px 1px;}
+p.error{color: #d93e3e; margin: 0 0 5px 1px;}
+p.success{color: green; margin: 0 0 5px 1px;}
 
 .btn-gradient.cancel-forgot{float: right; padding: 0 12px; height: 32px; margin-right: 10px; color: #61656a;}
 

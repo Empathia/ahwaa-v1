@@ -32,6 +32,8 @@
         <ul>
           <%= render :partial => 'replies/reply_reply', :collection => reply.replies %>
         </ul>
+      <% else %>
+        <%= link_to t(".reply_to", {:username => current_username}), nil, :class => 'reply-to' %>
       <% end %>
     </div>
   </div>

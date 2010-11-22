@@ -1,0 +1,22 @@
+<div class="adm-title">
+  <h1>Flagged Replies</h1>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <th class="created_at border-left">Created at</th>
+    <th class="content">Content</th>
+    <th class="flag_count">Flag Count</th>
+    <th class="actions border-right">Actions</th>
+  </tr>
+  <% @flags.each do |reply| %>
+    <tr>
+      <td><%= reply.created_at %></td>
+      <td><%= reply.content %></td>
+      <td><%= reply.flags.count %></td>
+      <td>
+        <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete %></td>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
