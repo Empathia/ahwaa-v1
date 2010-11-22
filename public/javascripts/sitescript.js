@@ -224,6 +224,9 @@ $(function(){
     
     $('.items > div:last-child').css("background","none");
     
+    var input = $("input")[0];
+    //jQuery.data(input, "value", $('input[type=text]')[0].attr('placeholder'));
+    console.log(input.attr('id'));
 });
 
 
