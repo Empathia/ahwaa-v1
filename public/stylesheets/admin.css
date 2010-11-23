@@ -49,6 +49,7 @@ select{width: 206px;}
 input:focus:invalid, textarea:focus:invalid{background-color:#fbe2e5;}
 
 form > p > label{display: block;}
+form > #related_content_form_fields > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 h1{padding-bottom: 10px;}
 .new_topic p{padding-bottom: 10px;}

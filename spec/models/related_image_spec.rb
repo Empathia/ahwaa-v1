@@ -78,7 +78,8 @@ describe RelatedImage do
     end
 
     it "should have title and description entered by the admin" do
-      pending "Pass title and description to the attributes"
+      @raw.update_attributes(:title => 'title', :description => 'description')
+      @raw.reload.title.should == 'title'
     end
   end
 end
