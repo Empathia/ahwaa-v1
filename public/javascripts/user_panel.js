@@ -8,6 +8,19 @@ function closeFormEdit(form){
     form.find('input, label, select, .passwords').css('display', 'none').end().find('span').css('display', 'block');
 }
 
+$(window).bind('hashchange', function() {
+    var frag = $.deparam.fragment();
+    if(!isNaN(parseInt(frag.m))) {
+        var url = '/inbox/' + frag.m + '.js';
+        if(frag.hasOwnProperty('reply')) {
+            url += '?reply=true';
+        }
+        $.getScript(url);
+    } else if (frag.hasOwnProperty('inbox')) {
+        $.getScript('/inbox.js');
+    }
+}).trigger('hashchange');
+
 var avatars = {
     toggle: function(){
         $('.avatars-wrapper').hasClass('active') ? avatars.hide() : avatars.show();

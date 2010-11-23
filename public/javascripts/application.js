@@ -55,6 +55,18 @@ $(document).ready(function() {
             });
 
             return false;
+        } else if(urlType == "image" && $('#related_content_title').length == 0 ) {
+          $('#related_content_form_fields').append('<p>\
+              <label for="related_content_title">Title</label>\
+              <input id="related_content_title" name="related_content[title]" size="30" type="text">\
+            </p>\
+          ');
+          $('#related_content_form_fields').append('<p>\
+              <label for="related_content_description">Description</label>\
+              <input id="related_content_description" name="related_content[description]" size="30" type="text">\
+            </p>\
+          ');
+          return false;
         }
     });
 

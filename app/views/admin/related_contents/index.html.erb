@@ -9,10 +9,20 @@
 <% end %>
 
 <%= form_for [:admin, @topic, @related_content], :html => { :id => 'related_content_form'} do |f| %>
-  <p>
-    <%= f.label :source_url %>
-    <%= f.text_field :source_url, :required => "true" %>
-  </p>
+  <div id='related_content_form_fields' >
+    <p>
+      <%= f.label :source_url %>
+      <%= f.text_field :source_url, :required => "true" %>
+    </p>
+    <p>
+      <%= f.label :title, 'Title (optional)' %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label :description, 'Description (optional)' %>
+      <%= f.text_field :description %>
+    </p>
+  </div>
   <p>
     <%= f.submit 'Add Related Content' %>
   </p>

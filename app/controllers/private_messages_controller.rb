@@ -1,13 +1,15 @@
 class PrivateMessagesController < ApplicationController
   before_filter :find_private_message, :only => [:show, :destroy]
-  respond_to :html
-  respond_to :js, :only => [:create]
+  respond_to :html, :only => [:destroy]
+  respond_to :js, :only => [:index, :create, :show]
 
   def index
-    @private_messages = current_user.private_messages
+    @private_messages = current_user.private_messages.paginate(:page => params[:page])
   end
 
   def show
+    @private_message.read!
+    @replying = !!params[:reply]
   end
 
   def create
@@ -20,7 +22,7 @@ class PrivateMessagesController < ApplicationController
 
   def destroy
     @private_message.destroy
-    respond_with(@private_message)
+    redirect_to user_path
   end
 
   private

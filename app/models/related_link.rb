@@ -11,8 +11,8 @@ class RelatedLink < RelatedContent
 
   def scrape_link
     Fetchers::Link.scrape(source_url) do |response|
-      self.title = response.title
-      self.description = response.description
+      self.title = response.title if self.title.blank?
+      self.description = response.description if self.description.blank?
       self.thumbnail = RioUtils.download(URI.encode(@thumbnail_url || response.thumbnail_url))
     end
   end

@@ -9,19 +9,14 @@ describe PrivateMessagesController do
   describe 'GET index' do
 
     def do_request(params = {})
-      get :index, params
+      xhr :get, :index, params.merge(:format => :js)
     end
 
     context "when user isn't logged in" do
 
-      it "doesn't redirect to index action" do
+      it "doesn't render index template" do
         do_request
-        response.should_not redirect_to(:action => :index)
-      end
-
-      it "redirects to login path" do
-        do_request
-        response.should redirect_to(root_path)
+        response.should_not render_template(:index)
       end
 
     end
@@ -50,19 +45,14 @@ describe PrivateMessagesController do
   describe 'GET show' do
 
     def do_request(params = {})
-      get :show, params
+      xhr :get, :show, params.merge(:format => :js)
     end
 
     context "when user isn't logged in" do
 
-      it "doesn't redirect to show action" do
+      it "doesn't render show template" do
         do_request :id => 1
-        response.should_not redirect_to(:action => :show)
-      end
-
-      it "redirects to login path" do
-        do_request :id => 1
-        response.should redirect_to(root_path)
+        response.should_not render_template(:show)
       end
 
     end
@@ -73,6 +63,7 @@ describe PrivateMessagesController do
         sign_in @user
         @private_message = Factory(:private_message)
         current_user.stub_chain(:private_messages, :find).and_return(@private_message)
+        @private_message.stub!(:read!)
       end
 
       it "render show template" do
@@ -81,7 +72,12 @@ describe PrivateMessagesController do
       end
 
       it "should find a private message of the current user" do
-        current_user.private_messages.should_receive(:find).and_return(@private_mesage)
+        current_user.private_messages.should_receive(:find).and_return(@private_message)
+        do_request :id => 1
+      end
+
+      it "should mark message as read" do
+        @private_message.should_receive(:read!)
         do_request :id => 1
       end
 
@@ -92,19 +88,14 @@ describe PrivateMessagesController do
   describe 'POST create' do
 
     def do_request(params = {})
-      post :create, params.merge(:user_id => 1)
+      xhr :post, :create, params.merge(:user_id => 1, :format => :js)
     end
 
     context "when user isn't logged in" do
 
-      it "doesn't redirect to create action" do
+      it "doesn't render create template" do
         do_request
-        response.should_not redirect_to(:action => :create)
-      end
-
-      it "redirects to login path" do
-        do_request
-        response.should redirect_to(root_path)
+        response.should_not render_template(:create)
       end
 
     end
@@ -133,11 +124,12 @@ describe PrivateMessagesController do
 
         before(:each) do
           @private_message.stub!(:save).and_return(true)
+          UserMailer.stub_chain(:private_message_notification, :deliver)
         end
 
-        it "redirects to index action" do
+        it "sends an email to the recipient" do
+          UserMailer.private_message_notification(any_args).should_receive(:deliver)
           do_request
-          response.should redirect_to(:action => :index)
         end
 
       end
@@ -183,7 +175,7 @@ describe PrivateMessagesController do
 
       it "redirects to index action" do
         do_request :id => 1
-        response.should redirect_to(:action => :index)
+        response.should redirect_to(user_path)
       end
 
     end

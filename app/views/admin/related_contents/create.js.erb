@@ -1,5 +1,5 @@
 <% if @related_content && @related_content.errors.empty? %>
-  $('#related_content_form').append('<%= escape_javascript render(:locals => {:possible_thumbnails => @possible_thumbnails}, :partial => 'possible_thumbnails') %>');
+  $('#related_content_form_fields').append('<%= escape_javascript render(:locals => {:possible_thumbnails => @possible_thumbnails}, :partial => 'possible_thumbnails') %>');
 <% else %>
   $('.flash').remove();
   $('.admin').prepend('<%= escape_javascript(print_flash) %>');
