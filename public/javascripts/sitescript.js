@@ -1,5 +1,4 @@
 $(function(){        
-    
     function toggleSignUp(link, formName){        
         $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');                                                              
         link.addClass('auth-form-active');         
@@ -43,8 +42,9 @@ $(function(){
        }
     });
     
-    $(document).click(function(e){                 
+    $(document).unbind('click').click(function(e){                 
         !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active');
+        if(e.target.tagName != "a"){$('.search_results').removeClass('visible')}
     });
     
     $('.cancel-forgot').click(function(){
@@ -169,11 +169,11 @@ $(function(){
         $.trim(input.val()) ? input.next().addClass('clear') : input.next().removeClass('clear') && $('.search_results').removeClass('visible');
     }).next().click(function(){
         var _magnify = $(this);
-        _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val('').focus();
+        _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val(' ').focus();
         $('.search_results').removeClass('visible');
     });
     
-    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true });
+    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true }).click(function(){$('.pageslide-body-wrap').addClass('jlo')});
     
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
@@ -186,7 +186,7 @@ $(function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
     });
     
-    $('.topic-avatars').find('.avatar').mouseover(function(){
+    $('.avatar').mouseover(function(){
                 $(this).siblings('.private-msg').removeClass('inside');
                 if($("body").width() < 1372 && $(this).parent().parent().is(':first-child')) {
                     $(this).siblings('.private-msg').fadeIn('fast').addClass('inside').addClass('active-avatar');
@@ -224,18 +224,25 @@ $(function(){
     
     $('.items > div:last-child').css("background","none");
     
-    var input = $("input")[0];
-    //jQuery.data(input, "value", $('input[type=text]')[0].attr('placeholder'));
-    console.log(input.attr('id'));
-});
-
-
-
-
-
-
-
-
-
-
-
+    if (!$.browser.webkit) {
+        var inputs = $('input:text');
+        
+        inputs.each(function(){
+            if($(this).attr('placeholder') && $(this).attr('placeholder').length > 0){
+                $(this).addClass('placeholder');
+                $.data(inputs, 'tovalue', $(this).attr('placeholder'));
+                $(this).attr('value', $.data(inputs, 'tovalue'));
+                inputs.focus(function(e){
+                    if ($(this).attr('value') == $(this).attr('placeholder')){
+                        $(this).removeClass('placeholder').attr('value', ' ');
+                    }
+                })
+                inputs.blur(function(){
+                    if($(this).attr('value').length <= 1){
+                        $(this).addClass('placeholder').attr('value', $(this).attr('placeholder'));
+                    }
+                })
+            }
+        })
+     }
+})

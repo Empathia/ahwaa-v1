@@ -226,8 +226,8 @@ $.fn.comments = function(options){
         e.preventDefault();
         return false;
     });
-    
-    $('.comments-ls > li').live('mouseover mouseout', function(e){             
+    //commented by now becouse is broken
+    /*$('.comments-ls > li').live('mouseover mouseout', function(e){             
         if (event.type == 'mouseover') {
             $(this).children('.res-flag-btns').show();
         } else {
@@ -236,7 +236,7 @@ $.fn.comments = function(options){
         }
         e.stopPropagation();
         return false;
-    });
+    });*/
     
     setTimeout(function(){
         expandBtn.trigger('click');

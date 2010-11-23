@@ -13,8 +13,8 @@ article{padding: 40px; background-color: #ffffff; display: block; min-height: 44
 .topic-content p{margin-top: 23px; line-height: 24px; position: relative;}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic} 
-article > header{overflow: hidden; display: block;}
-article > header > h1{float: left; width: 650px;}
+article > header{display:block}
+article > header > h1{float:left; width: 650px;}
 article > header > div{float: right;}
 aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-color: #ffffff; position: fixed;}
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
@@ -167,7 +167,7 @@ p:hover .icn{display: inline;}
 
 .topic-avatars{width: 100%; float: left;}
 .topic-avatars > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
-.topic-avatars > li > div{margin-bottom: 5px; margin-left: 1px; overflow: hidden;}
+.topic-avatars > li > div{margin-bottom: 5px;overflow: hidden;}
 .topic-avatars > li:nth-child(2n+1){margin-right:20px;}
 
 .expand-btn{width: 132px; height: 26px; line-height: 2;}    

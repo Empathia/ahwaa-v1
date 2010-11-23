@@ -92,6 +92,7 @@
     	if ($.browser.webkit) {
             $('header').animate({left: -556});
          }
+          $('#pageslide-body-wrap').css('overflow','hidden');
 		  $("#pageslide-body-wrap").animate(direction, settings.duration, function() {
 	      $.ajax({
   		      type: "GET",
@@ -171,6 +172,7 @@
       $("#pageslide-content").css("width","0px").empty();
       $('#pageslide-body-wrap, #pageslide-slide-wrap').css('left','');
       $('#pageslide-body-wrap, #pageslide-slide-wrap').css('right','');
+      $('#pageslide-body-wrap').css('overflow','')
       _overflowFixRemove();
     });
     if ($.browser.webkit) {

@@ -4,6 +4,7 @@ body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4}
 .dark-lk{color: #5d646a; font-weight: bold;}
+em{font-style:normal}
 input[type=text],
 input[type=password],
 input[type=email],
@@ -16,11 +17,12 @@ body > div > div > header{background-color: #fcfdfe; position: fixed; width: 100
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
 .light{background-color: #e2ecf2;}
 .dark{background-color: #d7e4eb;}
+.placeholder{color:#bbb}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
 .header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: 6px}
 .topic{background: url('../images/transcend.png') no-repeat center 0;}
 .homepage{background: url('../images/homepage.png') no-repeat center 0;}
-.clear{clear:both}
+.clear{clear:both!important;float:none!important;}
 .links{width: 237px; height: 54px; left: 361px; position: absolute; top: 0;  text-align: center;}
 .topic > .links > div{height: 18px; padding-top: 2px;}
 .homepage > .links > div{padding-top: 5px;}
@@ -75,8 +77,8 @@ body > div > div > header{background-color: #fcfdfe; position: fixed; width: 100
 .logged_opts > li > a{color: #9b9b9b}
 .search{float: right;}
 .search > p{border: 1px solid #CCC; width: 280px; height: 29px; padding: 0 10px; margin: 3px 0 5px;}
-.search > p > input{width: 258px; height: 27px; border: none; float: left;}
-.search > p > span{background-image: url('../images/icn-search.png'); background-repeat: no-repeat; float: right; width: 13px; height: 12px; margin-top: 9px;}
+.search > p > input{width:258px;height:27px;border:none;float: left}
+.search > p > span{background-image: url('../images/icn-search.png'); background-repeat: no-repeat; float: right; width: 13px; height: 12px; margin-top: 9px;clear:none}
 .search > ul{background-color: #F6F9FB; /*border: 1px solid #CCC;*/;display:none; width: 280px; padding: 11px 10px 3px 10px; margin: 0px; position: absolute;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;-moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);z-index:2;}
 .search > ul.visible{display:block;}
 .search > ul >li{ text-align: left; border-bottom: 1px solid #E3EBF0;padding:7px 0 6px}
@@ -206,6 +208,7 @@ p.success{color: green; margin: 0 0 5px 1px;}
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da')";
 }
+.request-error > div.clear{width:auto;height:auto;float:none;border:none;padding:0}
 .sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin-bottom: 8px;}
 .request-error > div > a{height: 25px; width: 83px; overflow: hidden; margin: 0 39px;}
 .request-error > div > a > span{float: left; width: 61px; padding: 0 10px; height: 23px; font-size: 12px;}
