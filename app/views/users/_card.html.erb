@@ -11,7 +11,7 @@
       <%= image_tag user.profile.avatar.url, :width => '50' %>
     </div>
   </div>
-  <%= form_for [user, PrivateMessage.new], :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
+  <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
     <%= f.text_area :content, :class => 'border-all' %>
     <div class="private-msg-btns">
       <input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>">

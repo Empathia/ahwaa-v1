@@ -11,8 +11,9 @@ class User < ActiveRecord::Base
   has_many :replies, :dependent => :destroy
   has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
   has_many :rated_replies, :through => :ratings, :source => :reply
-  has_many :private_messages, :dependent => :destroy,
-    :foreign_key => :recipient_id, :conditions => {:parent_id => nil}
+  has_many :sent_messages, :foreign_key => :sender_id, :dependent => :destroy
+  has_many :received_messages, :foreign_key => :recipient_id,
+    :dependent => :destroy, :group => :conversation_id
   has_many :topic_requests
 
   attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes

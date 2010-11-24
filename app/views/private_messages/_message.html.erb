@@ -1,0 +1,31 @@
+<h2 class="regular"><%= t('users.show.content.private_messages.title') %></h2>
+<div class="bar-wrapper">
+  <div class="bar border-all bar-private">
+    <ul class="opts">
+      <li><%= link_to 'Delete', private_message_path(message), :class => "pm-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>
+      <li><%= link_to 'Reply', '#toreply', :class => "pm-reply" %></li>
+    </ul> 
+  </div>
+  <%= link_to 'Back to messages', '#inbox', :class => "bar border-all back-to-msgs" %>
+</div>
+<div class="pm-details">
+  <%= render :partial => 'reply', :object => message %>
+</div>
+<div class="replies-wrapper <% 'pm-details' unless message.replies.blank? %>">
+  <%= render :partial => 'reply', :collection => message.replies %>
+</div>
+<div class="new-response response-wrapper">
+  <% if defined?(replying) && replying %>
+    <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>
+      <%= hidden_field_tag :reply_to, message.id %>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+
+      <%= f.submit t('.reply') %>
+    <% end %>
+  <% else %>
+    <div>
+      <a href="#">New Response</a>
+    </div>
+  <% end %>
+</div>

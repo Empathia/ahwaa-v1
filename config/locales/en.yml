@@ -227,8 +227,10 @@ en:
           at_date: in %{date}
           reply: Reply
           block: Block
+    inbox:
+      no_messages: There are no private messages
   private_messages:
-    private_message:
+    message:
       reply: Reply
   passwords:
     edit:

@@ -1,44 +1,61 @@
 class PrivateMessage < ActiveRecord::Base
-  # TODO: attr_accessible
-
+  belongs_to :parent, :class_name => "PrivateMessage"
   belongs_to :sender, :class_name => "User"
   belongs_to :recipient, :class_name => "User"
-  belongs_to :parent, :class_name => "PrivateMessage"
-  has_many :replies, :class_name => "PrivateMessage", :foreign_key => :parent_id,
-    :dependent => :destroy, :order => "created_at DESC"
+  has_many :replies, :class_name => "PrivateMessage", :foreign_key => :parent_id
+  has_one :received_message
 
+  before_create :prepare_copies
+  after_create :send_notifications
+  after_create :set_conversation_to_received
+
+  validates :content, :presence => true
   validates :sender_id, :presence => true
   validates :recipient_id, :presence => true
-  validates :content, :presence => true
-  validate :replying_ownership, :unless => "parent_id.blank?"
-
-  default_scope order("created_at DESC")
 
   # Builds an instance setting the available params,
   # like recipient and parent
-  def self.build_from_params(params)
+  def self.build_from_params(params, sender)
     new(params[:private_message]).tap do |pm|
       pm.recipient = User.find_by_username(params[:user_id])
+      pm.sender = sender
       pm.parent = PrivateMessage.find(params[:reply_to]) if params[:reply_to]
     end
   end
 
-  # Flags message if has any unread reply
-  def has_unread_reply?
-    replies.any?(&:unread?)
+  # Wether or not the conversation has any of its relies unread by the passed user
+  def unread_by?(user)
+    received_message.unread? || replies.map { |r|
+      r.received_message if r.recipient == user
+    }.compact.any?(&:unread?)
   end
-  
-  # Marks as read
-  def read!
-    update_attribute(:unread, false)
+
+  # Marks all the conversation for the passed users as read
+  def read_for!(user)
+    received_message.read!
+    replies.map { |r|
+      r.received_message if r.recipient == user
+    }.compact.each(&:read!)
+  end
+
+  def received_messages_thread(user)
+    received_message.conversation_replies.map do |r|
+      r.received_message if r.recipient == user
+    end.compact
   end
 
   private
 
-    # Validates that it's replying to a PM involving both recipient and sender
-    def replying_ownership
-      ownership = (parent.sender == sender && parent.recipient == recipient) ||
-        (parent.sender == recipient && parent.recipient == sender)
-      errors.add(:parent_id, :invalid) unless ownership
-    end
+  def set_conversation_to_received
+    received_message.conversation_id = parent ? parent.id : id
+  end
+
+  def prepare_copies
+    return if recipient.blank?
+    build_received_message(:recipient_id => recipient.id)
+  end
+
+  def send_notifications
+    UserMailer.private_message_notification(recipient, sender).deliver
+  end
 end

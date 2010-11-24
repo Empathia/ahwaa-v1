@@ -1,11 +1,18 @@
-var _form = $('.form-private-msg:visible');   
-_form.find('.pm-flash').remove();
-<% if @private_message.valid? %>
-_form.prepend('<div class="pm-flash success border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
-_form.delay(2000).slideUp(function(){
-    _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.pm-flash.success').remove();
-});
-_form[0].reset();
+<% if params[:reply_to] %>
+  var w = $('.replies-wrapper');
+  w.hasClass('pm-details') || w.addClass('pm-details');
+  w.append('<%= escape_javascript render(:partial => 'reply', :object => @message) %>');
+  $('#reply-form')[0].reset();
 <% else %>
-    _form.prepend('<div class="pm-flash error border-all"><p><%= escape_javascript @private_message.errors.full_messages.first %></p></div>');
+  var _form = $('.form-private-msg');
+  _form.find('.pm-flash').remove();
+  <% if @message.valid? %>
+  _form.prepend('<div class="pm-flash success border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
+  _form.delay(2000).slideUp(function(){
+      _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.pm-flash.success').remove();
+  });
+  _form[0].reset();
+  <% else %>
+      _form.prepend('<div class="pm-flash error border-all"><p><%= escape_javascript @message.errors.full_messages.first %></p></div>');
+  <% end %>
 <% end %>

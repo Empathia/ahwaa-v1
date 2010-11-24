@@ -1,33 +1,31 @@
 class PrivateMessagesController < ApplicationController
-  before_filter :find_private_message, :only => [:show, :destroy]
+  before_filter :find_conversation, :only => [:show, :destroy]
   respond_to :html, :only => [:destroy]
   respond_to :js, :only => [:index, :create, :show]
 
   def index
-    @private_messages = current_user.private_messages.paginate(:page => params[:page])
+    @messages = current_user.received_messages.paginate(:page => params[:page])
   end
 
   def show
-    @private_message.read!
+    @conversation.read_for!(current_user)
     @replying = !!params[:reply]
   end
 
   def create
-    @private_message = PrivateMessage.build_from_params(params)
-    @private_message.sender = current_user
-    UserMailer.private_message_notification(@private_message.recipient,
-                                            @private_message.sender).deliver if @private_message.save
-    respond_with(@private_message)
+    @message = PrivateMessage.build_from_params(params, current_user)
+    @message.save
+    respond_with(@message)
   end
 
   def destroy
-    @private_message.destroy
+    @conversation.received_messages_thread(current_user).each(&:destroy)
     redirect_to user_path
   end
 
   private
 
-  def find_private_message
-    @private_message = current_user.private_messages.find(params[:id])
+  def find_conversation
+    @conversation = current_user.received_messages.find(params[:id]).conversation
   end
 end

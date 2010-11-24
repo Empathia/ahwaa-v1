@@ -1,1 +1,1 @@
-$('#pm-wrapper').html('<%= escape_javascript render(:partial => @private_message, :locals => {:replying => @replying}) %>');
+$('#pm-wrapper').html('<%= escape_javascript render(:partial => 'private_messages/message', :object => @conversation, :locals => {:replying => @replying}) %>');

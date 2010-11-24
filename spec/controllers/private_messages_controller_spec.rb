@@ -25,7 +25,7 @@ describe PrivateMessagesController do
 
       before(:each) do
         sign_in @user
-        current_user.stub!(:private_messages).and_return(@private_messages = PrivateMessage.scoped)
+        current_user.stub!(:received_messages).and_return(@private_messages = ReceivedMessage.scoped)
       end
 
       it "render index template" do
@@ -34,7 +34,7 @@ describe PrivateMessagesController do
       end
 
       it "should get all private messages of current user" do
-        current_user.should_receive(:private_messages).and_return(@private_messages)
+        current_user.should_receive(:received_messages).and_return(@private_messages)
         do_request
       end
 
@@ -61,9 +61,9 @@ describe PrivateMessagesController do
 
       before(:each) do
         sign_in @user
-        @private_message = Factory(:private_message)
-        current_user.stub_chain(:private_messages, :find).and_return(@private_message)
-        @private_message.stub!(:read!)
+        @conversation = Factory(:private_message)
+        current_user.stub_chain(:received_messages, :find, :conversation).and_return(@conversation)
+        @conversation.stub!(:read_for!).with(current_user)
       end
 
       it "render show template" do
@@ -72,12 +72,12 @@ describe PrivateMessagesController do
       end
 
       it "should find a private message of the current user" do
-        current_user.private_messages.should_receive(:find).and_return(@private_message)
+        current_user.received_messages.find(any_args).should_receive(:conversation).and_return(@conversation)
         do_request :id => 1
       end
 
       it "should mark message as read" do
-        @private_message.should_receive(:read!)
+        @conversation.should_receive(:read_for!).with(current_user)
         do_request :id => 1
       end
 
@@ -115,23 +115,8 @@ describe PrivateMessagesController do
       end
 
       it "sets current user as the sender of the message" do
-        @private_message.should_receive(:sender=).with(current_user).and_return(current_user)
         @private_message.should_receive(:save).and_return(true)
         do_request
-      end
-
-      context "when messages saves successfully" do
-
-        before(:each) do
-          @private_message.stub!(:save).and_return(true)
-          UserMailer.stub_chain(:private_message_notification, :deliver)
-        end
-
-        it "sends an email to the recipient" do
-          UserMailer.private_message_notification(any_args).should_receive(:deliver)
-          do_request
-        end
-
       end
 
     end
@@ -162,18 +147,18 @@ describe PrivateMessagesController do
 
       before(:each) do
         sign_in @user
-        @private_message = Factory(:private_message)
-        current_user.stub_chain(:private_messages, :find).and_return(@private_message)
-        @private_message.stub!(:destroy).and_return(true)
+        @conversation = Factory(:private_message)
+        current_user.stub_chain(:received_messages, :find, :conversation).and_return(@conversation)
+        @conversation.stub!(:received_messages_thread).with(current_user).and_return([])
       end
 
-      it "deletes private message of current user" do
-        current_user.private_messages.should_receive(:find).and_return(@private_message)
-        @private_message.should_receive(:destroy).and_return(true)
+      it "deletes received messages of current user" do
+        current_user.received_messages.find(any_args).should_receive(:conversation).and_return(@conversation)
+        @conversation.received_messages_thread(current_user).should_receive(:each)
         do_request :id => 1
       end
 
-      it "redirects to index action" do
+      it "redirects to users' profile action" do
         do_request :id => 1
         response.should redirect_to(user_path)
       end

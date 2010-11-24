@@ -1,25 +1,29 @@
 <h2 class="regular"><%= t('users.show.content.private_messages.title') %></h2>
-<ul class="bar opts border-all">
-  <li><%= link_to 'Delete', '#', :class => "pm-delete" %></li>
-</ul>      
-<ul class="messages">
-  <% inbox.each do |pm| %>
-    <li class="<%= 'new' if pm.unread? %>">
-      <input type="checkbox">
-      <div class="avatar-wrapper">
-        <div class="avatar"><%= image_tag pm.sender.profile.avatar.url, :width => 50 %></div>
-      </div>
-      <ul class="msg-opts">
-        <li><%= link_to t('users.show.content.private_messages.delete'), pm, :class => "opt-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>          
-        <li><%= link_to t('users.show.content.private_messages.reply'), user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %></li>
-      </ul>
-      <div class="from"><%= link_to t('users.show.content.private_messages.by', :sender => pm.sender.username), user_path({:anchor => {:m => pm.id}}), :class => 'display-pm', :'data-value' => pm.id %> <%= t 'users.show.content.private_messages.at_date', :date => l(pm.created_at, :format => :long) %></div>
-      <div class="msg">
-        <p><%= truncate pm.content, :length => 125 %></p>
-      </div>
-    </li>
-  <% end %>
-</ul>
-<div class="bar border-all"> 
-  <%= will_paginate inbox, :renderer => PrivateMessagesPaginationRenderer %>
-</div>
+<% unless inbox.empty? %>
+  <ul class="bar opts border-all">
+    <li><%= link_to 'Delete', '#', :class => "pm-delete" %></li>
+  </ul>      
+  <ul class="messages">
+    <% inbox.each do |pm| %>
+      <li class="<%= 'new' if pm.conversation.unread_by?(current_user) %>">
+        <input type="checkbox">
+        <div class="avatar-wrapper">
+          <div class="avatar"><%= image_tag pm.conversation_replies.last.sender.profile.avatar.url, :width => 50 %></div>
+        </div>
+        <ul class="msg-opts">
+          <li><%= link_to t('users.show.content.private_messages.delete'), private_message_path(pm), :class => "opt-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>          
+          <li><%= link_to t('users.show.content.private_messages.reply'), user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %></li>
+        </ul>
+        <div class="from"><%= link_to t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender.username), user_path({:anchor => {:m => pm.id}}), :class => 'display-pm', :'data-value' => pm.id %> <%= t 'users.show.content.private_messages.at_date', :date => l(pm.conversation_replies.last.created_at, :format => :long) %></div>
+        <div class="msg">
+          <p><%= truncate pm.conversation_replies.last.content, :length => 125 %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="bar border-all"> 
+    <%= will_paginate inbox, :renderer => PrivateMessagesPaginationRenderer %>
+  </div>
+<% else %>
+  <h3><%= t('.no_messages') %></h3>
+<% end %>

@@ -5,5 +5,4 @@ Factory.define :private_message do |f|
   f.content "Hey! this is a private message for you."
   f.recipient { |p| p.association(:user) }
   f.parent nil
-  f.unread true
 end
