@@ -1,0 +1,14 @@
+<tr>
+  <td><%= profile_match_result.username %></td>
+  <td><%= profile_match_result.email %></td>
+  <td><%= profile_match_result.is_expert %></td>
+  <td>
+    <%= link_to 'Notify', 
+      notify_admin_topic_profile_match_path(topic, 
+        :id => profile_match_result.id, :format => 'js' ),
+        :method => :post, 
+        :remote => true,
+        :id => "notify_user_id_#{profile_match_result.id}_link"
+    %>
+  </td>
+</tr>

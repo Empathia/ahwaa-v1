@@ -1,0 +1,10 @@
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <th class="username border-left">Username</th>
+    <th class="email">Email</th>
+    <th class="is_expert">Is Expert</th>
+    <th class="actions">Notify</th>
+  </tr>
+  <%= render(:collection => users, :locals => { :topic => @topic }, 
+             :partial => 'profile_match_result') %>
+</table>

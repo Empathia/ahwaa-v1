@@ -1,6 +1,8 @@
 <div class="adm-title">
   <h1>Topic Profile Matches</h1> 
 </div>
+<h2><%= @topic.title %></h2>
+<p><%= @topic.content %></p>
 <% head do %>
   <script type="text/javascript" >
     currentTopicId = <%= @topic.id %>;

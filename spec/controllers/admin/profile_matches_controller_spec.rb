@@ -21,7 +21,7 @@ describe Admin::ProfileMatchesController do
       end
 
       it "should show for an existing topic" do
-        get :show, :topic_id => @topic.id
+        get :index, :topic_id => @topic.id
         response.should_not be_redirect
         assigns(:topic).should == @topic
       end
@@ -78,6 +78,29 @@ describe Admin::ProfileMatchesController do
           }
           response.should be_succes
           assigns(:users).should == [@user_profile_2.user, @user_profile_3.user]
+        end
+
+        it 'should notify user' do
+          user = mock_model(User, :is_expert? => false)
+          user.should_receive(:notify_about_topic!).with(@topic)
+          User.should_receive(:find).with(1).and_return(user)
+          post :notify, :topic_id => @topic.id, :id => 1, :format => 'js'
+          response.should be_succes
+          assigns(:user).should == user
+        end
+
+        it 'should notify user and add to leader board if user is an expert' do
+          user = mock_model(User, :is_expert? => true)
+          topic = mock_model(Topic, :id => 1)
+          collection = mock('col')
+          collection.should_receive(:<<).with(user)
+          topic.should_receive(:experts).and_return(collection)
+          user.should_receive(:notify_about_topic!).with(topic)
+          User.should_receive(:find).with(1).and_return(user)
+          Topic.should_receive(:find).with(1).and_return(topic)
+          post :notify, :topic_id => topic.id, :id => 1, :format => 'js'
+          response.should be_succes
+          assigns(:user).should == user
         end
       end
     end
