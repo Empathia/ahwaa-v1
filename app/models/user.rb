@@ -35,6 +35,11 @@ class User < ActiveRecord::Base
     username
   end
   
+  # send notification to participate in a topic
+  def notify_about_topic!(topic)
+    UserMailer.deliver_topic_match_notification(self, topic)
+  end
+
   # sets a prize badge or level or whatever reward model for the matter
   def set_reward(reward)
     self.send("current_#{reward.class.to_s.underscore}=",reward)

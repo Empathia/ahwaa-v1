@@ -26,22 +26,18 @@ $(document).ready(function() {
         }
     });
 
-  $('#related_content_form').submit(function(){
-    var urlType = RelatedContent.detectType($('#related_content_source_url').val());
-
-    if (urlType == "link" && $(".possible-thumbnails").length == 0 ) {
-
+    //[Admin] listen to the profile match fomr select tags to filter results dinamically
+    $('#profile_match_filters_form').find('select').change(function(){
+      var form = $('#profile_match_filters_form');
       $.ajax({
-        url: '/admin/topics/'+currentTopicId+'/related_contents.js',
-        data: $(this).serialize(),
+        url: '/admin/topics/'+currentTopicId+'/profile_matches/list_matches.js',
+        data: form.serialize(),
         dataType: 'script',
         type: 'POST',
       });
+    });
 
-      return false;
-    }
-  });
-
+    //[Admin] checks related content url to handle special cases
     $('#related_content_form').submit(function(){
         var urlType = RelatedContent.detectType($('#related_content_source_url').val());
 

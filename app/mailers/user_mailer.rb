@@ -19,4 +19,11 @@ class UserMailer < ActionMailer::Base
     mail :to => @user.email,
       :subject => "You've received a private message"
   end
+
+  def topic_match_notification(user, topic)
+    @user = user
+    @topic = topic
+    mail(:to => @user.email,
+         :subject => I18n.t('mailers.user.topic_match_notification.subject'))
+  end
 end

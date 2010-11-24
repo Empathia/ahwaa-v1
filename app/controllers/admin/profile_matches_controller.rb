@@ -3,15 +3,20 @@ class Admin::ProfileMatchesController < ApplicationController
 
   before_filter :get_topic
   
-  def show
+  def index 
   end
 
   def list_matches
     @profiles = UserProfile.where(params[:filters]).select('user_id')
-    @users = User.find(@profiles.map(&:user_id)) 
+    @users = User.find(@profiles.map(&:user_id))
   end
 
   def notify
+    @user = User.find(params[:id])
+    if @user.is_expert?
+      @topic.experts << @user
+    end
+    @user.notify_about_topic!(@topic)
   end
 
 private

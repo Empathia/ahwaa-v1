@@ -235,3 +235,7 @@ en:
   passwords:
     edit:
       submit: Change password
+  mailers:
+    user:
+      topic_match_notification:
+        subject: You have been invited to participate on a topic
