@@ -1,5 +1,5 @@
-html{height: 100%;}
-body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 100%;}
+html{height: 101%;}
+body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 101%;}
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4}
@@ -279,10 +279,10 @@ p.success{color: green; margin: 0 0 5px 1px;}
 .user-wrapper > .avatar{float: right;}
 .user-info{float: left; text-align: left;}
 .user-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
-.user-info > p{padding-bottom: 5px;}
+.user-info > p{line-height:14px!important;margin-top:0px !important;padding-bottom:5px}
 
 .recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
-.recently-topics > p{padding-bottom: 15px;}
+.recently-topics > p{line-height:14px!important;margin-top:0px !important;padding-bottom: 15px;}
 .recently-topics > ul{list-style:disc inside}
 .recently-topics > ul > li{padding-bottom: 9px;}
 .recently-topics > ul > li > a{color: #61656a;}
