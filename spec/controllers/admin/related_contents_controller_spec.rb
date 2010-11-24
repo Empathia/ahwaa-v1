@@ -22,7 +22,7 @@ describe Admin::RelatedContentsController do
         @topic = Factory(:topic)
       end
 
-      it "shouldnt list related content for a non exixting topic" do
+      it "should list related content list" do
         get :index, :topic_id => @topic.id
         response.should_not be_redirect
         assigns(:topic).should == @topic

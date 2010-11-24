@@ -42,6 +42,14 @@ Lgbt::Application.routes.draw do
     end
     resources :topics, :except => [:show] do
       resources :related_contents, :only => [:destroy, :show, :index, :create]
+      resource :profile_matches, :only => [:show] do 
+        collection do
+          post :list_matches
+        end
+        member do
+          post :notify
+        end
+      end
     end
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do
