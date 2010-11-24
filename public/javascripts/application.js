@@ -98,19 +98,19 @@ $(document).ready(function() {
 function filterResponses() {
     var cbs = $('.filter-resposes input:checkbox:checked');
     var show_useful = $('#filter_helpful').is(':checked');
-    $('.comments.clon li.comment-st-level').hide();
+    $('.comments.clon li').hide();
     if(cbs.length === 0) {
         if(show_useful) {
-            $('.comments.clon li.comment-st-level.useful').show();
+            $('.comments.clon li').show();
         } else {
-            $('.comments.clon li.comment-st-level').show();
+            $('.comments.clon li').show();
         }
     } else {
         cbs.each(function () {
             if(show_useful) {
-                $('.comments.clon li.comment-st-level.useful.' + $(this).val()).show();
+                $('.comments.clon li.useful.' + $(this).val()).show();
             } else {
-                $('.comments.clon li.comment-st-level.' + $(this).val()).show();
+                $('.comments.clon li.' + $(this).val()).show();
             }
         });
     }
