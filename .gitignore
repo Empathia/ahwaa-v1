@@ -8,6 +8,8 @@ tmp/**/*
 .rvmrc
 public/javascripts/locales.js
 public/javascripts/common.js
+public/javascripts/all.js
+public/stylesheets/all.css
 db/development_structure.sql
 public/system/**/*
 tags
