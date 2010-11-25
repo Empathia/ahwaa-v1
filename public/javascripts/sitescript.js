@@ -100,10 +100,11 @@ $(function(){
             type: 'post',
             data: $(this).serialize(),
             success: function (data) {
-                location.reload();
+                alert('success');
+                console.log(data);
+                window.location.reload();
             },
             error: function (data) {
-                // TODO when login fails it doesn't allow to re-submit the form
                 if(data.status == 401) {
                     that.find('.password').append('<p class="error">' + I18n.t('layouts.application.header.login_form.wrong_password') + '</p>');
                 } else {
