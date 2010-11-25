@@ -91,29 +91,7 @@ $(function(){
         $('.sign-up-form #user_username').val($(this).val().replace(/@.*$/, ''));
     });
 
-    $('.login-form').submit(function(){
-        var that = $(this);
-        that.find('.error').remove();
-        $.ajax({
-            url: this.action,
-            dataType: 'json',
-            type: 'post',
-            data: $(this).serialize(),
-            success: function (data) {
-                alert('success');
-                console.log(data);
-                window.location.reload();
-            },
-            error: function (data) {
-                if(data.status == 401) {
-                    that.find('.password').append('<p class="error">' + I18n.t('layouts.application.header.login_form.wrong_password') + '</p>');
-                } else {
-                    that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.login_form.not_found') + '</p>');
-                }
-            }
-        });
-        return false;
-    }).find('input[type=submit]').formValidator(
+    $('.login-form').find('input[type=submit]').formValidator(
         {
             'errors': {
                 'text': I18n.t('layouts.application.header.login_form.error_login_empty'),

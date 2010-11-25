@@ -1,0 +1,8 @@
+var form = $('.login-form');
+<% if !@user %>
+form.find('.login').append('<p class="error"><%= escape_javascript t('layouts.application.header.login_form.not_found') %></p>');
+<% elsif !@authenticated %>
+  form.find('.password').append('<p class="error"><%= escape_javascript t('layouts.application.header.login_form.wrong_password') %></p>');
+<% else %>
+  location.reload();
+<% end %>

@@ -1,17 +1,11 @@
 class SessionsController < ApplicationController
-  respond_to :json, :only => [:create]
+  respond_to :js, :only => [:create]
   skip_before_filter :authenticate_user!, :only => [:create]
 
   def create
     @user = User.find_for_database_authentication(params[:login])
-    if @user && @user.authenticate!(params[:password])
-        session[:current_user] = @user.id
-        respond_with(@user)
-    elsif @user
-        respond_with(@user, :status => :unauthorized, :location => root_path)
-    else
-      respond_with(@user, :status => :not_found, :location => root_path)
-    end
+    @authenticated = @user && @user.authenticate!(params[:password])
+    session[:current_user] = @user.id if @authenticated
   end
 
   def destroy
