@@ -13,7 +13,7 @@ article{padding: 40px; background-color: #ffffff; display: block; min-height: 44
 .topic-content p{margin-top:10px; line-height: 22px; position: relative}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic} 
-article > header{display:block}
+article > header{display:block;position:static;}
 article > header > h1{float:left; width: 650px;}
 article > header > div{float: right;}
 aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-color: #ffffff; position: fixed;}
