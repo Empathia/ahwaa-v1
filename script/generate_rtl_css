@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+
+files = Dir.glob('public/stylesheets/**/*.css').reject { |p| p =~ /.*\/rtl\/.*\.css/ }
+ignore_list = ['all.css', 'admin_all.css', 'all_rtl.css', 'admin_all_rtl.css']
+destination_path = 'public/stylesheets/rtl'
+
+files = files.reject { |p| p =~ /.*\/rtl\/.*\.css/ || ignore_list.any? { |i| Regexp.new(i, 'i') =~ p } }
+
+Dir.mkdir(destination_path) unless File.directory?(destination_path)
+
+def convert(src, dest)
+  raise "File #{src} does not exists" unless File.exists?(src)
+  puts "Converting \033[32m#{src}\033[0m ----> \033[36m#{dest}\033[0m"
+
+  regs = [
+    [/background-position:\s*0([^;]+)/, 'background-position:___\\1'],
+    [/background-position:\s*100%([^;]+)/, 'background-position:0\\1'],
+    [/background-position:\s*___([^;]+)/, 'background-position:100%\\1'],
+    [/(border|margin|padding)-left\s*:/, '\\1-__:'],
+    [/(border|margin|padding)-right\s*:/, '\\1-left:'],
+    [/(border|margin|padding)-__:/, '\\1-right:'],
+    [/(border-width|margin|padding):(?:(?:\s?)(\d+(?:px)?))(?:(?:\s)(\d+(?:px)?))(?:(?:\s)(\d+(?:px)?))(?:(?:\s)(\d+(?:px)?))/, '\\1:\\2 \\5 \\4 \\3'],
+    [/left-radius/, '_KEY_'],
+    [/right-radius/, 'left-radius'],
+    [/_KEY_/, 'right-radius'],
+    [/radius-(top|bottom)left/, '\\1_KEY_'],
+    [/radius-(top|bottom)right/, 'radius-\\1left'],
+    [/(top|bottom)_KEY_/, 'radius-\\1right'],
+    [/float:\s*left/, 'float:t'],
+    [/float:\s*right/, 'float:left'],
+    [/float:t/, 'float:right'],
+    [/([\{\s;])left:/, '\\1_KEY_'],
+    [/([\{\s;])right:/, '\\1left:'],
+    [/([\{\s;])_KEY_/, '\\1right:'],
+    [/url\((['"])\.\./, 'url(\\1../..'],
+    [/url\((['"])fonts/, 'url(\\1../fonts']
+  ]
+
+  css = File.read(src)
+
+  regs.each do |exp, rep|
+    css.gsub!(exp, rep)
+  end
+
+  f = File.new(dest, 'w+')
+  f.puts css
+  f.close
+
+end
+
+files.each do |f|
+  filename = File.basename(f, '.css')
+  new_file = File.join(destination_path, "#{filename}_rtl.css")
+  convert f, new_file
+end
+
