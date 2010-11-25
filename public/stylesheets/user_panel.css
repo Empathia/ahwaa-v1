@@ -64,7 +64,7 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .pm-reply{background-position: 0 -75px}
 .pm-reply:hover{background-position: 0 -94px}
 
-.pagination{text-align:center;}
+.pagination{text-align:center;line-height:31px;}
 .pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;display:inline-block;zoom:1;/* IE7 (hasLayout)*/*display: inline; /* IE */}
 .pagination .arrow.left{background-position: 0 0;}
 .pagination .arrow.right{background-position: 0 100%;}
