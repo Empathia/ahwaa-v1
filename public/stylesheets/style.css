@@ -87,7 +87,7 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .search > ul >li a{color:#61656a;text-decoration:none;padding-left:10px;}
 .clear{background-position: 0 100%;}
 .slogan{text-align: center;}
-.header-tags{height: 100%;}
+.header-tags{height: 100%;position:relative;}
 .header-tags > ul{float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
 .header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left;}
@@ -105,9 +105,9 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .more-tags > li{height: 36px; border-bottom: 1px solid #eaeef0; padding-left: 21px; line-height: 3;}
 .more-tags > li:last-child{border-bottom: none;}
 .more:hover .more-tags{display: block;}
-.request-topic{float: right; margin-top: 7px; height: 25px; background: url('../images/request-bg.jpg') repeat-x 0 -25px;}
-.request-topic > span{float: right; height: 100%; text-align: center; background: url('../images/request-bg.jpg') no-repeat; padding-left: 3px;}
-.request-topic > span > span{float: right; width: 140px; height: 100%; line-height: 2; background: url('../images/request-bg.jpg') no-repeat right -50px; padding-right: 11px;}
+.request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/request-bg.png') repeat-x 0 -25px;}
+.request-topic > span{float: right; height: 100%; text-align: center; background: url('../images/request-bg.png') no-repeat; padding-left: 3px;}
+.request-topic > span > span{float: right; width: 140px; height: 100%; line-height: 2; background: url('../images/request-bg.png') no-repeat right -50px; padding-right:4px;}
 
 .tags,
 .tags > li{display: inline;}
@@ -200,7 +200,7 @@ p.success{color: green; margin: 0 0 5px 1px;}
 }
 
 .request-error.auth-form-active{display: block;}
-.request-error{width: 195px; height: 97px; float: left; position: fixed; display: none;}
+.request-error{width: 195px;height: 97px;position:absolute;display:none;top:27px;right:0;top:32px;}
 .request-error > span{border-color: transparent transparent #faf8e5; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; margin: 0px 87px; width: 0px;}
 .request-error > div{width: 169px; height: 71px; float: left; border-bottom: 1px solid #cac8b1; padding: 12px;
   background-image: -moz-linear-gradient(top, #faf8e5, #faf7da);
