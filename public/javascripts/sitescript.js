@@ -36,7 +36,7 @@ $(function(){
            _btn.addClass('auth-form-active');
            $('.auth-form-active').removeClass('auth-form-active');
            var offset = _btn.offset();
-           $('.request-error').addClass('auth-form-active').css({'top':offset.top+27, 'left':offset.left-39});
+           $('.request-error').addClass('auth-form-active');
            e.preventDefault();
            return false;
        }
