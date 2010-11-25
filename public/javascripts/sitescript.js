@@ -188,7 +188,7 @@ $(function(){
     
     $('.avatar').live('mouseover',function(){
                 $(this).siblings('.private-msg').removeClass('inside');
-                if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') || $(this).parents().hasClass('topics')) {
+                if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') || $("body").width() < 1372 && $(this).parents().hasClass('topics')) {
                     $(this).siblings('.private-msg').fadeIn('fast').addClass('inside').addClass('active-avatar');
                 }
                 else{
