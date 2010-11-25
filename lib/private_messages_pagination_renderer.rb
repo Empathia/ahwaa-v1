@@ -4,7 +4,7 @@ class PrivateMessagesPaginationRenderer < WillPaginate::ViewHelpers::LinkRendere
     links = @options[:page_links] ? windowed_links : []
     links = links.join(@options[:separator]).html_safe
 
-    html = @template.content_tag(:div) do
+    html = begin
       @template.link_to('', {:page => @collection.previous_page}, :class => 'arrow left').html_safe +
       @template.content_tag(:ul, links, :class => 'pag-numbers').html_safe +
       @template.link_to('', {:page => @collection.next_page}, :class => 'arrow right').html_safe

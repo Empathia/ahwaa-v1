@@ -63,15 +63,16 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .pm-block:hover{background-position: 0 -56px}
 .pm-reply{background-position: 0 -75px}
 .pm-reply:hover{background-position: 0 -94px}
-.pagination{float: left; position: absolute; left: 50%; margin-top: 8px;}
-.pagination > div{position: relative; left: -50%; float: left;}
-.pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;}
-.pagination .arrow.left{float: left; background-position: 0 0;}
-.pagination .arrow.right{float: right; background-position: 0 100%;}
-.pag-numbers{float: left;}
-.pag-numbers > li{float: left; margin: 0 6px;}
+
+.pagination{text-align:center;}
+.pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;display:inline-block;zoom:1;/* IE7 (hasLayout)*/*display: inline; /* IE */}
+.pagination .arrow.left{background-position: 0 0;}
+.pagination .arrow.right{background-position: 0 100%;}
+.pag-numbers{display:inline;}
+.pag-numbers > li{display:inline; margin: 0 6px;}
 .pag-numbers > li > a{color: #cbcfd2;}
 .pag-numbers .active a{color: #808386;}
+
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
 .messages > li{background-color: #fbfbfb; margin-bottom: 15px; padding: 14px 11px; border-bottom: 1px solid #e1e3e5; position: relative; overflow: hidden;}
@@ -103,6 +104,7 @@ filter: alpha(opacity=50);
 .avatars > .active{border: 2px solid #468ac4;}
 .checkmark{position: absolute; right: -10px; top: -10px;}
 
+#pm-wrapper strong{color:black}
 .pm-details{overflow: hidden; font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
 .pm-user{overflow: hidden; margin-bottom: 20px;}
 .pm-user-response{color: #b3b8bc; margin-bottom: 12px;}

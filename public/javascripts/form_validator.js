@@ -1,19 +1,5 @@
 $.fn.formValidator = function(options){
-    return this.each(function(){   
-        
-        if(this.getAttribute('type')) {
-            $(this).click(function(){  
-                return validateForm($(this).closest('form'), options);
-            });
-        }
-        else{
-            var _form = $(this);
-            _form.submit(function(){          
-                return validateForm(_form, options);
-            });            
-        }
-    });    
-    
+
     function validateForm(_form, options){
          var errors = _form.find('.error');
          errors.filter('p').remove();
@@ -24,8 +10,8 @@ $.fn.formValidator = function(options){
              var error = false;
              var type = this.getAttribute('type');
 
-             if(value){    
-                 var pattern = type == 'text' ? _input.attr('pattern') : type == 'email' ? /^([a-z0-9_\.\-\+]+)@([\da-z\.\-]+)\.([a-z\.]{2,6})$/i : type == 'number' ? /^-?[0-9]*(\.[0-9]+)?$/ : type == 'url' ? /^(https?:\/\/)?[\da-z\.\-]+\.[a-z\.]{2,6}[#\?\/\w \.\-=]*$/i : false;
+             if(value){
+                 var pattern = type == 'text' ? _input.attr('pattern') : type == 'email' ? (/^([a-z0-9_\.\-\+]+)@([\da-z\.\-]+)\.([a-z\.]{2,6})$/i) : type == 'number' ? (/^-?[0-9]*(\.[0-9]+)?$/) : type == 'url' ? (/^(https?:\/\/)?[\da-z\.\-]+\.[a-z\.]{2,6}[#\?\/\w \.\-=]*$/i) : false;
                  error = pattern && !pattern.test(value);
              }
              else{
@@ -37,4 +23,19 @@ $.fn.formValidator = function(options){
             return false;
         }
     }
-}
+
+    return this.each(function(){
+
+        if(this.getAttribute('type')) {
+            $(this).click(function(){
+                return validateForm($(this).closest('form'), options);
+            });
+        }
+        else{
+            var _form = $(this);
+            _form.submit(function(){
+                return validateForm(_form, options);
+            });
+        }
+    });
+};

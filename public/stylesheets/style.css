@@ -12,7 +12,7 @@ textarea{border: 1px solid #ccc}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 .container > .aligned input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
-body > div > div > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
+body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
 .light{background-color: #e2ecf2;}

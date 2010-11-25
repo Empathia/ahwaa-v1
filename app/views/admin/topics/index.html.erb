@@ -5,7 +5,6 @@
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
     <th class="created_at border-left">Created at</th>
-    <th class="updated_at">Updated at</th>
     <th class="title">Title</th>
     <th class="user">User</th>
     <th class="related_content">Related Content</th>
@@ -15,8 +14,7 @@
   </tr>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= l topic.created_at, :format => :short %></td
-      <td><%= l topic.updated_at, :format => :short %></td>
+      <td><%= l topic.created_at, :format => :short %></td>
       <td><%= link_to topic.title, topic %></td>
       <td><%= topic.user.username %></td>
       <td><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
@@ -27,6 +25,7 @@
   <% end %>
 </table>
 
+<br />
 <%= will_paginate(@topics) %>
 
 
