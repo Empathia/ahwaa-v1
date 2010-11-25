@@ -53,32 +53,7 @@ $(function(){
         return false;
     });
 
-    $('.sign-up-form').submit(function(){
-        var that = $(this);
-        that.find('.error').remove();
-
-        $.ajax({
-            url: this.action,
-            dataType: 'json',
-            type: 'post',
-            data: $(this).serialize(),
-            success: function (data) {
-                location.reload();
-            },
-            error: function (data) {
-                data = eval('(' + data.responseText + ')');
-                for (var attr in data) {
-                    var wrapper = that.find('.' + attr);
-                    if(wrapper.length === 0) {
-                        wrapper = that.find('.errors');
-                    }
-                    wrapper.append('<p class="error">' + attr + ' ' + data[attr] + '</p>');
-                }
-            }
-        });
-
-        return false;
-    }).find('input[type=submit]').formValidator(
+    $('.sign-up-form').find('input[type=submit]').formValidator(
         {
             'errors': {
                 'email': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),

@@ -1,0 +1,11 @@
+<% if @user.valid? %>
+location.reload();
+<% else %>
+  <% @user.errors.each do |attr, msg| %>
+    if($('.sign-up-form .<%= attr %>').length) {
+      $('.sign-up-form .<%= attr %>').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
+    } else {
+      $('.sign-up-form .errors').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
+    }
+  <% end %>
+<% end %>

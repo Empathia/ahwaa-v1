@@ -44,7 +44,7 @@ describe UsersController do
   describe "POST create" do
 
     def do_request(params = {})
-      xhr :post, :create, params.merge(:format => :json)
+      xhr :post, :create, params.merge(:format => :js)
     end
 
     before(:each) do
@@ -53,9 +53,9 @@ describe UsersController do
       @user.stub!(:save).and_return(true)
     end
 
-    it "responds with status 201" do
+    it "renders create template" do
       do_request
-      response.status.should == 201
+      response.should render_template(:create)
     end
 
     it "should be logged in" do
