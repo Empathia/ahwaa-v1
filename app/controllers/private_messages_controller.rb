@@ -1,7 +1,7 @@
 class PrivateMessagesController < ApplicationController
   before_filter :find_conversation, :only => [:show, :destroy]
   respond_to :html, :only => [:destroy]
-  respond_to :js, :only => [:index, :create, :show]
+  respond_to :js, :only => [:index, :create, :show, :destroy]
 
   def index
     @messages = current_user.received_messages.paginate(:page => params[:page])
@@ -20,7 +20,6 @@ class PrivateMessagesController < ApplicationController
 
   def destroy
     @conversation.received_messages_thread(current_user).each(&:destroy)
-    redirect_to user_path
   end
 
   private
