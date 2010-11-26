@@ -70,7 +70,8 @@ describe User do
   describe 'notify_about_topic!' do
     it 'should send email when notified to participate on a topic' do
       @topic = Factory(:topic)
-      UserMailer.should_receive(:deliver_topic_match_notification).with(@user,@topic)
+      mock_mailer = mock('mailer', :deliver => true) 
+      UserMailer.should_receive(:topic_match_notification).with(@user,@topic).and_return(mock_mailer)
       @user.notify_about_topic!(@topic)
     end
   end

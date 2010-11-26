@@ -126,19 +126,14 @@ describe PrivateMessagesController do
   describe "DELETE destroy" do
 
     def do_request(params = {})
-      delete :destroy, params
+      xhr :delete, :destroy, params.merge(:format => :js)
     end
 
     context "when user isn't logged in" do
 
-      it "doesn't redirects to destroy action" do
+      it "doesn't renders destroy template" do
         do_request :id => 1
-        response.should_not redirect_to(:action => :destroy)
-      end
-
-      it "redirects to login path" do
-        do_request :id => 1
-        response.should redirect_to(root_path)
+        response.should_not render_template(:destroy)
       end
 
     end
@@ -158,9 +153,9 @@ describe PrivateMessagesController do
         do_request :id => 1
       end
 
-      it "redirects to users' profile action" do
+      it "renders destroy template" do
         do_request :id => 1
-        response.should redirect_to(user_path)
+        response.should render_template(:destroy)
       end
 
     end

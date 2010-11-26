@@ -2,8 +2,7 @@
 <div class="bar-wrapper">
   <div class="bar border-all bar-private">
     <ul class="opts">
-      <li><%= link_to 'Delete', private_message_path(message), :class => "pm-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>
-      <li><%= link_to 'Reply', '#toreply', :class => "pm-reply" %></li>
+      <li><%= link_to 'Delete', private_message_path(message), :class => "pm-delete", :method => :delete, :remote => true, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>
     </ul> 
   </div>
   <%= link_to 'Back to messages', '#inbox', :class => "bar border-all back-to-msgs" %>

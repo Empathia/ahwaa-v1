@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  respond_to :js, :only => [:update]
-  respond_to :json, :only => [:create]
+  respond_to :js, :only => [:update, :create]
   before_filter :get_user
   skip_before_filter :authenticate_user!, :only => [:create]
 
@@ -14,7 +13,6 @@ class UsersController < ApplicationController
       UserMailer.sign_up_confirmation(@user).deliver
       session[:current_user] = @user.id 
     end
-    respond_with(@user, :location => root_path)
   end
 
   def update

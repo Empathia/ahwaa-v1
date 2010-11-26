@@ -48,4 +48,6 @@ Lgbt::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = { :host => 'tanscend.com' }
+  #leave this option only if using send mail as delivery mechanism
+  ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 end

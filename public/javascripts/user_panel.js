@@ -16,8 +16,8 @@ $(window).bind('hashchange', function() {
             url += '?reply=true';
         }
         $.getScript(url);
-    } else if (frag.hasOwnProperty('inbox')) {
-        $.getScript('/inbox.js');
+    } else if (frag.hasOwnProperty('inbox') || frag.hasOwnProperty('page')) {
+        $.getScript('/inbox.js?' + $.param({page: frag.page || 1}));
     }
 }).trigger('hashchange');
 

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   before_filter :set_locale
-  helper_method :current_user, :logged_in?
+  helper_method :current_user, :logged_in?, :rtl?
 
   protect_from_forgery
 
@@ -30,6 +30,10 @@ class ApplicationController < ActionController::Base
 
   def sign_out_current_user
     session[:current_user] = @current_user = nil
+  end
+
+  def rtl?
+    I18n.locale == 'ar'
   end
 
   private

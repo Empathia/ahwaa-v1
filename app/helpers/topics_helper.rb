@@ -30,8 +30,7 @@ module TopicsHelper
   # Converts the string array of tags to an array of links
   def linked_tag_list(tags)
     tags.map do |tag|
-      # TODO: add topic_tag_url
-      content_tag :span, link_to(tag, "/topics/#{tag}")
+      content_tag :span, link_to(tag, topic_tag_path(tag.name))
     end.join(", ").html_safe
   end
 
