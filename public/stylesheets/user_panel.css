@@ -117,6 +117,15 @@ filter: alpha(opacity=50);
 .response{color: #999999}
 .hide,
 .passwords{display: none;}   
-.response-wrapper{margin-top: 4px; width: 100%; float: left;}
+.response-wrapper{margin-top: 4px; width: 100%; float: left;border:none;}
+.new_private_message{overflow:hidden;padding:13px 0;}
+.new_private_message div.border-all{border:1px solid #c6d6e8;margin-bottom:15px;float:left}
+.new_private_message textarea{width:597px;margin:0;border:2px solid #edeef4;padding:12px 14px;line-height:16px;font-family:Arial, Helvetica, Sans-serif;color:#BBBBBB;font-size:13px;height:16px}
+.new_private_message legend{color:#61656A;font-size:12px;font-weight:bold;margin-bottom:15px}
+.new_private_message input[type="submit"]{display:none;width:89px;padding:5px 8px}
+.new_private_message label,
+.new_private_message textarea,
+.new_private_message input{float:left;clear:left}
+.new_private_message label {color:#A4A7AB}
 .pm-flash.success{margin: 4px 0 20px 0;}
 .pm-flash.success > p{font-size: 12px;}

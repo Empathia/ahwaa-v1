@@ -85,7 +85,7 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .search > ul >li:hover{background-color: #F0F3F4;}
 .search > ul >li.last{border:none;}
 .search > ul >li a{color:#61656a;text-decoration:none;padding-left:10px;}
-.clear{background-position: 0 100%;}
+.empty{background-position: 0 100%;}
 .slogan{text-align: center;}
 .header-tags{height: 100%;position:relative;}
 .header-tags > ul{float: left; height: 100%;}
@@ -121,7 +121,7 @@ footer > div > ul{float: right;}
 footer > div > ul > li{display: inline;}
 footer > div > span{float: left; color: #898f93;}
 
-.over-form{position: absolute; top: 0; left: 0; width: 280px; background: #f3f3f3; display: none; padding: 10px; border-style: solid; border-color: #d4dce2 #d4dce2 #d4dce2 #d4dce2; border-width: 1px; color: #797e84;
+.over-form{position:absolute;top:0;left:0;width:280px;background:#f3f3f3;display:none;padding:10px;border:solid #d4dce2 1px; color:#797e84;z-index:999;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;

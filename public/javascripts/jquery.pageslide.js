@@ -31,7 +31,7 @@
             position: 'absolute',
             top: '0px',
             left: '0px',
-            height: '100%',
+            height: $("body").height(),
             width: '100%',
             opacity: '0.0',
             backgroundColor: 'black',

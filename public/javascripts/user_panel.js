@@ -146,5 +146,25 @@ $(function(){
             'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email')
         }
     });
-
+    
+    $('#reply-form textarea').live('focus',function(){
+        var textarea = $(this);
+        if(textarea.val() == 'Click here to add a reply'){
+            textarea.val('').css('height','auto');
+            $('#private_message_submit').css('display','block');
+        }
+        textarea.blur(function(){
+                if(textarea.val().length <= 1 || textarea.val() ==  'Click here to add a reply'){
+                    textarea.val('Click here to add a reply').css('height','16px');
+                    $('#private_message_submit').css('display','none');
+                }
+            })
+        })
+        $('#reply-form').live('submit',function(){
+            $('textarea').val('Click here to add a reply').css('height','16px');
+            $('#private_message_submit').css('display','none');
+            $(this).hide();
+        });
 });
+
+

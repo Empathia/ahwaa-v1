@@ -1,8 +1,9 @@
 <% if params[:reply_to] %>
   var w = $('.replies-wrapper');
-  w.hasClass('pm-details') || w.addClass('pm-details');
+  w.hasClass('pm-details');
   w.append('<%= escape_javascript render(:partial => 'reply', :object => @message) %>');
   $('#reply-form')[0].reset();
+  $('#reply-form').show();
 <% else %>
   var _form = $('.form-private-msg');
   _form.find('.pm-flash').remove();

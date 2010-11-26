@@ -231,7 +231,7 @@ en:
       no_messages: There are no private messages
   private_messages:
     message:
-      reply: Reply
+      reply: Send reply
   passwords:
     edit:
       submit: Change password

@@ -145,10 +145,10 @@ $(function(){
 
     $('.search').find('input').keyup(function(){
         var input = $(this);
-        $.trim(input.val()) ? input.next().addClass('clear') : input.next().removeClass('clear') && $('.search_results').removeClass('visible');
+        $.trim(input.val()) ? input.next().addClass('empty') : input.next().removeClass('empty') && $('.search_results').removeClass('visible');
     }).next().click(function(){
         var _magnify = $(this);
-        _magnify.hasClass('clear') && _magnify.removeClass('clear') && _magnify.prev().val(' ').focus();
+        _magnify.hasClass('empty') && _magnify.removeClass('empty') && _magnify.prev().val(' ').focus();
         $('.search_results').removeClass('visible');
     });
 
@@ -203,11 +203,11 @@ $(function(){
     }
 
     $('.items > div:last-child').css("background","none");
-
+    
     if (!$.browser.webkit) {
         var inputs = $('input:text');
 
-        inputs.each(function(){
+        inputs.each(function place(){
             if($(this).attr('placeholder') && $(this).attr('placeholder').length > 0){
                 $(this).addClass('placeholder');
                 $.data(inputs, 'tovalue', $(this).attr('placeholder'));
