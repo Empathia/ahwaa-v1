@@ -20,6 +20,7 @@ class Reply < ActiveRecord::Base
   validate :type_of_reply, :unless => "category.blank?"
 
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
+  before_save :check_bad_words
 
   scope :latest, order("created_at DESC").limit(5)
   scope :flagged, :include => :ratings, :conditions => "ratings.vote = #{Rating::FLAG}"
@@ -79,6 +80,10 @@ class Reply < ActiveRecord::Base
   end
 
   private
+
+  def check_bad_words
+    self.content = BadWord.search_and_replace(content)
+  end
 
   def set_topic_from_parent
     self.topic = parent.topic
