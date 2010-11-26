@@ -159,23 +159,6 @@ $(function(){
        });
     });
 
-    //function to place the extra topic tags into the "more" vertical list
-    var lisTotal = $('#header-tags').children().length;
-    var lisIndex = lisTotal;
-    var lisWidth = 0;
-
-    /*$('#header-tags > li').each(function(e){
-        lisWidth = lisWidth + $('#header-tags > li').eq(-lisIndex).width();
-        lisIndex = lisIndex-1;
-        console.log(lisWidth);
-    })*/
-
-
-    for (var count = 0; count < lisTotal; count++){
-        lisWidth = lisWidth + $('#header-tags > li').eq(-lisIndex).width();
-        lisIndex = lisIndex-1;
-        //console.log(lisWidth);
-    }
 
     $('.items > div:last-child').css("background","none");
 
@@ -200,4 +183,15 @@ $(function(){
             }
         });
      }
+});
+
+$(window).load(function () {
+    $('#header-tags').css('width', '9999em').children(':not(.more)').each(function(){
+        if($(this).position().left + $(this).width() > 650) {
+            $('#moretags').append($(this).clone());
+            $(this).addClass('to-more');
+        }
+    }).filter('.to-more').remove();
+    if($('#moretags li').length === 0) { $('#header-tags .more').remove(); }
+    $('#header-tags').css('width', null);
 });
