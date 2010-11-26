@@ -5,9 +5,9 @@ class PrivateMessagesPaginationRenderer < WillPaginate::ViewHelpers::LinkRendere
     links = links.join(@options[:separator]).html_safe
 
     html = begin
-      @template.link_to('', {:page => @collection.previous_page}, :class => 'arrow left').html_safe +
+      @template.link_to('', @template.user_path(:anchor => {:page => @collection.previous_page}), :class => 'arrow left').html_safe +
       @template.content_tag(:ul, links, :class => 'pag-numbers').html_safe +
-      @template.link_to('', {:page => @collection.next_page}, :class => 'arrow right').html_safe
+      @template.link_to('', @template.user_path(:anchor => {:page => @collection.next_page}), :class => 'arrow right').html_safe
     end
 
     @options[:container] ? @template.content_tag(:div, html, container_attributes) : html
@@ -29,11 +29,11 @@ class PrivateMessagesPaginationRenderer < WillPaginate::ViewHelpers::LinkRendere
   end
 
   def page_link(page, text, attributes = {})
-    @template.content_tag(:li, @template.link_to(text, :page => page), attributes)
+    @template.content_tag(:li, @template.link_to(text, @template.user_path(:anchor => {:page => page})), attributes)
   end
 
   def page_span(page, text, attributes = {})
-    @template.content_tag(:li, @template.link_to(text, '#'), attributes)
+    @template.content_tag(:li, @template.link_to(text, @template.user_path(:anchor => {:page => page})), attributes)
   end
 
 end
