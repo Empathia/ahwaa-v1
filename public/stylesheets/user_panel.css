@@ -105,8 +105,8 @@ filter: alpha(opacity=50);
 .checkmark{position: absolute; right: -10px; top: -10px;}
 
 #pm-wrapper strong{color:black}
-.pm-details{overflow: hidden; font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
-.pm-user{overflow: hidden; margin-bottom: 20px;}
+.pm-details{font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
+.pm-user{margin-bottom: 20px}
 .pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
 .pm-user-response > a{color: #5e5e5e; font-weight: bold;}
 .pm-user .avatar-wrapper{margin-right: 14px;}
