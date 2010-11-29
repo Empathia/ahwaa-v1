@@ -20,7 +20,7 @@
                   </div>
                   <div class="item-data">
                     <%= link_to topic.title, topic, :class => 'dark-lk' %>           
-                    <%= t('topics.topic.popular.by', :author => link_to(topic.user.username, '#')).html_safe %>
+                    <%= t('topics.topic.popular.by', :author => topic.user.username).html_safe %>
                     <br />
                     <ul class="tags">
                       <% topic.tags.each do |tag| %>
