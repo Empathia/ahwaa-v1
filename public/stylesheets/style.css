@@ -141,6 +141,7 @@ footer > div > span{float: left; color: #898f93;}
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
+.over-form > ul > li > input.placeimg{background:url('../images/pass_placeholder.png') no-repeat 0 0 white}
 p.error{color: #d93e3e; margin: 0 0 5px 1px;}
 p.success{color: green; margin: 0 0 5px 1px;}
 

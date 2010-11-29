@@ -163,25 +163,39 @@ $(function(){
     $('.items > div:last-child').css("background","none");
     
     if (!$.browser.webkit) {
-        var inputs = $('input:text');
+        var inputt = $('input:text');
+        var inputp = $('input:password');
 
-        inputs.each(function place(){
+        inputt.each(function place(){
             if($(this).attr('placeholder') && $(this).attr('placeholder').length > 0){
                 $(this).addClass('placeholder');
-                $.data(inputs, 'tovalue', $(this).attr('placeholder'));
-                $(this).attr('value', $.data(inputs, 'tovalue'));
-                inputs.focus(function(e){
+                $.data(inputt, 'tovalue', $(this).attr('placeholder'));
+                $(this).attr('value', $.data(inputt, 'tovalue'));
+                inputt.focus(function(e){
                     if ($(this).attr('value') == $(this).attr('placeholder')){
-                        $(this).removeClass('placeholder').attr('value', ' ');
+                        $(this).removeClass('placeholder').attr('value', '');
                     }
                 });
-                inputs.blur(function(){
+                inputt.blur(function(){
                     if($(this).attr('value').length <= 1){
                         $(this).addClass('placeholder').attr('value', $(this).attr('placeholder'));
                     }
                 });
             }
         });
+        inputp.each (function placeimg(){
+            if($(this).attr('placeholder') && $(this).attr('placeholder').length > 0 && $(this).val() == 0 ){
+                $(this).addClass('placeimg');
+            }
+            inputp.focus(function(){
+                $(this).removeClass('placeimg');
+            })
+            inputp.blur(function(){
+                if($(this).attr('value').length == 0){
+                    $(this).addClass('placeimg');
+                }
+            })
+        })
      }
 });
 

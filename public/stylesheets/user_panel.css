@@ -75,7 +75,7 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
-.messages > li{background-color: #fbfbfb; margin-bottom: 15px; padding: 14px 11px; border-bottom: 1px solid #e1e3e5; position: relative; overflow: hidden;}
+.messages > li{background-color:#fbfbfb;margin-bottom:15px;padding:14px 11px;border-bottom:1px solid #e1e3e5;position:relative}
 .messages > li.new{background-color: #f3f9fc; border: 1px solid #c2dcea;}
 .messages > li:hover .msg-opts{display: block;}
 .msg-opts{position: absolute; width: 108px; right: 11px; top: 12px; font-size: 11px; display: none;}
