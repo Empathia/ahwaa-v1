@@ -66,9 +66,8 @@ aside section:first-child{border-top: none;}
 .comment-nd-level {border: 1px solid #e4eff4; margin: 10px 0; background-color: #ffffff;}
 .comment-nd-level > div{padding: 10px; border: 2px solid #edf5f9;}   
 
-.comments .expert{background-color: #f9fcf8;}
-.comments .expert{border: 1px solid #e7e8e6;}
-.comments .expert > div{border:2px solid #f2f5f1}
+.comments .expert > div{border:1px solid #e7e8e6;background-color:#f9fcf8}
+.expert .comm-wrap > div{border: 2px solid #f2f5f1}
 .expert > .comm-arrow{background-position: 0 -26px;}
 
 .response-user{height:56px;min-height:56px!important}
