@@ -1,0 +1,15 @@
+<div class="res-flag-btns">
+    <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
+    <%= link_to '#', :class => "btn-gradient flag #{'disabled' unless logged_in?}", :'data-value' => reply.id do %>
+      <span><%= t(".flag") %></span>
+    <% end %>            
+    <% unless logged_in? %>
+    <div class="sign-up-tt-wrapper">
+      <div class="sign-up-tt">
+        <p class="sign-up-legend">Anonymous users can't be rated</p>
+        <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn">Sign Up</span></a>
+      </div>                                                                                  
+      <div class="tt-arrow"></div>
+    </div>                 
+    <% end %>
+</div>

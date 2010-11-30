@@ -58,13 +58,15 @@ aside section:first-child{border-top: none;}
 .comments-ls > li{position: relative; padding-top: 10px;}
 .comm-wrap{background-color: #f2f9fc; border: 1px solid #daecf3;}
 .comments-ls > li:last-child{margin-bottom: 5px;}
+                                                                
+
 .comments-ls .comments-ls .comm-wrap{background-color: #ffffff;}
+.comments-ls .comments-ls .comm-arrow{background-position: 0 -13px;}
 
 .comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
+
 .add_comments .comm-arrow{background-position: 0 -13px;}
 .comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
-.comment-nd-level {border: 1px solid #e4eff4; margin: 10px 0; background-color: #ffffff;}
-.comment-nd-level > div{padding: 10px; border: 2px solid #edf5f9;}   
 
 .comments .expert{background-color: #f9fcf8;}
 .comments .expert{border: 1px solid #e7e8e6;}
@@ -79,7 +81,8 @@ aside section:first-child{border-top: none;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}
 .flag > span{background-image: url('../images/flags.png'); background-repeat: no-repeat; padding-left: 17px; background-position: 0 2px;}
 .sign-up-tt-wrapper{ position: absolute; top: 0; left: 0; display: none; z-index: 1; width: 134px; padding-bottom: 10px;}
-.sign-up-tt{background-color: #fbf9e1; border: 1px solid #f5f3d9; padding: 14px; width: 106px; overflow: hidden; font-size: 12px;}
+.sign-up-tt{background-color: #fbf9e1; border: 1px solid #f5f3d9; padding: 10px 14px 14px; width: 106px; overflow: hidden; font-size: 12px;}
+.sign-up-tt > .sign-up-legend{margin-top: 0; line-height: 1.5;}
 .tt-arrow{border-color: #fbf9e1 transparent transparent; border-style: solid; border-width: 10px 10px 0px; float: left; height: 0px; left: 57px; width: 0px; position: absolute; bottom: 1px;}
 
 .res-type-wrapper{background: url('../images/res-type-bg.png') no-repeat; padding-left: 2px; float: left;}
@@ -183,3 +186,8 @@ p:hover .icn{display: inline;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px;}
 .continue{color: #5e7587;}
 .legend-text{margin: 7px 10px 0 0; float: left;}
+
+.reply-to + .new-response{
+  margin-top: 9px;
+  display: none;
+}
