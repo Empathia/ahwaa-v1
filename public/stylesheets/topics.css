@@ -4,6 +4,7 @@ body{
   background: url('../images/topic-bg.jpg') 0 107px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
 }
 body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
+body > div#pageslide-blanket{background:none}
 .article-tags{float: left; background: url('../images/tag.png') no-repeat; margin: 10px 0 20px 0; padding-left: 25px;}
 .article-tags > li{display: inline;}     
 .left-side{float: left; width: 786px;}
@@ -22,15 +23,15 @@ aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 
 .response-wrapper > div{padding: 10px;}
-.response > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; overflow: hidden; resize: none;}
-.add_comments_top{overflow: hidden;}
-.cancel-comment{float: right; color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
-.res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;}
+.response > textarea{color:#c4c3c3;width:100%;padding:0;height:16px;border:none;margin-top:4px;resize:none;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:16px;}
+.add_comments_top{color:#468AC4;font-weight:bold}
+.cancel-comment{color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
+.res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;overflow:hidden;display:none;}
 .res-types-wrapper > div.error{float: left; color:red; line-height: 23px;}                                               
 .res-types-wrapper > div.buttons{float: right;}                                               
 .res-lbl{float: right; margin-right: 10px; line-height: 1.8; color: #7d96b2;}
 .res-types{float: right;}
-.res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-left: 1px solid #dee8f2; float: left; padding-left: 10px;
+.res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-left: 1px solid #dee8f2; float: left;
   background-image: -moz-linear-gradient(top, #edf4fb, #e7f1fa);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #edf4fb),color-stop(1, #e7f1fa));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa');
@@ -44,7 +45,7 @@ aside section:first-child{border-top: none;}
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff')";  
 }   
 
-.res-type > input{border: none; background: none; padding: 0 10px 0 18px; height: 100%; float: left; cursor: pointer; color: #7c99b6;}
+.res-type > input{border: none; background: none; padding: 0 10px; height: 100%; float: left; cursor: pointer; color: #7c99b6; font-weight:bold;}
 .res-type > span{background-image: url('../images/icn-types.png'); background-repeat: no-repeat; position: absolute; top: 4px; left: 10px; width: 12px; height: 12px;}
 .res-type > .advice{background-position: 0 -44px;}
 .res-type > .comment, 

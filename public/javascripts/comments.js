@@ -24,6 +24,9 @@ $.fn.slideUpComments = function(parag, link){
 $.fn.slideDownComments = function(){
   this.slideDown(function(){
       calculateArrowsPositions();
+      if (!$.browser.webkit) {
+          $('.add_comments.clon:visible textarea.comment_content').attr('placeholder') && $('.add_comments.clon:visible textarea.comment_content').attr('value',$('.add_comments.clon:visible textarea.comment_content').attr('placeholder'));
+      }
   }); 
 };
 
@@ -135,7 +138,24 @@ $.fn.comments = function(options){
         return false;
     });
 
-    $('.add_comments.clon:visible textarea.comment_content').live('keyup', function () {
+    $('.add_comments.clon:visible textarea.comment_content').live('focus',function(){
+        var textarea = $(this);
+        if(textarea.val() == 'Click here to write your response.'){
+            textarea.val('')
+        }
+        textarea.blur(function(){
+                if(textarea.val().length <= 1 || textarea.val() ==  'Click here to write your response.'){
+                    textarea.val('Click here to write your response.');
+                }
+            })
+        }).live('keyup', function () {
+        if($(this).siblings('.res-types-wrapper').is(':hidden') && $(this).val()){
+            $(this).siblings('.res-types-wrapper').slideDown('slow');
+        }
+        else if($(this).siblings('.res-types-wrapper').is(':visible') && !$(this).val() ){
+            $(this).siblings('.res-types-wrapper').slideUp('slow');
+        }
+        
         for(var i = 0; i < badWords.length; i++) {
             var reg = new RegExp(badWords[i], 'ig');
             if(reg.test($(this).val())) {
@@ -146,7 +166,7 @@ $.fn.comments = function(options){
     }).live('keypress', function(e){
         var textarea = $(this);
         e.keyCode == '13' && textarea.height(textarea.height() + 13);
-    }); 
+    }).attr('paceholder', 'nomedigas'); 
 
     function expandAll(){
         var allComments = [];
