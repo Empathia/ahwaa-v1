@@ -5,17 +5,29 @@
 <% end %>
 <% javascript 'ba-bbq', 'user_panel' %>
 <% stylesheet 'user_panel' %>
-<div class="aligned panel border-all">
+<div class="aligned panel border-all"> 
+  <div class="pm-panel">
+      <section class="avatars-wrapper"> 
+        <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
+        <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
+      </section>
+      <section id="pm-wrapper"> 
+        <%= render :partial => 'inbox', :object => @messages %>
+      </section>
+  </div>
   <aside class="user-sb border-left">
-    <div class="user-profile inner-shadow">
+    <div class="user-profile">
       <div class="avatar"><%= image_tag current_user.profile.avatar.url, :width => 50 %></div>
       <div class="user-details">
         <div class="username"><%= current_user.username %></div>
-        <div class="points"><b><%= t('.sidebar.trusthworthy') %></b> <span><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span></div>
+        <div class="points-wrapper">
+            <span class="level border-left"></span>
+            <span class="points border-right"><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span>
+        </div>
         <!--<div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>-->
       </div>
     </div>
-    <div class="white-area inner-shadow">  
+    <div class="white-area">  
       <section>
       <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>
         <%= user.fields_for :profile do |f| %>
@@ -159,12 +171,5 @@
       </section>
       <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
     </div>
-  </aside> 
-  <section class="avatars-wrapper"> 
-    <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
-    <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
-  </section>
-  <section id="pm-wrapper"> 
-    <%= render :partial => 'inbox', :object => @messages %>
-  </section>
+  </aside>  
 </div>

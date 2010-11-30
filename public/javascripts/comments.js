@@ -92,6 +92,23 @@ $.fn.comments = function(options){
         } 
     }   
     
+    
+    $('.res-flag-btns').find('.disabled').live('click', function(e){       
+        var lk = $(this),
+            sign_up = lk.parent().find('.sign-up-tt-wrapper');
+        if(sign_up.is(':visible') && lk.hasClass('clicked')){    
+            lk.removeClass('clicked');
+            sign_up.fadeOut();
+        }
+        else{     
+            lk.siblings('.clicked').removeClass('clicked');
+            lk.addClass('clicked');            
+            sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
+        }
+        e.preventDefault();
+        return false;
+    });
+    
     $('.useful').live('click', function(){
         var that = $(this);
         if(!that.hasClass('disabled')) {
@@ -110,8 +127,10 @@ $.fn.comments = function(options){
         }
         return false;
     });
+     
 
-    $('.flag').live('click', function () {
+    $('.flag').live('click', function (e) {
+        e.preventDefault();
         var that = $(this);
         if(!that.hasClass('disabled')) {
             var reply = new Reply({
@@ -239,24 +258,25 @@ $.fn.comments = function(options){
             addCommentForm = $('#add_comments').clone(true),
             id = 'add_comment_clone' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
-            index = newResponse.parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
+            index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clone/)[1];
         addCommentForm.attr('id', id).addClass('clon').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
         e.preventDefault();
         return false;
-    });
-    //commented by now becouse is broken
-    /*$('.comments-ls > li').live('mouseover mouseout', function(e){             
-        if (event.type == 'mouseover') {
+    });                                       
+    
+    
+    $('.comments-ls > li').live('mouseenter mouseleave', function(e){             
+        if (e.type == 'mouseover') {
             $(this).children('.res-flag-btns').show();
-        } else {
+        } else {                            
             $('.sign-up-tt-wrapper').hide();
             $(this).children('.res-flag-btns').hide();
         }
         e.stopPropagation();
         return false;
-    });*/
+    });
     
     setTimeout(function(){
         expandBtn.trigger('click');

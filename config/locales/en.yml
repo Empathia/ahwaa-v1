@@ -169,8 +169,6 @@ en:
   replies:
     reply:
       anonymous: Anonymous
-      useful: This was useful!
-      flag: Flag
       flagged: Flagged
       already_flagged: Already flagged
       already_useful: Already marked as useful
@@ -239,3 +237,10 @@ en:
     user:
       topic_match_notification:
         subject: You have been invited to participate on a topic
+
+  shared:
+    new_response:
+       new_response: New Response
+    useful_flag_buttons:
+       useful: This was useful!
+       flag: Flag

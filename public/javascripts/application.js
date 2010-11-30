@@ -65,7 +65,8 @@ $(document).ready(function() {
           return false;
         }
     });
-
+                                                    
+    /* //This code is in the comments.js file
     $('.comments .flag').live('click', function () {
         var that = $(this);
         var reply = new Reply({
@@ -82,7 +83,8 @@ $(document).ready(function() {
             }
         });
         return false;
-    });
+    });  
+    */
 
     $('.add_comments:visible input[type=submit]').live('click', function () {
         $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);

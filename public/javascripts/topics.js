@@ -25,25 +25,13 @@ $(function(){
            signUp.next().slideDown();
            signUp.remove();
        });
+       return false;
     });  
     
-    $('.res-flag-btns').find('a').live('click', function(e){
-        var lk = $(this),
-            sign_up = lk.parent().find('.sign-up-tt-wrapper');
-        if(sign_up.is(':visible') && lk.hasClass('clicked')){    
-            lk.removeClass('clicked');
-            sign_up.fadeOut();
-        }
-        else{     
-            lk.siblings('.clicked').removeClass('clicked');
-            lk.addClass('clicked');            
-            sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
-        }
-        e.preventDefault();
-        return false;
-    });
-        
+    
+    /* //This code is in the comments.js file    
     $('.flag:not(.disabled)').live('click', function () {
+        console.log('hola2');
         var that = $(this);
         var reply = new Reply({
             id: that.attr('data-value'),
@@ -58,7 +46,8 @@ $(function(){
             }
         });
         return false;
-    });
+    });  
+    
 
     $('.useful:not(.disabled)').live('click', function () {
         var that = $(this);
@@ -76,6 +65,7 @@ $(function(){
         });
         return false;
     });
+    */
     
     $(window).scroll(function(e){
         sidebar.add(socialBookmarkers).each(function(){
@@ -102,4 +92,11 @@ $(function(){
         	}     
         });
     });    
+    
+    $('.reply-to').live('click', function(e){
+        var lk = $(this);
+        lk.hasClass('clicked') ? lk.removeClass('clicked').next().slideUp() : lk.addClass('clicked').next().slideDown();
+        e.preventDefault();        
+        return false;
+    }).next().css('display', 'none');
 });

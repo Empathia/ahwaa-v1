@@ -3,10 +3,90 @@
     <ul class="comments-ls">
       <%= render replies %>
     </ul>
-    <div class="new-response response-wrapper">
-      <div>
-        <%= link_to t('.new_response'), '#' %>
-      </div>
-    </div>
+    <%= render :partial => "shared/new_response" %>
   </div>
-<% end %>
+<% end %>      
+
+<div class="comments" id="comments_1_1">
+    <ul class="comments-ls">
+        <li>
+          <span class="comm-arrow"></span>
+          <div class="comm-wrap">
+              <div>         
+                <div class="response-user">
+                  <div class="avatar-wrapper">
+                    <span class="avatar ">
+                      <img alt="No-image" src="/images/no-image.jpg?1285178749" width="50">
+                    </span>
+                    <div class="private-msg">
+                      <div class="user-wrapper">
+                        <div class="user-info">
+                          <p><b>felix</b> </p>
+                          <p>20 points</p>
+                            <a href="#" class="btn-gradient send-private-msg disabled">Send Private Message</a>
+                        </div>
+                        <div class="avatar ">
+                          <img alt="No-image" src="/images/no-image.jpg?1285178749" width="50">
+                        </div>
+                      </div>
+                      <form accept-charset="UTF-8" action="/users/felix/private_messages.js" class="form-private-msg" data-remote="true" id="new_private_message" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="VniXVucxNmsu8jBYwxBZE0Wsj0FR9KIuE5nF9hMgGJY="></div>
+                        <textarea class="border-all" cols="40" id="private_message_content" name="private_message[content]" rows="20"></textarea>
+                        <div class="private-msg-btns">
+                          <input type="button" class="cancel btn-gradient" value="Cancel">
+                          <input class="btn-gradient" id="private_message_submit" name="commit" type="submit" value="Submit">
+                        </div>
+                      </form>  
+                      <div class="recently-topics">
+                        <p>Recently participated in these topics:</p>
+                        <ul>
+                            <li><a href="/topics/this-is-a-topic-test">This is a topic test</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>  
+                  <div>
+                    <div class="res-username">
+                        <a href="/topics/this-is-a-topic-test">felix</a>
+                    </div>
+                  </div>
+                  <div class="res-type-wrapper">
+                    <div>
+                      <div>
+                        <div class="topic-res-type advice">Experience</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <p>Hey! I'm replying to the lorem</p>
+              </div>
+              <div class="res-flag-btns">
+                <a href="#" class="btn-gradient useful disabled" data-value="2">This was useful!</a>
+                <a href="#" class="btn-gradient flag disabled" data-value="2">
+                  <span>Flag</span>
+                </a>
+                <div class="sign-up-tt-wrapper" style="display: none; ">
+                  <div class="sign-up-tt">
+                    <p class="sign-up-legend">Anonymous users can't be rated</p>
+                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn">Sign Up</span></a>
+                  </div>                                                                                  
+                  <div class="tt-arrow"></div>
+                </div>                 
+            </div> 
+          </div>
+          <div class="res-flag-btns">
+                          <a href="#" class="btn-gradient useful disabled" data-value="2">This was useful!</a>
+                          <a href="#" class="btn-gradient flag disabled" data-value="2">
+                            <span>Flag</span>
+                          </a>
+                          <div class="sign-up-tt-wrapper" style="display: none; ">
+                            <div class="sign-up-tt">
+                              <p class="sign-up-legend">Anonymous users can't be rated</p>
+                              <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn">Sign Up</span></a>
+                            </div>                                                                                  
+                            <div class="tt-arrow"></div>
+                          </div>                 
+                      </div>   
+        </li>
+    </ul>
+    <%= render :partial => "shared/new_response" %>
+</div>
