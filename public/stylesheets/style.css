@@ -3,6 +3,11 @@ body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png');
 body > div{height: 100%;}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4}
+input:active,
+a:active{outline:none;}
+button::-moz-focus-inner,
+input::-moz-focus-inner,
+a::-moz-focus-inner { border: 0;outline:0 }
 .dark-lk{color: #5d646a; font-weight: bold;}
 em{font-style:normal}
 input[type=text],

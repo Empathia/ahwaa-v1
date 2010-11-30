@@ -68,9 +68,8 @@ aside section:first-child{border-top: none;}
 .add_comments .comm-arrow{background-position: 0 -13px;}
 .comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
 
-.comments .expert{background-color: #f9fcf8;}
-.comments .expert{border: 1px solid #e7e8e6;}
-.comments .expert > div{border:2px solid #f2f5f1}
+.comments .expert > div{border:1px solid #e7e8e6;background-color:#f9fcf8}
+.expert .comm-wrap > div{border: 2px solid #f2f5f1}
 .expert > .comm-arrow{background-position: 0 -26px;}
 
 .response-user{height:56px;min-height:56px!important}

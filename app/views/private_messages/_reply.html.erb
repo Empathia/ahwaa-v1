@@ -3,16 +3,19 @@
 <% else %>
   <div class="pm-user">
     <div class="avatar-wrapper">
-      <div class="avatar">
-        <%= image_tag reply.sender.profile.avatar.url, :width => 50 %>
-      </div>
+      <span class="avatar">
+      <%= image_tag reply.sender.profile.avatar.url, :width => 50 %>
+      </span>
+        <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
     </div>
     <div class="pm-user-details">
       <div><strong><%= t('users.show.content.private_messages.by', :sender => reply.sender.username) %></strong></div>
       <div><%= t 'users.show.content.private_messages.at_date', :date => l(reply.created_at, :format => :long) %></div>
     </div>
+    <div class="clear"></div>
   </div>
 <% end %>
 <div class="pm-message response">
   <%= reply.content %>
 </div>
+<div class="clear"></div>

@@ -14,6 +14,9 @@ class CreateUserProfiles < ActiveRecord::Migration
     end
 
     add_index :user_profiles, :user_id
+    add_index :user_profiles, 
+      [:religion_id, :sexual_orientation_id, :gender_id, :age_id, :political_view_id],
+      :name => 'user_profiles_profile_match_index'
   end
 
   def self.down

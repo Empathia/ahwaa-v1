@@ -7,7 +7,7 @@ class Admin::ProfileMatchesController < ApplicationController
   end
 
   def list_matches
-    @profiles = UserProfile.where(params[:filters]).select('user_id')
+    @profiles = UserProfile.get_matching_profiles_from_params(params[:filters])
     @users = User.find(@profiles.map(&:user_id))
   end
 

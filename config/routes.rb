@@ -1,5 +1,6 @@
 Lgbt::Application.routes.draw do
   get "search/topics"
+  post "avatars/matches"
 
   get "login" => "sessions#new"
   post "login" => "sessions#create"

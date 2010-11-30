@@ -7,5 +7,9 @@ class Gender < ActiveRecord::Base
   def to_s
     name
   end
+
+  def self.ids_for_male_and_female_entries
+    @ids_for_male_and_female_entries ||= self.where(:i18n_name => ['male','female']).select(:id).map(&:id)
+  end
   
 end

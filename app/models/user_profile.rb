@@ -16,6 +16,10 @@ class UserProfile < ActiveRecord::Base
   before_create :set_default_avatar, :if => "avatar.nil?"
   before_create :set_default_language, :if => "language.nil?"
 
+  def self.get_matching_profiles_from_params(params)
+    UserProfile.where(params)
+  end
+  
   def empty?
     !religion && !sexual_orientation && !country &&
       !gender && !age && !political_view
