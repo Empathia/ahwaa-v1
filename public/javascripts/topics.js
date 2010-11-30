@@ -25,6 +25,7 @@ $(function(){
            signUp.next().slideDown();
            signUp.remove();
        });
+       return false;
     });  
     
     

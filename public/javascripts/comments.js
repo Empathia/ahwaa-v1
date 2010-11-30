@@ -238,7 +238,7 @@ $.fn.comments = function(options){
             addCommentForm = $('#add_comments').clone(true),
             id = 'add_comment_clone' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
-            index = newResponse.parents('.comments.clon').attr('id').match(/comments_(\d+)_clone/)[1];
+            index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clone/)[1];
         addCommentForm.attr('id', id).addClass('clon').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
@@ -247,10 +247,10 @@ $.fn.comments = function(options){
     });                                       
     
     
-    $('.comments-ls > li').live('mouseover mouseout', function(e){             
+    $('.comments-ls > li').live('mouseenter mouseleave', function(e){             
         if (e.type == 'mouseover') {
             $(this).children('.res-flag-btns').show();
-        } else {
+        } else {                            
             $('.sign-up-tt-wrapper').hide();
             $(this).children('.res-flag-btns').hide();
         }
