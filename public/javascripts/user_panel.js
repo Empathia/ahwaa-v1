@@ -24,7 +24,7 @@ $(window).bind('hashchange', function() {
 var avatars = {
     toggle: function(){
         $('.avatars-wrapper').hasClass('active') ? avatars.hide() : avatars.show();
-    },        
+    },
     hide: function(){
         $('.avatars-wrapper').hide().removeClass('active')
             .siblings('section').show();
