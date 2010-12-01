@@ -91,7 +91,7 @@
         </div>
       <% end %>  
       <div class="response <%= "hidden" unless logged_in? %>">
-        <div class="add_comments_top"><%= current_username %></div>
+        <em class="add_comments_top"><%= current_username %></em>
         <%= f.text_area :content, :class => 'comment_content', :placeholder => t('.form.write_response') %>
         <div class="res-types-wrapper">
           <div class="error"></div>
@@ -100,7 +100,6 @@
             <ul class="res-types">
                <% Reply.categories_hash.each_with_index do |hash, i| %>
                   <li class="res-type <%= response_type_border_class i %>">
-                    <span class="<%= hash.first %>"></span>
                     <%= f.submit hash.last, :name => hash.first, :class => response_type_border_class(i) %>
                   </li>
                 <% end %>
