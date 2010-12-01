@@ -166,7 +166,7 @@ $(function(){
         var inputt = $('input:text');
         var inputp = $('input:password');
 
-        inputt.each(function place(){
+        inputt.each(function(i){
             if($(this).attr('placeholder') && $(this).attr('placeholder').length > 0){
                 $(this).addClass('placeholder');
                 $.data(inputt, 'tovalue', $(this).attr('placeholder'));
@@ -175,12 +175,17 @@ $(function(){
                     if ($(this).attr('value') == $(this).attr('placeholder')){
                         $(this).removeClass('placeholder').attr('value', '');
                     }
+                    $(this).keypress(function (event) {
+                        if (event.keyCode == 27){
+                            $(this).addClass('placeholder').blur().attr('value', $(this).attr('placeholder'));
+                        }
+                    });
                 });
                 inputt.blur(function(){
                     if($(this).attr('value').length <= 1){
                         $(this).addClass('placeholder').attr('value', $(this).attr('placeholder'));
                     }
-                });
+                })
             }
         });
         inputp.each (function placeimg(){
@@ -196,6 +201,9 @@ $(function(){
                 }
             })
         })
+        $(document).keyup(function (event) {
+            if (event.keyCode == 27) $.fn.pageSlideClose();
+        });
      }
 });
 
