@@ -3,7 +3,7 @@ $.fn.outerHTML = function() {
 }
 
 function calculateArrowsPositions(){
-    $('.comments.clon').each(function(){
+    $('.clon').each(function(){
         var comments = $(this),
             link = comments.prev('p').find('a:last-child');
         comments.find('.comm-arrow:first').css('left', link.position().left);        
@@ -279,6 +279,7 @@ $.fn.comments = function(options){
             id = 'add_comment_clon' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
             index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
+        newResponse.hasClass('reply-new-response') && addCommentForm.addClass('reply-new-response');
         addCommentForm.attr('id', id).addClass('clon no-arrow').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
@@ -286,6 +287,12 @@ $.fn.comments = function(options){
         return false;
     });                                       
     
+    $('.reply-to').live('click', function(e){
+        var lk = $(this);
+        lk.hasClass('clicked') ? lk.removeClass('clicked').next().slideUp() : lk.addClass('clicked').next().slideDown();
+        e.preventDefault();        
+        return false;
+    }).next().addClass('reply-new-response');
     
     $('.comments-ls > li').live('mouseenter mouseleave', function(e){             
         if (e.type == 'mouseover') {

@@ -188,7 +188,9 @@ p:hover .icn{display: inline;}
 .continue{color: #5e7587;}
 .legend-text{margin: 7px 10px 0 0; float: left;}
 
-.reply-to + .new-response{
+.reply-to + .new-response,
+.reply-to + .add_comments,
+.reply-new-response{
   margin-top: 9px;
   display: none;
 }

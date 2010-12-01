@@ -6,8 +6,8 @@
     <% unless logged_in? %>
     <div class="sign-up-tt-wrapper">
       <div class="sign-up-tt">
-        <p class="sign-up-legend">Anonymous users can't be rated</p>
-        <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn">Sign Up</span></a>
+        <p class="sign-up-legend"><%= t(".anonymous") %></p>
+        <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t(".sign_up") %></span></a>
       </div>                                                                                  
       <div class="tt-arrow"></div>
     </div>                 

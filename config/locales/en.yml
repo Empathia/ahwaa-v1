@@ -244,3 +244,5 @@ en:
     useful_flag_buttons:
        useful: This was useful!
        flag: Flag
+       anonymous: "Anonymous users can't be rated"
+       sign_up: Sign Up
