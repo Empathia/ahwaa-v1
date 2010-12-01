@@ -11,7 +11,7 @@ function calculateArrowsPositions(){
 }   
 
 function saveState(commentsClon){
-    var comments = $('#' + commentsClon.attr('id').replace('_clone', '')),
+    var comments = $('#' + commentsClon.attr('id').replace('_clon', '')),
         indexs = [],                            
         links = commentsClon.find('.icn');
     commentsClon.find('.has_comments.minus').each(function(){  
@@ -54,7 +54,7 @@ $.fn.comments = function(options){
     var expandBtn = $('.expand-btn');
     expandBtn.data('label', expandBtn.text()).click(function(e){
         if(expandBtn.hasClass('hide')){
-            $(".comments[id$='clone']").each(function (){
+            $(".clon").each(function (){
                 var comments = $(this);
                 comments.slideUp(function(){
                     var paragEnd = comments.next();
@@ -80,9 +80,9 @@ $.fn.comments = function(options){
             index = $('.topic-content .icn.' + getLevel(link.attr('class'))).index(this),
             tt = link.find('.tt');
             parentComments = link.closest('.comments.clon');                                                                                 
-            parentComments.length && (index = parentComments.attr('id').replace('_clone', '').replace('comments_', '') + '_' + index);
-        var comments = parag.next('#comments_' + index +'_clone');
-        !comments.length && (comments = parag.next('#comments_add_' + index + '_clone'));
+            parentComments.length && (index = parentComments.attr('id').replace('_clon', '').replace('comments_', '') + '_' + index);
+        var comments = parag.next('#comments_' + index +'_clon');
+        !comments.length && (comments = parag.next('#comments_add_' + index + '_clon'));
         if(comments.length){
             comments.slideUpComments(parag, link);
             tt.text(I18n.t('topics.show.contextual.reply_here'));
@@ -215,7 +215,7 @@ $.fn.comments = function(options){
             idChunks.shift();
             var id = idChunks.join('_'),
                 index = idChunks[idChunks.length-1];
-            $('#comments_' +  id +'_clone').length == 0 && allComments.push(cloneComments(getLink(idChunks, 1), comments.outerHTML(), id, true)[0]);
+            $('#comments_' +  id +'_clon').length == 0 && allComments.push(cloneComments(getLink(idChunks, 1), comments.outerHTML(), id, true)[0]);
         });         
        $(allComments).slideDownComments();
        $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
@@ -239,7 +239,7 @@ $.fn.comments = function(options){
             left = link.position().left;
         parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
         comments = parag.next();
-        comments.attr('id',  has_comments ? 'comments_' + index + '_clone' : 'comments_add_' + index + '_clone').addClass('clon').hide();
+        comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
         comments.find('.contextual_index').val(index);  
         comments.find('p').addMarkers();
@@ -250,7 +250,7 @@ $.fn.comments = function(options){
         var i=0,
             parags = this,
             parents = parags.eq(0).parents('.comments'),
-            selector = parents.length ? parents.eq(0).attr('id').replace(/clone/, '') : 'comments_',
+            selector = parents.length ? parents.eq(0).attr('id').replace(/clon/, '') : 'comments_',
             level = parents.length + 1;
         parags.each(function(){
             var parag = $(this),
@@ -276,9 +276,9 @@ $.fn.comments = function(options){
     $('.new-response').live('click', function(e){
         var newResponse = $(this),
             addCommentForm = $('#add_comments').clone(true),
-            id = 'add_comment_clone' + new Date().getTime(),
+            id = 'add_comment_clon' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
-            index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clone/)[1];
+            index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
         addCommentForm.attr('id', id).addClass('clon no-arrow').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
