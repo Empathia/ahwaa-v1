@@ -14,7 +14,7 @@ function saveState(commentsClon){
     var comments = $('#' + commentsClon.attr('id').replace('_clone', '')),
         indexs = [],                            
         links = commentsClon.find('.icn');
-    commentsClon.find('.has_comments').each(function(){  
+    commentsClon.find('.has_comments.minus').each(function(){  
         indexs.push(links.index($(this)));
     });                             
     comments.data('state', indexs);
@@ -209,7 +209,7 @@ $.fn.comments = function(options){
 
     function expandAll(){
         var allComments = [];
-        $('.comments').each(function(){
+        $('.comments:not(.clon)').each(function(){
             var comments = $(this),
                 idChunks =  comments.attr('id').split('_');             
             idChunks.shift();

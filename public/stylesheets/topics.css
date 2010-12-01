@@ -70,8 +70,8 @@ aside section:first-child{border-top: none;}
 .add_comments .comm-arrow{background-position: 0 -13px;}
 .comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
 
-.comments .expert > div{border:1px solid #e7e8e6;background-color:#f9fcf8}
-.expert .comm-wrap > div{border: 2px solid #f2f5f1}
+.comments .expert > .comm-wrap{border:1px solid #e7e8e6;background-color:#f9fcf8}
+.expert > .comm-wrap > div{border: 2px solid #f2f5f1}
 .expert > .comm-arrow{background-position: 0 -26px;}
 
 .response-user{height:56px;min-height:56px!important}
@@ -86,9 +86,9 @@ aside section:first-child{border-top: none;}
 .sign-up-tt > .sign-up-legend{margin-top: 0; line-height: 1.5;}
 .tt-arrow{border-color: #fbf9e1 transparent transparent; border-style: solid; border-width: 10px 10px 0px; float: left; height: 0px; left: 57px; width: 0px; position: absolute; bottom: 1px;}
 
-.res-type-wrapper{background: url('../images/res-type-bg.png') no-repeat; padding-left: 2px; float: left;}
-.res-type-wrapper > div{background: url('../images/res-type-bg.png') no-repeat right -8px; padding-right: 2px;}
-.res-type-wrapper > div > div{background: url('../images/res-type-bg.png') repeat-x right -16px; padding: 3px;}
+.res-type-wrapper{background: url('../images/res-type-bg-left.png') no-repeat 0 0; padding-left: 2px; float: left;}
+.res-type-wrapper > div{background: url('../images/res-type-bg-right.png') no-repeat right 0; padding-right: 2px;}
+.res-type-wrapper > div > div{background: url('../images/res-type-bg.png') repeat-x 0 0; padding: 3px;}
 
 .topic-res-type{background-image: url('../images/icn-types.png'); background-repeat: no-repeat; padding-left: 18px; color: #6c899b;}
 .topic-res-type.advice{background-position: 0 -44px;}
