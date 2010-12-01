@@ -20,6 +20,7 @@ aside{float: right; width: 134px; padding: 0 20px; margin: 20px 0; background-co
 aside section{padding: 20px 0; border-top: 1px solid #e5e5e5; width: 100%; float: left;}
 aside section:first-child{border-top: none;}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
+.add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-wrapper > div{padding: 10px;}
 .response > textarea{color: #c4c3c3; width: 100%; padding: 0; height: 13px; border: none; margin-top: 7px; overflow: hidden; resize: none;}

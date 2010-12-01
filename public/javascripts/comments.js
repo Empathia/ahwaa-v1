@@ -10,8 +10,26 @@ function calculateArrowsPositions(){
     })
 }   
 
+function saveState(commentsClon){
+    var comments = $('#' + commentsClon.attr('id').replace('_clone', '')),
+        indexs = [],                            
+        links = commentsClon.find('.icn');
+    commentsClon.find('.has_comments').each(function(){  
+        indexs.push(links.index($(this)));
+    });                             
+    comments.data('state', indexs);
+}            
+
+function loadState(commentsClon, commentsOriginal){     
+    var indexes = commentsOriginal.data('state');
+    for (index in indexes){
+        commentsClon.find('a:eq(' + indexes[index] + ')').trigger('click');
+    }
+}
+
 $.fn.slideUpComments = function(parag, link){
     var comments = $(this);
+    saveState(comments);
     comments.slideToggle(function(){
         var paragEnd = comments.next();
         paragEnd && parag.append(paragEnd.html()) && paragEnd.remove();
@@ -21,9 +39,11 @@ $.fn.slideUpComments = function(parag, link){
     });
 }
 
-$.fn.slideDownComments = function(){
-  this.slideDown(function(){
-      calculateArrowsPositions();
+$.fn.slideDownComments = function(commentsOriginal){
+  var commentsClon = $(this);
+  commentsClon.slideDown(function(){
+      calculateArrowsPositions();   
+      commentsOriginal && loadState(commentsClon, commentsOriginal);
   }); 
 };
 
@@ -67,11 +87,11 @@ $.fn.comments = function(options){
         else{       
             tt.text(I18n.t('topics.show.contextual.hide'));
             var has_comments = link.hasClass('has_comments');
-            comments = has_comments ? $('#comments_' + index).outerHTML() : $('#add_comments').outerHTML();
+            comments = has_comments ? $('#comments_' + index) : $('#add_comments');
             has_comments && link.addClass('minus');
             link.css('display', 'inline');
-            comments = cloneComments(link, comments, index, has_comments);
-            comments.slideDownComments();
+            var commentsClon = cloneComments(link, comments.outerHTML(), index, has_comments);
+            commentsClon.slideDownComments(comments);
         }
         return false;
     });                         
@@ -239,7 +259,7 @@ $.fn.comments = function(options){
             id = 'add_comment_clone' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
             index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clone/)[1];
-        addCommentForm.attr('id', id).addClass('clon').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
+        addCommentForm.attr('id', id).addClass('clon no-arrow').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
         e.preventDefault();
