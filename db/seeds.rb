@@ -49,4 +49,7 @@ users = [user, expert, admin]
   end
 end
 
-
+#load avatars
+AvatarLoader.new.load
+#load levels
+LevelLoader.new.load

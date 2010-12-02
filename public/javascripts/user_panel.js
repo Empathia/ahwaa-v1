@@ -21,9 +21,23 @@ var avatars = {
     },
     show: function(){ 
         var avatarsMarkup = $('.avatars');
-        avatarsMarkup.length ? $('.avatars-wrapper').show() : avatars.create();
+        avatarsMarkup.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
         $('.avatars-wrapper').addClass('active')
             .siblings('section').hide();
+    },
+    getMatchingAvatars: function(){
+      var avatarsWrapper = $('.avatars-wrapper');
+      avatarsWrapper.fadeIn();
+      $('.loading').show();
+      $('.avatars-list').html('');
+      var genderId = $('#user_profile_attributes_gender_id').val();
+      var ageId = $('#user_profile_attributes_age_id').val();
+      $.ajax({
+        url: '/avatars/matches.js',
+        data: 'filters[gender_id]=' + genderId + '&filters[age_id]=' + ageId,
+        dataType: 'script',
+        type: 'POST',
+      });
     },
     create: function(){                   
         var avatarsWrapper = $('.avatars-wrapper');
@@ -74,8 +88,13 @@ $(function(){
     /* refactor this
     $('.my-profile').click(function(){
         avatars.toggle(); 
+
     });             
     */
+
+    $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
+        avatars.getMatchingAvatars();
+    });
 
     $('#country_birth').keyup(function (ev) {
         var val = $(this).val();

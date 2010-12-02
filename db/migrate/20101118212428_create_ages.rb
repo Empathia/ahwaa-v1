@@ -5,8 +5,8 @@ class CreateAges < ActiveRecord::Migration
       t.timestamps
     end
 
-    Age.create(['12-16', '18-25', '24-35',
-               '40-50', '50-65', '65+'].map { |i| {:range => i} })
+    Age.create(['12-16', '17-24', '25-34',
+               '35-50', '51-65', '65+'].map { |i| {:range => i} })
   end
 
   def self.down

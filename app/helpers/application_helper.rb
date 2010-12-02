@@ -30,5 +30,24 @@ module ApplicationHelper
   def current_username
     logged_in? ? current_user.username : Reply.human_attribute_name(:anonymous)
   end
+  
+  # create avatar span
+  def avatar_span(user, expert = false)
+    css_classes = ['avatar']
+    css_classes << 'expert' if expert
+    css_classes << level_css_class_for_user(user)
+    content_tag(:span, :class => css_classes.join(' ') ) do
+      image_tag(user.profile.avatar.url, :width => 56) +
+      content_tag(:span)
+    end
+  end
 
+  # get acatar css for user
+  def level_css_class_for_user(user)
+    if user.current_level
+      user.current_level.name.underscore.dasherize
+    else
+      'no-level'
+    end
+  end
 end

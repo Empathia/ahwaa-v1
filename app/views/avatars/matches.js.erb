@@ -1,2 +1,5 @@
-<h1>Avatars#get_matches</h1>
-<p>Find me in app/views/avatars/get_matches.html.erb</p>
+var avatarsList = $('.avatars-list');
+$('.loading').hide();
+avatarsList.hide();
+avatarsList.html('<ul class="avatars suggested"><%= escape_javascript render(:collection => @avatars, :partial => 'avatar') %></ul>');
+avatarsList.fadeIn();
