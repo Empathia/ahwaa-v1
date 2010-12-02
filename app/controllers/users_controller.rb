@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  respond_to :js, :only => [:update, :create]
+  respond_to :js, :only => [:update, :create, :set_avatar]
   before_filter :get_user
   skip_before_filter :authenticate_user!, :only => [:create]
 
@@ -26,6 +26,11 @@ class UsersController < ApplicationController
     sign_out_current_user
     @user.destroy
     respond_with(@user, :location => root_path)
+  end
+
+  def set_avatar
+    @avatar = Avatar.find(params[:avatar_id])
+    @user.profile.update_attributes(:avatar => @avatar)
   end
 
   protected

@@ -92,11 +92,4 @@ $(function(){
         	}     
         });
     });    
-    
-    $('.reply-to').live('click', function(e){
-        var lk = $(this);
-        lk.hasClass('clicked') ? lk.removeClass('clicked').next().slideUp() : lk.addClass('clicked').next().slideDown();
-        e.preventDefault();        
-        return false;
-    }).next().css('display', 'none');
 });

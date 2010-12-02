@@ -10,6 +10,7 @@
       <section class="avatars-wrapper"> 
         <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
+        <section class='avatars-list'></section>
       </section>
       <section id="pm-wrapper"> 
         <%= render :partial => 'inbox', :object => @messages %>

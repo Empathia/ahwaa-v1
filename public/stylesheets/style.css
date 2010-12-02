@@ -41,9 +41,10 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 
 .sign-up{float: left; text-align: left; width: 240px;}
 .auth-wrapper{height: 32px; float: left; width: 96px; position: relative;}
-.sign-up-lk{ border: 1px solid #4785bf; line-height: 2;  text-decoration: none!important; float: left; }
-.sign-up-lk.auth-form-active{border:none;}
-.auth-wrapper > a{position: absolute; z-index: 1; left: 0; height: 32px; text-align: center;}
+.sign-up-lk{ border: 1px solid #4785bf; line-height: 2; float: left;}
+.auth-wrapper > .sign-up-lk{text-decoration: none;}
+.auth-wrapper > a{position: absolute; z-index: 1000; left: 0; height: 32px; text-align: center;}
+.auth-wrapper > .auth-form-active{text-decoration: none;}
 .auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
 .sign-up-btn{border: 1px solid #94bddf;  font-family: "GothamMediumRegular"; font-size: 17px; color: #ffffff; text-align: center;
   background-image: -moz-linear-gradient(top, #5998cc, #3778b7);

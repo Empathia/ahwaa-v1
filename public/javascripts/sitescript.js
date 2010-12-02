@@ -142,14 +142,13 @@ $(function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
     });
 
-    $('.avatar').live('mouseover',function(){
+    $('.avatar, .avatar + em').live('mouseover',function(){
         $(this).siblings('.private-msg').removeClass('inside');
-            if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics')) {
-                $(this).siblings('.private-msg').fadeIn('fast').addClass('inside').addClass('active-avatar');
-            }
-            else{
-                $(this).siblings('.private-msg').fadeIn('fast').addClass('active-avatar');
-            }
+        var classes = "active-avatar";
+        if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics')) {
+           classes += " inside";
+        }
+        $(this).siblings('.private-msg').fadeIn('fast').addClass(classes);
     });
 
     $('.active-avatar').live('mouseleave', function(){
