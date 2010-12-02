@@ -7,9 +7,7 @@
         <%= link_to t('private_message.send_msg'), '#', :class => "btn-gradient send-private-msg #{'disabled' unless logged_in?}" %>
       <% end %>
     </div>
-    <div class="avatar <%= 'expert' if user.is_expert? %>">
-      <%= image_tag user.profile.avatar.url, :width => '50' %>
-    </div>
+    <%= avatar_span(user, user.is_expert?) %>
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
     <%= f.text_area :content, :class => 'border-all' %>

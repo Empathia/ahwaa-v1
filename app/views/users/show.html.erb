@@ -18,7 +18,7 @@
   </div>
   <aside class="user-sb border-left">
     <div class="user-profile">
-      <div class="avatar"><%= image_tag current_user.profile.avatar.url, :width => 50 %></div>
+      <%= avatar_span(current_user) %>
       <div class="user-details">
         <div class="username"><%= current_user.username %></div>
         <div class="points-wrapper">
