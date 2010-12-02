@@ -171,7 +171,7 @@ p:hover .icn{display: inline;}
 
 .topic-avatars{width: 100%; float: left;}
 .topic-avatars > li{margin-bottom: 20px; float: left; width: 56px; text-align: center; font-size: 12px; position: relative;}
-.topic-avatars > li > div{margin-bottom: 5px;overflow: hidden;}
+.topic-avatars .avatar{margin-bottom: 5px; overflow: hidden;}
 .topic-avatars > li:nth-child(2n+1){margin-right:20px;}
 
 .expand-btn{width: 132px; height: 26px; line-height: 2;}    
