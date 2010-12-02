@@ -190,13 +190,8 @@ en:
           cancel: Cancel
         profile:
           title: My Profile
-          welcome: Welcome to Transcend!
-          welcome_legend: "Please enter your profile information, it's easy and fast! You can still remain anonymous"
-          enter_profile: Enter your profile
-          edit: Edit Profile
         password:
           title: Password
-          edit: Edit Password
           new_password: New Password
           confirm_password: Confirm Password
           errors:
@@ -204,7 +199,6 @@ en:
              confirm_password: "Password doesn't match confirmation"
         my_account:
           title: My Account
-          edit: Edit My Account
           nickname: 'Nickname:'
           mail: 'Mail:'
           language: 'Language:'
@@ -213,6 +207,9 @@ en:
         terminate_account: Terminate account
         confirm_terminate: Are you sure you want to delete your account? This cannot be undo.
         saved: "Information saved successfully!"
+        new_user:
+            question: "Who are you?"
+            legend: "Build your profile info and<br>connect with people like you!"
       content:
         avatars: 
           suggested: Suggested Avatars
