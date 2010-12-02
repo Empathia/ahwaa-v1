@@ -141,7 +141,7 @@
         function _showBlanket() {
             if (settings.modal == true) {
                 $("#pageslide-blanket").toggle().animate({
-                    opacity: '0.8'
+                    opacity: '0.25'
                 }, 'fast', 'linear');
             }
         }

@@ -24,7 +24,7 @@ en:
       topic_request:
         title: Title
         content: Content
-        anonymous_post: Remain anonymous for topic authoring
+        anonymous_post: Don't show any of my information when displaying this topic
       reply:
         anonymous: Anonymous
         advice: Advice
