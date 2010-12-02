@@ -11,7 +11,7 @@ class Avatar < ActiveRecord::Base
   def self.get_matching_avatars_for_params(params)
     filters = params.symbolize_keys
     filters.delete(:gender_id) if filters[:gender_id].blank? || 
-      !Gender.ids_for_male_and_female_entries.include?(filters[:gender_id])
+      !Gender.ids_for_male_and_female_entries.include?(filters[:gender_id].to_i)
     filters.delete(:age_id) if filters[:age_id].blank? 
 
     self.where(filters)

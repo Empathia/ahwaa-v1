@@ -1,0 +1,5 @@
+$('.avatar').fadeOut('fast', function(){
+  $('.avatar').html('<%= escape_javascript(image_tag current_user.profile.avatar.url, :width => 50) %>');
+  $('.avatar').fadeIn();
+});
+avatars.getMatchingAvatars();
