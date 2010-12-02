@@ -37,8 +37,7 @@ module ApplicationHelper
     css_classes << 'expert' if expert
     css_classes << level_css_class_for_user(user) if level
     content_tag(:span, :class => css_classes.join(' ') ) do
-      image_tag(user.profile.avatar.url, :width => 56) +
-      content_tag(:span)
+      image_tag(user.profile.avatar.url, :width => 56) + ( level ? content_tag(:span): '')
     end
   end
 
