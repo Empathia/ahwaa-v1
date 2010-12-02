@@ -1,13 +1,3 @@
-function closeFormEdit(form){
-    form.find('.edit-lk').removeClass('active');
-    var welcome = form.find('.welcome-wrapper');
-    welcome.length && welcome.next().fadeOut(function(){
-        welcome.find('.enter-profile').children().removeClass('active');
-        welcome.fadeIn();
-    });
-    form.find('input, label, select, .passwords').css('display', 'none').end().find('span').css('display', 'block');
-}
-
 $(window).bind('hashchange', function() {
     var frag = $.deparam.fragment();
     if(!isNaN(parseInt(frag.m))) {
@@ -72,6 +62,8 @@ var avatars = {
 };
 
 $(function(){ 
+    /* 
+    refactor this
     $('.edit-lk').add('.enter-profile > a').click(function(e){        
         var link = $(this);
         if(link.hasClass('active')){
@@ -79,33 +71,26 @@ $(function(){
         }
         var form = link.closest('form');
         form.find('.user-edit span').css('display', 'none').end().find('input, label, select, .passwords').css('display', 'block');
-        var welcome = form.find('.welcome-wrapper');           
-        if(welcome.length && welcome.is(':visible')){
-
-            welcome.fadeOut(function(){               
-                welcome.next().fadeIn();
-                (!welcome.find('a').hasClass('active')) && avatars.toggle();
-                link.addClass('active');
-            });  
-        }
-        else{          
-            link.addClass('active');
-        }
-    e.preventDefault(); 
-    return false;
-    });
+        link.addClass('active');
+        e.preventDefault(); 
+        return false;
+    });  
+    
+    */
 
     $('.cancel').click(function(){
         var form = $(this).closest('form');
         form[0].reset();
         form.find('.error').text('');
-        closeFormEdit(form); 
-        if(form.hasClass('profile')) { avatars.toggle(); }
+        form.hasClass('profile') && avatars.toggle();
     });    
 
-    $('.edit-profile').click(function(){
+    /* refactor this
+    $('.my-profile').click(function(){
         avatars.toggle(); 
-    });
+
+    });             
+    */
 
     $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
         avatars.getMatchingAvatars();
@@ -177,12 +162,19 @@ $(function(){
                     $('#private_message_submit').css('display','none');
                 }
             })
-        })
-        $('#reply-form').live('submit',function(){
-            $('textarea').val('Click here to add a reply').css('height','16px');
-            $('#private_message_submit').css('display','none');
-            $(this).hide();
         });
+        
+    $('#reply-form').live('submit',function(){
+        $('textarea').val('Click here to add a reply').css('height','16px');
+        $('#private_message_submit').css('display','none');
+        $(this).hide();
+    });
+    
+    $('.edit-profile').find('a').click(function(){
+        $(this).parent().add('.new-user-msg-wrapper').slideUp(function(){
+            $('.white-area').slideDown();
+        });
+    });
 });
 
 

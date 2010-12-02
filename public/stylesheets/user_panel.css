@@ -1,13 +1,16 @@
+body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
 .container > .aligned{overflow: hidden;}
-aside{overflow: hidden; border-right: 1px solid #e5e9ed;}                          
+aside{overflow: hidden;}                          
 .inner-shadow{background: url('../images/inner-shadow-right.png') repeat-y right 0;   padding: 23px;}
-.user-sb{width: 240px; float: right; background: #ffffff url('../images/inner-shadow-top.png') repeat-x}
-.user-sb > div{padding: 23px;}
+.user-sb{width: 240px; float: right;}
+.user-sb-white{background: #ffffff url('../images/inner-shadow-top.png') repeat-x; border-right: 1px solid #e5e9ed;}
+.user-sb-white > div{padding: 19px;}
 .user-profile{overflow: hidden; border-bottom: 1px solid #e5e9ed;}  
-.user-details{width: 128px; float: right;}
-
+.user-details{width: 134px; float: right;}
+.user-sb .edit-profile{text-align: center; padding: 13px 0; font-weight: bold;}
+.white-area{display: none;}
 .points-wrapper{padding-bottom: 3px;}
-.points-wrapper > span{float: left; padding: 0 8px; height: 34px; border-bottom: 1px solid #e6e6e6;
+.points-wrapper > span{float: left; padding: 0 8px; height: 30px; border-bottom: 1px solid #e6e6e6;
   background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
@@ -20,25 +23,15 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .points-wrapper > .points{font-size: 12px; line-height: 3; color: #707b8b; border-left: 1px solid #fbfbfb;}                
 .points-wrapper > .points > b{font-size: 14px;}
 
-.username{color: #4c5563; font-size: 18px}                
+.username{color: #4c5563; font-size: 18px; margin-bottom: 6px;}
 .usr-sec-title{overflow: hidden;  margin-bottom: 15px; position: relative; }
-.usr-sec-title > h2{color: #61656a; font-size: 12px; float: left; padding: 5px 10px 0 0;  position: relative; background-color: #ffffff;}
-.edit-lk{float: right; text-indent: -9999px; width: 25px; height: 22px; padding-left: 10px; background-color: #ffffff; position: relative;}
-.edit-lk > span{height: 20px; display: block; border: 1px solid #e1e8f0; padding-left: 5px;
-  background-image: -moz-linear-gradient(top, #f9fbfc, #eaf2f6);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fbfc),color-stop(1, #eaf2f6));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f6');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#eaf2f6')";
-}   
-
+.usr-sec-title > h2{color: #61656a; font-size: 12px; float: left; padding: 5px 5px 0 5px;  position: relative; background-color: #ffffff;}
 .usr-sec-title > .active > span{
   border-top: 1px solid #a5aab0;
   background-image: -moz-linear-gradient(top, #eaf1f5, #f8fbfc);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf1f5),color-stop(1, #f8fbfc));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc')";
-    
-  
 } 
 
 .usr-sec-title span > span{display: block; height: 100%; background: url('../images/icn-pencil.png') no-repeat 0px 4px;}
@@ -46,7 +39,6 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .user-edit{padding-bottom: 20px;}
 .user-edit > li{padding-bottom: 10px;}
 .user-edit > li > div:first-child{color: #a4a7ab; padding-bottom: 2px;}
-.user-edit > li input, .user-edit > li select, .user-edit > li label{display: none;}
 .terminate{color: #d56262; text-decoration: underline;}
 .user-edit .btn-gradient{margin-right: 10px;}  
 .cancel{color: #61656a; background: none; border: none; font-size: 11px; padding: 4px 0 0 0; cursor: pointer;}
@@ -99,12 +91,7 @@ aside{overflow: hidden; border-right: 1px solid #e5e9ed;}
 .opt-reply{background-position: 0 1px; padding-left: 15px;}
 .from{padding-bottom: 10px; color: #b3b8bc; font-size: 12px;}
 .from a{color: #468ac4; font-weight: bold;}     
-.msg{color: #838383; font-size: 12px;}   
-.welcome{text-align: center; font-size: 12px; line-height: 18px; overflow: hidden;}
-.welcome > p{overflow: hidden;}
-.welcome b{color: #5e5e5e;}
-.enter-profile{margin-top: 10px;}
-.enter-profile a{padding: 5px 8px; width: 95px; margin: 0 60px; text-decoration: none;}
+.msg{color: #838383; font-size: 12px;}
 .avatars-wrapper{display: none;}
 .avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin-top: 60px;}
 .avatars{float: left;}
@@ -143,3 +130,14 @@ filter: alpha(opacity=50);
 .new_private_message label {color:#A4A7AB}
 .pm-flash.success{margin: 4px 0 20px 0;}
 .pm-flash.success > p{font-size: 12px;}
+.avatar{padding: 3px;}
+
+.new-user-msg-wrapper{overflow: hidden; margin-top: 5px;}
+.new-user-arrow{border-color: transparent transparent #35353a; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; width: 0px; margin: 0 105px; position: relative; z-index: 1;}            
+.new-user-msg{padding: 18px; text-align: center;} 
+.new-user-msg.dark{background-color: #35353a; border: 1px solid #000000; width: 202px; float: left; margin-top: -1px; color: #ffffff;}
+.new-user-msg.yellow{background-color: #fffbeb; border: 1px solid #edda8d; color: #38414e;}
+.new-user-msg > p{line-height: 1.5;}
+.new-user-msg > h3{font-size: 20px; padding-bottom: 10px; font-weight: normal;}
+.new-user-msg.dark > h3{color: #ffffff;}
+.new-user-msg.yellow > h3{color: #38414e;}
