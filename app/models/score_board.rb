@@ -21,7 +21,7 @@ class ScoreBoard < ActiveRecord::Base
 
   # callback that updates the rewards when the score board is updated 
   def update_current_rewards
-    Reward.descendants.each do |klass|
+    [Level, Badge, Prize].each do |klass|
       from, to = self.changes[:current_points]
       new_reward = klass.where(:amount_points_of_required => ((from)..(to))).order('amount_points_of_required DESC').first
       self.send("current_#{klass.to_s.underscore}_id=", new_reward.id) if new_reward

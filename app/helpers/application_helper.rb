@@ -45,7 +45,7 @@ module ApplicationHelper
   # get acatar css for user
   def level_css_class_for_user(user)
     if user.current_level
-      user.current_level.name.underscore.dasherize
+      user.current_level.name.underscore.parameterize
     else
       'no-level'
     end
