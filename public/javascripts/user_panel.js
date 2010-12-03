@@ -22,8 +22,7 @@ var avatars = {
     show: function(){ 
         var avatarsMarkup = $('.avatars');
         avatarsMarkup.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
-        $('.avatars-wrapper').addClass('active')
-            .siblings('section').hide();
+        $('.avatars-wrapper').addClass('active').siblings('section').hide();
     },
     getMatchingAvatars: function(){
       var avatarsWrapper = $('.avatars-wrapper');
@@ -84,13 +83,6 @@ $(function(){
         form.find('.error').text('');
         form.hasClass('profile') && avatars.toggle();
     });    
-
-    /* refactor this
-    $('.my-profile').click(function(){
-        avatars.toggle(); 
-
-    });             
-    */
 
     $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
         avatars.getMatchingAvatars();
@@ -171,8 +163,16 @@ $(function(){
     });
     
     $('.edit-profile').find('a').click(function(){
-        $(this).parent().add('.new-user-msg-wrapper').slideUp(function(){
-            $('.white-area').slideDown();
+        avatars.toggle(); 
+        $('.new-user-msg-wrapper').slideUp();
+        $(this).parent().slideUp(function(){
+            $('.white-area').slideDown(function(){
+                var label = null;
+                $(this).find('.label').each(function(){                  
+                    label = $(this);
+                    label.height() <= 15 && label.css('line-height', 2);
+                })
+            });
         });
     });
 });
