@@ -63,7 +63,7 @@ $(function(){
     );
 
     $('.sign-up-form #user_email').change(function () {
-        $('.sign-up-form #user_username').val($(this).val().replace(/@.*$/, ''));
+        $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, ''));
     });
 
     $('.login-form').find('input[type=submit]').formValidator(
@@ -157,6 +157,10 @@ $(function(){
          pm.find('.pm-flash').remove();
        });
     });
+    
+    $('input:text').live('focus', function(){
+        $(this).hasClass('error') && $(this).removeClass('error') && $(this).siblings('p.error').remove();
+    })
 
 
     $('.items > div:last-child').css("background","none");
