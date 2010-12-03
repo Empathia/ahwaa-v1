@@ -95,6 +95,9 @@
                 <% Topic.tag_counts.each do |tag| %>
                   <li><%= link_to tag, topic_tag_path(tag.name) %></li>
                 <% end %>
+                <% Topic.tag_counts.each do |tag| %>
+                  <li><%= link_to tag, topic_tag_path(tag.name) %></li>
+                <% end %>
                 <li class="more">
                   <%= link_to 'More' %>
                   <ul id="moretags" class="more-tags border-all border-menu">

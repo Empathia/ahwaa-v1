@@ -102,20 +102,17 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .header-tags{height: 100%;position:relative;}
 .header-tags > ul{float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
-.header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left;}
+.header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight:bold;}
 .more{background: url('../images/more.png') no-repeat 55px 17px; position: relative;}
-.more > a:hover{
+.more > a{text-decoration:none;color:#61656a!important}
+.more-tags{background-color: #f6f9fb; position: absolute; top: 39px; display: none;
   -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
 }
-.more-tags{width: 129px; background-color: #f6f9fb; position: absolute; top: 39px; display: none;
-  -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
-  -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
-  box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
-}
-.more-tags > li{height: 36px; border-bottom: 1px solid #eaeef0; padding-left: 21px; line-height: 3;}
+.more-tags > li{height: 36px; border-bottom: 1px solid #eaeef0; padding:0 15px; line-height: 3;font-weight:bold;white-space:nowrap;}
 .more-tags > li:last-child{border-bottom: none;}
+.more:hover {background-color:#f9f9f9;border-right-color:#dfe1ed}
 .more:hover .more-tags{display: block;}
 .request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/request-bg.png') repeat-x 0 -25px;outline:0;}
 .request-topic > span{float: right; height: 100%; text-align: center; background: url('../images/request-bg.png') no-repeat; padding-left: 3px;}
@@ -265,26 +262,28 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 
  #pageslide-slide-wrap{background:none white}
  #pageslide-slide-wrap > div{background-image:none;}
- #pageslide-slide-wrap > div > div{padding:20px 0;overflow:hidden;}
- #pageslide-slide-wrap > div p{margin-top:2px;border-bottom:1px solid #e9f2f6;
-     background-image: -moz-linear-gradient(top, #fbfeff, #f2fbff);
-     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fbfeff),color-stop(1, #f2fbff));
-     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff');
-     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";}
+ #pageslide-slide-wrap > div > div{overflow:hidden;}
+ #pageslide-slide-wrap > div div.header{margin-top:2px;border-bottom:1px solid #e9f2f6;overflow:hidden;padding:18px 0 19px 0;
+     background-image: -moz-linear-gradient(top, #EDF5F9, #F3FAFD);
+     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #EDF5F9),color-stop(1, #F3FAFD));
+     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#EDF5F9', EndColorStr='#F3FAFD');
+     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#EDF5F9', EndColorStr='#F3FAFD')"}
  #pageslide-slide-wrap > div h2 {float:left;width:420px;padding-left:30px;font-family:GothamMediumRegular;font-size:16px;margin-top:7px;}
  #pageslide-slide-wrap > div a  {float:right;height:25px;margin-right:29px;color:#8497a7;font-weight:bold;background:url("../images/back-bg.png") repeat-x scroll 0 -25px transparent;}
  #pageslide-slide-wrap > div a > span{background:url("../images/back-bg.png") no-repeat scroll right 0 transparent;float:left;height:100%;padding-right:3px;text-align:center}
  #pageslide-slide-wrap > div a > span > span{background:url("../images/back-bg.png") no-repeat scroll left -50px transparent;float:left;height:100%;line-height:2;padding-left:11px;width:54px}
- #pageslide-slide-wrap > div form{float:left;padding-left:30px;border-top:1px solid #E9F2F6;margin-top:19px;padding-top:30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
+ #pageslide-slide-wrap > div form{float:left;padding-left:30px;margin-top:19px;padding-top:30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
  #pageslide-slide-wrap > div form > fieldset{border:none;margin:0;padding:0;}
  #pageslide-slide-wrap > div form input[type="text"]{font-size:12px;height:11px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:20px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
  #pageslide-slide-wrap > div form textarea{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:8px 10px;color:#888;margin-bottom:16px;font-family:Arial, Helvetica, sans-serif;font-size:12px;display:block;width:474px}
  #pageslide-slide-wrap > div form input[type="submit"]{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;padding:8px 19px;line-height:1em;float:none!important;margin-left:75px;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:12px;background-color:white}
 
 .avatar-wrapper{float:left;position:relative}
-.avatar{width:56px;height:56px;padding:4px;float:left;position:relative;background:url("../images/avatars/avatar-greybg-border.png") no-repeat 0 0 transparent}
-.avatar.expert{background-image:url("../images/avatars/avatar-greenbg-border.png")}
-.avatar > span{width:30px;height:21px;display:block;position:absolute;left:17px;top:49px;background:url("../images/avatars/hearts.png") no-repeat 0 0 transparent}
+.avatar{width:56px;height:56px;padding:4px;float:left;position:relative;background:url("../images/avatar-greybg-border.png") no-repeat 0 0 transparent}
+.avatar.expert{background-image:url("../images/avatar-greenbg-border.png")}
+.avatar > span{width:30px;height:21px;display:block;position:absolute;left:17px;top:49px;background:url("../images/hearts.png") no-repeat transparent}
+.avatar.no-level > span{background:none;}
+.avatar.green-heart > span{background-position:0 0}
 .avatar.bronze-heart > span{background-position:0 -21px}
 .avatar.silver-heart > span{background-position:0 -42px}
 .avatar.gold-heart > span{background-position:0 -63px}

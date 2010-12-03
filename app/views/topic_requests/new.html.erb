@@ -1,10 +1,12 @@
 <div>
-	<h2><%= t('.title') %></h2>
-	<a href="" class="pageslide-close">
-	    <span>
-			<span><!--<%= t('.back.button')%>-->Back</span>
-		</span>
-	</a>
+  <div class="header">
+	  <h2><%= t('.title') %></h2>
+  	<a href="" class="pageslide-close">
+  	    <span>
+  			<span><!--<%= t('.back.button')%>-->Back</span>
+  		</span>
+  	</a>
+  </div>
 	<% javascript :form_validator, :form_script %>
 	<%= form_for @topic_request do |f| %>
 		<fieldset>
