@@ -6,11 +6,13 @@
 <% javascript 'ba-bbq', 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all"> 
-  <div class="pm-panel">
+  <div class="pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
       <section class="avatars-wrapper"> 
         <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
-        <section class='avatars-list'></section>
+        <section class='avatars-list'>
+          <a href="#" class="custom-avatar border-all"><span><%= t('.content.avatars.custom_avatar') %></span></a>
+        </section>
       </section>
       <section id="pm-wrapper"> 
         <%= render :partial => 'inbox', :object => @messages %>
@@ -26,134 +28,126 @@
               <span class="level border-left <%= level_css_class_for_user(current_user) %>"></span>
               <span class="points border-right"><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span>
           </div>
-          <!--<div><input type="checkbox"> <%= t('.sidebar.use_avatar') %></div>-->
         </div>
       </div>                    
       <div class="edit-profile">
-        <a href="#">Edit Profile</a>
+        <a href="#"><%= t('.sidebar.edit_profile') %></a>
       </div>
       <div class="white-area">
-        <section>      
-          <% if current_user.profile.empty? %>
-            <div class="new-user-msg yellow border-all">
-              <h3><%= t('.sidebar.new_user.question') %></h3>
-              <p><%= t('.sidebar.new_user.legend') %></p>
-            </div>
-          <% end %> 
-            
-        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>
-          <%= user.fields_for :profile do |f| %>
-            <div class="usr-sec-title">
-              <hr>          
-              <h2><%= t('.sidebar.profile.title') %></h2>
-            </div>
-            <ul class="user-edit">
-              <li>             
-                <div><%= UserProfile.human_attribute_name(:religion_id) %></div>
-                <div>
-                  <%= f.collection_select :religion_id, Religion.all, :id, :name %>
-                </div>
-              </li>
-              <li>
-                <div><%= UserProfile.human_attribute_name(:gender_id) %></div>
-                <div>
-                  <%= f.collection_select :gender_id, Gender.all, :id, :name %>
-                </div>                                                                                                     
-              </li>                                                                                                        
-              <li>             
-                <div><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>
-                <div>
-                  <%= f.collection_select :sexual_orientation_id, SexualOrientation.all, :id, :name %>
-                </div>
-              </li>
-              <li>             
-                <div><%= UserProfile.human_attribute_name(:age_id) %></div>
-                <div>
-                  <%= f.collection_select :age_id, Age.all, :id, :range %>
-                </div>
-              </li>
-              <li>             
-                <div><%= UserProfile.human_attribute_name(:country_id) %></div>
-                <div>
-                  <%= text_field_tag :country_birth, current_user.profile.country %>
-                  <%= f.hidden_field :country_id, :class => 'country_id' %>
-                </div>
-              </li>
-              <li>             
-                <div><%= UserProfile.human_attribute_name(:political_view) %></div>
-                <div>
-                  <%= f.collection_select :political_view_id, PoliticalView.all, :id, :name %>
-                </div>
-              </li>
-              <li>
-                <%= f.submit t('.sidebar.buttons.save'), :class => 'btn-gradient' %>
-                <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
-              </li>
-            </ul>
-            <% end %>
-          <% end %>
-        </section>
-        <section>  
-          <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form password' }, :remote => true do |f| %>
-            <div class="usr-sec-title">
-              <hr>          
-              <h2><%= t('.sidebar.password.title') %></h2>
-            </div>   
-            <ul class="user-edit passwords">
-              <li>
-                  <div><%= t('.sidebar.password.new_password') %></div>
-                  <div>
-                    <%= f.password_field :password %>
+        <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>        
+          <section>      
+            <% if current_user.profile.empty? %>
+              <div class="new-user-msg yellow border-all">
+                <h3><%= t('.sidebar.new_user.question') %></h3>
+                <p><%= t('.sidebar.new_user.legend') %></p>
+              </div>
+            <% end %> 
+            <%= user.fields_for :profile do |profile| %>
+              <div class="usr-sec-title">
+                <hr>          
+                <h2><%= t('.sidebar.profile.title') %></h2>
+              </div>
+              <ul class="user-edit">
+                <li>             
+                  <div class="label"><%= UserProfile.human_attribute_name(:religion_id) %></div>
+                  <div class="field">
+                    <%= profile.collection_select :religion_id, Religion.all, :id, :name %>
                   </div>
-              </li>
-              <li>
-                  <div><%= t('.sidebar.password.confirm_password') %></div>
-                  <div>
-                    <%= f.password_field :password_confirmation %>
-                    <p class="error"></p>
+                </li>
+                <li>
+                  <div class="label"><%= UserProfile.human_attribute_name(:gender_id) %></div>
+                  <div class="field">
+                    <%= profile.collection_select :gender_id, Gender.all, :id, :name %>
+                  </div>                                                                                                     
+                </li>                                                                                                        
+                <li>             
+                  <div class="label"><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>
+                  <div class="field">
+                    <%= profile.collection_select :sexual_orientation_id, SexualOrientation.all, :id, :name %>
                   </div>
-              </li>            
-              <li>
-                <%= f.submit t('.sidebar.buttons.save'), :class => 'btn-gradient' %>
-                <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
-              </li>
-            </ul>
-          <% end %>
-        </section>
-        <section>
-          <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form account' }, :remote => true do |f| %>
-            <div class="usr-sec-title">
-              <hr>
-              <h2><%= t('.sidebar.my_account.title') %></h2>
-            </div>
-            <ul class="user-edit">
-              <li>
-                <div><%= t('.sidebar.my_account.nickname') %></div>
-                <div>
-                  <label><%= current_user.username %></label>
-                </div>                                                                                                     
-              </li>                                                                                                        
-              <li>             
-                <div><%= t('.sidebar.my_account.mail') %></div>
-                <div>
-                  <%= f.email_field :email, :required => true %>
-                </div>
-              </li>
-              <li>             
-                <div><%= t('.sidebar.my_account.language') %></div>
-                <div>
-                  <%= f.fields_for :profile do |p| %>
-                    <%= p.select :language, [[UserProfile.human_attribute_name(:en), 'en'], [UserProfile.human_attribute_name(:ar), 'ar']] %>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <input type="submit" class="btn-gradient" value="<%= t('.sidebar.buttons.save') %>">
-                <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">
-              </li>
-            </ul>
-          <% end %>
-        </section>
+                </li>
+                <li>             
+                  <div class="label"><%= UserProfile.human_attribute_name(:age_id) %></div>
+                  <div class="field">
+                    <%= profile.collection_select :age_id, Age.all, :id, :range %>
+                  </div>
+                </li>
+                <li>             
+                  <div class="label"><%= UserProfile.human_attribute_name(:country_id) %></div>
+                  <div class="field">
+                    <%= text_field_tag :country_birth, current_user.profile.country %>
+                    <%= profile.hidden_field :country_id, :class => 'country_id' %>
+                  </div>
+                </li>
+                <li>             
+                  <div class="label"><%= UserProfile.human_attribute_name(:political_view) %></div>
+                  <div class="field">
+                    <%= profile.collection_select :political_view_id, PoliticalView.all, :id, :name %>
+                  </div>
+                </li>
+              </ul>
+              <% end %>
+              <br class="clear">
+          </section>
+          <section>  
+              <div class="usr-sec-title">
+                <hr>          
+                <h2><%= t('.sidebar.password.title') %></h2>
+              </div>   
+              <ul class="user-edit passwords">
+                <li>
+                    <div class="label"><%= t('.sidebar.password.new_password') %></div>
+                    <div class="field">
+                      <%= user.password_field :password %>
+                    </div>
+                </li>
+                <li>
+                    <div class="label"><%= t('.sidebar.password.confirm_password') %></div>
+                    <div class="field">
+                      <%= user.password_field :password_confirmation %>
+                      <p class="error"></p>
+                    </div>
+                </li>            
+              </ul>
+              <br class="clear">              
+          </section>
+          <section>
+              <div class="usr-sec-title">
+                <hr>
+                <h2><%= t('.sidebar.my_account.title') %></h2>
+              </div>
+              <ul class="user-edit">
+                <li>
+                  <div class="label"><%= t('.sidebar.my_account.nickname') %></div>
+                  <div class="field">
+                    <label><%= current_user.username %></label>
+                  </div>                                                                                                     
+                </li>                                                                                                        
+                <li>             
+                  <div class="label"><%= t('.sidebar.my_account.mail') %></div>
+                  <div class="field">
+                    <%= user.email_field :email, :required => true %>
+                  </div>
+                </li>
+                <li>             
+                  <div class="label"><%= t('.sidebar.my_account.language') %></div>
+                  <div class="field">
+                    <%= user.fields_for :profile do |profile| %>
+                      <%= profile.select :language, [[UserProfile.human_attribute_name(:en), 'en'], [UserProfile.human_attribute_name(:ar), 'ar']] %>
+                    <% end %>
+                  </div>
+                </li>
+                <li>
+                  <div class="label"></div>
+                  <div class="field">                                                                             
+                    <input type="submit" class="auth-submit border-all" value="<%= t('.sidebar.buttons.save') %>">
+                    <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">                                        
+                  </div>
+                </li>
+              </ul>
+              <br class="clear">              
+          </section>
+        <% end %>
         <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
       </div>
     </div>    

@@ -182,9 +182,8 @@ en:
   users:
     show:
       sidebar:                   
-        trusthworthy: is trusthworthy.
         points: '%{points} points'
-        use_avatar: Use avatar
+        edit_profile: Edit Profile
         buttons:
           save: Save
           cancel: Cancel
@@ -212,8 +211,9 @@ en:
             legend: "Build your profile info and<br>connect with people like you!"
       content:
         avatars: 
-          suggested: Suggested Avatars
+          suggested: Select your avatar
           loading: Loading Avatars...
+          custom_avatar: Custom Avatar
         private_messages:
           title: Private Messages
           delete: Delete
