@@ -1,21 +1,17 @@
 <div>
   <div class="header">
 	  <h2><%= t('.title') %></h2>
-  	<a href="" class="pageslide-close">
-  	    <span>
-  			<span><!--<%= t('.back.button')%>-->Back</span>
-  		</span>
-  	</a>
+  	<a href="#" class="pageslide-close"><!--<%= t('.back.button')%>-->Back</a>
   </div>
 	<% javascript :form_validator, :form_script %>
 	<%= form_for @topic_request do |f| %>
 		<fieldset>
-	    	<%= f.text_field :title, :required => "true", :placeholder => t('.titleTopic') %>
-	    	<%= f.text_area :content, :required => "true", :placeholder => t('.topicDetails') %>
-	    	<label for="topic_request_anonymous_post">
-				<%= f.check_box :anonymous_post %>
-	    		<span class="desc"><%= TopicRequest.human_attribute_name(:anonymous_post) %></span>
-			</label>
+		    <%= f.label :title %>
+	    	<%= f.text_field :title, :required => "true" %>
+	    	<%= f.label :topic_details %>
+	    	<%= f.text_area :content, :required => "true", :rows => "26" %>
+	    	<%= f.check_box :anonymous_post %>
+        <%= f.label TopicRequest.human_attribute_name(:anonymous_post), :class => "anonym" %>
 	    	<%= f.submit t('.submit'), :class => "btn-gradient" %>
 		</fieldset>
 	<% end %>
