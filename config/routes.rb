@@ -38,7 +38,7 @@ Lgbt::Application.routes.draw do
   get '/tag/:tag' => "topics#tag", :as => :topic_tag
 
   namespace :admin do
-    resources :tags,  :only => [:index]
+    resources :tags,  :only => [:index, :destroy]
     resources :flagged_replies, :only => [:index, :destroy]
     resource  :bad_words, :only => [:show, :update]
     resources :topic_requests, :only => [:index, :destroy] do
