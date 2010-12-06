@@ -4,6 +4,8 @@ class CreateBadWords < ActiveRecord::Migration
       t.string :word
       t.timestamps
     end
+
+    add_index :bad_words, :word, :unique => true
   end
 
   def self.down

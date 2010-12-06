@@ -9,6 +9,8 @@ class CreatePoliticalViews < ActiveRecord::Migration
                          monarchist sharia_law social_democrat socialist
                         pan_arabist green communist anarchist apolitical
                         undeclared].map { |i| {:i18n_name => i} })
+
+    add_index :political_views, :i18n_name, :unique => true
   end
 
   def self.down

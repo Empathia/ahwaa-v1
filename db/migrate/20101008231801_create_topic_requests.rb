@@ -8,6 +8,8 @@ class CreateTopicRequests < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :topic_requests, :user_id
   end
 
   def self.down

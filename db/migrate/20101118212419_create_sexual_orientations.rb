@@ -7,6 +7,8 @@ class CreateSexualOrientations < ActiveRecord::Migration
 
     SexualOrientation.create(%w[straight gay lesbian bisexual queer transsexual pansexual
     intersexual transvestite no_say].map { |i| {:i18n_name => i} })
+
+    add_index :sexual_orientations, :i18n_name, :unique => true
   end
 
   def self.down

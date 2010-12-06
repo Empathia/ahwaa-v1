@@ -9,6 +9,10 @@ class CreateRewards < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :rewards, :type
+    add_index :rewards, :amount_points_of_required
+    add_index :rewards, [:amount_points_of_required, :type]
   end
 
   def self.down

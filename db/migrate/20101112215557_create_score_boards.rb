@@ -9,6 +9,13 @@ class CreateScoreBoards < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :score_boards, :user_id
+    add_index :score_boards, :current_points
+    add_index :score_boards, [:user_id, :current_points]
+    add_index :score_boards, :current_level_id
+    add_index :score_boards, :current_badge_id
+    add_index :score_boards, :current_prize_id
   end
 
   def self.down

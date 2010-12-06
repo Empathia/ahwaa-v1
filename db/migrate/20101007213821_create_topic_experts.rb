@@ -6,6 +6,9 @@ class CreateTopicExperts < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :topic_experts, :topic_id
+    add_index :topic_experts, :expert_id
   end
 
   def self.down

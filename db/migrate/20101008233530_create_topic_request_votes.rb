@@ -6,6 +6,10 @@ class CreateTopicRequestVotes < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :topic_request_votes, :user_id
+    add_index :topic_request_votes, :topic_request_id
+
   end
 
   def self.down

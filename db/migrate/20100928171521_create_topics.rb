@@ -8,6 +8,9 @@ class CreateTopics < ActiveRecord::Migration
       t.string :cached_slug
       t.timestamps
     end
+    
+    add_index :topics, :user_id
+    add_index :topics, :cached_slug
   end
 
   def self.down

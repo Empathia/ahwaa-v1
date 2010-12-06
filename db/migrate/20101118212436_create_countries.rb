@@ -44,6 +44,8 @@ class CreateCountries < ActiveRecord::Migration
     "yemen", "zambia", "zimbabwe"]
 
     Country.create(countries.map { |i| {:i18n_name => i} })
+
+    add_index :countries, :i18n_name, :unique => true
   end
 
   def self.down

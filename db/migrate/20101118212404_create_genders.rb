@@ -6,6 +6,8 @@ class CreateGenders < ActiveRecord::Migration
     end
 
     Gender.create(%w[male female transgender no_say].map { |i| {:i18n_name => i} })
+
+    add_index :genders, :i18n_name, :unique => true
   end
 
   def self.down

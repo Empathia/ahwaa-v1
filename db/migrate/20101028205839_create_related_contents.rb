@@ -14,6 +14,7 @@ class CreateRelatedContents < ActiveRecord::Migration
     end
 
     add_index :related_contents, :topic_id
+    add_index :related_contents, [:source_url, :topic_id]
   end
 
   def self.down
