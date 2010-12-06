@@ -190,7 +190,7 @@ en:
         profile:
           title: My Profile
         password:
-          title: Password
+          title: Change password
           new_password: New Password
           confirm_password: Confirm Password
           errors:
