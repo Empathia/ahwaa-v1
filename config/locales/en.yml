@@ -152,7 +152,7 @@ en:
         hide_all_responses: Hide all responses
         show_all_responses: Show all responses
         filter_responses:
-          title: Filter responses
+          title: Filter Responses
         filter_helpful: Show only the helpful ones
         experts:
           title: Topic experts
