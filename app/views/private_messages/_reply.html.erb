@@ -3,9 +3,7 @@
 <% else %>
   <div class="pm-user">
     <div class="avatar-wrapper">
-      <span class="avatar">
-      <%= image_tag reply.sender.profile.avatar.url, :width => 50 %>
-      </span>
+        <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
         <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
     </div>
     <div class="pm-user-details">

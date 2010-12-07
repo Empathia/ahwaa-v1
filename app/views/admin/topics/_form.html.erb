@@ -1,4 +1,23 @@
-<% javascript :form_validator, :form_script %>
+<% javascript :form_validator, :form_script, 'jquery.fcbkcomplete.min' %>
+<% stylesheet :fcbkcomplete %>
+<% head do %>
+  <script type="text/javascript" >
+    $(function(){
+      $("#topic_tag_list").fcbkcomplete({
+        json_url: "/admin/tags.json",
+        cache: true,
+        filter_case: true,
+        filter_hide: true,
+        newel: true
+      });
+      <% @topic_tags.each do |topic_tag| %>
+        $("#topic_tag_list").trigger("addItem", [<%= topic_tag.to_json.html_safe %>] );
+      <% end %>
+    })
+  </script>
+<% end %>
+
+
 <%= form_for [:admin, @topic] do |f| %>
   <p>
     <%= f.label :title %>
@@ -14,7 +33,7 @@
   </p>
   <p>
     <%= f.label :tag_list %>
-    <%= f.text_field :tag_list %>
+    <%= select_tag 'topic[tag_list]', [], :multiple => true %>
     <span class="desc">Comma separated</span>
   </p>
   <p>

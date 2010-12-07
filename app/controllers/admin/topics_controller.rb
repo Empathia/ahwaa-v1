@@ -33,5 +33,6 @@ class Admin::TopicsController < ApplicationController
 
   def find_topic
     @topic = Topic.find(params[:id])
+    @topic_tags = @topic.tags.map{|tag| {'title' => tag.name, 'value' => tag.name}}
   end
 end
