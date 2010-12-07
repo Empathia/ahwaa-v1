@@ -1,4 +1,4 @@
-body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
+.page-wrapper{background: url('../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 .container > .aligned{overflow: hidden;}
 aside{overflow: hidden;}                          
 .inner-shadow{background: url('../images/inner-shadow-right.png') repeat-y right 0;   padding: 23px;}

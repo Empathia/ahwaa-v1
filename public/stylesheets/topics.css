@@ -1,9 +1,9 @@
 .content{position: relative; margin-bottom: 10px;}
 body{                                               
   background: url('../images/bg-noise-topic.jpg') repeat fixed top left;                                  
-  background: url('../images/topic-bg.jpg') 0 107px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
+  background: url('../images/topic-bg.jpg') 0 105px repeat-x fixed, url('../images/bg-noise-topic.jpg') top left repeat;
 }
-body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 107px;}
+body > div{background: url('../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 body > div#pageslide-blanket{background:none}
 .article-tags{background: url('../images/tag.png') no-repeat; margin-top:15px;padding-left:32px;color:#468AC4;}
 .article-tags > li{display: inline;}     

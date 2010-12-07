@@ -1,4 +1,4 @@
-$(function(){
+$(function(){    
     function toggleSignUp(link, formName){
         $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');
         link.addClass('auth-form-active');
@@ -127,10 +127,6 @@ $(function(){
         $('.search_results').removeClass('visible');
     });
 
-    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true }).click(function(){
-        $('.pageslide-body-wrap').addClass('jlo');
-    });
-
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
             $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
@@ -211,12 +207,32 @@ $(function(){
 });
 
 $(window).load(function () {
-    $('#header-tags').css('width', '9999em').children(':not(.more)').each(function(){
-        if($(this).position().left + $(this).width() > 650) {
-            $('#moretags').append($(this).clone());
-            $(this).addClass('to-more');
+    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true }).click(function(){
+        $('.pageslide-body-wrap').addClass('jlo');
+    });
+    
+    var headerTags = $('#header-tags'),
+        moreTags = $('#moretags'),
+        tag = null,
+        self = $(this);
+    headerTags.css('width', '9999em').children(':not(.more)').each(function(){
+        tag =  $(this);
+        if(tag.position().left + tag.width() > 650) {
+            moreTags.append(tag.clone());
+            tag.addClass('to-more');
         }
     }).filter('.to-more').remove();
-    if($('#moretags li').length === 0) { $('#header-tags .more').remove(); }
-    $('#header-tags').css('width', null);
-});
+    moreTags.find('li').length === 0 && headerTags.find('.more').remove();
+    headerTags.css('width', null);
+      
+    var container = $('.container'),
+        siblings = container.siblings(),
+        header = siblings.filter('header'),
+        footer = siblings.filter('footer'),
+        delta = header.outerHeight() + footer.outerHeight() + 50;
+    container.css('min-height', self.height() - delta);
+    
+    self.resize(function(){
+        container.css('min-height', self.height() - delta);
+    });
+}); 

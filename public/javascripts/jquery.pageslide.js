@@ -46,7 +46,8 @@
 
                 var psBodyWrap = document.createElement("div");
                 $(psBodyWrap).css(pageslide_body_wrap_css);
-                $(psBodyWrap).attr("id", "pageslide-body-wrap").width($("body").width());
+                //$(psBodyWrap).attr("id", "pageslide-body-wrap").width($("body").width());
+                $(psBodyWrap).attr("id", "pageslide-body-wrap");
                 $("body").contents().wrapAll(psBodyWrap);
 
                 var psSlideContent = document.createElement("div");
@@ -71,9 +72,11 @@
             }
 
             // Callback events for window resizing
-            $(window).resize(function () {
+            /*
+            $(window).resize(function () {                       
                 $("#pageslide-body-wrap").width($("body").width());
             });
+            */
 
             // mark the anchor!
             $(anchor).attr("rel", "pageslide");

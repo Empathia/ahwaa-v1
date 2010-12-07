@@ -16,78 +16,31 @@ var avatars = {
         $('.avatars-wrapper').hasClass('active') ? avatars.hide() : avatars.show();
     },
     hide: function(){
-        $('.avatars-wrapper').hide().removeClass('active')
-            .siblings('section').show();
+        $('.avatars-wrapper').hide().removeClass('active').siblings('section').show();
     },
     show: function(){  
-        var avatarsLoaded = $('.avatars .thumb');
-        avatarsLoaded.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
-        $('.avatars-wrapper').addClass('active').siblings('section').hide();
+        var avatarsWrapper = $('.avatars-wrapper');
+        avatarsWrapper.find('.thumb').length ? avatarsWrapper.show() : avatars.getMatchingAvatars();
+        avatarsWrapper.addClass('active').siblings('section').hide();
     },
     getMatchingAvatars: function(){
       var avatarsWrapper = $('.avatars-wrapper');
-      avatarsWrapper.fadeIn();
-      $('.loading').show();
-      $('.avatars-list').html('');       
-      var genderId = $('#user_profile_attributes_gender_id').val();
-      var ageId = $('#user_profile_attributes_age_id').val();
-      $.ajax({
-        url: '/avatars/matches.js',
-        data: 'filters[gender_id]=' + genderId + '&filters[age_id]=' + ageId,
-        dataType: 'script',
-        type: 'POST',
+      avatarsWrapper.fadeIn(function(){
+          $('.loading').show();
+          avatarsWrapper.find('.avatars.suggested').children(':not(.custom)').remove();
+          var genderId = $('#user_profile_attributes_gender_id').val(),
+              ageId = $('#user_profile_attributes_age_id').val();
+          $.ajax({
+              url: '/avatars/matches.js',
+              data: 'filters[gender_id]=' + genderId + '&filters[age_id]=' + ageId,
+              dataType: 'script',
+              type: 'POST',
+          });
       });
-    },
-    create: function(){
-        var avatarsWrapper = $('.avatars-wrapper');
-        avatarsWrapper.fadeIn();
-        setTimeout(function(){
-            $('.loading').hide();
-            var avatarsList = $('.avatars.suggested'),
-                avatars = "",
-                avatarsWrapper = $('.avatars-list');
-            for(var i=0; i<16; i++){
-                avatars += '<li ' + (i==3 ? 'class="active"' : '') + '><div class="border-all"><div class="thumb"><a href="#"><img src="/images/default-avatar.png" width="55"></a>' + (i==3 ? '<img src="/images/checkmark.png" class="checkmark"></div></div></li>' : '');
-            }                                       
-            avatarsList.append(avatars)
-            avatarsWrapper.append(avatarsList).show();
-            var avatarsOpacity = $('<ul>').addClass('avatars opacity');
-            avatars = "";
-            for(var i=0; i<16; i++){
-                avatars += '<li><div class="border-all"><div class="thumb"><a href="#"><img src="/images/default-avatar.png" width="55"></a></div></div></li>';  
-            }                        
-            avatarsOpacity.append(avatars);
-            avatarsWrapper.append(avatarsOpacity);
-        }, 2000);
-        return false; 
     }
 };
 
-$(function(){ 
-    /* 
-    refactor this
-    $('.edit-lk').add('.enter-profile > a').click(function(e){        
-        var link = $(this);
-        if(link.hasClass('active')){
-            return false;
-        }
-        var form = link.closest('form');
-        form.find('.user-edit span').css('display', 'none').end().find('input, label, select, .passwords').css('display', 'block');
-        link.addClass('active');
-        e.preventDefault(); 
-        return false;
-    });  
-    
-    */
-
-    $('.cancel').click(function(){
-        var form = $(this).closest('form');
-        form[0].reset();
-        form.find('.error').text('');
-        form.parent().slideUp(function(){
-            $('.edit-profile').slideDown();
-        }) && avatars.toggle();
-    });    
+$(function(){    
 
     $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
         avatars.getMatchingAvatars();
@@ -116,8 +69,9 @@ $(function(){
             $('input:hidden.country_id').val('');
         }
     });
-
-    $('.edit-form').find('input[type=submit]').click(function(e){
+    
+    var editForm = $('.edit-form');
+    editForm.find('input[type=submit]').click(function(e){
         if($('#user_password').val() !== $('#user_password_confirmation').val()) {
             $('.edit-form.password').find('.error').text(I18n.t('users.show.sidebar.password.errors.confirm_password'));
             e.preventDefault();
@@ -127,6 +81,14 @@ $(function(){
         'errors': {  
             'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email')
         }
+    });
+    
+    editForm.find('.cancel').click(function(){
+       editForm[0].reset();       
+       editForm.find('.error').removeClass('error').filter('p').text('');
+       editForm.parent().slideUp(function(){
+           $('.edit-profile').slideDown();
+       }) && avatars.toggle();
     });
     
     $('#reply-form textarea').live('focus',function(){
