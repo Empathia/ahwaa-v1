@@ -47,14 +47,14 @@ var avatars = {
                 avatars = "",
                 avatarsWrapper = $('.avatars-list');
             for(var i=0; i<16; i++){
-                avatars += '<li ' + (i==3 ? 'class="active"' : '') + '><div class="border-all"><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a>' + (i==3 ? '<img src="/images/checkmark.png" class="checkmark"></div></div></li>' : '');
+                avatars += '<li ' + (i==3 ? 'class="active"' : '') + '><div class="border-all"><div class="thumb"><a href="#"><img src="/images/default-avatar.png" width="55"></a>' + (i==3 ? '<img src="/images/checkmark.png" class="checkmark"></div></div></li>' : '');
             }                                       
             avatarsList.append(avatars)
             avatarsWrapper.append(avatarsList).show();
             var avatarsOpacity = $('<ul>').addClass('avatars opacity');
             avatars = "";
             for(var i=0; i<16; i++){
-                avatars += '<li><div class="border-all"><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a></div></div></li>';  
+                avatars += '<li><div class="border-all"><div class="thumb"><a href="#"><img src="/images/default-avatar.png" width="55"></a></div></div></li>';  
             }                        
             avatarsOpacity.append(avatars);
             avatarsWrapper.append(avatarsOpacity);

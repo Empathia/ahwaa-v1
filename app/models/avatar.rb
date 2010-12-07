@@ -19,7 +19,7 @@ class Avatar < ActiveRecord::Base
 
   # Gets the default avatar
   def self.default
-    find_or_create_by_url("/images/no-image.jpg")
+    find_or_create_by_url("/images/default-avatar.png")
   end
 
 end

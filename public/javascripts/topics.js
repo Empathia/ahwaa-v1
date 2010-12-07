@@ -10,7 +10,7 @@ $(function(){
     var article = $(".article-wrapper"),
         socialBookmarkers = $('.social-bookmarkers'),
         sidebar = article.find('aside'),
-        leftSideWidth = 786;
+        leftSideWidth = 720;
     sidebar.css('left', article.offset().left + leftSideWidth - $(window).scrollLeft());
 
     $(window).resize(function() {
