@@ -153,7 +153,7 @@ en:
         show_all_responses: Show all responses
         filter_responses:
           title: Filter responses
-        filter_helpful: Show only helpful commentaries
+        filter_helpful: Show only the helpful ones
         experts:
           title: Topic experts
         need_help: Need help?

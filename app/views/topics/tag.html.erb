@@ -13,9 +13,7 @@
               <% group_topics.each do | topic | %>
                 <div>                                                                                            
                   <div class="avatar-wrapper">
-                    <span class="avatar <%= 'expert' if topic.user.is_expert %>">
-                      <%= image_tag(topic.user.profile.avatar.url, :width => '50') %>
-                    </span>
+                    <%= avatar_span(topic.user, topic.user.is_expert?) %>
                     <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
                   </div>
                   <div class="item-data">
