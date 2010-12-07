@@ -198,9 +198,9 @@ en:
              confirm_password: "Password doesn't match confirmation"
         my_account:
           title: My Account
-          nickname: 'Nickname:'
-          mail: 'Mail:'
-          language: 'Language:'
+          nickname: 'Nickname'
+          mail: 'Mail'
+          language: 'Language'
           errors:
             invalid_email: "Email is invalid"
         terminate_account: Terminate account

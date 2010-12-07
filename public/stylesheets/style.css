@@ -1,6 +1,11 @@
-html{height: 101%;}
-body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 101%;}
-body > div{height: 100%;}
+html{height: 100%;}
+body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 100%;}
+.page-wrapper{min-height: 100%;}
+.page-wrapper > header{
+  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+  box-shadow: 0px 0px 2px rgba(0,0, 0, .6);
+}
 .aligned{width: 960px; margin: 0 auto;}
 a{color: #468ac4}
 input:active,
@@ -20,7 +25,10 @@ input.error[type=email],
 textarea.error{border-color:#D93E3E;background:url('../images/cross-error.png') no-repeat right 0 white;cursor:pointer;}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
-.container > .aligned input.error, input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
+.container > .aligned input.error, input:focus:invalid, #twitter textarea:focus:invalid{
+  border: 1px solid #e79090;
+  background: url('../images/error-mark.png') no-repeat 110px 8px;
+}
 body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
