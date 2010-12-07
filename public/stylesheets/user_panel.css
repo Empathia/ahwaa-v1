@@ -49,7 +49,7 @@ aside{overflow: hidden;}
 .edit-form select{border: 1px solid #d5d5d5; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: 0px 0px 0px 3px #f5f5f5; height: 25px; width: 124px; margin-bottom: 5px;}
 .edit-form select{width: 128px;}
 
-.pm-panel{background-color: #ffffff; width: 660px; padding: 20px 25px; float: left; min-height: 98px;}
+.pm-panel{background-color: #ffffff; width: 660px; padding: 20px 25px; float: left; min-height: 102px;}
 .pm-panel.new-user{min-height: 240px;}
 .pm-panel > section > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}
 
@@ -97,16 +97,18 @@ aside{overflow: hidden;}
 .from a{color: #468ac4; font-weight: bold;}     
 .msg{color: #838383; font-size: 12px;}
 .avatars-wrapper{display: none;}
-.avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin-top: 60px;}
-.avatars{float: left;}
+.avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin: 60px 0 40px 0;}
+
+.avatars{float: left;} 
+.avatars .thumb{overflow: hidden;}                              
+.avatars .thumb > a > img{float: left;}
 .avatars.suggested{border-bottom: 1px solid #efeff0;}
-.avatars.opacity > li > div > a > img{
-opacity: .50;
-filter: alpha(opacity=50);
--ms-filter: "alpha(opacity=50)";
-}
-.avatars > li{margin: 10px; float: left; border: 2px solid transparent; position: relative;}
-.avatars > .active{border: 2px solid #468ac4;}
+.avatars.opacity .thumb > a > img{opacity: .50; filter: alpha(opacity=50); -ms-filter: "alpha(opacity=50)";}
+.avatars-list{display: none;}
+.avatars > li{margin: 10px; float: left;}
+.avatars > li > div{border: 2px solid transparent; position: relative;}
+.avatars > .active > div{border: 2px solid #468ac4;}
+
 .checkmark{position: absolute; right: -10px; top: -10px;}
 
 #pm-wrapper strong{color:black}
@@ -120,8 +122,7 @@ filter: alpha(opacity=50);
 .pm-user-details a{color: #468ac4; font-weight: bold;}
 .pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #d5dae1; padding-bottom: 15px;}
 .response{color: #999999}
-.hide,
-.passwords{display: none;}   
+.hide{display: none;}   
 .response-wrapper{margin-top: 4px; width: 100%; float: left;border:none;}
 .new_private_message{overflow:hidden;padding:13px 0;}
 .new_private_message div.border-all{border:1px solid #c6d6e8;margin-bottom:15px;float:left}
@@ -132,13 +133,13 @@ filter: alpha(opacity=50);
 .new_private_message textarea,
 .new_private_message input{float:left;clear:left}
 .new_private_message label {color:#A4A7AB}
-.pm-flash.success{margin: 4px 0 20px 0;}
-.pm-flash.success > p{font-size: 12px;}
+.pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
+.pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
 .avatar{padding: 3px;}
 
 .new-user-msg-wrapper{overflow: hidden; margin-top: 5px;}
 .new-user-arrow{border-color: transparent transparent #35353a; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; width: 0px; margin: 0 105px; position: relative; z-index: 1;}            
-.new-user-msg{padding: 18px; text-align: center;} 
+.new-user-msg{padding: 18px 15px; text-align: center;} 
 .new-user-msg.dark{background-color: #35353a; border: 1px solid #000000; width: 202px; float: left; margin-top: -1px; color: #ffffff;}
 .new-user-msg.yellow{background-color: #fffbeb; border: 1px solid #edda8d; color: #38414e; margin-bottom: 14px;}
 .new-user-msg > p{line-height: 1.5;}

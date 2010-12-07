@@ -190,7 +190,7 @@ en:
         profile:
           title: My Profile
         password:
-          title: Password
+          title: Change password
           new_password: New Password
           confirm_password: Confirm Password
           errors:
@@ -205,10 +205,11 @@ en:
             invalid_email: "Email is invalid"
         terminate_account: Terminate account
         confirm_terminate: Are you sure you want to delete your account? This cannot be undo.
-        saved: "Information saved successfully!"
+        saved: "Your profile has been updated!"
         new_user:
             question: "Who are you?"
-            legend: "Build your profile info and<br>connect with people like you!"
+            legend_st_line: "Build your profile info and"
+            legend_nd_line: "connect with people like you!"
       content:
         avatars: 
           suggested: Select your avatar

@@ -12,23 +12,23 @@ $(window).bind('hashchange', function() {
 }).trigger('hashchange');
 
 var avatars = {
-    toggle: function(){
+    toggle: function(){                             
         $('.avatars-wrapper').hasClass('active') ? avatars.hide() : avatars.show();
     },
     hide: function(){
         $('.avatars-wrapper').hide().removeClass('active')
             .siblings('section').show();
     },
-    show: function(){ 
-        var avatarsMarkup = $('.avatars');
-        avatarsMarkup.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
+    show: function(){  
+        var avatarsLoaded = $('.avatars .thumb');
+        avatarsLoaded.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
         $('.avatars-wrapper').addClass('active').siblings('section').hide();
     },
     getMatchingAvatars: function(){
       var avatarsWrapper = $('.avatars-wrapper');
       avatarsWrapper.fadeIn();
       $('.loading').show();
-      $('.avatars-list').html('');
+      $('.avatars-list').html('');       
       var genderId = $('#user_profile_attributes_gender_id').val();
       var ageId = $('#user_profile_attributes_age_id').val();
       $.ajax({
@@ -38,23 +38,26 @@ var avatars = {
         type: 'POST',
       });
     },
-    create: function(){                   
+    create: function(){
         var avatarsWrapper = $('.avatars-wrapper');
         avatarsWrapper.fadeIn();
         setTimeout(function(){
             $('.loading').hide();
-            var avatarsWrapper = $('<ul>').addClass('avatars suggested');
-            var avatars = "";
+            var avatarsList = $('.avatars.suggested'),
+                avatars = "",
+                avatarsWrapper = $('.avatars-list');
             for(var i=0; i<16; i++){
-                avatars += '<li ' + (i==3 ? 'class="active"' : '') + '><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a>' + (i==3 ? '<img src="/images/checkmark.png" class="checkmark"></div></li>' : '');
-            }
-            avatarsWrapper.append(avatars).appendTo('.avatars-wrapper');
+                avatars += '<li ' + (i==3 ? 'class="active"' : '') + '><div class="border-all"><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a>' + (i==3 ? '<img src="/images/checkmark.png" class="checkmark"></div></div></li>' : '');
+            }                                       
+            avatarsList.append(avatars)
+            avatarsWrapper.append(avatarsList).show();
             var avatarsOpacity = $('<ul>').addClass('avatars opacity');
             avatars = "";
             for(var i=0; i<16; i++){
-                avatars += '<li><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a></div></li>';  
-            }
-            avatarsOpacity.append(avatars).appendTo('.avatars-wrapper');
+                avatars += '<li><div class="border-all"><div class="thumb"><a href="#"><img src="/images/no-image.jpg" width="55"></a></div></div></li>';  
+            }                        
+            avatarsOpacity.append(avatars);
+            avatarsWrapper.append(avatarsOpacity);
         }, 2000);
         return false; 
     }
@@ -81,7 +84,9 @@ $(function(){
         var form = $(this).closest('form');
         form[0].reset();
         form.find('.error').text('');
-        form.hasClass('profile') && avatars.toggle();
+        form.parent().slideUp(function(){
+            $('.edit-profile').slideDown();
+        }) && avatars.toggle();
     });    
 
     $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
@@ -112,31 +117,13 @@ $(function(){
         }
     });
 
-    $('.edit-form.password input[type=submit]').click(function (ev) {
-        if(!$('#user_password').val() && !$('#user_password_confirmation').val()) {
-            ev.preventDefault();
-            return false;
-        }
+    $('.edit-form').find('input[type=submit]').click(function(e){
         if($('#user_password').val() !== $('#user_password_confirmation').val()) {
             $('.edit-form.password').find('.error').text(I18n.t('users.show.sidebar.password.errors.confirm_password'));
-            ev.preventDefault();
+            e.preventDefault();
             return false;
-        } else {
-            $('.edit-form.password').find('.error').text('');
-        }
-    });
-
-    /*
-       $('.edit-form.password').find('input[type=submit]').formValidator(
-       {
-       'errors': {  
-       'password': I18n.t('layouts.application.header.sign_up_form.error_login_empty'),
-       'confirm_password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
-       }
-       }
-       );
-       */
-    $('.edit-form.account').find('input[type=submit]').formValidator({
+        }        
+    }).formValidator({
         'errors': {  
             'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email')
         }

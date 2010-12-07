@@ -11,7 +11,11 @@
         <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
         <section class='avatars-list'>
-          <a href="#" class="custom-avatar border-all"><span><%= t('.content.avatars.custom_avatar') %></span></a>
+          <ul class="avatars suggested">                                                                            
+            <li>
+              <a href="#" class="custom-avatar border-all"><span><%= t('.content.avatars.custom_avatar') %></span></a>
+            </li>
+          </ul>
         </section>
       </section>
       <section id="pm-wrapper"> 
@@ -39,7 +43,7 @@
             <% if current_user.profile.empty? %>
               <div class="new-user-msg yellow border-all">
                 <h3><%= t('.sidebar.new_user.question') %></h3>
-                <p><%= t('.sidebar.new_user.legend') %></p>
+                <p><%= t('.sidebar.new_user.legend_st_line') %><br><%= t('.sidebar.new_user.legend_nd_line') %></p>
               </div>
             <% end %> 
             <%= user.fields_for :profile do |profile| %>
@@ -144,11 +148,11 @@
                     <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">                                        
                   </div>
                 </li>
-              </ul>
+              </ul>                           
               <br class="clear">              
           </section>
+          <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
         <% end %>
-        <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
       </div>
     </div>    
     <% if current_user.profile.empty? %>
@@ -156,7 +160,7 @@
         <div class="new-user-arrow"></div>
         <div class="new-user-msg dark border-all">
           <h3><%= t('.sidebar.new_user.question') %></h3>
-          <p><%= t('.sidebar.new_user.legend') %></p>
+          <p><%= t('.sidebar.new_user.legend_st_line') %><br><%= t('.sidebar.new_user.legend_nd_line') %></p>
         </div>
       </div>
     <% end %> 
