@@ -21,14 +21,14 @@ var avatars = {
     },
     show: function(){  
         var avatarsLoaded = $('.avatars .thumb');
-        avatarsLoaded.length ? $('.avatars-wrapper').show() : avatars.create();//getMatchingAvatars();
+        avatarsLoaded.length ? $('.avatars-wrapper').show() : avatars.getMatchingAvatars();
         $('.avatars-wrapper').addClass('active').siblings('section').hide();
     },
     getMatchingAvatars: function(){
       var avatarsWrapper = $('.avatars-wrapper');
       avatarsWrapper.fadeIn();
       $('.loading').show();
-      $('.avatars-list').html('');
+      $('.avatars-list').html('');       
       var genderId = $('#user_profile_attributes_gender_id').val();
       var ageId = $('#user_profile_attributes_age_id').val();
       $.ajax({
@@ -84,7 +84,9 @@ $(function(){
         var form = $(this).closest('form');
         form[0].reset();
         form.find('.error').text('');
-        form.hasClass('profile') && avatars.toggle();
+        form.parent().slideUp(function(){
+            $('.edit-profile').slideDown();
+        }) && avatars.toggle();
     });    
 
     $('#user_profile_attributes_gender_id, #user_profile_attributes_age_id').change(function(){
