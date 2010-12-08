@@ -5,19 +5,42 @@ $.fn.formValidator = function(options){
          errors.filter('p').remove();
          errors.removeClass('error');
          _form.find('input').each(function(e){
-             var _input = $(this);
-             var value = _input.val();
-             var error = false;
-             var type = this.getAttribute('type');
-
-             if(value){
-                 var pattern = type == 'text' ? _input.attr('pattern') : type == 'email' ? (/^([a-z0-9_\.\-\+]+)@([\da-z\.\-]+)\.([a-z\.]{2,6})$/i) : type == 'number' ? (/^-?[0-9]*(\.[0-9]+)?$/) : type == 'url' ? (/^(https?:\/\/)?[\da-z\.\-]+\.[a-z\.]{2,6}[#\?\/\w \.\-=]*$/i) : false;
+             var _input = $(this),
+                 value = _input.val(),
+                 error = false,
+                 type = this.getAttribute('type');
+             if(value){         
+                 var pattern = false;
+                 switch(type){
+                     case 'text':
+                        pattern = _input.attr('pattern');
+                        break;
+                     case 'email':
+                        pattern = /^([a-z0-9_\.\-\+]+)@([\da-z\.\-]+)\.([a-z\.]{2,6})$/i;
+                        break;
+                     case 'number':
+                        pattern = /^-?[0-9]*(\.[0-9]+)?$/; 
+                        break;
+                     case 'url':
+                        pattern = /^(https?:\/\/)?[\da-z\.\-]+\.[a-z\.]{2,6}[#\?\/\w \.\-=]*$/i;
+                        break;
+                     case 'password':
+                        pattern =  /^\S{6,}/i;
+                        break;
+                 }
                  error = pattern && !pattern.test(value);
              }
              else{
                 error = _input.attr('required');
+             }   
+             if(error){
+                 _input.addClass('error')
+                 if(options.errors[type]){
+                     var parentField = _input.closest('.field'),
+                         error = '<p class="error">' + options.errors[type] + '</p>';
+                     parentField.length ? parentField.after(error) : _input.after(error);
+                 }
              }
-             error ? _input.addClass('error') && options.errors[type] && _input.next('.error').remove().end().after('<p class="error">' + options.errors[type] + '</p>') : _input.hasClass('error') && _input.removeClass('error') && _input.next('.error').remove();
          });
         if(_form.find('.error').length){
             return false;

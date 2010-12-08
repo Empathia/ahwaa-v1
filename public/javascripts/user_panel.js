@@ -27,7 +27,7 @@ var avatars = {
       var avatarsWrapper = $('.avatars-wrapper');
       avatarsWrapper.fadeIn(function(){
           $('.loading').show();
-          avatarsWrapper.find('.avatars.suggested').children(':not(.custom)').remove();
+          avatarsWrapper.find('.avatars').children(':not(.custom)').remove();
           var genderId = $('#user_profile_attributes_gender_id').val(),
               ageId = $('#user_profile_attributes_age_id').val();
           $.ajax({
@@ -71,15 +71,16 @@ $(function(){
     });
     
     var editForm = $('.edit-form');
-    editForm.find('input[type=submit]').click(function(e){
-        if($('#user_password').val() !== $('#user_password_confirmation').val()) {
-            $('.edit-form.password').find('.error').text(I18n.t('users.show.sidebar.password.errors.confirm_password'));
+    editForm.find('input[type=submit]').formValidator({
+        'errors': {  
+            'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email'),
+            'password': 'The new password its too short.'
+        }
+    }).click(function(e){
+        if($('#user_password').val() !== $('#user_password_confirmation').val()) {   
+            $('<p>').addClass('error').text(I18n.t('users.show.sidebar.password.errors.confirm_password')).insertAfter('.passwords .field:last');
             e.preventDefault();
             return false;
-        }        
-    }).formValidator({
-        'errors': {  
-            'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email')
         }
     });
     

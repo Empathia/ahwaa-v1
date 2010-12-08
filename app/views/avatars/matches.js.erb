@@ -1,2 +1,2 @@
 $('.loading').hide();
-$('.avatars.suggested').append('<%= escape_javascript render(:collection => @avatars, :partial => 'avatar') %>').parent().fadeIn();
+$('.avatars').append('<%= escape_javascript render(:collection => @avatars, :partial => 'avatar') %>').parent().fadeIn();

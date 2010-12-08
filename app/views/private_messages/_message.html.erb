@@ -1,12 +1,9 @@
-<h2 class="regular"><%= t('users.show.content.private_messages.title') %></h2>
-<div class="bar-wrapper">
-  <div class="bar border-all bar-private">
-    <ul class="opts">
-      <li><%= link_to 'Delete', private_message_path(message), :class => "pm-delete", :method => :delete, :remote => true, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>
-    </ul> 
-  </div>
-  <%= link_to 'Back to messages', '#inbox', :class => "bar border-all back-to-msgs" %>
-</div>
+<h2 class="regular"><%= t('users.show.content.private_messages.title') %>
+  <%= link_to '#inbox', :class => "border-all back-to-msgs" do %>
+    <span class="arrow"></span>
+    <span><%= t('users.show.content.private_messages.back_to_msgs') %></span>
+  <% end %>
+</h2>
 <div class="pm-details">
   <%= render :partial => 'reply', :object => message %>
 </div>
@@ -22,7 +19,7 @@
     <% end %>
   <% else %>
     <div>
-      <a href="#">New Response</a>
+      <a href="#"><%= t('users.show.content.private_messages.add_reply') %></a>
     </div>
   <% end %>
 </div>

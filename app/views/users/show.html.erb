@@ -11,7 +11,7 @@
         <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
         <section class='avatars-list'>
-          <ul class="avatars suggested">                                                                            
+          <ul class="avatars">                                                                            
             <li class="custom">
               <a href="#" class="custom-avatar border-all"><span><%= t('.content.avatars.custom_avatar') %></span></a>
             </li>
@@ -149,7 +149,7 @@
                   </div>
                 </li>
               </ul>                           
-              <br class="clear">              
+              <br class="clear">
           </section>
           <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
         <% end %>
@@ -164,5 +164,6 @@
         </div>
       </div>
     <% end %> 
-  </aside>  
+  </aside>
+  <br class="clear">  
 </div>

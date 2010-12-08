@@ -1,4 +1,4 @@
-<li>
+<li <%= "class='active'" if current_user.profile.avatar == avatar %>>
   <div class="thumb">
     <%= link_to(
       image_tag(avatar.url, :width => "56"),
