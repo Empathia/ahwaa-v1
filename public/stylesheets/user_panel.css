@@ -9,18 +9,6 @@ aside{overflow: hidden;}
 .user-details{width: 134px; float: right;}
 .user-sb .edit-profile{text-align: center; padding: 13px 0; font-weight: bold;}
 .white-area{display: none;}
-.points-wrapper{padding-bottom: 3px;}
-.points-wrapper > span{float: left; padding: 0 8px; height: 30px; border-bottom: 1px solid #e6e6e6;
-  background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')";
-}                
-
-.level{border-right: 1px solid #e6e6e6;}
-
-.points-wrapper > .points{font-size: 12px; line-height: 3; color: #707b8b; border-left: 1px solid #fbfbfb;}                
-.points-wrapper > .points > b{font-size: 14px;}
 
 .username{color: #4c5563; font-size: 18px; margin-bottom: 6px;}
 .usr-sec-title{overflow: hidden;  margin-bottom: 15px; position: relative; }

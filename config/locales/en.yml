@@ -69,8 +69,8 @@ en:
           error_login_empty: Sign Up
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
-          username: Username
-          email: Email          
+          username: Your Name or Nickname
+          email: Your Email          
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
           note_pt2: and
           terms_of_use: Terms of Use
@@ -81,7 +81,7 @@ en:
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
-          login: Username or Email
+          login: Email
           password: Password
           forgot_password: Forgot Password
           sign_in: Sign In
@@ -93,7 +93,7 @@ en:
           not_found: Username or Email not found
           legend: "Enter your email address and we'll send you a link to reset your password."
           sent: "We've sent you the instructions to your email."
-          login: Username or Email
+          login: Email
           send: Send my Password
           cancel: Cancel
           empty: Username or Email is empty

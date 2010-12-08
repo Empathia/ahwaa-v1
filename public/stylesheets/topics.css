@@ -41,14 +41,14 @@ aside section.show-hide a.hide{
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
-aside section.filter{padding:5px 0 17px;overflow:hidden;border-bottom:1px solid #f3f3f3;}
+aside section.filter{padding:5px 0 14px;overflow:hidden;border-bottom:1px solid #f3f3f3;}
 aside section.filter ul,aside section.experts ul{margin-top:10px}
 aside section.filter h2, aside section.experts h2{border-top:1px solid #ddd;}
 aside section.filter h2 span, aside section.experts h2 span{padding:0 4px;background:white;margin:-7px 0 0 6px;display:block;float:left;color:#38414e}
 aside section.helpful{padding:13px 0}
 aside section.helpful label{margin-left:4px}
 aside section.experts{padding:32px 0 25px;border-bottom:1px solid #f3f3f3}
-aside section.need-help{padding:10px 0;text-align:center}
+aside section.need-help{padding:13px 0;text-align:center}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
@@ -200,7 +200,7 @@ p:hover .icn{display: inline;}
 .story,.experience{background-position: 0 -28px;}*/
 
 .topic-avatars{}
-.topic-avatars > li{margin-bottom:14px;float:left;width:64px;text-align:center;font-size:12px;position:relative;padding:0 18px;}
+.topic-avatars > li{float:left;width:64px;text-align:center;font-size:12px;position:relative;margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px; overflow: hidden;}
 .topic-avatars em{color:#468AC4}
 /*.topic-avatars > li:nth-child(2n+1){margin-right:20px;}*/

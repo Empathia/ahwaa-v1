@@ -18,7 +18,7 @@ em{font-style:normal}
 input[type=text],
 input[type=password],
 input[type=email],
-textarea{border: 1px solid #ccc;cursor:text;}
+textarea{border:1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color:#e1eaee;cursor:text;font-size:13px;}
 input.error[type=text],
 input.error[type=password],
 input.error[type=email],
@@ -98,7 +98,7 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .logged_opts > li{float: left; margin-right: 23px;}
 .logged_opts > li > a{color: #9b9b9b}
 .search{float: right;}
-.search > p{border:1px solid #d9e2e6; border-top:1px solid #a7adb0; border-bottom:1px solid #e1eaee; width: 280px; height: 29px; padding: 0 10px; margin: 3px 0 5px;}
+.search > p{border:1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color:#e1eaee; width: 280px; height: 29px; padding: 0 10px; margin: 3px 0 5px;}
 .search > p > input{width:258px;height:27px;border:none;float: left;font-size:13px}
 .search > p > span{background:url('../images/icn-search.png') no-repeat 0 0 transparent; float: right; width: 17px; height: 17px; margin-top:6px;clear:none}
 .search > ul{background-color:#eff1f2; border: 1px solid white;display:none; width: 288px; padding:3px; margin: 0px; position: absolute;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);z-index:2;}
@@ -305,7 +305,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .avatar.silver-heart > span{background-position:0 -42px}
 .avatar.gold-heart > span{background-position:0 -63px}
 
-.private-msg{position: absolute; width: 270px; padding: 16px; background-color: #f7f7f7; border: 1px solid #dfe1e2; right: -17px; top: -17px; display: none; text-align: left; z-index: 999; font-size: 12px;}
+.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;/*display:none;*/text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
 .private-msg-btns{float: right;}
@@ -317,14 +317,25 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .inside .user-info{float:right}
 .inside .user-wrapper > .avatar{float:left}          
 
-.user-wrapper{overflow: hidden; margin-bottom: 15px;}
+.user-wrapper{padding:15px 16px;overflow:hidden;background:white;border-top-right-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;border-top-left-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
 .user-wrapper > .avatar{float: right;}
 .user-info{float: left; text-align: left;}
 .user-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
-.user-info > p{line-height:14px!important;margin-top:0px !important;padding-bottom:5px}
+.user-info > p{margin-top:0px !important;padding-bottom:5px;color:#4c5563;font:bold 18px/1em Arial,sans-serif}
 
 .recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
 .recently-topics > p{line-height:14px!important;margin-top:0px !important;padding-bottom: 15px;}
 .recently-topics > ul{list-style:disc inside}
 .recently-topics > ul > li{padding-bottom: 9px;}
 .recently-topics > ul > li > a{color: #61656a;}
+
+.points-wrapper{padding-bottom: 3px;}
+.points-wrapper > span{float: left; padding: 0 8px; height: 30px; border-bottom: 1px solid #e6e6e6;
+  background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
+            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')";
+}                
+.level{border-right: 1px solid #e6e6e6;}
+.points-wrapper > .points{font-size: 12px; line-height: 3; color: #707b8b; border-left: 1px solid #fbfbfb;}                
+.points-wrapper > .points > b{font-size: 14px;}
