@@ -312,7 +312,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .avatar.silver-heart > span{background-position:0 -42px}
 .avatar.gold-heart > span{background-position:0 -63px}
 
-.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;/*display:none;*/text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
+.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;display:none;text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
 .private-msg-btns{float: right;}
