@@ -10,8 +10,8 @@ found in the config/initializers/tanker.rb.
 
 Notice the callbacks in the Topic model.
 
-  after_save :update_tank_indexes, :if => 'Rails.env.production?'
-  after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
+    after_save :update_tank_indexes, :if => 'Rails.env.production?'
+    after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
 
 These callbacks feed the index while the application is running.
 
@@ -19,7 +19,7 @@ When a topic instance gets saved the index tank index gets posted the
 information for the Topic's title, content and tag list. When the index
 is searched:
 
-  Topic.search_tank(params[:query])
+    Topic.search_tank(params[:query])
 
 The tanker gem posts the search query to the index tank api and gets
 back an array of ids that correspond to those results. Then the gem
@@ -28,8 +28,8 @@ tries to find the ids in the local database to instance the results.
 There are a couple of rake tasks that can aid in the management of the
 search index that are added by the tanker gem.
 
-  rake tanker:clear_indexes          # Clear all Index Tank indexes
-  rake tanker:reindex                # Reindex all models
+    rake tanker:clear_indexes          # Clear all Index Tank indexes
+    rake tanker:reindex                # Reindex all models
 
 This two tasks are the only you need to run if you get into problems
 with the index results yielding ids that are not in the database.
@@ -37,9 +37,9 @@ with the index results yielding ids that are not in the database.
 The app currently uses a demo index account. To login to the index tank
 dashboard.
 
-  https://indextank.com/dashboard
-  paco@freshout.us
-  redbullkills2
+    https://indextank.com/dashboard
+    paco@freshout.us
+    redbullkills2
 
 There you can manually configure the index though there is really
 nothing much to do there.
