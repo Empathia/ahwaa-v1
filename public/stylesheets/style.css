@@ -189,6 +189,8 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .login-form > .legend{margin-top: 10px;}
 
 .border-all,
+.avatar,
+.avatar > img,
 .comm-wrap,
 .btn-gradient,
 .new-response,
@@ -303,8 +305,19 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
  #pageslide-slide-wrap > div form input[type="submit"]{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;padding:8px 19px;line-height:1em;float:right;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:12px;background-color:white}
 
 .avatar-wrapper{float:left;position:relative}
-.avatar{width:56px;height:56px;padding:4px;float:left;position:relative;background:url("../images/avatar-graybg-border.png") no-repeat 0 0 transparent}
-.avatar.expert{background-image:url("../images/avatar-greenbg-border.png")}
+.avatar{width:56px;height:56px;padding:4px;float:left;position:relative;border:1px solid rgba(59, 64, 67, .25);background:white}
+.avatar > img{
+    background-image: -moz-linear-gradient(top, #dcdfe1, #edeeef);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #dcdfe1),color-stop(1, #edeeef));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#dcdfe1', EndColorStr='#edeeef');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#dcdfe1', EndColorStr='#edeeef')";
+    }
+.avatar.expert > img{
+    background-image: -moz-linear-gradient(top, #c3cfbe, #dee5da);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c3cfbe),color-stop(1, #dee5da));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da')";
+}
 .avatar > span{width:30px;height:21px;display:block;position:absolute;left:17px;top:49px;background:url("../images/hearts.png") no-repeat transparent}
 .avatar.no-level > span{background:none;}
 .avatar.green-heart > span{background-position:0 0}
@@ -312,7 +325,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .avatar.silver-heart > span{background-position:0 -42px}
 .avatar.gold-heart > span{background-position:0 -63px}
 
-.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;display:none;text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
+.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;/*display:none;*/text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
 .private-msg > form{display: block; overflow: hidden; display: none;}
 .private-msg > form > textarea{width: 269px; height: 126px;}
 .private-msg-btns{float: right;}
