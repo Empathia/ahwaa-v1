@@ -1,19 +1,15 @@
 <h2 class="regular"><%= t('users.show.content.private_messages.title') %></h2>
 <% unless inbox.empty? %>
-  <ul class="bar opts border-all">
-    <li><%= link_to 'Delete', '#', :class => "pm-delete" %></li>
-  </ul>      
   <ul class="messages">
     <% inbox.each do |pm| %>
       <li class="<%= 'new' if pm.conversation.unread_by?(current_user) %>">
-        <input type="checkbox">
         <div class="avatar-wrapper">
           <span class="avatar">
           <%= image_tag pm.conversation_replies.last.sender.profile.avatar.url, :width => 50 %>
           </span>
           <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
         </div>
-        <ul class="msg-opts">
+        <ul class="msg-opts border-bottom">
           <li><%= link_to t('users.show.content.private_messages.delete'), private_message_path(pm), :class => "opt-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>          
           <li><%= link_to t('users.show.content.private_messages.reply'), user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %></li>
         </ul>

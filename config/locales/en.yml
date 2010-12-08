@@ -222,7 +222,8 @@ en:
           by: by %{sender}
           at_date: in %{date}
           reply: Reply
-          block: Block
+          back_to_msgs: Back to messages
+          add_reply: Click here to add a reply.
     inbox:
       no_messages: There are no private messages
   private_messages:
