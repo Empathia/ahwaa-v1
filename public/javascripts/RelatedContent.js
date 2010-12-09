@@ -15,7 +15,8 @@ Class('RelatedContent')({
     } else if(this.isImage(url)) {
       contentType = 'image';
     }
-      return contentType;
+    
+    return contentType;
   },
 
   isImage: function(url) {
