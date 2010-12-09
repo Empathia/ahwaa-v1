@@ -25,7 +25,11 @@
   </p>
   <p>
     <%= f.label :content %>
-    <%= f.text_area :content, :required => "true" %>
+    <% if @topic.new_record? %>
+      <%= f.text_area :content, :required => "true" %>
+    <% else %>
+      <%= @topic.content %>
+    <% end %>
   </p>
   <p>
     <%= f.label :user_id %>
