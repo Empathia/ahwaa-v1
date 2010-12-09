@@ -130,12 +130,25 @@ $(function(){
     $('.send-private-msg').click(function(){
         if(!$(this).hasClass('disabled')) {
             $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
-        }
+            var textarea = $(this).closest('.private-msg').find('textarea');
+            textarea.attr('value', textarea.attr('placeholder'));
+            textarea.focus(function(){
+                if(textarea.val() == textarea.attr('placeholder')){
+                    textarea.val('');
+                }
+                textarea.blur(function(){
+                        if(textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')){
+                            textarea.attr('value', textarea.attr('placeholder'));
+                        }
+                    });
+                });
+            }
        return false;
-    });
+    })
 
     $('.private-msg').find('.cancel').click(function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
+       return false;
     });
 
     $('.avatar, .avatar + em').live('mouseover',function(){

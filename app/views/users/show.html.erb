@@ -12,9 +12,9 @@
         <p class="loading"><%= image_tag 'loader.gif' %><br/><%= t('.content.avatars.loading') %></p>
         <section class='avatars-list'>
           <ul class="avatars">                                                                            
-            <li class="custom">
+            <!--li class="custom">
               <a href="#" class="custom-avatar border-all"><span><%= t('.content.avatars.custom_avatar') %></span></a>
-            </li>
+            </li-->
           </ul>
         </section>
       </section>
@@ -25,7 +25,7 @@
   <aside class="user-sb">
     <div class="user-sb-white border-left">
       <div class="user-profile">
-        <%= avatar_span(current_user, false, false) %>
+        <%= avatar_span(current_user, current_user.is_expert?, false) %>
         <div class="user-details">
           <div class="username"><%= current_user.username %></div>
           <div class="points-wrapper">
