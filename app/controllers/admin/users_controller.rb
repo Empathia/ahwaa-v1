@@ -14,4 +14,12 @@ class Admin::UsersController < ApplicationController
     end
     redirect_to :action => "index"
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_with(@user, :location => [:admin, :users])
+  end
+
+
 end

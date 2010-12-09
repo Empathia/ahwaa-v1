@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   has_many :replies, :dependent => :destroy
   has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
   has_many :rated_replies, :through => :ratings, :source => :reply
-  has_many :sent_messages, :foreign_key => :sender_id, :dependent => :destroy
   has_many :received_messages, :foreign_key => :recipient_id,
     :dependent => :destroy, :group => :conversation_id
   has_many :topic_requests
