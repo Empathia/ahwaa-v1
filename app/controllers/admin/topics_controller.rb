@@ -8,6 +8,7 @@ class Admin::TopicsController < ApplicationController
 
   def new
     @topic = Topic.new(params[:topic])
+    @topic_tags = []
   end
 
   def create
