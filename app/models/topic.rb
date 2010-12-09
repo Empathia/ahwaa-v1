@@ -47,7 +47,7 @@ class Topic < ActiveRecord::Base
 
   # Get topic users leaderboard
   def leaderboard
-    experts + most_active_users
+    (experts + most_active_users).uniq
   end
 
 end
