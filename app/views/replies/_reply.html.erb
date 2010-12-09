@@ -20,7 +20,7 @@
         <!--div-->
           <div class="res-username">
             <% unless reply.anonymous? %>
-              <%= link_to reply.user.username %>
+              <p><%= reply.user.username %></p>
             <% else %>
               <%= t(".anonymous") %>
             <% end %>
