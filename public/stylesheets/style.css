@@ -305,7 +305,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
  #pageslide-slide-wrap > div form input[type="submit"]{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;padding:8px 19px;line-height:1em;float:right;font-family:Arial, Helvetica, sans-serif;font-weight:bold;font-size:12px;background-color:white}
 
 .avatar-wrapper{float:left;position:relative}
-.avatar{width:56px;height:56px;padding:4px;float:left;position:relative;border:1px solid rgba(59, 64, 67, .25);background:white}
+.avatar{width:56px;height:56px;padding:3px;float:left;position:relative;border:1px solid rgba(59, 64, 67, .25);background:white}
 .avatar > img{
     background-image: -moz-linear-gradient(top, #dcdfe1, #edeeef);
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #dcdfe1),color-stop(1, #edeeef));
@@ -318,46 +318,63 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da')";
 }
-.avatar > span{width:30px;height:21px;display:block;position:absolute;left:17px;top:49px;background:url("../images/hearts.png") no-repeat transparent}
+.avatar > span{width:30px;height:30px;display:block;position:absolute;left:17px;top:44px;background:url("../images/hearts.png") no-repeat transparent}
 .avatar.no-level > span{background:none;}
-.avatar.green-heart > span{background-position:0 0}
-.avatar.bronze-heart > span{background-position:0 -21px}
-.avatar.silver-heart > span{background-position:0 -42px}
-.avatar.gold-heart > span{background-position:0 -63px}
+.avatar.green-heart > span,
+.points-wrapper > span.green-heart{background-position:0 0}
+.avatar.bronze-heart > span,
+.points-wrapper > span.bronze-heart{background-position:0 -30px}
+.avatar.silver-heart > span,
+.points-wrapper > span.silver-heart{background-position:0 -60px}
+.avatar.gold-heart > span,
+.points-wrapper > span.gold-heart{background-position:0 -90px}
 
-.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-17px;top:-17px;display:none;text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
-.private-msg > form{display: block; overflow: hidden; display: none;}
-.private-msg > form > textarea{width: 269px; height: 126px;}
-.private-msg-btns{float: right;}
-.private-msg-btns > input{height: 24px;}
-.private-msg .cancel{margin-right: 10px; color: #61656a;}
+.private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-20px;top:-19px;display:none;text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
+.private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;}
+.private-msg > form > textarea{width:254px; height: 126px;margin-top:0;margin-bottom:8px;}
+.private-msg-btns{text-align:right}
+.private-msg-btns > input{height: 24px;float:none!important;}
+.private-msg-btns > a{margin-right:8px; color: #404750; font-size:12px;}
 .private-msg > .avatar{float: right;}
 
-.inside{left:-17px}
+.inside{left:-20px}
 .inside .user-info{float:right}
 .inside .user-wrapper > .avatar{float:left}          
 
-.user-wrapper{padding:15px 16px;overflow:hidden;background:white;border-top-right-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;border-top-left-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
+.user-wrapper{padding:15px 16px 0;overflow:hidden;background:white;border-top-right-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;border-top-left-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
 .user-wrapper > .avatar{float: right;}
-.user-info{float: left; text-align: left;}
-.user-info > .btn-gradient{height: 24px; width: 156px; line-height: 2;}
-.user-info > p{margin-top:0px !important;padding-bottom:5px;color:#4c5563;font:bold 18px/1em Arial,sans-serif}
+.user-info{float: left; text-align: left; width:182px;}
+.user-info > .btn-gradient{height:29px;width:31px;
+    background:url('../images/btn-private-msg.png') no-repeat 7px 5px, -moz-linear-gradient(top, #fff, #eaf7fd);
+    background:url('../images/btn-private-msg.png'), -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd')";
+            }
+.user-info > p{margin-top:0px !important;padding-bottom:7px;color:#4c5563;font:bold 18px/1em Arial,sans-serif;float:left;}
 
-.recently-topics{margin-top: 15px; border-top: 1px solid #ecf2f5; padding-top: 15px;}
-.recently-topics > p{line-height:14px!important;margin-top:0px !important;padding-bottom: 15px;}
-.recently-topics > ul{list-style:disc inside}
-.recently-topics > ul > li{padding-bottom: 9px;}
-.recently-topics > ul > li > a{color: #61656a;}
+.recently-topics{padding-top:28px;background:white}
+form + .recently-topics{padding-top:18px;}
+.recently-topics > p{line-height:1em!important;margin-top:0px !important;padding:0 0 10px 15px;font-weight:bold}
+.recently-topics > ul{background:#fbfbfb;border-bottom-right-radius:3px;-moz-border-radius-bottomright:3px;-webkit-border-bottom-right-radius:3px;border-bottom-left-radius:3px;-moz-border-radius-bottomleft:3px;-webkit-border-bottom-left-radius:3px;}
+.recently-topics > ul > li{padding:9px 16px 7px;border-top:1px solid #d8dce0;font-size:13px;}
+.recently-topics > ul > li > a{}
 
-.points-wrapper{padding-bottom: 3px;}
-.points-wrapper > span{float: left; padding: 0 8px; height: 30px; border-bottom: 1px solid #e6e6e6;
-  background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')";
-}                
-.level{border-right: 1px solid #e6e6e6;}
-.points-wrapper > .points{font-size: 12px; line-height: 3; color: #707b8b; border-left: 1px solid #fbfbfb;}                
+.points-wrapper{padding:0 10px 0 0;overflow:hidden;clear:left}
+.points-wrapper > span{float:left;height:30px;border-bottom:1px solid #e6e6e6;width:30px}
+/*.points-wrapper > span.no-level{display:none;}
+.points-wrapper > span.no-level + span{border-left:none;-moz-border-radius:3px;-webkit-border-radius: 3px;border-radius: 3px}*/                
+.points-wrapper > .level{border-right: 1px solid #e6e6e6;
+    background:url("../images/hearts.png") no-repeat 0 0, -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
+    background:url("../images/hearts.png") no-repeat 0 0, -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')"; 
+    }
+.points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-left:1px solid #fbfbfb;width:auto;padding:0 8px;
+    background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')";
+    }                
 .points-wrapper > .points > b{font-size: 14px;}
 
 .custom > a{text-decoration: none;}
