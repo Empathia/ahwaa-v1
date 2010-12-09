@@ -40,7 +40,6 @@ $(document).ready(function() {
     //[Admin] checks related content url to handle special cases
     $('#related_content_form').submit(function(){
         var urlType = RelatedContent.detectType($('#related_content_source_url').val());
-
         if (urlType == "link" && $(".possible-thumbnails").length == 0 ) {
 
             $.ajax({

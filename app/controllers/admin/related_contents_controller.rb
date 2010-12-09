@@ -14,8 +14,8 @@ class Admin::RelatedContentsController < ApplicationController
     url = params[:related_content].delete(:source_url)
     @related_content = RelatedContent.build_from_url(url, params[:related_content])
     if @related_content
-
       if @related_content.link? && @related_content.no_thumbnail_url?
+        @related_content.scrape_link
         @possible_thumbnails = Fetchers::Link.get_possible_thumbnails(url)
       else
         @related_content.topic = @topic

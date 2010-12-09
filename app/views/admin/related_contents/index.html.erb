@@ -1,13 +1,16 @@
 <div class="adm-title">
   <h1>Related Content for <%= @topic.title %></h1>
 </div>
-<% javascript :form_validator, :form_script, :RelatedContent %>
+<% javascript :form_validator, :form_script, :Neon, :RelatedContent %>
 <% head do %>
   <script type="text/javascript" >
     currentTopicId = <%= @topic.id %>;
   </script>
 <% end %>
 
+<h3>For image links from Flikr and TwitPic you might preffer to set the Title and Description manually.</h3>
+<h3>For links and videos Title and Description are scraped but you can set them to what you please also</h3>
+<br/>
 <%= form_for [:admin, @topic, @related_content], :html => { :id => 'related_content_form'} do |f| %>
   <div id='related_content_form_fields' >
     <p>
