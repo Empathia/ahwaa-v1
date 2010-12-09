@@ -36,10 +36,12 @@ table td{padding: 5px 10px;}
 input[type=text],
 input[type=password],
 input[type=email],
+input[type=url],
 textarea{border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef;}
 
 input[type=text],
 input[type=password],
+input[type=url],
 input[type=email]{height: 30px; width: 400px; padding: 0 5px;}
 
 textarea{height: 400px; width: 798px; padding: 5px;}
