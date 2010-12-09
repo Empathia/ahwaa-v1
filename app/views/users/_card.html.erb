@@ -13,10 +13,9 @@
     <%= avatar_span(user, user.is_expert?) %>
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
-    <%= f.text_area :content, :class => 'border-all' %>
+    <%= f.text_area :content, :class => 'border-all', :placeholder => 'Write your message' %>
     <div class="private-msg-btns">
-      <%= link_to t('private_message.cancel'), '#' %>
-      <!-- input type="button" class="cancel btn-gradient" value="<%= t('private_message.cancel') %>" -->
+      <%= link_to t('private_message.cancel'), '#', :class => 'cancel' %>
       <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
     </div>
   <% end %>

@@ -331,10 +331,10 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 
 .private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-20px;top:-19px;display:none;text-align:left;z-index:999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
 .private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;}
-.private-msg > form > textarea{width:254px; height: 126px;margin-top:0;margin-bottom:8px;}
+.private-msg > form > textarea{width:234px;height:112px;margin-top:0;margin-bottom:8px;padding:10px;font-family:Arial, Sans-serif;font-size:12px;color:#aeb4bd;}
 .private-msg-btns{text-align:right}
 .private-msg-btns > input{height: 24px;float:none!important;}
-.private-msg-btns > a{margin-right:8px; color: #404750; font-size:12px;}
+.private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:12px;}
 .private-msg > .avatar{float: right;}
 
 .inside{left:-20px}
@@ -344,9 +344,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .user-wrapper{padding:15px 16px 0;overflow:hidden;background:white;border-top-right-radius:3px;-moz-border-radius-topright:3px;-webkit-border-top-right-radius:3px;border-top-left-radius:3px;-moz-border-radius-topleft:3px;-webkit-border-top-left-radius:3px;}
 .user-wrapper > .avatar{float: right;}
 .user-info{float: left; text-align: left; width:182px;}
-.user-info > .btn-gradient{height:29px;width:31px;
+.user-info > .btn-gradient{height:29px;width:31px;outline:0 none;
     background:url('../images/btn-private-msg.png') no-repeat 7px 5px, -moz-linear-gradient(top, #fff, #eaf7fd);
-    background:url('../images/btn-private-msg.png'), -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
+    background:url('../images/btn-private-msg.png') no-repeat 7px 5px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd')";
             }
@@ -359,10 +359,10 @@ form + .recently-topics{padding-top:18px;}
 .recently-topics > ul > li{padding:9px 16px 7px;border-top:1px solid #d8dce0;font-size:13px;}
 .recently-topics > ul > li > a{}
 
-.points-wrapper{padding:0 10px 0 0;overflow:hidden;clear:left}
+.points-wrapper{padding:0 10px 0 0;clear:left}
 .points-wrapper > span{float:left;height:30px;border-bottom:1px solid #e6e6e6;width:30px}
-/*.points-wrapper > span.no-level{display:none;}
-.points-wrapper > span.no-level + span{border-left:none;-moz-border-radius:3px;-webkit-border-radius: 3px;border-radius: 3px}*/                
+.points-wrapper > span.no-level{display:none;}
+.points-wrapper > span.no-level + span{border-left:none;-moz-border-radius:3px;-webkit-border-radius: 3px;border-radius: 3px}
 .points-wrapper > .level{border-right: 1px solid #e6e6e6;
     background:url("../images/hearts.png") no-repeat 0 0, -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
     background:url("../images/hearts.png") no-repeat 0 0, -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
