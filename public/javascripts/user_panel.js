@@ -89,7 +89,7 @@ $(function(){
        editForm.find('.error').removeClass('error').filter('p').text('');
        editForm.parent().slideUp(function(){
            $('.edit-profile').slideDown();
-       }) && avatars.toggle();
+       }) && avatars.hide();
     });
     
     $('#reply-form textarea').live('focus',function(){
@@ -113,7 +113,7 @@ $(function(){
     });
     
     $('.edit-profile').find('a').click(function(){
-        avatars.toggle(); 
+        avatars.show(); 
         $('.new-user-msg-wrapper').slideUp();
         $(this).parent().slideUp(function(){
             $('.white-area').slideDown(function(){

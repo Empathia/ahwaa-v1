@@ -14,7 +14,7 @@ var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javas
 <% end %>
 */
 setTimeout(function(){
-    avatars.toggle();
+    avatars.hide();
     $('.white-area').slideUp(function(){
         successMsg.remove();
         $('.edit-profile').slideDown();        
