@@ -13,7 +13,7 @@
       <td><%= user.email %></td>
       <td><%= user.is_expert %></td>
       <td>
-        <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user), :method => :put %>
+        <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user.id), :method => :put %>
       </td>
       <td><%= link_to 'Delete' %></td>      
     </tr>
