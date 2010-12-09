@@ -4,6 +4,7 @@ aside{overflow: hidden;}
 .user-sb{width: 240px; float: right;}
 .user-sb-white{background: #ffffff url('../images/inner-shadow-top.png') repeat-x; border-right: 1px solid #e5e9ed;}
 .user-sb-white > div{padding: 19px;}
+.user-sb-white .user-details{width:127px;}
 .user-profile{overflow: hidden; border-bottom: 1px solid #e5e9ed;}  
 .user-details{width: 134px; float: right;}
 .user-sb .edit-profile{text-align: center; padding: 13px 0; font-weight: bold;}
@@ -21,14 +22,14 @@ aside{overflow: hidden;}
 } 
 
 .usr-sec-title span > span{display: block; height: 100%; background: url('../images/icn-pencil.png') no-repeat 0px 4px;}
-.usr-sec-title > hr{border: 1px solid #dddddd; float: left; width: 121px; position: absolute; width: 100%; top: 5px;}                    
+.usr-sec-title > hr{border:none;border-top: 1px solid #dddddd; float: left; width: 121px; position: absolute; width: 100%; top: 5px;}                    
 .user-edit{overflow: hidden;}
 .user-edit > li{padding-bottom: 10px; width: 100%; float: left;}
 .label{color: #aeb4bd; float: left; width: 62px; text-align: right; height: 27px; margin-bottom: 5px;}
 .field{float: right; width: 128px;}
 .terminate{color: #d56262; text-decoration: underline;}
 .user-edit .btn-gradient{margin-right: 10px;}  
-.cancel{color: #61656a; background: none; border: none; font-size: 11px; padding: 4px 0 0 0; cursor: pointer; float: left; margin-top: 5px;}
+.cancel{color: #61656a; background: none; border: none; font-size: 11px; padding: 4px 0 0 0; cursor: pointer; margin-top: 5px;}
 .field > .auth-submit{float: left; margin-right: 10px;}
 .edit-form input[type=text],
 .edit-form input[type=password],
@@ -121,7 +122,7 @@ aside{overflow: hidden;}
 .new-user-msg > p{line-height: 1.5;}
 .new-user-msg > h3{font-size: 20px; padding-bottom: 10px; font-weight: normal;}
 .new-user-msg.dark > h3{color: #ffffff;}
-.new-user-msg.yellow > h3{color: #38414e;}
+.new-user-msg.yellow > h3{color: #38414e;font-weight:bold;}
 
 .custom-avatar{padding: 15px; width: 119px; height: 26px; border: 1px solid #becad7; color: #6d91a9; text-align: right; float: left; font-size: 12px; font-weight: bold; line-height: 2.2;
   background-image: -moz-linear-gradient(top, #f8fcfe, #ecf8fd);

@@ -4,9 +4,7 @@
     <% inbox.each do |pm| %>
       <li class="<%= 'new' if pm.conversation.unread_by?(current_user) %>">
         <div class="avatar-wrapper">
-          <span class="avatar">
-          <%= image_tag pm.conversation_replies.last.sender.profile.avatar.url, :width => 50 %>
-          </span>
+          <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
           <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
         </div>
         <ul class="msg-opts border-bottom">
