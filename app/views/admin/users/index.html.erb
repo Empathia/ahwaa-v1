@@ -15,7 +15,7 @@
       <td>
         <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user.id), :method => :put %>
       </td>
-      <td><%= link_to 'Delete' %></td>      
+      <td><%= link_to 'Delete', admin_user_path(user.id), :method => :delete %></td>
     </tr>
   <% end %>
 </table>

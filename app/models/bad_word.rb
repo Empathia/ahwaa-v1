@@ -12,9 +12,11 @@ class BadWord < ActiveRecord::Base
   end
 
   def self.set_bad_word_index(list)
-    list.split(',').each do |word|
-      find_or_create_by_word(word.strip)
+    word_list = list.split(',').map(&:strip)
+    word_list.each do |word|
+      find_or_create_by_word(word)
     end
+    self.destroy_all( ['word NOT IN (?)', word_list] )
   end
 
   def self.reload_bad_word_cache

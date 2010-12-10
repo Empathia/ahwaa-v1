@@ -154,7 +154,7 @@ $(function(){
     $('.avatar, .avatar + em').live('mouseover',function(){
         $(this).siblings('.private-msg').removeClass('inside');
         var classes = "active-avatar";
-        if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics')) {
+        if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics') || $("body").width() < 1298 && $(this).parent().parent().is('div.response-user') ) {
            classes += " inside";
         }
         $(this).siblings('.private-msg').fadeIn('fast').addClass(classes);

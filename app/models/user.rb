@@ -11,10 +11,10 @@ class User < ActiveRecord::Base
   has_many :replies, :dependent => :destroy
   has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
   has_many :rated_replies, :through => :ratings, :source => :reply
-  has_many :sent_messages, :foreign_key => :sender_id, :dependent => :destroy
   has_many :received_messages, :foreign_key => :recipient_id,
     :dependent => :destroy, :group => :conversation_id
   has_many :topic_requests
+  has_many :topics
 
   attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes
 
@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
   before_create :build_score_board
   before_validation :set_temp_password, :on => :create, :if => "password.blank?"
   before_save :set_encrypted_password, :if => :should_require_password?
+  before_destroy :change_topics_owner
 
   validates :username, :uniqueness => true, :presence => true,
     :format => { :with => /^[\w-]+$/ }
@@ -30,6 +31,14 @@ class User < ActiveRecord::Base
   validates :email, :uniqueness => true, :email => true
 
   accepts_nested_attributes_for :profile
+
+  # if a user is destroyed change the ownership of its topics to admin
+  def change_topics_owner
+    self.topics.each do |topic|
+      topic.user = User.where(:is_admin => true).first
+      topic.save!
+    end
+  end
 
   def to_param
     username
