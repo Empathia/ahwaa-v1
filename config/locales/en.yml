@@ -81,7 +81,7 @@ en:
           error_username_not: This username is not available
           error_password_empty: The password is empty          
         login_form:
-          login: Email
+          login: Email or Username
           password: Password
           forgot_password: Forgot Password
           sign_in: Sign In
