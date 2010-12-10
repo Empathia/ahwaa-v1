@@ -110,6 +110,7 @@
       </div>              
     </div>                
   <%= f.hidden_field :contextual_index, :class => 'contextual_index' %>    
+  <%= hidden_field_tag :reply_to, nil, :class => 'parent_id' %>    
   </div>  
 <% end %>
 <%= render :partial => 'comments', :object => @replies %>

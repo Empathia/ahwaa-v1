@@ -242,7 +242,14 @@ $.fn.comments = function(options){
         comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
         comments.find('.contextual_index').val(index);  
+        if(comments.parents('.comments').length) {
+            comments.find('.parent_id').val(/comments_(\d+)_clon/.exec(comments.parents('.comments').attr('id'))[1]);  
+        }
         comments.find('p').addMarkers();
+        $('.icn.level_2').each(function() {
+            var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
+            $(this).attr('id', 'add_' + id + '_' + $(this).index());
+        });
         return comments;
     }   
 
@@ -265,13 +272,14 @@ $.fn.comments = function(options){
             //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
             parag.html(paragHTML);
        });
-    }
+    };
      
     $(this).addMarkers();
     
     $('.icn.level_1').each(function(i){
        $(this).attr('id', 'add_' + i);
     });
+
 
     $('.new-response').live('click', function(e){
         var newResponse = $(this),

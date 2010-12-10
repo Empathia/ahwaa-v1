@@ -12,7 +12,7 @@ class BadWord < ActiveRecord::Base
   end
 
   def self.set_bad_word_index(list)
-    word_list = list.strip.map(&:strip)
+    word_list = list.split(',').map(&:strip)
     word_list.each do |word|
       find_or_create_by_word(word)
     end
