@@ -6,6 +6,7 @@ class RepliesController < ApplicationController
 
   def create
     @reply = @topic.replies.build(params[:reply])
+    @reply.parent = @topic.replies.find(params[:reply_to]) if params[:reply_to]
     @reply.user = current_user if logged_in?
     @reply.save
   end
