@@ -16,7 +16,7 @@
     <tr>
       <td><%= l topic.created_at, :format => :short %></td>
       <td><%= link_to topic.title, topic %></td>
-      <td><%= topic.user.username %></td>
+      <td><%= topic.user ? topic.user.username : '' %></td>
       <td><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
       <td><%= link_to 'Profile Matches', admin_topic_profile_matches_path(topic) %></td>
       <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
