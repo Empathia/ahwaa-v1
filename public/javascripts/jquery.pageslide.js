@@ -166,7 +166,7 @@
             $(this).unbind("click").bind("click", function () {
                 _openSlide(this);
                 $("#pageslide-slide-wrap").unbind('click').click(function (e) {
-                    if (e.target.tagName != "A") return false;
+                    //if (e.target.tagName != "A") return false;
                 });
                 if (settings.modal != true) {
                     $(document).unbind('click').click(function (e) {

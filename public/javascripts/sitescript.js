@@ -37,7 +37,7 @@ $(function(){
            $('.auth-form-active').removeClass('auth-form-active');
            var offset = _btn.offset();
            $('.request-error').addClass('auth-form-active');
-           e.preventDefault();
+           //e.preventDefault();
            return false;
        }
     });
