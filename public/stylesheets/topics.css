@@ -53,7 +53,6 @@ aside section.need-help{padding:13px 0;text-align:center}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-wrapper > div{padding: 10px;}
-.response > textarea{color:#c4c3c3;width:100%;padding:0;height:16px;border:none;margin-top:4px;resize:none;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:16px;}
 .add_comments_top{color:#468AC4;font-weight:bold}
 .cancel-comment{color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;overflow:hidden;display:none;}

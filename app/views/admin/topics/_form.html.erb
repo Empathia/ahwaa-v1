@@ -19,11 +19,12 @@
 
 
 <%= form_for [:admin, @topic] do |f| %>
-  <p>
+  <%= render "shared/error_messages", :target => @topic %>
+  <p class="field">
     <%= f.label :title %>
     <%= f.text_field :title, :required => "true" %>
   </p>
-  <p>
+  <p class="field">
     <%= f.label :content %>
     <% if @topic.new_record? %>
       <%= f.text_area :content, :required => "true" %>
@@ -31,11 +32,11 @@
       <%= @topic.content %>
     <% end %>
   </p>
-  <p>
+  <p class="field">
     <%= f.label :user_id %>
     <%= f.collection_select :user_id, User.all, :id, :username, :required => "true" %>
   </p>
-  <p>
+  <p class="field">
     <%= f.label :tag_list %>
     <%= select_tag 'topic[tag_list]', [], :multiple => true %>
     <span class="desc">Comma separated</span>
