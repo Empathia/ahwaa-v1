@@ -191,7 +191,7 @@ $(function(){
                 });
                 input.blur(function(){
                     var input = $(this)
-                    input.attr('value').length <= 1 && input.addClass('placeholder').attr('value', input.attr('placeholder'));
+                    input.attr('value').length == 0 && input.addClass('placeholder').attr('value', input.attr('placeholder'));
                 })
             }
         });     
