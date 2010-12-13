@@ -167,7 +167,7 @@ $(function(){
        });
     });
     
-    $('input:text').live('focus', function(){
+    $('input:text, textarea').live('focus', function(){
         $(this).hasClass('error') && $(this).removeClass('error') && $(this).siblings('p.error').remove();
     })
 
@@ -217,6 +217,7 @@ $(function(){
             if (event.keyCode == 27) $.fn.pageSlideClose();
         });
      }
+     
 });
 
 $(window).load(function () {

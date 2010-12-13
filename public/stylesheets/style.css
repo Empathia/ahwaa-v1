@@ -22,7 +22,7 @@ textarea{border:1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color
 input.error[type=text],
 input.error[type=password],
 input.error[type=email],
-textarea.error{border-color:#D93E3E;background:url('../images/cross-error.png') no-repeat right 0 white;cursor:pointer;}
+textarea.error{border-color:#D93E3E!important;background:url('../images/cross-error.png') no-repeat right 0 white;cursor:pointer;}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
@@ -295,10 +295,10 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
  #pageslide-slide-wrap > div a:active{outline:0;border:0;}
  /*#pageslide-slide-wrap > div a > span{background:url("../images/back-bg.png") no-repeat scroll right 0 transparent;float:left;height:100%;padding-right:3px;text-align:center}
  #pageslide-slide-wrap > div a > span > span{background:url("../images/back-bg.png") no-repeat scroll left -50px transparent;float:left;height:100%;line-height:2;padding-left:11px;width:54px}*/
- #pageslide-slide-wrap > div form{float:left;padding:21px 0 0 30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
+ #pageslide-slide-wrap > div form{float:left;padding-left:30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
  #pageslide-slide-wrap > div form > fieldset{border:none;margin:0;padding:0;}
- #pageslide-slide-wrap > div form label{font-size:13px;margin-bottom:6px;line-height:1em;display:block;} 
- #pageslide-slide-wrap > div form input[type="text"]{font-size:12px;height:11px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:29px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
+ #pageslide-slide-wrap > div form label{font-size:13px;margin:21px 0 6px;line-height:1em;display:block;} 
+ #pageslide-slide-wrap > div form input[type="text"]{font-size:12px;height:12px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:8px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
  #pageslide-slide-wrap > div form textarea{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:8px 10px;color:#888;margin-bottom:16px;font-family:Arial, Helvetica, sans-serif;font-size:12px;display:block;width:474px}
  #pageslide-slide-wrap > div form input[type="checkbox"]{float:left;margin:10px 5px 0 0}
  #pageslide-slide-wrap > div form label.anonym{float:left;margin-top:10px} 

@@ -4,7 +4,7 @@ $.fn.formValidator = function(options){
          var errors = _form.find('.error');
          errors.filter('p').remove();
          errors.removeClass('error');
-         _form.find('input').each(function(e){
+         _form.find('input, textarea').each(function(e){
              var _input = $(this),
                  value = _input.val(),
                  error = false,
