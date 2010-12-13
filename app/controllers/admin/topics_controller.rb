@@ -13,6 +13,7 @@ class Admin::TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(params[:topic])
+    @topic_tags = @topic.tags.map{|tag| {'title' => tag.name, 'value' => tag.name}}
     @topic.save
     respond_with(@topic, :location => [:admin, :topics])
   end

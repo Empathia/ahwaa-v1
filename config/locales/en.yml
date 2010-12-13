@@ -24,7 +24,7 @@ en:
       topic_request:
         title: Title
         content: Content
-        anonymous_post: Don't show any of my information when displaying this topic
+        anonymous_post: "Don't show any of my information when displaying this topic"
       reply:
         anonymous: Anonymous
         advice: Advice
@@ -43,6 +43,11 @@ en:
     messages:
       voted: You have already marked this as useful.
       flagged: You have already flagged this reply.
+    template:
+      header:
+        one: "1 error prohibited this record from being saved:"
+        other: "%{count} errors prohibited this record from being saved:"
+
 
   helpers:
     ago: %{time} ago
