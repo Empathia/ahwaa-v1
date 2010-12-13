@@ -270,7 +270,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border:2px solid #f0f5f8;font-size:11px;}
-.response-wrapper.new-response > div{border:1px solid #d6d6d6;padding:6px 7px;}
+.response-wrapper.new-response > div{border:1px solid #d6d6d6;padding:6px 7px;}                                                
+.response > textarea{color:#c4c3c3;width:100%;padding:0;height:16px;border:none;margin-top:4px;resize:none;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:16px;}
+
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
         
 .pm-flash{padding: 7px 12px; margin-bottom: 10px;}

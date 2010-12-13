@@ -208,6 +208,7 @@ en:
           language: 'Language'
           errors:
             invalid_email: "Email is invalid"
+            password_too_short: The new password its too short.
         terminate_account: Terminate account
         confirm_terminate: Are you sure you want to delete your account? This cannot be undo.
         saved: "Your profile has been updated!"
@@ -229,6 +230,7 @@ en:
           reply: Reply
           back_to_msgs: Back to messages
           add_reply: Click here to add a reply.
+          send_reply: Send Reply
     inbox:
       no_messages: There are no private messages
   private_messages:

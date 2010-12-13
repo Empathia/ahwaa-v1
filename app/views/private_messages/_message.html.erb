@@ -9,17 +9,15 @@
 </div>
 <div class="replies-wrapper <% 'pm-details' unless message.replies.blank? %>">
   <%= render :partial => 'reply', :collection => message.replies %>
-</div>
-<div class="new-response response-wrapper">
-  <% if defined?(replying) && replying %>
-    <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>
-      <%= hidden_field_tag :reply_to, message.id %>
-      <div class="border-all"><%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :value => 'Click here to add a reply' %></div>
-      <%= f.submit t('.reply'), :class => 'btn-gradient' %>
-    <% end %>
-  <% else %>
-    <div>
-      <a href="#"><%= t('users.show.content.private_messages.add_reply') %></a>
+</div>  
+<%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>
+  <div class="new-response response-wrapper reply-pm">
+    <div class="response border-all">
+      <%= hidden_field_tag :reply_to, message.id %>                                  
+      <%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :placeholder => t('users.show.content.private_messages.add_reply'), :value => t('users.show.content.private_messages.add_reply') %>
     </div>
-  <% end %>
-</div>
+  </div>
+  <%= f.submit t('users.show.content.private_messages.send_reply'), :class => 'btn-gradient' %>
+<% end %>
+      
+

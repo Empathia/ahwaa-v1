@@ -60,8 +60,8 @@ $(function(){
             }
         }
     }).change(function () {
-        var that = $(this);
-        var grep = $.grep(countries, function(a) { return a[1] == that.val(); });
+        var that = $(this),
+            grep = $.grep(countries, function(a) { return a[1] == that.val(); });
         if(grep.length > 0) {
             $('input:hidden.country_id').val(grep[0][0]);
         } else {
@@ -74,7 +74,7 @@ $(function(){
     editForm.find('input[type=submit]').formValidator({
         'errors': {  
             'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email'),
-            'password': 'The new password its too short.'
+            'password': I18n.t('users.show.sidebar.my_account.errors.password_too_short')
         }
     }).click(function(e){
         if($('#user_password').val() !== $('#user_password_confirmation').val()) {   
@@ -92,22 +92,25 @@ $(function(){
        }) && avatars.hide();
     });
     
-    $('#reply-form textarea').live('focus',function(){
-        var textarea = $(this);
-        if(textarea.val() == 'Click here to add a reply'){
-            textarea.val('').css('height','auto');
-            $('#private_message_submit').css('display','block');
-        }
-        textarea.blur(function(){
-                if(textarea.val().length <= 1 || textarea.val() ==  'Click here to add a reply'){
-                    textarea.val('Click here to add a reply').css('height','16px');
-                    $('#private_message_submit').css('display','none');
+    if (!$.browser.webkit) {    
+        $('#reply-form textarea').live('focus',function(){
+            var textarea = $(this);
+            if(textarea.val() == textarea.attr('placeholder')){
+                textarea.val('').css('height','auto');
+                $('.new_private_message > .btn-gradient').css('display','block');
+            }   
+            textarea.blur(function(){
+                if(textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')){
+                    textarea.val(textarea.attr('placeholder')).css('height','16px');
+                    $('.new_private_message > .btn-gradient').css('display','none');
                 }
             })
         });
+    }
         
     $('#reply-form').live('submit',function(){
-        $('textarea').val('Click here to add a reply').css('height','16px');
+        var textarea = $(this).find('textarea');
+        textarea.val(textarea.attr('placeholder')).css('height','16px');
         $('#private_message_submit').css('display','none');
         $(this).hide();
     });
