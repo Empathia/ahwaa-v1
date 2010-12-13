@@ -6,6 +6,9 @@
 <% head do %>
   <script type="text/javascript" >
     currentTopicId = <%= @topic.id %>;
+    $(document).ready(function() {
+      getProfileTopicMatches();
+    });
   </script>
 <% end %>
 <%= form_tag(list_matches_admin_topic_profile_matches_path(@topic, :format => 'js'), :id => 'profile_match_filters_form') do %>

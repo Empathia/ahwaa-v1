@@ -28,13 +28,7 @@ $(document).ready(function() {
 
     //[Admin] listen to the profile match fomr select tags to filter results dinamically
     $('#profile_match_filters_form').find('select').change(function(){
-      var form = $('#profile_match_filters_form');
-      $.ajax({
-        url: '/admin/topics/'+currentTopicId+'/profile_matches/list_matches.js',
-        data: form.serialize(),
-        dataType: 'script',
-        type: 'POST',
-      });
+      
     });
 
     //[Admin] checks related content url to handle special cases
@@ -111,4 +105,14 @@ function filterResponses() {
             }
         });
     }
+}
+
+function getProfileTopicMatches() {
+  var form = $('#profile_match_filters_form');
+  $.ajax({
+    url: '/admin/topics/'+currentTopicId+'/profile_matches/list_matches.js',
+    data: form.serialize(),
+    dataType: 'script',
+    type: 'POST',
+  });
 }
