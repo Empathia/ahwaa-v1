@@ -1,7 +1,7 @@
 html{height: 100%;}
 body{background-color: #e3ecf0; background-image: url('../images/bg-noise.png'); height: 100%;}
 .page-wrapper{min-height: 100%;}
-.page-wrapper > header{
+.page-wrapper > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 1000;
   -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
   -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
   box-shadow: 0px 0px 2px rgba(0,0, 0, .6);
@@ -18,16 +18,17 @@ em{font-style:normal}
 input[type=text],
 input[type=password],
 input[type=email],
-textarea{border:1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color:#e1eaee;cursor:text;font-size:13px;}
+textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor:text; font-size:13px;}
+
 input.error[type=text],
 input.error[type=password],
 input.error[type=email],
-textarea.error{border-color:#D93E3E;background:url('../images/cross-error.png') no-repeat right 0 white;cursor:pointer;}
+textarea.error{border-color:#D93E3E; background-color: #ffffff; background-image: url('../images/cross-error.png'); background-repeat: no-repeat; background-position: right 0; cursor:pointer;}
+textarea.error{background: none;}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
-.container > .aligned input.error{background: url('../images/error-mark.png') no-repeat 110px 8px;  }
-body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;}
+/*.container > .aligned input.error{background-image: url('../images/error-mark.png'); background-repeat: no-repeat; background-position: 110px 8px;  }*/
 .rainbow{background: url('../images/rainbow.jpg') repeat-x; height: 3px;}
 .gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
 .light{background-color: #e2ecf2;}
@@ -124,9 +125,9 @@ body header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 2;
 .more-tags > li:last-child{border-bottom: none;}
 .more:hover {background-color:#f9f9f9;border-right-color:#dfe1ed}
 .more:hover .more-tags{display: block;}
-.request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/request-bg.png') repeat-x 0 -25px;outline:0;}
-.request-topic > span{float: right; height: 100%; text-align:left; background: url('../images/request-bg.png') no-repeat; padding-left:31px;}
-.request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background: url('../images/request-bg.png') no-repeat right -50px}
+.request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/blue-btn-bg.png') repeat-x 0 -25px;outline:0;}
+.request-topic > span{float: right; height: 100%; text-align:left; background: url('../images/blue-btn-bg.png') no-repeat; padding-left:31px;}
+.request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background: url('../images/blue-btn-bg.png') no-repeat right -50px}
 
 .tags,
 .tags > li{display: inline;}
@@ -270,7 +271,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border:2px solid #f0f5f8;font-size:11px;}
-.response-wrapper.new-response > div{border:1px solid #d6d6d6;padding:6px 7px;}
+.response-wrapper.new-response > div{border:1px solid #d6d6d6;padding:6px 7px;}                                                
+.response > textarea{color:#c4c3c3;width:100%;padding:0;height:16px;border:none;margin-top:4px;resize:none;font-family:Arial, Helvetica, sans-serif;font-size:13px;line-height:16px;}
+
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
         
 .pm-flash{padding: 7px 12px; margin-bottom: 10px;}
@@ -295,10 +298,10 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
  #pageslide-slide-wrap > div a:active{outline:0;border:0;}
  /*#pageslide-slide-wrap > div a > span{background:url("../images/back-bg.png") no-repeat scroll right 0 transparent;float:left;height:100%;padding-right:3px;text-align:center}
  #pageslide-slide-wrap > div a > span > span{background:url("../images/back-bg.png") no-repeat scroll left -50px transparent;float:left;height:100%;line-height:2;padding-left:11px;width:54px}*/
- #pageslide-slide-wrap > div form{float:left;padding:21px 0 0 30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
+ #pageslide-slide-wrap > div form{float:left;padding-left:30px;font-size:12px;font-family:Arial, Helvetica, sans-serif;width:496px;}
  #pageslide-slide-wrap > div form > fieldset{border:none;margin:0;padding:0;}
- #pageslide-slide-wrap > div form label{font-size:13px;margin-bottom:6px;line-height:1em;display:block;} 
- #pageslide-slide-wrap > div form input[type="text"]{font-size:12px;height:11px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:29px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
+ #pageslide-slide-wrap > div form label{font-size:13px;margin:21px 0 6px;line-height:1em;display:block;} 
+ #pageslide-slide-wrap > div form input[type="text"]{font-size:12px;height:12px;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:10px;line-height:1em;color:#888;margin-bottom:8px;display:block;width:474px;font-family:Arial, Helvetica, sans-serif}
  #pageslide-slide-wrap > div form textarea{border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px;border:1px solid #D9E2E6;border-top-color:#929898;border-bottom-color:#e1eaee;padding:8px 10px;color:#888;margin-bottom:16px;font-family:Arial, Helvetica, sans-serif;font-size:12px;display:block;width:474px}
  #pageslide-slide-wrap > div form input[type="checkbox"]{float:left;margin:10px 5px 0 0}
  #pageslide-slide-wrap > div form label.anonym{float:left;margin-top:10px} 

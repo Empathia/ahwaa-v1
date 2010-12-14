@@ -126,6 +126,14 @@
                                 _closeSlide(elm);
                                 $(this).find('pageslide-close').unbind('click');
                             });
+                            $('.new_topic_request').find('input[type=submit]').formValidator(
+                                {
+                                    'errors': {
+                                        'text': I18n.t('layouts.application.header.request_topic.title'),
+                                        'textarea': I18n.t('layouts.application.header.request_topic.topic_details')
+                                    }
+                                }
+                            );
                         });
                     }
                 });

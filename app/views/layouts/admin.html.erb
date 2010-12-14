@@ -11,35 +11,35 @@
   <![endif]-->
 </head>
 <body>
-  <div>
-        <header>
-          <div class="rainbow"></div>
-          <div class="gray dark"></div>
-          <div class="aligned">
-            <div class="header-top topic">
-              <div class="links">
-                <div><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
-                <div><%= link_to 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ', { :locale => 'ar' }, :class => 'lan' %></div>
-              </div>
-              <ul class="logged_opts">
-                <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
-                <li><%= link_to t('.header.logged_in.sign_out'), logout_path %></li>
-              </ul>
-            </div>
+  <div class="page-wrapper">
+    <header>
+      <div class="rainbow"></div>
+      <div class="gray dark"></div>
+      <div class="aligned">
+        <div class="header-top topic">
+          <div class="links">
+            <div><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
+            <div><%= link_to 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ', { :locale => 'ar' }, :class => 'lan' %></div>
           </div>
-          <div class="header-wrapper">
-            <div class="header-tags aligned">
-              <ul>
-                <li><%= link_to 'Topics', admin_topics_path %></li>
-                <li><%= link_to 'Topics Requests', admin_topic_requests_path %></li>
-                <li><%= link_to 'Users', admin_users_path %></li>
-                <li><%= link_to 'Bad Words', admin_bad_words_path %></li>
-                <li><%= link_to 'Flagged Replies', admin_flagged_replies_path %></li>
-                <li><%= link_to 'Tags', admin_tags_path %></li>
-              </ul>
-            </div>
-          </div>
-        </header>
+          <ul class="logged_opts">
+            <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
+            <li><%= link_to t('.header.logged_in.sign_out'), logout_path %></li>
+          </ul>
+        </div>
+      </div>
+      <div class="header-wrapper">
+        <div class="header-tags aligned">
+          <ul>
+            <li><%= link_to 'Topics', admin_topics_path %></li>
+            <li><%= link_to 'Topics Requests', admin_topic_requests_path %></li>
+            <li><%= link_to 'Users', admin_users_path %></li>
+            <li><%= link_to 'Bad Words', admin_bad_words_path %></li>
+            <li><%= link_to 'Flagged Replies', admin_flagged_replies_path %></li>
+            <li><%= link_to 'Tags', admin_tags_path %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
     <div class="container">
       <div class="aligned">
         <div class="admin border-all">

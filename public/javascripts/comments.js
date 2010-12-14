@@ -278,8 +278,7 @@ $.fn.comments = function(options){
     
     $('.icn.level_1').each(function(i){
        $(this).attr('id', 'add_' + i);
-    });
-
+    });  
 
     $('.new-response').live('click', function(e){
         var newResponse = $(this),

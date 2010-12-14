@@ -25,7 +25,7 @@ describe Admin::BadWordsController do
     it "should update the bad word list" do
       lambda do
         put :update, :bad_word_list => 'fool, dumbass, dumb'
-      end.should change(BadWord, :count).by(2)
+      end.should change(BadWord, :count).by(1)
       response.should be_redirect
     end
 
