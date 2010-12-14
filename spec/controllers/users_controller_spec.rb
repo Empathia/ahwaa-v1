@@ -58,9 +58,9 @@ describe UsersController do
       response.should render_template(:create)
     end
 
-    it "should be logged in" do
+    it "should not be logged in" do
       do_request
-      assigns(:user).id.should == session[:current_user]
+      session[:current_user].should be_nil
     end
 
     it "should deliver sign up confirmation" do
