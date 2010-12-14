@@ -52,7 +52,7 @@
                         </li>
                       </ul>
                       <div class="errors"></div>
-                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path, :target => "_blank" %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path, :target => "_blank" %> <%=t('.header.sign_up_form.note_pt3')%></p>
+                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
                       <%= f.submit nil, :class => "auth-submit border-all" %>
                     <% end %>
                   </div>
@@ -129,8 +129,8 @@
       <div class="aligned">
         <span><%= t('.footer.all_rights', {:year => '2010'}) %></span>
         <ul>
-          <li><%= link_to t('.footer.about'), about_path %> - </li>
-          <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+          <li><%= link_to t('.footer.about') %> - </li>
+          <li><%= link_to t('.footer.privacy_policy') %></li>
         </ul>
       </div>
     </footer>

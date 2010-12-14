@@ -1,5 +1,5 @@
-if($('#private_message_<%= @conversation.id %>').length === 0) {
+if($('#received_message_<%= @conversation.id %>').length === 0) {
   location.href = '/profile#inbox';
 } else {
-  $('#private_message_<%= @conversation.id %>').fadeOut();
+  $('#received_message_<%= @conversation.id %>').fadeOut();
 }
