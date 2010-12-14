@@ -13,31 +13,31 @@
 <% end %>
 <%= form_tag(list_matches_admin_topic_profile_matches_path(@topic, :format => 'js'), :id => 'profile_match_filters_form') do %>
   <ul class="profile-match-filters">
-    <li>
+    <li class="field">
       <div><%= UserProfile.human_attribute_name(:religion_id) %></div>
       <div>
         <%= select_tag 'filters[religion_id]', options_from_collection_for_select(Religion.all, :id, :name) %>
       </div>
     </li>
-    <li>
+    <li class="field">
       <div><%= UserProfile.human_attribute_name(:gender_id) %></div>
       <div>
         <%= select_tag 'filters[gender_id]', options_from_collection_for_select(Gender.all, :id, :name) %>
       </div> 
     </li>
-    <li>
+    <li class="field">
       <div><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>
       <div>
         <%= select_tag 'filters[sexual_orientation_id]', options_from_collection_for_select(SexualOrientation.all, :id, :name) %>
       </div>
     </li>
-    <li>
+    <li class="field">
       <div><%= UserProfile.human_attribute_name(:age_id) %></div>
       <div>
         <%= select_tag 'filters[age_id]', options_from_collection_for_select(Age.all, :id, :range) %>
       </div>
     </li>
-    <li>
+    <li class="field">
       <div><%= UserProfile.human_attribute_name(:political_view) %></div>
       <div>
         <%= select_tag 'filters[political_view_id]', options_from_collection_for_select(PoliticalView.all, :id, :name) %>

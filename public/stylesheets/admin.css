@@ -5,27 +5,36 @@ table th,
 table td{padding: 5px 10px;}
 .border-left{border-left: 1px solid #e9f0f3;}
 .border-right{border-right: 1px solid #e9f0f3;}
-.created_at{width: 80px;}
+.created_at{width: 80px; text-align: center;}
 .updated_at{width: 80px;}
-.edit{width: 40px;}
-.delete{width: 40px;}
+.edit{width: 40px; text-align: center;}
+.delete{width: 40px; text-align: center;} 
+.requests-title{width: 400px;}
+.requests-actions{width: 136px;}
+.requests-votes{width: 35px; text-align: center;}
+.related_content{width: 100px; text-align: center;}
+.profile_matches{width: 100px; text-align: center;}
+.flag_count{width: 70px; text-align: center;}
 .adm-title{overflow: hidden;}
 .adm-title > h1{float: left;}
 .adm-title > a{float: right;}
 
-/*Topics*/
-.title{}
-.user{}
 
 /*Related Content*/
 .related-content > li{margin-bottom: 10px; padding:5px; overflow:hidden; }
-.related-content > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;};
-.related-content-details > a{float:left; padding-right:10px;}
+.related-content > li > a{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;}
+.related-content-details > div{padding-bottom: 2px;}
+.related-content-details{float: left; margin-left: 10px; width: 802px;}
 
 /* Possible Thumbnails */
-.possible-thumbnails > li{ margin-bottom: 10px; padding:5px; overflow:hidden; }
-.possible-thumbnails > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;};
-.
+.possible-thumbnails {overflow: hidden; background-color: #FBFBFB; height: 400px;}
+.possible-thumbnails > .arrow{width: 20px; height: 100%;}
+.possible-thumbnails > .arrow.left{float: left;}
+.possible-thumbnails > .arrow.right{float: right;}
+.pt-wrapper{width: 840px; float: left; height: 100%;}
+.pt > li{ margin-bottom: 10px; padding:5px; overflow:hidden; }
+.pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;};
+
 
 /*Users*/
 .username{}
@@ -37,7 +46,12 @@ input[type=text],
 input[type=password],
 input[type=email],
 input[type=url],
-textarea{border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef;}
+textarea{border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background-color: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef;}
+
+input.error[type=text],
+input.error[type=password],
+input.error[type=email],
+textarea.error{background-color: #fbfbfb;}
 
 input[type=text],
 input[type=password],
@@ -48,7 +62,7 @@ textarea{height: 400px; width: 798px; padding: 5px;}
 
 select{width: 206px;}
 
-input:focus:invalid, textarea:focus:invalid{background-color:#fbe2e5;}
+/*input:focus:invalid, textarea:focus:invalid{background-color:#fbe2e5;}*/
 
 form > p > label{display: block;}
 form > #related_content_form_fields > p > label{display: block;}
@@ -63,9 +77,3 @@ h1{padding-bottom: 10px;}
 .flash.error > h2{font-size: 14px; font-weight: normal; margin-bottom: 10px;}
 .field{margin-bottom: 20px;}
 .field > label{margin-bottom: 3px;}
-
-.holder{
-  border: none;
-  padding: 0;
-  margin: 0;
-}

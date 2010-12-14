@@ -14,13 +14,13 @@
   </tr>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= l topic.created_at, :format => :short %></td>
+      <td class="created_at"><%= l topic.created_at, :format => :short %></td>
       <td><%= link_to topic.title, topic %></td>
       <td><%= topic.user ? topic.user.username : '' %></td>
-      <td><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
-      <td><%= link_to 'Profile Matches', admin_topic_profile_matches_path(topic) %></td>
-      <td><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
-      <td><%= link_to 'Delete', admin_topic_path(topic), :method => :delete, :confirm => "Are you sure?" %></td>
+      <td class="related_content"><%= link_to 'Related Content', admin_topic_related_contents_path(topic) %></td>
+      <td class="profile_matches"><%= link_to 'Profile Matches', admin_topic_profile_matches_path(topic) %></td>
+      <td class="edit"><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
+      <td class="delete"><%= link_to 'Delete', admin_topic_path(topic), :method => :delete, :confirm => "Are you sure?" %></td>
     </tr>
   <% end %>
 </table>

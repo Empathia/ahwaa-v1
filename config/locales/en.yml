@@ -134,9 +134,6 @@ en:
     related_content:
       related_content:
         title: Related Content
-        arrows:
-          back: Back
-          next: Next
     topic:
       popular:
         by: By %{author}
