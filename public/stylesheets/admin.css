@@ -27,18 +27,21 @@ table td{padding: 5px 10px;}
 .related-content-details{float: left; margin-left: 10px; width: 802px;}
 
 /* Possible Thumbnails */
-.possible-thumbnails {overflow: hidden; background-color: #FBFBFB; height: 400px;}
-.possible-thumbnails > .arrow{width: 20px; height: 100%;}
-.possible-thumbnails > .arrow.left{float: left;}
-.possible-thumbnails > .arrow.right{float: right;}
-.pt-wrapper{width: 840px; float: left; height: 100%;}
-.pt > li{ margin-bottom: 10px; padding:5px; overflow:hidden; }
-.pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;};
+.possible-thumbnails {overflow: hidden; background-color: #FBFBFB; height: 400px; margin-bottom: 20px; padding: 5px 10px;}
+.possible-thumbnails > .arrow{width: 23px; height: 100%; background-repeat: no-repeat;}
+.possible-thumbnails > .arrow.back{float: left; background-image: url('../images/arrow-left.png'); background-position: 0 50%;}
+.possible-thumbnails > .arrow.back.active{background-image: url('../images/arrow-left-active.png');}
+.possible-thumbnails > .arrow.next{float: right; background-image: url('../images/arrow-right.png'); background-position: right 50%;}
+.possible-thumbnails > .arrow.next.active{ background-image: url('../images/arrow-right-active.png');}
+.pt-wrapper{width: 814px; float: left; height: 100%; overflow: hidden; position: relative;}
+.pt{float: left; position: absolute; width: 2000px; height: 100%; left: 0; top: 0;}
+.pt > li{ margin-bottom: 10px; padding:5px; overflow:hidden; float: left;}
+.pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;}
+.pt > li > div{text-align: center;}
 
+.radio-wrapper{margin-bottom: 15px}
 
 /*Users*/
-.username{}
-.email{}
 .is_expert{width: 56px;}
 .actions{width: 80px;}
 
