@@ -10,7 +10,7 @@ body > div#pageslide-blanket{background:none}
 .left-side{float: left; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding: 16px 20px 0 20px;}
 .related-content > div:first-child{position: relative; overflow: hidden; height: 25px; margin-bottom: 15px;}
-.related-content > div > h2{float: left; position: absolute; background-color: #ffffff; margin-left: 5px; padding: 0 5px; top: 5px; left: 5px; font-weight: normal;}
+.related-content > div > h2{font-family: 'GothamMediumRegular'; float: left; position: absolute; background-color: #ffffff; margin-left: 5px; padding: 0 5px; top: 5px; left: 5px; font-weight: normal;}
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
 
 .related-content li{width: 150px; float: left;}
