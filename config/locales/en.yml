@@ -13,6 +13,7 @@ en:
         alert: '%{resource_name} could not be destroyed.'
     application:
       should_be_admin: 'You should have admin credentials to access this part of site.'
+      not_logged_in: You are not logged in
     passwords:
       update:
         notice: Your password has been changed. You can now log in with your new password.
@@ -134,6 +135,7 @@ en:
     related_content:
       related_content:
         title: Related Content
+        view_more: View More
     topic:
       popular:
         by: By %{author}

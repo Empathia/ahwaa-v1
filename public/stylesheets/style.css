@@ -352,7 +352,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
     background:url('../images/btn-private-msg.png') no-repeat 7px 5px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd')";
-            }
+}
 .user-info > p{margin-top:0px !important;padding-bottom:7px;color:#4c5563;font:bold 18px/1em Arial,sans-serif;float:left;}
 
 .recently-topics{padding-top:28px;background:white}
@@ -371,13 +371,22 @@ form + .recently-topics{padding-top:18px;}
     background:url("../images/hearts.png") no-repeat 0 0, -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')"; 
-    }
+}
+    
 .points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-left:1px solid #fbfbfb;width:auto;padding:0 8px;
     background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')";
-    }                
+}                
+
 .points-wrapper > .points > b{font-size: 14px;}
 
 .custom > a{text-decoration: none;}
+
+.flash.alert{height: 45px; line-height: 3.3; color: #464646; font-weight: bold; border-bottom: 1px solid #c9c8b1; position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; visibility: hidden;
+  background-image: -moz-linear-gradient(top, #fefce9, #fefadd);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fefce9),color-stop(1, #fefadd));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefce9', EndColorStr='#fefadd');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefce9', EndColorStr='#fefadd')";
+}

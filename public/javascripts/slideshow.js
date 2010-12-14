@@ -1,21 +1,22 @@
-$.fn.blockSlider = function(options){
+$.fn.blockSlider = function(options){  
 	return this.each(function(){
 		options = $.extend({
 			auto: false,
 			anim: 'carrousel',
 			circ: false,
-			speed: 1000,
-			pause: 4000,
+			speed: 2000,
+			pause: 8000,
 			nav: false,
 			navSelector: '',  
 			arrows: true,
 			nxt: '.next',
-			bck: '.back'
+			bck: '.back',
+			delay: 0
 		}, options);
-		var slider = $(this);
-		var wrapper = options.anim == 'carrousel' ? slider.parent().parent() : slider.parent();
-		var slides = slider.children();
-		var size = slides.length;
+		var slider = $(this), 
+		             wrapper = options.anim == 'carrousel' ? slider.parent().parent() : slider.parent(), 
+		             slides = slider.children(), 
+		             size = slides.length;
 		slides.filter(':first').addClass('active');                             
 		if(options.anim == 'carrousel'){
 	        var width = 0;
@@ -27,9 +28,9 @@ $.fn.blockSlider = function(options){
 	    }
 		var animations = { 
 		    start: function(){        
-                slider.data('id', setInterval(animations[options.anim], options.pause));
+                options.to ? animations.timeOut() : options.auto && slider.data('id', setInterval(animations[options.anim], options.pause));
 		    },
-		    fade: function(){
+		    fade: function(){      
     			var currentItem = slides.filter('.active:first').index();
     			slides.eq(currentItem).fadeOut(options.speed, function(){
     				slides.each(function(i){
@@ -91,8 +92,8 @@ $.fn.blockSlider = function(options){
                     else{           
                         var next = currentItem-1;
                     }
-		        }                                    
-		        var left = next * slides.eq(0).outerWidth(true) * -1;                              
+		        }                                                   
+		        var left = parseInt(slider.css('left')) + (delta > 0 ? (slides.eq(currentItem).outerWidth(true) * -1) : (slides.eq(next).outerWidth(true)));
 			    slider.animate({'left' : left}, 1000, function(){
                     nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
 		            slides.eq(currentItem).removeClass('active').end().eq(next).addClass('active');
@@ -109,8 +110,7 @@ $.fn.blockSlider = function(options){
     		},
 			arrowscarrousel: function(){
 				wrapper.find(options.nxt).click(function(){
-				    animations.resetCarr(1);               
-				    console.log($(options.bck).hasClass('active'));
+				    animations.resetCarr(1);
 				});
 				wrapper.find(options.bck).click(function(){
 				    animations.resetCarr(-1);
@@ -125,8 +125,8 @@ $.fn.blockSlider = function(options){
     			}).eq(0).addClass('active');
     		},
     		addNav: function(){
-                var nav = $('<ul class="nav">');                               
-    			var bullets = "";                                              
+                var nav = $('<ul class="nav">'),
+                    bullets = "";                                              
     			for(var i=0; i<size; i++){
     				bullets += '<li></li>';
     			}                                                                     
@@ -134,7 +134,7 @@ $.fn.blockSlider = function(options){
     			return nav; 
     		}
         }
-		options.auto && animations.start();
+        setTimeout(animations.start, options.delay);
 		var nav = options.nav ? (options.navSelector ? wrapper.find(options.navSelector) : animations.addNav()) : false;
 		nav && animations['nav'+options.anim](); 		
 	    options.arrows && animations['arrows'+ options.anim]();

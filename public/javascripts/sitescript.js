@@ -210,7 +210,10 @@ $(function(){
             if (event.keyCode == 27) $.fn.pageSlideClose();
         });
      }
-     
+                                      
+     setTimeout(function(){
+         $('.flash.alert').css({'display': 'none', 'visibility':'visible'}).slideDown('slow');
+     }, 1000);
 });
 
 $(window).load(function () {
