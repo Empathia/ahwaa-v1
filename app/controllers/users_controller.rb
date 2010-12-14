@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       UserMailer.sign_up_confirmation(@user).deliver
-      session[:current_user] = @user.id 
     end
   end
 

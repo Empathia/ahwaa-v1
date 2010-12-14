@@ -26,7 +26,7 @@ describe RelatedVideo do
     end
 
     it "should fetch the video's thumbnail and store it" do
-      @vimeo.thumbnail.url(:original, false).should == "/system/thumbnails/#{@vimeo.id}/original/94117347_100.jpg"
+      @vimeo.thumbnail.url(:original, false).should == "/system/thumbnails/#{@vimeo.id}/original/109796897_100.jpg"
     end
 
     it "should raise an exception if no response is got" do
