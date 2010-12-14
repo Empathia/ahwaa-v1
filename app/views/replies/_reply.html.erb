@@ -1,4 +1,4 @@
-<%= content_tag :li, :class => reply_css_classes(reply) do %>
+<%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id do %>
   <% if defined?(reply_counter) && reply_counter == 0 && reply.contextual_index.present? || (defined?(noArrow) && !noArrow) %>
     <span class="comm-arrow"></span>
   <% end %>
@@ -17,15 +17,13 @@
             <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
           <% end %>
         </div>
-        <!--div-->
-          <div class="res-username">
-            <% unless reply.anonymous? %>
-              <p><%= reply.user.username %></p>
-            <% else %>
-              <%= t(".anonymous") %>
-            <% end %>
-          </div>
-        <!--/div-->
+        <div class="res-username">
+          <% unless reply.anonymous? %>
+            <p><%= reply.user.username %></p>
+          <% else %>
+            <%= t(".anonymous") %>
+          <% end %>
+        </div>
         <div class="res-type-wrapper">
           <div>
             <div>
@@ -40,10 +38,10 @@
           <%= render reply.replies, :locals => {:noArrow => true} %>
         </ul>
       <% elsif reply.parent.nil? %>
-        <%= link_to t(".reply_to", {:username => current_username}), nil, :class => 'reply-to' %>
+        <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' %>
       <% end %>
       <% if reply.parent.nil? %>
-        <%= render :partial => "shared/new_response" %>
+        <%= render :partial => "shared/new_response", :locals => { :global => true } %>
       <% end %>
     </div>
   </div>

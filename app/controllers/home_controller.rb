@@ -6,4 +6,13 @@ class HomeController < ApplicationController
     @latest = Reply.latest
   end
 
+  def privacy_policy
+  end
+
+  def about
+  end
+
+  def terms
+  end
+
 end

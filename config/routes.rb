@@ -65,5 +65,9 @@ Lgbt::Application.routes.draw do
     root :to => 'topics#index'
   end
 
+  get "privacy_policy" => "home#privacy_policy"
+  get "about" => "home#about"
+  get "terms" => "home#terms"
+
   root :to => "home#index"
 end

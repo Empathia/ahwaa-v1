@@ -14,7 +14,7 @@ class Topic < ActiveRecord::Base
   end
 
   belongs_to :user
-  has_many :replies, :dependent => :destroy, :conditions => { :parent_id => nil }
+  has_many :replies, :dependent => :destroy, :conditions => "contextual_index IS NOT NULL"
   has_many :all_replies, :class_name => "Reply", :dependent => :destroy
   has_many :users, :through => :replies
   has_many :topic_experts, :dependent => :destroy

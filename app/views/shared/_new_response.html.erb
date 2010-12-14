@@ -1,5 +1,5 @@
-<div class="new-response response-wrapper">
+<%= content_tag :div, :class => 'new-response response-wrapper', :'data-type' => ('global' if defined?(global) && global) do %>
   <div class="border-all">
     <%= link_to t('.new_response'), '#' %>
   </div>
-</div>
+<% end %>
