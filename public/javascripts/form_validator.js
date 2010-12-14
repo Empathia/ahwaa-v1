@@ -8,7 +8,8 @@ $.fn.formValidator = function(options){
              var _input = $(this),
                  value = _input.val(),
                  error = false,
-                 type = this.getAttribute('type');
+                 type = this.getAttribute('type');              
+             value == _input.attr('placeholder') && (value = '');
              if(value){         
                  var pattern = false;
                  switch(type){
