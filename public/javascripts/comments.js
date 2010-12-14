@@ -140,10 +140,10 @@ $.fn.comments = function(options){
             });
             reply.vote_up({
                 success: function (r) {
-                    that.text(I18n.t('replies.reply.useful')).addClass('disabled');
+                    that.addClass('disabled').text(I18n.t('replies.reply.useful'));
                 },
                 error: function () {
-                    that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
+                    that.addClass('disabled').text(I18n.t('replies.reply.already_useful'));
                 }
             });
         }

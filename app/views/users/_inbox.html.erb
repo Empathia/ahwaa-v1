@@ -2,13 +2,13 @@
 <% unless inbox.empty? %>
   <ul class="messages">
     <% inbox.each do |pm| %>
-      <li class="<%= 'new' if pm.conversation.unread_by?(current_user) %>">
+      <%= content_tag_for :li, pm, :class => ('new' if pm.conversation.unread_by?(current_user)) do %>
         <div class="avatar-wrapper">
           <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
           <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
         </div>
         <ul class="msg-opts border-bottom">
-          <li><%= link_to t('users.show.content.private_messages.delete'), private_message_path(pm), :class => "opt-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete') %></li>          
+          <li><%= link_to t('users.show.content.private_messages.delete'), private_message_path(pm), :class => "opt-delete", :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete'), :remote => true %></li>          
           <li><%= link_to t('users.show.content.private_messages.reply'), user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %></li>
         </ul>
         <div class="from">
@@ -23,12 +23,14 @@
           <% end %>
         </div>
         <div class="clear"></div>
-      </li>
+      <% end %>
     <% end %>
   </ul>
-  <div class="bar border-all"> 
-    <%= will_paginate inbox, :renderer => PrivateMessagesPaginationRenderer %>
-  </div>
+    <% if inbox.length > 10 %>
+      <div class="bar border-all"> 
+        <%= will_paginate inbox, :renderer => PrivateMessagesPaginationRenderer %>
+      </div>
+    <% end %>
 <% else %>
   <h3><%= t('.no_messages') %></h3>
 <% end %>
