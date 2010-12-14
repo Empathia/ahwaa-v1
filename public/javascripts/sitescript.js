@@ -210,7 +210,19 @@ $(function(){
             if (event.keyCode == 27) $.fn.pageSlideClose();
         });
      }
-     
+                 
+     var flashAlert = $('.flash.alert');
+     if(flashAlert.length){
+        setTimeout(function(){                                                            
+            flashAlert.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
+                flashAlert.click(function(){
+                  flashAlert.slideUp(function(){
+                      flashAlert.remove();
+                  })
+                }); 
+            });
+        }, 1000);             
+     }
 });
 
 $(window).load(function () {
