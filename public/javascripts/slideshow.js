@@ -1,4 +1,4 @@
-$.fn.blockSlider = function(options){  
+$.fn.blockSlider = function(options){
 	return this.each(function(){
 		options = $.extend({
 			auto: false,
@@ -20,7 +20,7 @@ $.fn.blockSlider = function(options){
 		slides.filter(':first').addClass('active');                             
 		if(options.anim == 'carrousel'){
 	        var width = 0;
-	        slides.each(function(){
+	        slides.each(function(){       
                 width += $(this).outerWidth(true);
     	    });
     	    slider.width(width);
@@ -71,8 +71,8 @@ $.fn.blockSlider = function(options){
     			}).eq(0).addClass('active');
     		},                       
 		    carrousel: function(delta){                          
-		        var currentItem = slides.filter('.active:first').index();       ;
-		        if(!delta || (delta > 0)){
+		        var currentItem = slides.filter('.active:first').index();
+		        if(!delta || (delta > 0)){     
                     if(slider.parent().width() >= slider.outerWidth() + parseInt(slider.css('left'))){
                         if(!options.circ){ 
                             return false;
@@ -92,7 +92,7 @@ $.fn.blockSlider = function(options){
                     else{           
                         var next = currentItem-1;
                     }
-		        }                                                   
+		        }                                                                                                                                           
 		        var left = parseInt(slider.css('left')) + (delta > 0 ? (slides.eq(currentItem).outerWidth(true) * -1) : (slides.eq(next).outerWidth(true)));
 			    slider.animate({'left' : left}, 1000, function(){
                     nav && nav.children().eq(currentItem).removeClass('active').end().eq(next).addClass('active');
@@ -109,7 +109,7 @@ $.fn.blockSlider = function(options){
                 options.auto && animations.start();                                 
     		},
 			arrowscarrousel: function(){
-				wrapper.find(options.nxt).click(function(){
+				wrapper.find(options.nxt).click(function(){   
 				    animations.resetCarr(1);
 				});
 				wrapper.find(options.bck).click(function(){

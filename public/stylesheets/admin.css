@@ -33,7 +33,8 @@ table td{padding: 5px 10px;}
 .possible-thumbnails > .arrow.back.active{background-image: url('../images/arrow-left-active.png');}
 .possible-thumbnails > .arrow.next{float: right; background-image: url('../images/arrow-right.png'); background-position: right 50%;}
 .possible-thumbnails > .arrow.next.active{ background-image: url('../images/arrow-right-active.png');}
-.pt-wrapper{width: 814px; float: left; height: 100%;}
+.pt-wrapper{width: 814px; float: left; height: 100%; overflow: hidden; position: relative;}
+.pt{float: left; position: absolute; width: 2000px; height: 100%; left: 0; top: 0;}
 .pt > li{ margin-bottom: 10px; padding:5px; overflow:hidden; float: left;}
 .pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;}
 .pt > li > div{text-align: center;}
