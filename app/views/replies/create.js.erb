@@ -1,13 +1,28 @@
 <% if @reply.valid? %>
-  if($('#comments_<%= @reply.contextual_index %>').length == 0) {
-    $('.container').append('<%= escape_javascript render(:partial => 'topics/comments', :object => [[@reply.contextual_index, @reply]]) %>');
-  } else {
-    $('#comments_<%= @reply.contextual_index %> ul').append('<%= escape_javascript render(@reply) %>');
-  }
-  $('#add_<%= @reply.contextual_index %>').addClass('has_comments').removeClass('no_comments').trigger('click');
-  setTimeout(function() {
-    $('#add_<%= @reply.contextual_index %>').trigger('click');
-  }, 500);
+  <% if @reply.contextual_index.blank? %>
+    var stamp = 'tmp_' + new Date().getTime();
+    if($('.comments:not(.clon) li[data-id=<%= @reply.parent_id %>] ul.comments-ls').length > 0) {
+      $('.comments:not(.clon) li[data-id=<%= @reply.parent_id %>] ul.comments-ls').append('<%= escape_javascript render(@reply) %>');
+    } else {
+      $('.comments:not(.clon) li[data-id=<%= @reply.parent_id %>] .reply-to')
+        .next('.new-response').removeClass('reply-new-response').end()
+        .replaceWith($('<ul/>').addClass('comments-ls').html('<%= escape_javascript render(@reply) %>'));
+    }
+    $('.comments.clon li[data-id=<%= @reply.parent_id %>]').parents('.comments.clon').prev('p').find('a:last-child').addClass(stamp).trigger('click');
+    setTimeout(function() {
+      $('a.' + stamp).trigger('click');
+    }, 500);
+  <% else %>
+    if($('#comments_<%= @reply.contextual_index %>').length == 0) {
+      $('.container').append('<%= escape_javascript render(:partial => 'topics/comments', :object => [[@reply.contextual_index, @reply]]) %>');
+    } else {
+      $('#comments_<%= @reply.contextual_index %> ul').append('<%= escape_javascript render(@reply) %>');
+    }
+    $('#add_<%= @reply.contextual_index %>').addClass('has_comments').removeClass('no_comments').trigger('click');
+    setTimeout(function() {
+      $('#add_<%= @reply.contextual_index %>').trigger('click');
+    }, 500);
+  <% end %>
 <% else %>
   $('.response-wrapper:visible .error').text("<%= @reply.errors.full_messages.first %>");
 <% end %>
