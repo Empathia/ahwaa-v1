@@ -91,22 +91,22 @@ $(function(){
            $('.edit-profile').slideDown();
        }) && avatars.hide();
     });
-    
-    if (!$.browser.webkit) {    
-        $('#reply-form textarea').live('focus',function(){
-            var textarea = $(this);
-            if(textarea.val() == textarea.attr('placeholder')){
-                textarea.val('').css('height','auto');
-                $('.new_private_message > .btn-gradient').css('display','block');
-            }   
-            textarea.blur(function(){
-                if(textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')){
-                    textarea.val(textarea.attr('placeholder')).css('height','16px');
-                    $('.new_private_message > .btn-gradient').css('display','none');
-                }
-            })
-        });
-    }
+   
+   /*
+    $('#reply-form textarea').live('focus',function(){
+        var textarea = $(this);
+        if(textarea.val() == textarea.attr('placeholder')){
+            textarea.val('').css('height','auto');
+            $('.new_private_message > .btn-gradient').css('display','block');
+        }   
+        textarea.blur(function(){
+            if(textarea.val().length == 0 || textarea.val() ==  textarea.attr('placeholder')){
+                textarea.val(textarea.attr('placeholder')).css('height','16px');
+                $('.new_private_message > .btn-gradient').css('display','none');
+            }
+        })
+    })
+    */
         
     $('#reply-form').live('submit',function(){
         var textarea = $(this).find('textarea');
