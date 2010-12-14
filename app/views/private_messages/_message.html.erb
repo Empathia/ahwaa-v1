@@ -14,7 +14,7 @@
   <div class="new-response response-wrapper reply-pm">
     <div class="response border-all">
       <%= hidden_field_tag :reply_to, message.id %>                                  
-      <%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :placeholder => t('users.show.content.private_messages.add_reply'), :value => t('users.show.content.private_messages.add_reply') %>
+      <%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :placeholder => t('users.show.content.private_messages.add_reply') %>
     </div>
   </div>
   <%= f.submit t('users.show.content.private_messages.send_reply'), :class => 'btn-gradient' %>
