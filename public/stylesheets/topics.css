@@ -8,7 +8,7 @@ body > div#pageslide-blanket{background:none}
 .article-tags{background: url('../images/tag.png') no-repeat; margin-top:15px;padding-left:32px;color:#468AC4;}
 .article-tags > li{display: inline;}     
 .left-side{float: left; width:700px;}
-.related-content{overflow: hidden;}
+.related-content{overflow: hidden; background-color: #ffffff; padding: 16px 20px 0 20px;}
 .related-content > div:first-child{position: relative; overflow: hidden; height: 25px; margin-bottom: 15px;}
 .related-content > div > h2{float: left; position: absolute; background-color: #ffffff; margin-left: 5px; padding: 0 5px; top: 5px; left: 5px; font-weight: normal;}
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
@@ -175,9 +175,9 @@ a.no_comments{
 }  
 .icn:hover > span{display: block;}
 p:hover .icn{display: inline;}
-.related-content{background-color: #ffffff; padding: 20px;}
+
 .related-carrousel{overflow: hidden; width: 660px; float: left; position: relative;}
-.related-carrousel > ul > li{width: 206px; overflow: hidden; float: left; margin-right: 20px;}
+.related-carrousel > ul > li{width: 206px; overflow: hidden; float: left; margin: 0 20px 20px 0;}
 .related-carrousel > ul > li > a:first-child{float: left; margin-right: 15px;}
 .related-carrousel > ul > li > a{color: #7e838a;}     
 .related-carrousel .rd-related-content{margin-right: 0;}
