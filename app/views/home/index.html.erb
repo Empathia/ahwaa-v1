@@ -6,7 +6,7 @@
       <h1><%= t('.title') %></h1>
       <h2><%= t('.legend') %></h2>
     </hgroup>                                                                    
-    <ul class="features">
+    <ul class="features <%= "only-3-values" if logged_in? %>">
       <li id="anonymity" class="feature-wrapper">
         <div>
           <div>                                   
@@ -31,12 +31,14 @@
           </div>
         </div>
       </li>
-      <li id="join" class="border-all">
-         <%= link_to '#', :class => 'sign-up-btn' do %>
-             <span class="join-st-line"><%= t('.join_now') %></SPAN>
-             <span class="join-nd-line"><%= t('.get_started') %></span>
-          <% end%>         
-      </li>
+      <% unless logged_in? %>
+        <li id="join" class="border-all">
+           <%= link_to '#', :class => 'sign-up-btn' do %>
+               <span class="join-st-line"><%= t('.join_now') %></SPAN>
+               <span class="join-nd-line"><%= t('.get_started') %></span>
+            <% end%>         
+        </li>
+      <% end %>
     </ul>
   </section>       
   <div class="items-wrapper">

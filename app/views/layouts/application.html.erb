@@ -52,7 +52,7 @@
                         </li>
                       </ul>
                       <div class="errors"></div>
-                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
+                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path %> <%=t('.header.sign_up_form.note_pt3')%></p>
                       <%= f.submit nil, :class => "auth-submit border-all" %>
                     <% end %>
                   </div>

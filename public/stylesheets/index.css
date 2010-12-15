@@ -38,3 +38,4 @@ body > div > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
 #join > a{color: #ffffff; font-family: "GothamBoldRegular"; text-decoration: none; text-shadow: 0px -2px 2px #255890; padding: 34px 0; height: 53px; display: block; border: 1px solid #7198c2; overflow: hidden;}
 .join-st-line{font-size: 36px; display: block;}
 .join-nd-line{font-size: 18px; color: #a9d0ef;}
+.only-3-values{padding: 0 121px;}
