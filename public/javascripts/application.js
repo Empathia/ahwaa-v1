@@ -40,7 +40,7 @@ $(document).ready(function() {
                 url: '/admin/topics/'+currentTopicId+'/related_contents.js',
                 data: $(this).serialize(),
                 dataType: 'script',
-                type: 'POST',
+                type: 'POST'
             });
 
             return false;
@@ -113,6 +113,6 @@ function getProfileTopicMatches() {
     url: '/admin/topics/'+currentTopicId+'/profile_matches/list_matches.js',
     data: form.serialize(),
     dataType: 'script',
-    type: 'POST',
+    type: 'POST'
   });
 }
