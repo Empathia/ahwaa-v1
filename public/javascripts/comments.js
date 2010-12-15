@@ -131,7 +131,7 @@ $.fn.comments = function(options){
         return false;
     });
     
-    $('.useful').live('click', function(){
+    $('.useful-lk').live('click', function(){
         var that = $(this);
         if(!that.hasClass('disabled')) {
             var reply = new Reply({

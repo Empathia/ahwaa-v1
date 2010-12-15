@@ -14,6 +14,9 @@
     <%= javascript_include_tag 'html5_ie' %>
     <%= stylesheet_link_tag 'ie', :cache => true %>
   <![endif]-->
+  <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie7', :cache => true %>  
+  <![endif]-->    
 </head>
 <body>
   <div class="page-wrapper">
@@ -52,7 +55,7 @@
                         </li>
                       </ul>
                       <div class="errors"></div>
-                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use') %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy') %> <%=t('.header.sign_up_form.note_pt3')%></p>
+                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path %> <%=t('.header.sign_up_form.note_pt3')%></p>
                       <%= f.submit nil, :class => "auth-submit border-all" %>
                     <% end %>
                   </div>
@@ -62,7 +65,7 @@
                     </a>
                     <%= form_tag login_path(:js), :class => "over-form login-form", :remote => true do %>
                       <ul>
-                        <li class="login"><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.login') %></li>
+                        <li class="login"><%= text_field_tag :login, nil, :required => "true", 'id' => "login-input", :placeholder => t('.header.login_form.login') %></li>
                         <li class="password"><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
                       </ul>
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
@@ -104,19 +107,21 @@
                   <ul id="moretags" class="more-tags border-all border-menu">
                   </ul>
                 </li>
-              </ul>
-              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
-                <span>
-                  <span><%= t('.header.request_topic.button')%></span>
-                </span>
-              </a>
-              <div class="request-error">
-                <span></span>
-                <div>
-                  <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
-                  <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+              </ul>     
+              <div class="request-topic-wrapper">
+                <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                  <span>
+                    <span><%= t('.header.request_topic.button')%></span>
+                  </span>
+                </a>
+                <div class="request-error">
+                  <span></span>
+                  <div>
+                    <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
+                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+                  </div>
+                  <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
               </div>
             </div>
           </div>

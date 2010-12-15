@@ -243,6 +243,7 @@ $(window).load(function () {
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
     headerTags.css('width', null);
+    $.browser.msie && headerTags.parent().css('position', 'static');
       
     var container = $('.container'),
         siblings = container.siblings(),

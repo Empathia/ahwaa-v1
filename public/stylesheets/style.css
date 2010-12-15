@@ -78,14 +78,16 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 #login.auth-form-active span{padding:0;}
 .header-top .sign-up .auth-form-active,
 #sign-up.auth-form-active{outline:0 none;}
+
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top:1px;background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;;
+.auth-wrapper .auth-form-active > span:hover{padding-top:1px; background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 .sign-up > .auth-form-active:first-child{
@@ -112,7 +114,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .search > ul >li a{text-decoration:none;padding-left:10px;}
 .empty{background-position:0 -23px !important;}
 .slogan{text-align: center;}
-.header-tags{height: 100%;position:relative;}
+.header-tags{height: 100%; position:relative;}
 .header-tags > ul{float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
 .header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight:bold;}
@@ -129,6 +131,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .more-tags > li:last-child{border-bottom: none;}
 .more:hover {background-color:#f9f9f9;border-right-color:#dfe1ed}
 .more:hover .more-tags{display: block;}
+.request-topic-wrapper{float: right; position: relative;}
 .request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/blue-btn-bg.png') repeat-x 0 -25px;outline:0;}
 .request-topic > span{float: right; height: 100%; text-align:left; background: url('../images/blue-btn-bg.png') no-repeat; padding-left:31px;}
 .request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background: url('../images/blue-btn-bg.png') no-repeat right -50px}
@@ -160,7 +163,7 @@ footer > div > span{float: left; color: #898f93;}
 .over-form > ul > li{margin-bottom: 5px; float: left;}
 .over-form > ul > li > input[type="text"],
 .over-form > ul > li > input[type="email"],
-.over-form > ul > li > input[type="password"]{width: 257px;height:32px; padding: 0 10px; margin-bottom: 5px;
+.over-form > ul > li > input[type="password"]{width: 257px;height:32px; padding: 0 10px; margin-bottom: 5px; line-height: 2.8;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -175,7 +178,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 
 .btn-gradient.cancel-forgot{float: right; padding: 0 12px; height: 32px; margin-right: 10px; color: #61656a;}
 
-.auth-submit{border:none;border-bottom:1px solid #1e4d88;padding:0 12px;height:32px;float:right;color:#ffffff;
+.auth-submit{border: none; border-bottom: 1px solid #1e4d88; padding: 0 12px; height: 32px; float: right; color: #ffffff; font-size: 11px;
   background-image: -moz-linear-gradient(top, #64a2d1, #2f6daf);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #64a2d1),color-stop(1, #2f6daf));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#64a2d1', EndColorStr='#2f6daf');
