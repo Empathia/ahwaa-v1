@@ -6,7 +6,7 @@
             <span class="level border-left <%= level_css_class_for_user(user) %>"></span>
             <span class="points border-right"><%= t('private_message.points', {:points => user.score_board.current_points})%></span>
       </p>
-      <% unless current_user == user %>
+      <% unless current_user == user || !logged_in? %>
         <%= link_to '#', :class => "btn-gradient send-private-msg #{'disabled' unless logged_in?}" do  %>
         <!--[if lt IE 9]>
           <span></span>

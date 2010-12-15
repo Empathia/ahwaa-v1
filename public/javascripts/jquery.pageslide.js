@@ -107,7 +107,7 @@
             $("#pageslide-slide-wrap").animate({
                 width: settings.width
             }, settings.duration);
-            if ($.browser.webkit) {
+            if ($.browser.webkit || $.browser.msie) {
                 $('header').animate({
                     left: -556
                 });
@@ -243,7 +243,7 @@
             $('#pageslide-body-wrap').css('overflow', '');
             _overflowFixRemove();
         });
-        if ($.browser.webkit) {
+        if ($.browser.webkit || $.browser.msie) {
             $('header').animate({
                 left: 0
             });
