@@ -37,9 +37,9 @@ aside{overflow: hidden;}
 .edit-form select{border: 1px solid #d5d5d5; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: 0px 0px 0px 3px #f5f5f5; height: 23px; width: 124px; margin-bottom: 5px;}
 .edit-form select{width: 128px;}
 
-.pm-panel{background-color: #ffffff; width: 660px; padding: 20px 25px; float: left; min-height: 102px;}
+.pm-panel{background-color: #ffffff; width: 660px; padding: 20px 0; float: left; min-height: 102px;}
 .pm-panel.new-user{min-height: 240px;}
-.pm-panel > section > .regular{border-bottom: 1px solid #efeff0; padding-bottom: 5px; margin-bottom: 10px;}
+.pm-panel > section > .regular{border-bottom: 1px solid #efeff0;padding:0 38px 10px}
 
 
 .bar{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px; position: relative;}
@@ -88,16 +88,19 @@ aside{overflow: hidden;}
 .msg a{color: #838383; font-size: 12px; text-decoration: none;}
 .avatars-wrapper{display: none;}
 .avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin: 60px 0 40px 0;}
+.avatars-list{display:none;overflow:hidden;padding:0 18px;}
 
-.avatars{float: left;} 
-.avatars .thumb{float: left; width: 54px; height: 56px;}
-.avatars .thumb > a > img{float: left;}
-.avatars-list{display: none;}
-.avatars > li{margin: 10px; float: left;}
-.avatars > li > div{border: 2px solid transparent; position: relative;}
-.avatars > .active > div{border: 2px solid #468ac4;}
+.avatars{overflow:hidden;} 
+.avatars > li{margin:15px 20px;float:left;position:relative;}
+.avatars > li > .avatar > a{outline:0 none}
+.avatars > .active{margin:13px 18px;border:2px solid #4082bf}
+.avatars > .active > .avatar{border:1px solid #3f71a0;
+    -moz-border-radius:0!important;
+    -webkit-border-radius:0!important;
+    border-radius:0!important;
+    }
 
-.checkmark{position: absolute; right: -10px; top: -10px;}
+.checkmark{position:absolute;right:-7px;top:-5px;background-image:none!important}
 
 #pm-wrapper strong{color:black}
 .pm-details{font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
@@ -116,7 +119,6 @@ aside{overflow: hidden;}
 
 .pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
 .pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
-.avatar{padding: 3px;}
 
 .new-user-msg-wrapper{overflow: hidden; margin-top: 5px;}
 .new-user-arrow{border-color: transparent transparent #35353a; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; width: 0px; margin: 0 105px; position: relative; z-index: 1;}            

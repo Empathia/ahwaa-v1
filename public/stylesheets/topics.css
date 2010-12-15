@@ -28,15 +28,15 @@ aside section.show-hide{border-top:none;padding:19px 0 25px;}
 aside section.show-hide a{text-align:left;text-decoration:none;padding-left:48px;display:block;width:150px;outline:0 none;float:none!important;
     background: url('../images/icn-show-hide.png') no-repeat 23px 11px, -moz-linear-gradient(top, #fff, #eaf7fd);
     background: url('../images/icn-show-hide.png') no-repeat 23px 11px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#eaf7fd')";
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd')";
 
 }
 aside section.show-hide a:hover{
     background: url('../images/icn-show-hide.png') no-repeat 23px 11px, -moz-linear-gradient(top, #fff, #e3f1ff);
     background: url('../images/icn-show-hide.png') no-repeat 23px 11px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #e3f1ff));
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#e3f1ff');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#e3f1ff')";
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e3f1ff');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e3f1ff')";
 }
 aside section.show-hide a.hide{
     border-color:#a6b8c5 #dde6ec #dae4eb;
