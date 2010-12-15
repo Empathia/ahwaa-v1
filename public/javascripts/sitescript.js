@@ -1,11 +1,12 @@
-$(function(){    
+$(function(){   
+    
     function toggleSignUp(link, formName){
         $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');
         link.addClass('auth-form-active');
         if(!formName){
           formName = '.' + link.attr('id') + '-form';
         }
-        $(formName).addClass('auth-form-active').offset({
+        $(formName).css('display', 'block').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight() - 1
             }
@@ -65,15 +66,13 @@ $(function(){
     $('.sign-up-form #user_email').change(function () {
         $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, ''));
     });
-
-    $('.login-form').find('input[type=submit]').formValidator(
-        {
-            'errors': {
-                'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
-                'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
-            }
+        
+    $('.login-form').find('input[type=submit]').formValidator({
+        'errors': {
+            'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
+            'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
         }
-    );
+    });
 
     $('.forgot-pass-form').submit(function () {
         var that = $(this),
@@ -243,7 +242,9 @@ $(window).load(function () {
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
     headerTags.css('width', null);
-    $.browser.msie && headerTags.parent().css('position', 'static');
+    if($.browser.msie){
+        $.browser.version == '8.0' ? $('.over-form').css({display: 'none', visibility: 'visible'}) : headerTags.parent().css('position', 'static');
+    }
       
     var container = $('.container'),
         siblings = container.siblings(),
