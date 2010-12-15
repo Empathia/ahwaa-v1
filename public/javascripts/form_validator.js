@@ -46,18 +46,22 @@ $.fn.formValidator = function(options){
         if(_form.find('.error').length){
             return false;
         }
+        return true;
     }
 
     return this.each(function(){
 
         if(this.getAttribute('type')) {
             $(this).click(function(){
-                return validateForm($(this).closest('form'), options);
+                if(validateForm($(this).closest('form'), options)) {
+                    $(this).parents('form').trigger('submit');
+                }
+                return false;
             });
         }
         else{
             var _form = $(this);
-            _form.submit(function(){
+            _form.bind('submit', function(){
                 return validateForm(_form, options);
             });
         }
