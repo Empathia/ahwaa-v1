@@ -40,7 +40,7 @@ aside{overflow: hidden;}
 .pm-panel{background-color: #ffffff; width: 660px; padding: 20px 0; float: left; min-height: 102px;}
 .pm-panel.new-user{min-height: 240px;}
 .pm-panel > section > .regular{border-bottom: 1px solid #efeff0;padding:0 38px 10px}
-
+.pm-panel > section > .messages{padding:20px 40px}
 
 .bar{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px; position: relative;}
 
