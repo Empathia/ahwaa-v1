@@ -1,5 +1,5 @@
 <div class="res-flag-btns">
-    <%= link_to t(".useful"), '#', :class => "btn-gradient useful #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
+    <%= link_to t(".useful"), '#', :class => "btn-gradient useful-lk #{'disabled' unless logged_in?}", :'data-value' => reply.id %>
     <%= link_to '#', :class => "btn-gradient flag #{'disabled' unless logged_in?}", :'data-value' => reply.id do %>
       <span><%= t(".flag") %></span>
     <% end %>            
