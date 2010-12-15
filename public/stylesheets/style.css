@@ -78,14 +78,16 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 #login.auth-form-active span{padding:0;}
 .header-top .sign-up .auth-form-active,
 #sign-up.auth-form-active{outline:0 none;}
+
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top:1px;background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;;
+.auth-wrapper .auth-form-active > span:hover{padding-top:1px; background-color: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
 .sign-up > .auth-form-active:first-child{
@@ -112,7 +114,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .search > ul >li a{text-decoration:none;padding-left:10px;}
 .empty{background-position:0 -23px !important;}
 .slogan{text-align: center;}
-.header-tags{height: 100%;position:relative;}
+.header-tags{height: 100%; position:relative;}
 .header-tags > ul{float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
 .header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight:bold;}
@@ -129,6 +131,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .more-tags > li:last-child{border-bottom: none;}
 .more:hover {background-color:#f9f9f9;border-right-color:#dfe1ed}
 .more:hover .more-tags{display: block;}
+.request-topic-wrapper{float: right; position: relative;}
 .request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/blue-btn-bg.png') repeat-x 0 -25px;outline:0;}
 .request-topic > span{float: right; height: 100%; text-align:left; background: url('../images/blue-btn-bg.png') no-repeat; padding-left:31px;}
 .request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background: url('../images/blue-btn-bg.png') no-repeat right -50px}

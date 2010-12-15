@@ -1,4 +1,5 @@
 var form = $('.edit-form');
+form.find('.pm-flash').remove();
 var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.user-edit:last'));
 /*
 <% if @submitted_form == 'profile' %>
@@ -16,7 +17,7 @@ var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javas
 setTimeout(function(){
     avatars.hide();
     $('.white-area').slideUp(function(){
-        successMsg.remove();
-        $('.edit-profile').slideDown();        
+        successMsg.remove();          
+        $('.edit-profile').slideDown();
     });
 }, 2000);

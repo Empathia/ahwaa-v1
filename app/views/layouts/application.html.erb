@@ -14,6 +14,9 @@
     <%= javascript_include_tag 'html5_ie' %>
     <%= stylesheet_link_tag 'ie', :cache => true %>
   <![endif]-->
+  <!--[if lt IE 8]>
+    <%= stylesheet_link_tag 'ie7', :cache => true %>  
+  <![endif]-->    
 </head>
 <body>
   <div class="page-wrapper">
@@ -104,19 +107,21 @@
                   <ul id="moretags" class="more-tags border-all border-menu">
                   </ul>
                 </li>
-              </ul>
-              <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
-                <span>
-                  <span><%= t('.header.request_topic.button')%></span>
-                </span>
-              </a>
-              <div class="request-error">
-                <span></span>
-                <div>
-                  <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
-                  <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+              </ul>     
+              <div class="request-topic-wrapper">
+                <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                  <span>
+                    <span><%= t('.header.request_topic.button')%></span>
+                  </span>
+                </a>
+                <div class="request-error">
+                  <span></span>
+                  <div>
+                    <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
+                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+                  </div>
+                  <div class="clear"></div>
                 </div>
-                <div class="clear"></div>
               </div>
             </div>
           </div>
