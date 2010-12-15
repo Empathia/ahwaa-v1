@@ -80,7 +80,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 #sign-up.auth-form-active{outline:0 none;}
 
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top:1px; background-color: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;
+.auth-wrapper .auth-form-active > span:hover{padding-top:1px; background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6;border-top-color:#f3f3f3;
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
