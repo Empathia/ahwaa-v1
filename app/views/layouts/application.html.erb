@@ -65,7 +65,7 @@
                     </a>
                     <%= form_tag login_path(:js), :class => "over-form login-form", :remote => true do %>
                       <ul>
-                        <li class="login"><%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.login_form.login') %></li>
+                        <li class="login"><%= text_field_tag :login, nil, :required => "true", 'id' => "login-input", :placeholder => t('.header.login_form.login') %></li>
                         <li class="password"><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
                       </ul>
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
