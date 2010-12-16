@@ -46,7 +46,7 @@ $(function(){
     });
 
     $(document).unbind('click').click(function(e){
-        !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active');
+        !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
         if(e.target.tagName != "a"){ $('.search_results').removeClass('visible'); }
     });
 
