@@ -20,7 +20,8 @@ $(function(){
 
     $('.continue').live('click', function(){
        $(this).closest('.sign-up-or-continue').slideUp(function(){
-           var signUp = $(this);
+           var signUp = $(this);      
+           console.log(signUp.next().length, signUp.next().attr('class'));
            signUp.next().slideDown();
            signUp.remove();
        });
