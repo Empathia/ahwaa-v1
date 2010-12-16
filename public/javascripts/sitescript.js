@@ -1,12 +1,12 @@
 $(function(){   
     
     function toggleSignUp(link, formName){
-        $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');
+        $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active').filter('.over-form').addClass('hidden');
         link.addClass('auth-form-active');
         if(!formName){
           formName = '.' + link.attr('id') + '-form';
         }
-        $(formName).css('display', 'block').addClass('auth-form-active').offset({
+        $(formName).removeClass('hidden').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight() - 1
             }
@@ -243,7 +243,7 @@ $(window).load(function () {
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
     headerTags.css('width', null);
     if($.browser.msie){
-        $.browser.version == '8.0' ? $('.over-form').css({display: 'none', visibility: 'visible'}) : headerTags.parent().css('position', 'static');
+        $.browser.version == '8.0' ? $('.over-form').addClass('hidden') : headerTags.parent().css('position', 'static');
     }
       
     var container = $('.container'),
