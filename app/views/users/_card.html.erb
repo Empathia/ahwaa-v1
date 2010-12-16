@@ -19,6 +19,7 @@
       <% end %>
     </div>
     <%= avatar_span(user, user.is_expert?, true) %>
+    <br class="clear" />
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
     <%= f.text_area :content, :class => 'border-all', :placeholder => 'Write your message' %>
