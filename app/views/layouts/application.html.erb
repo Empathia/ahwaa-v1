@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html <%= 'dir="rtl"'.html_safe if rtl? %>>
 <head>
-  <title>Transcend</title>
-  <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', 'jquery.pageslide', :cache => true %>
+  <title>Transcend</title>                                                                                              
   <% if rtl? %>
     <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', :cache => 'all_rtl' %>
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
-  <% end %>
+  <% end %>  
+  <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', 'jquery.pageslide', :cache => true %>
+  <link rel="shortcut icon" href="<%= root_url %>favicon.ico">
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
   <!--[if lt IE 9]>
