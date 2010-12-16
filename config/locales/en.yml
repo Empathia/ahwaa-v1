@@ -20,6 +20,8 @@ en:
     users:
       create:
         notice: "We've sent you an email for confirmation. Please check your inbox"
+      destroy:
+        notice: "Your account has been terminated."
 
   activerecord:
     models:
