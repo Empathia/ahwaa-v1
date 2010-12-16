@@ -1,8 +1,14 @@
-<ul class='possible-thumbnails'>
-  <% @possible_thumbnails.each do |possible_thumbnail| %>
-    <li>
-      <%= radio_button_tag "related_content[thumbnail_url]", possible_thumbnail %>
-      <%= image_tag(possible_thumbnail) %>
-    </li>
-  <% end %>
-</ul>
+<div class="possible-thumbnails">
+  <div class="arrow back"></div>
+  <div class="pt-wrapper">
+    <ul class='pt'>
+      <% @possible_thumbnails.each do |possible_thumbnail| %>
+        <li>
+          <div class="radio-wrapper"><%= radio_button_tag "related_content[thumbnail_url]", possible_thumbnail %></div>
+          <div><%= image_tag(possible_thumbnail) %></div>
+        </li>
+      <% end %>
+    </ul>                               
+  </div>
+  <div class="arrow next"></div>
+</div>

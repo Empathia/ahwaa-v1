@@ -1,0 +1,4 @@
+.search > p > input{margin-top:2px}
+.user-info > .btn-gradient span{height:29px;width:31px;display:block;background:url('../images/btn-private-msg.png') no-repeat 7px 5px}
+.avatar{border:1px solid rgb(206, 207, 208)}
+.items > li {background-color:rgb(234, 240, 243)}

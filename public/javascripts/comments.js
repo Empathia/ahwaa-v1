@@ -94,6 +94,8 @@ $.fn.comments = function(options){
             has_comments && link.addClass('minus');
             link.css('display', 'inline');
             var commentsClon = cloneComments(link, comments.outerHTML(), index, has_comments);
+            commentsClon.find('.contextual_index').val(index);
+            commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
         }
         return false;
@@ -129,7 +131,7 @@ $.fn.comments = function(options){
         return false;
     });
     
-    $('.useful').live('click', function(){
+    $('.useful-lk').live('click', function(){
         var that = $(this);
         if(!that.hasClass('disabled')) {
             var reply = new Reply({
@@ -138,10 +140,10 @@ $.fn.comments = function(options){
             });
             reply.vote_up({
                 success: function (r) {
-                    that.text(I18n.t('replies.reply.useful')).addClass('disabled');
+                    that.addClass('disabled').text(I18n.t('replies.reply.useful'));
                 },
                 error: function () {
-                    that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
+                    that.addClass('disabled').text(I18n.t('replies.reply.already_useful'));
                 }
             });
         }
@@ -211,26 +213,13 @@ $.fn.comments = function(options){
         var allComments = [];
         $('.comments:not(.clon)').each(function(){
             var comments = $(this),
-                idChunks =  comments.attr('id').split('_');             
-            idChunks.shift();
-            var id = idChunks.join('_'),
-                index = idChunks[idChunks.length-1];
-            $('#comments_' +  id +'_clon').length == 0 && allComments.push(cloneComments(getLink(idChunks, 1), comments.outerHTML(), id, true)[0]);
+                id = comments.attr('id').replace('comments_', '');
+            $('#comments_' +  id +'_clon').length == 0 && allComments.push(cloneComments($('#add_' + id), comments.outerHTML(), id, true)[0]);
         });         
        $(allComments).slideDownComments();
        $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
        $('.topic-content .has_comments').addClass('minus');
     } 
-    
-    function getLink(idChunks, level){
-        while(idChunks.length){
-            var id = idChunks.pop();
-            if(idChunks.length > 0){
-                return getLink(idChunks, ++level)
-            }                    
-            return $('.topic-content .icn.level_' + level + ':eq(' + id + ')');
-        } 
-    }
     
     function cloneComments(link, comments, index, has_comments){
         var parag = link.parent(),
@@ -241,14 +230,11 @@ $.fn.comments = function(options){
         comments = parag.next();
         comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
-        comments.find('.contextual_index').val(index);  
-        if(comments.parents('.comments').length) {
-            comments.find('.parent_id').val(/comments_(\d+)_clon/.exec(comments.parents('.comments').attr('id'))[1]);  
-        }
         comments.find('p').addMarkers();
         $('.icn.level_2').each(function() {
+            var ix = $(this).parents('.comments.clon').find('.icn.level_2').index($(this));
             var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
-            $(this).attr('id', 'add_' + id + '_' + $(this).index());
+            $(this).attr('id', 'add_' + id + '_' + ix);
         });
         return comments;
     }   
@@ -285,11 +271,15 @@ $.fn.comments = function(options){
             addCommentForm = $('#add_comments').clone(true),
             id = 'add_comment_clon' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
-            index = newResponse.parents('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
+            index = newResponse.closest('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
         newResponse.hasClass('reply-new-response') && addCommentForm.addClass('reply-new-response');
-        addCommentForm.attr('id', id).addClass('clon no-arrow').find('.contextual_index').val(index).end().find('.comm-arrow').remove();
+        addCommentForm.attr('id', id).addClass('clon no-arrow').find('.comm-arrow').remove();
+        newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
         newResponse.replaceWith(addCommentForm);
         $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
+        // comments.find('.contextual_index').val(index);  
+        addCommentForm.find('.reply_to').val(addCommentForm.closest('li').attr('data-id'));  
+        // addCommentForm.find('.contextual_index').val(addCommentForm.prev('p').find('a:last-child').attr('id').replace('add_', ''));
         e.preventDefault();
         return false;
     });                                       

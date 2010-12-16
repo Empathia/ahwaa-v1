@@ -8,7 +8,8 @@ $.fn.formValidator = function(options){
              var _input = $(this),
                  value = _input.val(),
                  error = false,
-                 type = this.getAttribute('type');
+                 type = this.getAttribute('type');              
+             value == _input.attr('placeholder') && (value = '');
              if(value){         
                  var pattern = false;
                  switch(type){
@@ -45,18 +46,22 @@ $.fn.formValidator = function(options){
         if(_form.find('.error').length){
             return false;
         }
+        return true;
     }
 
     return this.each(function(){
 
         if(this.getAttribute('type')) {
             $(this).click(function(){
-                return validateForm($(this).closest('form'), options);
+                if(validateForm($(this).closest('form'), options)) {
+                    $(this).parents('form').trigger('submit');
+                }
+                return false;
             });
         }
         else{
             var _form = $(this);
-            _form.submit(function(){
+            _form.bind('submit', function(){
                 return validateForm(_form, options);
             });
         }

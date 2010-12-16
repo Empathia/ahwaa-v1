@@ -1,11 +1,12 @@
-$(function(){    
+$(function(){   
+    
     function toggleSignUp(link, formName){
-        $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active');
+        $('.auth-wrapper > a').add('.over-form').removeClass('auth-form-active').filter('.over-form').addClass('hidden');
         link.addClass('auth-form-active');
         if(!formName){
           formName = '.' + link.attr('id') + '-form';
         }
-        $(formName).addClass('auth-form-active').offset({
+        $(formName).removeClass('hidden').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight() - 1
             }
@@ -65,15 +66,13 @@ $(function(){
     $('.sign-up-form #user_email').change(function () {
         $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, ''));
     });
-
-    $('.login-form').find('input[type=submit]').formValidator(
-        {
-            'errors': {
-                'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
-                'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
-            }
+        
+    $('.login-form').find('input[type=submit]').formValidator({
+        'errors': {
+            'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
+            'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
         }
-    );
+    });
 
     $('.forgot-pass-form').submit(function () {
         var that = $(this),
@@ -210,7 +209,19 @@ $(function(){
             if (event.keyCode == 27) $.fn.pageSlideClose();
         });
      }
-     
+                 
+     var flashAlert = $('.flash.alert');
+     if(flashAlert.length){
+        setTimeout(function(){                                                            
+            flashAlert.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
+                flashAlert.click(function(){
+                  flashAlert.slideUp(function(){
+                      flashAlert.remove();
+                  })
+                }); 
+            });
+        }, 1000);             
+     }
 });
 
 $(window).load(function () {
@@ -231,6 +242,9 @@ $(window).load(function () {
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
     headerTags.css('width', null);
+    if($.browser.msie){
+        $.browser.version == '8.0' ? $('.over-form').addClass('hidden') : headerTags.parent().css('position', 'static');
+    }
       
     var container = $('.container'),
         siblings = container.siblings(),

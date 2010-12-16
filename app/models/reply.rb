@@ -12,7 +12,7 @@ class Reply < ActiveRecord::Base
   has_many :flags, :class_name => 'Rating', :dependent => :destroy,
     :conditions => { :vote => Rating::FLAG }
   has_many :ratings, :dependent => :destroy
-  has_many :replies, :foreign_key => :parent_id
+  has_many :replies, :foreign_key => :parent_id, :conditions => { :contextual_index => nil }
 
   validates :content, :presence => true
   validates :topic_id, :presence => true
@@ -21,6 +21,7 @@ class Reply < ActiveRecord::Base
 
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
   before_save :check_bad_words
+  before_save :nullify_contextual_index
 
   scope :latest, order("created_at DESC").limit(5)
   scope :flagged, :include => :ratings, :conditions => "ratings.vote = #{Rating::FLAG}"
@@ -80,6 +81,10 @@ class Reply < ActiveRecord::Base
   end
 
   private
+
+  def nullify_contextual_index
+    self.contextual_index = nil if contextual_index.blank?
+  end
 
   def check_bad_words
     self.content = BadWord.search_and_replace(content)

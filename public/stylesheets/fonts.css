@@ -16,5 +16,7 @@
 body{font-size: 13px; font-family: Arial, Helvetica; color: #61656a;}
 h1, h2{color: #393c3f;}
 h1{font-size: 22px; font-family: 'GothamMediumRegular'; font-weight: normal;}
-.sec-title, .h2{font-size: 16px; font-family: 'GothamBoldRegular'; color: #393c3f; font-weight: normal; padding-bottom: 10px;}
+.sec-title, .sec-title-med, .h2{font-size: 16px; color: #393c3f; font-weight: normal; padding-bottom: 10px;}
+.sec-title, .h2{font-family: 'GothamBoldRegular';}
+.sec-title-med{font-family: 'GothamMediumRegular';}
 h3,.regular{font-size: 13px; color: #61656a;}

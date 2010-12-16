@@ -13,6 +13,7 @@ en:
         alert: '%{resource_name} could not be destroyed.'
     application:
       should_be_admin: 'You should have admin credentials to access this part of site.'
+      not_logged_in: You are not logged in
     passwords:
       update:
         notice: Your password has been changed. You can now log in with your new password.
@@ -48,26 +49,25 @@ en:
         one: "1 error prohibited this record from being saved:"
         other: "%{count} errors prohibited this record from being saved:"
 
-
   helpers:
     ago: %{time} ago
-    
+
   private_message:
     send_msg: Send Private Message
     cancel: Cancel
     submit: Submit
     points: "%{points} points"
-    expert: is an Expert            
+    expert: is an Expert
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
     no_activity: No recent activity
   layouts:
-    application:        
-      header:     
+    application:
+      header:
         auth:
           sign_up: Sign Up
           login: Login
-        request_topic: 
+        request_topic:
           button: Request a topic
           legend: "Anonymous users can't request a topic"
           sign_up: Sign Up
@@ -78,7 +78,7 @@ en:
         sign_up_form:
           legend: Please register and enjoy all the benefits of Transcend!
           username: Your Name or Nickname
-          email: Your Email          
+          email: Your Email
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
           note_pt2: and
           terms_of_use: Terms of Use
@@ -87,7 +87,7 @@ en:
           error_email_empty: Email is empty
           error_username_empty: Username is empty
           error_username_not: This username is not available
-          error_password_empty: The password is empty          
+          error_password_empty: The password is empty
         login_form:
           login: Email or Username
           password: Password
@@ -96,7 +96,7 @@ en:
           invalid: The email address or password is incorrect. Please try again.
           wrong_password: Wrong password
           not_found: Username or Email not found
-          error_login_empty: Username or Email is empty          
+          error_login_empty: Username or Email is empty
         forgot_pass_form:
           not_found: Username or Email not found
           legend: "Enter your email address and we'll send you a link to reset your password."
@@ -111,14 +111,14 @@ en:
           sign_out: Sign Out
         search_topics: Search topics
       footer:
-        all_rights: "© Transcend - All Rights Reserved %{year}" 
+        all_rights: "© Transcend - All Rights Reserved %{year}"
         about: About
         privacy_policy: Privacy Policy
     admin:
-      header:             
+      header:
         logged_in:
           hi: 'Hi %{username}'
-          my_account: My Account          
+          my_account: My Account
           sign_out: Sign Out
   home:
     index:
@@ -134,9 +134,7 @@ en:
     related_content:
       related_content:
         title: Related Content
-        arrows:
-          back: Back
-          next: Next
+        view_more: View More
     topic:
       popular:
         by: By %{author}
@@ -189,7 +187,7 @@ en:
       topicDetails: Topic details
   users:
     show:
-      sidebar:                   
+      sidebar:
         points: '%{points} points'
         edit_profile: Edit Profile
         buttons:
@@ -220,7 +218,7 @@ en:
             legend_st_line: "Build your profile info and"
             legend_nd_line: "connect with people like you!"
       content:
-        avatars: 
+        avatars:
           suggested: Select your avatar
           loading: Loading Avatars...
           custom_avatar: Custom Avatar

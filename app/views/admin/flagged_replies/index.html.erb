@@ -10,9 +10,9 @@
   </tr>
   <% @flags.each do |reply| %>
     <tr>
-      <td><%= reply.created_at %></td>
+      <td class="created_at"><%= l reply.created_at, :format => :short %></td>      
       <td><%= reply.content %></td>
-      <td><%= reply.flags.count %></td>
+      <td class="flag_count"><%= reply.flags.count %></td>
       <td>
         <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete %></td>
       </td>

@@ -1,6 +1,5 @@
 $(function(){
     $('.topic-content > p').comments({color: '#FFFF00'});
-    $('.related-content > div > ul').blockSlider();
 
     /* The Browser Sniff is pending*/
     $('.add_comments > div > textarea').click(function(){
