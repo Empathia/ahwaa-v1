@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      flash[:notice] = t('flash.users.create.notice')
       UserMailer.sign_up_confirmation(@user).deliver
     end
   end

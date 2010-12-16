@@ -1,3 +1,3 @@
 require "babilu"
-I18n.reload!
-Babilu.generate
+# I18n.reload!
+# Babilu.generate

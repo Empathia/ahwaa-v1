@@ -19,10 +19,14 @@ class Admin::RelatedContentsController < ApplicationController
         @possible_thumbnails = Fetchers::Link.get_possible_thumbnails(url)
       else
         @related_content.topic = @topic
-        if @related_content.save
-          flash[:notice] = "#{@related_content.class.to_s} created"
-        else
-          flash[:alert] = @related_content.errors.full_messages.to_sentence
+        begin
+          if @related_content.save
+            flash[:notice] = "#{@related_content.class.to_s} created"
+          else
+            flash[:alert] = @related_content.errors.full_messages.to_sentence
+          end
+        rescue => detail
+          flash[:alert] = 'There was an error creating the related content, please check the url is valid and try again'
         end
       end
     else

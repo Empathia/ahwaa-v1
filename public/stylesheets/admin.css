@@ -6,13 +6,14 @@ table td{padding: 5px 10px;}
 .border-left{border-left: 1px solid #e9f0f3;}
 .border-right{border-right: 1px solid #e9f0f3;}
 .created_at{width: 80px; text-align: center;}
+.requested_at{width: 83px; text-align: center;}
 .updated_at{width: 80px;}
 .edit{width: 40px; text-align: center;}
 .delete{width: 40px; text-align: center;} 
 .requests-title{width: 400px;}
 .requests-actions{width: 136px;}
 .requests-votes{width: 35px; text-align: center;}
-.related_content{width: 100px; text-align: center;}
+.related_content{width: 102px; text-align: center;}
 .profile_matches{width: 100px; text-align: center;}
 .flag_count{width: 70px; text-align: center;}
 .adm-title{overflow: hidden;}

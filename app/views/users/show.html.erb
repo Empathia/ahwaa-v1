@@ -8,7 +8,7 @@
 <div class="aligned panel border-all"> 
   <div class="pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
       <section class="avatars-wrapper"> 
-        <h2 class="regular"><%= t('.content.avatars.suggested') %></h2>
+        <h2 class="regular pm-panel-padding"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading"><%= image_tag 'loading.gif', :width => "32", :height => "32"%><br/><%= t('.content.avatars.loading') %></p>
         <section class='avatars-list'>
           <ul class="avatars"></ul>

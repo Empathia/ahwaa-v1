@@ -17,6 +17,11 @@ en:
     passwords:
       update:
         notice: Your password has been changed. You can now log in with your new password.
+    users:
+      create:
+        notice: "We've sent you an email for confirmation. Please check your inbox"
+      destroy:
+        notice: "Your account has been terminated."
 
   activerecord:
     models:
@@ -85,9 +90,11 @@ en:
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
           error_email_empty: Email is empty
+          error_email_invalid: Email is invalid
           error_username_empty: Username is empty
           error_username_not: This username is not available
           error_password_empty: The password is empty
+          error_password_short: The password is invalid
         login_form:
           login: Email or Username
           password: Password

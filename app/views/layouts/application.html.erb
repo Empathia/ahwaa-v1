@@ -51,10 +51,10 @@
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
-                          <%= f.email_field :email, :required => "true", :placeholder => t('.header.sign_up_form.email') %>
+                          <%= f.email_field :email, :required => "true", :maxlength => 35, :placeholder => t('.header.sign_up_form.email') %>
                         </li>
                         <li class="username">
-                          <%= f.text_field :username, :required => "true", :placeholder => t('.header.sign_up_form.username') %>
+                          <%= f.text_field :username, :required => "true", :maxlength => 35, :placeholder => t('.header.sign_up_form.username') %>
                         </li>
                       </ul>
                       <div class="errors"></div>

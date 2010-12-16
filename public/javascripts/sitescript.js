@@ -5,8 +5,10 @@ $(function(){
         link.addClass('auth-form-active');
         if(!formName){
           formName = '.' + link.attr('id') + '-form';
-        }
-        $(formName).removeClass('hidden').addClass('auth-form-active').offset({
+        }          
+        var form = $(formName);
+        form.find('.error').removeClass('error').filter('p').remove();
+        form.removeClass('hidden').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight() - 1
             }
@@ -56,8 +58,11 @@ $(function(){
 
     $('.sign-up-form').find('input[type=submit]').formValidator(
         {
-            'errors': {
-                'email': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+            'errors': {              
+                'email': {
+                    'empty': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+                    'invalid': I18n.t('layouts.application.header.sign_up_form.error_email_invalid')
+                },
                 'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
             }
         }
@@ -70,7 +75,10 @@ $(function(){
     $('.login-form').find('input[type=submit]').formValidator({
         'errors': {
             'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
-            'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+            'password': {
+                'invalid': I18n.t('layouts.application.header.sign_up_form.error_password_short'),
+                'empty': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+            }
         }
     });
 
@@ -166,7 +174,7 @@ $(function(){
        });
     });
     
-    $('input:text, textarea').live('focus', function(){
+    $('input[type=text], input[type=email], input[type=password], textarea').live('focus', function(){
         $(this).hasClass('error') && $(this).removeClass('error') && $(this).siblings('p.error').remove();
     })
 
@@ -208,14 +216,14 @@ $(function(){
             if (event.keyCode == 27) $.fn.pageSlideClose();
         });
      }
-
-     var flashAlert = $('.flash.alert');
-     if(flashAlert.length){
+     
+     var flashMsg = $('.flash');
+     if(flashMsg.length){
         setTimeout(function(){                                                            
-            flashAlert.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
-                flashAlert.click(function(){
-                  flashAlert.slideUp(function(){
-                      flashAlert.remove();
+            flashMsg.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
+                flashMsg.click(function(){
+                  flashMsg.slideUp(function(){
+                      flashMsg.remove();
                   })
                 }); 
             });

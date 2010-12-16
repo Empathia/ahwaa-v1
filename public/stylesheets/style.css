@@ -393,11 +393,11 @@ form + .recently-topics{padding-top:18px;}
 
 .custom > a{text-decoration: none;}
 
-.flash.alert{height: 45px; line-height: 3.3; color: #464646; font-weight: bold; border-bottom: 1px solid #c9c8b1; position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; visibility: hidden; cursor: pointer;
+.flash{height: 45px; line-height: 3.3; color: #464646; font-weight: bold; border-bottom: 1px solid #c9c8b1; position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; visibility: hidden; cursor: pointer;
   background-image: -moz-linear-gradient(top, #fefce9, #fefadd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fefce9),color-stop(1, #fefadd));
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefce9', EndColorStr='#fefadd');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefce9', EndColorStr='#fefadd')";
 }
 
-.flash.alert > .aligned{background: url('../images/icn-close.png') no-repeat right 17px;}
+.flash > .aligned{background: url('../images/icn-close.png') no-repeat right 17px;}

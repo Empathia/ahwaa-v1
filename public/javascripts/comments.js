@@ -292,9 +292,9 @@ $.fn.comments = function(options){
     }).next().addClass('reply-new-response');
     
     $('.comments-ls > li').live('mouseenter mouseleave', function(e){             
-        if (e.type == 'mouseover') {
+        if (e.type == 'mouseenter') {                                              
             $(this).children('.res-flag-btns').show();
-        } else {                            
+        } else {
             $('.sign-up-tt-wrapper').hide();
             $(this).children('.res-flag-btns').hide();
         }
