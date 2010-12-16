@@ -126,7 +126,7 @@ $(function(){
         $('.search_results').removeClass('visible');
     });
 
-    $('.send-private-msg').click(function(){
+    $('.send-private-msg').live('click', function(){
         if(!$(this).hasClass('disabled')) {
             $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
             var textarea = $(this).closest('.private-msg').find('textarea');
@@ -145,7 +145,7 @@ $(function(){
        return false;
     })
 
-    $('.private-msg').find('.cancel').click(function(){
+    $('.private-msg').find('.cancel').live('click', function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
        return false;
     });
@@ -154,13 +154,13 @@ $(function(){
         $(this).siblings('.private-msg').removeClass('inside');
         var classes = "active-avatar";
         if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics') || $("body").width() < 1298 && $(this).parent().parent().is('div.response-user') ) {
-           classes += " inside";
+           classes += "inside";
         }
         $(this).siblings('.private-msg').fadeIn('fast').addClass(classes);
     });
 
     $('.active-avatar').live('mouseleave', function(){
-       var pm = $(this) ;
+       var pm = $(this);
        pm.fadeOut('fast', function(){
          pm.find('.pm-flash').remove();
        });
