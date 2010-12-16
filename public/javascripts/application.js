@@ -17,12 +17,18 @@ String.prototype.padRight = function(n, pad) {
     return t.toString();
 };
 
+var searching = false;
+
 $(document).ready(function() {
     //listen on keystrokes of the query text field
     $("#query").keyup(function(e) {
-        var code = (e.keyCode ? e.keyCode : e.which);
-        if(code == 13 || code == 32) { //Enter or space keycode
-            $.getScript("/search/topics.js?query=" + encodeURIComponent($.trim($("#query").val())));
+        if(!searching && $(this).val()) {
+            searching = true;
+            setTimeout(function() {
+                $.getScript("/search/topics.js?query=" + encodeURIComponent($.trim($("#query").val())), function () {
+                    searching = false;
+                });
+            }, 1000);
         }
     });
 

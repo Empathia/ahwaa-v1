@@ -17,6 +17,11 @@ en:
     passwords:
       update:
         notice: Your password has been changed. You can now log in with your new password.
+    users:
+      create:
+        notice: "We've sent you an email for confirmation. Please check your inbox"
+      destroy:
+        notice: "Your account has been terminated."
 
   activerecord:
     models:
