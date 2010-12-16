@@ -37,7 +37,7 @@ $.fn.formValidator = function(options){
              }   
              if(error){
                  _input.addClass('error');
-                 error_msg = options.errors[type].constructor.name == 'Object' ? options.errors[type][error] : options.errors[type];
+                 error_msg = typeof options.errors[type] == 'object' ? options.errors[type][error] : options.errors[type];
                  if(error_msg){
                      var parentField = _input.closest('.field'),
                          error = '<p class="error">' + error_msg + '</p>';
