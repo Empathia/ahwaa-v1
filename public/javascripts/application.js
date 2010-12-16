@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     //[Admin] listen to the profile match fomr select tags to filter results dinamically
     $('#profile_match_filters_form').find('select').change(function(){
-      
+      getProfileTopicMatches();
     });
 
     //[Admin] checks related content url to handle special cases
