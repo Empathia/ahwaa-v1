@@ -152,12 +152,11 @@ $(function(){
 
     $('.avatar, .avatar + em').live('mouseover',function(){
         $(this).siblings('.private-msg').removeClass('inside');
-        var classes = "active-avatar";
+        var classes = "active-avatar ";
         if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics') || $("body").width() < 1298 && $(this).parent().parent().is('div.response-user') ) {
            classes += "inside";
         }
         $(this).siblings('.private-msg').fadeIn('fast').addClass(classes);
-        $(this).find('span').css('z-index','100000');
     });
 
     $('.active-avatar').live('mouseleave', function(){
@@ -241,7 +240,7 @@ $(window).load(function () {
         }
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
-    headerTags.css('width', 'auto');
+    headerTags.css('width', null);
     if($.browser.msie){
         $.browser.version == '8.0' ? $('.over-form').addClass('hidden') : headerTags.parent().css('position', 'static');
     }
