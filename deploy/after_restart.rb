@@ -1,6 +1,6 @@
 env = node['environment']['framework_env']
 
 puts "Generating babilu locales for javascript"
-run "rake babilu:generate RAILS_ENV=#{env}"
-run "rm public/javascripts/all.js"
+run "cd #{current_path} && rake babilu:generate RAILS_ENV=#{env}"
+run "rm #{current_path}/public/javascripts/all.js"
 
