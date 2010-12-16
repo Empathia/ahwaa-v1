@@ -1,4 +1,4 @@
-<h2 class="regular"><%= t('users.show.content.private_messages.title') %></h2>
+<h2 class="regular pm-panel-padding"><%= t('users.show.content.private_messages.title') %></h2>
 <% unless inbox.empty? %>
   <ul class="messages">
     <% inbox.each do |pm| %>
@@ -32,5 +32,5 @@
       </div>
     <% end %>
 <% else %>
-  <h3><%= t('.no_messages') %></h3>
+  <h3 class="pm-panel-padding"><%= t('.no_messages') %></h3>
 <% end %>

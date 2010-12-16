@@ -5,8 +5,10 @@ $(function(){
         link.addClass('auth-form-active');
         if(!formName){
           formName = '.' + link.attr('id') + '-form';
-        }
-        $(formName).removeClass('hidden').addClass('auth-form-active').offset({
+        }          
+        var form = $(formName);
+        form.find('.error').removeClass('error').filter('p').remove();
+        form.removeClass('hidden').addClass('auth-form-active').offset({
             'left': link.offset().left,
             'top': link.offset().top + link.outerHeight() - 1
             }
@@ -166,7 +168,7 @@ $(function(){
        });
     });
     
-    $('input:text, textarea').live('focus', function(){
+    $('input[type=text], input[type=email], input[type=password], textarea').live('focus', function(){
         $(this).hasClass('error') && $(this).removeClass('error') && $(this).siblings('p.error').remove();
     })
 
@@ -210,13 +212,13 @@ $(function(){
         });
      }
                  
-     var flashAlert = $('.flash.alert');
-     if(flashAlert.length){
+     var flashMsg = $('.flash');
+     if(flashMsg.length){
         setTimeout(function(){                                                            
-            flashAlert.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
-                flashAlert.click(function(){
-                  flashAlert.slideUp(function(){
-                      flashAlert.remove();
+            flashMsg.css({'display': 'none', 'visibility':'visible'}).slideDown(function(){
+                flashMsg.click(function(){
+                  flashMsg.slideUp(function(){
+                      flashMsg.remove();
                   })
                 }); 
             });
