@@ -7,7 +7,8 @@ $.fn.formValidator = function(options){
          _form.find('input, textarea').each(function(e){
              var _input = $(this),
                  value = _input.val(),
-                 error = false,
+                 error = false,  
+                 error_msg = '',
                  type = this.getAttribute('type');              
              value == _input.attr('placeholder') && (value = '');
              if(value){         
@@ -20,7 +21,7 @@ $.fn.formValidator = function(options){
                         pattern = /^([a-z0-9_\.\-\+]+)@([\da-z\.\-]+)\.([a-z\.]{2,6})$/i;
                         break;
                      case 'number':
-                        pattern = /^-?[0-9]*(\.[0-9]+)?$/; 
+                        pattern = /^-?[0-9]*(\.[0-9]+)?$/;
                         break;
                      case 'url':
                         pattern = /^(https?:\/\/)?[\da-z\.\-]+\.[a-z\.]{2,6}[#\?\/\w \.\-=]*$/i;
@@ -29,16 +30,17 @@ $.fn.formValidator = function(options){
                         pattern =  /^\S{6,}/i;
                         break;
                  }
-                 error = pattern && !pattern.test(value);
+                 error = (pattern && !pattern.test(value)) ? 'invalid' : '';
              }
              else{
-                error = _input.attr('required');
+                error = _input.attr('required') ? 'empty' : '';
              }   
              if(error){
-                 _input.addClass('error')
-                 if(options.errors[type]){
+                 _input.addClass('error');
+                 error_msg = options.errors[type].constructor.name == 'Object' ? options.errors[type][error] : options.errors[type];
+                 if(error_msg){
                      var parentField = _input.closest('.field'),
-                         error = '<p class="error">' + options.errors[type] + '</p>';
+                         error = '<p class="error">' + error_msg + '</p>';
                      parentField.length ? parentField.after(error) : _input.after(error);
                  }
              }

@@ -58,8 +58,11 @@ $(function(){
 
     $('.sign-up-form').find('input[type=submit]').formValidator(
         {
-            'errors': {
-                'email': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+            'errors': {              
+                'email': {
+                    'empty': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
+                    'invalid': I18n.t('layouts.application.header.sign_up_form.error_email_invalid')
+                },
                 'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
             }
         }
@@ -72,7 +75,10 @@ $(function(){
     $('.login-form').find('input[type=submit]').formValidator({
         'errors': {
             'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
-            'password': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+            'password': {
+                'invalid': I18n.t('layouts.application.header.sign_up_form.error_password_short'),
+                'empty': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+            }
         }
     });
 

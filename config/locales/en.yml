@@ -90,9 +90,11 @@ en:
           privacy_policy: Privacy Policy
           note_pt3: for using LGBT.
           error_email_empty: Email is empty
+          error_email_invalid: Email is invalid
           error_username_empty: Username is empty
           error_username_not: This username is not available
           error_password_empty: The password is empty
+          error_password_short: The password is invalid
         login_form:
           login: Email or Username
           password: Password
