@@ -235,7 +235,7 @@ $.fn.comments = function(options){
         comments = parag.next();
         comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
-        comments.find('p').addMarkers();
+        comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
         $('.icn.level_2').each(function() {
             var ix = $(this).parents('.comments.clon').find('.icn.level_2').index($(this));
             var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
