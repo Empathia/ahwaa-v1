@@ -6,14 +6,16 @@
         <%= t('.related_content.title') %>
       </h2>   
       <div class="blue-btn-wrapper">
-        <a href="#" class="blue-btn">
-          <span>
+        <% if related_contents.length > 6 %>
+          <a href="#" class="blue-btn">
             <span>
-              <span class="w-arrow"><%= t('.related_content.view_more') %></span>
-              <span class="more-arrow"></span>
+              <span>
+                <span class="w-arrow"><%= t('.related_content.view_more') %></span>
+                <span class="more-arrow"></span>
+              </span>
             </span>
-          </span>
-        </a>
+          </a>
+        <% end %>
       </div>
     </div>
     <div class="related-carrousel">

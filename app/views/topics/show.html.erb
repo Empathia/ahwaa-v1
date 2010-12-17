@@ -76,7 +76,7 @@
   </div>
   <br class="clear">  
 </div>
-<%= form_for [@topic, Reply.new], :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
+<%= form_for Reply.new, :url => topic_replies_path(@topic, :format => :js), :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
   <span class="comm-arrow"></span>
   <div class="response-wrapper border-all">
     <div>                

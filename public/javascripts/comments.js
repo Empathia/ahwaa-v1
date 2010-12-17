@@ -97,6 +97,11 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
+            console.log(commentsClon);
+            commentsClon.one('submit.rails', function (ev) {
+                $(this).callRemote();
+                ev.preventDefault();
+            });
         }
         return false;
     });                         
@@ -280,6 +285,7 @@ $.fn.comments = function(options){
         // comments.find('.contextual_index').val(index);  
         addCommentForm.find('.reply_to').val(addCommentForm.closest('li').attr('data-id'));  
         // addCommentForm.find('.contextual_index').val(addCommentForm.prev('p').find('a:last-child').attr('id').replace('add_', ''));
+
         e.preventDefault();
         return false;
     });                                       
