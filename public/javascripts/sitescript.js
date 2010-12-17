@@ -137,22 +137,31 @@ $(function(){
     $('.send-private-msg').live('click', function(){
         if(!$(this).hasClass('disabled')) {
             $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
-            var textarea = $(this).closest('.private-msg').find('textarea');
-            textarea.attr('value', textarea.attr('placeholder'));
-            textarea.focus(function(){
-                if(textarea.val() == textarea.attr('placeholder')){
-                    textarea.val('');
-                }
+            if (!$.browser.webkit) {
+                var textarea = $(this).closest('.private-msg').find('textarea');
+                textarea.attr('value', textarea.attr('placeholder'));
+                textarea.focus(function(){
+                textarea.val() == textarea.attr('placeholder') && textarea.val('');
                 textarea.blur(function(){
-                        if(textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')){
-                            textarea.attr('value', textarea.attr('placeholder'));
-                        }
+                        (textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')) && textarea.attr('value', textarea.attr('placeholder'));
                     });
                 });
             }
-       return false;
+        }
+        return false;
     })
-
+    
+    $('.form-private-msg').each(function(){
+        var formPrivateMsg = $(this);
+        formPrivateMsg.find('input[type=submit]').click(function(){
+            var textarea = formPrivateMsg.find('textarea');
+            if(textarea.attr('placeholder') == textarea.val() || $.trim(textarea.val()) == ''){
+                formPrivateMsg.prepend('<div class="pm-flash error border-all"><p>' + I18n.t('private_message.message_empty') + '</p></div>');
+                return false;
+            } 
+        });
+    });
+    
     $('.private-msg').find('.cancel').live('click', function(){
        $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
        return false;

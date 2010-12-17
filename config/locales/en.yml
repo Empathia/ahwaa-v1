@@ -59,13 +59,15 @@ en:
 
   private_message:
     send_msg: Send Private Message
+    write_msg: Write your message
     cancel: Cancel
     submit: Submit
     points: "%{points} points"
     expert: is an Expert
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
-    no_activity: No recent activity
+    message_empty: The message is empty
+    no_activity: No recent activity                  
   layouts:
     application:
       header:
