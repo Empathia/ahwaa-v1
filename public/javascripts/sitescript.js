@@ -248,7 +248,8 @@ $(window).load(function () {
         }
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
-    headerTags.css('width', 'auto');
+    headerTags.css('width', 'auto').parent().css('overflow', 'visible');
+    
     if($.browser.msie){
         $.browser.version == '8.0' ? $('.over-form').addClass('hidden') : headerTags.parent().css('position', 'static');
     }
