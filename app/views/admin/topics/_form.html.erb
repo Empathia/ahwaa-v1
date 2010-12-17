@@ -8,7 +8,8 @@
         cache: true,
         filter_case: true,
         filter_hide: true,
-        newel: true
+        newel: true,
+        keepItemsOnDeleteKeyPress: true
       });
       <% @topic_tags.each do |topic_tag| %>
         $("#topic_tag_list").trigger("addItem", [<%= topic_tag.to_json.html_safe %>] );
