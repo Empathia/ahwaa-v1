@@ -53,12 +53,23 @@ $.fn.formValidator = function(options){
 
     return this.each(function(){
 
-        if(this.getAttribute('type')) {
-            $(this).click(function(){
-                if(validateForm($(this).closest('form'), options)) {
-                    $(this).parents('form').trigger('submit');
-                }
-                return false;
+        if(this.getAttribute('type')) {       
+            var form = $(this).closest('form');
+            $.browser.msie && form.find('input').keydown(function(e){
+                if(e.keyCode == 13){
+                    if(validateForm(form, options)){
+                        form.trigger('submit');
+                    }                         
+                    e.stopPropagation();
+                    e.preventDefault();
+                }                             
+            });
+            $(this).click(function(e){        
+                if(validateForm(form, options)){
+                    form.trigger('submit');
+                }                         
+                e.stopPropagation();
+                e.preventDefault();
             });
         }
         else{

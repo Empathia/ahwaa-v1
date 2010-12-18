@@ -97,7 +97,6 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
-            console.log(commentsClon);
             commentsClon.one('submit.rails', function (ev) {
                 $(this).callRemote();
                 ev.preventDefault();

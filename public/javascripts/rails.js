@@ -84,14 +84,12 @@ jQuery(function ($) {
         }
     });
 
-
-
     /**
      * remote handlers
      */
-    $('form[data-remote]').bind('submit.rails', function (e) {
+    $('form[data-remote]').live('submit.rails', function (e) {
         $(this).callRemote();
-        e.preventDefault();
+        e.preventDefault();          
     });
 
     $('a[data-remote],input[data-remote]').live('click.rails', function (e) {
