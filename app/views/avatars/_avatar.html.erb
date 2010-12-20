@@ -1,12 +1,6 @@
-<li <%= "class='active'" if current_user.profile.avatar == avatar %>>
+<%= content_tag :li, :class => ('active' if current_user.profile.avatar == avatar) do %>
   <span class="avatar">
-    <%= link_to(
-      image_tag(avatar.url, :width => "56"),
-      set_avatar_user_path(:avatar_id => avatar.id), 
-      :remote => true, :format => 'js', :method => :post) 
-    %>
+    <%= link_to image_tag(avatar.url, :width => "56"), '#', :class => 'set-avatar-id', :'data-id' => avatar.id %>
   </span>
-  <% if current_user.profile.avatar == avatar %>
-    <img src="/images/checkmark.png" class="checkmark">
-  <% end %>
-</li>
+  <img src="/images/checkmark.png" class="checkmark" />
+<% end %>

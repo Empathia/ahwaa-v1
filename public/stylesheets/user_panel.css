@@ -101,7 +101,8 @@ aside{overflow: hidden;}
     border-radius:0!important;
     }
 
-.checkmark{position:absolute;right:-7px;top:-5px;background-image:none!important}
+.checkmark{position:absolute;right:-7px;top:-5px;background-image:none!important;display:none;}
+li.active > .checkmark{display:block;}
 
 #pm-wrapper strong{color:black}
 .pm-details{font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}

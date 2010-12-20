@@ -112,6 +112,13 @@ $(function(){
             });
         });
     });
+
+    $('.set-avatar-id').live('click', function () {
+        $('#user_profile_attributes_avatar_id').val($(this).attr('data-id'));
+        $(this).closest('ul').children('li.active').removeClass('active');
+        $(this).closest('li').addClass('active');
+        return false;
+    });
 });
 
 
