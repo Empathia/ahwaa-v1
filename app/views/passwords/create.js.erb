@@ -1,0 +1,16 @@
+<% if @user %>
+  var form = $('.forgot-pass-form');
+  var success = $('<p>').addClass('success').text('<%= escape_javascript t('layouts.application.header.forgot_pass_form.sent') %>').appendTo(form.find('.login')),
+      inputTxt = form.find('.login input').hide();
+  setTimeout(function(){
+      $('a.auth-form-active').removeClass('auth-form-active');
+      form.fadeOut(function(){
+          form.css('display', '').removeClass('auth-form-active');
+          success.remove();
+          inputTxt.val('').show();
+      });
+  }, 2000);
+<% else %>
+  $('<p>').addClass('error')
+    .text('<%= escape_javascript t('layouts.application.header.forgot_pass_form.not_found') %>').appendTo(form.find('.login')),
+<% end %>

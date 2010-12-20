@@ -8,7 +8,7 @@ describe PasswordsController do
   describe "POST create" do
     
     def do_request(params = {})
-      xhr :post, :create, params.merge(:format => :json)
+      xhr :post, :create, params.merge(:format => :js)
     end
 
     it "should try to find user with email or username" do
@@ -35,11 +35,6 @@ describe PasswordsController do
         do_request
       end
 
-      it "responds with status 201" do
-        do_request
-        response.status.should == 201
-      end
-
     end
 
     context "when user is not found" do
@@ -58,11 +53,6 @@ describe PasswordsController do
       it "should not reset single access token" do
         @user.should_not_receive(:reset_single_access_token!)
         do_request
-      end
-
-      it "responds with status 404" do
-        do_request
-        response.status.should == 404
       end
 
     end

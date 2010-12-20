@@ -1,6 +1,6 @@
 class PasswordsController < ApplicationController
   skip_before_filter :authenticate_user!
-  respond_to :json, :only => [:create]
+  respond_to :js, :only => [:create]
   before_filter :find_user, :only => [:edit, :update]
 
   def create
@@ -8,9 +8,6 @@ class PasswordsController < ApplicationController
     if @user
       @user.reset_single_access_token!
       UserMailer.password_reset(@user).deliver 
-      respond_with(@user, :location => root_path)
-    else
-      respond_with(@user, :status => :not_found, :location => root_path)
     end
   end
 
