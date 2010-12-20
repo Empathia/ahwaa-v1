@@ -2,8 +2,10 @@
   var w = $('.replies-wrapper');
   w.hasClass('pm-details');
   w.append('<%= escape_javascript render(:partial => 'reply', :object => @message) %>');
-  $('#reply-form')[0].reset();
-  $('#reply-form').show();
+  $('#reply-form').show()[0].reset();
+  $('#reply-form > .btn-gradient').hide();
+  $('#reply-form textarea').css({'height':'16px', 'min-height':'16px'});
+  !$.browser.webkit && $('#reply-form textarea').val().length == 0 && $('#reply-form textarea').val($('#reply-form textarea').attr('placeholder'));
 <% else %>
   var _form = $('.form-private-msg');
   _form.find('.pm-flash').remove();
