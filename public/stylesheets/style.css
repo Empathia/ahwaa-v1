@@ -275,7 +275,8 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 }
 
 .responses {background:url("../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-left:15px;display:inline!important;white-space:nowrap;}
-.tags{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px; margin: 0 10px;}   
+.tags{margin: 0 10px;}   
+.tags > li:first-child{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px;}
 
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
