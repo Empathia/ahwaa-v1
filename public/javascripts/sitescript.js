@@ -82,7 +82,8 @@ $(function(){
         }
     });
 
-    $('.forgot-pass-form').submit(function () {
+    $('.forgot-pass-form').submit(function (e) {
+        console.log('asdasd');
         var that = $(this),
             inputSubmit = that.find('input[type=submit]').attr('disabled', 'disabled');
         that.find('.error').remove();
@@ -92,7 +93,6 @@ $(function(){
             type: 'post',
             data: $(this).serialize(),
             success: function (data) {
-                console.log(data);
                 var success = $('<p>').addClass('success').text(I18n.t('layouts.application.header.forgot_pass_form.sent')).appendTo(that.find('.login')),
                     inputTxt = that.find('.login input').hide();
                 setTimeout(function(){
@@ -112,7 +112,7 @@ $(function(){
                 inputSubmit.removeAttr('disabled');
             }
         });
-        return false;
+        e.preventDefault();
     }).find('input[type=submit]').formValidator(
         {
             'errors': {

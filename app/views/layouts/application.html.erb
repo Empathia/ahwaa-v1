@@ -75,7 +75,7 @@
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
                     <% end %>
-                    <%= form_tag passwords_path, :class => "over-form forgot-pass-form" do %>
+                    <%= form_tag passwords_path(:json), :class => "over-form forgot-pass-form" do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
                         <li class="login">
