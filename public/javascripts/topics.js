@@ -28,44 +28,15 @@ $(function(){
        return false;
     });  
     
-    
-    /* //This code is in the comments.js file    
-    $('.flag:not(.disabled)').live('click', function () {
-        console.log('hola2');
-        var that = $(this);
-        var reply = new Reply({
-            id: that.attr('data-value'),
-            topic_id: topicId
-        });
-        reply.flag({
-            success: function (r) {
-                that.addClass('disabled').find('span').text(I18n.t('replies.reply.flagged'));
-            },
-            error: function () {
-                that.addClass('disabled').find('span').text(I18n.t('replies.reply.already_flagged'));
-            }
-        });
-        return false;
-    });  
-    
-
-    $('.useful:not(.disabled)').live('click', function () {
-        var that = $(this);
-        var reply = new Reply({
-            id: that.attr('data-value'),
-            topic_id: topicId
-        });
-        reply.vote_up({
-            success: function (r) {
-                that.text(I18n.t('replies.reply.useful')).addClass('disabled');
-            },
-            error: function () {
-                that.text(I18n.t('replies.reply.already_useful')).addClass('disabled');
-            }
-        });
+    $('.view-more').click(function(e){                        
+        if(!$(this).hasClass('disabled')){
+            var carrouselWrapper = $('.related-carrousel'),
+                carrousel = carrouselWrapper.children('ul:eq(0)');
+            carrousel.outerHeight() > carrouselWrapper.outerHeight() && carrouselWrapper.animate({height:carrousel.outerHeight()}) && $(this).addClass('disabled');
+        }
+        e.preventDefault();
         return false;
     });
-    */
     
     $(window).scroll(function(e){
         sidebar.add(socialBookmarkers).each(function(){

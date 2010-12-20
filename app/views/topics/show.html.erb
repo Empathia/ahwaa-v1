@@ -22,7 +22,7 @@
             <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
             <em><%= @topic.user.username %></em>
           </div>
-          <div class="clear"></div>
+          <br class="clear">
         </header>
         <div class="topic-content">
           <%= simple_format @topic.content %>
@@ -42,8 +42,7 @@
         <ul class="filter-resposes">
           <% Reply::CATEGORIES.each do |category| %>
             <li>
-              <%= check_box_tag :filter_category, category %>
-              <%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
+              <%= check_box_tag :filter_category, category %><%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
             </li>
           <% end %>
         </ul>
@@ -63,7 +62,7 @@
             </li>
           <% end %>
         </ul>
-        <div class="clear"></div>
+        <br class="clear">
       </section>
       <section class="need-help">
         <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
