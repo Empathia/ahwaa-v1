@@ -46,14 +46,24 @@ class Reply < ActiveRecord::Base
     ratings.sum(:vote) > 0
   end
 
+  # Wether or not the user already voted the reply
+  def voted_by?(user)
+    !!vote_ups.find_by_user_id(user.id) if user
+  end
+
   # Votes up the reply
   def vote_up!(user)
-    vote_ups.create(:user => user)
+    vote_ups.create(:user => user) unless voted_by?(user)
   end
 
   # Flags reply
   def flag!(user)
-    flags.create(:user => user)
+    flags.create(:user => user) unless flagged_by?(user)
+  end
+
+  # Wether or not the user already flagged the reply
+  def flagged_by?(user)
+    !!flags.find_by_user_id(user.id) if user
   end
 
   # Wether the user of the reply is null or not

@@ -78,19 +78,14 @@ describe RepliesController do
     end
 
     def do_request(params = {})
-      xhr :post, :flag, params.merge(:topic_id => @topic.id, :format => :json)
+      xhr :post, :flag, params.merge(:topic_id => @topic.id, :format => :js)
     end
 
     context "when user is not logged in" do
 
-      it "responds with status 401" do
-        do_request :reply_id => 1
-        response.status.should == 401
-      end
-
       it "doesn't get flagged" do
         @reply.should_not_receive(:flag!)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
     end
@@ -105,12 +100,12 @@ describe RepliesController do
 
       it "finds reply of topic" do
         @topic.all_replies.should_receive(:find).and_return(@reply)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
       it "flags reply" do
         @reply.should_receive(:flag!)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
     end
@@ -124,19 +119,14 @@ describe RepliesController do
     end
 
     def do_request(params = {})
-      xhr :post, :vote_up, params.merge(:topic_id => @topic.id, :format => :json)
+      xhr :post, :vote_up, params.merge(:topic_id => @topic.id, :format => :js)
     end
 
     context "when user is not logged in" do
 
-      it "responds with status 401" do
-        do_request :reply_id => 1
-        response.status.should == 401
-      end
-
       it "doesn't get voted up" do
         @reply.should_not_receive(:vote_up!)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
     end
@@ -151,12 +141,12 @@ describe RepliesController do
 
       it "finds reply of topic" do
         @topic.all_replies.should_receive(:find).and_return(@reply)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
       it "votes up reply" do
         @reply.should_receive(:vote_up!)
-        do_request :reply_id => 1
+        do_request :id => 1
       end
 
     end

@@ -63,6 +63,17 @@ describe Reply do
 
   describe 'being rated' do
 
+    it "knows if a user has already voted" do
+      @user = Factory(:user)
+      @reply.voted_by?(@user).should be_false
+      @reply.vote_up!(@user)
+      @reply.voted_by?(@user).should be_true
+
+      @reply.flagged_by?(@user).should be_false
+      @reply.flag!(@user)
+      @reply.flagged_by?(@user).should be_true
+    end
+
     context "gets marked as useful" do
 
       it "with positive votes only" do

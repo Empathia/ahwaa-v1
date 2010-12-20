@@ -184,9 +184,6 @@ en:
   replies:
     reply:
       anonymous: Anonymous
-      flagged: Flagged
-      already_flagged: Already flagged
-      already_useful: Already marked as useful
       reply_to: "Reply to %{username}"
   topic_requests:
     new:
@@ -258,7 +255,12 @@ en:
     new_response:
        new_response: New Response
     useful_flag_buttons:
-       useful: This was useful!
-       flag: Flag
-       anonymous: "Anonymous users can't be rated"
-       sign_up: Sign Up
+      voted: Marked as useful
+      flagged: Flagged
+      already_flagged: Already flagged
+      already_useful: Already marked as useful
+      useful: This was useful!
+      flag: Flag
+      anonymous: "Anonymous users can't be rated"
+      sign_up: Sign Up
+

@@ -30,8 +30,10 @@ Lgbt::Application.routes.draw do
 
   resources :topics, :only => [:show] do
     resources :replies, :only => [:create] do
-      post :flag, :as => :member
-      post :vote_up, :as => :member
+      member do
+        post :flag
+        post :vote_up
+      end
     end
   end
 

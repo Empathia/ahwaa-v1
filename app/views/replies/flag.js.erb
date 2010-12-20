@@ -1,0 +1,3 @@
+$('.flag[data-id=<%= @reply.id %>] span').addClass('disabled')
+  .text('<%= escape_javascript @flagged ? t('shared.useful_flag_buttons.flagged') : t('errors.messages.flagged') %>');
+
