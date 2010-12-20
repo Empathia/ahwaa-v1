@@ -10,10 +10,10 @@
       <div><strong><%= t('users.show.content.private_messages.by', :sender => reply.sender.username) %></strong></div>
       <div><%= t 'users.show.content.private_messages.at_date', :date => l(reply.created_at, :format => :long) %></div>
     </div>
-    <div class="clear"></div>
+    <br class="clear">
   </div>
 <% end %>
 <div class="pm-message response">
   <%= reply.content %>
 </div>
-<div class="clear"></div>
+<br class="clear">

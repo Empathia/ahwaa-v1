@@ -28,6 +28,15 @@ $(function(){
        return false;
     });  
     
+    $('.view-more').click(function(e){                        
+        if(!$(this).hasClass('disabled')){
+            var carrouselWrapper = $('.related-carrousel'),
+                carrousel = carrouselWrapper.children('ul:eq(0)');
+            carrousel.outerHeight() > carrouselWrapper.outerHeight() && carrouselWrapper.animate({height:carrousel.outerHeight()}) && $(this).addClass('disabled');
+        }
+        e.preventDefault();
+        return false;
+    });
     
     $(window).scroll(function(e){
         sidebar.add(socialBookmarkers).each(function(){
