@@ -69,7 +69,7 @@ $(function(){
     );
 
     $('.sign-up-form #user_email').change(function () {
-        $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, ''));
+        $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, '').replace(/[^a-z0-9]/i, ''));
     });
 
     $('.login-form').find('input[type=submit]').formValidator({
@@ -92,6 +92,7 @@ $(function(){
             type: 'post',
             data: $(this).serialize(),
             success: function (data) {
+                console.log(data);
                 var success = $('<p>').addClass('success').text(I18n.t('layouts.application.header.forgot_pass_form.sent')).appendTo(that.find('.login')),
                     inputTxt = that.find('.login input').hide();
                 setTimeout(function(){
