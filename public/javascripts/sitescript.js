@@ -82,38 +82,7 @@ $(function(){
         }
     });
 
-    $('.forgot-pass-form').submit(function (e) {
-        console.log('asdasd');
-        var that = $(this),
-            inputSubmit = that.find('input[type=submit]').attr('disabled', 'disabled');
-        that.find('.error').remove();
-        $.ajax({
-            url: this.action,
-            dataType: 'json',
-            type: 'post',
-            data: $(this).serialize(),
-            success: function (data) {
-                var success = $('<p>').addClass('success').text(I18n.t('layouts.application.header.forgot_pass_form.sent')).appendTo(that.find('.login')),
-                    inputTxt = that.find('.login input').hide();
-                setTimeout(function(){
-                    $('a.auth-form-active').removeClass('auth-form-active');
-                    that.fadeOut(function(){
-                        that.css('display', '').removeClass('auth-form-active');
-                        success.remove();
-                        inputTxt.val('').show();
-                        inputSubmit.removeAttr('disabled');
-                    });
-                }, 2000);
-            },
-            error: function (data) {
-                if(data.status == 404) {
-                    that.find('.login').append('<p class="error">' + I18n.t('layouts.application.header.forgot_pass_form.not_found') + '</p>');
-                }
-                inputSubmit.removeAttr('disabled');
-            }
-        });
-        e.preventDefault();
-    }).find('input[type=submit]').formValidator(
+    $('.forgot-pass-form').find('input[type=submit]').formValidator(
         {
             'errors': {
                 'text': I18n.t('layouts.application.header.forgot_pass_form.empty')

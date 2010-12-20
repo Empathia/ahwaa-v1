@@ -75,14 +75,14 @@
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
                     <% end %>
-                    <%= form_tag passwords_path(:json), :class => "over-form forgot-pass-form" do %>
+                    <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
                         <li class="login">
                           <%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.forgot_pass_form.login') %>
                         </li>
                       </ul>
-                      <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all" %>
+                      <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all", :disable_with => '...', :'data-enable-with' => t('.header.forgot_pass_form.send') %>
                         <input type="button" class="cancel-forgot btn-gradient" value="<%= t('.header.forgot_pass_form.cancel') %>">
                     <% end %>
                    </div>
