@@ -27,7 +27,7 @@ module Fetchers
       @title = find_title
       @description = find_description
       @possible_thumbnails = thumbnails
-      @thumbnail_url = @possible_thumbnails.first
+      @thumbnail_url = @possible_thumbnails.first # TODO: set to default image if null
     end
 
     def thumbnails

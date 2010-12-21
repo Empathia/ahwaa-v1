@@ -45,5 +45,7 @@
       <% end %>
     </div>
   </div>
-  <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply} %>  
+  <% if !logged_in? || (!reply.anonymous? && reply.user != current_user) %>
+    <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply} %>  
+  <% end %>
 <% end %>
