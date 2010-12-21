@@ -5,3 +5,8 @@
 .user-wrapper{overflow: hidden;}                          
 article > header .avatar-wrapper{text-align: center;}
 input.placeimg.error{background: #ffffff url('../images/pass_placeholder_error.png') no-repeat 0 0}
+.view-more{width: 76px;}
+.edit-profile{float: left; width: 100%;}
+.user-sb-white{overflow: hidden;}
+.msg-opts{width: 127px;}
+.pm-user{width: 100%;}

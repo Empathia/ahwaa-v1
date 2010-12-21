@@ -34,7 +34,7 @@ var avatars = {
               url: '/avatars/matches.js',
               data: 'filters[gender_id]=' + genderId + '&filters[age_id]=' + ageId,
               dataType: 'script',
-              type: 'POST',
+              type: 'POST'
           });
       });
     }

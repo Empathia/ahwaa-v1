@@ -39,7 +39,7 @@ aside{overflow: hidden;}
 
 .pm-panel{background-color: #ffffff; width: 660px; padding: 20px 0; float: left; min-height: 102px;}
 .pm-panel.new-user{min-height: 240px;}
-.pm-panel > section > .regular{border-bottom: 1px solid #efeff0; margin-bottom: 20px;}
+.pm-panel > section > .regular{border-bottom: 1px solid #efeff0; margin-bottom: 20px; overflow: hidden;}
 .pm-panel > section > .messages{padding:20px 40px}
 .pm-panel-padding{padding:0 38px 10px}
 
@@ -59,7 +59,7 @@ aside{overflow: hidden;}
 
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
-.messages > li{background-color:#fbfbfb;margin-bottom:15px;padding:14px 11px;border-bottom:1px solid #e1e3e5;position:relative}
+.messages > li{background-color:#fbfbfb; margin-bottom:15px; padding:14px 11px; width:556px; border-bottom:1px solid #e1e3e5; position:relative; clear: both;}
 .messages > li.new{background-color: #f3f9fc; border: 1px solid #c2dcea;}
 .messages > li:hover .msg-opts{display: block;}
 .msg-opts{position: absolute; right: 0; top: 0; font-size: 11px; display: none; height: 25px; border-width: 0 0 1px 1px; border-style: solid; border-color: #e1e1e1;
@@ -123,7 +123,7 @@ li.active > .checkmark{display:block;}
 .pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
 
 .new-user-msg-wrapper{overflow: hidden; margin-top: 5px;}
-.new-user-arrow{border-color: transparent transparent #35353a; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; width: 0px; margin: 0 105px; position: relative; z-index: 1;}            
+.new-user-arrow{border-color: transparent transparent #35353a; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; width: 0px; left: 105px; position: relative; z-index: 1;}
 .new-user-msg{padding: 18px 15px; text-align: center;} 
 .new-user-msg.dark{background-color: #35353a; border: 1px solid #000000; width: 202px; float: left; margin-top: -1px; color: #ffffff;}
 .new-user-msg.yellow{background-color: #fffbeb; border: 1px solid #edda8d; color: #38414e; margin-bottom: 14px;}

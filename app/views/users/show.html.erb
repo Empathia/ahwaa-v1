@@ -151,7 +151,8 @@
           <p><%= link_to t('.sidebar.terminate_account'), user_path, :class => "terminate", :method => :delete, :confirm => t('.sidebar.confirm_terminate') %></p>    
         <% end %>
       </div>
-    </div>    
+    </div>   
+    <br class="clear"> 
     <% if current_user.profile.empty? %>
       <div class="new-user-msg-wrapper">
         <div class="new-user-arrow"></div>

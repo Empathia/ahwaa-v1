@@ -47,6 +47,7 @@ $.fn.slideDownComments = function(commentsOriginal){
       if (!$.browser.webkit) {
           $('.add_comments.clon:visible textarea.comment_content').attr('placeholder') && $('.add_comments.clon:visible textarea.comment_content').attr('value',$('.add_comments.clon:visible textarea.comment_content').attr('placeholder'));
       }
+      commentsClon.css('visibility', 'visible');
   }); 
 };
 
