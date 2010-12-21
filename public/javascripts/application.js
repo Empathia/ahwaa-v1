@@ -98,7 +98,7 @@ function filterResponses() {
     $('.comments.clon li').hide();
     if(cbs.length === 0) {
         if(show_useful) {
-            $('.comments.clon li').show();
+            $('.comments.clon li.useful').show();
         } else {
             $('.comments.clon li').show();
         }

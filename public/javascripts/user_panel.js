@@ -92,22 +92,6 @@ $(function(){
        }) && avatars.hide();
     });
    
-   /*
-    $('#reply-form textarea').live('focus',function(){
-        var textarea = $(this);
-        if(textarea.val() == textarea.attr('placeholder')){
-            textarea.val('').css('height','auto');
-            $('.new_private_message > .btn-gradient').css('display','block');
-        }   
-        textarea.blur(function(){
-            if(textarea.val().length == 0 || textarea.val() ==  textarea.attr('placeholder')){
-                textarea.val(textarea.attr('placeholder')).css('height','16px');
-                $('.new_private_message > .btn-gradient').css('display','none');
-            }
-        })
-    })
-    */
-        
     $('#reply-form').live('submit',function(){
         var textarea = $(this).find('textarea');
         textarea.val(textarea.attr('placeholder')).css('height','16px');
@@ -127,6 +111,13 @@ $(function(){
                 })
             });
         });
+    });
+
+    $('.set-avatar-id').live('click', function () {
+        $('#user_profile_attributes_avatar_id').val($(this).attr('data-id'));
+        $(this).closest('ul').children('li.active').removeClass('active');
+        $(this).closest('li').addClass('active');
+        return false;
     });
 });
 

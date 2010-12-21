@@ -1,6 +1,5 @@
 class RepliesController < ApplicationController
-  respond_to :json, :except => [:create]
-  respond_to :js, :only => [:create]
+  respond_to :js
   before_filter :find_topic
   skip_before_filter :authenticate_user!, :except => [:flag, :vote_up]
 
@@ -12,22 +11,16 @@ class RepliesController < ApplicationController
   end
 
   def flag
-    @reply = @topic.all_replies.find(params[:reply_id])
+    @reply = @topic.all_replies.find(params[:id])
     if @reply
-      @flag = @reply.flag!(current_user)
-      respond_with(@flag, :location => @topic)
-    else
-      respond_with(@reply, :location => @topic)
+      @flagged = !!@reply.flag!(current_user)
     end
   end
 
   def vote_up
-    @reply = @topic.all_replies.find(params[:reply_id])
+    @reply = @topic.all_replies.find(params[:id])
     if @reply
-      @vote = @reply.vote_up!(current_user)
-      respond_with(@vote, :location => @topic)
-    else
-      respond_with(@reply, :location => @topic)
+      @voted = !!@reply.vote_up!(current_user)
     end
   end
 

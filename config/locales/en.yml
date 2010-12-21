@@ -184,9 +184,6 @@ en:
   replies:
     reply:
       anonymous: Anonymous
-      flagged: Flagged
-      already_flagged: Already flagged
-      already_useful: Already marked as useful
       reply_to: "Reply to %{username}"
   topic_requests:
     new:
@@ -234,7 +231,7 @@ en:
         private_messages:
           title: Private Messages
           delete: Delete
-          confirm_delete: Are you sure you want to delete all messages in this thread? This cannot be undo.
+          confirm_delete: Are you sure you want to delete this conversation? This cannot be undo.
           by: by %{sender}
           at_date: in %{date}
           reply: Reply
@@ -258,7 +255,12 @@ en:
     new_response:
        new_response: New Response
     useful_flag_buttons:
-       useful: This was useful!
-       flag: Flag
-       anonymous: "Anonymous users can't be rated"
-       sign_up: Sign Up
+      voted: Marked as useful
+      flagged: Flagged
+      already_flagged: Already flagged
+      already_useful: Already marked as useful
+      useful: This was useful!
+      flag: Flag
+      anonymous: "Anonymous users can't be rated"
+      sign_up: Sign Up
+

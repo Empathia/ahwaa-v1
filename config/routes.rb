@@ -8,11 +8,7 @@ Lgbt::Application.routes.draw do
 
   resources :topic_requests, :only => [:new, :create]
 
-  resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update] do
-    member do
-      post :set_avatar
-    end
-  end
+  resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update]
   resources :users, :except => [:show, :destroy, :update, :edit] do
     resource :private_messages, :only => [:create]
   end
@@ -30,8 +26,10 @@ Lgbt::Application.routes.draw do
 
   resources :topics, :only => [:show] do
     resources :replies, :only => [:create] do
-      post :flag, :as => :member
-      post :vote_up, :as => :member
+      member do
+        post :flag
+        post :vote_up
+      end
     end
   end
 

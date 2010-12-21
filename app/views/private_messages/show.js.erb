@@ -4,11 +4,14 @@ var textarea = $('#reply-form textarea');
 
 !$.browser.webkit && textarea.attr('placeholder').length > 0 && textarea.attr('value', textarea.attr('placeholder'));
     
-textarea.live('focus',function(){
+textarea.bind('focus',function(){
     !$.browser.webkit && textarea.val() == textarea.attr('placeholder') && textarea.val('');
-    textarea.css({'height':'auto', 'min-height':'31px'}) && $('.new_private_message > .btn-gradient').css('display','block');   
-    textarea.blur(function(){
-    !$.browser.webkit && textarea.val().length == 0 && textarea.val(textarea.attr('placeholder'));
-    textarea.css({'height':'16px', 'min-height':'16px'}) && $('.new_private_message > .btn-gradient').css('display','none');
-    })
-})
+    textarea.css({'height':'auto', 'min-height':'31px'});
+    $('.new_private_message > .btn-gradient').show();
+}).blur(function(){
+  !$.browser.webkit && textarea.val().length == 0 && textarea.val(textarea.attr('placeholder'));
+  if(!$(this).val()) {
+    textarea.css({'height':'16px', 'min-height':'16px'});
+    $('.new_private_message > .btn-gradient').hide();
+  }
+});

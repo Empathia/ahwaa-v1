@@ -135,45 +135,6 @@ $.fn.comments = function(options){
         return false;
     });
     
-    $('.useful-lk').live('click', function(){
-        var that = $(this);
-        if(!that.hasClass('disabled')) {
-            var reply = new Reply({
-                id: that.attr('data-value'),
-                topic_id: topicId
-            });
-            reply.vote_up({
-                success: function (r) {
-                    that.addClass('disabled').text(I18n.t('replies.reply.useful'));
-                },
-                error: function () {
-                    that.addClass('disabled').text(I18n.t('replies.reply.already_useful'));
-                }
-            });
-        }
-        return false;
-    });
-     
-
-    $('.flag').live('click', function (e) {
-        e.preventDefault();
-        var that = $(this);
-        if(!that.hasClass('disabled')) {
-            var reply = new Reply({
-                id: that.attr('data-value'),
-                topic_id: topicId
-            });
-            reply.flag({
-                success: function (r) {
-                    that.addClass('disabled').find('span').text(I18n.t('replies.reply.flagged'));
-                },
-                error: function () {
-                    that.addClass('disabled').find('span').text(I18n.t('replies.reply.already_flagged'));
-                }
-            });
-        }
-        return false;
-    });
 
     $('.cancel-comment').live('click', function(e){
         var comments = $(this).closest('.add_comments');

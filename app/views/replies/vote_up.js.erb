@@ -1,0 +1,2 @@
+$('.useful-lk[data-id=<%= @reply.id %>]').addClass('disabled')
+  .text('<%= escape_javascript @voted ? t('shared.useful_flag_buttons.voted') : t('errors.messages.voted') %>');

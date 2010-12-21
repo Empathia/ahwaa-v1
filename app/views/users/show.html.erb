@@ -43,6 +43,7 @@
               </div>
             <% end %> 
             <%= user.fields_for :profile do |profile| %>
+              <%= profile.hidden_field :avatar_id %>
               <div class="usr-sec-title">
                 <hr>          
                 <h2><%= t('.sidebar.profile.title') %></h2>
