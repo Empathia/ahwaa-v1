@@ -137,7 +137,8 @@ $(function(){
        return false;
     });
 
-    $('.avatar, .avatar + em').live('mouseover',function(){
+    $('.avatar, .avatar + em').live('mouseover',function(){ 
+        //$.browser.msie && $(this).parent().css('position', 'relative');
         $(this).siblings('.private-msg').removeClass('inside');
         var classes = "active-avatar ";
         if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics') || $("body").width() < 1298 && $(this).parent().parent().is('div.response-user') ) {
@@ -147,6 +148,7 @@ $(function(){
     });
 
     $('.active-avatar').live('mouseleave', function(){
+       //$.browser.msie && $(this).parent().css('position', 'static');        
        var pm = $(this);
        pm.fadeOut('fast', function(){
          pm.find('.pm-flash').remove();

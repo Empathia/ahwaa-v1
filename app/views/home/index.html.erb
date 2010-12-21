@@ -45,15 +45,15 @@
     <section class="topics">
       <h2><%= t('.popular_topics') %></h2>
       <ul class="items topic-avatars">
-        <%= render @popular %>
+        <%= render :partial => @popular, :locals => {:leng => @popular.length} %>
       </ul>
     </section>
     <section class="feeds">
       <h2><%= t('.feeds') %></h2>
       <ul class="items topic-avatars">
-        <% @latest.each do |reply| %>
+        <% @latest.each_with_index do |reply, i| %>
           <li>
-            <div class="avatar-wrapper">
+            <div class="avatar-wrapper" style="z-index: <%= @latest.length - i %>">
               <% unless reply.anonymous? %>
                 <%= avatar_span(reply.user, reply.user.is_expert?) %>
               <% else %>

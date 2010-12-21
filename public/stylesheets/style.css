@@ -169,7 +169,7 @@ footer > div > span{float: left; color: #898f93;}
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.over-form > ul > li > input.placeimg{background:url('../images/pass_placeholder.png') no-repeat 0 0 white}
+.placeimg{background:url('../images/pass_placeholder.png') no-repeat 0 0 white}
 p.error{color: #d93e3e; margin: 0 0 5px 1px;}
 p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;border:1px #a3c9a9 solid;background:url("../images/checked.png") no-repeat 14px 6px #ebffee;padding:7px 0 0 34px;height:18px;width:243px;
     -moz-border-radius: 2px;
@@ -383,7 +383,7 @@ form + .recently-topics{padding-top:18px;}
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')"; 
 }
     
-.points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-left:1px solid #fbfbfb;width:auto;padding:0 8px;
+.points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-left:1px solid #fbfbfb;width:auto;padding:0 8px; white-space: nowrap;
     background-image: -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');

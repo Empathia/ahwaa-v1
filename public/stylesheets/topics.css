@@ -22,7 +22,7 @@ article > header{display:block;position:static;}
 article > header > h1{}
 article > header > div{float:left;}
 article > header > div.left{float:left;width:556px;padding-bottom:35px;}
-article > header em{display:block;float:left;clear:left;width:100%;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
+article > header em{display:block;clear:left;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
 aside{font-size:12px;float:right;width:200px;padding:0 18px;background:url('../images/bg-aside.png') repeat-x 0 0 #ffffff;position:fixed;border-top:1px solid white;border-left:2px solid white;border-right:2px solid white;}
 aside section.show-hide{border-top:none;padding:19px 0 25px;}
 aside section.show-hide a{text-align:left;text-decoration:none;padding-left:48px;display:block;width:150px;outline:0 none;float:none!important;

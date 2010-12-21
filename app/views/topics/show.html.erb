@@ -54,8 +54,8 @@
       <section class="experts">
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
-          <% @topic.leaderboard.each do |user| %>
-            <li>
+          <% @topic.leaderboard.each_with_index do |user, i| %>
+            <li class="hola_<%= @topic.leaderboard.length - i %>">
               <%= avatar_span(user, user.is_expert?) %> 
               <em><%= user.username %></em>
               <%= render :partial => 'users/card', :locals => {:user => user} %>
