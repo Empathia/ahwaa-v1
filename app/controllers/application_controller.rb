@@ -32,8 +32,8 @@ class ApplicationController < ActionController::Base
     session[:current_user] = @current_user = nil
   end
 
-  def rtl?
-    I18n.locale == 'ar'
+  def rtl?      
+    I18n.locale.to_s == 'ar'
   end
 
   private

@@ -4,6 +4,7 @@
   <title>Transcend</title>                                                                                              
   <% if rtl? %>
     <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', :cache => 'all_rtl' %>
+    <%= stylesheet_link_tag 'style-rtl', :cache => true %>
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
   <% end %>  

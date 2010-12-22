@@ -13,7 +13,9 @@ module ApplicationHelper
 
   # Include stylesheet files within the +<head>+ tags
   def stylesheet(*args)
-    args.map! { |arg| arg.to_s }
+    args.map! { |arg|
+      rtl? ? "rtl/#{arg}_rtl" : arg.to_s
+    }
     head { stylesheet_link_tag *args }
   end
 
