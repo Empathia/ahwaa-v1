@@ -98,10 +98,6 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
-            commentsClon.one('submit.rails', function (ev) {
-                $(this).callRemote();
-                ev.preventDefault();
-            });
         }
         return false;
     });                         
@@ -196,7 +192,7 @@ $.fn.comments = function(options){
         comments = parag.next();
         comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
         comments.find('.comm-arrow:first').css('left', left);
-        comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
+        index.split('_').length < 2 && comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
         $('.icn.level_2').each(function() {
             var ix = $(this).parents('.comments.clon').find('.icn.level_2').index($(this));
             var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
