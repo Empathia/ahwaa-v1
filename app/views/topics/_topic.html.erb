@@ -6,7 +6,7 @@
   <div class="item-data">
     <%= link_to topic.title, topic, :class => 'dark-lk' %>
     <div>            
-      <%= t('.popular.by', :author => topic.user.username).html_safe %>
+      <span class="by-author"><%= t('.popular.by', :author => topic.user.username).html_safe %></span>
       <ul class="tags">
         <% topic.tags.each do |tag| %>
           <li><%= link_to tag, topic_tag_path(tag.name) %></li>

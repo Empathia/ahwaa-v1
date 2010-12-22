@@ -140,8 +140,11 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .request-topic > span{float:left; height: 100%; background-repeat: no-repeat; background-position:100% 0; padding-right:31px;}
 .request-topic > span > span{float:left; width: 106px;font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position:0 -50px}
 
-.tags,
-.tags > li{display: inline;}
+.tags > li{margin-left: 4px;}
+.by-author{margin-left: 14px;}
+.by-author,
+.tags > li{float:right;}
+.tags{display: inline; margin-left: 5px;}
 
 .container{padding-top:126px}
 
@@ -277,9 +280,9 @@ p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;borde
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";
 }
 
-.responses {background:url("../../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-right:15px;display:inline!important;white-space:nowrap;}
+.responses {background-color: transparent; background-image: url("../../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position:100% 4px; padding-right:15px;display:inline!important;white-space:nowrap; float:right; margin-right: 10px;}
 .tags{margin: 0 10px;}   
-.tags > li:first-child{background: url('../../images/topic-icons.png') no-repeat 0 1px; padding-right: 25px;}
+.tags > li:first-child{background-image: url('../../images/icn-tag.png'); background-repeat: no-repeat; background-position:100% 3px; padding-right: 25px;}
 
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
@@ -290,7 +293,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;borde
 .new-response a{display: block; color: #868484; padding-right: 15px; background: url('../../images/icn-reply.png') no-repeat 0 2px;}
         
 .pm-flash{padding: 7px 12px; margin-bottom: 10px;}
-.pm-flash > p{padding-right: 20px;}
+.pm-flash > p{padding-right: 20px; margin-top: 0 !important; line-height: normal !important;}
 
 .pm-flash.success{background-color: #ebffee; border: 1px solid #a3c9a9;}
 .pm-flash.success > p{background: url('../../images/check-mark.png') no-repeat; color: #6fa677;}
@@ -382,8 +385,6 @@ form + .recently-topics{padding-top:18px;}
 .points-wrapper > .level{border-left: 1px solid #e6e6e6;
     background:url("../../images/hearts.png") no-repeat 0 0, -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
     background:url("../../images/hearts.png") no-repeat 0 0, -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')"; 
 }
     
 .points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-right:1px solid #fbfbfb;width:auto;padding:0 8px; white-space: nowrap;

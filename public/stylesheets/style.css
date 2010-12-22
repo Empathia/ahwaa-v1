@@ -140,8 +140,11 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .request-topic > span{float: right; height: 100%; background-repeat: no-repeat; background-position: 0 0; padding-left:31px;}
 .request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position: 100% -50px}
 
-.tags,
-.tags > li{display: inline;}
+.tags > li{margin-right: 4px;}
+.by-author{margin-right: 14px;}
+.by-author,
+.tags > li{float: left;}
+.tags{display: inline; margin-right: 5px;}
 
 .container{padding-top:126px}
 
@@ -277,9 +280,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";
 }
 
-.responses {background:url("../images/topic-icons.png") no-repeat scroll 0 -21px transparent;padding-left:15px;display:inline!important;white-space:nowrap;}
+.responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px;display:inline!important;white-space:nowrap; float: left; margin-left: 10px;}
 .tags{margin: 0 10px;}   
-.tags > li:first-child{background: url('../images/topic-icons.png') no-repeat 0 1px; padding-left: 25px;}
+.tags > li:first-child{background-image: url('../images/icn-tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 25px;}
 
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
