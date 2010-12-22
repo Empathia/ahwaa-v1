@@ -142,3 +142,7 @@ li.active > .checkmark{display:block;}
 
 .custom-avatar > span{display: block; height: 100%; background: url('../images/icn-upload.png') no-repeat left 50%;}
 p.error{clear: both; padding: 10px 0 2px 0;}
+
+.autocomplete {border: 1px solid #ccc;display:none;}
+.autocomplete li {background: #eee;border:1px solid #ccc;padding: 3px 2px;cursor:pointer;}
+.autocomplete li.active{background: #4173CC;color: #fff;}
