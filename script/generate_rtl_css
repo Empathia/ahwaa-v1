@@ -12,7 +12,10 @@ def convert(src, dest)
   raise "File #{src} does not exists" unless File.exists?(src)
   puts "Converting \033[32m#{src}\033[0m ----> \033[36m#{dest}\033[0m"
 
-  regs = [
+  regs = [                      
+    [/text-align:\s*left/, 'text-align:---'],
+    [/text-align:\s*right/, 'text-align: left'],
+    [/text-align:---/, 'text-align: right'],
     [/background-position:\s*0([^;]+)/, 'background-position:___\\1'],
     [/background-position:\s*100%([^;]+)/, 'background-position:0\\1'],
     [/background-position:\s*___([^;]+)/, 'background-position:100%\\1'],

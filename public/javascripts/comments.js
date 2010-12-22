@@ -52,8 +52,9 @@ $.fn.slideDownComments = function(commentsOriginal){
 };
 
 $.fn.comments = function(options){                         
-    var expandBtn = $('.expand-btn');
-    expandBtn.data('label', expandBtn.text()).click(function(e){
+    var expandBtn = $('.expand-btn'),
+        expandBtnSpan = expandBtn.find('span');
+    expandBtn.data('label', expandBtnSpan.text()).click(function(e){
         if(expandBtn.hasClass('hide')){
             $(".clon").each(function (){
                 var comments = $(this);
@@ -63,13 +64,15 @@ $.fn.comments = function(options){
                     paragEnd.remove();
                     comments.remove();
                 });
-            });
-            expandBtn.text(I18n.t('topics.show.sidebar.show_all_responses')).removeClass('hide');
+            });                                                                 
+            expandBtn.removeClass('hide');
+            expandBtnSpan.text(I18n.t('topics.show.sidebar.show_all_responses'));
             $('.topic-content .icn').removeClass('minus');
         }
         else{
-            expandAll();
-            expandBtn.text(expandBtn.data('label')).addClass('hide');
+            expandAll();                
+            expandBtn.addClass('hide');
+            expandBtnSpan.text(expandBtn.data('label'));
         }
         e.preventDefault();
         return false;

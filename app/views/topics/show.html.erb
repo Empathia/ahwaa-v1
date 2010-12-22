@@ -35,7 +35,9 @@
     </div>
     <aside class="border-all">
       <section class="show-hide">
-        <%= link_to t('.sidebar.hide_all_responses'), nil, :class => "expand-btn btn-gradient" %>
+        <%= link_to nil, :class => "expand-btn btn-gradient" do %>
+          <span><%= t('.sidebar.hide_all_responses')%></span>
+        <% end %>
       </section>
       <section class="filter">
         <h2 class="sec-title regular"><span><%= t('.sidebar.filter_responses.title') %></span></h2>

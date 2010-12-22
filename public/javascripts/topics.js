@@ -10,12 +10,12 @@ $(function(){
         socialBookmarkers = $('.social-bookmarkers'),
         sidebar = article.find('aside'),
         leftSideWidth = 720;
-    sidebar.css('left', article.offset().left + leftSideWidth - $(window).scrollLeft());
+    sidebar.data('float', sidebar.css('float')).css({left:sidebar.offset().left, position: 'fixed'}).data('fixed', 'true');
 
     $(window).resize(function() {
         var self = $(this);
-        socialBookmarkers.data("fixed") == true && socialBookmarkers.css('left', article.offset().left - 30); 
-        sidebar.data("fixed") == "true" && sidebar.css('left', article.offset().left + leftSideWidth - self.scrollLeft());
+        socialBookmarkers.data("fixed") == true && socialBookmarkers.css('left', article.offset().left - 30);
+        sidebar.data("fixed") == "true" && sidebar.css('left', sidebar.data('float') == 'right' ? article.offset().left + leftSideWidth - self.scrollLeft() : $('.article-wrapper').offset().left);
     });
 
     $('.continue').live('click', function(){

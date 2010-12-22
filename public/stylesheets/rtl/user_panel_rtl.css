@@ -25,7 +25,7 @@ aside{overflow: hidden;}
 .usr-sec-title > hr{border:none;border-top: 1px solid #dddddd; float:right; width: 121px; position: absolute; width: 100%; top: 5px;}                    
 .user-edit{overflow: hidden;}
 .user-edit > li{padding-bottom: 10px; width: 100%; float:right;}
-.label{color: #aeb4bd; float:right; width: 62px; text-align: right; height: 27px; margin-bottom: 5px;}
+.label{color: #aeb4bd; float:right; width: 62px; text-align: left; height: 27px; margin-bottom: 5px;}
 .field{float:left; width: 128px;}
 .terminate{color: #d56262; text-decoration: underline;}
 .user-edit .btn-gradient{margin-left: 10px;}  
@@ -132,7 +132,7 @@ li.active > .checkmark{display:block;}
 .new-user-msg.dark > h3{color: #ffffff;}
 .new-user-msg.yellow > h3{color: #38414e;font-weight:bold;}
 
-.custom-avatar{padding: 15px; width: 119px; height: 26px; border: 1px solid #becad7; color: #6d91a9; text-align: right; float:right; font-size: 12px; font-weight: bold; line-height: 2.2;
+.custom-avatar{padding: 15px; width: 119px; height: 26px; border: 1px solid #becad7; color: #6d91a9; text-align: left; float:right; font-size: 12px; font-weight: bold; line-height: 2.2;
   background-image: -moz-linear-gradient(top, #f8fcfe, #ecf8fd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8fcfe),color-stop(1, #ecf8fd));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fcfe', EndColorStr='#ecf8fd');

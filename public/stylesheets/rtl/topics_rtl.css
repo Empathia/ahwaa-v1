@@ -5,7 +5,7 @@ body{
 }
 body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 body > div#pageslide-blanket{background:none}
-.article-tags{background: url('../../images/tag.png') no-repeat; margin-top:15px;padding-right:32px;color:#468AC4;}
+.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top:15px;padding-right:32px;color:#468AC4;}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
@@ -23,25 +23,27 @@ article > header > h1{}
 article > header > div{float:right;}
 article > header > div.left{float:right;width:556px;padding-bottom:35px;}
 article > header em{display:block;clear:left;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
-aside{font-size:12px;float:left;width:200px;padding:0 18px;background:url('../../images/bg-aside.png') repeat-x 0 0 #ffffff;position:fixed;border-top:1px solid white;border-right:2px solid white;border-left:2px solid white;}
+aside{font-size:12px;float:left;width:200px;padding:0 18px;background:url('../../images/bg-aside.png') repeat-x 0 0 #ffffff;border-top:1px solid white;border-right:2px solid white;border-left:2px solid white; float:left;}
 aside section.show-hide{border-top:none;padding:19px 0 25px;}
-aside section.show-hide a{text-align:left;text-decoration:none;padding-right:48px;display:block;width:150px;outline:0 none;float:none!important;
-    background: url('../../images/icn-show-hide.png') no-repeat 23px 11px, -moz-linear-gradient(top, #fff, #eaf7fd);
-    background: url('../../images/icn-show-hide.png') no-repeat 23px 11px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
+aside section.show-hide a{text-align: right;text-decoration:none;padding-right:23px;outline:0 none;float:none!important;height: 31px;display:block;
+    background-image: -moz-linear-gradient(top, #fff, #eaf7fd);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd')";
-
 }
+
+aside section.show-hide a span{display: block; padding-right: 25px; background-image: url('../../images/icn-show-hide.png'); background-repeat:no-repeat; background-position:100% 11px; height: 100%;} 
+
 aside section.show-hide a:hover{
-    background: url('../../images/icn-show-hide.png') no-repeat 23px 11px, -moz-linear-gradient(top, #fff, #e3f1ff);
-    background: url('../../images/icn-show-hide.png') no-repeat 23px 11px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #e3f1ff));
+    background: -moz-linear-gradient(top, #fff, #e3f1ff);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #e3f1ff));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e3f1ff');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e3f1ff')";
 }
 aside section.show-hide a.hide{
     border-color:#a6b8c5 #dde6ec #dae4eb;
-    background:url('../../images/icn-show-hide.png') no-repeat 23px 11px, url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
-    background: url('../../images/icn-show-hide.png') no-repeat 23px 11px, -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(1, #f9fdfe));
+    background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(1, #f9fdfe));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
