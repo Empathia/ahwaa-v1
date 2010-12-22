@@ -221,13 +221,16 @@ $(window).load(function () {
     var headerTags = $('#header-tags'),
         moreTags = $('#moretags'),
         tag = null,
-        self = $(this);
+        self = $(this),
+        count = 0;
     headerTags.css('width', '9999em').children(':not(.more)').each(function(){
-        tag =  $(this);
-        if(tag.position().left + tag.width() > 650) {
+        tag =  $(this);              
+        count += tag.outerWidth();
+        if(count > 650) {  
             moreTags.append(tag.clone());
             tag.addClass('to-more');
-        }
+        }                            
+
     }).filter('.to-more').remove();
     moreTags.find('li').length === 0 && headerTags.find('.more').remove();
     headerTags.css('width', 'auto').parent().css('overflow', 'visible');

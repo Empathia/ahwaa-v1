@@ -133,9 +133,12 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .more:hover {background-color:#f9f9f9;border-right-color:#dfe1ed}
 .more:hover .more-tags{display: block;}
 .request-topic-wrapper{float: right; position: relative;}
-.request-topic{float: right; margin:7px 10px 0 0; height: 25px; background: url('../images/blue-btn-bg.png') repeat-x 0 -25px;outline:0;}
-.request-topic > span{float: right; height: 100%; text-align:left; background: url('../images/blue-btn-bg.png') no-repeat; padding-left:31px;}
-.request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background: url('../images/blue-btn-bg.png') no-repeat right -50px}
+.request-topic,
+.request-topic > span,
+.request-topic > span > span{background-image: url('../images/blue-btn-bg.png');} 
+.request-topic{float: right; margin:7px 10px 0 0; height: 25px; background-repeat: repeat-x; background-position: 0 -25px;outline:0;}
+.request-topic > span{float: right; height: 100%; background-repeat: no-repeat; background-position: 0 0; padding-left:31px;}
+.request-topic > span > span{float:right; width: 106px;font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position: 100% -50px}
 
 .tags,
 .tags > li{display: inline;}
