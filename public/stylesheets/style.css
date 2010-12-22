@@ -287,7 +287,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .new-response a{display: block; color: #868484; padding-left: 15px; background: url('../images/icn-reply.png') no-repeat 0 2px;}
         
 .pm-flash{padding: 7px 12px; margin-bottom: 10px;}
-.pm-flash > p{padding-left: 20px;}
+.pm-flash > p{padding-left: 20px; margin-top: 0 !important; line-height: normal !important;}
 
 .pm-flash.success{background-color: #ebffee; border: 1px solid #a3c9a9;}
 .pm-flash.success > p{background: url('../images/check-mark.png') no-repeat; color: #6fa677;}
