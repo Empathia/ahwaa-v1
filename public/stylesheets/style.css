@@ -379,8 +379,6 @@ form + .recently-topics{padding-top:18px;}
 .points-wrapper > .level{border-right: 1px solid #e6e6e6;
     background:url("../images/hearts.png") no-repeat 0 0, -moz-linear-gradient(top, #f6f6f6, #f3f3f3);
     background:url("../images/hearts.png") no-repeat 0 0, -webkit-gradient(linear,left top,left bottom,color-stop(0, #f6f6f6),color-stop(1, #f3f3f3));
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f6f6', EndColorStr='#f3f3f3')"; 
 }
     
 .points-wrapper > .points{font-size:12px;line-height:3;color:#707b8b;border-left:1px solid #fbfbfb;width:auto;padding:0 8px; white-space: nowrap;
