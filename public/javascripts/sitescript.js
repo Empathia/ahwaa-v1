@@ -125,6 +125,7 @@ $(function(){
         var formPrivateMsg = $(this);
         formPrivateMsg.find('input[type=submit]').click(function(){
             var textarea = formPrivateMsg.find('textarea');
+            formPrivateMsg.find('.error').remove();
             if(textarea.attr('placeholder') == textarea.val() || $.trim(textarea.val()) == ''){
                 formPrivateMsg.prepend('<div class="pm-flash error border-all"><p>' + I18n.t('private_message.message_empty') + '</p></div>');
                 return false;
