@@ -14,13 +14,13 @@
   <%= yield(:head) %>
   <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5_ie' %>
-    <%= stylesheet_link_tag 'ie', :cache => true %>
+    <%= stylesheet_link_tag 'ie' %>
   <![endif]-->
   <!--[if lt IE 8]>
-    <%= stylesheet_link_tag 'ie7', :cache => true %>  
+    <%= stylesheet_link_tag 'ie7' %>  
   <![endif]--> 
   <!--[if IE 8]>
-    <%= stylesheet_link_tag 'ie8', :cache => true %>  
+    <%= stylesheet_link_tag 'ie8' %>  
   <![endif]-->
 </head>
 <body>

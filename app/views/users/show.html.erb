@@ -77,6 +77,8 @@
                   <div class="label"><%= UserProfile.human_attribute_name(:country_id) %></div>
                   <div class="field">
                     <%= text_field_tag :country_birth, current_user.profile.country %>
+                    <ul class="autocomplete">
+                    </ul>
                     <%= profile.hidden_field :country_id, :class => 'country_id' %>
                   </div>
                 </li>
