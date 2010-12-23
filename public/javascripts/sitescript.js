@@ -137,17 +137,17 @@ $(function(){
     });
 
     $('.avatar, .avatar + em').live('mouseover',function(){ 
-        //$.browser.msie && $(this).parent().css('position', 'relative');
-        $(this).siblings('.private-msg').removeClass('inside');
-        var classes = "active-avatar ";
-        if($("body").width() < 1372 && $(this).parent().parent().is('div:first-child') && $(this).parent().parent().is(!'div.pm-user')  || $("body").width() < 1372 && $(this).parents().hasClass('topics') || $("body").width() < 1298 && $(this).parent().parent().is('div.response-user') ) {
-           classes += "inside";
-        }
-        $(this).siblings('.private-msg').fadeIn('fast').addClass(classes);
+        var pm = $(this).siblings('.private-msg');
+        pm.show(0, function () {
+            if(pm.offset().left < 0) {
+                pm.addClass('inside');
+            }
+        });
+        pm.hide();
+        pm.fadeIn('fast').addClass('active-avatar');
     });
 
     $('.active-avatar').live('mouseleave', function(){
-       //$.browser.msie && $(this).parent().css('position', 'static');        
        var pm = $(this);
        pm.fadeOut('fast', function(){
          pm.find('.pm-flash').remove();
