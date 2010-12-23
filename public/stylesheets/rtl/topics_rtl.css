@@ -179,8 +179,8 @@ p:hover .icn{display: inline;}
 .related-carrousel > ul > li > a{color: #7e838a;}     
 .related-carrousel .rd-related-content{margin-left: 0;}
 
-.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; margin:42px 0 20px 0; width: 18px; right: -30px;}
-.social-bookmarkers > a{float:right; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../../images/icn-social.png'); background-repeat: none;}
+.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; margin:42px 0 20px 0; width: 18px; right: -30px; float:right;}
+.social-bookmarkers > a{float:right; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../../images/icn-social.png'); background-repeat: none; overflow: hidden;}
 .facebook{background-position:100% 0;}
 .facebook:hover{background-position:100% -18px;}
 .social-bookmarkers > .twitter{background-position:100% -36px; margin-bottom: 0;}
@@ -202,7 +202,7 @@ p:hover .icn{display: inline;}
 .expand-btn{height:31px;line-height:2.5em;font-family: 'GothamBoldRegular';font-size:13px}    
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
-.help{background: url('../../images/question-mark.png') no-repeat;padding:2px 22px 2px 0;line-height:1em;}
+.help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0;line-height:1em;}
 
 .sign-up-or-continue{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}               
 .sign-up-or-continue > .sign-up-lk{margin-left: 10px;}
@@ -221,9 +221,9 @@ p:hover .icn{display: inline;}
 .blue-btn,
 .blue-btn > span,
 .blue-btn > span > span{background-image: url('../../images/blue-btn-bg.png'); display: block;}
-.blue-btn{padding-right: 5px; background-position:100% 0; height: 25px; line-height: 2;}
-.blue-btn span{height: 100%; display: block; background-repeat: no-repeat;}
-.blue-btn > span{background-repeat: repeat-x; background-position:100% -25px;}
-.blue-btn > span > span{padding-left: 5px; background-position: right -75px; float:right;}
+.blue-btn{padding-right: 5px; background-position:100% 0; height: 25px; line-height: 2; background-repeat: no-repeat;}
+.blue-btn span{height: 100%; display: block;}
+.blue-btn > span{ background-position:0 -75px; padding-left: 5px; background-repeat: no-repeat;}
+.blue-btn > span > span{background-position:100% -25px; float:right; background-repeat: repeat-x;}
 .w-arrow{float:right;}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width:5px 5px 5px 0px; float:left; height: 0; width: 0; margin:7px 5px 0 0;}
