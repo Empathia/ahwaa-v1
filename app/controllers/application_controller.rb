@@ -40,11 +40,8 @@ class ApplicationController < ActionController::Base
 
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
-      if current_user
-        I18n.locale = current_user.profile.language
-      else
-        I18n.locale = params[:locale] if params[:locale].present?
-      end
+      I18n.locale = params[:locale] and return if params[:locale].present?
+      I18n.locale = current_user.profile.language if current_user && !params[:locale]
     end
 
     def authenticate_user!

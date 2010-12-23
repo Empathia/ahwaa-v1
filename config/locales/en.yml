@@ -71,6 +71,7 @@ en:
   layouts:
     application:
       header:
+        switch_to_english: 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ'
         auth:
           sign_up: Sign Up
           login: Login
