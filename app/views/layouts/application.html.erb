@@ -108,7 +108,9 @@
                   <li><%= link_to tag, topic_tag_path(tag.name) %></li>
                 <% end %>
                 <li class="more">
-                  <%= link_to 'More' %>
+                  <%= link_to nil do %>
+                    <span>More</span>
+                  <% end %>
                   <ul id="moretags" class="more-tags border-all border-menu">
                   </ul>
                 </li>

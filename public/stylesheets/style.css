@@ -28,7 +28,7 @@ textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #
 input.error[type=text],
 input.error[type=password],
 input.error[type=email],
-textarea.error{border-color:#D93E3E; background-color: #ffffff; background-image: url('../images/cross-error.png'); background-repeat: no-repeat; background-position: right 0; cursor:pointer;}
+textarea.error{border-color:#D93E3E; background-color: #ffffff; background-image: url('../images/cross-error.png'); background-repeat: no-repeat; background-position: 100% 0; cursor:pointer;}
 textarea.error{background: none;}
 form > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
@@ -119,10 +119,13 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .header-tags > ul{float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
 .header-tags > ul > li > a{color: #468ac4; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight:bold;}
-.more{background: url('../images/more.png') no-repeat 55px 18px; position: relative;}
-.more:hover{background-position:55px -7px!important;}
+.header-tags .more > a{position: relative; padding: 0 16px 0 20px;}
 .more > a{text-decoration:none;outline:0 none;}
-.more:hover > a{color:#61656a!important}
+.more:hover > a{color:#61656a!important}       
+
+.more > a > span{background-image: url('../images/more.png'); background-repeat: no-repeat; background-position: 100% 6px; padding-right: 12px;}
+.more:hover > a > span{background-position: 100% -19px;}
+
 .more-tags{background-color: #f6f9fb; position: absolute; top: 39px; display: none; left: 0;
   -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
@@ -296,10 +299,10 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .pm-flash > p{padding-left: 20px; margin-top: 0 !important; line-height: normal !important;}
 
 .pm-flash.success{background-color: #ebffee; border: 1px solid #a3c9a9;}
-.pm-flash.success > p{background: url('../images/check-mark.png') no-repeat; color: #6fa677;}
+.pm-flash.success > p{background-image: url('../images/check-mark.png'); background-repeat: no-repeat; background-position: 0 0; color: #6fa677;}
 
 .pm-flash.error{background-color: #ffffff; border: 1px solid #E79090;}
-.pm-flash.error > p{background: url('../images/error-mark.png') no-repeat 0 2px; color: #D93E3E;}
+.pm-flash.error > p{background-image: url('../images/error-mark.png'); background-repeat: no-repeat; background-position: 0 2px; color: #D93E3E;}
 
  #pageslide-slide-wrap{background:none white}
  #pageslide-slide-wrap > div{background-image:none;}
