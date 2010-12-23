@@ -36,7 +36,10 @@ def convert(src, dest)
     [/([\{\s;])right:/, '\\1left:'],
     [/([\{\s;])_KEY_/, '\\1right:'],
     [/url\((['"])\.\./, 'url(\\1../..'],
-    [/url\((['"])fonts/, 'url(\\1../fonts']
+    [/url\((['"])fonts/, 'url(\\1../fonts'],
+    [/clear:\s*left/, 'clear:---'],
+    [/clear:\s*right/, 'clear: left'],
+    [/clear:---/, 'clear: right']
   ]
 
   css = File.read(src)

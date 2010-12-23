@@ -14,7 +14,7 @@ body > div#pageslide-blanket{background:none}
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; right: 0;}
 
 .related-content li{width: 150px; float:right;}
-article{padding: 40px; background:url('../../images/bg-article.png') repeat-x 0 2px white; display: block; min-height: 449px;}
+article{padding: 40px; background: #ffffff url('../../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
 .topic-content p{margin-top:10px;line-height: 22px;position:relative;word-wrap:break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic} 
@@ -22,7 +22,7 @@ article > header{display:block;position:static;}
 article > header > h1{}
 article > header > div{float:right;}
 article > header > div.left{float:right;width:556px;padding-bottom:35px;}
-article > header em{display:block;clear:left;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
+article > header em{display:block;clear: right;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
 aside{font-size:12px;float:left;width:200px;padding:0 18px;background:url('../../images/bg-aside.png') repeat-x 0 0 #ffffff;border-top:1px solid white;border-right:2px solid white;border-left:2px solid white; float:left;}
 aside section.show-hide{border-top:none;padding:19px 0 25px;}
 aside section.show-hide a{text-align: right;text-decoration:none;padding-right:23px;outline:0 none;float:none!important;height: 31px;display:block;
@@ -179,7 +179,7 @@ p:hover .icn{display: inline;}
 .related-carrousel > ul > li > a{color: #7e838a;}     
 .related-carrousel .rd-related-content{margin-left: 0;}
 
-.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; margin:42px 0 20px 0; width: 18px; right: -30px; float:right;}
+.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; right: -30px; margin:42px 0 20px 0; width: 18px;  float:right;}
 .social-bookmarkers > a{float:right; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../../images/icn-social.png'); background-repeat: none; overflow: hidden;}
 .facebook{background-position:100% 0;}
 .facebook:hover{background-position:100% -18px;}
