@@ -14,7 +14,7 @@
         <div class="from">
           <%= link_to  user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %> 
               <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender.username) %></span>
-              <%= t 'users.show.content.private_messages.at_date', :date => l(pm.conversation_replies.last.created_at, :format => :long) %>
+              <span><%= t 'users.show.content.private_messages.at_date', :date => l(pm.conversation_replies.last.created_at, :format => :long) %></span>
           <% end %>
         </div>
         <div class="msg">
