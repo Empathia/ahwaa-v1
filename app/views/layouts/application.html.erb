@@ -104,13 +104,16 @@
                 <% Topic.tag_counts.each do |tag| %>
                   <li><%= link_to tag, topic_tag_path(tag.name) %></li>
                 <% end %>
-                <% Topic.tag_counts.each do |tag| %>
-                  <li><%= link_to tag, topic_tag_path(tag.name) %></li>
-                <% end %>
                 <li class="more">
                   <%= link_to 'More' %>
-                  <ul id="moretags" class="more-tags border-all border-menu">
-                  </ul>
+                  <div class="scroll-tags more-tags">
+                    <div class="arrow scroll-up"><a href="#">&uarr;</a></div>
+                    <div class="scroller">
+                      <ul id="moretags" class="border-all border-menu">
+                      </ul>
+                    </div>
+                    <div class="arrow scroll-down"><a href="#">&darr;</a></div>
+                  </div>
                 </li>
               </ul>     
               <div class="request-topic-wrapper">
