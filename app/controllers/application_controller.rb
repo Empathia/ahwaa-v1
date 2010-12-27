@@ -50,7 +50,8 @@ class ApplicationController < ActionController::Base
       if logged_in?
         redirect_to(root_url(:subdomain => current_user.profile.language)) and return unless locale == current_user.profile.language
       elsif locale.blank? || !I18n.available_locales.include?(locale.to_sym)
-        redirect_to(root_url(:subdomain => 'en')) and return
+        lang = request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
+        redirect_to(root_url(:subdomain => lang)) and return
       end
       I18n.locale = locale
     end
