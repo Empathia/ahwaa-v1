@@ -3,8 +3,7 @@
 <head>
   <title>Transcend</title>                                                                                              
   <% if rtl? %>
-    <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', :cache => 'all_rtl' %>
-    <%= stylesheet_link_tag 'style-rtl', :cache => true %>
+    <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
   <% end %>  
