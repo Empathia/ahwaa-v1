@@ -29,9 +29,9 @@ class Topic < ActiveRecord::Base
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
 
   scope :by_language, lambda { |lang| where("language = :lang", :lang => lang) }
-  scope :by_replies_count, by_language(I18n.locale).order("replies_count DESC")
-  scope :newest, by_language(I18n.locale).order("created_at DESC")
-  scope :popular, by_replies_count.limit(5)
+  scope :by_replies_count, lambda { |*lang| by_language(lang.first || 'en').order("replies_count DESC") }
+  scope :newest, lambda { |*lang| by_language(lang.first || 'en').order("created_at DESC") }
+  scope :popular, lambda { |*lang| by_replies_count(lang.first || 'en').limit(5) }
 
   def self.per_page
     10

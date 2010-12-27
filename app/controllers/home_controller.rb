@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def index
-    @popular = Topic.popular
+    @popular = Topic.popular(I18n.locale)
     @latest = Reply.latest(I18n.locale)
   end
 
