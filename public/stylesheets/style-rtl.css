@@ -1,3 +1,6 @@
+.topic > .links > div{padding-top: 4px;}
+.homepage > .links > div{padding-top: 8px;}
+
 .request-topic,
 .request-topic > span,
 .request-topic > span > span,
