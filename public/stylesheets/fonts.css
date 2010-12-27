@@ -13,10 +13,16 @@
   font-weight: normal;
   font-style: normal;
 }
-body{font-size: 13px; font-family: Arial, Helvetica; color: #61656a;}
-h1, h2{color: #393c3f;}
-h1{font-size: 22px; font-family: 'GothamMediumRegular'; font-weight: normal;}
-.sec-title, .sec-title-med, .h2{font-size: 16px; color: #393c3f; font-weight: normal; padding-bottom: 10px;}
+
+
+h1{font-family: 'GothamMediumRegular'; font-weight: normal;}
+body{font-family: Arial, Helvetica;}
 .sec-title, .h2{font-family: 'GothamBoldRegular';}
 .sec-title-med{font-family: 'GothamMediumRegular';}
-h3,.regular{font-size: 13px; color: #61656a;}
+
+.items-wrapper > section > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
+.feature-wrapper h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
+.related-content > div > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
+.expand-btn{font-family: 'GothamBoldRegular';}
+.sign-up-btn{font-family: "GothamMediumRegular";}
+#pageslide-slide-wrap > div h2 {font-family: 'GothamMediumRegular';}
