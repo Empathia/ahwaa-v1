@@ -24,7 +24,7 @@ Lgbt::Application.routes.draw do
 
   resources :bad_words, :only => [:index]
 
-  scope '(:locale)', :locale => /en|ar/ do
+  # scope '(:locale)', :locale => /en|ar/ do
     resources :topics, :only => [:show] do
       resources :replies, :only => [:create] do
         member do
@@ -35,7 +35,9 @@ Lgbt::Application.routes.draw do
     end
 
     get '/tag/:tag' => "topics#tag", :as => :topic_tag
-  end
+
+    root :to => "home#index"
+  # end
 
   namespace :admin do
     resources :tags,  :only => [:index, :destroy]
@@ -69,5 +71,4 @@ Lgbt::Application.routes.draw do
   get "about" => "home#about"
   get "terms" => "home#terms"
 
-  root :to => "home#index"
 end

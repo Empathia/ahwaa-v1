@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include UrlHelper
   self.responder = ApplicationResponder
   respond_to :html
 
@@ -37,16 +38,21 @@ class ApplicationController < ActionController::Base
   end
   
   # Include selected locale in links
-  def default_url_options(options = {})
-    {:locale => I18n.locale}
-  end
+  # def default_url_options(options = {})
+  #   {:locale => I18n.locale}
+  # end
 
   private
 
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
-      I18n.locale = params[:locale] and return if params[:locale].present?
-      I18n.locale = current_user.profile.language if current_user && !params[:locale]
+      locale = request.subdomains.first
+      if logged_in?
+        redirect_to(root_url(:subdomain => current_user.profile.language)) and return unless locale == current_user.profile.language
+      elsif locale.blank? || !I18n.available_locales.include?(locale.to_sym)
+        redirect_to(root_url(:subdomain => 'en')) and return
+      end
+      I18n.locale = locale
     end
 
     def authenticate_user!
