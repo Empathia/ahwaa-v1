@@ -18,7 +18,8 @@ class Admin::TopicRequestsController < ApplicationController
 
     options = {:topic => {
       :title => @topic_request.title,
-      :content => @topic_request.content
+      :content => @topic_request.content,
+      :language => @topic_request.language
     }}
 
     unless @topic_request.anonymous_post

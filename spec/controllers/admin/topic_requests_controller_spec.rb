@@ -48,7 +48,8 @@ describe Admin::TopicRequestsController do
                                     :topic => {
                                       :title => @first_topic_request.title,
                                       :content => @first_topic_request.content,
-                                      :user_id => @first_topic_request.user_id
+                                      :user_id => @first_topic_request.user_id,
+                                      :language => @first_topic_request.language
                                     })
       end
 

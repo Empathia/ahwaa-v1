@@ -1,19 +1,20 @@
 <div>
   <div class="header">
-	  <h2><%= t('.title') %></h2>
-  	<a href="#" class="pageslide-close"><%= t('layouts.application.header.request_topic.back_button')%></a>
+    <h2><%= t('.title') %></h2>
+    <a href="#" class="pageslide-close"><%= t('layouts.application.header.request_topic.back_button')%></a>
   </div>
-	<% javascript :form_validator, :form_script %>
-	<%= form_for @topic_request do |f| %>
-		<fieldset>
-		    <%= f.label :title %>
-	    	<%= f.text_field :title, :required => "true" %>
-	    	<%= f.label :topic_details %>
-	    	<%= f.text_area :content, :required => "true", :rows => "26", :type => "textarea" %>
-	    	<%= f.check_box :anonymous_post %>
-        <%= f.label TopicRequest.human_attribute_name(:anonymous_post), :class => "anonym" %>
-	    	<%= f.submit t('.submit'), :class => "btn-gradient" %>
-		</fieldset>
-	<% end %>
+  <% javascript :form_validator, :form_script %>
+  <%= form_for @topic_request do |f| %>
+    <fieldset>
+      <%= f.label :title %>
+      <%= f.text_field :title, :required => "true" %>
+      <%= f.label :topic_details %>
+      <%= f.text_area :content, :required => "true", :rows => "26", :type => "textarea" %>
+      <%= f.hidden_field :language, I18n.locale %>
+      <%= f.check_box :anonymous_post %>
+      <%= f.label TopicRequest.human_attribute_name(:anonymous_post), :class => "anonym" %>
+      <%= f.submit t('.submit'), :class => "btn-gradient" %>
+    </fieldset>
+  <% end %>
 </div>
 

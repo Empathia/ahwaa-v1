@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     @popular = Topic.popular
-    @latest = Reply.latest
+    @latest = Reply.latest(I18n.locale)
   end
 
   def privacy_policy

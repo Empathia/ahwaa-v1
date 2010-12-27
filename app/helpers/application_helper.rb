@@ -1,5 +1,4 @@
 module ApplicationHelper
-
   # Wraps content to display within the +<head>+ tags
   def head(&block)
     content_for(:head) { block.call }

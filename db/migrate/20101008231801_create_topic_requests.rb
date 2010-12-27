@@ -5,6 +5,7 @@ class CreateTopicRequests < ActiveRecord::Migration
       t.string :title
       t.boolean :anonymous_post
       t.text    :content
+      t.string :language
 
       t.timestamps
     end

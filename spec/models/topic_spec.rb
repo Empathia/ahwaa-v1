@@ -40,4 +40,25 @@ describe Topic do
     topics.map(&:id).sort.should == popular_topics.map(&:id).sort
   end
 
+  describe ".by_language" do
+
+    before(:each) do
+      Topic.destroy_all
+      3.times do
+        Factory(:topic, :language => 'en')
+      end
+      5.times do
+        Factory(:topic, :language => 'ar')
+      end
+    end
+
+    it "returns only english topics" do
+      Topic.by_language(:en).length.should == 3
+    end
+
+    it "returns only arabic topics" do
+      Topic.by_language(:ar).length.should == 5
+    end
+  end
+
 end

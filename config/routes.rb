@@ -24,16 +24,18 @@ Lgbt::Application.routes.draw do
 
   resources :bad_words, :only => [:index]
 
-  resources :topics, :only => [:show] do
-    resources :replies, :only => [:create] do
-      member do
-        post :flag
-        post :vote_up
+  scope '(:locale)', :locale => /en|ar/ do
+    resources :topics, :only => [:show] do
+      resources :replies, :only => [:create] do
+        member do
+          post :flag
+          post :vote_up
+        end
       end
     end
-  end
 
-  get '/tag/:tag' => "topics#tag", :as => :topic_tag
+    get '/tag/:tag' => "topics#tag", :as => :topic_tag
+  end
 
   namespace :admin do
     resources :tags,  :only => [:index, :destroy]

@@ -23,8 +23,9 @@ class Reply < ActiveRecord::Base
   before_save :check_bad_words
   before_save :nullify_contextual_index
 
-  scope :latest, order("created_at DESC").limit(5)
-  scope :flagged, :include => :ratings, :conditions => "ratings.vote = #{Rating::FLAG}"
+  scope :by_topic_language, lambda { |lang| includes(:topic).where("topics.language = :lang", :lang => lang) }
+  scope :latest, lambda { |*lang| by_topic_language(lang.first || 'en').order("replies.created_at DESC").limit(5) }
+  scope :flagged, includes(:ratings).where("ratings.vote = :flag", :flag => Rating::FLAG)
 
   # returns the amount of points granted this post produces
   def points_granted

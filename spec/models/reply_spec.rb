@@ -160,4 +160,20 @@ describe Reply do
 
   end
 
+  describe ".by_topic_language" do
+
+    before(:each) do
+      topic = Factory(:topic, :language => 'ar')
+      @ar_reply = Factory(:reply, :topic_id => topic.id)
+    end
+
+    it "returns reply from english topic" do
+      Reply.by_topic_language(:en).first.should == @reply
+    end
+
+    it "return reply from arabic topic" do
+      Reply.by_topic_language(:ar).first.should == @ar_reply
+    end
+  end
+
 end
