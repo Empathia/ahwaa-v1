@@ -15,7 +15,7 @@ $(function(){
         
         
     windowObj.load(function(){     
-        sidebar.css({left:sidebar.offset().left, position: 'fixed'}).data('fixed', 'true');       
+        sidebar.css({left:sidebar.offset().left, position: 'fixed'}).data('fixed', true);
     }); 
     
        
