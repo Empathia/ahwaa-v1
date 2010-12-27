@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'GothamMediumRegular';
   src: url('gotham-medium.eot');
-  src: local('☺'), url('fonts/gotham-medium.woff') format('woff'), url('fonts/gotham-medium.ttf') format('truetype'), url('fonts/gotham-medium.svg#webfontzAljFo39') format('svg');
+  src: local('☺'), url('/stylesheets/fonts/gotham-medium.woff') format('woff'), url('/stylesheets/fonts/gotham-medium.ttf') format('truetype'), url('/stylesheets/fonts/gotham-medium.svg#webfontzAljFo39') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
   font-family: 'GothamBoldRegular';
   src: url('gotham-bold.eot');
-  src: local('☺'), url('fonts/gotham-bold.woff') format('woff'), url('fonts/gotham-bold.ttf') format('truetype'), url('fonts/gotham-bold.svg#webfontNoFfkWyt') format('svg');
+  src: local('☺'), url('/stylesheets/fonts/gotham-bold.woff') format('woff'), url('/stylesheets/fonts/gotham-bold.ttf') format('truetype'), url('/stylesheets/fonts/gotham-bold.svg#webfontNoFfkWyt') format('svg');
   font-weight: normal;
   font-style: normal;
 }
