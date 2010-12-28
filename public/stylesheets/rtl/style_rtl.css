@@ -107,11 +107,18 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .logged_opts{float:right;margin-top:12px}
 .logged_opts > li{float:right;margin-left:23px}
 .logged_opts > li > a{color: #9b9b9b}
-.search{float:left;}
+.search{float:left; position: relative;}
 .search > p{border:1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color:#e1eaee; width: 280px; height: 23px; padding:6px 10px 0; margin: 3px 0 5px;}
 .search > p > input{width:258px;height:16px;border:none;float:right;font-size:13px;line-height:1em;padding:0;}
 .search > p > span{background:url('../../images/icn-search.png') no-repeat 0 0 transparent; float:left; width: 17px; height: 17px;clear:none}
-.search > ul{background-color:#eff1f2; border: 1px solid white;display:none; width: 288px; padding:3px; margin: 0px; position: absolute;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);z-index:2;}
+.search > ul{background-color:#eff1f2; border: 1px solid white;display:none; width: 288px; padding:3px; margin: 0px; position: absolute; right: 0; z-index:2;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
+  -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
+  box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
+}
 .search > ul.visible{display:block;}
 .search > ul >li{text-align: right;border-bottom:1px solid #d7dadf;padding:7px 0 6px;background-color:#fbfbfb;}
 .search > ul >li:hover{background-color: #F0F7Fb;}
@@ -188,7 +195,7 @@ footer > div > span{float:right; color: #898f93;}
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.placeimg{background:url('../../images/pass_placeholder.png') no-repeat 0 0 white}
+.placeimg{background-image: url('../../images/pass_placeholder.png'); background-repeat: no-repeat; background-position:100% 0; background-color: #ffffff}
 p.error{color: #d93e3e; margin:0 1px 5px 0;}
 p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;border:1px #a3c9a9 solid;background:url("../../images/checked.png") no-repeat 14px 6px #ebffee;padding:7px 34px 0 0;height:18px;width:243px;
     -moz-border-radius: 2px;

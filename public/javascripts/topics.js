@@ -15,7 +15,7 @@ $(function(){
         
         
     windowObj.load(function(){     
-        sidebar.css({left:sidebar.offset().left, position: 'fixed'}).data('fixed', true);
+        sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 126}).data('fixed', true);
     }); 
     
        
@@ -65,7 +65,7 @@ $(function(){
         	    fixedElement.data("fixed", false);
         	} else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
                 windowObj.scrollLeft() && (fixedElementPosX = calculatePosX(fixedElement));
-                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto"}
+                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto", top: 126}
         	    fixedElement.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
         	    fixedElement.data("fixed", true);
         	} else {   
