@@ -39,12 +39,12 @@ input[type=checkbox] + label{display: inline;}
 input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 /*.container > .aligned input.error{background-image: url('../../images/error-mark.png'); background-repeat: no-repeat; background-position: 110px 8px;  }*/
 .rainbow{background: url('../../images/rainbow.jpg') repeat-x; height: 3px;}
-.gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb; position: absolute; width: 100%; top: 3px;}
+.gray{height: 5px; border-bottom: 1px solid #c0c9ce; border-top: 1px solid #f7fafb;}
 .light{background-color: #e2ecf2;}
 .dark{background-color: #d7e4eb;}
 .placeholder{color:#bbb}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
-.header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: 6px}
+.header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: -1px}
 .topic{background: url('../../images/transcend.png') no-repeat center 0;}
 .homepage{background: url('../../images/homepage.png') no-repeat center 0;}
 .clear{clear:both!important;float:none!important;}
@@ -151,7 +151,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .request-topic > span > span{background-image: url('../../images/blue-btn-bg.png');} 
 .request-topic{float:left; margin:7px 0 0 10px; height: 25px; background-repeat: repeat-x; background-position:100% -25px;outline:0;}
 .request-topic > span{float:left; height: 100%; background-repeat: no-repeat; background-position:100% 0; padding-right:31px;}
-.request-topic > span > span{float:left; width: 106px;font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position:0 -50px}
+.request-topic > span > span{float:left; padding-left: 21px; font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position:0 -50px}
 
 .tags > li{margin-left: 4px;}
 .by-author{margin-left: 14px;}

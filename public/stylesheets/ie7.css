@@ -10,3 +10,4 @@ input.placeimg.error{background: #ffffff url('../images/pass_placeholder_error.p
 .user-sb-white{overflow: hidden;}
 .msg-opts{width: 127px;}
 .pm-user{width: 100%;}
+.request-topic > span > span{width: 86px;}

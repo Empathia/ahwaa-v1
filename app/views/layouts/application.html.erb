@@ -17,6 +17,9 @@
   <![endif]-->
   <!--[if lt IE 8]>
     <%= stylesheet_link_tag 'ie7' %>  
+    <% if rtl? %>
+      <%= stylesheet_link_tag 'ie7-rtl' %>      
+    <% end %>
   <![endif]--> 
   <!--[if IE 8]>
     <%= stylesheet_link_tag 'ie8' %>  
@@ -64,9 +67,7 @@
                     <% end %>
                   </div>
                   <div class="auth-wrapper">
-                    <a href="#" id="login">
-                      <span><%= t('.header.auth.login') %></span>
-                    </a>
+                    <a href="#" id="login"><span><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form", :remote => true do %>
                       <ul>
                         <li class="login"><%= text_field_tag :login, nil, :required => "true", 'id' => "login-input", :placeholder => t('.header.login_form.login') %></li>
