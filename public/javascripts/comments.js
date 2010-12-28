@@ -240,8 +240,10 @@ $.fn.comments = function(options){
         newResponse.hasClass('reply-new-response') && addCommentForm.addClass('reply-new-response');
         addCommentForm.attr('id', id).addClass('clon no-arrow').find('.comm-arrow').remove();
         newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
-        newResponse.replaceWith(addCommentForm);
-        $('#' + id).data('newResponse', newResponseClon).slideDown().find('textarea').focus();
+        newResponse.replaceWith(addCommentForm);  
+        $('#' + id).data('newResponse', newResponseClon).slideDown(function(){
+            $.browser.msie && $.browser.version == '7.0' && $(this).css('opacity', '1');
+        }).find('textarea').focus();
         // comments.find('.contextual_index').val(index);  
         addCommentForm.find('.reply_to').val(addCommentForm.closest('li').attr('data-id'));  
         // addCommentForm.find('.contextual_index').val(addCommentForm.prev('p').find('a:last-child').attr('id').replace('add_', ''));
