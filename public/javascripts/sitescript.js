@@ -127,11 +127,9 @@ $(function(){
         formPrivateMsg.find('.error').remove();
         if(textarea.attr('placeholder') == textarea.val() || $.trim(textarea.val()) == ''){
             formPrivateMsg.prepend('<div class="pm-flash error border-all"><p>' + I18n.t('private_message.message_empty') + '</p></div>');
-        }  else {
-            $(this).closest('form').callRemote();
+            ev.preventDefault();
+            ev.stopPropagation();
         }
-        ev.preventDefault();
-        ev.stopPropagation();
     });
     
     $('.private-msg').find('.cancel').live('click', function(){
