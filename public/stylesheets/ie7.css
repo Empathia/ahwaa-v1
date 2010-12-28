@@ -11,3 +11,6 @@ article > header .avatar-wrapper{text-align: center; z-index: 99;}
 .pm-user{width: 100%;}
 .request-topic > span > span{width: 86px;}
 .header-top{z-index: 99;}
+.comm-wrap > div > p{z-index: -1;}
+.private-msg p {z-index: 1;}
+aside{z-index: 99;}
