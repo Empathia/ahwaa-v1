@@ -62,88 +62,88 @@ ar:
   # Used in distance_of_time_in_words(), distance_of_time_in_words_to_now(), time_ago_in_words()
   datetime:
     distance_in_words:
-      half_a_minute: "half a minute"
+      half_a_minute: "نصف دقيقة"
       less_than_x_seconds:
-        one:   "less than 1 second"
-        other: "less than %{count} seconds"
+        one:   "نصف دقيقة"
+        other: "قل من %{count} ثانية"
       x_seconds:
-        one:   "1 second"
-        other: "%{count} seconds"
+        one:   "1 ثانية"
+        other: "%{count} ثانية"
       less_than_x_minutes:
-        one:   "less than a minute"
-        other: "less than %{count} minutes"
+        one:   "أقل من دقيقة"
+        other: "أقل من %{count} دقيقة"
       x_minutes:
-        one:   "1 minute"
-        other: "%{count} minutes"
+        one:   "1 دقيقة"
+        other: "%{count} دقيقة"
       about_x_hours:
-        one:   "about 1 hour"
-        other: "about %{count} hours"
+        one:   "حوالي 1 ساعة"
+        other: "حول %{count} ساعات"
       x_days:
-        one:   "1 day"
-        other: "%{count} days"
+        one:   "1 يوم"
+        other: "%{count} أيام"
       about_x_months:
-        one:   "about 1 month"
-        other: "about %{count} months"
+        one:   "حوالي 1 شهر"
+        other: "حول %{count} أشهر"
       x_months:
-        one:   "1 month"
-        other: "%{count} months"
+        one:   "1 شهر"
+        other: "%{count} أشهر"
       about_x_years:
-        one:   "about 1 year"
-        other: "about %{count} years"
+        one:   "حوالي 1 سنة"
+        other: "حول %{count} سنة"
       over_x_years:
-        one:   "over 1 year"
-        other: "over %{count} years"
+        one:   "أكثر من 1 سنة"
+        other: "أكثر من %{count} سنة"
       almost_x_years:
-        one:   "almost 1 year"
-        other: "almost %{count} years"
+        one:   "1 سنة تقريبا"
+        other: "تقريبا %{count} سنة"
     prompts:
-      year:   "Year"
-      month:  "Month"
-      day:    "Day"
-      hour:   "Hour"
-      minute: "Minute"
-      second: "Seconds"
+      year:   "السنة"
+      month:  "الشهر"
+      day:    "اليوم"
+      hour:   "ساعة"
+      minute: "دقيقة"
+      second: "ثانية"
 
   activemodel:
     errors:
       template:
         header:
-          one:    "1 error prohibited this %{model} from being saved"
-          other:  "%{count} errors prohibited this %{model} from being saved"
+          one:    "1 يحظر هذا الخطأ  %{model} من يتم حفظ"
+          other:  "%{count} يحظر هذه الأخطاء %{model}من يتم حفظ"
         # The variable :count is also available
-        body: "There were problems with the following fields:"
+        body: "كانت هناك مشاكل مع الحقول التالية"
 
   support:
     select:
       # default value for :prompt => true in FormOptionsHelper
-      prompt: "Please select"
+      prompt: "الرجاء اختيار"
   
   activerecord:
     errors:
       # The values :model, :attribute and :value are always available for interpolation
       # The value :count is available when applicable. Can be used for pluralization.
       messages:
-        inclusion: "is not included in the list"
-        exclusion: "is reserved"
-        invalid: "is invalid"
-        confirmation: "doesn't match confirmation"
-        accepted: "must be accepted"
-        empty: "can't be empty"
-        blank: "can't be blank"
-        too_long: "is too long (maximum is %{count} characters)"
-        too_short: "is too short (minimum is %{count} characters)"
-        wrong_length: "is the wrong length (should be %{count} characters)"
-        taken: "has already been taken"
-        not_a_number: "is not a number"
-        not_an_integer: "must be an integer"
-        greater_than: "must be greater than %{count}"
-        greater_than_or_equal_to: "must be greater than or equal to %{count}"
-        equal_to: "must be equal to %{count}"
-        less_than: "must be less than %{count}"
-        less_than_or_equal_to: "must be less than or equal to %{count}"
-        odd: "must be odd"
-        even: "must be even"
-        record_invalid: "Validation failed: %{errors}"
+        inclusion: "ليست مدرجة في قائمة"
+        exclusion: "محجوز"
+        invalid: "غير صالح"
+        confirmation: "لا يتطابق مع تأكيد"
+        accepted: "يجب ان تكون مقبولة"
+        empty: "لا يمكن أن تكون فارغة"
+        blank: "لا يمكن أن تكون فارغة"
+        too_long: "طويل جدا (الحد الأقصى %{count} الأحرف)"
+        too_short: "قصيرة جدا (الحد الأدنى %{count} الأحرف)"
+        wrong_length: "هو يجب أن طول خاطئ (سواء %{count} الأحرف)"
+        taken: "وقد تم بالفعل اتخاذ"
+        not_a_number: "ليس رقما"
+        not_an_integer: "يجب أن يكون صحيحا"
+        greater_than: "يجب أن تكون أكبر من %{count}"
+        greater_than_or_equal_to: "يجب أن تكون أكبر من أو يساوي %{count}"
+        equal_to: "يجب أن تكون مساوية %{count}"
+        less_than: "يجب أن يكون أقل من %{count}"
+        less_than_or_equal_to: "يجب أن يكون أقل من أو يساوي %{count}"
+        odd: "يجب أن تكون فردية"
+        even: "يجب أن يكون حتى"
+        record_invalid: "فشل التحقق من صحة %{errors}"
         # Append your own errors here or at the model/attributes scope.
 
       # You can define own errors for models or model attributes.
@@ -182,14 +182,14 @@ ar:
       short: "%b %d"
       long: "%B %d, %Y"
       
-    day_names: [Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday]
-    abbr_day_names: [Sun, Mon, Tue, Wed, Thu, Fri, Sat]
+    day_names: [الأحد ، الاثنين ، الثلاثاء، الاربعاء، الخميس، الجمعة، السبت]
+    abbr_day_names: [سبت، الاثنين ، الثلاثاء، الاربعاء ، الخميس ، الجمعة ،]
       
     # Don't forget the nil at the beginning; there's no such thing as a 0th month
-    month_names: [~, January, February, March, April, May, June, July, August, September, October, November, December]
-    abbr_month_names: [~, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]
+    month_names: [~, كانون الثاني ، شباط، آذار، نيسان، أيار ، حزيران، تموز، آب، أيلول / سبتمبر ، أكتوبر، نوفمبر، ديسمبر]
+    abbr_month_names: [~, "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
     # Used in date_select and datime_select.
-    order: [ :year, :month, :day ]
+    order: [ :"السنة ", :"الشهر", :"اليوم"]
 
   time:
     formats:
