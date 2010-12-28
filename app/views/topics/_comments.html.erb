@@ -1,7 +1,7 @@
 <% comments.each do |contextual_index, replies| %>
   <div class="comments" id="comments_<%= contextual_index %>">
     <ul class="comments-ls">
-      <%= render replies %>
+      <%= render :partial => "replies/reply", :collection => replies, :locals => {:leng => replies.length} %>
     </ul>
     <%= render :partial => "shared/new_response" %>
   </div>

@@ -3,7 +3,7 @@
 .request-topic-wrapper{width: 137px;}   
 .sign-up-btn{background-color: #3a7ab9;}
 .user-wrapper{overflow: hidden;}                          
-article > header .avatar-wrapper{text-align: center;}
+article > header .avatar-wrapper{text-align: center; z-index: 99;}
 .view-more{width: 76px;}
 .edit-profile{float: left; width: 100%;}
 .user-sb-white{overflow: hidden;}

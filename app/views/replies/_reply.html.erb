@@ -1,4 +1,4 @@
-<%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id do %>
+<%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id, :style => ("z-index: #{leng-reply_counter}" if defined?(leng)) do %>
   <% if defined?(reply_counter) && reply_counter == 0 && reply.contextual_index.present? || (defined?(noArrow) && !noArrow) %>
     <span class="comm-arrow"></span>
   <% end %>
@@ -35,7 +35,7 @@
       <%= simple_format reply.content %>
       <% if reply.replies.size > 0 %>
         <ul class="comments-ls">
-          <%= render reply.replies, :locals => {:noArrow => true} %>
+          <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.length}%>
         </ul>
       <% elsif reply.parent.nil? %>
         <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' %>
