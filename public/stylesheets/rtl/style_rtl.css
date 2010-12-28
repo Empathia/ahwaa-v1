@@ -188,7 +188,7 @@ footer > div > span{float:right; color: #898f93;}
   -webkit-border-radius: 3px;
   border-radius: 3px;
 }
-.placeimg{background:url('../../images/pass_placeholder.png') no-repeat 0 0 white}
+.placeimg{background-image: url('../../images/pass_placeholder.png'); background-repeat: no-repeat; background-position:100% 0; background-color: #ffffff}
 p.error{color: #d93e3e; margin:0 1px 5px 0;}
 p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;border:1px #a3c9a9 solid;background:url("../../images/checked.png") no-repeat 14px 6px #ebffee;padding:7px 34px 0 0;height:18px;width:243px;
     -moz-border-radius: 2px;
