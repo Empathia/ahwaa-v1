@@ -26,8 +26,10 @@ $(function(){
 
     $('.continue').live('click', function(){
        $(this).closest('.sign-up-or-continue').slideUp(function(){
-           var signUp = $(this);
-           signUp.next().slideDown();
+           var signUp = $(this),
+               form = signUp.next();
+           form.slideDown();
+           !$.browser.webkit && form.find('textarea').focus();
            signUp.remove();
        });
        return false;
