@@ -4,7 +4,7 @@
 .sign-up-btn{background-color: #3a7ab9;}
 .user-wrapper{overflow: hidden;}                          
 article > header .avatar-wrapper{text-align: center;}
-input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_error.png') no-repeat 0 0}
+article > header > .avatar-wrapper{z-index: 99;}
 .view-more{width: 76px;}
 .edit-profile{float:right; width: 100%;}
 .user-sb-white{overflow: hidden;}

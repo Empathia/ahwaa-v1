@@ -14,7 +14,7 @@
     }, 500);
   <% else %>
     if($('#comments_<%= @reply.contextual_index %>').length == 0) {
-      $('.container').append('<%= escape_javascript render(:partial => 'topics/comments', :object => [[@reply.contextual_index, @reply]]) %>');
+      $('.container').append('<%= escape_javascript render(:partial => 'topics/comments', :object => [[@reply.contextual_index,[@reply]]]) %>');
     } else {
       $('#comments_<%= @reply.contextual_index %> ul').append('<%= escape_javascript render(@reply) %>');
     }

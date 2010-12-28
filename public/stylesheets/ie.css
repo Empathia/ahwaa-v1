@@ -15,3 +15,4 @@
 .items > li {background-color:rgb(234, 240, 243)}
 .icn > span{background-color: #3c454f;}         
 .tta{border-color: #3c454f transparent transparent;}  
+input.placeimg.error{background: #ffffff url('../images/pass_placeholder_error.png') no-repeat 0 0}

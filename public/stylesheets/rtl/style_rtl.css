@@ -369,7 +369,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;borde
 .points-wrapper > span.gold-heart{background-position:0 -90px}
 
 .private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;left:-20px;top:-19px;display:none;text-align: right;z-index:99999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
-.private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;}
+.private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;margin:0;}
 .private-msg > form > textarea{width:234px;height:112px;margin-top:0;margin-bottom:8px;padding:10px;font-family:Arial, Sans-serif;font-size:12px;color:#aeb4bd;}
 .private-msg-btns{text-align: left}
 .private-msg-btns > input{height: 24px;float:none!important;}
@@ -389,7 +389,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0;font-size:11px;line-height:1em;borde
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd')";
 }
-.user-info > p{margin-top:0px !important;padding-bottom:7px;color:#4c5563;font:bold 18px/1em Arial,sans-serif;float:right;}
+.user-info > p{margin-top:0px !important;padding-bottom:7px;color:#4c5563;font:bold 18px/1em Arial,sans-serif;}
 
 .recently-topics{padding-top:28px;background:white}
 form + .recently-topics{padding-top:18px;}
@@ -398,7 +398,7 @@ form + .recently-topics{padding-top:18px;}
 .recently-topics > ul > li{padding:9px 16px 7px;border-top:1px solid #d8dce0;font-size:13px;}
 .recently-topics > ul > li > a{}
 
-.points-wrapper{padding:0 0 0 10px;clear: right}
+.points-wrapper{padding:0 0 0 10px;clear: right;float:right;}
 .points-wrapper > span{float:right;height:30px;border-bottom:1px solid #e6e6e6;width:30px}
 .points-wrapper > span.no-level{display:none;}
 .points-wrapper > span.no-level + span{border-right:none;-moz-border-radius:3px;-webkit-border-radius: 3px;border-radius: 3px}

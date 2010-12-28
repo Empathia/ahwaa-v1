@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 files = Dir.glob('public/stylesheets/**/*.css').reject { |p| p =~ /.*\/rtl\/.*\.css/ }
-ignore_list = ['all.css', 'admin_all.css', 'all_rtl.css', 'admin_all_rtl.css', 'style-rtl.css', 'ie7-rtl.css']
+ignore_list = ['all.css', 'admin_all.css', 'all_rtl.css', 'admin_all_rtl.css', 'style-rtl.css', 'ie-rtl', 'ie7-rtl.css']
 destination_path = 'public/stylesheets/rtl'
 
 files = files.reject { |p| p =~ /.*\/rtl\/.*\.css/ || ignore_list.any? { |i| Regexp.new(i, 'i') =~ p } }
