@@ -13,7 +13,10 @@
   <%= yield(:head) %>
   <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5_ie' %>
-    <%= stylesheet_link_tag 'ie' %>
+    <%= stylesheet_link_tag 'ie' %>         
+    <% if rtl? %> 
+      <%= stylesheet_link_tag 'ie-rtl' %>    
+    <% end %>    
   <![endif]-->
   <!--[if lt IE 8]>
     <%= stylesheet_link_tag 'ie7' %>  
