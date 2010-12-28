@@ -112,7 +112,7 @@ aside section.need-help{padding:13px 0;text-align:center}
 .response-user .avatar-wrapper{margin-right: 10px;}
 
 .res-username{margin-bottom:7px; float: left; width: 494px; padding-top: 5px;}
-.res-username p{color:#468AC4; margin-top: 0;}
+.res-username > span{color:#468AC4; margin-top: 0;}
 .res-flag-btns{float: right; display: none; position: absolute; right: 12px; top: 24px;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}
 .flag > span{background-image: url('../images/flags.png'); background-repeat: no-repeat; padding-left: 17px; background-position: 0 2px;}
