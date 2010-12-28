@@ -369,7 +369,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px;font-size:11px;line-height:1em;bord
 .points-wrapper > span.gold-heart{background-position:0 -90px}
 
 .private-msg{position:absolute;width:288px;background-color:#eff1f2;padding:3px;border:1px solid white;right:-20px;top:-19px;display:none;text-align:left;z-index:99999;font-size:12px;-moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);-webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)}
-.private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;}
+.private-msg > form{display: block;background:white;display: none;padding:24px 16px 0;margin:0;}
 .private-msg > form > textarea{width:234px;height:112px;margin-top:0;margin-bottom:8px;padding:10px;font-family:Arial, Sans-serif;font-size:12px;color:#aeb4bd;}
 .private-msg-btns{text-align:right}
 .private-msg-btns > input{height: 24px;float:none!important;}
