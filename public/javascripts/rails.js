@@ -92,6 +92,13 @@ jQuery(function ($) {
         e.preventDefault();          
     });
 
+    if($.browser.msie) {
+        $('form[data-remote] input[type=submit]').live('click.rails', function (e) {
+            $(this).closest('form').callRemote();
+            e.preventDefault();
+        });
+    }
+
     $('a[data-remote],input[data-remote]').live('click.rails', function (e) {
         $(this).callRemote();
         e.preventDefault();

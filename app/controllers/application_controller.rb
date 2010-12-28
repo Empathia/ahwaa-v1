@@ -47,13 +47,14 @@ class ApplicationController < ActionController::Base
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
       locale = request.subdomains.first
-      if logged_in?
-        redirect_to(root_url(:subdomain => current_user.profile.language)) and return unless locale == current_user.profile.language
-      elsif locale.blank? || !I18n.available_locales.include?(locale.to_sym)
-        lang = request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
-        redirect_to(root_url(:subdomain => lang)) and return
-      end
+      locale = (logged_in? ?
+                current_user.profile.language :
+                browser_language) if locale.blank? || !I18n.available_locales.include?(locale.to_sym)
       I18n.locale = locale
+    end
+
+    def browser_language
+      request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
     end
 
     def authenticate_user!

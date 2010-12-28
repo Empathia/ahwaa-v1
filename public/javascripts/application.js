@@ -65,7 +65,7 @@ $(document).ready(function() {
         }
     });
                                                     
-    $('.add_comments:visible input[type=submit]').live('click', function () {
+    $('.add_comments:visible input[type=submit]').live('mouseover', function () {
         $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
     });
 
