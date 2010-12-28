@@ -139,7 +139,7 @@ $(function(){
     $('.avatar, .avatar + em').live('mouseover',function(){ 
         var pm = $(this).siblings('.private-msg');
         pm.show(0, function () {
-            if(pm.offset().left < 0) {
+            if(pm.offset().left < 0 || pm.offset().left + pm.outerWidth() > $(window).width()) {
                 pm.addClass('inside');
             }
         });
@@ -214,7 +214,7 @@ $(function(){
 var scrollerInteval;
 
 $(window).load(function () {
-    $(".request-topic.active").pageSlide({ width: "556px", direction: "left", modal: true }).click(function(){
+    $(".request-topic.active").pageSlide({ width: "556px", direction: I18n.locale == 'ar' ? 'right' : "left", modal: true }).click(function(){
         $('.pageslide-body-wrap').addClass('jlo');
     });
 

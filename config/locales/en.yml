@@ -84,6 +84,7 @@ en:
           topic_details: "Topic details is empty"
           back_button: back
         sign_up_form:
+          sign_up: Sign up
           legend: Please register and enjoy all the benefits of Transcend!
           username: Your Name or Nickname
           email: Your Email
@@ -190,8 +191,7 @@ en:
     new:
       submit: Submit
       title: Request a Topic
-      titleTopic: Title
-      topicDetails: Topic details
+      content: Topic details
   users:
     show:
       sidebar:
