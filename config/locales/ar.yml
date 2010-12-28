@@ -71,7 +71,7 @@ ar:
   layouts:
     application:
       header:
-        switch_to_english: اللغة الإنجليزية
+        switch_to_english: View in english
         auth:
           sign_up: التوقيع
           login: تسجيل الدخول
