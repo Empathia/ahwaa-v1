@@ -84,6 +84,7 @@ ar:
           topic_details: "تفاصيل الموضوع فارغ"
           back_button: العودة
         sign_up_form:
+          sign_up: "قم بالتسجيل"
           legend: يرجى تسجيل والتمتع بجميع المزايا من تجاوز
           username: الاسم أو الكنية
           email: البريد الإلكتروني الخاص بك
@@ -190,8 +191,7 @@ ar:
     new:
       submit: تقدم
       title: طلب المواضيع
-      titleTopic: العنوان
-      topicDetails: تفاصيل الموضوع
+      content: تفاصيل الموضوع
   users:
     show:
       sidebar:
