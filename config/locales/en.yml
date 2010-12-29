@@ -240,7 +240,8 @@ en:
           add_reply: Click here to add a reply.
           send_reply: Send Reply
     inbox:
-      no_messages: There are no private messages
+      no_messages: You have no private messages
+      empty_tip: "Tip: To send messages, roll over someone's profile and compose a message!"
   private_messages:
     message:
       reply: Send reply

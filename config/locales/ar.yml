@@ -240,7 +240,8 @@ ar:
           add_reply: انقر هنا لإضافة الرد.
           send_reply: إرسال الرد
     inbox:
-      no_messages: لا توجد رسائل خاصة
+      no_messages: لا يوجد لديك رسائل خاصة
+      empty_tip: "نصيحة : لإرسال الرسائل، يتدحرج الشخصي لشخص ما ويؤلف رسالة!"
   private_messages:
     message:
       reply: إرسال الرد
