@@ -188,6 +188,7 @@ footer > div > span{float: left; color: #898f93;}
 .form-parag{margin-bottom: 15px; font-size: 12px;}
 .over-form > ul{overflow: hidden;}
 .over-form > ul > li{margin-bottom: 5px; float: left;}
+.over-form > ul > li > label{display: block; margin-bottom: 3px; color: #a9a9a9;}
 .over-form > ul > li > input[type="text"],
 .over-form > ul > li > input[type="email"],
 .over-form > ul > li > input[type="password"]{width: 257px; height:32px; padding: 0 10px; margin-bottom: 5px; line-height: 2.8;

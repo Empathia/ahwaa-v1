@@ -58,10 +58,12 @@
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
-                          <%= f.email_field :email, :required => "true", :maxlength => 35, :placeholder => t('.header.sign_up_form.email') %>
+                          <label><%= t('.header.sign_up_form.email') %></label>
+                          <%= f.email_field :email, :required => "true", :maxlength => 35 %>
                         </li>
                         <li class="username">
-                          <%= f.text_field :username, :required => "true", :maxlength => 35, :placeholder => t('.header.sign_up_form.username') %>
+                          <label><%= t('.header.sign_up_form.username') %></label>
+                          <%= f.text_field :username, :required => "true", :maxlength => 35 %>
                         </li>
                       </ul>
                       <div class="errors"></div>
@@ -73,8 +75,13 @@
                     <a href="#" id="login"><span><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form", :remote => true do %>
                       <ul>
-                        <li class="login"><%= text_field_tag :login, nil, :required => "true", 'id' => "login-input", :placeholder => t('.header.login_form.login') %></li>
-                        <li class="password"><%= password_field_tag :password, nil, :required => "true", :placeholder => t('.header.login_form.password') %></li>
+                        <li class="login">                                                               
+                          <label><%= t('.header.login_form.login') %></label>
+                          <%= text_field_tag :login, nil, :required => "true", 'id' => "login-input" %>
+                        </li>
+                        <li class="password">
+                          <label><%= t('.header.login_form.password') %></label>
+                          <%= password_field_tag :password, nil, :required => "true" %></li>
                       </ul>
                       <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
@@ -82,8 +89,9 @@
                     <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
-                        <li class="login">
-                          <%= text_field_tag :login, nil, :required => "true", :placeholder => t('.header.forgot_pass_form.login') %>
+                        <li class="login">                                                  
+                          <label><%= t('.header.forgot_pass_form.login') %></label>
+                          <%= text_field_tag :login, nil, :required => "true" %>
                         </li>
                       </ul>
                       <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all", :disable_with => '...', :'data-enable-with' => t('.header.forgot_pass_form.send') %>

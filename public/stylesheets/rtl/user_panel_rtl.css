@@ -110,7 +110,7 @@ li.active > .checkmark{display:block;}
 .pm-user{margin-bottom: 20px}
 .pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
 .pm-user-response > a{color: #5e5e5e; font-weight: bold;}
-.pm-user .avatar-wrapper{margin-left: 14px;}
+.pm-user .avatar-wrapper{margin-left: 14px; z-index: 1;}
 .pm-user-details{color: #b3b8bc; margin-top: 10px; float:right; width: 506px;}
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
