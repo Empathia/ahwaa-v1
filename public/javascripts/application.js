@@ -68,7 +68,13 @@ $(document).ready(function() {
     $('.add_comments:visible input[type=submit]').live('mouseover', function () {
         $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
     });
-
+    
+    $('<img />').attr('src', '/images/loading-s.gif');            
+    
+    $('.add_comments:visible input[type=submit]').live('click', function(){
+        $(this).parents('.res-types-wrapper').find('.res-lbl').addClass('loading');        
+    });
+    
     $('.filter-resposes input:checkbox, #filter_helpful').change(filterResponses);
 });
 

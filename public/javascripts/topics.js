@@ -44,8 +44,14 @@ $(function(){
         e.preventDefault();
         return false;
     });
-    
-   
+     
+    if($.browser.msie && $.browser.version == '7.0') {
+        var topicAvatars = $('.topic-avatars').children();
+        topicAvatars.each(function(i){
+            $(this).css('z-index', topicAvatars.length - i);
+        });
+    }
+
     function calculatePosX(fixedElement){
         var left = fixedElement.hasClass('social-bookmarkers') ? (rtl ? article.offset().left + leftSideWidth - self.scrollLeft() : article.offset().left - 30) : (rtl ? article.offset().left : article.offset().left + leftSideWidth - windowObj.scrollLeft());
         return left;
@@ -53,7 +59,7 @@ $(function(){
     
     windowObj.scroll(function(e){
         sidebar.add(socialBookmarkers).each(function(){
-            var selfOffset = article.offset().top-112,
+            var selfOffset = article.offset().top-126,
         		selfHeight = article.outerHeight(),
         		windowOffset = windowObj.scrollTop(),
         		fixedElement = $(this);
@@ -62,7 +68,7 @@ $(function(){
                 cssProperties = {};          
         	if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight && selfOffset - windowOffset < fixedElementHeight-selfHeight){
         	    cssProperties = {position : "absolute", bottom: "0", top: "auto"};
-        	    fixedElement.data("fixed", false);
+        	    fixedElement.data("fixed", false);   
         	} else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
                 windowObj.scrollLeft() && (fixedElementPosX = calculatePosX(fixedElement));
                 cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto", top: 126}
