@@ -1,8 +1,8 @@
 <h2 class="regular pm-panel-padding"><%= t('users.show.content.private_messages.title') %></h2>
 <% unless inbox.empty? %>
   <ul class="messages">
-    <% inbox.each do |pm| %>
-      <%= content_tag_for :li, pm, :class => ('new' if pm.conversation.unread_by?(current_user)) do %>
+    <% inbox.each_with_index do |pm, i| %>
+      <%= content_tag_for :li, pm, :class => ('new' if pm.conversation.unread_by?(current_user)), :style => "z-index: #{inbox.length - i}" do %>
         <div class="avatar-wrapper">
           <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
           <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
