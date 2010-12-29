@@ -44,8 +44,14 @@ $(function(){
         e.preventDefault();
         return false;
     });
-    
-   
+     
+    if($.browser.msie && $.browser.version == '7.0') {
+        var topicAvatars = $('.topic-avatars').children();
+        topicAvatars.each(function(i){
+            $(this).css('z-index', topicAvatars.length - i);
+        });
+    }
+
     function calculatePosX(fixedElement){
         var left = fixedElement.hasClass('social-bookmarkers') ? (rtl ? article.offset().left + leftSideWidth - self.scrollLeft() : article.offset().left - 30) : (rtl ? article.offset().left : article.offset().left + leftSideWidth - windowObj.scrollLeft());
         return left;
