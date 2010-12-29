@@ -5,7 +5,7 @@ body{
 }
 body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 body > div#pageslide-blanket{background:none}
-.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top:15px;padding-right:32px;color:#468AC4;}
+.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 15px; padding-right: 32px; color: #468AC4;}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
@@ -15,17 +15,17 @@ body > div#pageslide-blanket{background:none}
 
 .related-content li{width: 150px; float:right;}
 article{padding: 40px; background: #ffffff url('../../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
-.topic-content p{margin-top:10px;line-height: 22px;position:relative;word-wrap:break-word}
+.topic-content p{margin-top: 10px; line-height: 22px; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic} 
-article > header{display:block;position:static;}
+article > header{display: block; position: static;}
 article > header > h1{}
 article > header > div{float:right;}
-article > header > div.left{float:right;width:556px;padding-bottom:35px;}
-article > header em{display:block;clear: right;text-align:center;color:#468AC4;padding:5px 0 35px 0;}
-aside{font-size:12px;float:left;width:200px;padding:0 18px;background:url('../../images/bg-aside.png') repeat-x 0 0 #ffffff;border-top:1px solid white;border-right:2px solid white;border-left:2px solid white; float:left;}
-aside section.show-hide{border-top:none;padding:19px 0 25px;}
-aside section.show-hide a{text-align: right;text-decoration:none;padding-right:23px;outline:0 none;float:none!important;height: 31px;display:block;
+article > header > div.left{float:right; width:556px; padding-bottom:35px;}
+article > header em{display: block; clear: right; text-align: center; color: #468AC4; padding:5px 0 35px 0;}
+aside{font-size: 12px; float:left; width: 200px; padding: 0 18px; background: url('../../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; border-right: 2px solid #ffffff; border-left: 2px solid #ffffff; float:left; z-index: 99;}
+aside section.show-hide{border-top:none; padding:19px 0 25px;}
+aside section.show-hide a{text-align: right; text-decoration: none; padding-right: 23px; outline: 0 none; float: none!important; height: 31px; display: block;
     background-image: -moz-linear-gradient(top, #fff, #eaf7fd);
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd');
@@ -47,21 +47,21 @@ aside section.show-hide a.hide{
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
-aside section.filter{padding: 7px 0 14px;overflow:hidden;border-bottom:1px solid #f3f3f3;}
+aside section.filter{padding: 7px 0 14px; overflow:hidden; border-bottom:1px solid #f3f3f3;}
 aside section.filter ul,aside section.experts ul{margin-top:10px}
 aside section.filter h2, aside section.experts h2{border-top:1px solid #ddd;}
-aside section.filter h2 span, aside section.experts h2 span{padding:0 4px;background:white;margin:-7px 0 0 6px;display:block;float:right;color:#38414e}
+aside section.filter h2 span, aside section.experts h2 span{padding:0 4px; background-color: #ffffff; margin:-7px 0 0 6px; display:block; float:right; color:#38414e}
 aside section.helpful{padding:13px 0}
 aside section.helpful label{margin-right:4px}
-aside section.experts{padding:32px 0 25px;border-bottom:1px solid #f3f3f3}
-aside section.need-help{padding:13px 0;text-align:center}
+aside section.experts{padding:32px 0 25px; border-bottom:1px solid #f3f3f3}
+aside section.need-help{padding:13px 0; text-align:center}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-wrapper > div{padding: 10px;}
-.add_comments_top{color:#468AC4;font-weight:bold}
+.add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
-.res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px;overflow:hidden;display:none;}
+.res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
 .res-types-wrapper > div.error{float:right; color:red; line-height: 23px;}                                               
 .res-types-wrapper > div.buttons{float:left;}                                               
 .res-lbl{float:left; margin-left: 10px; line-height: 1.8; color: #7d96b2;}
@@ -104,11 +104,11 @@ aside section.need-help{padding:13px 0;text-align:center}
 .add_comments .comm-arrow{background-position:100% -13px;}
 .comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
 
-.comments .expert > .comm-wrap{border:1px solid #e7e8e6;background-color:#f9fcf8}
+.comments .expert > .comm-wrap{border: 1px solid #e7e8e6; background-color: #f9fcf8}
 .expert > .comm-wrap > div{border: 2px solid #f2f5f1}
 .expert > .comm-arrow{background-position:100% -26px;}
 
-.response-user{height:56px;min-height:56px!important}
+.response-user{height: 56px; min-height: 56px!important}
 .response-user .avatar-wrapper{margin-left: 10px;}
 
 .res-username{margin-bottom:7px; float:right; width: 494px; padding-top: 5px;}
@@ -125,7 +125,7 @@ aside section.need-help{padding:13px 0;text-align:center}
 .res-type-wrapper > div{background: url('../../images/res-type-bg-right.png') no-repeat right 0; padding-left: 2px;}
 .res-type-wrapper > div > div{background: url('../../images/res-type-bg.png') repeat-x 0 0; padding:5px 6px;}
 
-.topic-res-type{color:#6c899b;font-size:10px;font-weight:bold}
+.topic-res-type{color: #6c899b; font-size: 10px; font-weight: bold}
 .topic-res-type.advice{background-position:100% -44px;}
 .topic-res-type.comment, 
 .topic-res-type.comments{background-position:100% -60px;}
@@ -186,23 +186,21 @@ p:hover .icn{display: inline;}
 .social-bookmarkers > .twitter{background-position:100% -36px; margin-bottom: 0;}
 .social-bookmarkers > .twitter:hover{background-position:100% 100%}
 
-.filter-resposes > li{margin:0 0 12px 30px;float:right;}
+.filter-resposes > li{margin:0 0 12px 30px; float:right;}
 .filter-resposes > li:last-child{margin-bottom: 0;}
 .filter-resposes > li > label{margin-right:4px;}
 /*.advice{background-position:100% 1px;}
 .comment,.comments{background-position:100% -14px;}
 .story,.experience{background-position:100% -28px;}*/
 
-.topic-avatars{}
-.topic-avatars > li{float:right;width:64px;text-align:center;font-size:12px;position:relative;margin:0 18px 14px;}
+.topic-avatars > li{float:left; width:64px; text-align:center; font-size:12px; position:relative; margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px}
 .topic-avatars em{color:#468AC4}
-/*.topic-avatars > li:nth-child(2n+1){margin-left:20px;}*/
 
-.expand-btn{height:31px;line-height:2.5em;font-size:13px}    
+.expand-btn{height: 31px; line-height: 2.5em; font-size: 13px}    
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
-.help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0;line-height:1em;}
+.help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0; line-height: 1em;}
 
 .sign-up-or-continue{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}               
 .sign-up-or-continue > .sign-up-lk{margin-left: 10px;}
