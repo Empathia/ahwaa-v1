@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = t('flash.users.create.notice')
-      UserMailer.sign_up_confirmation(@user).deliver
+      @user.notify_sign_up_confirmation!
     end
   end
 

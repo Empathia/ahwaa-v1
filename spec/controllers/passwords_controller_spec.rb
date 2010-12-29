@@ -21,17 +21,11 @@ describe PasswordsController do
 
       before(:each) do
         User.stub!(:find_for_database_authentication).and_return(@user)
-        UserMailer.stub_chain(:password_reset, :deliver)
-        @user.stub!(:reset_single_access_token!).and_return(true)
+        @user.stub!(:notify_password_reset!)
       end
 
       it "should send password reset link by email" do
-        UserMailer.password_reset(@user).should_receive(:deliver)
-        do_request
-      end
-
-      it "should reset single access token" do
-        @user.should_receive(:reset_single_access_token!).and_return(true)
+        @user.should_receive(:notify_password_reset!)
         do_request
       end
 
@@ -41,12 +35,11 @@ describe PasswordsController do
 
       before(:each) do
         User.stub!(:find_for_database_authentication).and_return(nil)
-        UserMailer.stub_chain(:password_reset, :deliver)
         @user.stub!(:reset_single_access_token!)
       end
 
       it "should not send password reset link by email" do
-        UserMailer.password_reset(@user).should_not_receive(:deliver)
+        @user.should_not_receive(:notify_password_reset!)
         do_request
       end
 

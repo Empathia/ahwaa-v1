@@ -251,6 +251,12 @@ ar:
     user:
       topic_match_notification:
         subject: كنت قد دعيت للمشاركة في موضوع
+      private_message_notification:
+        subject: لقد تلقيت رسالة خاصة
+      password_reset:
+        subject: إعادة تعيين كلمة المرور
+      sign_up_confirmation:
+        subject: مرحبا بكم في تجاوز
 
   shared:
     new_response:

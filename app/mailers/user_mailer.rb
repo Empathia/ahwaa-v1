@@ -4,20 +4,20 @@ class UserMailer < ActionMailer::Base
   def sign_up_confirmation(user)
     @user = user
     mail :to => @user.email,
-      :subject => "Welcome to Transcend"
+      :subject => I18n.t('mailers.user.sign_up_confirmation.subject')
   end
 
   def password_reset(user)
     @user = user
     mail :to => @user.email,
-      :subject => "Password reset"
+      :subject => I18n.t('mailers.user.password_reset.subject')
   end
 
   def private_message_notification(user, sender)
     @user = user
     @sender = sender
     mail :to => @user.email,
-      :subject => "You've received a private message"
+      :subject => I18n.t('mailers.user.private_message_notification.subject')
   end
 
   def topic_match_notification(user, topic)

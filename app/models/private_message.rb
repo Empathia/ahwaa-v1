@@ -56,6 +56,6 @@ class PrivateMessage < ActiveRecord::Base
   end
 
   def send_notifications
-    UserMailer.private_message_notification(recipient, sender).deliver
+    recipient.notify_private_message!(sender)
   end
 end

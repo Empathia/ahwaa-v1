@@ -251,6 +251,12 @@ en:
     user:
       topic_match_notification:
         subject: You have been invited to participate on a topic
+      private_message_notification:
+        subject: You have received a private message
+      password_reset:
+        subject: Password reset
+      sign_up_confirmation:
+        subject: Welcome to Transcend
 
   shared:
     new_response:
