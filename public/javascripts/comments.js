@@ -257,7 +257,9 @@ $.fn.comments = function(options){
     
     $('.reply-to').live('click', function(e){
         var lk = $(this);
-        lk.hasClass('clicked') ? lk.removeClass('clicked').next().slideUp() : lk.addClass('clicked').next().slideDown();
+        lk.hasClass('clicked') ? lk.removeClass('clicked').next().slideUp() : lk.addClass('clicked').next().slideDown(function(){
+            $(this).css('opacity', '1');
+        });
         e.preventDefault();        
         return false;
     }).next().addClass('reply-new-response');
