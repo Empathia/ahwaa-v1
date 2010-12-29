@@ -63,7 +63,8 @@ aside section.need-help{padding:13px 0; text-align:center}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
 .res-types-wrapper > div.error{float:right; color:red; line-height: 23px;}                                               
-.res-types-wrapper > div.buttons{float:left;}                                               
+.res-types-wrapper > div.buttons{float:left;}                              
+.loading{background-image: url('../../images/loading-s.gif'); background-repeat: no-repeat; background-position:100% 1px; padding-right: 30px;}
 .res-lbl{float:left; margin-left: 10px; line-height: 1.8; color: #7d96b2;}
 .res-types{float:left;}
 .res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-right: 1px solid #dee8f2; float:right;
