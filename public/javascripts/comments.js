@@ -4,9 +4,12 @@ $.fn.outerHTML = function() {
 
 function calculateArrowsPositions(){
     $('.clon').each(function(){
-        var comments = $(this),
-            link = comments.prev('p').find('a:last-child');
-        comments.find('.comm-arrow:first').css('left', link.position().left);        
+        var comments = $(this),      
+            parag = comments.prev('p');
+        if(parag.length){
+            var link = parag.find('a:last-child');
+            comments.find('.comm-arrow:first').css('left', link.position().left);        
+        }
     })
 }   
 
