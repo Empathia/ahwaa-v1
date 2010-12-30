@@ -8,4 +8,8 @@ class Religion < ActiveRecord::Base
     name
   end
 
+  def self.all_with_all_option
+    all + [Struct.new(:id, :name).new('all', I18n.t('catalogs.options.all'))]
+  end
+
 end

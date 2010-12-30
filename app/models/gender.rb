@@ -11,5 +11,9 @@ class Gender < ActiveRecord::Base
   def self.ids_for_male_and_female_entries
     @ids_for_male_and_female_entries ||= self.where(:i18n_name => ['male','female']).select(:id).map(&:id)
   end
+
+  def self.all_with_all_option
+    all + [Struct.new(:id, :name).new('all', I18n.t('catalogs.options.all'))]
+  end
   
 end

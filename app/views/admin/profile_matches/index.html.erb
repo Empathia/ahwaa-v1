@@ -16,31 +16,31 @@
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:religion_id) %></div>
       <div>
-        <%= select_tag 'filters[religion_id]', options_from_collection_for_select(Religion.all, :id, :name) %>
+        <%= select_tag 'filters[religion_id]', options_from_collection_for_select(Religion.all_with_all_option, :id, :name) %>
       </div>
     </li>
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:gender_id) %></div>
       <div>
-        <%= select_tag 'filters[gender_id]', options_from_collection_for_select(Gender.all, :id, :name) %>
+        <%= select_tag 'filters[gender_id]', options_from_collection_for_select(Gender.all_with_all_option, :id, :name) %>
       </div> 
     </li>
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>
       <div>
-        <%= select_tag 'filters[sexual_orientation_id]', options_from_collection_for_select(SexualOrientation.all, :id, :name) %>
+        <%= select_tag 'filters[sexual_orientation_id]', options_from_collection_for_select(SexualOrientation.all_with_all_option, :id, :name) %>
       </div>
     </li>
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:age_id) %></div>
       <div>
-        <%= select_tag 'filters[age_id]', options_from_collection_for_select(Age.all, :id, :range) %>
+        <%= select_tag 'filters[age_id]', options_from_collection_for_select(Age.all_with_all_option, :id, :range) %>
       </div>
     </li>
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:political_view) %></div>
       <div>
-        <%= select_tag 'filters[political_view_id]', options_from_collection_for_select(PoliticalView.all, :id, :name) %>
+        <%= select_tag 'filters[political_view_id]', options_from_collection_for_select(PoliticalView.all_with_all_option, :id, :name) %>
       </div>
     </li>
   </ul>
