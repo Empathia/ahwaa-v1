@@ -21,7 +21,7 @@ body > div > div{ background: url('../../images/bg-gradient.png') repeat-x 0 107
 .item-data > p a + a{font-weight:bold}
 .topics{margin-left: 20px;}
 .feeds{margin-right: 20px;}
-.feed-date{font-size: 11px; color: #bdc6cb;}
+.item-data .feed-date{font-size: 11px; color: #bdc6cb;}
 .feature-wrapper{background: url('../../images/feature-bg.png') no-repeat 0 0; width: 223px; margin: 5px; float:right; padding-right: 9px; text-align: center;}
 .feature{background-color: #ffffff; height: 115px; border: 1px solid #a8bfcb; float:right; width: 100%; margin: 9px 0;}
 .features li:first-child{margin-right: 1px;}
@@ -35,7 +35,8 @@ body > div > div{ background: url('../../images/bg-gradient.png') repeat-x 0 107
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3')";
 }    
-#join > a{color: #ffffff; text-decoration: none; text-shadow: 0px -2px 2px #255890; padding: 34px 0; height: 53px; display: block; border: 1px solid #7198c2; overflow: hidden;}
+#join > a{color: #ffffff; text-decoration: none; text-shadow: 0px -2px 2px #255890; height: 121px; display: block; border: 1px solid #8CB7D8; overflow: hidden;}
+#join > a > span{display: block; height: 51px; padding: 34px 0; border: 1px solid #669ecb;}
 .join-st-line{font-size: 36px; display: block;}
 .join-nd-line{font-size: 18px; color: #a9d0ef;}
 .only-3-values{padding: 0 121px;}
