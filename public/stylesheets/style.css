@@ -308,7 +308,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";
 }
 
-.responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px; display:inline!important; white-space:nowrap; float: left; margin-left: 10px;}
+.responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px; display:inline!important; white-space:nowrap; float: left; margin-left: 10px; font-size: 11px;}
 .tags{margin: 0 10px;}   
 .tags > li:first-child{background-image: url('../images/icn-tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 25px;}
 

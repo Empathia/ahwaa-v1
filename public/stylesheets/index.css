@@ -21,7 +21,7 @@ body > div > div{ background: url('../images/bg-gradient.png') repeat-x 0 107px}
 .item-data > p a + a{font-weight:bold}
 .topics{margin-right: 20px;}
 .feeds{margin-left: 20px;}
-.feed-date{font-size: 11px; color: #bdc6cb;}
+.item-data .feed-date{font-size: 11px; color: #bdc6cb;}
 .feature-wrapper{background: url('../images/feature-bg.png') no-repeat 0 0; width: 223px; margin: 5px; float: left; padding-left: 9px; text-align: center;}
 .feature{background-color: #ffffff; height: 115px; border: 1px solid #a8bfcb; float: left; width: 100%; margin: 9px 0;}
 .features li:first-child{margin-left: 1px;}
