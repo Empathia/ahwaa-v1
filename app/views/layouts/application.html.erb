@@ -82,9 +82,9 @@
                         <li class="password">
                           <label><%= t('.header.login_form.password') %></label>
                           <%= password_field_tag :password, nil, :required => "true" %></li>
-                      </ul>
-                      <p class="legend"><%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass' %></p>
+                      </ul>             
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
+                      <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
                     <% end %>
                     <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
@@ -95,7 +95,7 @@
                         </li>
                       </ul>
                       <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all", :disable_with => '...', :'data-enable-with' => t('.header.forgot_pass_form.send') %>
-                        <input type="button" class="cancel-forgot btn-gradient" value="<%= t('.header.forgot_pass_form.cancel') %>">
+                        <a href="#" class="cancel-forgot action-lk"><%= t('.header.forgot_pass_form.cancel') %></a>
                     <% end %>
                    </div>
                 </div>

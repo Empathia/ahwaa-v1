@@ -7,9 +7,9 @@ h3,.regular{font-size: 13px; color: #61656a;}
 body .hidden{display: none;}
 .page-wrapper{min-height: 100%;}
 .page-wrapper > header{background-color: #fcfdfe; position: fixed; width: 100%; z-index: 1000;
-  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
-  box-shadow: 0px 0px 2px rgba(0,0, 0, .6);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, .6);
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, .6);
+  box-shadow: 0px 0px 3px rgba(0,0, 0, .6);
 }
 .info-page{background-color: #ffffff; padding: 40px;}
 .info-page > section{margin-bottom: 30px;}      
@@ -227,6 +227,8 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#77b3e3', EndColorStr='#498dd2');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#77b3e3', EndColorStr='#498dd2')";
 }
+
+.action-lk{margin: 10px 10px 0 0; color: #797e84; float: right;}
 
 .legend{font-size: 11px; float: left; width: 170px;}
 .login-form > .legend{margin-top: 10px;}
