@@ -118,7 +118,7 @@ ar:
           empty: اسم المستخدم أو البريد الإلكتروني هو فارغ
         logged_in:
           hi: "مرحبا %{username}"
-          my_account: "رسائل بلدي / الشخصي"
+          my_account: "ملفاتي + رسائل"
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث
       footer:
@@ -129,7 +129,7 @@ ar:
       header:
         logged_in:
           hi: "مرحبا %{username}"
-          my_account: "رسائل بلدي / الشخصي"
+          my_account: "ملفاتي + رسائل"
           sign_out: تسجيل الخروج
   home:
     index:

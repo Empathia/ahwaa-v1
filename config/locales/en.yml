@@ -118,7 +118,7 @@ en:
           empty: Username or Email is empty
         logged_in:
           hi: 'Hi %{username}'
-          my_account: "My messages/profile"
+          my_account: "My Profile + Messages"
           sign_out: Sign Out
         search_topics: Search topics
       footer:
@@ -129,7 +129,7 @@ en:
       header:
         logged_in:
           hi: 'Hi %{username}'
-          my_account: "My messages/profile"
+          my_account: "My Profile + Messages"
           sign_out: Sign Out
   home:
     index:
