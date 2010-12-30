@@ -46,9 +46,11 @@ $(function(){
     });
      
     if($.browser.msie && $.browser.version == '7.0') {
-        var topicAvatars = $('.topic-avatars').children();
+        var topicAvatars = $('.topic-avatars').children(),
+            j = 0;       
         topicAvatars.each(function(i){
-            $(this).css('z-index', topicAvatars.length - i);
+            $(this).css('z-index', topicAvatars.length - j);
+            i % 2 && j++;
         });
     }
 
