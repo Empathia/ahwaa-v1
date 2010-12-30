@@ -76,5 +76,64 @@ describe User do
     end
   end
 
+  describe "notify_password_reset!" do
+
+    before(:each) do
+      @mock_mailer = mock('mailer', :deliver => true)
+    end
+
+    it "should send email with password reset instructions" do
+      UserMailer.should_receive(:password_reset).with(@user).and_return(@mock_mailer)
+      @user.should_receive(:reset_single_access_token!)
+      @user.notify_password_reset!
+    end
+
+  end
+
+  describe "notify_sign_up_confirmation!" do
+
+    before(:each) do
+      @mock_mailer = mock('mailer', :deliver => true)
+    end
+
+    it "should send email when signed up" do
+      UserMailer.should_receive(:sign_up_confirmation).with(@user).and_return(@mock_mailer)
+      @user.notify_sign_up_confirmation!
+    end
+
+  end
+
+  describe "notify_private_message!" do
+
+    before(:each) do
+      @mock_mailer = mock('mailer', :deliver => true)
+    end
+
+    it "should send email when received a private message" do
+      sender = Factory(:user)
+      UserMailer.should_receive(:private_message_notification).with(@user, sender).and_return(@mock_mailer)
+      @user.notify_private_message!(sender)
+    end
+
+  end
+
+  describe "with_user_locale" do
+
+    before(:each) do
+      I18n.locale = 'en'
+      @user.profile.update_attribute(:language, 'ar')
+      @user.profile.language.should == 'ar'
+    end
+
+    it "scopes block to user's locale" do
+      I18n.locale.should == :en
+      @user.with_user_locale do
+        I18n.locale.should == :ar
+      end
+      I18n.locale.should == :en
+    end
+
+  end
+
 end
 

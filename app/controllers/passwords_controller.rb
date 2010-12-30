@@ -5,10 +5,7 @@ class PasswordsController < ApplicationController
 
   def create
     @user = User.find_for_database_authentication(params[:login])
-    if @user
-      @user.reset_single_access_token!
-      UserMailer.password_reset(@user).deliver 
-    end
+    @user.notify_password_reset! if @user
   end
 
   def edit

@@ -47,7 +47,7 @@ en:
         ar: Arabic
   errors:
     messages:
-      voted: You have already marked this as useful.
+      voted: You have already marked this as helpful.
       flagged: You have already flagged this reply.
     template:
       header:
@@ -118,7 +118,7 @@ en:
           empty: Username or Email is empty
         logged_in:
           hi: 'Hi %{username}'
-          my_account: My Account
+          my_account: "My Profile + Messages"
           sign_out: Sign Out
         search_topics: Search topics
       footer:
@@ -129,7 +129,7 @@ en:
       header:
         logged_in:
           hi: 'Hi %{username}'
-          my_account: My Account
+          my_account: "My Profile + Messages"
           sign_out: Sign Out
   home:
     index:
@@ -240,7 +240,8 @@ en:
           add_reply: Click here to add a reply.
           send_reply: Send Reply
     inbox:
-      no_messages: There are no private messages
+      no_messages: You have no private messages
+      empty_tip: "Tip: To send messages, roll over someone's profile and compose a message!"
   private_messages:
     message:
       reply: Send reply
@@ -251,16 +252,22 @@ en:
     user:
       topic_match_notification:
         subject: You have been invited to participate on a topic
+      private_message_notification:
+        subject: You have received a private message
+      password_reset:
+        subject: Password reset
+      sign_up_confirmation:
+        subject: Welcome to Transcend
 
   shared:
     new_response:
        new_response: New Response
     useful_flag_buttons:
-      voted: Marked as useful
+      voted: Marked as helpful
       flagged: Flagged
       already_flagged: Already flagged
-      already_useful: Already marked as useful
-      useful: This was useful!
+      already_useful: Already marked as helpful
+      useful: This was helpful!
       flag: Flag
       anonymous: "Anonymous users can't be rated"
       sign_up: Sign Up

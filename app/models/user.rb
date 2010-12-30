@@ -46,7 +46,31 @@ class User < ActiveRecord::Base
   
   # send notification to participate in a topic
   def notify_about_topic!(topic)
-    UserMailer.topic_match_notification(self, topic).deliver
+    with_user_locale do
+      UserMailer.topic_match_notification(self, topic).deliver
+    end
+  end
+
+  # sends notification for password reset
+  def notify_password_reset!
+    with_user_locale do
+      reset_single_access_token!
+      UserMailer.password_reset(self).deliver 
+    end
+  end
+
+  # sends notification for sign up confirmation
+  def notify_sign_up_confirmation!
+    with_user_locale do
+      UserMailer.sign_up_confirmation(self).deliver
+    end
+  end
+
+  # sends notification for private message
+  def notify_private_message!(sender)
+    with_user_locale do
+      UserMailer.private_message_notification(self, sender).deliver
+    end
   end
 
   # sets a prize badge or level or whatever reward model for the matter
@@ -81,6 +105,18 @@ class User < ActiveRecord::Base
   # Compares passed password with the one encrypted in the database
   def authenticate!(psw)
     User.encrypt_token(psw, password_salt) == encrypted_password
+  end
+
+  # Scopes a block to the user's profile locale
+  def with_user_locale
+    raise "No block given" unless block_given?
+    begin
+      tmp_locale = I18n.locale
+      I18n.locale = profile.language
+      yield
+    ensure
+      I18n.locale = tmp_locale
+    end
   end
 
   private
