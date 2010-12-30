@@ -14,3 +14,4 @@ article > header .avatar-wrapper{text-align: center; z-index: 99;}
 .comm-wrap > div > p{z-index: -1;}
 .private-msg p {z-index: 1;}
 .article-wrapper{width: 100%; float: left;}
+#join > a > span{height: 63px; padding: 28px 0;}

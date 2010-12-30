@@ -34,8 +34,10 @@
       <% unless logged_in? %>
         <li id="join" class="border-all">
            <%= link_to '#', :class => 'sign-up-btn' do %>
-               <span class="join-st-line"><%= t('.join_now') %></SPAN>
-               <span class="join-nd-line"><%= t('.get_started') %></span>
+               <span>
+                 <span class="join-st-line"><%= t('.join_now') %></span>
+                 <span class="join-nd-line"><%= t('.get_started') %></span>
+               </span>    
             <% end%>         
         </li>
       <% end %>
