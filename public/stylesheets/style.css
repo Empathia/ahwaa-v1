@@ -57,11 +57,12 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
 .sign-up{float: left; text-align: left; width: 240px;}
 .auth-wrapper{height: 32px; float: left; width: 96px; position: relative;}
+.auth-wrapper:first-child{margin-right: 6px;}
 .sign-up-lk{ border: 1px solid #4785bf; line-height: 2; float: left;}
 .auth-wrapper > .sign-up-lk{text-decoration:none}
-.auth-wrapper > a{position: absolute; z-index: 1000; left: 0; height: 32px; text-align: center;}
+.auth-wrapper > a{position: absolute; z-index: 1000; left: 0; height: 32px; text-align: center; overflow: hidden;}
 
-.auth-wrapper > a.auth-form-active{text-decoration: none; border: none}
+.auth-wrapper > a.auth-form-active{height: 30px; text-decoration: none; border: none; left: -3px; padding: 3px 3px 0 3px;}
 
 .auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
 .sign-up-btn{border: 1px solid #94bddf; font-size: 17px; color: #ffffff; text-align: center;
@@ -85,14 +86,17 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 #sign-up.auth-form-active{outline:0 none;}
 
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top:1px; background: #f3f3f3; border-style: solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; border-width: 1px; color: #66a8d6; border-top-color:#f3f3f3;
+.auth-wrapper .auth-form-active > span:hover{background: #f3f3f3; color: #66a8d6; border: none;
   border-top-left-radius: 5px;
   -moz-border-radius-topleft: 5px;
   -webkit-border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   -moz-border-radius-topright: 5px;
   -webkit-border-top-right-radius: 5px;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);            
+  -moz-box-shadow: 0px 0px 3px #6b8b9f;
+    -webkit-box-shadow: 0px 0px 3px #6b8b9f;
+            box-shadow: 0px 0px 3px #6b8b9f;
 }
 
 .sign-up > .auth-form-active:first-child{
@@ -175,13 +179,16 @@ footer > div > ul{float: right;}
 footer > div > ul > li{display: inline;}
 footer > div > span{float: left; color: #898f93;}
 
-.over-form{position:absolute; top:0; left:0; width:280px; background:#f3f3f3; display:none; padding:10px; border: 1px solid #d4dce2; color:#797e84; z-index:999; border-top:none;
+.over-form{position:absolute; top:0; left:0; width:280px; background:#f3f3f3; display:none; padding:15px; color:#797e84; z-index:999; border-top:none;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   border-top-left-radius: 0;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
+  -moz-box-shadow: 0px 0px 3px #6b8b9f; /* FF3.5+ */
+    -webkit-box-shadow: 0px 0px 3px #6b8b9f; /* Saf3.0+, Chrome */
+            box-shadow: 0px 0px 3px #6b8b9f;
 }
 
 .over-form.auth-form-active{display: block;}
@@ -206,7 +213,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 
 .btn-gradient.cancel-forgot{float: right; padding: 0 12px; height: 32px; margin-right: 10px; color: #61656a;}
 
-.auth-submit{border: none; border-bottom: 1px solid #1e4d88; padding: 0 12px; height: 32px; float: right; color: #ffffff; font-size: 11px;
+.auth-submit{border: none; border-bottom: 1px solid #1e4d88; padding: 0 12px; height: 32px; float: right; color: #ffffff; font-size: 13px; font-family: Arial, Helvetica, sans-serif;
   background-image: -moz-linear-gradient(top, #64a2d1, #2f6daf);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #64a2d1),color-stop(1, #2f6daf));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#64a2d1', EndColorStr='#2f6daf');
@@ -221,7 +228,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#77b3e3', EndColorStr='#498dd2')";
 }
 
-.legend{font-size: 10px; float: left; width: 160px;}
+.legend{font-size: 11px; float: left; width: 170px;}
 .login-form > .legend{margin-top: 10px;}
 
 .border-all,

@@ -9,7 +9,7 @@ $(function(){
         var form = $(formName);
         form.find('.error').removeClass('error').filter('p').remove();
         form.removeClass('hidden').addClass('auth-form-active').offset({
-            'left': link.offset().left,
+            'left': $.browser.msie ? link.offset().left : link.offset().left + 3,
             'top': link.offset().top + link.outerHeight() - 1
             }
         );
