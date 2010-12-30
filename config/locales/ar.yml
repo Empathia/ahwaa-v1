@@ -22,14 +22,17 @@ ar:
         notice: "وقال لقد أرسلنا إليك رسالة بريد إلكتروني للتأكيد. الرجاء مراجعة صندوق البريد الوارد"
       destroy:
         notice: "تم إنهاء حسابك"
+    topic_requests:
+      create:
+        notice: "لقد تم ارسال طلبك للمراجعة من قبل الادارة. شكرا لك! "
 
   activerecord:
     models:
       topic_request: "طلب المواضيع"
     attributes:
       topic_request:
-        title: "العنوان"
-        content: "المحتوى"
+        title: "عنوان الموضوع"
+        content: "حصة قصتك. طلب المشورة. بدء مناقشة حول قضية ما يهم لكم!"
         anonymous_post: "لا تظهر أي من المعلومات الخاصة بي عند عرض هذا الموضوع "
       reply:
         anonymous: "مجهول"
@@ -258,6 +261,8 @@ ar:
         subject: إعادة تعيين كلمة المرور
       sign_up_confirmation:
         subject: مرحبا بكم في تجاوز
+      topic_request_notification:
+        subject: وقد طلب موضوع جديد
 
   shared:
     new_response:

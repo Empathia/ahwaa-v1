@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :profile
 
+  scope :admins, where(:is_admin => true)
+
   # if a user is destroyed change the ownership of its topics to admin
   def change_topics_owner
     self.topics.each do |topic|
@@ -70,6 +72,15 @@ class User < ActiveRecord::Base
   def notify_private_message!(sender)
     with_user_locale do
       UserMailer.private_message_notification(self, sender).deliver
+    end
+  end
+
+  # sends notifications to admins about a topic request
+  def self.notify_about_topic_request!(topic)
+    admins.each do |admin|
+      admin.with_user_locale do
+        UserMailer.topic_request_notification(admin, topic).deliver
+      end
     end
   end
 

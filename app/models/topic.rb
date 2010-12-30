@@ -27,6 +27,7 @@ class Topic < ActiveRecord::Base
 
   after_save :update_tank_indexes, :if => 'Rails.env.production?'
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
+  after_create :ensure_topic_request_deletion, :if => "from_request.present?"
 
   scope :by_language, lambda { |lang| where("language = :lang", :lang => lang) }
   scope :by_replies_count, lambda { |*lang| by_language(lang.first || 'en').order("replies_count DESC") }
@@ -35,6 +36,16 @@ class Topic < ActiveRecord::Base
 
   def self.per_page
     10
+  end
+
+  # Creates an instance from the request attributes
+  def self.build_from_request(request_id)
+    topic_request = TopicRequest.find_by_id(request_id)
+    return new unless topic_request
+    topic = new(topic_request.attributes.slice("title", "content", "language", "user_id"))
+    topic.from_request = request_id
+    topic.user_id = nil if topic_request.anonymous_post?
+    topic
   end
 
   # Finds most active users in the topic
@@ -49,6 +60,12 @@ class Topic < ActiveRecord::Base
   # Get topic users leaderboard
   def leaderboard
     (experts + most_active_users).uniq
+  end
+
+  private
+
+  def ensure_topic_request_deletion
+    TopicRequest.find_by_id(from_request).try(:destroy)
   end
 
 end

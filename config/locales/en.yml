@@ -22,14 +22,17 @@ en:
         notice: "We've sent you an email for confirmation. Please check your inbox"
       destroy:
         notice: "Your account has been terminated."
+    topic_requests:
+      create:
+        notice: "Your request has been sent to be reviewed by an admin. Thank you!"
 
   activerecord:
     models:
       topic_request: Topic Request
     attributes:
       topic_request:
-        title: Title
-        content: Content
+        title: Topic Title
+        content: "Share your story. Request advice. Start a discussion about an issue that matters to you!"
         anonymous_post: "Don't show any of my information when displaying this topic"
       reply:
         anonymous: Anonymous
@@ -258,6 +261,8 @@ en:
         subject: Password reset
       sign_up_confirmation:
         subject: Welcome to Transcend
+      topic_request_notification:
+        subject: A new topic has been requested
 
   shared:
     new_response:

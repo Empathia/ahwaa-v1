@@ -41,18 +41,6 @@ describe Admin::TopicRequestsController do
         ]
       end
 
-      it "should allow to create a new topic from a topic request" do
-        delete :promote_to_topic, :id => @first_topic_request.id
-        lambda { Topic.find(@first_topic_request.id) }.should raise_error(ActiveRecord::RecordNotFound)
-        response.should redirect_to(:action => 'new', :controller => 'topics',
-                                    :topic => {
-                                      :title => @first_topic_request.title,
-                                      :content => @first_topic_request.content,
-                                      :user_id => @first_topic_request.user_id,
-                                      :language => @first_topic_request.language
-                                    })
-      end
-
       it "should destroy a topic" do
         delete :destroy, :id => @first_topic_request.id
         lambda { Topic.find(@first_topic_request.id) }.should raise_error(ActiveRecord::RecordNotFound)
