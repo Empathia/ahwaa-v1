@@ -17,7 +17,7 @@ class UserProfile < ActiveRecord::Base
   before_create :set_default_language, :if => "language.nil?"
 
   def self.get_matching_profiles_from_params(params)
-    UserProfile.where(params)
+    UserProfile.where(params.reject{ |k, v| v == 'all' })
   end
   
   def empty?

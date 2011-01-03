@@ -7,6 +7,7 @@ class CreateTopics < ActiveRecord::Migration
       t.integer :replies_count, :default => 0
       t.string :cached_slug
       t.string :language, :default => 'en'
+      t.integer :from_request
       t.timestamps
     end
     

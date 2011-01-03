@@ -6,7 +6,6 @@
     <th class="requested_at border-left">Requested at</th>
     <th class="requests-title">Title</th>
     <th class="requests-user">User</th>
-    <th class="requests-votes">Votes</th>
     <th class="requests-actions border-right">Actions</th>
   </tr>
   <% @topic_requests.each do |topic_request| %>
@@ -14,9 +13,8 @@
       <td class="created_at"><%= l topic_request.created_at, :format => :short %></td>
       <td><%= topic_request.title %></td>
       <td><%= topic_request.user.username %></td>
-      <td class="requests-votes"><%= topic_request.votes %></td>
       <td>
-        <%= link_to 'Promote to topic', promote_to_topic_admin_topic_request_path(topic_request), :method => :delete %>
+        <%= link_to 'Promote to topic', new_admin_topic_path(:from => topic_request.id) %>
         <%= link_to 'Delete', admin_topic_request_path(topic_request), :method => :delete %></td>
       </td>
     </tr>

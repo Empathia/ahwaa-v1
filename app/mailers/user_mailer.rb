@@ -26,4 +26,11 @@ class UserMailer < ActionMailer::Base
     mail(:to => @user.email,
          :subject => I18n.t('mailers.user.topic_match_notification.subject'))
   end
+
+  def topic_request_notification(user, topic_request)
+    @user = user
+    @topic_request = topic_request
+    mail :to => @user.email,
+      :subject => I18n.t('mailers.user.topic_request_notification.subject')
+  end
 end

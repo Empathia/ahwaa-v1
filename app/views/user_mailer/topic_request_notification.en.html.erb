@@ -1,0 +1,13 @@
+<p>Hello <%= @user.username %>,</p>
+
+<p>A new topic has been request on Transcend.</p>
+
+<p>The topic title is <strong>"<%= @topic_request.title %>"</strong></p>
+
+<p>Please review it and approve it so it can be visible in the public page.</p>
+
+<p>Go to <%= link_to "view all topic requests", admin_topic_requests_url %>.</p>
+
+<p>Thanks,<br/>
+  Transcend</p>
+

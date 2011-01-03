@@ -44,9 +44,6 @@ Lgbt::Application.routes.draw do
     resources :flagged_replies, :only => [:index, :destroy]
     resource  :bad_words, :only => [:show, :update]
     resources :topic_requests, :only => [:index, :destroy] do
-      member do
-        delete :promote_to_topic
-      end
     end
     resources :topics, :except => [:show] do
       resources :related_contents, :only => [:destroy, :show, :index, :create]

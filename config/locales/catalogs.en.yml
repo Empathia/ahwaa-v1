@@ -1,5 +1,8 @@
 en:
   catalogs:
+    options:
+      all: All
+
     religion:
       agnostic: Agnostic
       bahai: "Baha'i"

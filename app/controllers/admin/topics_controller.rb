@@ -7,7 +7,7 @@ class Admin::TopicsController < ApplicationController
   end
 
   def new
-    @topic = Topic.new(params[:topic])
+    @topic = Topic.build_from_request(params[:from])
     @topic_tags = []
   end
 

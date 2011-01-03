@@ -20,6 +20,7 @@
 
 <%= form_for [:admin, @topic] do |f| %>
   <%= render "shared/error_messages", :target => @topic %>
+  <%= f.hidden_field :from_request %>
   <p class="field">
     <%= f.label :title %>
     <%= f.text_field :title, :required => "true" %>

@@ -10,9 +10,8 @@ class TopicRequestsController < ApplicationController
 
     if @topic_request.save
       @topic_request.vote!(current_user)
-      flash[:notice] == t('flash.actions.destroy.notice')
-    else
-      flash[:alert] == t('flash.actions.destroy.alert')
+      User.notify_about_topic_request!(@topic_request)
+      flash[:notice] = t('flash.topic_requests.create.notice')
     end
 
     redirect_to '/'

@@ -60,5 +60,41 @@ describe Topic do
       Topic.by_language(:ar).length.should == 5
     end
   end
+  
+  describe "build_from_request" do
+
+    before(:each) do
+      @topic_request = Factory(:topic_request, :anonymous_post => false)
+      @topic = Topic.build_from_request(@topic_request.id)
+    end
+
+    it "builds a new instance from the topic request attributes" do
+      @topic.from_request.should == @topic_request.id
+      @topic.title.should == @topic_request.title
+      @topic.content.should == @topic_request.content
+      @topic.language.should == @topic_request.language
+      @topic.user_id.should == @topic_request.user_id
+    end
+
+    context "when request is anonymous" do
+
+      before(:each) do
+        @topic_request = Factory(:topic_request, :anonymous_post => true)
+        @topic = Topic.build_from_request(@topic_request.id)
+      end
+
+      it "doesn't copy the user_id to the new topic" do
+        @topic.user_id.should be_nil
+        @topic.user_id.should_not == @topic_request.user_id
+      end
+
+    end
+
+    it "destroys request after being created successfully" do
+      @topic.save!
+      TopicRequest.find_by_id(@topic.from_request).should be_nil
+    end
+
+  end
 
 end

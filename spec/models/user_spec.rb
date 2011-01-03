@@ -117,6 +117,23 @@ describe User do
 
   end
 
+  describe "notify_about_topic_request!" do
+
+    before(:each) do
+      @mock_mailer = mock('mailer', :deliver => true)
+    end
+
+    it "should send email to admins when received a topic request" do
+      3.times { Factory(:user, :is_admin => true) }
+      topic_request = Factory(:topic_request)
+      User.admins.each do |admin|
+        UserMailer.should_receive(:topic_request_notification).with(admin, topic_request).and_return(@mock_mailer)
+      end
+      User.notify_about_topic_request!(topic_request)
+    end
+
+  end
+
   describe "with_user_locale" do
 
     before(:each) do
@@ -131,6 +148,15 @@ describe User do
         I18n.locale.should == :ar
       end
       I18n.locale.should == :en
+    end
+
+  end
+
+  describe "admins" do
+
+    it "scopes to all the admin users" do
+      3.times { Factory(:user, :is_admin => true) }
+      User.admins.length.should == 3
     end
 
   end

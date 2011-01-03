@@ -32,5 +32,14 @@ describe TopicRequestsController do
       TopicRequest.last.votes.should == 1
     end
 
+    it "notifies admins about the topic request" do
+      User.should_receive(:notify_about_topic_request!)
+      post :create, :topic_request => {
+        :title => 'title',
+        :content => 'content',
+        :anonymous_post => false
+      }
+    end
+
   end
 end
