@@ -288,6 +288,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #faf8e5),color-stop(1, #faf7da));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#faf8e5', EndColorStr='#faf7da')";
+  -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);        
 }
 .request-error > div.clear{width:auto; height:auto; float:none; border:none; padding:0}
 .sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin: 0 0 8px 0;}
