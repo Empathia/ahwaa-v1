@@ -22,8 +22,10 @@ module ApplicationHelper
   def print_flash
     flash.collect do |key, msg|
       content_tag(:div, :class => "flash #{key}") do
-        content_tag(:div, :class => "aligned") do
-          msg
+        content_tag(:div) do
+          content_tag(:div) do
+            msg
+          end
         end
       end
     end.join.html_safe

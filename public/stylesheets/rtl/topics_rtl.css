@@ -5,7 +5,7 @@ body{
 }
 body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 body > div#pageslide-blanket{background:none}
-.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 15px; padding-right: 32px; color: #468AC4;}
+.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4;}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
@@ -21,8 +21,8 @@ article{padding: 40px; background: #ffffff url('../../images/bg-article.png') re
 article > header{display: block; position: static;}
 article > header > h1{}
 article > header > div{float:right;}
-article > header > div.left{float:right; width:556px; padding-bottom:35px;}
-article > header em{display: block; clear: right; text-align: center; color: #468AC4; padding:5px 0 35px 0;}
+article > header > div.right{float:left; width: 541px; padding-bottom: 15px; margin-top: 7px;}
+article > header em{display: block; clear: right; text-align: center; color: #468AC4; padding:5px 0 15px 0;}
 aside{font-size: 12px; float:left; width: 200px; padding: 0 18px; background: url('../../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; border-right: 2px solid #ffffff; border-left: 2px solid #ffffff; float:left; z-index: 99;}
 aside section.show-hide{border-top:none; padding:19px 0 25px;}
 aside section.show-hide a{text-align: right; text-decoration: none; padding-right: 23px; outline: 0 none; float: none!important; height: 31px; display: block;
@@ -81,7 +81,7 @@ aside section.need-help{padding:13px 0; text-align:center}
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff')";  
 }   
 
-.res-type > input{border: none; background: none; padding: 0 10px; height: 100%; float:right; cursor: pointer; color: #7c99b6; font-weight:bold;}
+.res-type > input{border: none; background: none; padding: 0 10px; height: 100%; float:right; cursor: pointer; color: #7c99b6; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
 .res-type > span{background-image: url('../../images/icn-types.png'); background-repeat: no-repeat; position: absolute; top: 4px; right: 10px; width: 12px; height: 12px;}
 .res-type > .advice{background-position:100% -44px;}
 .res-type > .comment, 

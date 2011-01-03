@@ -1,5 +1,5 @@
 body {background-image:url("../../images/bg-noise-topic.jpg")}
-body > div {background:url("../../images/topic-bg.jpg") repeat-x scroll 0 105px transparent}
+body > div {background:url("../../images/topic-bg.jpg") repeat-x fixed 0 105px transparent}
 section.topics{background:white url('../../images/bg-gradient2.png') repeat-x 0 0;margin-top:13px;border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 .order{height:30px;padding:15px 25px 0 0;color:#9da2a8;}
 .order a{padding-right:5px;color:#9da2a8;}

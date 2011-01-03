@@ -31,14 +31,14 @@
             position: 'absolute',
             top: '0px',
             left: '0px',
-            height: $("body").height(),
+            height: $(document).height(),
             width: '100%',
             opacity: '0.0',
             backgroundColor: 'black',
             zIndex: '1',
             display: 'none'
         };
-
+        
         function _initialize(anchor) {
 
             // Create and prepare elements for pageSlide
@@ -83,7 +83,7 @@
 
         }
 
-        function _openSlide(elm) {
+        function _openSlide(elm) { 
             if ($("#pageslide-slide-wrap").width() != 0) return false;
             _showBlanket();
             // decide on a direction

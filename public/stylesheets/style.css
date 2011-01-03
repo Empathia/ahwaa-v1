@@ -332,7 +332,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .pm-flash.error{background-color: #ffffff; border: 1px solid #E79090;}
 .pm-flash.error > p{background-image: url('../images/error-mark.png'); background-repeat: no-repeat; background-position: 0 2px; color: #D93E3E;}
 
- #pageslide-slide-wrap{background:none #ffffff; overflow-y: auto;}
+ #pageslide-slide-wrap{background:none #ffffff; overflow-y: auto; overflow-x: hidden;}
  #pageslide-slide-wrap > div{background-image:none;}
  #pageslide-slide-wrap > div > div{overflow:hidden;}
  #pageslide-slide-wrap > div div.header{margin-top:2px; border-bottom:1px solid #e9f2f6; overflow:hidden; padding:18px 0 19px 0;
@@ -397,8 +397,8 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .private-msg > form{display: block; background:#ffffff; display: none; padding:24px 16px 0; margin:0;}
 .private-msg > form > textarea{width:234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
 .private-msg-btns{text-align:right}
-.private-msg-btns > input{height: 24px; float:none!important;}
-.private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:12px;}
+.private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
+.private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:13px;}
 .private-msg > .avatar{float: right;}
 
 .inside{left:-20px}
@@ -469,4 +469,6 @@ form + .recently-topics{padding-top:18px;}
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fefce9', EndColorStr='#fefadd')";
 }
 
-.flash > .aligned{background: url('../images/icn-close.png') no-repeat right 17px;}
+.flash > div{padding: 0 25px;}
+
+.flash > div > div{background: url('../images/icn-close.png') no-repeat 100% 17px;}

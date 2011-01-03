@@ -11,16 +11,16 @@
     <div class="left-side">
       <article class="border-all">
         <header>
-          <div class="left">
-            <h1><%= @topic.title %></h1>
-            <p class="article-tags">
-              <%= linked_tag_list @topic.tags %>
-            </p>
-          </div>
           <div class="avatar-wrapper">
             <%= avatar_span(@topic.user, @topic.user.is_expert?) %> 
             <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
             <em><%= @topic.user.username %></em>
+          </div>
+          <div class="right">
+            <h1><%= @topic.title %></h1>
+            <p class="article-tags">
+              <%= linked_tag_list @topic.tags %>
+            </p>
           </div>
           <br class="clear">
         </header>
@@ -52,7 +52,8 @@
       <section class="helpful">
         <%= check_box_tag :filter_helpful %>
         <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
-      </section>
+      </section>    
+      <% if @topic.leaderboard.length > 0 %>
       <section class="experts">
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
@@ -66,6 +67,7 @@
         </ul>
         <br class="clear">
       </section>
+      <% end %>
       <section class="need-help">
         <%= link_to t('.sidebar.need_help'), '#', :class => "help" %>
       </section>

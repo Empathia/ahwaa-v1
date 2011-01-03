@@ -157,7 +157,7 @@ $(function(){
     
     $('input[type=text], input[type=email], input[type=password], textarea').live('focus', function(){
         $(this).hasClass('error') && $(this).removeClass('error') && $(this).siblings('p.error').remove();
-    })
+    });
 
     $('.items > div:last-child').css("background","none");
      
@@ -179,6 +179,9 @@ var scrollerInteval;
 
 $(window).load(function () {
     $(".request-topic.active").pageSlide({ width: "556px", direction: I18n.locale == 'ar' ? 'right' : "left", modal: true }).click(function(){
+        var sidebar = $(".article-wrapper").find('aside');                                                                                                                                                                       
+        sidebar.length && sidebar.data('fixed') == true && sidebar.css({position : "absolute", bottom: "auto", right: 0, left: "auto", top: sidebar.position().top - 126}) && sidebar.data("fixed", false);
+        $('#pageslide-blanket').css('min-height', $(document).height());
         $('.pageslide-body-wrap').addClass('jlo');
     });
 
