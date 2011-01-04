@@ -138,10 +138,15 @@ en:
     index:
       title: TRANSCEND
       legend: Supporting tagline will live here and it should be about this long
+      community: We're a community that is...
+      private: Private
+      engaging: Engaging
+      positive: Positive
+      choose: Choose what to disclose
+      share: Share stories and experiences
+      offer: Offer and receive support
       popular_topics: Most Popular Topics
       feeds: "What's Going on Now"
-      join_now: Join Now
-      get_started: And Get Started!
       latest:
         has_left_a_comment: %{author} has left an %{comment} on %{topic}
   topics:

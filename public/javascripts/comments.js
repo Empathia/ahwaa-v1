@@ -54,23 +54,27 @@ $.fn.slideDownComments = function(commentsOriginal){
   }); 
 };
 
+function collapseAllComments(){
+    $(".clon").each(function (){
+        var comments = $(this);
+        comments.slideUp(function(){
+            var paragEnd = comments.next();
+            comments.prev().append(paragEnd.html());
+            paragEnd.remove();
+            comments.remove();
+        });
+    });
+    $('.topic-content .icn').removeClass('minus');
+};
+
 $.fn.comments = function(options){                         
     var expandBtn = $('.expand-btn'),
         expandBtnSpan = expandBtn.find('span');
     expandBtn.data('label', expandBtnSpan.text()).click(function(e){
         if(expandBtn.hasClass('hide')){
-            $(".clon").each(function (){
-                var comments = $(this);
-                comments.slideUp(function(){
-                    var paragEnd = comments.next();
-                    comments.prev().append(paragEnd.html());
-                    paragEnd.remove();
-                    comments.remove();
-                });
-            });                                                                 
+            collapseAllComments();                                                                
             expandBtn.removeClass('hide');
             expandBtnSpan.text(I18n.t('topics.show.sidebar.show_all_responses'));
-            $('.topic-content .icn').removeClass('minus');
         }
         else{
             expandAll();                

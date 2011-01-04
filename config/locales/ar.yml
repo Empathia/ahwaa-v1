@@ -138,10 +138,15 @@ ar:
     index:
       title: تجاوز
       legend: سوف تاغلين دعم العيش هنا وينبغي أن يكون حول هذا طويل
+      community: ...نحن مجتمع الذي هو
+      private: خاصة
+      engaging: الانخراط
+      positive: الإيجابية
+      choose: اختيار ما على الكشف عن
+      share: تبادل القصص والخبرات
+      offer: تقديم وتلقي الدعم
       popular_topics: معظم موضوعات شعبية
       feeds: "وقال ما يحدث الآن"
-      join_now: إشترك الآن
-      get_started: وتبدأ
       latest:
         has_left_a_comment: %{author} وقد ترك %{comment} على %{topic}
   topics:

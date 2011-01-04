@@ -79,24 +79,26 @@ $(document).ready(function() {
 });
 
 function filterResponses() {
-    var cbs = $('.filter-resposes input:checkbox:checked');
-    var show_useful = $('#filter_helpful').is(':checked');
-    $('.comments.clon li').hide();
+    var cbs = $('.filter-resposes input:checkbox:checked'),
+        show_useful = $('#filter_helpful').is(':checked'),
+        comments_ls = $('.comments.clon .comments-ls');
+    //collapseAllComments();
+    
+    comments_ls.children().hide();
     if(cbs.length === 0) {
-        if(show_useful) {
-            $('.comments.clon li.useful').show();
-        } else {
-            $('.comments.clon li').show();
-        }
+        comments_ls.children((show_useful ? '.useful' : '')).slideDown();
     } else {
         cbs.each(function () {
-            if(show_useful) {
-                $('.comments.clon li.useful.' + $(this).val()).show();
-            } else {
-                $('.comments.clon li.' + $(this).val()).show();
-            }
+            comments_ls.children((show_useful ? '.useful.' : '.') + $(this).val()).slideDown();
         });
-    }
+    };
+    comments_ls.each(function(){                                                                  
+        console.log($(this).children(':visible').length);                         
+        var comments = $(this).closest('.comments'),
+            index = comments.attr('id').match(/comments_((\w|_)+)_clon/)[1],
+            link = $('#add_' + index);
+        $(this).children(':visible').length == 0 && comments.slideUpComments(link.parent(), link);
+    });
 }
 
 function getProfileTopicMatches() {
