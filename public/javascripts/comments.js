@@ -95,7 +95,8 @@ $.fn.comments = function(options){
     var expandBtn = $('.expand-btn'),
         expandBtnSpan = expandBtn.find('span');
     expandBtn.data('label', expandBtnSpan.text()).click(function(e){
-        if(expandBtn.hasClass('hide')){
+        if(expandBtn.hasClass('hide')){ 
+            $('.article-wrapper').find('input:checked').attr('checked', false);
             collapseAllComments();                                                                
             expandBtn.removeClass('hide');
             expandBtnSpan.text(I18n.t('topics.show.sidebar.show_all_responses'));
