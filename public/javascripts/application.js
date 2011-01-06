@@ -65,41 +65,11 @@ $(document).ready(function() {
         }
     });
                                                     
-    $('.add_comments:visible input[type=submit]').live('mouseover', function () {
-        $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
-    });
-    
     $('<img />').attr('src', '/images/loading-s.gif');            
     
-    $('.add_comments:visible input[type=submit]').live('click', function(){
-        $(this).parents('.res-types-wrapper').find('.res-lbl').addClass('loading');        
-    });
-    
-    $('.filter-resposes input:checkbox, #filter_helpful').change(filterResponses);
 });
 
-function filterResponses() {
-    var cbs = $('.filter-resposes input:checkbox:checked'),
-        show_useful = $('#filter_helpful').is(':checked'),
-        comments_ls = $('.comments.clon .comments-ls');
-    //collapseAllComments();
-    
-    comments_ls.children().hide();
-    if(cbs.length === 0) {
-        comments_ls.children((show_useful ? '.useful' : '')).slideDown();
-    } else {
-        cbs.each(function () {
-            comments_ls.children((show_useful ? '.useful.' : '.') + $(this).val()).slideDown();
-        });
-    };
-    comments_ls.each(function(){                                                                  
-        console.log($(this).children(':visible').length);                         
-        var comments = $(this).closest('.comments'),
-            index = comments.attr('id').match(/comments_((\w|_)+)_clon/)[1],
-            link = $('#add_' + index);
-        $(this).children(':visible').length == 0 && comments.slideUpComments(link.parent(), link);
-    });
-}
+
 
 function getProfileTopicMatches() {
   var form = $('#profile_match_filters_form');

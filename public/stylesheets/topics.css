@@ -171,7 +171,7 @@ a.no_comments{
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9')";
 }
 
-.topic-content .icn{position: relative; text-decoration: none; text-align: center;}
+.topic-content .icn{position: relative; text-decoration: none; text-align: center; z-index: 1;}
 .icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; left: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5; background-color: #3c454f; background-color: rgba(60, 69, 79, .92); text-align: center;}
 .tta{border-style: solid; border-width: 5px 5px 0px; float: left; height: 0px; left: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}  
 .icn:hover > span{display: block;}
