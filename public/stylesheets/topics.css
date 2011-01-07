@@ -64,8 +64,8 @@ aside section.need-help{padding:13px 0; text-align:center}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
 .res-types-wrapper > div.error{float: left; color:red; line-height: 23px;}                                               
 .res-types-wrapper > div.buttons{float: right;}                              
-.loading{background-image: url('../images/loading-s.gif'); background-repeat: no-repeat; background-position: 0 1px; padding-left: 30px;}
 .res-lbl{float: right; margin-right: 10px; line-height: 1.8; color: #7d96b2;}
+.res-lbl.loading{background-image: url('../images/loading-s-white.gif'); background-position: 0 50%;}
 .res-types{float: right;}
 .res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-left: 1px solid #dee8f2; float: left;
   background-image: -moz-linear-gradient(top, #edf4fb, #e7f1fa);

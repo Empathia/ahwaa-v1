@@ -56,7 +56,9 @@ $(function(){
         return false;
     });
 
-    $('.sign-up-form').find('input[type=submit]').formValidator(
+    $('.sign-up-form').submit(function(){
+        $(this).find('.legend').addClass('loading');
+    }).find('input[type=submit]').formValidator(
         {
             'errors': {              
                 'email': {
@@ -72,7 +74,9 @@ $(function(){
         $('.sign-up-form #user_username').removeClass('placeholder').val($(this).val().replace(/@.*$/, '').replace(/[^a-z0-9]/i, ''));
     });
 
-    $('.login-form').find('input[type=submit]').formValidator({
+    $('.login-form').submit(function(){
+      $(this).find('#forgot-pass').addClass('loading');
+    }).find('input[type=submit]').formValidator({
         'errors': {
             'text': I18n.t('layouts.application.header.login_form.error_login_empty'),
             'password': {

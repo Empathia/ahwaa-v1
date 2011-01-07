@@ -477,3 +477,6 @@ form + .recently-topics{padding-top:18px;}
 .flash > div{padding: 0 25px;}
 
 .flash > div > div{background: url('../images/icn-close.png') no-repeat 100% 17px;}
+
+.loading{background-image: url('../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position: 0 50%; padding-left: 26px;}
+.legend.loading{padding-right: 26px; background-position: 100% 50%; padding-left: 0;}
