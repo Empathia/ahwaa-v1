@@ -44,7 +44,7 @@ ar:
         gender_id: بين الجنسين
         sexual_orientation_id: التوجه الجنسي
         age_id: السن
-        country_id: بلد المولد
+        country_id: بلد المنشأ
         political_view: الرأي السياسي
         en: اللغة الإنجليزية
         ar: العربية

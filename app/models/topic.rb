@@ -54,7 +54,7 @@ class Topic < ActiveRecord::Base
                         :group => :user_id,
                         :order => "count_user_id DESC",
                         :limit => (4 - experts.length)).keys
-    User.find(ids)
+    User.find(ids.compact)
   end
 
   # Get topic users leaderboard

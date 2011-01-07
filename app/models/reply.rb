@@ -26,7 +26,8 @@ class Reply < ActiveRecord::Base
   scope :by_topic_language, lambda { |lang| includes(:topic).where("topics.language = :lang", :lang => lang) }
   scope :latest, lambda { |*lang| by_topic_language(lang.first || 'en').order("replies.created_at DESC").limit(5) }
   scope :flagged, includes(:ratings).where("ratings.vote = :flag", :flag => Rating::FLAG)
-
+  scope :by_category, lambda {|category| where(:category => category)}
+  
   # returns the amount of points granted this post produces
   def points_granted
     self.user ? POINTS_FOR_POSTING : 0

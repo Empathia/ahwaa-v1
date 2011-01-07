@@ -40,17 +40,20 @@
         <% end %>
       </section>
       <section class="filter">
-        <h2 class="sec-title regular"><span><%= t('.sidebar.filter_responses.title') %></span></h2>
-        <ul class="filter-resposes">
-          <% Reply::CATEGORIES.each do |category| %>
-            <li>
-              <%= check_box_tag :filter_category, category %><%= label_tag "filter_#{category}", Reply.human_attribute_name(category), :class => category %>
+        <h2 class="sec-title regular <%= "disabled" if @replies.length == 0 %>"><span><%= t('.sidebar.filter_responses.title') %></span></h2>
+        <ul class="filter-responses <%= "disabled" if @replies.length == 0 %>">
+          <% Reply::CATEGORIES.each_with_index do |category, i| %>
+            <li class="<%= "even" if (i-1)%2 == 0 %>">
+              <%= check_box_tag :filter_category, category, false, :disabled => @replies.length == 0 %>
+              <% label_tag "filter_#{category} ", :class => category do %>
+                <%= Reply.human_attribute_name(category) %> <span>(<%= @topic.replies.by_category(category).length %>)</span>
+              <% end %>
             </li>
           <% end %>
         </ul>
       </section>
-      <section class="helpful">
-        <%= check_box_tag :filter_helpful %>
+      <section class="helpful <%= "disabled" if @replies.length == 0 %>">
+        <%= check_box_tag :filter_helpful, true, false, :disabled => @replies.length == 0 %>
         <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
       </section>    
       <% if @topic.leaderboard.length > 0 %>

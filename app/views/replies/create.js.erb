@@ -22,7 +22,13 @@
     setTimeout(function() {
       $('#add_<%= @reply.contextual_index %>').trigger('click');
     }, 500);
-  <% end %>
+  <% end %>                        
+  
+  var filter = $('.filter'),
+      span = filter.children().removeClass('disabled').find('label.<%= @reply.category%> span'),
+      count = parseInt(span.text().replace(/[\(\)]/, ''));
+  span.closest('li').removeClass('disabled').end().text('(' + (count+1) + ')');
+  $('.helpful').removeClass('disabled');
 <% else %>
   $('.response-wrapper:visible .error').text("<%= @reply.errors.full_messages.first %>");
 <% end %>

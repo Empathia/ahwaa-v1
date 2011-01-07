@@ -5,7 +5,3 @@ input,select,textarea{outline: none}
 header,section,article,section{display: block}
 a{text-decoration: none; cursor: pointer;} 
 a:hover{text-decoration: underline;}
-/*
-a:active{ outline:none; }  
-a:focus{ -moz-outline-style:none; }
-*/

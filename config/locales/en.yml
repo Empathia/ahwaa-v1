@@ -44,7 +44,7 @@ en:
         gender_id: Gender
         sexual_orientation_id: Sexual orientation
         age_id: Age
-        country_id: Country of birth
+        country_id: Country of origin
         political_view: Political view
         en: English
         ar: Arabic

@@ -13,12 +13,11 @@ aside{overflow: hidden;}
 .username{color: #4c5563; font-size: 18px; margin-bottom: 6px;}
 .usr-sec-title{overflow: hidden;  margin-bottom: 15px; position: relative; }
 .usr-sec-title > h2{color: #61656a; font-size: 12px; float: left; padding: 5px 5px 0 5px;  margin-left: 5px; position: relative; background-color: #ffffff;}
-.usr-sec-title > .active > span{
-  border-top: 1px solid #a5aab0;
+.usr-sec-title > .active > span{border-top: 1px solid #a5aab0;
   background-image: -moz-linear-gradient(top, #eaf1f5, #f8fbfc);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf1f5),color-stop(1, #f8fbfc));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc')";
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc')";
 } 
 
 .usr-sec-title span > span{display: block; height: 100%; background: url('../images/icn-pencil.png') no-repeat 0px 4px;}
@@ -65,15 +64,14 @@ aside{overflow: hidden;}
 .msg-opts{position: absolute; right: 0; top: 0; font-size: 11px; display: none; height: 25px; border-width: 0 0 1px 1px; border-style: solid; border-color: #e1e1e1;
   background-image: -moz-linear-gradient(top, #fafafa, #f1f1f1);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fafafa),color-stop(1, #f1f1f1));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#f1f1f1');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#f1f1f1')";  
-  
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#f1f1f1');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafafa', EndColorStr='#f1f1f1')";
 }    
 .new > .msg-opts{ border-color: #C2DCEA;
   background-image: -moz-linear-gradient(top, #ffffff, #f1fafd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ffffff),color-stop(1, #f1fafd));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f1fafd');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f1fafd')";
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f1fafd');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f1fafd')";
 }
 
 .msg-opts > li{float: right; padding: 7px 10px; height: 11px;}
@@ -97,10 +95,10 @@ aside{overflow: hidden;}
 .avatars > li > .avatar > a{outline:0 none}
 .avatars > .active{margin:13px 18px;border:2px solid #4082bf}
 .avatars > .active > .avatar{border:1px solid #3f71a0;
-    -moz-border-radius:0!important;
-    -webkit-border-radius:0!important;
-    border-radius:0!important;
-    }
+  -moz-border-radius:0!important;
+  -webkit-border-radius:0!important;
+  border-radius:0!important;
+}
 
 .checkmark{position:absolute;right:-7px;top:-5px;background-image:none!important;display:none;}
 li.active > .checkmark{display:block;}
@@ -136,9 +134,9 @@ li.active > .checkmark{display:block;}
 .custom-avatar{padding: 15px; width: 119px; height: 26px; border: 1px solid #becad7; color: #6d91a9; text-align: right; float: left; font-size: 12px; font-weight: bold; line-height: 2.2;
   background-image: -moz-linear-gradient(top, #f8fcfe, #ecf8fd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8fcfe),color-stop(1, #ecf8fd));
-            filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fcfe', EndColorStr='#ecf8fd');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fcfe', EndColorStr='#ecf8fd')";  
- -webkit-box-shadow: 0px 0px 0px 3px #f5f5f5;
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fcfe', EndColorStr='#ecf8fd');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fcfe', EndColorStr='#ecf8fd')";  
+  -webkit-box-shadow: 0px 0px 0px 3px #f5f5f5;
 }
 
 .custom-avatar > span{display: block; height: 100%; background: url('../images/icn-upload.png') no-repeat left 50%;}

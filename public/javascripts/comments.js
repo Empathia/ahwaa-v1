@@ -313,8 +313,8 @@ $.fn.comments = function(options){
     });
     
     
-    $('.filter-resposes input:checkbox, #filter_helpful').change(function(){    
-        var cbs = $('.filter-resposes input:checkbox:checked'),
+    $('.filter-responses input:checkbox, #filter_helpful').change(function(){    
+        var cbs = $('.filter-responses input:checkbox:checked'),
             show_useful = $(this).filter('#filter_helpful').is(':checked'),
             allComments = $('.comments:not(.clon)'),
             expandBtn = $('.expand-btn'),

@@ -191,12 +191,10 @@ p:hover .icn{display: inline;}
 .social-bookmarkers > .twitter{background-position: 0 -36px; margin-bottom: 0;}
 .social-bookmarkers > .twitter:hover{background-position: 0 100%}
 
-.filter-resposes > li{margin:0 30px 12px 0; float:left;}
-.filter-resposes > li:last-child{margin-bottom: 0;}
-.filter-resposes > li > label{margin-left:4px;}
-/*.advice{background-position: 0 1px;}
-.comment,.comments{background-position: 0 -14px;}
-.story,.experience{background-position: 0 -28px;}*/
+.filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
+.filter-responses > .even{margin-right: 0; float: right}
+.filter-responses > li:last-child{margin-bottom: 0;}
+.filter-responses > li > label{margin-left:4px;}
 
 .topic-avatars > li{float:left; width:64px; text-align:center; font-size:12px; position:relative; margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px}
