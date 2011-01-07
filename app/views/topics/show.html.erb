@@ -44,8 +44,8 @@
         <ul class="filter-responses <%= "disabled" if @replies.length == 0 %>">
           <% Reply::CATEGORIES.each_with_index do |category, i| %>
             <li class="<%= "even" if (i-1)%2 == 0 %>">
-              <%= check_box_tag :filter_category, category, false, :disabled => @replies.length == 0 %>
-              <% label_tag "filter_#{category} ", :class => category do %>
+              <%= check_box_tag :filter_category, category, false, :disabled => @topic.replies.by_category(category).length == 0 %>
+              <% label_tag "filter_#{category} ", :class => "#{category} #{'disabled' if @topic.replies.by_category(category).length == 0}" do %>
                 <%= Reply.human_attribute_name(category) %> <span>(<%= @topic.replies.by_category(category).length %>)</span>
               <% end %>
             </li>

@@ -84,7 +84,7 @@ function collapseAllComments(){
 };
 
 $.fn.filter2ndLevelComments = function(filter){
-    $(this).children('.comments_ls').children().each(function(){                              
+    $(this).children('.comments-ls').children().each(function(){                              
       var ndLevelComments = $(this).find('li');     
           ndLevelCommentsNotUseful = ndLevelComments.filter(':not(' + filter + ')');                  
       ndLevelComments.length == ndLevelCommentsNotUseful.length && !$(this).filter(filter).length ?  $(this).hide() : ndLevelCommentsNotUseful.hide();
@@ -343,7 +343,7 @@ $.fn.comments = function(options){
                    commentsClon.length && commentsGroupToSlideUp.push(commentsClon);
                }
                else{   
-                   if(commentsClon.length){     
+                   if(commentsClon.length){   
                        commentsClon.filter2ndLevelComments(filter);  
                    }
                    else{                    

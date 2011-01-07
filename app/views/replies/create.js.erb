@@ -27,7 +27,7 @@
   var filter = $('.filter'),
       span = filter.children().removeClass('disabled').find('label.<%= @reply.category%> span'),
       count = parseInt(span.text().replace(/[\(\)]/, ''));
-  span.closest('li').find('disabled');
+  span.parent().removeClass('disabled').siblings('input').attr('disabled', false);
   span.text('(' + (count+1) + ')');
   $('.helpful').removeClass('disabled');
 <% else %>
