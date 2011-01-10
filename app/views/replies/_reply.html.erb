@@ -17,19 +17,19 @@
             <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
           <% end %>
         </div>
-        <div class="res-username">
-          <% unless reply.anonymous? %>
-            <span><%= reply.user.username %></span>
-          <% else %>
-            <%= t(".anonymous") %>
-          <% end %>
-        </div>
         <div class="res-type-wrapper">
           <div>
             <div>
               <div class="topic-res-type advice"><%= reply.i18n_category %></div>
             </div>
           </div>
+        </div>
+        <div class="res-username">
+          <% unless reply.anonymous? %>
+            &nbsp;by <span><%= reply.user.username %></span>
+          <% else %>
+            &nbsp;by <%= t(".anonymous") %>
+          <% end %>
         </div>
       </div>
       <%= simple_format reply.content %>

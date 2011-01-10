@@ -11,6 +11,7 @@
   _form.find('.pm-flash').remove();
   <% if @message.valid? %>
     _form.each(function() { this.reset(); });
+    _form.find('.loading').removeClass('loading');
     _form.prepend('<div class="pm-flash success border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');
     _form.delay(2000).slideUp(function(){
     _form.parent().find('.send-private-msg').removeClass('disabled').end().find('.pm-flash.success').remove();

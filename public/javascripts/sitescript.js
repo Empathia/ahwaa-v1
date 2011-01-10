@@ -86,7 +86,9 @@ $(function(){
         }
     });
 
-    $('.forgot-pass-form').find('input[type=submit]').formValidator(
+    $('.forgot-pass-form').submit(function(){
+        $(this).find('.cancel-forgot').addClass('loading');
+    }).find('input[type=submit]').formValidator(
         {
             'errors': {
                 'text': I18n.t('layouts.application.header.forgot_pass_form.empty')
@@ -125,7 +127,9 @@ $(function(){
         return false;
     })
     
-    $('.form-private-msg').find('input[type=submit]').live('click', function(ev){
+    $('.form-private-msg').submit(function(){
+      $(this).find('.cancel').addClass('loading');
+    }).find('input[type=submit]').live('click', function(ev){
         var formPrivateMsg = $(this).closest('form');
         var textarea = formPrivateMsg.find('textarea');
         formPrivateMsg.find('.error').remove();

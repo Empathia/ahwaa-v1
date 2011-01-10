@@ -5,42 +5,25 @@
     <hgroup class="slogan">
       <h1><%= t('.title') %></h1>
       <h2><%= t('.legend') %></h2>
-    </hgroup> 
-    <!--h2 class="presentation"><%= t('.community') %></h2-->
+    </hgroup>      
+    <div class="watch-video"> 
+      <div>
+        <a href="#" class="border-all"><span><%= t('.watch_video')%></span></a>
+      </div>
+    </div>
     <ul class="features">
       <li id="anonymity" class="feature-wrapper">
-        <%= image_tag 'feature-private.png', :width => "302", :height => "186"%>
-        <!--div class="sha-box">
-          <div>
-            <div>                                   
-              <div class="feature border-all"><%= link_to image_tag "illustration.png", :alt => 'Mantain your anonymity' %></div>
-            </div>
-          </div>
-        </div-->
+        <div class="feature-image"><%= image_tag 'feature-private.png', :width => "302", :height => "186"%></div>
         <h2><%= t('.private') %></h2>
         <p><%= t('.choose') %></p>
       </li>
       <li id="community" class="feature-wrapper">
-        <%= image_tag 'feature-engaging.png', :width => "302", :height => "186"%>
-        <!--div class="sha-box">
-          <div> 
-            <div>
-              <div class="feature border-all"><%= link_to image_tag "illustration.png", :alt => 'Support your community' %></div>
-            </div>
-          </div>
-        </div-->
+        <div class="feature-image"><%= image_tag 'feature-engaging.png', :width => "287", :height => "188"%></div>
         <h2><%= t('.engaging') %></h2>
         <p><%= t('.share') %></p>
       </li>
       <li id="trustworthy" class="feature-wrapper">
-        <%= image_tag 'feature-positive.png', :width => "302", :height => "186"%>
-        <!--div class="sha-box">
-          <div>     
-            <div>
-              <div class="feature border-all"><%= link_to image_tag "illustration.png", :alt => 'Find help from trustworthy people!' %></div>
-            </div>
-          </div>
-        </div-->            
+        <div class="feature-image"><%= image_tag 'feature-positive.png', :width => "302", :height => "186"%></div>
         <h2><%= t('.positive') %></h2>
         <p><%= t('.offer') %></p>
       </li>

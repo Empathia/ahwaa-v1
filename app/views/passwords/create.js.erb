@@ -2,6 +2,7 @@
   var form = $('.forgot-pass-form');
   var success = $('<p>').addClass('success').text('<%= escape_javascript t('layouts.application.header.forgot_pass_form.sent') %>').appendTo(form.find('.login')),
       inputTxt = form.find('.login input').hide();
+      form.find('.loading').removeClass('loading');
   setTimeout(function(){
       $('a.auth-form-active').removeClass('auth-form-active');
       form.fadeOut(function(){

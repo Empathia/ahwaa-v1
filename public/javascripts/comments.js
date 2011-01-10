@@ -186,12 +186,13 @@ $.fn.comments = function(options){
                     textarea.val('Click here to write your response.');
                 }
             })
-        }).live('keyup', function () {
-        if($(this).siblings('.res-types-wrapper').is(':hidden') && $(this).val()){
-            $(this).siblings('.res-types-wrapper').slideDown('slow');
+        }).live('keyup', function () {        
+        var resTypesWrapper = $(this).closest('.response').find('.res-types-wrapper');
+        if(resTypesWrapper.is(':hidden') && $(this).val()){
+           resTypesWrapper.slideDown('slow');
         }
-        else if($(this).siblings('.res-types-wrapper').is(':visible') && !$(this).val() ){
-            $(this).siblings('.res-types-wrapper').slideUp('slow');
+        else if(resTypesWrapper.is(':visible') && !$(this).val() ){
+          resTypesWrapper.slideUp('slow');
         }
         
         for(var i = 0; i < badWords.length; i++) {
@@ -211,7 +212,7 @@ $.fn.comments = function(options){
     });
     
     $('.add_comments:visible input[type=submit]').live('click', function(){
-        $(this).parents('.res-types-wrapper').find('.res-lbl').addClass('loading');        
+        $(this).parents('.res-types-wrapper').find('.submit-reply-wrapper').addClass('loading');        
     });
     
     function expandAll(){

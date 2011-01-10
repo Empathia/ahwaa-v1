@@ -37,6 +37,8 @@
   span.parent().removeClass('disabled').siblings('input').attr('disabled', false);
   span.text('(' + (count+1) + ')');
   $('.helpful').removeClass('disabled');
-<% else %>
-  $('.response-wrapper:visible .error').text("<%= @reply.errors.full_messages.first %>");
+<% else %>                           
+  var responseWrapper = $('.response-wrapper:visible');
+  responseWrapper.find('.error').text("<%= @reply.errors.full_messages.first %>");
+  responseWrapper.find('.loading').removeClass('loading');
 <% end %>

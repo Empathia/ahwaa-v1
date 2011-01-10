@@ -138,6 +138,7 @@ en:
     index:
       title: TRANSCEND
       legend: Supporting tagline will live here and it should be about this long
+      watch_video: Watch a video
       community: We're a community that is...
       private: Private
       engaging: Engaging
@@ -185,7 +186,8 @@ en:
       form:
         cancel: Cancel
         write_response: Click here to write your response.
-        type_response: 'Type of response:'
+        type_response: 'This is a:'
+        post_response: Post Response
         anonymous_legend: "Anonymous Responses can't be rated."
         continue: Continue
         sign_up: Sign Up

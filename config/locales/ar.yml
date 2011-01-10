@@ -138,6 +138,7 @@ ar:
     index:
       title: تجاوز
       legend: سوف تاغلين دعم العيش هنا وينبغي أن يكون حول هذا طويل
+      watch_video: شاهد فيديو      
       community: ...نحن مجتمع الذي هو
       private: خاصة
       engaging: الانخراط
@@ -185,7 +186,8 @@ ar:
       form:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
-        type_response: "نوع من الاستجابة :"
+        type_response: ':هذا هو '
+        post_response: "نوع من الاستجابة "
         anonymous_legend: "لا يمكن أن يتم تقييم الردود المجهول"
         continue: مواصلة
         sign_up: التوقيع
