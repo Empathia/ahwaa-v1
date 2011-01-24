@@ -1,16 +1,16 @@
 ar:
   catalogs:
     religion:
-      agnostic: الملحد
+      agnostic: التشككية
       bahai: "البهائية"
-      druze: درزي
+      druze: الدرزية
       buddhism: البوذية
-      christianity: مسيحية
+      christianity: المسيحية
       confucianism: الكونفوشية
       hinduism: الهندوسية
       islam: الإسلام
       jainism: اليانية
-      judaism: يهودية
+      judaism: اليهودية
       shinto: شنتو
       sikhism: السيخية
       taoism: الطاوية
@@ -23,22 +23,21 @@ ar:
     gender:
       male: ذكر
       female: أنثى
-      transgender: المتحولين جنسيا
-      no_say: لن أقول بدلا
+      transgender: متحول جنسيًا
+      no_say: لا أريد الإفصاح
 
     sexual_orientation:
-      straight: مستقيم
-      gay: مثلي الجنس
-      lesbian: مثليه
+      straight: غيري الجنس
+      gay: مثليّ الجنس
+      lesbian: مثليّة
       bisexual: ثنائية الجنسي
-      queer: عليل
-      transsexual: جراحات
-      pansexual: عموم الجنسي
+      queer: مختلط
+      transsexual: متحوّل الجنس
+      pansexual: جنساني شامل
       intersexual: خنثوي
       transvestite: متخنث
-      no_say: لن أقول بدلا
-
-    country:
+      no_say: غير مُعلن
+    ountry:
       afghanistan: أفغانستان
       aland_islands: جزر آلاند
       albania: ألبانيا
@@ -286,17 +285,17 @@ ar:
       zimbabwe: زيمبابوي
 
     political_view:
-      libertian: التحررية
-      liberal: ليبرالية
+      libertarian: ليبرتاري
+      liberal: ليبرالي
       conservative: محافظ
       nationalist: قومي
       monarchist: ملكي
       sharia_law: الشريعة الاسلامية
-      social_democrat: الاشتراكي الديمقراطي
-      socialist: الاشتراكي
-      pan_arabist: القومية العربية
-      green: الأخضر
+      social_democrat: اشتراكي ديمقراطي
+      socialist: اشتراكي
+      pan_arabist: قومية عربية
+      green: الخُضر
       communist: شيوعي
       anarchist: فوضوي
-      apolitical: سياسي
-      undeclared: غير معلنة
+      apolitical: لا سياسي
+      undeclared: غير مُعلن

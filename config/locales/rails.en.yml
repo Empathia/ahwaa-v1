@@ -1,5 +1,3 @@
-# UK English translation for Rails
-# by Jon Wood (jon@blankpad.net)
 en:
   number:
     # Used in number_with_delimiter()

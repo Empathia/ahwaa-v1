@@ -1,61 +1,58 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 ar:
   flash:
     actions:
       create:
-        notice: "%{resource_name} تم بنجاح إنشاء."
+        notice: "%{resource_name} تم الإنشاء بنجاح."
       update:
-        notice: "%{resource_name} تم تحديث بنجاح."
+        notice: "%{resource_name} تم التحديث بنجاح."
       destroy:
-        notice: "%{resource_name} ودمر بنجاح."
-        alert: "%{resource_name} لا يمكن تدميرها."
+        notice: "%{resource_name} أُزيلت بنجاح."
+        alert: "%{resource_name} لا يمكن إزالتها."
     application:
-      should_be_admin: "يجب أن يكون لديك وثائق التفويض المشرف للوصول إلى هذا الجزء من الموقع."
+      should_be_admin: "ليس لديك الصلاحيات الكافية للوصول إلى هذا الجزء من الموقع."
       not_logged_in: "لم يتم دخولك في"
     passwords:
       update:
-        notice: "تم تغيير كلمة السر الخاصة بك. يمكنك الآن تسجيل الدخول باستخدام كلمة المرور الجديدة."
+        notice: "تم تغيير كلمة السر الخاصة بكم. يمكنكم الآن تسجيل الدخول باستخدام كلمة المرور الجديدة."
     users:
       create:
-        notice: "وقال لقد أرسلنا إليك رسالة بريد إلكتروني للتأكيد. الرجاء مراجعة صندوق البريد الوارد"
+        notice: "!لقد أرسلنا إليك رسالة بريد إلكتروني للتأكيد. الرجاء مراجعة صندوق البريد الوارد"
       destroy:
-        notice: "تم إنهاء حسابك"
+        notice: "تم إنهاء حسابك!"
     topic_requests:
       create:
-        notice: "لقد تم ارسال طلبك للمراجعة من قبل الادارة. شكرا لك! "
+        notice: "لقد تم ارسال طلبك للمراجعة من قِبل الادارة. شكرًا لك! "
 
   activerecord:
     models:
-      topic_request: "طلب المواضيع"
+      topic_request: "طلب موضوع"
     attributes:
       topic_request:
         title: "عنوان الموضوع"
-        content: "حصة قصتك. طلب المشورة. بدء مناقشة حول قضية ما يهم لكم!"
-        anonymous_post: "لا تظهر أي من المعلومات الخاصة بي عند عرض هذا الموضوع "
+        content: "احكِ قصتك. طلب المشورة. بدء مناقشة حول قضية هامة بالنسبة لكم!"
+        anonymous_post: "لا تُظهر أي من المعلومات الخاصة بي عند عرض هذا الموضوع "
       reply:
         anonymous: "مجهول"
         advice: نصيحة
         comment: التعليق
         experience: تجربة
       user_profile:
-        religion_id: الدين
-        gender_id: بين الجنسين
+        religion_id: الديانة
+        gender_id: النوع الاجتماعي
         sexual_orientation_id: التوجه الجنسي
         age_id: السن
-        country_id: بلد المنشأ
-        political_view: الرأي السياسي
-        en: اللغة الإنجليزية
+        country_id: بلد المولد
+        political_view: الاتجاه السياسي
+        en: اللغة الإنكليزية
         ar: العربية
   errors:
     messages:
-      voted: اتسمت أنت بالفعل هذا من المفيد.
-      flagged: انت قمت بالإشارة لهذا الرد.
+      voted: لقد قمت بالتصويت.
+      flagged: لقد قمت بالإشارة لهذا الرد.
     template:
       header:
-        one: "يحظر 1 خطأ من هذا السجل يتم حفظ :"
-        other: "%{count} يحظر أخطاء من هذا السجل يتم حفظ : "
+        one: "هناك خطأ أثناء محاولة حفظ هذا السجل :"
+        other: "%{count} تم حفظ هذا السجل بلا أخطاء : "
 
   helpers:
     ago: %{time} منذ
@@ -64,64 +61,64 @@ ar:
     send_msg: أرسل رسالة خاصة
     write_msg: اكتب رسالتك
     cancel: إلغاء
-    submit: تقدم
+    submit: تقدّم
     points: "%{points} نقاط "
     expert: "خبير"
-    recently_participated: "شارك مؤخرا في هذه المواضيع :"
+    recently_participated: "مشاركاتك الأخيرة :"
     message_sent: تم إرسال رسالتك بنجاح!
     message_empty: رسالة فارغة
-    no_activity: أي نشاط الأخيرة
+    no_activity: لا يوجد نشاطًا جديدًا
   layouts:
     application:
       header:
         switch_to_english: View in english
         auth:
-          sign_up: التوقيع
+          sign_up: "أنشئ حسابًا جديدًا!"
           login: تسجيل الدخول
         request_topic:
-          button: طلب موضوع
-          legend: "لا يمكن للمستخدمين المجهول طلب موضوع "
-          sign_up: التوقيع
-          error_login_empty: التوقيع
+          button: "طلب موضوع"
+          legend: "لا يمكن للمستخدمين المجهولين طلب موضوع "
+          sign_up: أنشئ حسابًا جديدًا!
+          error_login_empty: تسجيل الدخول
           title: "عنوان فارغ"
           topic_details: "تفاصيل الموضوع فارغ"
           back_button: العودة
         sign_up_form:
           sign_up: "قم بالتسجيل"
-          legend: يرجى تسجيل والتمتع بجميع المزايا من تجاوز
-          username: الاسم أو الكنية
+          legend: يرجى التسجيل للتمتع بكافة مزايا تجاوز
+          username: الاسم أو الكُنية
           email: البريد الإلكتروني الخاص بك
           note_pt1: "بالنقر على إرسال، تؤكد أنك تقبل"
           note_pt2: و
           terms_of_use: شروط الاستخدام
           privacy_policy: سياسة الخصوصية
           note_pt3: لاستخدام المثليين.
-          error_email_empty: البريد الإلكتروني هو فارغ
-          error_email_invalid: البريد الالكتروني غير صالح
+          error_email_empty: البريد الإلكتروني غير موجود
+          error_email_invalid: البريد الالكتروني غير موجود
           error_username_empty: اسم المستخدم فارغ
-          error_username_not: اسم المستخدم هذا غير متوفر
+          error_username_not: اسم المستخدم هذا غير موجود
           error_password_empty: كلمة المرور فارغة
           error_password_short: كلمة المرور غير صالحة
         login_form:
           login: البريد الإلكتروني أو اسم المستخدم
-          password: كلمة السر
+          password: كلمة المرور
           forgot_password: نسيت كلمة المرور
           sign_in: تسجيل الدخول
-          invalid: عنوان البريد الإلكتروني أو كلمة المرور غير صحيحة. يرجى المحاولة مرة أخرى.
-          wrong_password: كلمة سر خاطئة
-          not_found: اسم المستخدم أو البريد الإلكتروني لم يتم العثور على
-          error_login_empty: اسم المستخدم أو البريد الإلكتروني هو فارغ
-        forgot_pass_form:
-          not_found: اسم المستخدم أو البريد الإلكتروني لم يتم العثور على
-          legend: "أدخل عنوان بريدك الالكتروني وسنرسل لك رابطا لإعادة تعيين كلمة المرور"
-          sent: وقال "لقد أرسلنا لكم تعليمات الى بريدك الالكتروني."
+          invalid: عنوان البريد الإلكتروني أو كلمة المرور غير صحيحة. يُرجى المحاولة مرة أخرى.
+          wrong_password: كلمة المرور خاطئة
+          not_found: لم يتم العثورة على اسم المستخدم أو البريد الإلكتروني
+          error_login_empty: اسم المستخدم أو البريد الإلكتروني خطأ
+          forgot_pass_form: لقد نسيت كلمة المرور الخاصة بي
+          not_found: لم يتم العثورة على اسم المستخدم أو البريد الإلكتروني
+          legend: "أدخل عنوان بريدك الالكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور"
+          sent: "من فضلك اتّبع التعليمات المُرسلة لك على بريدك الإلكتروني."
           login: البريد الإلكتروني
-          send: إرسال كلمة السر
+          send: إرسال كلمة المرور
           cancel: إلغاء
-          empty: اسم المستخدم أو البريد الإلكتروني هو فارغ
+          empty: اسم المستخدم أو البريد الإلكتروني فارغ
         logged_in:
           hi: "مرحبا %{username}"
-          my_account: "ملفاتي + رسائل"
+          my_account: "حسابي"
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث
       footer:
@@ -138,31 +135,29 @@ ar:
     index:
       title: تجاوز
       legend: سوف تاغلين دعم العيش هنا وينبغي أن يكون حول هذا طويل
-      watch_video: شاهد فيديو      
-      community: ...نحن مجتمع الذي هو
+      community: مجتمع
       private: خاصة
       engaging: الانخراط
       positive: الإيجابية
-      choose: اختيار ما على الكشف عن
+      choose: اختيار
       share: تبادل القصص والخبرات
-      offer: تقديم وتلقي الدعم
-      popular_topics: معظم موضوعات شعبية
-      feeds: "وقال ما يحدث الآن"
+      offer: تقديم وتلقّي الدعم
+      popular_topics: أكثر الموضوعات شعبية
+      feeds: "ما يحدث الآن"
       latest:
-        has_left_a_comment: %{author} وقد ترك %{comment} على %{topic}
-  topics:
-    related_content:
+        has_left_a_comment: "%{author} وقد ترك %{comment} على %{topic}"
+    topics:
       related_content:
         title: ذات المحتوى
         view_more: عرض مزيد من
     topic:
       popular:
         by: من قبل %{author}
-        response: استجابة
+        response: رد
     tag:
       sort_by:
         label: "ترتيب حسب :"
-        newest: جدد
+        newest: الأجدد
         responses: "معظم الردود"
     show:
       contextual:
@@ -171,26 +166,25 @@ ar:
         hide: "إخفاء"
       icons:
         social:
-          linked_in: مرتبط في
-          facebook: بوك
-          twitter: تغريد
+          linked_in: لينكِد إين
+          facebook: فيسبوك
+          twitter: تويتر
       sidebar:
         hide_all_responses: اخفاء جميع الردود
-        show_all_responses: إظهار كافة الاستجابات
+        show_all_responses: إظهار كافة الردود
         filter_responses:
-          title: ردود تصفية
-        filter_helpful: تظهر فقط تلك مفيدة
+          title: ترشيح الردود
+        filter_helpful: ترشيح الردود المفيدة فقط
         experts:
-          title: الخبراء المواضيع
+         title: الخبراء المواضيع
         need_help: بحاجة للمساعدة؟
       form:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
-        type_response: ':هذا هو '
-        post_response: "نوع من الاستجابة "
-        anonymous_legend: "لا يمكن أن يتم تقييم الردود المجهول"
+        type_response: "نوع من الاستجابة :"
+        anonymous_legend: "لا يمكن أن يتم تقييم الردود المجهولة"
         continue: مواصلة
-        sign_up: التوقيع
+        sign_up: أنشئ حساب
     comments:
       new_response: استجابة جديدة
   replies:
@@ -200,7 +194,7 @@ ar:
   topic_requests:
     new:
       submit: تقدم
-      title: طلب المواضيع
+      title: طلب مواضيع
       content: تفاصيل الموضوع
   users:
     show:
@@ -217,23 +211,23 @@ ar:
           new_password: كلمة السر الجديدة
           confirm_password: تأكيد كلمة المرور
           errors:
-             new_password: كلمة المرور الجديدة هو قصيرة
-             confirm_password: "كلمة السر لا تتطابق مع تأكيد"
+             new_password: كلمة المرور الجديدة قصيرة
+             confirm_password: "كلمتي المرور لا يتطابقا"
         my_account:
           title: حسابي
           nickname: "لقب "
           mail: "بريد"
           language: "اللغة"
           errors:
-            invalid_email: "بريد إلكتروني غير صالح"
-            password_too_short: "كلمة المرور الجديدة لها قصيرة جدا."
+            invalid_email: "هذا البريد الإلكتروني غير صالح"
+            password_too_short: "كلمة المرور الجديدة قصيرة جدًا."
         terminate_account: إنهاء الحساب
-        confirm_terminate: هل أنت متأكد أنك تريد حذف حسابك؟ وهذا لا يمكن أن يكون التراجع
-        saved: "تم تحديث الملف الشخصي الخاص بك"
+        confirm_terminate: هل أنت متأكد أنك تريد حذف حسابك؟ لا يمكنك التراجع فيما بعد
+        saved: "تم تحديث الحساب الشخصي الخاص بك"
         new_user:
-            question: "من أنت؟"
-            legend_st_line: "بناء معلومات ملفك الشخصي و"
-            legend_nd_line: "تواصل مع الناس مثلك"
+          question: "من أنت؟"
+          legend_st_line: "بناء معلومات ملفك الشخصي و"
+          legend_nd_line: "تواصل مع مستخدمين مثلك"
       content:
         avatars:
           suggested: حدد الخاص بك!
@@ -242,7 +236,7 @@ ar:
         private_messages:
           title: الرسائل الخاصة
           delete: حذف
-          confirm_delete: هل أنت متأكد أنك تريد حذف هذا الحديث؟ هذا لا يمكن أن التراجع
+          confirm_delete: هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكنك التراجع فيما بعد
           by: من قبل %{sender}
           at_date: في %{date}
           reply: الرد
@@ -251,7 +245,7 @@ ar:
           send_reply: إرسال الرد
     inbox:
       no_messages: لا يوجد لديك رسائل خاصة
-      empty_tip: "نصيحة : لإرسال الرسائل، يتدحرج الشخصي لشخص ما ويؤلف رسالة!"
+      empty_tip: "نصيحة : لإرسال الرسائل!"
   private_messages:
     message:
       reply: إرسال الرد
@@ -261,7 +255,7 @@ ar:
   mailers:
     user:
       topic_match_notification:
-        subject: كنت قد دعيت للمشاركة في موضوع
+        subject: كنت قد دُعيت للمشاركة في موضوع
       private_message_notification:
         subject: لقد تلقيت رسالة خاصة
       password_reset:
@@ -269,18 +263,17 @@ ar:
       sign_up_confirmation:
         subject: مرحبا بكم في تجاوز
       topic_request_notification:
-        subject: وقد طلب موضوع جديد
+        subject: تم طلب موضوع جديد
 
   shared:
     new_response:
-       new_response: استجابة جديدة
+       new_response: رد جديدة
     useful_flag_buttons:
-      voted: وضعت مفيدة
-      flagged: توضع
-      already_flagged: توضع مسبقا
+      voted: تم التصويت
+      flagged: أشِر إلى هذا كغير لائق
+      already_flagged: تمت الإشارة
       already_useful: كما شهدت بالفعل مفيدة
-      useful: وكان هذا مفيدا!
-      flag: العلم
-      anonymous: "يمكن للمستخدمين المجهول لا يتم تقييم"
-      sign_up: التوقيع
-
+      useful: كان هذا مفيدًا!
+      flag: الإشارة
+      anonymous: "لا يمكن للمستخدمين المجهولين التقييم"
+      sign_up: أنشئ حسابًا جديدًا
