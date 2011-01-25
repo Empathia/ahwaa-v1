@@ -44,7 +44,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .placeholder{color:#bbb}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
 .header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: -1px}
-.topic{background: url('../images/transcend.png') no-repeat center 0;}
+.topic{background: url('../images/ahwaa.png') no-repeat center 0;}
 .homepage{background: url('../images/homepage.png') no-repeat center 0;}
 .clear{clear:both!important; float:none!important;}
 .links{width: 237px; height: 54px; left: 361px; position: absolute; top: 0;  text-align: center;}
