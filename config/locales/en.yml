@@ -85,7 +85,7 @@ en:
           back_button: back
         sign_up_form:
           sign_up: Sign up
-          legend: Please register and enjoy all the benefits of Transcend!
+          legend: Please register and enjoy all the benefits of Ahwaa!
           username: Your Name or Nickname
           email: Your Email
           note_pt1: 'By clicking on Submit, you confirm that you accept the'
@@ -122,7 +122,7 @@ en:
           sign_out: Sign Out
         search_topics: Search topics
       footer:
-        all_rights: "© Transcend - All Rights Reserved %{year}"
+        all_rights: "© Ahwaa - All Rights Reserved %{year}"
         about: About
         privacy_policy: Privacy Policy
     admin:
@@ -264,7 +264,7 @@ en:
       password_reset:
         subject: Password reset
       sign_up_confirmation:
-        subject: Welcome to Transcend
+        subject: Welcome to Ahwaa
       topic_request_notification:
         subject: A new topic has been requested
 
