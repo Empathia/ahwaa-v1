@@ -44,7 +44,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .placeholder{color:#bbb}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #e0e9ee; height: 39px;}
 .header-top{height: 37px; text-align: center; padding: 10px 0; position: relative; margin-top: -1px}
-.topic{background: url('../../images/transcend.png') no-repeat center 0;}
+.topic{background: url('../../images/ahwaa.png') no-repeat center 0;}
 .homepage{background: url('../../images/homepage.png') no-repeat center 0;}
 .clear{clear:both!important; float:none!important;}
 .links{width: 237px; height: 54px; right: 361px; position: absolute; top: 0;  text-align: center;}
@@ -321,7 +321,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border: 2px solid #f0f5f8; font-size: 11px;}
 .response-wrapper.new-response > div{border: 1px solid #d6d6d6; padding: 6px 7px;}                                                
-.response > textarea{color: #61656A; width: 100%; padding: 0; height: 16px; border: none; margin-top: 4px; resize: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;}
+.comment_content{color: #61656A; width: 100%; padding: 0; height: 16px; border: none; margin-top: 4px; resize: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;}
 
 .new-response a{display: block; color: #868484; padding-right: 15px; background-image: url('../../images/icn-reply.png'); background-repeat: no-repeat; background-position:100% 2px;}
         
@@ -477,3 +477,6 @@ form + .recently-topics{padding-top:18px;}
 .flash > div{padding: 0 25px;}
 
 .flash > div > div{background: url('../../images/icn-close.png') no-repeat 100% 17px;}
+
+.loading{background-image: url('../../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position:100% 50%; padding-right: 26px;}
+.legend.loading{padding-left: 26px; background-position:0 50%; padding-right: 0;}

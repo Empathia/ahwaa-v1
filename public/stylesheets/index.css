@@ -61,4 +61,4 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 }
   
 .watch-video > div > a:hover{text-decoration: none;}
-.watch-video > div > a > span{background: url('../images/icn-film.png') no-repeat 0 1px; margin: 8px; float: left; padding-left: 22px;}
+.watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px; float: left; padding-left: 22px;}

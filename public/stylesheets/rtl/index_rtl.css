@@ -1,10 +1,9 @@
 body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92px}
 .container{background: url('../../images/bg-color-text-600.jpg') no-repeat 50% 107px}
-.slogan{height:197px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
+.slogan{height:165px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 57px 0}
 .features{overflow: hidden; margin-bottom: 72px;}
-.features li > img{margin-bottom:10px;}
 .items-wrapper > section{width: 460px; float:right;}
 .items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
 .items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; width: 440px; float:right; margin-bottom: 10px;}
@@ -22,16 +21,12 @@ body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92p
 .features li:first-child{margin-right: 1px;}
 .features li:last-child{margin-left: 1px;}
 
-.sha-box,
-.sha-box > div,
-.sha-box > div > div{background-image: url('../../images/feature-bg.png');}
-
-.sha-box{background-repeat: no-repeat; padding-right: 10px; margin-bottom: 22px;}
-.sha-box > div{padding-left: 10px; background-repeat: no-repeat;  background-position:0 -366px;}
-.sha-box > div > div{background-repeat: repeat-x; background-position:100% -198px; overflow: hidden;}
-
 .feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin-bottom: 7px;}
 .feature-wrapper p{color: #707f8a; font-size: 16px; text-shadow: 0 1px 1px #f7fbfe;}
+.feature-image{position: relative; height: 200px;} 
+.feature-image > img{position: absolute; bottom: 0; right: 0;}
+#anonymity > .feature-image > img{bottom: -7px;}
+#trustworthy > .feature-image > img{bottom: 12px;}
 #join{width: 228px; height: 123px; overflow: hidden; border: 2px solid #226099;  text-align: center; margin:5px 5px 5px 1px; float:right;
   background-image: -moz-linear-gradient(top, #5191c3, #2865a3);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5191c3),color-stop(1, #2865a3));
@@ -44,3 +39,26 @@ body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92p
 .join-nd-line{font-size: 18px; color: #a9d0ef;}
 
 .presentation{color: #ffffff; font-family: "GothamBoldRegular"; text-align: center; font-size: 28px; font-weight: normal; overflow: hidden; text-indent: -9999px;}
+
+.watch-video{position: relative; margin-bottom: 32px;}                    
+.watch-video > div{position: absolute; right: 50%; top: 0;}
+.watch-video > div > a{position: relative; right: -50%; border: 1px solid #6f9bb5; float:right;
+  -moz-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
+  -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
+  background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(1, #f9fdfe));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";  
+
+}                         
+
+.watch-video > div > a:hover{
+  background-image: -moz-linear-gradient(top, #f9fdfe, #eaf7fd);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fdfe),color-stop(1, #eaf7fd));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd')";
+}
+  
+.watch-video > div > a:hover{text-decoration: none;}
+.watch-video > div > a > span{background-image: url('../../images/icn-film.png'); background-repeat: no-repeat; background-position:100% 1px; margin: 8px; float:right; padding-right: 22px;}

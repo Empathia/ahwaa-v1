@@ -58,38 +58,36 @@ aside section.need-help{padding:13px 0; text-align:center}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
-.response-wrapper > div{padding: 10px;}
+.response-padding{padding: 10px;}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
 .res-types-wrapper > div.error{float:right; color:red; line-height: 23px;}                                               
-.res-types-wrapper > div.buttons{float:left;}                              
-.loading{background-image: url('../../images/loading-s.gif'); background-repeat: no-repeat; background-position:100% 1px; padding-right: 30px;}
-.res-lbl{float:left; margin-left: 10px; line-height: 1.8; color: #7d96b2;}
-.res-types{float:left;}
-.res-type{border-bottom: 1px solid #bcd0e7; height: 22px; border-right: 1px solid #dee8f2; float:right;
+.res-types-wrapper > .radios{float:right;}                              
+
+.res-lbl{float:right; margin-left: 10px; line-height: 1.8; color: #7d96b2;}
+
+.res-types{float:right; margin-top: 4px;}
+.res-type{float:right; display: inline; margin-left: 12px;}
+.res-type > label{color: #6a7988; font-size: 11px; font-weight: bold;}
+   
+.submit-reply-wrapper{float:left;}
+.submit-reply-wrapper.loading{background-image: url('../../images/loading-s-white.gif'); background-position:100% 50%;}
+.submit-reply{border-style: solid; border-width: 1px; border-color: transparent transparent #bcd0e7 #dee8f2; height: 22px;  float:left; position: relative; padding: 0 10px;  cursor: pointer; color: #7c99b6; font-weight:bold; font-family: Arial, Helvetica, sans-serif;
+  background: none;
   background-image: -moz-linear-gradient(top, #edf4fb, #e7f1fa);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #edf4fb),color-stop(1, #e7f1fa));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa')";        
-        position: relative;
-}        
-.res-type:hover{
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#edf4fb', EndColorStr='#e7f1fa')";
+}
+
+.submit-reply:hover{
   background-image: -moz-linear-gradient(top, #ebf6ff, #e7f1fa);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ebf6ff),color-stop(1, #f2f9ff));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff')";  
-}   
+}
 
-.res-type > input{border: none; background: none; padding: 0 10px; height: 100%; float:right; cursor: pointer; color: #7c99b6; font-weight:bold; font-family: Arial, Helvetica, sans-serif;}
-.res-type > span{background-image: url('../../images/icn-types.png'); background-repeat: no-repeat; position: absolute; top: 4px; right: 10px; width: 12px; height: 12px;}
-.res-type > .advice{background-position:100% -44px;}
-.res-type > .comment, 
-.res-type > .comments{background-position:100% -59px;}
-.res-type > .story,
-.res-type > .experience{background-position:100% -74px;}
-
-.res-type.border-left{border-right: 0;}
 .comments{display: none; margin-top: 14px;}
 
 .comments-ls > li{position: relative; padding-top: 10px;}
@@ -103,7 +101,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .comm-arrow{position: absolute; left: 0; top: 0; height:13px; width: 14px; background-image: url('../../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
 
 .add_comments .comm-arrow{background-position:100% -13px;}
-.comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
+.comm-wrap > div{border: 2px solid #e9f0f3; padding: 20px;}
 
 .comments .expert > .comm-wrap{border: 1px solid #e7e8e6; background-color: #f9fcf8}
 .expert > .comm-wrap > div{border: 2px solid #f2f5f1}
@@ -112,9 +110,9 @@ aside section.need-help{padding:13px 0; text-align:center}
 .response-user{height: 56px; min-height: 56px!important}
 .response-user .avatar-wrapper{margin-left: 10px;}
 
-.res-username{margin-bottom:7px; float:right; width: 494px; padding-top: 5px;}
-.res-username > span{color:#468AC4; margin-top: 0;}
-.res-flag-btns{float:left; display: none; position: absolute; left: 12px; top: 24px;}
+.res-username{margin-bottom:7px; float:right; padding-top: 3px; color: #a1b6bf;}
+.res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}
+.res-flag-btns{float:left; display: none; position: absolute; left: 13px; top: 33px;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-left: 10px; text-decoration: none;}
 .flag > span{background-image: url('../../images/flags.png'); background-repeat: no-repeat; padding-right: 17px; background-position:100% 2px;}
 .sign-up-tt-wrapper{ position: absolute; top: 0; right: 0; display: none; z-index: 1; width: 134px; padding-bottom: 10px;}
@@ -191,7 +189,8 @@ p:hover .icn{display: inline;}
 .social-bookmarkers > .twitter{background-position:100% -36px; margin-bottom: 0;}
 .social-bookmarkers > .twitter:hover{background-position:100% 100%}
 
-.filter-responses > li{margin:0 0 12px 30px; float:right;}
+.filter-responses > li{margin-bottom: 12px; float:right; min-width: 100px;}
+.filter-responses > .even{margin-left: 0; float:left}
 .filter-responses > li:last-child{margin-bottom: 0;}
 .filter-responses > li > label{margin-right:4px;}
 
@@ -204,8 +203,8 @@ p:hover .icn{display: inline;}
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 .help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0; line-height: 1em;}
 
-.sign-up-or-continue{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}               
-.sign-up-or-continue > .sign-up-lk{margin-left: 10px;}
+.sign-up-or-continue > div{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}               
+.sign-up-or-continue .sign-up-lk{margin-left: 10px;}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-right: 17px;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px;}

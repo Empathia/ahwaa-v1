@@ -1,0 +1,26 @@
+body {                               
+  padding: 0;
+  margin: 0;                                                      
+  background: #E3ECF0 url('../../images/bg-gradient.jpg') repeat-x 0 0;
+}
+
+body > div{
+  height: 633px;
+  background: url('../../images/error-404-bg.png') no-repeat 50% 0;
+  position: relative;
+}
+
+body > div > p{
+  font-family: Arial;
+  font-size: 13px;
+  color: #5d646a;  
+  text-align: center;
+  position: absolute;
+  bottom: 3px; 
+  width: 100%;
+  line-height: 20px;
+}
+
+body > div > p > a{
+  color: #468ac4;
+}
