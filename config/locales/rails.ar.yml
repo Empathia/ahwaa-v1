@@ -40,37 +40,37 @@ ar:
       half_a_minute: "نصف دقيقة"
       less_than_x_seconds:
         one:   "نصف دقيقة"
-        other: "قل من %{count} ثانية"
+        other: "أقل من %{count} ثانية"
       x_seconds:
-        one:   "1 ثانية"
+        one:   "ثانية واحدة"
         other: "%{count} ثانية"
       less_than_x_minutes:
         one:   "أقل من دقيقة"
         other: "أقل من %{count} دقيقة"
       x_minutes:
-        one:   "1 دقيقة"
+        one:   "دقيقة واحدة"
         other: "%{count} دقيقة"
       about_x_hours:
-        one:   "حوالي 1 ساعة"
+        one:   "حوالي ساعة واحدة"
         other: "حول %{count} ساعات"
       x_days:
-        one:   "1 يوم"
+        one:   "يوم واحد"
         other: "%{count} أيام"
       about_x_months:
-        one:   "حوالي 1 شهر"
+        one:   "حوالي شهر واحد"
         other: "حول %{count} أشهر"
       x_months:
-        one:   "1 شهر"
+        one:   "شهر واحد"
         other: "%{count} أشهر"
       about_x_years:
-        one:   "حوالي 1 سنة"
+        one:   "حوالي سنة واحدة"
         other: "حول %{count} سنة"
       over_x_years:
-        one:   "أكثر من 1 سنة"
+        one:   "أكثر من سنة واحدة"
         other: "أكثر من %{count} سنة"
       almost_x_years:
-        one:   "1 سنة تقريبا"
-        other: "تقريبا %{count} سنة"
+        one:   "سنة واحدة تقريبًا"
+        other: "تقريبًا %{count} سنة"
     prompts:
       year:   "السنة"
       month:  "الشهر"
@@ -83,9 +83,9 @@ ar:
     errors:
       template:
         header:
-          one:    "1 يحظر هذا الخطأ  %{model} من يتم حفظ"
-          other:  "%{count} يحظر هذه الأخطاء %{model}من يتم حفظ"
-        body: "كانت هناك مشاكل مع الحقول التالية"
+          one:    "هناك خطأ واحد  %{model} يعوق عملية الحفظ"
+          other:  "%{count} هذه الأخطاء %{model}تعوق عملية الحفظ"
+        body: "يوجد أخطاء في الحقول التالية تعوق عملية الحفظ"
 
   support:
     select:
@@ -94,26 +94,26 @@ ar:
   activerecord:
     errors:
       messages:
-        inclusion: "ليست مدرجة في قائمة"
+        inclusion: "ليست مُدرجة في القائمة"
         exclusion: "محجوز"
         invalid: "غير صالح"
-        confirmation: "لا يتطابق مع تأكيد"
-        accepted: "يجب ان تكون مقبولة"
-        empty: "لا يمكن أن تكون فارغة"
-        blank: "لا يمكن أن تكون فارغة"
-        too_long: "طويل جدا (الحد الأقصى %{count} الأحرف)"
-        too_short: "قصيرة جدا (الحد الأدنى %{count} الأحرف)"
-        wrong_length: "هو يجب أن طول خاطئ (سواء %{count} الأحرف)"
-        taken: "وقد تم بالفعل اتخاذ"
-        not_a_number: "ليس رقما"
-        not_an_integer: "يجب أن يكون صحيحا"
-        greater_than: "يجب أن تكون أكبر من %{count}"
-        greater_than_or_equal_to: "يجب أن تكون أكبر من أو يساوي %{count}"
-        equal_to: "يجب أن تكون مساوية %{count}"
+        confirmation: "كلمة المرور لا تتطابق مع التأكيد"
+        accepted: "تم القبول والحفظ"
+        empty: "لا يمكن أن تُترك خالية"
+        blank: "لا يمكن أن تُترك فارغة"
+        too_long: "طويل جدًا (الحد الأقصى %{count} أحرف)"
+        too_short: "قصير جدًا (الحد الأدنى %{count} أحرف)"
+        wrong_length: "الطول خاطئ (يجب أن تكون في حدود %{count} أحرف)"
+        taken: "هذا الاسم مسجّل من قبل على الموقع"
+        not_a_number: "ليس رقمًا"
+        not_an_integer: "يجب أن يكون صحيحًا"
+        greater_than: "يجب أن يكون أكبر من %{count}"
+        greater_than_or_equal_to: "يجب أن يكون أكبر من أو يساوي %{count}"
+        equal_to: "يجب أن يكون مساوي %{count}"
         less_than: "يجب أن يكون أقل من %{count}"
         less_than_or_equal_to: "يجب أن يكون أقل من أو يساوي %{count}"
-        odd: "يجب أن تكون فردية"
-        even: "يجب أن يكون حتى"
+        odd: "يجب أن يكون رقمًا فرديًا"
+        even: "يجب أن يكون رقمًا زوجيًا"
         record_invalid: "فشل التحقق من صحة %{errors}"
 
   date:
@@ -122,10 +122,10 @@ ar:
       short: "%b %d"
       long: "%B %d, %Y"
       
-    day_names: [الأحد ، الاثنين ، الثلاثاء، الاربعاء، الخميس، الجمعة، السبت]
-    abbr_day_names: [سبت، الاثنين ، الثلاثاء، الاربعاء ، الخميس ، الجمعة ،]
+    day_names: [الأحد ، الإثنين ، الثلاثاء، الأربعاء، الخميس، الجمعة، السبت]
+    abbr_day_names: [الأحد، الإثنين ، الثلاثاء، الأربعاء ، الخميس ، الجمعة ، السبت]
       
-    month_names: [~, كانون الثاني ، شباط، آذار، نيسان، أيار ، حزيران، تموز، آب، أيلول / سبتمبر ، أكتوبر، نوفمبر، ديسمبر]
+    month_names: [~, كانون الثاني، شباط، آذار، نيسان، آيار، حزيران، تموز، آب، أيلول، تشرين الأول، تشرين الثاني، كانون الأول]
     abbr_month_names: [~, "يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو", "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"]
     order: [ :"السنة ", :"الشهر", :"اليوم"]
 
