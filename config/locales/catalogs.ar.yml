@@ -1,8 +1,8 @@
 ar:
   catalogs:
     religion:
-      agnostic: التشككية
-      bahai: "البهائية"
+      agnostic: متشكك
+      bahai: البهائية      
       druze: الدرزية
       buddhism: البوذية
       christianity: المسيحية
@@ -16,7 +16,7 @@ ar:
       taoism: الطاوية
       yazidi: اليزيدية
       zoroastrianism: الزرادشتية
-      atheism: الإلحاد
+      atheism: ملحد
       none: لا شيء
       other: أخرى
 
