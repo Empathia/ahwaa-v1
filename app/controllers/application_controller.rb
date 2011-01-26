@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
   before_filter :set_locale
   helper_method :current_user, :logged_in?, :rtl?
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+
   protect_from_forgery
 
   # Wether there's a user logged in
@@ -43,6 +45,10 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+    
+    def record_not_found
+      render :file => "#{RAILS_ROOT}/public/404.#{I18n.locale}.html", :status => 404
+    end
 
     # [Callback] sets locale or in the locale param or defaults to en
     def set_locale
