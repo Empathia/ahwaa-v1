@@ -6,7 +6,7 @@
 </head>
 <body>
   <div>
-      <p>Looks like you followed a bad link or something went wrong.<br>Hope back to the <a href="#">Homepage</a> and if it happens again, <a href="#">let us know.</a></p>
+      <p>Looks like you followed a bad link or something went wrong.<br>Hope back to the <%= link_to 'Homepage', root_path %> and if it happens again, <%= link_to "let us know", "mailto:transcend@gmail.com" %></p>
   </div>
 </body>
 </html>

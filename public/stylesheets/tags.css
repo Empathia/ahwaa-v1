@@ -1,18 +1,24 @@
 body {background-image:url("../images/bg-noise-topic.jpg")}
 body > div {background:url("../images/topic-bg.jpg") repeat-x fixed 0 105px transparent}
-section.topics{background:white url('../images/bg-gradient2.png') repeat-x 0 0;margin-top:13px;border-top-left-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-.order{height:30px;padding:15px 0 0 25px;color:#9da2a8;}
-.order a{padding-left:5px;color:#9da2a8;}
-.order .active {color:#6c6f71;font-weight:bold;}
-.items{padding:0 25px 14px;}
-.items > div {line-height:19px;background:url("../images/border-topics.gif") no-repeat 0 bottom transparent}
-.items > div > div {width:430px;padding:25px 0;float:left}
-.items > div > div + div{padding-left:50px;}
-.items > div > div.bottom{border:none;padding:0;}
-.item-img > img {border:2px solid #FFFFFF;float:left}
-.item-img {border:1px solid #dadee0;float:left}
-.item-data {float:left;width:340px;padding-left:15px;font-size:12px}
-.item-data .dark-lk {color:#5D646A;font-weight:bold;font-size:14px;}
-.item-data, .item-data > div, .item-data > a, .item-data > div > span, .item-data > div > span > a {color:#898F93}
+.topics{background-color: #ffffff; margin-top:13px;border-top-left-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+.items{padding:0 40px 14px;}
+.item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative;}
+.item {width:415px; padding:25px 0; float:left}
+.item + div{padding-left:50px;}
+.items > div > div.bottom{border:none; padding:0;}
+.item-img > img {border:2px solid #FFFFFF; float:left}
+.item-img {border:1px solid #dadee0; float:left}
+.item-data {float:left; width:335px; padding-left:15px; font-size:12px}
+.item-data .dark-lk {color:#5D646A; font-weight:bold; font-size:14px;}
+
+.item-data{color:#a4a7ab}
+.item-data > a{color: #a4a7ab;}
 .item-data > div > span {display:block}
 .tags{margin:0}
+.tags-title{overflow: hidden; padding: 0 40px; height: 39px; border-bottom: 1px solid #edf2f7;}
+.tags-title > h2{float: left; font-size: 15px; font-weight: bold; color: #4c5563;  line-height: 2.9;}
+.order{color:#9da2a8; float: right; line-height: 3.5;}
+.order a{padding-left:5px; color:#9da2a8;}
+.order .active {color:#6c6f71; font-weight:bold;}                              
+.white-area{background-color: #ffffff; position: absolute; bottom: -1px; left: 415px; height: 1px;}
+/*background:url("../images/border-topics.gif") repeat-x 0 100% transparent; */

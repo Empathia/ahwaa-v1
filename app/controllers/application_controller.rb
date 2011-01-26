@@ -47,7 +47,7 @@ class ApplicationController < ActionController::Base
   private
     
     def record_not_found
-      render :file => "#{RAILS_ROOT}/public/404.#{I18n.locale}.html", :status => 404
+      render :file => "#{Rails.root}/public/404.#{I18n.locale}.html", :layout => false
     end
 
     # [Callback] sets locale or in the locale param or defaults to en
