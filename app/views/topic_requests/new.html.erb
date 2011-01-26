@@ -5,7 +5,7 @@
   </div>        
   <% javascript :form_validator, :form_script %>
   <%= form_for @topic_request do |f| %>
-    <div class="flash-privacy border-all">Please refrain from revealing your identity and sharing personal details you wouldn't want the entire internet to know.<span></span></div>
+    <div class="flash-privacy border-all">Please refrain from revealing your identity and sharing personal details you wouldn't want the entire internet to know.<span class="exclamation"></span><span class="icn-cross"></span></div>
     <fieldset>
       <%= f.label :title %>
       <%= f.text_field :title, :required => "true" %>

@@ -180,7 +180,11 @@ $(function(){
                 }); 
             });
         }, 1000);
-     }
+     };
+     
+     $('.icn-cross').live('click', function(){
+        $(this).parent().slideUp();
+     });
 });
 
 var scrollerInteval;
@@ -191,6 +195,7 @@ $(window).load(function () {
         sidebar.length && sidebar.data('fixed') == true && sidebar.css({position : "absolute", bottom: "auto", right: 0, left: "auto", top: sidebar.position().top - 126}) && sidebar.data("fixed", false);
         $('#pageslide-blanket').css('min-height', $(document).height());
         $('.pageslide-body-wrap').addClass('jlo');
+        $('.flash-privacy').show();
     });
 
     $('.more').hover(function () {
