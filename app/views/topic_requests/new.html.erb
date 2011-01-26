@@ -2,9 +2,10 @@
   <div class="header">
     <h2><%= t('.title') %></h2>
     <a href="#" class="pageslide-close"><%= t('layouts.application.header.request_topic.back_button')%></a>
-  </div>
+  </div>        
   <% javascript :form_validator, :form_script %>
   <%= form_for @topic_request do |f| %>
+    <div class="flash-privacy border-all">Please refrain from revealing your identity and sharing personal details you wouldn't want the entire internet to know.<span></span></div>
     <fieldset>
       <%= f.label :title %>
       <%= f.text_field :title, :required => "true" %>

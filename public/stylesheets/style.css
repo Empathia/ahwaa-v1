@@ -480,3 +480,10 @@ form + .recently-topics{padding-top:18px;}
 
 .loading{background-image: url('../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position: 0 50%; padding-left: 26px;}
 .legend.loading{padding-right: 26px; background-position: 100% 50%; padding-left: 0;}
+
+.flash-privacy{font-family: Arial; font-size: 11px; color: #52503b; padding: 11px 22px; background-color: #fffcd3; margin-top: 21px; position: relative; border: 1px solid #f4f0b8; line-height: 1.5; font-weight: bold;}
+.flash-privacy > span{width: 29px; height: 33px; position: absolute; left: -17px; top: 0; background: #fffcd3 url('../images/exclamation-mark.png') no-repeat 50% 50%;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px; 
+}
