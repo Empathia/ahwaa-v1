@@ -313,10 +313,10 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfeff', EndColorStr='#f2fbff')";
 }
 
-.responses {background-color: transparent; background-image: url("../../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position:100% 4px; padding-right:15px; display:inline!important; white-space:nowrap; float:right; margin-right: 10px; font-size: 11px;}
+.responses {background-color: transparent; background-image: url("../../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position:100% 4px; padding-right:15px; display:inline!important; white-space:nowrap; float:right; font-size: 11px;}
 .tags{margin: 0 10px;}   
 .tags > li:first-child{background-image: url('../../images/icn-tag.png'); background-repeat: no-repeat; background-position:100% 3px; padding-right: 25px;}
-
+.tags > .last-tag{margin-left: 10px;}
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border: 2px solid #f0f5f8; font-size: 11px;}
@@ -480,3 +480,11 @@ form + .recently-topics{padding-top:18px;}
 
 .loading{background-image: url('../../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position:100% 50%; padding-right: 26px;}
 .legend.loading{padding-left: 26px; background-position:0 50%; padding-right: 0;}
+
+.flash-privacy{font-family: Arial; font-size: 11px; color: #52503b; padding: 11px 22px; background-color: #fffcd3; margin-top: 21px; position: relative; border: 1px solid #f4f0b8; line-height: 1.5; font-weight: bold;}
+.exclamation{width: 29px; height: 33px; position: absolute; right: -17px; top: 0; background: #fffcd3 url('../../images/exclamation-mark.png') no-repeat 50% 50%;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px; 
+}
+.icn-cross{width: 7px; height: 7px; float:left; position: absolute; left: 6px; top: 6px; background: url('../../images/icn-cross.png') no-repeat 0 0; cursor: pointer;}

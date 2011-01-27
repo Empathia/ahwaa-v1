@@ -12,3 +12,6 @@
 #pm-wrapper .back-to-msgs .arrow{border-color: transparent transparent transparent #A7C7E3; border-width: 4px 0 4px 4px; margin: 2px 0 0 8px;}
 
 .placeimg{background-image: url('../images/pass_placeholder_ar.png');}
+
+.page-wrapper > .container{background: url('../images/bg-color-text-600-ar.jpg') no-repeat 50% 107px}
+.watch-video{margin-top: 20px;}

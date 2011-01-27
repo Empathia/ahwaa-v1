@@ -26,7 +26,7 @@ var avatars = {
     getMatchingAvatars: function(){
       var avatarsWrapper = $('.avatars-wrapper');
       avatarsWrapper.fadeIn(function(){
-          $('.loading').show();
+          $('.loading-avatar').show();
           avatarsWrapper.find('.avatars').children(':not(.custom)').remove();
           var genderId = $('#user_profile_attributes_gender_id').val(),
               ageId = $('#user_profile_attributes_age_id').val();

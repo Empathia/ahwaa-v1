@@ -5,9 +5,23 @@ body {
 }
 
 body > div{
-  height: 633px;
-  background: url('../../images/error-404-bg.png') no-repeat 50% 0;
+  height: 633px;                    
+  background-position: 50% 0; 
+  background-repeat: no-repeat;
+  background-image: url('../../images/error-404-bg.png');
   position: relative;
+}
+
+body > .rtl{
+  background-image: url('../../images/error-404-bg-ar.png');
+}
+
+body > .error-500{
+  background-image: url('../../images/error-500-bg.png');  
+}
+
+body > .error-500-rtl{
+  background-image: url('../../images/error-500-bg-ar.png');  
 }
 
 body > div > p{
