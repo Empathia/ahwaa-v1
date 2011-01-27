@@ -112,9 +112,11 @@ $(function(){
 
     $('.send-private-msg').live('click', function(){
         if(!$(this).hasClass('disabled')) {
-            $(this).addClass('disabled').closest('.private-msg').children('form').slideDown();
+            var private_form = $(this).addClass('disabled').closest('.private-msg');
+            //private_form.find('.flash-privacy').show();
+            private_form.children('form').slideDown();
             if (!$.browser.webkit) {
-                var textarea = $(this).closest('.private-msg').find('textarea');
+                var textarea = private_form.find('textarea');
                 textarea.attr('value', textarea.attr('placeholder'));
                 textarea.focus(function(){
                 textarea.val() == textarea.attr('placeholder') && textarea.val('');
@@ -183,7 +185,7 @@ $(function(){
      };
      
      $('.icn-cross').live('click', function(){
-        $(this).parent().slideUp();
+         $(this).closest('.flash-privacy').slideUp();
      });
 });
 

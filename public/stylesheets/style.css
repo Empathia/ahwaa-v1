@@ -63,7 +63,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
 .auth-wrapper > a.auth-form-active{height: 30px; text-decoration: none; border: none; left: -3px; padding: 3px 3px 0 3px;}
 
-.auth-wrapper span{float: left; width: 72px; padding: 0 10px; height: 30px;}
+.auth-wrapper > a > span{float: left; width: 72px; padding: 0 10px; height: 30px;}
 .sign-up-btn{border: 1px solid #94bddf; font-size: 17px; color: #ffffff; text-align: center;
   background-image: -moz-linear-gradient(top, #5998cc, #3778b7);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5998cc),color-stop(1, #3778b7));
@@ -394,17 +394,21 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .avatar.gold-heart > span,
 .points-wrapper > span.gold-heart{background-position:0 -90px}
 
+.response-user > .avatar-wrapper > .avatar{width: 40px; height: 40px;}
+.response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
+
 .private-msg{position:absolute; width:288px; background-color:#eff1f2; padding:3px; border:1px solid #ffffff; right:-20px; top:-19px; display:none; text-align:left; z-index:999; font-size:12px;
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)
 }
-.private-msg > form{display: block; background:#ffffff; display: none; padding:24px 16px 0; margin:0;}
+.private-msg > form{display: block; background:#ffffff; display: none; padding: 7px 16px 0; margin:0;}
 .private-msg > form > textarea{width:234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
 .private-msg-btns{text-align:right}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
 .private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:13px;}
 .private-msg > .avatar{float: right;}
+.form-private-msg > .flash-privacy{margin: 0 0 15px 0;}
 
 .inside{left:-20px}
 .inside .user-info{float:right}
@@ -480,11 +484,14 @@ form + .recently-topics{padding-top:18px;}
 
 .loading{background-image: url('../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position: 0 50%; padding-left: 26px;}
 .legend.loading{padding-right: 26px; background-position: 100% 50%; padding-left: 0;}
-
-.flash-privacy{font-family: Arial; font-size: 11px; color: #52503b; padding: 11px 22px; background-color: #fffcd3; margin-top: 21px; position: relative; border: 1px solid #f4f0b8; line-height: 1.5; font-weight: bold;}
-.exclamation{width: 29px; height: 33px; position: absolute; left: -17px; top: 0; background: #fffcd3 url('../images/exclamation-mark.png') no-repeat 50% 50%;
+              
+.flash-privacy{position: relative; padding-left: 17px; margin-top: 21px;}
+.flash-privacy > div{font-family: Arial; font-size: 11px; color: #52503b; padding: 11px 22px; background-color: #fffcd3;  border: 1px solid #f4f0b8; line-height: 1.5; font-weight: bold;}
+.exclamation{width: 29px; height: 33px; position: absolute; left: 0; top: 0; background: #fffcd3 url('../images/exclamation-mark.png') no-repeat 50% 50%;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px; 
 }
 .icn-cross{width: 7px; height: 7px; float: right; position: absolute; right: 6px; top: 6px; background: url('../images/icn-cross.png') no-repeat 0 0; cursor: pointer;}
+
+.auth-form-active > .flash-privacy{margin-bottom: 15px;}

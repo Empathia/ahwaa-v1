@@ -68,6 +68,7 @@ en:
     message_sent: Your message was sent successfully!
     message_empty: The message is empty
     no_activity: No recent activity                  
+    flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
   layouts:
     application:
       header:
@@ -83,6 +84,7 @@ en:
           title: "Title is empty"
           topic_details: "Topic details is empty"
           back_button: back
+          flash_alert: "Please refrain from revealing your identity and sharing personal details you wouldn't want the entire internet to know."
         sign_up_form:
           sign_up: Sign up
           legend: Please register and enjoy all the benefits of Ahwaa!
@@ -99,6 +101,7 @@ en:
           error_username_not: This username is not available
           error_password_empty: The password is empty
           error_password_short: The password is invalid
+          flash_alert: You are encouraged to use a pseudonym. Each user is responsible for protecting their own identity.
         login_form:
           login: Email or Username
           password: Password
@@ -188,6 +191,7 @@ en:
         anonymous_legend: "Anonymous Responses can't be rated."
         continue: Continue
         sign_up: Sign Up
+        flash_alert: "Please refrain from revealing your or someone else's identity when posting comments."
     comments:
       new_response: New Response
   replies:

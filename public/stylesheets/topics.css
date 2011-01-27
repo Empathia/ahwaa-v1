@@ -59,6 +59,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-padding{padding: 10px;}
+.response-padding > .flash-privacy{margin: 15px 0;}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
@@ -110,7 +111,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .response-user{height: 56px; min-height: 56px!important}
 .response-user .avatar-wrapper{margin-right: 10px;}
 
-.res-username{margin-bottom:7px; float: left; padding-top: 3px; color: #a1b6bf;}
+.res-username{margin-bottom:7px; padding-top: 3px; color: #a1b6bf;}
 .res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}
 .res-flag-btns{float: right; display: none; position: absolute; right: 13px; top: 33px;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}

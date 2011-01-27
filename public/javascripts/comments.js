@@ -302,7 +302,7 @@ $.fn.comments = function(options){
         return false;
     }).next().addClass('reply-new-response');
     
-    $('.comments-ls > li').live('mouseenter mouseleave', function(e){             
+    $('.comments-ls > li').css((!$.browser.msie || $.browser.version != '7.0') ? {'z-index': ''} : {}).live('mouseenter mouseleave', function(e){             
         if (e.type == 'mouseenter') {                                              
             $(this).children('.res-flag-btns').show();
         } else {

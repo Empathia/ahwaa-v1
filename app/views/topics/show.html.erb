@@ -99,11 +99,14 @@
           <br class="clear">
         </div>
       <% end %>  
-      <div class="response <%= "hidden" unless logged_in? %>">
-        <div class="response-padding">
+      <div class="response <%= "hidden" unless logged_in? %>">        
+        <div class="response-padding">                        
           <em class="add_comments_top"><%= current_username %></em>
+          <div class="flash-privacy">
+            <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+          </div>
           <%= f.text_area :content, :class => 'comment_content', :placeholder => t('.form.write_response') %>
-        </div>
+        </div> 
         <div class="res-types-wrapper response-padding">
           <div class="radios">
              <span class="res-lbl"><%= t('.form.type_response') %></span>

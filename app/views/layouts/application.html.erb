@@ -65,7 +65,10 @@
                           <label><%= t('.header.sign_up_form.username') %></label>
                           <%= f.text_field :username, :required => "true", :maxlength => 35 %>
                         </li>
-                      </ul>
+                      </ul>                    
+                      <div class="flash-privacy">
+                        <div class="border-all"><%= t('.header.sign_up_form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+                      </div>
                       <div class="errors"></div>
                       <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path %> <%=t('.header.sign_up_form.note_pt3')%></p>
                       <%= f.submit t('.header.sign_up_form.sign_up'), :class => "auth-submit border-all" %>

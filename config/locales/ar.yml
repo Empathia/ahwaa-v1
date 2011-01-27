@@ -68,6 +68,7 @@ ar:
     message_sent: تم إرسال رسالتك بنجاح!
     message_empty: رسالة فارغة
     no_activity: لا يوجد نشاطًا جديدًا
+    flash_alert: .من فضلك لا نصيب هويتك وتفاصيل شخصية. لا يمكننا أن نضمن أن يمكن الوثوق بها جميع مستخدمي هذا الموقع. توخي الحذر عند التواصل مع الآخرين على الموقع
   layouts:
     application:
       header:
@@ -83,6 +84,7 @@ ar:
           title: "عنوان فارغ"
           topic_details: "تفاصيل الموضوع فارغ"
           back_button: العودة
+          flash_alert: .يرجى الامتناع عن الكشف عن هويتك وتفاصيل شخصية تقاسم كنت لا تريد أن تعرف شبكة الإنترنت بالكامل
         sign_up_form:
           sign_up: "قم بالتسجيل"
           legend: يرجى التسجيل للتمتع بكافة مزايا تجاوز
@@ -98,7 +100,8 @@ ar:
           error_username_empty: اسم المستخدم فارغ
           error_username_not: اسم المستخدم هذا غير موجود
           error_password_empty: كلمة المرور فارغة
-          error_password_short: كلمة المرور غير صالحة
+          error_password_short: كلمة المرور غير صالحة 
+          flash_alert: .أنت تشجيع لاستخدام اسم مستعار. لكل مستخدم مسؤولة عن حماية هويتهم
         login_form:
           login: البريد الإلكتروني أو اسم المستخدم
           password: كلمة المرور
@@ -186,6 +189,7 @@ ar:
         anonymous_legend: "لا يمكن أن يتم تقييم الردود المجهولة"
         continue: مواصلة
         sign_up: أنشئ حساب
+        flash_alert: .يرجى الامتناع عن كشف أو هوية شخص آخر عند نشر التعليقات        
     comments:
       new_response: استجابة جديدة
   replies:

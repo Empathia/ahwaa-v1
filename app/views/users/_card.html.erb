@@ -22,6 +22,9 @@
     <br class="clear" />
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg'}, :remote => true do |f| %>
+    <div class="flash-privacy">
+      <div class="border-all"><%=  t('private_message.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+    </div>
     <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true %>
     <div class="private-msg-btns">
       <%= link_to t('private_message.cancel'), '#', :class => 'cancel' %>
