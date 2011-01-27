@@ -91,9 +91,9 @@ aside{overflow: hidden;}
 .avatars-list{display:none;overflow:hidden;padding:0 18px;}
 
 .avatars{overflow:hidden;} 
-.avatars > li{margin:15px;float:left;position:relative;}
+.avatars > li{margin:15px; float:left; position:relative;}
 .avatars > li > .avatar > a{outline:0 none}
-.avatars > .active{margin:13px 18px;border:2px solid #4082bf}
+.avatars > .active{margin:13px; border:2px solid #4082bf}
 .avatars > .active > .avatar{border:1px solid #3f71a0;
   -moz-border-radius:0!important;
   -webkit-border-radius:0!important;
