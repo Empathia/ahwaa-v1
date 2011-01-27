@@ -1,5 +1,5 @@
 var form = $('.login-form');
-form.find('.loading').removeClass('loading');
+form.find('.loading').removeClass('loading').end().find('p.error').remove();
 <% if !@user %>      
     form.find('.login').append('<p class="error"><%= escape_javascript t('layouts.application.header.login_form.not_found') %></p>');
 <% elsif !@authenticated %>
