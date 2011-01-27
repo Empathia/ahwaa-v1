@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default :from => "no-reply@transcend.com"
+  default :from => "no-reply@ahwaa.org"
 
   def sign_up_confirmation(user)
     @user = user
