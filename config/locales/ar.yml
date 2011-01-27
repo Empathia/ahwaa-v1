@@ -187,8 +187,8 @@ ar:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
         type_response: "نوع من الاستجابة :"
-        anonymous_legend: "لا يمكن أن يتم تقييم الردود المجهولة"
-        continue: مواصلة
+        anonymous_legend: الرجاء الرد
+        continue: أو البقاء مجهولين
         sign_up: أنشئ حساب
         flash_alert: .يرجى الامتناع عن كشف أو هوية شخص آخر عند نشر التعليقات        
     comments:

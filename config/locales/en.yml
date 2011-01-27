@@ -189,8 +189,8 @@ en:
         write_response: Click here to write your response.
         type_response: 'This is a:'
         post_response: Post Response
-        anonymous_legend: "Anonymous Responses can't be rated."
-        continue: Continue
+        anonymous_legend: To respond please
+        continue: or Stay Anonymous
         sign_up: Sign Up
         flash_alert: "Please refrain from revealing your or someone else's identity when posting comments."
     comments:
