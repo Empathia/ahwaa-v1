@@ -47,7 +47,7 @@ Lgbt::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'tanscend.com' }
+  config.action_mailer.default_url_options = { :host => 'ahwaa.org' }
   #leave this option only if using send mail as delivery mechanism
   ActionMailer::Base.smtp_settings[:enable_starttls_auto] = false
 end
