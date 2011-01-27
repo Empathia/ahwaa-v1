@@ -59,6 +59,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-padding{padding: 10px;}
+.response-padding > .flash-privacy{margin: 15px 0;}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
@@ -110,7 +111,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .response-user{height: 56px; min-height: 56px!important}
 .response-user .avatar-wrapper{margin-left: 10px;}
 
-.res-username{margin-bottom:7px; float:right; padding-top: 3px; color: #a1b6bf;}
+.res-username{margin-bottom:7px; padding-top: 3px; color: #a1b6bf;}
 .res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}
 .res-flag-btns{float:left; display: none; position: absolute; left: 13px; top: 33px;}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-left: 10px; text-decoration: none;}
@@ -182,7 +183,7 @@ p:hover .icn{display: inline;}
 .related-carrousel > ul > li > a{color: #7e838a;}     
 .related-carrousel .rd-related-content{margin-left: 0;}
 
-.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; right: -30px; margin:42px 0 20px 0; width: 18px;  float:right;}
+.social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; right: -30px; margin:42px 0 20px 0; width: 18px;  float:right; z-index: 99;}
 .social-bookmarkers > a{float:right; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../../images/icn-social.png'); background-repeat: none; overflow: hidden;}
 .facebook{background-position:100% 0;}
 .facebook:hover{background-position:100% -18px;}
@@ -226,3 +227,8 @@ p:hover .icn{display: inline;}
 .blue-btn > span > span{background-position:100% -25px; float:right; background-repeat: repeat-x;}
 .w-arrow{float:right;}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width:5px 5px 5px 0px; float:left; height: 0; width: 0; margin:7px 5px 0 0;}
+
+.social-bookmarkers > .flash-privacy{position: absolute; right: 31px; top: 0; white-space: nowrap; padding-right: 6px; margin-top: 0; display: none;}
+.social-bookmarkers > .flash-privacy > div{ padding-right: 50px; }
+.social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;} 
+.flash-arrow{position: absolute; top: 12px; right: 0; border-color: transparent #fffcd3 transparent transparent; border-style: solid; border-width:7px 0px 7px 7px; float:right; height: 0; width: 0;}

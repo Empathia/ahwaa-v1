@@ -185,7 +185,7 @@ $(function(){
      };
      
      $('.icn-cross').live('click', function(){
-         $(this).closest('.flash-privacy').slideUp();
+         $(this).closest('.flash-privacy').addClass('closed-once').slideUp();
      });
 });
 

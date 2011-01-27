@@ -13,7 +13,12 @@ $(function(){
         windowObj = $(window),
         rtl = $('html').attr('dir') == 'rtl';
         
-        
+    socialBookmarkers.mouseleave(function(){
+        $(this).children('.flash-privacy').hide();        
+    }).find('a').hover(function(){          
+        $(this).parent().children('.flash-privacy:not(.closed-once)').css('top', $(this).position().top - 10).show();
+    });
+    
     windowObj.load(function(){     
         sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 126}).data('fixed', true);
     }); 

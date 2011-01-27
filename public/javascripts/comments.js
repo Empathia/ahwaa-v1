@@ -302,7 +302,12 @@ $.fn.comments = function(options){
         return false;
     }).next().addClass('reply-new-response');
     
-    $('.comments-ls > li').css((!$.browser.msie || $.browser.version != '7.0') ? {'z-index': ''} : {}).live('mouseenter mouseleave', function(e){             
+    var commentsLists = $('.comments-ls > li');
+    (!$.browser.msie || $.browser.version != '7.0') ? commentsLists.css('z-index', '') : commentsLists.each(function(i){
+        $(this).css('z-index', commentsLists.length - i);
+    });
+    
+    commentsLists.live('mouseenter mouseleave', function(e){             
         if (e.type == 'mouseenter') {                                              
             $(this).children('.res-flag-btns').show();
         } else {

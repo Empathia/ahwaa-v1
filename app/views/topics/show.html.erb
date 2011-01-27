@@ -30,6 +30,9 @@
         <div class="social-bookmarkers border-left">
           <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook' %>
           <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter' %>
+          <div class="flash-privacy">
+            <div class="border-all"><%= t('.icons.social.flash_alert')%><span class="flash-arrow"></span><span class="icn-cross"></span><span class="exclamation-center"></span></div>
+          </div>
         </div>
       </article>
     </div>

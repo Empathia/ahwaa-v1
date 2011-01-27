@@ -19,7 +19,7 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 .feature-wrapper{width: 302px; margin: 5px 21px 5px 5px; float: left; text-align: center;}
 .feature{background-color: #ffffff; height: 175px; border: 1px solid #a8bfcb; float: left; width: 100%; margin-top: 9px;}
 .features li:first-child{margin-left: 1px;}
-.features li:last-child{margin-right: 1px;}
+.features > .last-feature{margin-right: 1px;}
 
 .feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin-bottom: 7px;}
 .feature-wrapper p{color: #707f8a; font-size: 16px; text-shadow: 0 1px 1px #f7fbfe;}
@@ -61,4 +61,4 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 }
   
 .watch-video > div > a:hover{text-decoration: none;}
-.watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px; float: left; padding-left: 22px;}
+.watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px 8px 0 8px; float: left; padding: 0 0 8px 22px;}
