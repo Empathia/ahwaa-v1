@@ -25,23 +25,21 @@ class PrivateMessage < ActiveRecord::Base
 
   # Wether or not the conversation has any of its relies unread by the passed user
   def unread_by?(user)
-    received_message.unread? || replies.map { |r|
+    received_message.try(:unread?) || replies.map { |r|
       r.received_message if r.recipient == user
     }.compact.any?(&:unread?)
   end
 
   # Marks all the conversation for the passed users as read
   def read_for!(user)
-    received_message.read!
+    received_message.read! if received_message
     replies.map { |r|
       r.received_message if r.recipient == user
     }.compact.each(&:read!)
   end
 
   def received_messages_thread(user)
-    received_message.conversation_replies.map do |r|
-      r.received_message if r.recipient == user
-    end.compact
+    ([received_message] + replies.where(:recipient_id => user.id).map(&:received_message)).compact
   end
 
   private
