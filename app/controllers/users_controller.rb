@@ -17,9 +17,6 @@ class UsersController < ApplicationController
 
   def update
     @user.update_attributes(params[:user])
-    @submitted_form = params[:user][:profile_attributes] &&
-      params[:user][:profile_attributes][:religion_id] ?
-      'profile' : (params[:user][:password] ? 'password' : 'account')
   end
 
   def destroy
