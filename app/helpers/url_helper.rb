@@ -2,8 +2,7 @@ module UrlHelper
   def with_subdomain(subdomain)
     subdomain = (subdomain || "")
     subdomain += "." unless subdomain.empty?
-    # TODO: remove the (2) when deploying to the real domain
-    [subdomain, request.domain(2), request.port_string].join
+    [subdomain, request.domain, request.port_string].join
   end
 
   def url_for(options = nil)
