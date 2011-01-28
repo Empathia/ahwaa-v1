@@ -321,7 +321,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border: 2px solid #f0f5f8; font-size: 11px;}
 .response-wrapper.new-response > div{border: 1px solid #d6d6d6; padding: 6px 7px;}                                                
-.comment_content{color: #61656A; width: 100%; padding: 0; height: 16px; border: none; margin-top: 4px; resize: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px;}
+.comment_content{color: #61656A; width: 100%; padding: 0; height: 16px; border: none; margin-top: 4px; resize: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px; overflow: hidden;}
 
 .new-response a{display: block; color: #868484; padding-right: 15px; background-image: url('../../images/icn-reply.png'); background-repeat: no-repeat; background-position:100% 2px;}
         
@@ -349,7 +349,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 #pageslide-slide-wrap > div form{float:right; padding-right:30px; font-size:12px; font-family:Arial, Helvetica, sans-serif; width:496px;}
 #pageslide-slide-wrap > div form > fieldset{border:none; margin:0; padding:0;}
 #pageslide-slide-wrap > div form label{font-size:13px; margin:21px 0 6px; line-height:1em; display:block;} 
-#pageslide-slide-wrap > div form input[type="text"]{font-size:12px; height:12px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:474px; font-family:Arial, Helvetica, sans-serif   
+#pageslide-slide-wrap > div form input[type="text"]{font-size:12px; height:15px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:474px; font-family:Arial, Helvetica, sans-serif   
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;

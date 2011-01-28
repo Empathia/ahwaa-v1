@@ -204,13 +204,13 @@ p:hover .icn{display: inline;}
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 .help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0; line-height: 1em;}
 
-.sign-up-or-continue > div{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}               
-.sign-up-or-continue .sign-up-lk{margin-left: 10px;}
+.sign-up-or-continue > div{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}
+.sign-up-or-continue .sign-up-lk{margin:0 5px 0 10px;}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-right: 17px;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px;}
-.continue{color: #5e7587;}
-.legend-text{margin:7px 0 0 10px; float:right;}
+.continue{color: #a6a48b;}
+.legend-text{margin:7px 0 0 5px; float:right;}
 
 .reply-to + .new-response,
 .reply-to + .add_comments,

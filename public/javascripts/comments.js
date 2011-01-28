@@ -84,9 +84,12 @@ function collapseAllComments(){
 };
 
 $.fn.filter2ndLevelComments = function(filter){
+    
     $(this).children('.comments-ls').children().each(function(){                              
       var ndLevelComments = $(this).find('li');     
-          ndLevelCommentsNotUseful = ndLevelComments.filter(':not(' + filter + ')');                  
+          ndLevelCommentsNotUseful = ndLevelComments.filter(':not(' + filter + ')');
+          
+          console.log(!$(this).filter(filter).length);
       ndLevelComments.length == ndLevelCommentsNotUseful.length && !$(this).filter(filter).length ?  $(this).hide() : ndLevelCommentsNotUseful.hide();
     });    
 };
@@ -326,7 +329,7 @@ $.fn.comments = function(options){
             expandBtn = $('.expand-btn'),
             commentsGroupToSlideUp = [],
             commentsGroupToSlideDown = [];
-        if(cbs.length === 0) {               
+        if(cbs.length === 0) {
             if(show_useful){
                 allComments.each(function(){
                     var commentsClon = $('#' + $(this).attr('id') + '_clon');
@@ -336,23 +339,23 @@ $.fn.comments = function(options){
                $('.comments.clon').find('li:not(.useful)').show();
                expandBtn.hasClass('hide') ? expandAll() : collapseAllComments();
             }
-        } else {
+        } else {                 
             var filter = '';
             cbs.each(function() {
-                filter += (show_useful ? 'li.useful.' : 'li.') + $(this).val() + ', ';
-            });                      
-            filter = filter.replace(/(\s+)?.$/, "");
+                filter += (show_useful ? 'li.useful.' : 'li.') + $(this).val() + ',';
+            });
+            filter = filter.replace(/(\s+)?.$/, "");            
             allComments.each(function(){
                var comments = $(this);
                    commentsClon = $('#' + comments.attr('id') + '_clon');
                if(comments.find(filter).length == 0){
                    commentsClon.length && commentsGroupToSlideUp.push(commentsClon);
                }
-               else{   
-                   if(commentsClon.length){   
+               else{                                 
+                   if(commentsClon.length){     
                        commentsClon.filter2ndLevelComments(filter);  
                    }
-                   else{                    
+                   else{                 
                        var index = comments.attr('id').replace('comments_', ''),
                            link = $('#add_' + index);
                        var commentsClon = cloneComments(link, comments.outerHTML(), index, link.hasClass('has_comments'));
