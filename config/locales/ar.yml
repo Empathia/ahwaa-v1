@@ -249,6 +249,7 @@ ar:
           back_to_msgs: عودة إلى رسائل
           add_reply: انقر هنا لإضافة الرد.
           send_reply: إرسال الرد
+          send_pm: أرسل رسالة خاصة
     inbox:
       no_messages: لا يوجد لديك رسائل خاصة
       empty_tip: "نصيحة : لإرسال الرسائل!"

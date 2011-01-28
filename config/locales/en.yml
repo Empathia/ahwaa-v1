@@ -251,6 +251,7 @@ en:
           back_to_msgs: Back to messages
           add_reply: Click here to add a reply.
           send_reply: Send Reply
+          send_pm: Send Private Message
     inbox:
       no_messages: You have no private messages
       empty_tip: "Tip: To send messages, roll over someone's profile and compose a message!"

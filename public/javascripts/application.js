@@ -65,7 +65,8 @@ $(document).ready(function() {
         }
     });
                                                     
-    $('<img />').attr('src', '/images/loading-s.gif');            
+    $('<img />').attr('src', '/images/loading-s-gray.gif');
+    $('<img />').attr('src', '/images/loading-s-white.gif');
     
 });
 
