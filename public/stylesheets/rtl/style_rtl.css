@@ -382,7 +382,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c3cfbe),color-stop(1, #dee5da));
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da')";
-}
+}             
 .avatar > span{width:30px; height:30px; display:block; position:absolute; right:17px; top:44px; background:url("../../images/hearts.png") no-repeat transparent}
 .avatar.no-level > span{background:none;}
 .avatar.green-heart > span,
@@ -396,6 +396,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 
 .response-user > .avatar-wrapper > .avatar{width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
+.response-user > .avatar-wrapper > .avatar > span{right: 8px; top: 29px;}
 
 .private-msg{position:absolute; width:288px; background-color:#eff1f2; padding:3px; border:1px solid #ffffff; left:-20px; top:-19px; display:none; text-align: right; z-index:999; font-size:12px;
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);

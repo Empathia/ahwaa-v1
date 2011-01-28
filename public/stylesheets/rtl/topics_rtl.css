@@ -110,6 +110,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 
 .response-user{height: 56px; min-height: 56px!important}
 .response-user .avatar-wrapper{margin-left: 10px;}
+.response-user .avatar-wrapper
 
 .res-username{margin-bottom:7px; padding-top: 3px; color: #a1b6bf;}
 .res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}

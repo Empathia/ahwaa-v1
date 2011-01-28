@@ -88,8 +88,6 @@ $.fn.filter2ndLevelComments = function(filter){
     $(this).children('.comments-ls').children().each(function(){                              
       var ndLevelComments = $(this).find('li');     
           ndLevelCommentsNotUseful = ndLevelComments.filter(':not(' + filter + ')');
-          
-          console.log(!$(this).filter(filter).length);
       ndLevelComments.length == ndLevelCommentsNotUseful.length && !$(this).filter(filter).length ?  $(this).hide() : ndLevelCommentsNotUseful.hide();
     });    
 };
@@ -206,8 +204,10 @@ $.fn.comments = function(options){
             }
         }
     }).live('keypress', function(e){
-        var textarea = $(this);
-        e.keyCode == '13' && textarea.height(textarea.height() + 13);
+        if(e.keyCode == '13'){
+            var textarea = $(this);
+            textarea.height(textarea.height() + 15);
+        }
     }).attr('paceholder', 'nomedigas'); 
     
     $('.add_comments:visible input[type=submit]').live('mouseover', function () {
