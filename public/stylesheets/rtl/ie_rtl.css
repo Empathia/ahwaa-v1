@@ -17,3 +17,7 @@ input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_erro
 .over-form{border: 1px solid #d4dce2;}
 
 .auth-wrapper > a{height: auto; right: 0; padding: 0;}
+
+.over-form > ul > li > input[type="text"],
+.over-form > ul > li > input[type="email"],
+.over-form > ul > li > input[type="password"]{line-height: 2.8;}
