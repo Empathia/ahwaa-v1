@@ -12,7 +12,7 @@
     <tr>   
       <td class="created_at"><%= l topic_request.created_at, :format => :short %></td>
       <td><%= topic_request.title %></td>
-      <td><%= topic_request.user.username %></td>
+      <td><%= topic_request.user ? topic_request.user.username : "Deleted user" %></td>
       <td>
         <%= link_to 'Promote to topic', new_admin_topic_path(:from => topic_request.id) %>
         <%= link_to 'Delete', admin_topic_request_path(topic_request), :method => :delete %></td>
