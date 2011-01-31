@@ -59,7 +59,8 @@ aside section.need-help{padding:13px 0; text-align:center}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}
 
 .response-padding{padding: 10px;}
-.response-padding > .flash-privacy{margin: 15px 0;}
+.response-padding > .flash-privacy{margin: 15px 0; overflow: hidden;}
+.response-padding > .flash-privacy > div{width: 100%; float:right;}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}

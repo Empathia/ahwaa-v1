@@ -22,7 +22,7 @@ $.fn.TextAreaExpander = function(minHeight, maxHeight) {
 		ResizeTextarea(this);
 		if (!this.Initialized) {
 			this.Initialized = true;
-			$(this).css("padding-top", 1).css("padding-bottom", 0);
+			$(this).css("padding-top", 0).css("padding-bottom", 0);
 			$(this).bind("keyup", ResizeTextarea).bind("focus", ResizeTextarea);
 		}
 	});
