@@ -69,6 +69,7 @@ en:
     message_empty: The message is empty
     no_activity: No recent activity                  
     flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
+    send_pm: Send Private Message
   layouts:
     application:
       header:
@@ -251,7 +252,6 @@ en:
           back_to_msgs: Back to messages
           add_reply: Click here to add a reply.
           send_reply: Send Reply
-          send_pm: Send Private Message
     inbox:
       no_messages: You have no private messages
       empty_tip: "Tip: To send messages, roll over someone's profile and compose a message!"
