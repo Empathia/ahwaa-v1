@@ -62,8 +62,10 @@ $.fn.slideDownComments = function(commentsOriginal, callback){
   commentsClon.slideDown(function(){
       calculateArrowsPositions();   
       commentsOriginal && loadState(commentsClon, commentsOriginal);
+      var commentsTextarea = $('.add_comments.clon:visible textarea.comment_content');
+      commentsTextarea.TextAreaExpander(16);
       if (!$.browser.webkit) {
-          $('.add_comments.clon:visible textarea.comment_content').attr('placeholder') && $('.add_comments.clon:visible textarea.comment_content').attr('value',$('.add_comments.clon:visible textarea.comment_content').attr('placeholder'));
+          commentsTextarea.attr('placeholder') && commentsTextarea.attr('value', commentsTextarea.attr('placeholder'));
       }
       commentsClon.css('visibility', 'visible');
       callback && callback();
@@ -203,12 +205,7 @@ $.fn.comments = function(options){
                 $(this).val(replacement);
             }
         }
-    }).live('keypress', function(e){
-        if(e.keyCode == '13'){
-            var textarea = $(this);
-            textarea.height(textarea.height() + 15);
-        }
-    }).attr('paceholder', 'nomedigas'); 
+    }); 
     
     $('.add_comments:visible input[type=submit]').live('mouseover', function () {
         $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
@@ -283,6 +280,7 @@ $.fn.comments = function(options){
             index = newResponse.closest('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
         newResponse.hasClass('reply-new-response') && addCommentForm.addClass('reply-new-response');
         addCommentForm.attr('id', id).addClass('clon no-arrow').find('.comm-arrow').remove();
+        addCommentForm.find('.comment_content').TextAreaExpander(16);
         newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
         newResponse.replaceWith(addCommentForm);  
         $('#' + id).data('newResponse', newResponseClon).slideDown(function(){

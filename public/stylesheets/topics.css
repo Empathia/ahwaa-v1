@@ -177,7 +177,7 @@ a.no_comments{
 .icn:hover > span{display: block;}
 p:hover .icn{display: inline;}
 
-.related-carrousel{overflow: hidden; width: 660px; float: left; position: relative; height: 168px;}
+.related-carrousel{overflow: hidden; width: 660px; float: left; position: relative; max-height: 168px;}
 .related-carrousel > ul{overflow: hidden;}
 .related-carrousel > ul > li{width: 206px; overflow: hidden; float: left; margin: 0 20px 20px 0;}
 .related-carrousel > ul > li > a:first-child{float: left; margin-right: 15px;}
