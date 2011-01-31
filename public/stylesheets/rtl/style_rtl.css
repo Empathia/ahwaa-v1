@@ -495,4 +495,4 @@ form + .recently-topics{padding-top:18px;}
 }
 .icn-cross{width: 7px; height: 7px; float:left; position: absolute; left: 6px; top: 6px; background: url('../../images/icn-cross.png') no-repeat 0 0; cursor: pointer;}
 
-.auth-form-active > .flash-privacy{margin-bottom: 15px;}
+.auth-form-active > .flash-privacy{margin:7px 0 15px 0;}
