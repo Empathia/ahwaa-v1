@@ -2,7 +2,7 @@
 // Author: Joseph Huckaby
 
 function loadZeroClipboard( id, oncomplete ){
-  ZeroClipboard.setMoviePath( 'ZeroClipboard.swf' );
+  ZeroClipboard.setMoviePath( '/swfs/ZeroClipboard.swf' )
   window.clip = new ZeroClipboard.Client();
   window.clip.addEventListener('complete', function (client, text) {
     oncomplete(client, text);
