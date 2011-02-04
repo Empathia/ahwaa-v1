@@ -73,7 +73,7 @@ en:
   layouts:
     application:
       header:
-        switch_to_english: 'ﺔﻴﺑﺮﻌﻟﺍ ﺔﻐﻠﻟﺎﺑ'
+        switch_to_english: 'تصفّح النسخة العربية'
         auth:
           sign_up: Sign Up
           login: Login

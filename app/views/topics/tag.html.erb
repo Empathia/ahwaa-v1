@@ -3,7 +3,7 @@
     <div class="items-wrapper">
       <section class="topics border-all">
         <div class="tags-title">
-          <h2>Youth Topics</h2>
+          <h2><%= params[:tag] %></h2>
           <p class="order">
             <%= t '.sort_by.label' %>
             <%= link_to t('.sort_by.newest'), nil, :class => active_class %>
