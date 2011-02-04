@@ -1,263 +1,303 @@
-(function ($) {
-    $.fn.pageSlide = function (options) {
+$.fn.pageSlide = function(opts) { 
+  var settings = $.extend({
+    height: '85%',
+    loading: false,
+    buttons : {
+      back : {
+        display: true,
+        label: "Back to site"
+      },
+      copy_url : {
+        display: true,
+        label: "Copy URL",
+        success: "Copied to clipboard!"
+      },
+      view_original : {
+        display: true,
+        label: "View Original"
+      },
+      bookmarkers : {
+        fb_share : {
+          display: true,
+          label: "Share"
+        },
+        display: true 
+      },
+      prev : {
+        display: true,
+        label: "PREV"
+      },
+      next : {
+        display: true,
+        label: "NEXT"
+      }
+    },     
+    duration: 'normal',
+    direction: 'top',
+    modal: false
+  }, opts);
 
-        var settings = $.extend({
-            width: "300px",
-            // Accepts fixed widths
-            duration: "normal",
-            // Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
-            direction: "left",
-            // default direction is left.
-            modal: false,
-            // if true, the only way to close the pageslide is to define an explicit close class. 
-            _identifier: $(this)
-        }, options);
-
-        // these are the minimum css requirements for the pageslide elements introduced in this plugin.
-        var pageslide_slide_wrap_css = {
-            position: 'fixed',
-            width: '0',
-            top: '0',
-            height: '100%',
-            zIndex: '999'
-        };
-
-        var pageslide_body_wrap_css = {
-            position: 'relative',
-            zIndex: '0'
-        };
-
-        var pageslide_blanket_css = {
-            position: 'absolute',
-            top: '0px',
-            left: '0px',
-            height: $(document).height(),
-            width: '100%',
-            opacity: '0.0',
-            backgroundColor: 'black',
-            zIndex: '1',
-            display: 'none'
-        };
+  var page = $(document),
+      body = $('body'),
+      htmlDom = $('html'),
+      collection = $(this),
+      size = collection.size(),                          
+      current = false;
+            
+  function _initialize(anchor) {
+    if($('#pageslide-body-wrap').length != 0){
+      var psSlideContent = $('#pageslide-content');
+      psSlideContent.children('iframe').length == 0 && !new RegExp(location.host, 'gi').test(collection.eq(0).attr('href')) && $('<iframe />').attr('id', 'pageslide-iframe').appendTo(psSlideContent);
+      return;
+    }
+    
+    var psBodyWrap = $('<div />').attr('id', 'pageslide-body-wrap');
+    body.children(':not(script)').wrapAll(psBodyWrap);
+    
         
-        function _initialize(anchor) {
+    var psSlideContent = $('<div/>').attr('id', 'pageslide-content');
+    psSlideContent.append(_addButtonsBar());  
+                                                                                   
 
-            // Create and prepare elements for pageSlide
-            if ($("#pageslide-body-wrap, #pageslide-content, #pageslide-slide-wrap").size() == 0) {
+    !new RegExp(location.host, 'gi').test(collection.eq(0).attr('href')) && $('<iframe />').attr('id', 'pageslide-iframe').appendTo(psSlideContent);
 
-                var psBodyWrap = document.createElement("div");
-                $(psBodyWrap).css(pageslide_body_wrap_css);
-                //$(psBodyWrap).attr("id", "pageslide-body-wrap").width($("body").width());
-                $(psBodyWrap).attr("id", "pageslide-body-wrap");
-                $("body").contents().wrapAll(psBodyWrap);
-
-                var psSlideContent = document.createElement("div");
-                $(psSlideContent).attr("id", "pageslide-content").width(settings.width);
-
-                var psSlideWrap = document.createElement("div");
-                $(psSlideWrap).css(pageslide_slide_wrap_css);
-                $(psSlideWrap).attr("id", "pageslide-slide-wrap").append(psSlideContent);
-                $("body").append(psSlideWrap);
-
-            }
-
-            // introduce the blanket if modal option is set to true.
-            if ($("#pageslide-blanket").size() == 0 && settings.modal == true) {
-                var psSlideBlanket = document.createElement("div");
-                $(psSlideBlanket).css(pageslide_blanket_css);
-                $(psSlideBlanket).attr("id", "pageslide-blanket");
-                $("body").append(psSlideBlanket);
-                $("#pageslide-blanket").click(function () {
-                    return false;
-                });
-            }
-
-            // Callback events for window resizing
-            /*
-            $(window).resize(function () {                       
-                $("#pageslide-body-wrap").width($("body").width());
-            });
-            */
-
-            // mark the anchor!
-            $(anchor).attr("rel", "pageslide");
-
-        }
-
-        function _openSlide(elm) { 
-            if ($("#pageslide-slide-wrap").width() != 0) return false;
-            _showBlanket();
-            // decide on a direction
-            if (settings.direction == "right") {
-                direction = {
-                    right: "-" + settings.width
-                };
-                $("#pageslide-slide-wrap").css({
-                    left: 0
-                });
-                _overflowFixAdd();
-            }
-            else {
-                direction = {
-                    left: "-" + settings.width
-                };
-                $("#pageslide-slide-wrap").css({
-                    right: 0
-                });
-            }
-            $("#pageslide-slide-wrap").animate({
-                width: settings.width
-            }, settings.duration);
-            if ($.browser.webkit || $.browser.msie) {
-                $('header').animate({
-                    left: -556
-                });
-            }
-            $('#pageslide-body-wrap').css('overflow', 'hidden');
-            $("#pageslide-body-wrap").animate(direction, settings.duration, function () {
-                $.ajax({
-                    type: "GET",
-                    url: $(elm).attr("href"),
-                    success: function (data) {
-                        $("#pageslide-content").css("width", settings.width).html(data).queue(function () {
-                            $(this).dequeue();
-
-                            // add hook for a close button
-                            $(this).find('.pageslide-close').unbind('click').click(function (elm) {
-                                _closeSlide(elm);
-                                $(this).find('pageslide-close').unbind('click');
-                            });
-                            $('.new_topic_request').find('input[type=submit]').formValidator(
-                                {
-                                    'errors': {
-                                        'text': I18n.t('layouts.application.header.request_topic.title'),
-                                        'textarea': I18n.t('layouts.application.header.request_topic.topic_details')
-                                    }
-                                }
-                            );
-                        });
-                    }
-                });
-            });
-        }
-
-        function _closeSlide(event) {
-            if ($(event)[0].button != 2 && $("#pageslide-slide-wrap").css('width') != "0px") { // if not right click.
-                $.fn.pageSlideClose(settings);
-            }
-        }
-
-        // this is used to activate the modal blanket, if the modal setting is defined as true.
-
-
-        function _showBlanket() {
-            if (settings.modal == true) {
-                $("#pageslide-blanket").toggle().animate({
-                    opacity: '0.25'
-                }, 'fast', 'linear');
-            }
-        }
-
-        // fixes an annoying horizontal scrollbar.
-
-
-        function _overflowFixAdd() {
-            ($.browser.msie) ? $("body, html").css({
-                overflowX: 'hidden'
-            }) : $("body").css({
-                overflowX: 'hidden'
-            });
-        }
-
-        // Initalize pageslide, if it hasn't already been done.
-        _initialize(this);
-        return this.each(function () {
-            $(this).unbind("click").bind("click", function () {
-                _openSlide(this);
-                $("#pageslide-slide-wrap").unbind('click').click(function (e) {
-                    //if (e.target.tagName != "A") return false;
-                });
-                if (settings.modal != true) {
-                    $(document).unbind('click').click(function (e) {
-                        if (e.target.tagName != "A") {
-                            _closeSlide(e);
-                            return false;
-                        }
-                    });
-                }
-                return false;
-            });
-        });
-
-    };
-})(jQuery);
-
-// pageSlideClose allows the system to automatically close any pageslide that is currently open in the view.
-(function ($) {
-    $.fn.pageSlideClose = function (options) {
-
-        var settings = $.extend({
-            width: "300px",
-            // Accepts fixed widths
-            duration: "normal",
-            // Accepts standard jQuery effects speeds (i.e. fast, normal or milliseconds)
-            direction: "left",
-            // default direction is left.
-            modal: false,
-            // if true, the only way to close the pageslide is to define an explicit close class. 
-            _identifier: $(this)
-        }, options);
-
-        function _hideBlanket() {
-            if ( //settings.modal == true && //commented to allow to close pageSlide with the 'escape' key even if modal is set to true
-            $("#pageslide-blanket").is(":visible")) {
-                $("#pageslide-blanket").animate({
-                    opacity: '0.0'
-                }, 'fast', 'linear', function () {
-                    $(this).hide();
-                });
-            }
-        }
-
-        function _overflowFixRemove() {
-            ($.browser.msie) ? $("body, html").css({
-                overflowX: ''
-            }) : $("body").css({
-                overflowX: ''
-            });
-        }
-
-        _hideBlanket();
-        direction = ($("#pageslide-slide-wrap").css("left") != "0px") ? {
-            left: "0"
-        } : {
-            right: "0"
-        };
-        $("#pageslide-body-wrap").animate(direction, settings.duration);
-        $("#pageslide-slide-wrap").animate({
-            width: "0"
-        }, settings.duration, function () {
-            // clear bug
-            $("#pageslide-content").css("width", "0px").empty();
-            $('#pageslide-body-wrap, #pageslide-slide-wrap').css('left', '');
-            $('#pageslide-body-wrap, #pageslide-slide-wrap').css('right', '');
-            $('#pageslide-body-wrap').css('overflow', '');
-            _overflowFixRemove();
-        });
-        if ($.browser.webkit || $.browser.msie) {
-            $('header').animate({
-                left: 0
-            });
-        }
-    };
-})(jQuery);
-
-// this adds the ability to close pageSlide with the 'escape' key, if not modal.
-(function ($) {
-    $(document).ready(function () {
-        $(document).keyup(function (event) {
-            if ( //!$("#pageslide-blanket").is(":visible") &&  //commented to allow to close pageSlide with the 'escape' key even if modal is set to true
-            event.keyCode == 27) $.fn.pageSlideClose();
-        });
+    $('<div />').attr('id', 'pageslide-slide-wrap').append(psSlideContent).appendTo(body);
+    
+    $('<div />').attr("id", "pageslide-blanket").appendTo(body).click(function(){
+      return false;
     });
-})(jQuery);
+    
+    $(window).resize(function() {
+    $('#pageslide-body-wrap').width(body.width());
+    });
 
+    $(anchor).attr('rel', 'pageslide'); 
+    
+    _bindButtons();
+  }
+  
+  function _addButtonsBar(){
+    var psSlideBack = $('<div />').attr('id', 'pageslide-close-bar').attr('href', '#');
+    settings.buttons.back.display && $('<a />').addClass('pageslide-close').text(settings.buttons.back.label).attr('href', '#').appendTo(psSlideBack);
+    settings.buttons.copy_url.display && $('<a />').attr('id', 'glueButton').text(settings.buttons.copy_url.label).appendTo(psSlideBack);
+    settings.buttons.view_original.display && $('<a />').attr('href', '#').addClass('view-original').text(settings.buttons.view_original.label).appendTo(psSlideBack);            
+    settings.buttons.prev.display && size > 1 && $('<div>').addClass('slide-controls').html('<div><a href="#" class="prev">PREV</a><a href="" class="next">NEXT</a></div>').appendTo(psSlideBack) && $('<div />').addClass('psMessage').appendTo(psSlideBack);
+    if(settings.buttons.bookmarkers.display){
+      var bookmarkers = $('<div />').addClass('bookmarkers');
+      settings.buttons.bookmarkers.fb_share.display && bookmarkers.append('<a href="javascript:void(0)" title="Share to Facebook" class="share-facebook"></a>');
+      bookmarkers.appendTo(psSlideBack);
+    }
+    return psSlideBack;
+  } 
+  
+  function _bindButtons() {    
+    var psIframe = $('#pageslide-iframe');
+    $('.view-original').unbind('click').click(function(){
+      window.location = psIframe.attr('src')
+    });
+
+    $('.pageslide-close').unbind('click').click(function(ev) {
+      collection.trigger('closePageSlide');
+      return false;
+    });
+
+    settings.buttons.prev.display && $('.slide-controls a').unbind('click').click(function(){
+      current = $(this).hasClass('next') ? ((current == size-1) ? 0 : current+1) : ((current == 0) ? size-1 : current-1);
+      var url = collection.eq(current).attr('href');
+      psIframe.attr('src', url);
+      settings.buttons.bookmarkers.display && _changeFacebookURL(url);
+      return false;
+    });
+  };
+  
+  function _changeFacebookURL(url){
+    $('.share-facebook').unbind('click').click(function(){
+      window.open("http://www.facebook.com/sharer.php?u="+encodeURIComponent(url), 'sharer', 'toolbar=0,status=0,width=626,height=436');
+      return false;
+    }).attr('href', "http://www.facebook.com/sharer.php?u="+encodeURIComponent(url));
+  }
+  
+  function _overflowFixAdd() {
+    $.browser.msie ? body.add(htmlDom).css({overflowX: 'hidden'}) : body.css({overflowX: 'hidden'});
+  }
+  
+  function _overflowFixRemove() {
+    $.browser.msie ? body.add(htmlDom).css({overflowX: ''}) : body.css({overflowX: ''});
+  }
+  
+  function _showBlanket() {                   
+    $("#pageslide-blanket").css('height', page.height()).toggle().animate({opacity: '0.25'}, 'fast', 'linear');
+  }
+  
+  function _hideBlanket() {
+    $("#pageslide-blanket").is(":visible") && $("#pageslide-blanket").animate({opacity: '0.0'}, 'fast', 'linear', function () {
+      $(this).hide();
+    });
+  }
+  
+  function _openSlide(elm) {           
+    var psWrap = $('#pageslide-slide-wrap'),
+        psBodyWrap = $('#pageslide-body-wrap'),
+        psIframe = $('#pageslide-iframe'),
+        psContent = $('#pageslide-content'),
+        direction = {};
+    _showBlanket();
+    !new RegExp(location.host, 'gi').test(elm.href) ? psContent.children().not('iframe').not('#pageslide-close-bar').hide() : psContent.children().hide();
+    if(/top|bottom/.test(settings.direction)) {
+      psWrap.css({height: 0, width: '100%'});
+      psContent.children('iframe, #pageslide-close-bar').show();
+      var new_height = settings.height.charAt(settings.height.length - 1) == '%' ? Math.ceil($(window).height() * parseFloat(settings.height) / 100) + 'px' : settings.height;
+      if(/bottom/.test(settings.direction)){
+        direction = {
+          bottom: '-' + new_height
+        };
+        psWrap.css('top', 'auto');
+      }
+      else{
+        direction = {
+          top: new_height
+        };
+        psWrap.css('bottom', 'auto');        
+      }   
+      body.attr('scrollTop', 0);
+      body.add(htmlDom).css({overflowY: 'hidden'});
+      psBodyWrap.find('header:eq(0)').css('position', 'relative');
+      psWrap.animate({height: new_height}, settings.duration);
+      psBodyWrap.animate(direction, settings.duration, function() {        
+        psContent.css('height', psWrap.height() - 40).show();
+        if(!new RegExp(location.host, 'gi').test(elm.href)){
+          settings.loading && psIframe.css('height', 0);
+          $(elm).attr('href') !== psIframe.attr('src') && psIframe.attr('src', elm.href) && settings.buttons.bookmarkers.display && _changeFacebookURL(elm.href);
+          settings.buttons.copy_url.display && loadZeroClipboard('glueButton', function(){
+          var psMessage = $('.psMessage');
+          psMessage.html(settings.buttons.copy_url.success);
+          setTimeout(function(){
+            psMessage.html('&nbsp;');
+          }, 5000);
+          }) && setZeroClipboardText(psIframe.attr('src'));
+        }
+
+        $(window).resize(function() {
+          new_height = settings.height.charAt(settings.height.length - 1) == '%' ? Math.ceil($(window).height() * parseFloat(settings.height) / 100) + 'px' : settings.height;
+          psWrap.css('height', new_height);
+          psContent.css('height', psWrap.height() - 40);
+          psBodyWrap.css('top', new_height);
+        });
+      });
+    }
+    else {  
+      psWrap.css({width:0, height:'100%'});   
+      psContent.css('height', '').show();
+      if (settings.direction == "right") {  
+        direction = {
+            right: "-" + settings.width
+        };
+        psWrap.css('left', 0);
+        _overflowFixAdd();
+      }
+      else {
+        direction = {
+            left: "-" + settings.width
+        };       
+        psWrap.css('right', 0);
+      }                   
+      psWrap.animate({width: settings.width}, settings.duration);
+      ($.browser.webkit || $.browser.msie) && $('header').animate(direction);
+      psBodyWrap.css('overflow', 'hidden').animate(direction, settings.duration, function () {
+          $.ajax({
+              type: "GET",
+              url: $(elm).attr("href"),
+              success: function (data) {
+                psContent.css("width", settings.width).children(':not(iframe)').not('#pageslide-close-bar').remove();
+                psContent.append(data).queue(function () {
+                      $(this).dequeue();
+
+                      // add hook for a close button
+                      $('.request-topic-section').find('.pageslide-close').unbind('click').click(function (elm) {
+                          collection.trigger('closePageSlide');
+                      });
+                      $('.new_topic_request').find('input[type=submit]').formValidator(
+                          {
+                              'errors': {
+                                  'text': I18n.t('layouts.application.header.request_topic.title'),
+                                  'textarea': I18n.t('layouts.application.header.request_topic.topic_details')
+                              }
+                          }
+                      );
+                  });
+              }
+          });
+      });
+    }
+  };
+  
+  collection.bind('closePageSlide', function(event){
+      var psWrap = $('#pageslide-slide-wrap'),
+          psBodyWrap = $('#pageslide-body-wrap'),
+          header = psBodyWrap.find('header:eq(0)'); 
+          
+      if(event.button != 2){  
+        _hideBlanket();
+        if(/top|bottom/.test(settings.direction) && psWrap.height() != 0){
+          body.css('height', 'auto');
+          psWrap.animate({height: 0}, settings.duration, function() {
+            $('#pageslide-content').css('height', '0px').hide();
+            psWrap.add(psBodyWrap).css({
+              top: 0,
+              bottom: '',
+              width: ''
+            });                   
+            header.css('position', '');
+            $(window).unbind('resize');
+            $('#pageslide-iframe').attr('src', 'about:blank');
+            body.add(htmlDom).css({overflowY: ''});
+          });
+        }
+        else if(psWrap.width() != 0){
+          var direction = (psWrap.css("left") != "0px") ? {left: "0"} : {right: "0"};
+          psBodyWrap.animate(direction, settings.duration);
+          psWrap.animate({width: '0'}, settings.duration, function (){
+            
+              $("#pageslide-content").css("width", '');
+              psWrap.add(psBodyWrap).css({
+                left: '',
+                right: '',
+                width: '',
+                height: ''
+              }); 
+              
+              psBodyWrap.css('overflow', '');
+              _overflowFixRemove();
+          });
+          ($.browser.webkit || $.browser.msie) && header.animate(direction);
+        }
+      }
+  });  
+  
+
+  _initialize(this);
+
+  page.click(function(ev) {
+    if(ev.target.tagName != "A") {
+      collection.trigger('closePageSlide');
+      return false;
+    }
+  });
+  
+  return this.each(function() {
+    var link = $(this);
+    if(!link.hasClass('pageslide-binded')) {
+      link.bind('click', function(e) {
+        _openSlide(this);
+        link.addClass('pageslide-binded');
+        return false;
+      });
+    }
+  });
+};
+
+$(function() {
+  $(document).keyup(function(event) {                                     
+    $("#pageslide-blanket").is(":visible") && event.keyCode == 27 && $('a').trigger('closePageSlide');
+  });
+});

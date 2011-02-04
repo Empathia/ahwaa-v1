@@ -337,33 +337,33 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 #pageslide-slide-wrap{background:none #ffffff; overflow-y: auto; overflow-x: hidden;}
 #pageslide-slide-wrap > div{background-image:none;}
 #pageslide-slide-wrap > div > div{overflow:hidden;}
-#pageslide-slide-wrap > div div.header{margin-top:2px; border-bottom:1px solid #e9f2f6; overflow:hidden; padding:18px 0 19px 0;
+.request-topic-section > .header{margin-top:2px; border-bottom:1px solid #e9f2f6; overflow:hidden; padding:18px 0 19px 0;
   background-image: -moz-linear-gradient(top, #EDF5F9, #F3FAFD);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #EDF5F9),color-stop(1, #F3FAFD));
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#EDF5F9', EndColorStr='#F3FAFD');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#EDF5F9', EndColorStr='#F3FAFD')"
 }
-#pageslide-slide-wrap > div h2 {float:right; width:420px; padding-right:30px; font-size:16px; margin-top:7px;}
-#pageslide-slide-wrap > div a  {float:left; height:18px; width:45px; margin-left:29px; color:#8497a7; font-weight:bold; background:url("../../images/back-bg.png") no-repeat scroll 0 0 transparent; line-height:1em; padding:7px 23px 0 0}
-#pageslide-slide-wrap > div a:active{outline:0; border:0;}
-#pageslide-slide-wrap > div form{float:right; padding-right:30px; font-size:12px; font-family:Arial, Helvetica, sans-serif; width:496px;}
-#pageslide-slide-wrap > div form > fieldset{border:none; margin:0; padding:0;}
-#pageslide-slide-wrap > div form label{font-size:13px; margin:21px 0 6px; line-height:1em; display:block;} 
-#pageslide-slide-wrap > div form input[type="text"]{font-size:12px; height:15px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:474px; font-family:Arial, Helvetica, sans-serif   
+.request-topic-section > .header > h2 {float:right; width:420px; padding-right:30px; font-size:16px; margin-top:7px;}
+.request-topic-section > .header > a  {float:left; height:18px; width:45px; margin-left:29px; color:#8497a7; font-weight:bold; background:url("../../images/back-bg.png") no-repeat scroll 0 0 transparent; line-height:1em; padding:7px 23px 0 0}
+.request-topic-section > .header > a:active{outline:0; border:0;}
+.request-topic-section > form{float:right; padding-right:30px; font-size:12px; font-family:Arial, Helvetica, sans-serif; width:496px;}
+.request-topic-section > form > fieldset{border:none; margin:0; padding:0;}
+.request-topic-section > form label{font-size:13px; margin:21px 0 6px; line-height:1em; display:block;} 
+.request-topic-section > form input[type="text"]{font-size:12px; height:15px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:474px; font-family:Arial, Helvetica, sans-serif   
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 }
 
-#pageslide-slide-wrap > div form textarea{border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:8px 10px; color:#888; margin-bottom:16px; font-family:Arial, Helvetica, sans-serif; font-size:12px; display:block; width:474px;
+.request-topic-section > form textarea{border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:8px 10px; color:#888; margin-bottom:16px; font-family:Arial, Helvetica, sans-serif; font-size:12px; display:block; width:474px;
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
 }
 
-#pageslide-slide-wrap > div form input[type="checkbox"]{float:right; margin:10px 0 0 5px}
-#pageslide-slide-wrap > div form label.anonym{float:right; margin-top:10px} 
-#pageslide-slide-wrap > div form input[type="submit"]{padding:8px 19px; line-height:1em; float:left; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; background-color:#ffffff;
+.request-topic-section > form input[type="checkbox"]{float:right; margin:10px 0 0 5px}
+.request-topic-section > form label.anonym{float:right; margin-top:10px} 
+.request-topic-section > form input[type="submit"]{padding:8px 19px; line-height:1em; float:left; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; background-color:#ffffff;
   border-radius:3px;
   -moz-border-radius:3px;
   -webkit-border-radius:3px;
@@ -496,3 +496,31 @@ form + .recently-topics{padding-top:18px;}
 .icn-cross{width: 7px; height: 7px; float:left; position: absolute; left: 6px; top: 6px; background: url('../../images/icn-cross.png') no-repeat 0 0; cursor: pointer;}
 
 .auth-form-active > .flash-privacy{margin:7px 0 15px 0;}
+
+#pageslide-body-wrap{position: relative; z-index: 0;}
+#pageslide-slide-wrap{height: 100%; position: fixed; top: 0; width: 0; z-index: 9999; background-color: #FFF;}                                                                      
+
+#pageslide-blanket{position: absolute; top: 0; right: 0; height: 100%; width: 100%; opacity: 0; background: #000; z-index: 1; display: none;}
+
+#pageslide-iframe {border: none; width: 100%; height: 100%;}
+#pageslide-close-bar {position: relative; overflow: hidden; padding: 8px; background-color: #E5E5E5;}
+#pageslide-close-bar > a {float:right; margin-right: 5px; padding: 5px; border: 1px solid #4785BF; font-size: 11px; font-family: Arial, Helvetica; text-decoration: none; color: #FFF; background-color: #5998CC; 
+  background-image: -moz-linear-gradient(top, #5998CC, #3778B7);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5998CC),color-stop(1, #3778B7));
+  background-image: linear-gradient(top, #5998CC, #3778B7);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#5998CC', EndColorStr='#3778B7');
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;  
+}
+
+#pageslide-close-bar > a:first-child {margin-right: 0;}
+.bookmarkers {float:left;}
+.bookmarkers > a {background-image: url('../../images/icons-command.png'); background-repeat: no-repeat; float:left;}
+.share-facebook {background-position:100% -21px; height: 19px; width: 55px; margin:3px 5px 0 0;}
+.slide-controls {position: absolute; top: 0; right: 50%; float:right;}
+.slide-controls > div {position: relative; top: 8px; right: -50%; float:right;}
+.slide-controls > div > a {color: #848484; text-decoration: none; font-size: 14px; font-weight: bold; line-height: 1.8;}
+.slide-controls > div > a:first-child {margin-left: 10px;}
+.psMessage {margin:5px 5px 0 0; font-size: 11px; color: #848484; float:right;}
+#glueButton {position: relative;}
