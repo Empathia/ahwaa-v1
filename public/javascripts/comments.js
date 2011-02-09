@@ -320,7 +320,7 @@ $.fn.comments = function(options){
     });
     
     
-    $('.filter-responses input:checkbox, #filter_helpful').change(function(){    
+    $('.filter-responses input:checkbox, #filter_helpful').click(function(){
         var cbs = $('.filter-responses input:checkbox:checked'),
             show_useful = $(this).filter('#filter_helpful').is(':checked'),
             allComments = $('.comments:not(.clon)'),
