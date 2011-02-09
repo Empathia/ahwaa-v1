@@ -103,42 +103,6 @@ describe UsersController do
         do_request
       end
 
-      context "when submitting profile form" do
-
-        before(:each) do
-          do_request :user => { :profile_attributes => { :religion_id => 1 } }
-        end
-
-        it "assigns submitted_form to profile" do
-          assigns(:submitted_form).should == 'profile'
-        end
-
-      end
-
-      context "when submitting password form" do
-
-        before(:each) do
-          do_request :user => { :password => 'asdasd' }
-        end
-
-        it "assigns submitted_form to password" do
-          assigns(:submitted_form).should == 'password'
-        end
-
-      end
-
-      context "when submitting account form" do
-
-        before(:each) do
-          do_request :user => { :user => { :email => 'new@example.com' } }
-        end
-
-        it "assigns submitted_form to account" do
-          assigns(:submitted_form).should == 'account'
-        end
-
-      end
-
     end
 
   end

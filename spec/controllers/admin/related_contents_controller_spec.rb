@@ -11,9 +11,8 @@ describe Admin::RelatedContentsController do
   describe "GET 'index'" do
 
     it "shouldnt list related content for a non exixting topic" do
-      lambda do
-        get :index, :topic_id => 1
-      end.should raise_error
+      get :index, :topic_id => 1
+      response.should render_template("public/404.#{I18n.locale}.html")
     end
 
     context 'with an existing topic' do

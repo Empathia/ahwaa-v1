@@ -52,7 +52,7 @@ describe RelatedVideo do
     end
 
     it "should fetch the video's thumbnail and store it" do
-      @youtube.thumbnail.url(:original, false).should == "/system/thumbnails/#{@youtube.id}/original/2.jpg"
+      @youtube.thumbnail.url(:original, false).should == "/system/thumbnails/#{@youtube.id}/original/0.jpg"
     end
 
     it "should raise an exception if no response is got" do

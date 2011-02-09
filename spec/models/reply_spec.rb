@@ -92,9 +92,10 @@ describe Reply do
         ActiveRecord::Observer.with_observers(:user_observer, :rating_observer) do
           @rater = Factory(:user)
           @reply = Factory(:reply)
+          @current_user_points = @reply.user.score_board.current_points
           @reply.vote_up!(@rater)
         end
-        @reply.reload.user.score_board.current_points.should == Rating::VOTE_UP
+        @reply.reload.user.score_board.current_points.should == Rating::VOTE_UP + @current_user_points
         @rater.score_board.current_points.should == Rating::POINTS_FOR_RATING 
       end
 
