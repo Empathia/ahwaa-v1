@@ -97,4 +97,25 @@ describe Topic do
 
   end
 
+  describe ".find_by_slug_or_id" do
+
+    it "finds a topic passing its slug" do
+      Topic.find_by_slug_or_id!(@topic.cached_slug).should == @topic
+    end
+
+    it "finds a topic passing its id" do
+      Topic.find_by_slug_or_id!(@topic.id).should == @topic
+    end
+
+    it "doesn't find an unexisting topic" do
+      lambda do
+        Topic.find_by_slug_or_id!("some unexisting slug")
+      end.should raise_error(ActiveRecord::RecordNotFound)
+      lambda do
+        Topic.find_by_slug_or_id!(43456346456)
+      end.should raise_error(ActiveRecord::RecordNotFound)
+    end
+
+  end
+
 end

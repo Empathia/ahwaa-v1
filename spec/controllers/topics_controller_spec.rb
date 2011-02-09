@@ -61,7 +61,7 @@ describe TopicsController do
     end
 
     before(:each) do
-      Topic.stub_chain(:includes, :find).and_return(@topic = Factory(:topic))
+      Topic.stub_chain(:includes, :find_by_slug_or_id!).and_return(@topic = Factory(:topic))
       @topic.stub_chain(:replies, :group_by).and_return(@replies = Reply.scoped)
     end
 
@@ -73,7 +73,7 @@ describe TopicsController do
       end
 
       it "should find topic" do
-        Topic.includes(:replies).should_receive(:find).and_return(@topic)
+        Topic.includes(:replies).should_receive(:find_by_slug_or_id!).and_return(@topic)
         do_request :id => 1
       end
 
@@ -109,7 +109,7 @@ describe TopicsController do
       end
 
       it "should find topic" do
-        Topic.includes(:replies).should_receive(:find).and_return(@topic)
+        Topic.includes(:replies).should_receive(:find_by_slug_or_id!).and_return(@topic)
         do_request :id => 1
       end
 
