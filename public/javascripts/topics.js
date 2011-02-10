@@ -40,6 +40,12 @@ $(function(){
        return false;
     });  
     
+    /* Avatar span someway blocks the click to the anchor and it doesn't do the default action. */
+    $('.related-carrousel a.avatar').click(function (ev) {
+        location.href = this.href;
+        return false;
+    });
+
     $('.view-more').click(function(e){                        
         if(!$(this).hasClass('disabled')){
             var carrouselWrapper = $('.related-carrousel'),
