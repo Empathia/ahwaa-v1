@@ -4,7 +4,6 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.includes(:replies).find_by_slug_or_id!(params[:id])
     @replies = @topic.replies.group_by(&:contextual_index)
-    @related_contents = @topic.related_contents
   end
 
   def tag

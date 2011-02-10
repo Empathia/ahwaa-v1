@@ -84,19 +84,6 @@ describe TopicsController do
 
     end
 
-
-    context "related content" do
-
-      it 'should include the related content' do
-        @related_video = Factory(:related_video)
-        @topic.related_contents << @related_video
-        do_request :id => @topic.id
-        assigns(:related_contents).should == [@related_video]
-      end
-
-    end
-
-
     context "when user is logged in" do
 
       before(:each) do

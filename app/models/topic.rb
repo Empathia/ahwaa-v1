@@ -19,7 +19,6 @@ class Topic < ActiveRecord::Base
   has_many :users, :through => :replies
   has_many :topic_experts, :dependent => :destroy
   has_many :experts, :through => :topic_experts
-  has_many :related_contents
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -55,6 +54,11 @@ class Topic < ActiveRecord::Base
     topic.from_request = request_id
     topic.user_id = nil if topic_request.anonymous_post?
     topic
+  end
+
+  # Finds related topics by tag
+  def related_topics
+    Topic.tagged_with(tags.map(&:name), :any => true).reject { |t| t == self }
   end
 
   # Finds most active users in the topic

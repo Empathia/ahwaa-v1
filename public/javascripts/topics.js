@@ -46,7 +46,7 @@ $(function(){
         if(!$(this).hasClass('disabled')){
             var carrouselWrapper = $('.related-carrousel'),
                 carrousel = carrouselWrapper.children('ul:eq(0)');
-            carrousel.outerHeight() > carrouselWrapper.outerHeight() && carrouselWrapper.animate({height:carrousel.outerHeight()}) && $(this).addClass('disabled');
+            carrousel.outerHeight() > carrouselWrapper.outerHeight() && carrouselWrapper.animate({height:carrousel.outerHeight()}).css('max-height', carrousel.outerHeight()) && $(this).addClass('disabled');
         }
         e.preventDefault();
         return false;

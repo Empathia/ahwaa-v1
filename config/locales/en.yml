@@ -140,7 +140,7 @@ en:
       title: TRANSCEND
       legend: Supporting tagline will live here and it should be about this long
       watch_video: Watch a video
-      community: We're a community that is...
+      community: "We're a community that is..."
       private: Private
       engaging: Engaging
       positive: Positive
@@ -152,10 +152,9 @@ en:
       latest:
         has_left_a_comment: %{author} has left an %{comment} on %{topic}
   topics:
-    related_content:
-      related_content:
-        title: Related Content
-        view_more: View More
+    related_topics:
+      title: Related Content
+      view_more: View More
     topic:
       popular:
         by: By %{author}

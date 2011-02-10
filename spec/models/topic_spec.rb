@@ -118,4 +118,26 @@ describe Topic do
 
   end
 
+  describe ".related_topics" do
+
+    before(:each) do
+      @topic.tag_list = "tag1, tag2, tag3, tag4"
+      @topic.save!
+      @with_tag1 = Factory(:topic, :tag_list => "tag1")
+      @with_tag2 = Factory(:topic, :tag_list => "tag2")
+      @with_tag3 = Factory(:topic, :tag_list => "tag3")
+    end
+
+    it "finds topics tagged with any of the topic's tags" do
+      @topic.related_topics.should == [@with_tag1, @with_tag2, @with_tag3]
+    end
+
+    it "doesn't include duplicated topics" do
+      @with_tag1.tag_list = "tag1, tag4"
+      @with_tag1.save!
+
+      @topic.related_topics.should == [@with_tag1, @with_tag2, @with_tag3]
+    end
+  end
+
 end
