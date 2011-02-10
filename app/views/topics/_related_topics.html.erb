@@ -22,10 +22,10 @@
       <ul>
         <% related_topics.each_with_index do |content, index| %>
           <li class="<%= "rd-related-content" if index > 0 && index.succ % 3 == 0 %>">
-            <%= link_to content, :target => "_blank", :class => "avatar" do %>
+            <%= link_to content, :class => "avatar" do %>
               <%= avatar_span(content.user, content.user.is_expert?, true) %>
             <% end %>
-            <%= link_to truncate(content.title, :length => 15), content,:target => "_blank" %>
+            <%= link_to truncate(content.title, :length => 15), content %>
             <%= truncate(content.content, :length => 45) %>
           </li>
         <% end %>

@@ -151,10 +151,10 @@ ar:
       feeds: "ما يحدث الآن"
       latest:
         has_left_a_comment: "%{author} وقد ترك %{comment} على %{topic}"
-    topics:
-      related_topics:
-        title: ذات المحتوى
-        view_more: عرض مزيد من
+  topics:
+    related_topics:
+      title: ذات المحتوى
+      view_more: عرض مزيد من
     topic:
       popular:
         by: من قبل %{author}

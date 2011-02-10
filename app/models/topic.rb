@@ -58,7 +58,7 @@ class Topic < ActiveRecord::Base
 
   # Finds related topics by tag
   def related_topics
-    Topic.tagged_with(tags.map(&:name), :any => true).reject { |t| t == self }
+    Topic.where(:language => language).tagged_with(tags.map(&:name), :any => true).reject { |t| t == self }
   end
 
   # Finds most active users in the topic

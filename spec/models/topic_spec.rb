@@ -138,6 +138,14 @@ describe Topic do
 
       @topic.related_topics.should == [@with_tag1, @with_tag2, @with_tag3]
     end
+
+    it "filters only topics in the same language" do
+      @with_tag2.language = @topic.language = "ar"
+      @topic.save!
+      @with_tag2.save!
+
+      @topic.related_topics.should == [@with_tag2]
+    end
   end
 
 end

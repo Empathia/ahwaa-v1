@@ -6,8 +6,6 @@ $(function(){
         $(this).css('color', '#6c6f74');
     });                                
     
-    $('.related-carrousel').find('a').pageSlide();
-          
     var article = $(".article-wrapper"),
         socialBookmarkers = $('.social-bookmarkers'),
         sidebar = article.find('aside'),
