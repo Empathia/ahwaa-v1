@@ -277,8 +277,8 @@ $.fn.pageSlide = function(opts) {
 
   _initialize(this);
 
-  page.click(function(ev) {
-    if(ev.target.tagName != "A") {
+  page.click(function(ev) {        
+    if(ev.target.tagName != "A" && $('#pageslide-blanket').is(':visible')) {
       collection.trigger('closePageSlide');
       return false;
     }
