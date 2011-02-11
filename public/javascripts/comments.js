@@ -189,7 +189,7 @@ $.fn.comments = function(options){
                     textarea.val('Click here to write your response.');
                 }
             })
-        }).live('keyup', function () {        
+    }).live('change', function () {        
         var resTypesWrapper = $(this).closest('.response').find('.res-types-wrapper');
         if(resTypesWrapper.is(':hidden') && $(this).val()){
            resTypesWrapper.slideDown('slow');
@@ -199,17 +199,13 @@ $.fn.comments = function(options){
         }
         
         for(var i = 0; i < badWords.length; i++) {
-            var reg = new RegExp(badWords[i], 'ig');
+            var reg = new RegExp("(\\b)" + badWords[i] + "(\\b)", 'ig');
             if(reg.test($(this).val())) {
-                var replacement = $(this).val().replace(reg, ''.padLeft(badWords[i].length, '*'));
+                var replacement = $(this).val().replace(reg, "$1" + ''.padLeft(badWords[i].length, '*') + "$2");
                 $(this).val(replacement);
             }
         }
     }); 
-    
-    $('.add_comments:visible input[type=submit]').live('mouseover', function () {
-        $(this).parents('.res-types-wrapper').find('.reply_category').val(this.name);
-    });
     
     $('.add_comments:visible input[type=submit]').live('click', function(){
         $(this).parents('.res-types-wrapper').find('.submit-reply-wrapper').addClass('loading');        
