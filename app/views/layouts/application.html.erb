@@ -107,8 +107,14 @@
                 <p class="border-all">
                   <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
                   <span></span>
-                </p>
-                <ul class='search_results'></ul>
+                </p>                     
+                <div class="search-results-wrapper">
+                  <a href="#" class="arrow scroll-up"><div><div></div></div></a>
+                  <div class="search-results-scroller">
+                    <ul class='search-results'></ul>
+                  </div>
+                  <a href="#" class="arrow scroll-down"><div><div></div></div></a>
+                </div>
               </div>
             </div>
           </div>
@@ -123,12 +129,12 @@
                     <span>More</span>
                   <% end %>
                   <div class="scroll-tags more-tags">
-                    <div class="arrow scroll-up"><a href="#">&uarr;</a></div>
+                    <a class="arrow scroll-up" href="#"><div><div></div></div></a>
                     <div class="scroller">
                       <ul id="moretags" class="border-all border-menu">
                       </ul>
                     </div>
-                    <div class="arrow scroll-down"><a href="#">&darr;</a></div>
+                    <a class="arrow scroll-down" href="#"><div><div></div></div></a>
                   </div>
                 </li>
               </ul>     
