@@ -29,10 +29,12 @@ var avatars = {
           $('.loading-avatar').show();
           avatarsWrapper.find('.avatars').children(':not(.custom)').remove();
           var genderId = $('#user_profile_attributes_gender_id').val(),
-              ageId = $('#user_profile_attributes_age_id').val();
+              ageId = $('#user_profile_attributes_age_id').val(),
+              data = { filters: { gender_id : genderId, age_id : ageId } };
+          data[$('meta[name=csrf-param]').attr('content')] = $('meta[name=csrf-token]').attr('content');
           $.ajax({
               url: '/avatars/matches.js',
-              data: 'filters[gender_id]=' + genderId + '&filters[age_id]=' + ageId,
+              data: data,
               dataType: 'script',
               type: 'POST'
           });

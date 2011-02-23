@@ -88,14 +88,14 @@ ar:
           flash_alert: .يرجى الامتناع عن الكشف عن هويتك وتفاصيل شخصية تقاسم كنت لا تريد أن تعرف شبكة الإنترنت بالكامل
         sign_up_form:
           sign_up: "قم بالتسجيل"
-          legend: يرجى التسجيل للتمتع بكافة مزايا تجاوز
+          legend: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
           username: الاسم أو الكُنية
           email: البريد الإلكتروني الخاص بك
-          note_pt1: "بالنقر على إرسال، تؤكد أنك تقبل"
+          note_pt1: "بالنقر على \"تسجيل\"، تؤكد قبولك"
           note_pt2: و
-          terms_of_use: شروط الاستخدام
+          terms_of_use: لشروط الاستخدام
           privacy_policy: سياسة الخصوصية
-          note_pt3: لاستخدام المثليين.
+          note_pt3: الخاصة باستخدام أهواء
           error_email_empty: البريد الإلكتروني غير موجود
           error_email_invalid: البريد الالكتروني غير موجود
           error_username_empty: اسم المستخدم فارغ
@@ -126,8 +126,8 @@ ar:
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث
       footer:
-        all_rights: "© تجاوز -- جميع الحقوق محفوظة %{year}"
-        about: ول
+        all_rights: "© %{year} أهواء - جميع الحقوق محفوظة"
+        about: من نحن؟
         privacy_policy: سياسة الخصوصية
     admin:
       header:
@@ -187,10 +187,11 @@ ar:
       form:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
+        post_response: آخر رد
         type_response: "نوع من الاستجابة :"
-        anonymous_legend: الرجاء الرد
-        continue: أو البقاء مجهولين
-        sign_up: أنشئ حساب
+        anonymous_legend: لإضافة ردّ، فضلًا 
+        continue: أو ابقَ مجهولًا
+        sign_up: أنشيء حسابًا
         flash_alert: .يرجى الامتناع عن كشف أو هوية شخص آخر عند نشر التعليقات        
     comments:
       new_response: استجابة جديدة
