@@ -34,13 +34,13 @@ $(function(){
     });
 
     $('.request-topic').click(function(e){
+       e.preventDefault();
        var _btn = $(this);
        if(_btn.hasClass('disabled')){
            _btn.addClass('auth-form-active');
            $('.auth-form-active').removeClass('auth-form-active');
            var offset = _btn.offset();
            $('.request-error').addClass('auth-form-active');
-           //e.preventDefault();
            return false;
        }
     });
