@@ -189,7 +189,7 @@ $.fn.comments = function(options){
                     textarea.val('Click here to write your response.');
                 }
             })
-    }).live('change', function () {        
+    }).live('keyup', function () {
         var resTypesWrapper = $(this).closest('.response').find('.res-types-wrapper');
         if(resTypesWrapper.is(':hidden') && $(this).val()){
            resTypesWrapper.slideDown('slow');
