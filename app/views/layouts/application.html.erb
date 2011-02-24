@@ -54,7 +54,7 @@
                     <a href="#" id="sign-up" class="sign-up-lk border-all">
                       <span class="sign-up-btn"><%= t('.header.auth.sign_up') %></span>
                     </a>
-                    <%= form_for User.new, :html => {:class => "over-form sign-up-form"}, :remote => true do |f| %>
+                    <%= form_for User.new, :html => {:class => "over-form sign-up-form ie8-hide"}, :remote => true do |f| %>
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
@@ -76,7 +76,7 @@
                   </div>
                   <div class="auth-wrapper">
                     <a href="#" id="login"><span><%= t('.header.auth.login') %></span></a>
-                    <%= form_tag login_path(:js), :class => "over-form login-form", :remote => true do %>
+                    <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
                       <ul>
                         <li class="login">                                                               
                           <label><%= t('.header.login_form.login') %></label>

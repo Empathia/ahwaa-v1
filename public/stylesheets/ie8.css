@@ -1,2 +1,2 @@
-.over-form{display: block; }
+.ie8-hide{display: block; padding: 0; height: 0; overflow: hidden;}
 .only-3-values{padding: 0 119px;}

@@ -9,7 +9,7 @@ $(function(){
         var form = $(formName);
         form.find('.error').removeClass('error').filter('p').remove();
         form.removeClass('hidden').addClass('auth-form-active').offset({
-            'left': $.browser.msie ? link.offset().left : link.offset().left + 3,
+            'left': ($.browser.msie && $.browser.msie == '7.0') ? link.offset().left : link.offset().left + 3,
             'top': link.offset().top + link.outerHeight() - 1
             }
         );
@@ -249,7 +249,7 @@ $(window).load(function () {
     }
     
     if($.browser.msie){
-        $.browser.version == '8.0' ? $('.over-form').addClass('hidden') : headerTags.parent().css('position', 'static');
+        $.browser.version == '8.0' ? $('.over-form').removeClass('ie8-hide') : headerTags.parent().css('position', 'static');
     }
 
     var container = $('.container'),
