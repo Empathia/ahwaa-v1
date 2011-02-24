@@ -50,7 +50,12 @@ $(function(){
         if(!$(this).hasClass('disabled')){
             var carrouselWrapper = $('.related-carrousel'),
                 carrousel = carrouselWrapper.children('ul:eq(0)');
-            carrousel.outerHeight() > carrouselWrapper.outerHeight() && carrouselWrapper.animate({height:carrousel.outerHeight()}).css('max-height', carrousel.outerHeight()) && $(this).addClass('disabled');
+            carrouselWrapper.css('max-height', carrousel.outerHeight());
+            carrousel.children().show();
+            if(carrousel.outerHeight() > carrouselWrapper.outerHeight()){
+                $(this).addClass('disabled');
+                carrouselWrapper.animate({height:carrousel.outerHeight()}).css('max-height', carrousel.outerHeight());                
+            }
         }
         e.preventDefault();
         return false;
