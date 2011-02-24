@@ -158,11 +158,9 @@ $(function(){
         pm.fadeIn('fast').addClass('active-avatar');
     });
 
-    $('.active-avatar').live('mouseleave', function(){
-       var pm = $(this);
-       pm.fadeOut('fast', function(){
-         pm.find('.pm-flash').remove();
-       });
+
+    $('.active-avatar').live('mouseleave', function(e){
+        e.target == this && $(this).hide().find('.pm-flash').remove();
     });
     
     $('input[type=text], input[type=email], input[type=password], textarea').live('focus', function(){
