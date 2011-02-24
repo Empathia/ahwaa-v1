@@ -158,9 +158,16 @@ $(function(){
         pm.fadeIn('fast').addClass('active-avatar');
     });
 
-
-    $('.active-avatar').live('mouseleave', function(e){
-        e.target == this && $(this).hide().find('.pm-flash').remove();
+    $('body').live('mousemove', function(e){
+        if($('.active-avatar:visible').length) {
+            var xleft = $('.active-avatar').offset().left,
+                xright = $('.active-avatar').offset().left + $('.active-avatar').width(),
+                ytop = $('.active-avatar').offset().top,
+                ybottom = $('.active-avatar').offset().top + $('.active-avatar').height();
+            if((e.pageX < xleft || e.pageX > xright) || (e.pageY < ytop || e.pageY > ybottom)) {
+                $('.active-avatar').hide().removeClass('active-avatar').find('.pm-flash').remove();
+            }
+        }
     });
     
     $('input[type=text], input[type=email], input[type=password], textarea').live('focus', function(){
