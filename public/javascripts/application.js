@@ -17,11 +17,14 @@ String.prototype.padRight = function(n, pad) {
     return t.toString();
 };
 
+var lastValue;
+
 $(document).ready(function() {
     //listen on keystrokes of the query text field
     $("#query").keyup(function(e) {
         var val = $.trim($(this).val());
-        if(val.length > 2) {
+        if(val.length > 2 && val != lastValue) {
+            lastValue = val;
             $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
         }
     });
