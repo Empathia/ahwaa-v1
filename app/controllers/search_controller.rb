@@ -5,7 +5,11 @@ class SearchController < ApplicationController
 
   def topics
     @results = if Rails.env == 'production'
-      Topic.search_tank(params[:query])
+      if !params[:query].blank? && params[:query].length > 0
+        Topic.search_tank(params[:query])
+      else
+        []
+      end
     else
       Topic.where("title LIKE :input",{:input => "%#{params[:query]}%"}).paginate(:page => 1)
     end

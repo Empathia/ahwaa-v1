@@ -22,13 +22,14 @@ var searching = false;
 $(document).ready(function() {
     //listen on keystrokes of the query text field
     $("#query").keyup(function(e) {
-        if(!searching && $(this).val()) {
+        var val = $.trim($(this).val());
+        if(!searching && val.length) {
             searching = true;
             setTimeout(function() {
-                $.getScript("/search/topics.js?query=" + encodeURIComponent($.trim($("#query").val())), function () {
+                $.getScript("/search/topics.js?query=" + encodeURIComponent(val), function () {
                     searching = false;
                 });
-            }, 1000);
+            }, 500);
         }
     });
 
