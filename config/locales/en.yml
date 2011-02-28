@@ -79,7 +79,7 @@ en:
           login: Login
         request_topic:
           button: Request a topic
-          legend: "Anonymous users can't request a topic"
+          legend: "You must be signed in to request a topic."
           sign_up: Sign Up
           error_login_empty: Sign Up
           title: "Title is empty"
