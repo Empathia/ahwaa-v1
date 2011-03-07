@@ -17,18 +17,15 @@ String.prototype.padRight = function(n, pad) {
     return t.toString();
 };
 
-var searching = false;
+var lastValue;
 
 $(document).ready(function() {
     //listen on keystrokes of the query text field
     $("#query").keyup(function(e) {
-        if(!searching && $(this).val()) {
-            searching = true;
-            setTimeout(function() {
-                $.getScript("/search/topics.js?query=" + encodeURIComponent($.trim($("#query").val())), function () {
-                    searching = false;
-                });
-            }, 1000);
+        var val = $.trim($(this).val());
+        if(val.length > 2 && val != lastValue) {
+            lastValue = val;
+            $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
         }
     });
 
