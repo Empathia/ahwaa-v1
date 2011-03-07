@@ -1,5 +1,7 @@
 $(function(){
-    $('.watch-video').overlay({href: '#watch-video-overlay'}).click(function(e){
+	
+    $('.watch-video a').overlay({href: '#watch-video-overlay'}).click(function(e){
+		$('#pageslide-body-wrap').css('position', 'static');	
         $(this).trigger('clickOverlay');
     });
 });

@@ -22,6 +22,7 @@ $.fn.overlay = function(options){
         function closeOverlay(){
             overlay.fadeOut(function(){
                 $('.opacityWrapper').fadeOut(function(){
+					$('#pageslide-body-wrap').css('position', '');
                     $(this).remove();
                 });
             });

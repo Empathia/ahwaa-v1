@@ -40,7 +40,7 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 
 .presentation{color: #ffffff; font-family: "GothamBoldRegular"; text-align: center; font-size: 28px; font-weight: normal; overflow: hidden; text-indent: -9999px;}
 
-.watch-video{position: relative; margin-bottom: 32px;}                    
+.watch-video{position: relative; height: 32px;}                    
 .watch-video > div{position: absolute; left: 50%; top: 0;}
 .watch-video > div > a{position: relative; left: -50%; border: 1px solid #6f9bb5; float: left;
   -moz-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
@@ -63,17 +63,18 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 .watch-video > div > a:hover{text-decoration: none;}
 .watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px 8px 0 8px; float: left; padding: 0 0 8px 22px;}
 
-#watch-video-overlay{width: 800px;}
+#watch-video-overlay{width: 790px;}
 .overlay-wrapper{position: absolute; left: 0; top: 0; display: none; z-index: 10000; background-color: #fcfaf4; float: left;
   -moz-box-shadow: 0px 0px 21px #000000;
   -webkit-box-shadow: 0px 0px 21px #000000;
   box-shadow: 0px 0px 21px #000000;
 }
 
-.opacityWrapper{height: 100%; position: fixed; width: 100%; z-index: 9999; top: 0; left: 0; background-color: rgba(0, 0, 0, .6); display: none}
+.opacityWrapper{height: 100%; position: fixed; width: 100%; z-index: 9999; top: 0; left: 0; display: none; background-color: rgba(0, 0, 0, .6);}
 .overlay{
   -moz-box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
   -webkit-box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
           box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
 }
-.overlay-padding{padding: 10px}
+.overlay-padding{padding: 5px}
+.overlay-wrapper > .close {position: absolute; right: -14px; top: -13px; cursor: pointer; height: 26px; width: 26px; background: transparent url('../images/close-overlay.png') no-repeat 0 0;}
