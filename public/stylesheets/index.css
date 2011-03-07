@@ -62,3 +62,18 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
   
 .watch-video > div > a:hover{text-decoration: none;}
 .watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px 8px 0 8px; float: left; padding: 0 0 8px 22px;}
+
+#watch-video-overlay{width: 800px;}
+.overlay-wrapper{position: absolute; left: 0; top: 0; display: none; z-index: 10000; background-color: #fcfaf4; float: left;
+  -moz-box-shadow: 0px 0px 21px #000000;
+  -webkit-box-shadow: 0px 0px 21px #000000;
+  box-shadow: 0px 0px 21px #000000;
+}
+
+.opacityWrapper{height: 100%; position: fixed; width: 100%; z-index: 9999; top: 0; left: 0; background-color: rgba(0, 0, 0, .6); display: none}
+.overlay{
+  -moz-box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
+  -webkit-box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
+          box-shadow: inset 0px 0px 27px rgba(207, 199, 184, .22);
+}
+.overlay-padding{padding: 10px}
