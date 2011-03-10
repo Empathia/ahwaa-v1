@@ -1,6 +1,6 @@
 <% head do %>
   <script type="text/javascript">
-    var topicId = '<%= @topic.cached_slug %>';
+    var topicId = '<%= @topic.id %>';
     var badWords = <%= BadWord.get_the_bad_word_index.inspect.html_safe %>;
   </script>
 <% end %>

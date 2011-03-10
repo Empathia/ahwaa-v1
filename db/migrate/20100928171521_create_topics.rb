@@ -5,14 +5,12 @@ class CreateTopics < ActiveRecord::Migration
       t.belongs_to :user
       t.text :content
       t.integer :replies_count, :default => 0
-      t.string :cached_slug
       t.string :language, :default => 'en'
       t.integer :from_request
       t.timestamps
     end
     
     add_index :topics, :user_id
-    add_index :topics, :cached_slug
   end
 
   def self.down

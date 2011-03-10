@@ -5,7 +5,7 @@
 <p><%= @topic.content %></p>
 <% head do %>
   <script type="text/javascript" >
-    currentTopicId = '<%= @topic.cached_slug %>';
+    currentTopicId = '<%= @topic.id %>';
     $(document).ready(function() {
       getProfileTopicMatches();
     });

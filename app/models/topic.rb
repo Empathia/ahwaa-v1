@@ -3,8 +3,6 @@ class Topic < ActiveRecord::Base
 
   # TODO: attr_accessible
   
-  has_friendly_id :title, :use_slug => true
-
   include Tanker
 
   tankit 'lgbt' do
@@ -35,15 +33,6 @@ class Topic < ActiveRecord::Base
 
   def self.per_page
     10
-  end
-
-  # Finds a topic either by slug or its id
-  def self.find_by_slug_or_id!(slug_or_id)
-    begin
-      find(slug_or_id)
-    rescue TypeError
-      find(slug_or_id.to_i)
-    end
   end
 
   # Creates an instance from the request attributes
