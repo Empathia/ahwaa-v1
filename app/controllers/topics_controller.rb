@@ -8,7 +8,8 @@ class TopicsController < ApplicationController
 
   def tag
     @topics = params[:by_responses] ? Topic.by_replies_count(I18n.locale) : Topic.newest(I18n.locale)
-    @topics = @topics.tagged_with(params[:tag]).in_groups_of(2, false)
+    @tag = ActsAsTaggableOn::Tag.find(params[:tag])
+    @topics = @topics.tagged_with(@tag).in_groups_of(2, false)
   end
 
 end

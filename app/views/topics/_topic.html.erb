@@ -9,7 +9,7 @@
       <span class="by-author"><%= t('.popular.by', :author => topic.user.username).html_safe %></span>
       <ul class="tags">
         <% topic.tags.each_with_index do |tag, i| %>
-          <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.name) %></li>
+          <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.id) %></li>
         <% end %>
       </ul>                                                                         
       <%= link_to pluralize(topic.replies.size, t('.popular.response')), topic, :class => "responses"  %>
