@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   self.responder = ApplicationResponder
   respond_to :html
 
-  before_filter :password_for_qa, :if => "Rails.env.production?"
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   before_filter :set_locale
@@ -24,12 +23,6 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-
-  def password_for_qa
-    authenticate_or_request_with_http_basic do |username, password|
-      username == 'qa' && password == 'test'
-    end
-  end
 
   def sign_out_current_user
     session[:current_user] = @current_user = nil
