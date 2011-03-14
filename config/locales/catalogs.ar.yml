@@ -1,5 +1,8 @@
 ar:
   catalogs:
+    options:
+      all: جميع
+
     religion:
       agnostic: متشكك
       bahai: البهائية      
@@ -37,252 +40,36 @@ ar:
       intersexual: خنثوي
       transvestite: متخنث
       no_say: غير مُعلن
-    ountry:
+    
+    country:
       afghanistan: أفغانستان
-      aland_islands: جزر آلاند
-      albania: ألبانيا
       algeria: الجزائر
-      american_samoa: ساموا الأمريكية
-      andorra: أندورا
-      angola: أنغولا
-      anguilla: أنغيلا
-      antarctica: القارة القطبية الجنوبية
-      antigua_and_barbuda: أنتيغوا وبربودا
-      argentina: الأرجنتين
       armenia: أرمينيا
-      aruba: أروبا
-      australia: أستراليا
-      austria: النمسا
       azerbaijan: أذربيجان
-      bahamas: جزر البهاما
       bahrain: البحرين
-      bangladesh: بنغلاديش
-      barbados: بربادوس
-      belarus: بيلاروس
-      belgium: بلجيكا
-      belize: بليز
-      benin: بنين
-      bermuda: برمودا
-      bhutan: بوتان
-      bolivia: بوليفيا
-      bosnia_and_herzegowina: البوسنة والهرسك
-      botswana: بوتسوانا
-      bouvet_island: جزيرة بوفيت
-      brazil: البرازيل
-      british_indian_ocean_territory: إقليم المحيط الهندي البريطاني
-      brunei_darussalam: بروناي دار السلام
-      bulgaria: بلغاريا
-      burkina_faso: بوركينا فاسو
-      burundi: بوروندي
-      cambodia: كمبوديا
-      cameroon: الكاميرون
-      canada: كندا
-      cape_verde: الرأس الأخضر
-      cayman_islands: جزر كايمان
-      central_african_republic: جمهورية أفريقيا الوسطى
-      chad: تشاد
-      chile: شيلي
-      china: الصين
-      christmas_island: جزيرة كريسماس
-      cocos_islands: كوكوس) كيلنغ
-      colombia: كولومبيا
-      comoros:  جزر القمر
-      congo: الكونغو
-      congo_the_democratic_republic_of_the: "جمهورية الكونغو الديمقراطية "
-      cook_islands: جزر كوك
-      costa_rica: كوستاريكا
-      cote_divoire: "كوت ديفوار "
-      croatia: كرواتيا
-      cuba: كوبا
-      cyprus: قبرص
-      czech_republic: الجمهورية التشيكية
-      denmark: الدنمارك
       djibouti: جيبوتي
-      dominica: دومينيكا
-      dominican_republic: جمهورية الدومينيكان
-      ecuador: الاكوادور
       egypt: مصر
-      el_salvador: السلفادور
-      equatorial_guinea: غينيا الاستوائية
-      eritrea: اريتريا
-      estonia: استونيا
-      ethiopia: اثيوبيا
-      falkland_islands: جزر فوكلاند (مالفيناس)
-      faroe_islands: جزر فارو
-      fiji: فيجي
-      finland: فنلندا
-      france: فرنسا
-      french_guiana: غيانا الفرنسية
-      french_polynesia: بولينيزيا الفرنسية
-      french_southern_territories: الأقاليم الجنوبية الفرنسية
-      gabon: غابون
-      gambia: غامبيا
-      georgia: جورجيا
-      germany: ألمانيا
-      ghana: غانا
-      gibraltar: جبل طارق
-      greece: اليونان
-      greenland: جرينلاند
-      grenada: غرينادا
-      guadeloupe: غواديلوب
-      guam: غوام
-      guatemala: غواتيمالا
-      guernsey: غيرنسي
-      guinea: غينيا
-      guinea_bissau: غينيا بيساو
-      guyana: غيانا
-      haiti: هايتي
-      heard_and_mcdonald_islands: سمعت وجزر ماكدونالد
-      holy_see: الكرسي الرسولي (دولة الفاتيكان)
-      honduras: هندوراس
-      hong_kong: "هونج كونج"
-      hungary: هنغاريا
-      iceland: أيسلندا
-      india:    الهند
-      indonesia: اندونيسيا
       iran: جمهورية إيران الإسلامية
       iraq: العراق
-      ireland: أيرلندا
-      isle_of_man: جزيرة مان
-      israel: اسرائيل
-      italy: إيطاليا
-      jamaica: جامايكا
-      japan: اليابان
-      jersey: جيرسي
+      kurdistan: كردستان
+      palestine: فلسطين
       jordan: الأردن
-      kazakhstan: كازاخستان
-      kenya: كينيا
-      kiribati: كيريباتي
-      korea_democratic_peoples_republic_of: "جمهورية كوريا الديمقراطية الشعبية"
-      korea_republic_of: جمهورية كوريا
       kuwait: الكويت
-      kyrgyzstan: قيرغيزستان
-      lao_peoples_democratic_republic: "جمهورية لاو الديمقراطية"
-      latvia: لاتفيا
       lebanon: لبنان
-      lesotho: ليسوتو
-      liberia: ليبيريا
-      libyan_arab_jamahiriya: "الجماهيرية العربية الليبية"
-      liechtenstein: ليختنشتاين
-      lithuania: ليتوانيا
-      luxembourg: لوكسمبورغ
-      macao: ماكاو
-      macedonia_the_former_yugoslav_republic_of: مقدونيا، الجمهورية اليوغوسلافية السابقة
-      madagascar: مدغشقر
-      malawi: ملاوي
-      malaysia: ماليزيا
-      maldives: جزر المالديف
-      mali: مالي
-      malta: مالطا
-      marshall_islands: جزر مارشال
-      martinique: مارتينيك
-      mauritania: موريتانيا
-      mauritius: موريشيوس
-      mayotte: مايوت
-      mexico: المكسيك
-      micronesia_federated_states_of: ولايات ميكرونيزيا الموحدة من
-      moldova_republic_of: مولدوفا، جمهورية
-      monaco: موناكو
-      mongolia: منغوليا
-      montenegro: الجبل الأسود
-      montserrat: مونتسيرات
+      libya: ليبيا
       morocco: المغرب
-      mozambique: موزامبيق
-      myanmar: ميانمار
-      namibia: ناميبيا
-      nauru: ناورو
-      nepal: نيبال
-      netherlands: هولندا
-      netherlands_antilles: جزر الأنتيل الهولندية
-      new_caledonia: كاليدونيا الجديدة
-      new_zealand: نيوزيلندا
-      nicaragua: نيكاراغوا
-      niger: النيجر
-      nigeria: نيجيريا
-      niue: نيوي
-      norfolk_island: جزيرة نورفولك
-      northern_mariana_islands: جزر ماريانا الشمالية
-      norway: النرويج
       oman: عمان
-      pakistan: باكستان
-      palau: بالاو
-      palestinian_territory_occupied: الأراضي الفلسطينية والأراضي المحتلة
-      panama: بنما
-      papua_new_guinea: بابوا غينيا الجديدة
-      paraguay: باراغواي
-      peru: بيرو
-      philippines: الفلبين
-      pitcairn: بيتكيرن
-      poland: بولندا
-      portugal: البرتغال
-      puerto_rico: بورتوريكو
       qatar: قطر
-      reunion: جمع شمل
-      romania: رومانيا
-      russian_federation: "الاتحاد الروسي"
-      rwanda: رواندا
-      saint_barthelemy: سانت بارتيليمي
-      saint_helena: سانت هيلانة
-      saint_kitts_and_nevis: سانت كيتس ونيفيس
-      saint_lucia: "سانت لوسيا"
-      saint_pierre_and_miquelon: سان بيار وميكلون
-      saint_vincent_and_the_grenadines: سانت فنسنت وغرينادين
-      samoa: ساموا
-      san_marino: سان مارينو
-      sao_tome_and_principe: ساو تومي وبرينسيبي
       saudi_arabia: "المملكة العربية السعودية"
-      senegal: السنغال
-      serbia: صربيا
-      seychelles: سيشيل
-      sierra_leone: سيراليون
-      singapore: سنغافورة
-      slovakia: سلوفاكيا
-      slovenia: سلوفينيا
-      solomon_islands: جزر سليمان
-      somalia: الصومال
-      south_africa: جنوب أفريقيا
-      south_georgia_and_the_south_sandwich_islands: جورجيا الجنوبية وجزر ساندويتش الجنوبية
-      spain: اسبانيا
-      sri_lanka: سري لانكا
+      ethiopia: اثيوبيا
       sudan: السودان
-      suriname: سورينام
-      svalbard_and_jan_mayen: سفالبارد وجان ماين
-      swaziland: سوازيلاند
-      sweden: السويد
-      switzerland: سويسرا
-      syrian_arab_republic: الجمهورية العربية السورية
-      taiwan_province_of_china: مقاطعة تايوان الصينية
-      tajikistan: طاجيكستان
-      tanzania_united_republic_of: "تنزانيا، الجمهورية المتحدة"
-      thailand: تايلاند
-      timor_leste: تيمور الشرقية
-      togo: توغو
-      tokelau: توكيلاو
-      tonga: تونغا
-      trinidad_and_tobago: ترينيداد وتوباغو
+      syrian: السورية
       tunisia: تونس
       turkey: تركيا
-      turkmenistan: تركمانستان
-      turks_and_caicos_islands: جزر تركس وكايكوس
-      tuvalu: توفالو
-      uganda: أوغندا
-      ukraine: أوكرانيا
       united_arab_emirates: الامارات
-      united_kingdom: "المملكة المتحدة"
-      united_states: الولايات المتحدة
-      united_states_minor_outlying_islands: الولايات المتحدة الجزر الصغيرة النائية
-      uruguay: أوروغواي
-      uzbekistan: أوزبكستان
-      vanuatu: فانواتو
-      venezuela: فنزويلا
-      viet_nam: فييت نام
-      virgin_islands_british: الجزر العذراء البريطانية
-      virgin_islands_us: الجزر العذراء، الولايات المتحدة
-      wallis_and_futuna: واليس وفوتونا
-      western_sahara: "الصحراء الغربية"
       yemen: اليمن
-      zambia: زامبيا
-      zimbabwe: زيمبابوي
+      pakistan: باكستان
+      other: أخرى
 
     political_view:
       libertarian: ليبرتاري

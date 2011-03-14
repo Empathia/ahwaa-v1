@@ -29,7 +29,7 @@ ar:
     attributes:
       topic_request:
         title: "عنوان الموضوع"
-        content: "احكِ قصتك. طلب المشورة. بدء مناقشة حول قضية هامة بالنسبة لكم!"
+        content: "احكِ قصتك، أو اطلب المشورة، أو استهلّ مناقشة حول قضية هامة بالنسبة لكم!!"
         anonymous_post: "لا تُظهر أي من المعلومات الخاصة بي عند عرض هذا الموضوع "
       reply:
         anonymous: "مجهول"
@@ -39,7 +39,7 @@ ar:
       user_profile:
         religion_id: الديانة
         gender_id: النوع الاجتماعي
-        sexual_orientation_id: التوجه الجنسي
+        sexual_orientation_id: الميول الجنسية
         age_id: السن
         country_id: بلد المولد
         political_view: الاتجاه السياسي
@@ -85,7 +85,7 @@ ar:
           title: "عنوان فارغ"
           topic_details: "تفاصيل الموضوع فارغ"
           back_button: العودة
-          flash_alert: .يرجى الامتناع عن الكشف عن هويتك وتفاصيل شخصية تقاسم كنت لا تريد أن تعرف شبكة الإنترنت بالكامل
+          flash_alert: .يرجى الامتناع عن الكشف عن هويتك أو أيّ تفاصيل شخصية أخرى من شأنها أن تعرّضك، أو تعرّض أفراد آخرين، للخطر. أحجِم عن نشر أيّ بيانات شخصية غير مرغوب في نشرها على شبكة الإنترنت
         sign_up_form:
           sign_up: "قم بالتسجيل"
           legend: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
@@ -122,7 +122,7 @@ ar:
           empty: اسم المستخدم أو البريد الإلكتروني فارغ
         logged_in:
           hi: "مرحبا %{username}"
-          my_account: "حسابي"
+          my_account: "حسابي+رسائلي"
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث
       footer:
@@ -141,12 +141,12 @@ ar:
       legend: سوف تاغلين دعم العيش هنا وينبغي أن يكون حول هذا طويل
       watch_video: شاهد فيديو
       community: مجتمع
-      private: خاصة
+      private: الخصوصية
       engaging: الانخراط
-      positive: داعمة
-      choose: اختيار
+      positive: مجموعات الدعم الإلكترونية
+      choose: لك كامل الحرية في اختيار ما تحب أن تشاركه مع الآخرين
       share: تبادل القصص والخبرات
-      offer: تقديم وتلقّي الدعم
+      offer: أعطِ وتلقّى المشورة والدعم
       popular_topics: أكثر الموضوعات شعبية
       feeds: "ما يحدث الآن"
       latest:
@@ -174,7 +174,7 @@ ar:
           linked_in: لينكِد إين
           facebook: فيسبوك
           twitter: تويتر
-          flash_alert: وستكون هذه المعلومات عامة وبمجرد مشاركته
+          flash_alert: سوف تصبح هذه المعلومات عامة ومتاحة للجميع بمجرّد نشرها
       sidebar:
         hide_all_responses: اخفاء جميع الردود
         show_all_responses: إظهار كافة الردود
@@ -216,7 +216,7 @@ ar:
           title: ملفي الشخصي
         password:
           title: تغيير كلمة المرور
-          new_password: كلمة السر الجديدة
+          new_password: كلمة المرور الجديدة
           confirm_password: تأكيد كلمة المرور
           errors:
              new_password: كلمة المرور الجديدة قصيرة
@@ -234,11 +234,11 @@ ar:
         saved: "تم تحديث الحساب الشخصي الخاص بك"
         new_user:
           question: "من أنت؟"
-          legend_st_line: "بناء معلومات ملفك الشخصي و"
-          legend_nd_line: "تواصل مع مستخدمين مثلك"
+          legend_st_line: "التواصل مع الأعضاء الآخرين"
+          legend_nd_line: "استكمل بيانات حسابك لتسهيل"
       content:
         avatars:
-          suggested: حدد الخاص بك!
+          suggested: اختر الصورة التي تناسبك
           loading: ...تحميل الصور الرمزية
           custom_avatar: مخصصة حاليا
         private_messages:
@@ -253,7 +253,7 @@ ar:
           send_reply: إرسال الرد
     inbox:
       no_messages: لا يوجد لديك رسائل خاصة
-      empty_tip: "نصيحة : لإرسال الرسائل!"
+      empty_tip: "لإرسال رسالة شخصية، يُرجى التوجه لحساب العضو المراد، ومراسلته مباشرةً من صفحته الشخصية على الموقع."
   private_messages:
     message:
       reply: إرسال الرد
