@@ -34,8 +34,8 @@ ar:
       reply:
         anonymous: "مجهول"
         advice: نصيحة
-        comment: التعليق
-        experience: تجربة
+        comment: تعليق
+        experience: خبرة
       user_profile:
         religion_id: الديانة
         gender_id: النوع الاجتماعي
@@ -88,7 +88,7 @@ ar:
           flash_alert: .يرجى الامتناع عن الكشف عن هويتك أو أيّ تفاصيل شخصية أخرى من شأنها أن تعرّضك، أو تعرّض أفراد آخرين، للخطر. أحجِم عن نشر أيّ بيانات شخصية غير مرغوب في نشرها على شبكة الإنترنت
         sign_up_form:
           sign_up: "قم بالتسجيل"
-          legend: ءاوهأ ايازم ةفاكب عتّمتلل ليجستلا ءاجرب!
+          legend: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
           username: الاسم أو الكُنية
           email: البريد الإلكتروني الخاص بك
           note_pt1: "بالنقر على \"تسجيل\"، تؤكد قبولك"
@@ -158,7 +158,10 @@ ar:
     topic:
       popular:
         by: من قبل %{author}
-        response: رد
+        response:
+          one: رد واحد
+          two: ردّان
+          other: ردود %{count}
     tag:
       sort_by:
         label: "ترتيب حسب :"
@@ -188,7 +191,7 @@ ar:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
         post_response: آخر رد
-        type_response: "نوع من الاستجابة :"
+        type_response: "نوع الاستجابة:"
         anonymous_legend: لإضافة ردّ، فضلًا 
         continue: أو ابقَ مجهولًا
         sign_up: أنشيء حسابًا
@@ -235,7 +238,7 @@ ar:
         new_user:
           question: "من أنت؟"
           legend_st_line: "استكمل بيانات حسابك لتسهيل"
-          legend_nd_line: "للتواصل مع الأعضاء الآخرين"
+          legend_nd_line: "التواصل مع الأعضاء الآخرين"
       content:
         avatars:
           suggested: اختر الصورة التي تناسبك
@@ -245,7 +248,7 @@ ar:
           title: الرسائل الخاصة
           delete: حذف
           confirm_delete: هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكنك التراجع فيما بعد
-          by: من قبل %{sender}
+          by: بواسطة %{sender}
           at_date: في %{date}
           reply: الرد
           back_to_msgs: عودة إلى رسائل

@@ -12,7 +12,7 @@
           <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.id) %></li>
         <% end %>
       </ul>                                                                         
-      <%= link_to pluralize(topic.replies.size, t('.popular.response')), topic, :class => "responses"  %>
+      <%= link_to pluralize_with_i18n(topic.replies.size, '.popular.response.one'), topic, :class => "responses"  %>
     </div>
   </div>
 </li>

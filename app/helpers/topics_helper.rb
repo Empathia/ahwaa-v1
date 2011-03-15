@@ -1,4 +1,19 @@
 module TopicsHelper
+  def pluralize_with_i18n(size, key)
+    if rtl?
+      case size
+      when 1
+        t "#{key}.one"
+      when 2
+        t "#{key}.two"
+      else
+        t "#{key}.other", :other => size
+      end
+    else
+      pluralize(size, key)
+    end
+  end
+  
   # Builds linked_in share url
   def linked_in_share_url(topic)
     qs = {
