@@ -47,8 +47,8 @@ en:
         ar: Arabic
   errors:
     messages:
-      voted: You have already marked this as helpful.
-      flagged: You have already flagged this reply.
+      voted: Already voted
+      flagged: Already flagged
     template:
       header:
         one: "1 error prohibited this record from being saved:"
@@ -150,7 +150,8 @@ en:
       popular_topics: Most Popular Topics
       feeds: "What's Going on Now"
       latest:
-        has_left_a_comment: %{author} has left an %{comment} on %{topic}
+        has_left_a_comment: %{author} has left a %{comment} on %{topic}
+        has_left_an_comment: %{author} has left an %{comment} on %{topic}
   topics:
     related_topics:
       title: Related Content
@@ -166,7 +167,7 @@ en:
         responses: Most responses
     show:
       contextual:
-        add_comment: Add Comment
+        add_comment: Add Response
         reply_here: Reply here
         hide: Hide
       icons:
@@ -277,10 +278,10 @@ en:
     new_response:
        new_response: New Response
     useful_flag_buttons:
-      voted: Marked as helpful
+      voted: Voted
       flagged: Flagged
       already_flagged: Already flagged
-      already_useful: Already marked as helpful
+      already_useful: Already voted
       useful: This was helpful!
       flag: Flag
       anonymous: "Anonymous users can't be rated"

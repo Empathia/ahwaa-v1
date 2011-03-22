@@ -7,10 +7,10 @@ module TopicsHelper
       when 2
         t "#{key}.two"
       else
-        t "#{key}.other", :other => size
+        t "#{key}.other", :count => size
       end
     else
-      pluralize(size, key)
+      pluralize(size, t(key))
     end
   end
   

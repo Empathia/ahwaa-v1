@@ -47,15 +47,15 @@ ar:
         ar: العربية
   errors:
     messages:
-      voted: لقد قمت بالتصويت.
-      flagged: لقد قمت بالإشارة لهذا الرد.
+      voted: لقد صوّتت لهذا الردّ بالفِعل.
+      flagged: لقد أشرت لهذا الردّ بالفِعل.
     template:
       header:
         one: "هناك خطأ أثناء محاولة حفظ هذا السجل :"
         other: "%{count} تم حفظ هذا السجل بلا أخطاء : "
 
   helpers:
-    ago: %{time} منذ
+    ago: منذ %{time}
 
   private_message:
     send_msg: أرسل رسالة خاصة
@@ -68,12 +68,12 @@ ar:
     message_sent: تم إرسال رسالتك بنجاح!
     message_empty: رسالة فارغة
     no_activity: لا يوجد نشاطًا جديدًا
-    flash_alert: .من فضلك لا نصيب هويتك وتفاصيل شخصية. لا يمكننا أن نضمن أن يمكن الوثوق بها جميع مستخدمي هذا الموقع. توخي الحذر عند التواصل مع الآخرين على الموقع
+    flash_alert: لا تُفصح عن هويتك الحقيقية أو أيّ تفاصيل شخصية أخرى، كوننا لا نستطيع ضمانة جميع مستخدمي هذا الموقع، توخّى الحذر عند التواصل مع أيّ شخص جديد!
     send_pm: أرسل رسالة خاصة
   layouts:
     application:
       header:
-        switch_to_english: View in english
+        switch_to_english: View in English
         auth:
           sign_up: "أنشئ حسابًا جديدًا!"
           login: تسجيل الدخول
@@ -102,7 +102,7 @@ ar:
           error_username_not: اسم المستخدم هذا غير موجود
           error_password_empty: كلمة المرور فارغة
           error_password_short: كلمة المرور غير صالحة 
-          flash_alert: .أنت تشجيع لاستخدام اسم مستعار. لكل مستخدم مسؤولة عن حماية هويتهم
+          flash_alert: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
         login_form:
           login: البريد الإلكتروني أو اسم المستخدم
           password: كلمة المرور
@@ -112,8 +112,8 @@ ar:
           wrong_password: كلمة المرور خاطئة
           not_found: لم يتم العثورة على اسم المستخدم أو البريد الإلكتروني
           error_login_empty: اسم المستخدم أو البريد الإلكتروني خطأ
-          forgot_pass_form: لقد نسيت كلمة المرور الخاصة بي
-          not_found: لم يتم العثورة على اسم المستخدم أو البريد الإلكتروني
+        forgot_pass_form:
+          not_found: لم يتم العثور على اسم المستخدم أو البريد الإلكتروني
           legend: "أدخل عنوان بريدك الالكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور"
           sent: "من فضلك اتّبع التعليمات المُرسلة لك على بريدك الإلكتروني."
           login: البريد الإلكتروني
@@ -150,14 +150,15 @@ ar:
       popular_topics: أكثر الموضوعات شعبية
       feeds: "ما يحدث الآن"
       latest:
-        has_left_a_comment: "%{author} وقد ترك %{comment} على %{topic}"
+        has_left_a_comment: "%{author} قد ترك %{comment} على %{topic}"
+        has_left_an_comment: "%{author} قد ترك %{comment} على %{topic}"
   topics:
     related_topics:
       title: ذات المحتوى
       view_more: عرض مزيد من
     topic:
       popular:
-        by: من قبل %{author}
+        by: بواسطة %{author}
         response:
           one: رد واحد
           two: ردّان
@@ -169,8 +170,8 @@ ar:
         responses: "معظم الردود"
     show:
       contextual:
-        add_comment: أضف تعليق
-        reply_here: الرد هنا
+        add_comment: إضافة ردّ جديد
+        reply_here: أضف ردًا هنا
         hide: "إخفاء"
       icons:
         social:
@@ -185,17 +186,17 @@ ar:
           title: ترشيح الردود
         filter_helpful: ترشيح الردود المفيدة فقط
         experts:
-         title: الخبراء المواضيع
+         title: خبراء المواضيع
         need_help: بحاجة للمساعدة؟
       form:
         cancel: إلغاء
         write_response: انقر هنا لكتابة ردكم.
-        post_response: آخر رد
+        post_response: أرسِل
         type_response: "نوع الاستجابة:"
         anonymous_legend: لإضافة ردّ، فضلًا 
         continue: أو ابقَ مجهولًا
         sign_up: أنشيء حسابًا
-        flash_alert: .يرجى الامتناع عن كشف أو هوية شخص آخر عند نشر التعليقات        
+        flash_alert: ييُرجى الامتناع عن كشف هويتك أو هوية الآخرين، لو كان هذا قد يسبب ضررًا لك أو لهم، عند إضافة ردّك.
     comments:
       new_response: استجابة جديدة
   replies:
@@ -204,7 +205,7 @@ ar:
       reply_to: "رد على %{username}"
   topic_requests:
     new:
-      submit: تقدم
+      submit: أرسِل
       title: طلب مواضيع
       content: تفاصيل الموضوع
   users:
@@ -272,19 +273,19 @@ ar:
       password_reset:
         subject: إعادة تعيين كلمة المرور
       sign_up_confirmation:
-        subject: مرحبا بكم في تجاوز
+        subject: مرحبًا بكم في أهواء
       topic_request_notification:
         subject: تم طلب موضوع جديد
 
   shared:
     new_response:
-       new_response: رد جديدة
+       new_response: إضافة ردّ جديد
     useful_flag_buttons:
-      voted: تم التصويت
-      flagged: أشِر إلى هذا كغير لائق
-      already_flagged: تمت الإشارة
-      already_useful: كما شهدت بالفعل مفيدة
-      useful: كان هذا مفيدًا!
+      voted: تمّ التصويت
+      flagged: تمّ الإشارة
+      already_flagged: لقد أشرت لهذا الردّ بالفِعل
+      already_useful: لقد صوّتت لهذا الردّ بالفِعل
+      useful: التصويت!
       flag: الإشارة
-      anonymous: "لا يمكن للمستخدمين المجهولين التقييم"
+      anonymous: "لا يمكن التقييم للمستخدمين الجدد"
       sign_up: أنشئ حسابًا جديدًا

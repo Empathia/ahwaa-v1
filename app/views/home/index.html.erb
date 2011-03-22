@@ -56,7 +56,7 @@
             </div>
             <div class="item-data">
               <p>
-              <%= t('.latest.has_left_a_comment', :author => reply.author_username, :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
+              <%= t(reply.category == 'comment' ? '.latest.has_left_a_comment' : '.latest.has_left_an_comment', :author => reply.author_username, :comment => link_to(reply.i18n_category, reply.topic, :class => 'dark-lk'), :topic => link_to(reply.topic.title, reply.topic)).html_safe %>
               </p>
               <p class="feed-date"><%= t 'helpers.ago', :time => time_ago_in_words(reply.created_at) %></p>
             </div>
