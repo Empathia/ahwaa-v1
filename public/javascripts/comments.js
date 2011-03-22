@@ -181,12 +181,12 @@ $.fn.comments = function(options){
 
     $('.add_comments.clon:visible textarea.comment_content').live('focus',function(){
         var textarea = $(this);
-        if(textarea.val() == 'Click here to write your response.'){
+        if(textarea.val() == textarea.attr('placeholder')){
             textarea.val('')
         }
         textarea.blur(function(){
-                if(textarea.val().length <= 1 || textarea.val() ==  'Click here to write your response.'){
-                    textarea.val('Click here to write your response.');
+                if(textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')){
+                    textarea.val(textarea.attr('placeholder'));
                 }
             })
     }).live('keyup', function () {
