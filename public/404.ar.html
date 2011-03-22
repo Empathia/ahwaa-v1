@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>(على الصفحة التي كنت تبحث عن لا وجود (404</title>
+  <title>لم يتم العثور على الصفحة المطلوبة (404)</title>
   <link href="/stylesheets/404.css" media="screen" rel="stylesheet" type="text/css">
   <link href="/stylesheets/404-rtl.css" media="screen" rel="stylesheet" type="text/css">  
 </head>
 <body>
   <div class="rtl">
-      <p>.يبدو أنك اتبعت رابط غير صالح أو حدث خطأ ما<br>واذا حدث ذلك مرة أخرى، وإعلامنا <%= mail_to "contact@ahwaa.org", 'الصفحة الرئيسية'  %> أمل العودة إلى</p>
+      <p>يبدو أنك اتّبعت رابطًا خاطئًا، أو حدث خطأ ما.<br>ارجع لـ <%= link_to 'الصفحة الرئيسية', root_path %> وإذا حدث مرة أخرى, <%= mail_to "contact@ahwaa.org", "راسلنا" %></p>
   </div>
 </body>
 </html>                                                                                                                  
