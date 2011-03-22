@@ -63,9 +63,7 @@ class User < ActiveRecord::Base
 
   # sends notification for sign up confirmation
   def notify_sign_up_confirmation!
-    with_user_locale do
-      UserMailer.sign_up_confirmation(self).deliver
-    end
+    UserMailer.sign_up_confirmation(self).deliver
   end
 
   # sends notification for private message
