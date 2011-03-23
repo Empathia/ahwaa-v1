@@ -10,13 +10,13 @@ ar:
         alert: "%{resource_name} لا يمكن إزالتها."
     application:
       should_be_admin: "ليس لديك الصلاحيات الكافية للوصول إلى هذا الجزء من الموقع."
-      not_logged_in: "لم يتم دخولك في"
+      not_logged_in: "أنت غير مُسجّل على الموقع"
     passwords:
       update:
-        notice: "تم تغيير كلمة السر الخاصة بكم. يمكنكم الآن تسجيل الدخول باستخدام كلمة المرور الجديدة."
+        notice: "تم تغيير كلمة المرور بنجاح. يمكنكم الآن تسجيل الدخول باستخدام كلمة المرور الجديدة."
     users:
       create:
-        notice: "!لقد أرسلنا إليك رسالة بريد إلكتروني للتأكيد. الرجاء مراجعة صندوق البريد الوارد"
+        notice: "!لقد أرسلنا إليكم رسالة بريد إلكتروني للتأكيد. الرجاء مراجعة صندوقيّ البريد الوارد والسُخام"
       destroy:
         notice: "تم إنهاء حسابك!"
     topic_requests:
@@ -51,8 +51,8 @@ ar:
       flagged: لقد أشرت لهذا الردّ بالفِعل.
     template:
       header:
-        one: "هناك خطأ أثناء محاولة حفظ هذا السجل :"
-        other: "%{count} تم حفظ هذا السجل بلا أخطاء : "
+        one: "هناك خطأ يعوق عملية الحفظ :"
+        other: "%{count} تم الحفظ بنجاح : "
 
   helpers:
     ago: منذ %{time}
@@ -61,7 +61,7 @@ ar:
     send_msg: أرسل رسالة خاصة
     write_msg: اكتب رسالتك
     cancel: إلغاء
-    submit: تقدّم
+    submit: أرسِل
     points: "%{points} نقاط "
     expert: "خبير"
     recently_participated: "مشاركاتك الأخيرة :"
@@ -79,15 +79,15 @@ ar:
           login: تسجيل الدخول
         request_topic:
           button: "طلب موضوع"
-          legend: "يجب أن تكون مسجلا في لطلب الموضوع."
+          legend: "يجب أن تكون مُسجلًا على موقع أهواء لطلب الموضوع."
           sign_up: أنشئ حسابًا جديدًا!
           error_login_empty: تسجيل الدخول
-          title: "عنوان فارغ"
-          topic_details: "تفاصيل الموضوع فارغ"
+          title: "العنوان فارغ"
+          topic_details: "تفاصيل الموضوع فارغة"
           back_button: العودة
           flash_alert: .يرجى الامتناع عن الكشف عن هويتك أو أيّ تفاصيل شخصية أخرى من شأنها أن تعرّضك، أو تعرّض أفراد آخرين، للخطر. أحجِم عن نشر أيّ بيانات شخصية غير مرغوب في نشرها على شبكة الإنترنت
         sign_up_form:
-          sign_up: "قم بالتسجيل"
+          sign_up: "تسجيل"
           legend: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
           username: الاسم أو الكُنية
           email: البريد الإلكتروني الخاص بك
@@ -99,7 +99,7 @@ ar:
           error_email_empty: البريد الإلكتروني غير موجود
           error_email_invalid: البريد الالكتروني غير موجود
           error_username_empty: اسم المستخدم فارغ
-          error_username_not: اسم المستخدم هذا غير موجود
+          error_username_not: اسم المستخدم غير موجود
           error_password_empty: كلمة المرور فارغة
           error_password_short: كلمة المرور غير صالحة 
           flash_alert: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
@@ -110,18 +110,18 @@ ar:
           sign_in: تسجيل الدخول
           invalid: عنوان البريد الإلكتروني أو كلمة المرور غير صحيحة. يُرجى المحاولة مرة أخرى.
           wrong_password: كلمة المرور خاطئة
-          not_found: لم يتم العثورة على اسم المستخدم أو البريد الإلكتروني
+          not_found: لم يتم العثور على اسم المستخدم أو البريد الإلكتروني
           error_login_empty: اسم المستخدم أو البريد الإلكتروني خطأ
         forgot_pass_form:
           not_found: لم يتم العثور على اسم المستخدم أو البريد الإلكتروني
-          legend: "أدخل عنوان بريدك الالكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور"
+          legend: "أدخل عنوان بريدك الإلكتروني وسنرسل لك رابطًا لإعادة تعيين كلمة المرور"
           sent: "من فضلك اتّبع التعليمات المُرسلة لك على بريدك الإلكتروني."
           login: البريد الإلكتروني
           send: إرسال كلمة المرور
           cancel: إلغاء
           empty: اسم المستخدم أو البريد الإلكتروني فارغ
         logged_in:
-          hi: "مرحبا %{username}"
+          hi: "مرحبًا %{username}"
           my_account: "حسابي+رسائلي"
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث
@@ -132,14 +132,14 @@ ar:
     admin:
       header:
         logged_in:
-          hi: "مرحبا %{username}"
+          hi: "مرحبًا %{username}"
           my_account: "ملفاتي + رسائل"
           sign_out: تسجيل الخروج
   home:
     index:
-      title: تجاوز
-      legend: سوف تاغلين دعم العيش هنا وينبغي أن يكون حول هذا طويل
-      watch_video: شاهد فيديو
+      title: أهواء
+      legend: هواء مفتوح لكل الهويات
+      watch_video: شاهد ڤيديو
       community: مجتمع
       private: الخصوصية
       engaging: الانخراط
@@ -154,7 +154,7 @@ ar:
         has_left_an_comment: "%{author} قد ترك %{comment} على %{topic}"
   topics:
     related_topics:
-      title: ذات المحتوى
+      title: محتوى ذات صلة
       view_more: عرض مزيد من
     topic:
       popular:
@@ -162,7 +162,7 @@ ar:
         response:
           one: رد واحد
           two: ردّان
-          other: ردود %{count}
+          other: %{count} ردود
     tag:
       sort_by:
         label: "ترتيب حسب :"
@@ -186,17 +186,17 @@ ar:
           title: ترشيح الردود
         filter_helpful: ترشيح الردود المفيدة فقط
         experts:
-         title: خبراء المواضيع
+         title: خبراء الموضوع
         need_help: بحاجة للمساعدة؟
       form:
         cancel: إلغاء
-        write_response: انقر هنا لكتابة ردكم.
+        write_response: انقر هنا لكتابة الردّ.
         post_response: أرسِل
         type_response: "نوع الاستجابة:"
         anonymous_legend: لإضافة ردّ، فضلًا 
         continue: أو ابقَ مجهولًا
         sign_up: أنشيء حسابًا
-        flash_alert: ييُرجى الامتناع عن كشف هويتك أو هوية الآخرين، لو كان هذا قد يسبب ضررًا لك أو لهم، عند إضافة ردّك.
+        flash_alert: يُرجى الامتناع عن كشف هويتك أو هوية الآخرين، لو كان هذا قد يسبب ضررًا لك أو لهم، عند إضافة ردّك.
     comments:
       new_response: استجابة جديدة
   replies:
@@ -206,7 +206,7 @@ ar:
   topic_requests:
     new:
       submit: أرسِل
-      title: طلب مواضيع
+      title: طلب موضوع
       content: تفاصيل الموضوع
   users:
     show:
@@ -234,7 +234,7 @@ ar:
             invalid_email: "هذا البريد الإلكتروني غير صالح"
             password_too_short: "كلمة المرور الجديدة قصيرة جدًا."
         terminate_account: إنهاء الحساب
-        confirm_terminate: هل أنت متأكد أنك تريد حذف حسابك؟ لا يمكنك التراجع فيما بعد
+        confirm_terminate: هل أنت متأكد أنك تريد حذف حسابك؟ لا يمكنك التراجع فيما بعد.
         saved: "تم تحديث الحساب الشخصي الخاص بك"
         new_user:
           question: "من أنت؟"
@@ -243,12 +243,12 @@ ar:
       content:
         avatars:
           suggested: اختر الصورة التي تناسبك
-          loading: ...تحميل الصور الرمزية
-          custom_avatar: مخصصة حاليا
+          loading: ...تحميل الصور الرمزية جارٍ
+          custom_avatar: خصص صورة جديدة
         private_messages:
           title: الرسائل الخاصة
           delete: حذف
-          confirm_delete: هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكنك التراجع فيما بعد
+          confirm_delete: هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكنك التراجع فيما بعد.
           by: بواسطة %{sender}
           at_date: في %{date}
           reply: الرد
@@ -287,5 +287,5 @@ ar:
       already_useful: لقد صوّتت لهذا الردّ بالفِعل
       useful: التصويت!
       flag: الإشارة
-      anonymous: "لا يمكن التقييم للمستخدمين الجدد"
+      anonymous: "لا يمكن التقييم للمستخدمين المجهولين"
       sign_up: أنشئ حسابًا جديدًا

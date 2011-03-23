@@ -5,7 +5,7 @@ class CreatePoliticalViews < ActiveRecord::Migration
       t.timestamps
     end
 
-    PoliticalView.create(%w[libertian liberal conservative nationalist
+    PoliticalView.create(%w[libertarian liberal conservative nationalist
                          monarchist sharia_law social_democrat socialist
                         pan_arabist green communist anarchist apolitical
                         undeclared].map { |i| {:i18n_name => i} })

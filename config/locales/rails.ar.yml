@@ -66,7 +66,7 @@ ar:
         one:   "حوالي سنة واحدة"
         other: "حول %{count} سنة"
       over_x_years:
-        one:   "أكثر من سنة واحدة"
+        one:   "أكثر من سنة"
         other: "أكثر من %{count} سنة"
       almost_x_years:
         one:   "سنة واحدة تقريبًا"
