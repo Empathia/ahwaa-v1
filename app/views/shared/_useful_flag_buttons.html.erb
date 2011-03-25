@@ -1,5 +1,7 @@
 <div class="res-flag-btns">
-  <%= link_to_vote_up reply %>
+  <% if !reply.anonymous? %>
+    <%= link_to_vote_up reply %>
+  <% end %>
   <%= link_to_flag reply %>
   <% unless logged_in? %>
     <div class="sign-up-tt-wrapper">
