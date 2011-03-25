@@ -250,7 +250,7 @@ $.fn.comments = function(options){
         parags.each(function(){
             var parag = $(this),
                 paragHTML= parag.html(),
-                exp = /([\.\?!])((?: [A-Z])|\s*$)/,
+                exp = /([\.\?!؟])((?: [A-Z])|\s*$)/,
                 has_comments = "";
             while(exp.test(paragHTML)){ 
                 paragHTML = $('#' + selector + i).length ? paragHTML.replace(exp, "$1 <a href='#' class='icn level_" + level + " has_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>&nbsp;<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$2") :
