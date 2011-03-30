@@ -64,7 +64,7 @@ ar:
     submit: أرسِل
     points: "%{points} نقاط "
     expert: "خبير"
-    recently_participated: "مشاركاتك الأخيرة :"
+    recently_participated: "المشاركات الأخيرة :"
     message_sent: تم إرسال رسالتك بنجاح!
     message_empty: رسالة فارغة
     no_activity: لا يوجد نشاطًا جديدًا
