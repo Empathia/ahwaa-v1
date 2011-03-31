@@ -28,6 +28,8 @@ describe TopicsController do
       end
 
       it "filters topics by tag" do
+        @tag = 'foo'
+        ActsAsTaggableOn::Tag.should_receive(:find).with('foo').and_return(@tag)
         @topics.tagged_with(any_args).should_receive(:in_groups_of).and_return([])
         do_request
       end
@@ -46,6 +48,8 @@ describe TopicsController do
       end
 
       it "filters topics by tag" do
+        @tag = 'foo'
+        ActsAsTaggableOn::Tag.should_receive(:find).with('foo').and_return(@tag)
         @topics.tagged_with(any_args).should_receive(:in_groups_of).and_return([])
         do_request :by_responses => '1'
       end

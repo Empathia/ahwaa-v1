@@ -41,7 +41,9 @@ Lgbt::Application.routes.draw do
 
   namespace :admin do
     resources :tags,  :only => [:index, :destroy]
-    resources :flagged_replies, :only => [:index, :destroy]
+    resources :flagged_replies, :only => [:index, :destroy] do
+      put 'unflag', :on => :member
+    end
     resource  :bad_words, :only => [:show, :update]
     resources :topic_requests, :only => [:index, :destroy] do
     end

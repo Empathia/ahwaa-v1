@@ -14,7 +14,9 @@
       <td><%= reply.content %></td>
       <td class="flag_count"><%= reply.flags.count %></td>
       <td>
-        <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete %></td>
+        <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete %>
+        or
+        <%= link_to 'Unflag', unflag_admin_flagged_reply_path(reply), :method => :put %>
       </td>
     </tr>
   <% end %>

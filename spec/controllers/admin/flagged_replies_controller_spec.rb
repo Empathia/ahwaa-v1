@@ -43,6 +43,34 @@ describe Admin::FlaggedRepliesController do
       end
 
     end
+
+  end
+
+  describe "PUT 'unflag'" do
+
+    before do
+      @reply = Factory(:reply)
+    end
+
+    def do_request(params = {})
+      put :unflag, params
+    end
+
+    context "when admin is logged in" do
+
+      before do
+        @admin = Factory(:admin)
+        sign_in @admin 
+      end
+
+      it "destroys all flags for the reply" do
+        Reply.should_receive(:find).with(1).and_return(@reply)
+        @reply.flags.should_receive(:clear)
+        do_request :id => 1
+      end
+
+    end
+
   end
 
 end
