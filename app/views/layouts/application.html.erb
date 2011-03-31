@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html <%= 'dir="rtl"'.html_safe if rtl? %>>
 <head>
-  <title>Ahwaa</title>                                                                                              
+  <title><%= "#{@page_title} - " if @page_title %>Ahwaa.org</title>
+  <meta name="description" content="<%= @page_description || 'A safe space to debate LGBTQ-related issues in the Middle East' %>">
   <% if rtl? %>
     <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
-  <% end %>  
+  <% end %>
   <%= javascript_include_tag :defaults, 'locales', 'form_validator', 'sitescript', 'jquery.pageslide', :cache => true %>
   <link rel="shortcut icon" href="<%= root_url %>favicon.ico">
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
   <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5_ie' %>
-    <%= stylesheet_link_tag 'ie' %>         
-    <% if rtl? %> 
-      <%= stylesheet_link_tag 'ie-rtl' %>    
-    <% end %>    
+    <%= stylesheet_link_tag 'ie' %>
+    <% if rtl? %>
+      <%= stylesheet_link_tag 'ie-rtl' %>
+    <% end %>
   <![endif]-->
   <!--[if lt IE 8]>
-    <%= stylesheet_link_tag 'ie7' %>  
+    <%= stylesheet_link_tag 'ie7' %>
     <% if rtl? %>
-      <%= stylesheet_link_tag 'ie7-rtl' %>      
+      <%= stylesheet_link_tag 'ie7-rtl' %>
     <% end %>
-  <![endif]--> 
+  <![endif]-->
   <!--[if IE 8]>
-    <%= stylesheet_link_tag 'ie8' %>  
+    <%= stylesheet_link_tag 'ie8' %>
   <![endif]-->
 </head>
 <body>
@@ -65,7 +66,7 @@
                           <label><%= t('.header.sign_up_form.username') %></label>
                           <%= f.text_field :username, :required => "true", :maxlength => 35 %>
                         </li>
-                      </ul>                    
+                      </ul>
                       <div class="flash-privacy">
                         <div class="border-all"><%= t('.header.sign_up_form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
                       </div>
@@ -78,21 +79,21 @@
                     <a href="#" id="login"><span><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
                       <ul>
-                        <li class="login">                                                               
+                        <li class="login">
                           <label><%= t('.header.login_form.login') %></label>
                           <%= text_field_tag :login, nil, :required => "true", 'id' => "login-input" %>
                         </li>
                         <li class="password">
                           <label><%= t('.header.login_form.password') %></label>
                           <%= password_field_tag :password, nil, :required => "true" %></li>
-                      </ul>             
+                      </ul>
                       <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
                       <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
                     <% end %>
                     <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
-                        <li class="login">                                                  
+                        <li class="login">
                           <label><%= t('.header.forgot_pass_form.login') %></label>
                           <%= text_field_tag :login, nil, :required => "true" %>
                         </li>
@@ -107,7 +108,7 @@
                 <p class="border-all">
                   <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
                   <span></span>
-                </p>                     
+                </p>
                 <div class="search-results-wrapper">
                   <a href="#" class="arrow scroll-up"><div><div></div></div></a>
                   <div class="search-results-scroller">
@@ -137,7 +138,7 @@
                     <a class="arrow scroll-down" href="#"><div><div></div></div></a>
                   </div>
                 </li>
-              </ul>     
+              </ul>
               <div class="request-topic-wrapper">
                 <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
                   <span>

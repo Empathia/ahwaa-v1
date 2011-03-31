@@ -1,4 +1,12 @@
 module ApplicationHelper
+  def title(title)
+    @page_title = title
+  end
+
+  def page_description(description)
+    @page_description = description.scan(/.{1,150}\b/).first.strip
+  end
+
   # Wraps content to display within the +<head>+ tags
   def head(&block)
     content_for(:head) { block.call }
