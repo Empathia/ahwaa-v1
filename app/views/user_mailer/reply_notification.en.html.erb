@@ -1,0 +1,8 @@
+<p>Dear <%= @user.username %></p>,
+
+<p>A user has just responded to your comment on <%= @reply.topic.title %> at Ahwaa.org. To read the response, click <%= link_to "here", topic_url(@reply.topic) %>.</p>
+
+<p><small>Don't wish to receive these e-mails? Unsubscribe at any time <%= link_to 'here', unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key) %>.</small></p>
+
+<p>Thanks,<br/>
+Ahwaa</p>

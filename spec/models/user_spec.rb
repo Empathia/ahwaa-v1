@@ -5,6 +5,7 @@ describe User do
     @user = Factory(:user)
   end
 
+  it { should have_many(:subscriptions) }
   it { should have_one(:score_board)}
   it { should have_one(:current_level)}
   it { should have_one(:current_badge)}
@@ -157,6 +158,17 @@ describe User do
     it "scopes to all the admin users" do
       3.times { Factory(:user, :is_admin => true) }
       User.admins.length.should == 3
+    end
+
+  end
+
+  describe ".subscribe_to" do
+
+    it "subscribes user to given topic" do
+      topic = Factory(:topic)
+      @user.subscriptions.length.should == 0
+      @user.subscribe_to(topic)
+      @user.subscriptions.length.should == 1
     end
 
   end

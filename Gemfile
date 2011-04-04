@@ -14,6 +14,7 @@ gem 'paperclip', '~> 2.3.4'
 gem 'rio', '~> 0.4.2'
 gem 'random_data'
 gem 'nokogiri', '~> 1.4.3.1'
+gem 'delayed_job', '~> 2.1.4'
 
 group :development, :test do
   gem 'rcov'
@@ -22,5 +23,6 @@ group :development, :test do
   gem "autotest", '~> 4.4.1'
   gem "factory_girl_rails", '~> 1.0'
   gem 'no_peeping_toms'
+  gem 'ruby-debug'
 end
 

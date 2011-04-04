@@ -17,6 +17,8 @@ class Topic < ActiveRecord::Base
   has_many :users, :through => :replies
   has_many :topic_experts, :dependent => :destroy
   has_many :experts, :through => :topic_experts
+  has_many :subscriptions
+  has_many :subscribers, :through => :subscriptions, :source => :user
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -30,6 +32,15 @@ class Topic < ActiveRecord::Base
   scope :by_replies_count, lambda { |*lang| by_language(lang.first || 'en').order("replies_count DESC") }
   scope :newest, lambda { |*lang| by_language(lang.first || 'en').order("created_at DESC") }
   scope :popular, lambda { |*lang| by_replies_count(lang.first || 'en').limit(5) }
+
+  # Notifies all subscribers to this topic about a new response
+  def notify_subscribers_about_new_response(reply)
+    subscribers.each do |user|
+      user.with_user_locale do
+        UserMailer.delay.reply_notification(user, reply)
+      end unless user == reply.user
+    end
+  end
 
   def self.per_page
     10

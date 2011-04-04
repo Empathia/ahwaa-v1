@@ -22,6 +22,10 @@ ar:
     topic_requests:
       create:
         notice: "لقد تم ارسال طلبك للمراجعة من قِبل الادارة. شكرًا لك! "
+    subscriptions:
+      unsubscribe:
+        notice: You have been ubsubscribed from this topic.
+        alert: "Could'nt find any subscription with that email"
 
   activerecord:
     models:
@@ -276,6 +280,8 @@ ar:
         subject: مرحبًا بكم في أهواء
       topic_request_notification:
         subject: تم طلب موضوع جديد
+      reply_notification:
+        subject: إشعار من أهواء
 
   shared:
     new_response:

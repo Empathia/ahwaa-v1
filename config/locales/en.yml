@@ -22,6 +22,10 @@ en:
     topic_requests:
       create:
         notice: "Your request has been sent to be reviewed by an admin. Thank you!"
+    subscriptions:
+      unsubscribe:
+        notice: You have been ubsubscribed from this topic.
+        alert: "Could'nt find any subscription with that email"
 
   activerecord:
     models:
@@ -273,6 +277,8 @@ en:
         subject: Welcome to Ahwaa
       topic_request_notification:
         subject: A new topic has been requested
+      reply_notification:
+        subject: Notification from Ahwaa
 
   shared:
     new_response:

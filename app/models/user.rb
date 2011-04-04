@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_one :current_level, :through => :score_board, :class_name => "Level", :source => :level
   has_one :current_badge, :through => :score_board, :class_name => "Badge", :source => :badge
   has_one :current_prize, :through => :score_board, :class_name => "Prize", :source => :prize
+  has_many :subscriptions, :dependent => :destroy
 
   has_many :ratings, :dependent => :destroy
   has_many :replies, :dependent => :destroy
@@ -33,6 +34,16 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
 
   scope :admins, where(:is_admin => true)
+
+  # Adds a subscription for the user to the given topic
+  def subscribe_to(topic)
+    subscriptions << Subscription.new(:topic => topic)
+  end
+
+  # Finds subscription to the given topic
+  def subscription_for(topic)
+    subscriptions.where(:topic_id => topic.id).first
+  end
 
   # if a user is destroyed change the ownership of its topics to admin
   def change_topics_owner
