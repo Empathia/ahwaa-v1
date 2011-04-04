@@ -180,7 +180,8 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .request-topic > span > span{float:right; padding-right: 21px; font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position: 100% -50px}
 
 .tags > li{margin-right: 4px;}
-.by-author{margin-right: 14px;}
+.by-author{margin-right: 14px}
+h1 + .by-author {margin-top: 10px}
 .by-author,
 .tags > li{float: left;}
 .tags{display: inline; margin-right: 5px;}

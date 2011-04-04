@@ -16,10 +16,10 @@
           <div class="avatar-wrapper">
             <%= avatar_span(@topic.user, @topic.user.is_expert?) %> 
             <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
-            <em><%= @topic.user.username %></em>
           </div>
           <div class="right">
             <h1><%= @topic.title %></h1>
+            <span class="by-author">By <%= @topic.user.username %></span>
             <p class="article-tags">
               <%= linked_tag_list @topic.tags %>
             </p>

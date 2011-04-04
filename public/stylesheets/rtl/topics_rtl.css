@@ -4,7 +4,7 @@ body{
   background: url('../../images/topic-bg.jpg') 0 105px repeat-x fixed, url('../../images/bg-noise-topic.jpg') top left repeat;
 }
 body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
-.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4;}
+.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4; float: left}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
