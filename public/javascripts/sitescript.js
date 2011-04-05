@@ -147,8 +147,8 @@ $(function(){
        return false;
     });
 
-    $('.avatar, .avatar + em').live('mouseover',function(){ 
-        var pm = $(this).siblings('.private-msg');
+    $('.avatar > img').live('mouseover',function(){ 
+        var pm = $(this).parent().siblings('.private-msg');
         pm.show(0, function () {
             if(pm.offset().left < 0 || pm.offset().left + pm.outerWidth() > $(window).width()) {
                 pm.addClass('inside');
