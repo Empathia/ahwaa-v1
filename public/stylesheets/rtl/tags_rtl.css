@@ -3,8 +3,8 @@ body > div {background:url("../../images/topic-bg.jpg") repeat-x fixed 0 105px t
 .topics{background-color: #ffffff; margin-top:13px;border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 .items{padding:0 40px 14px;}
 .item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative;}
-.item {width:415px; padding:25px 0; float:right}
 .item + div{padding-right:50px;}
+.item-row .item {width:415px; padding:25px 0; float:right}
 .items > div > div.bottom{border:none; padding:0;}
 .item-img > img {border:2px solid #FFFFFF; float:right}
 .item-img {border:1px solid #dadee0; float:right}

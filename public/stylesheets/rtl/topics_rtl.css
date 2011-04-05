@@ -4,7 +4,7 @@ body{
   background: url('../../images/topic-bg.jpg') 0 105px repeat-x fixed, url('../../images/bg-noise-topic.jpg') top left repeat;
 }
 body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
-.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4; float: left}
+.article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4; float:right}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
@@ -170,7 +170,7 @@ a.no_comments{
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9')";
 }
-
+.topic-content {padding-top: 20px}
 .topic-content .icn{position: relative; text-decoration: none; text-align: center; z-index: 1;}
 .icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; right: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5; background-color: #3c454f; background-color: rgba(60, 69, 79, .92); text-align: center;}
 .tta{border-style: solid; border-width: 5px 5px 0px; float:right; height: 0px; right: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}  

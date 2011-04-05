@@ -21,3 +21,4 @@ input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_erro
 .over-form > ul > li > input[type="text"],
 .over-form > ul > li > input[type="email"],
 .over-form > ul > li > input[type="password"]{line-height: 2.8;}
+.opacityWrapper{background: url('../../images/black-opacity.png')}
