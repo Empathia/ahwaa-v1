@@ -170,6 +170,7 @@ en:
         newest: Newest
         responses: Most responses
     show:
+      by: By %{author}
       contextual:
         add_comment: Add Response
         reply_here: Reply here

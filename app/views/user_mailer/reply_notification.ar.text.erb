@@ -1,10 +1,10 @@
-Dear <%= @user.username %>,
+عزيزي <%= @user.username %>,
 
-A user has just responded to your comment on <%= @reply.topic.title %> at Ahwaa.org. To read the response, click the link below:
+نوجه عناية سيادتكم وجود ردّ على <%= @reply.topic.title %> على موقع أهواء. للإطلاع عليه, إضغط على الرابط التالي
 
 <%= topic_url(@reply.topic) %>
 
-Don't wish to receive these e-mails? Unsubscribe at any time at: <%= unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key) %>
+إذا كنت لا ترغب في استلام هذه التنبيهات من موقع أهواء في المستقبل، ألغِ اشتراكك في أيّ وقت بالضغط على الرابط التالي: <%= unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key) %>
 
-Thanks,
-Ahwaa
+شكرًا،
+أهواء

@@ -24,8 +24,8 @@ ar:
         notice: "لقد تم ارسال طلبك للمراجعة من قِبل الادارة. شكرًا لك! "
     subscriptions:
       unsubscribe:
-        notice: You have been ubsubscribed from this topic.
-        alert: "Could'nt find any subscription with that email"
+        notice: لقد ألغيت اشتراكك في هذا الموضوع.
+        alert: "لم نعثر على أيّ اشتراك لهذا البريد الإلكتروني"
 
   activerecord:
     models:
@@ -173,6 +173,7 @@ ar:
         newest: الأجدد
         responses: "معظم الردود"
     show:
+      by: بواسطة %{author}
       contextual:
         add_comment: إضافة ردّ جديد
         reply_here: أضف ردًا هنا
