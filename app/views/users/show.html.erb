@@ -1,8 +1,3 @@
-<% head do %>
-  <script type="text/javascript">
-    var countries = <%= Country.all.map { |c| [c.id, c.name] }.inspect.html_safe %>;
-  </script>
-<% end %>
 <% javascript 'ba-bbq', 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all"> 
@@ -76,10 +71,7 @@
                 <li>             
                   <div class="label"><%= UserProfile.human_attribute_name(:country_id) %></div>
                   <div class="field">
-                    <%= text_field_tag :country_birth, current_user.profile.country %>
-                    <ul class="autocomplete">
-                    </ul>
-                    <%= profile.hidden_field :country_id, :class => 'country_id' %>
+                    <%= profile.collection_select :country_id, Country.all, :id, :name %>
                   </div>
                 </li>
                 <li>             

@@ -48,63 +48,6 @@ $(function(){
         avatars.getMatchingAvatars();
     });
 
-    // keyCode:
-    // 40: down
-    // 38: up
-    // 91: cmd
-    // 20: mayus
-    // 17: ctrl
-    // 16: shift
-    // 18: alt
-    // 93: right cmd
-    // 9: tab
-    $('#country_birth').keydown(function (ev) {
-        var val = $(this).val();
-        val = ev.which == 8 ? val.substring(0, val.length - 1) : (val + String.fromCharCode(ev.which));
-        $('input:hidden.country_id').val('');
-        if(ev.which === 40) {
-            var nxt = $('.autocomplete li.active').length > 0 ? $('.autocomplete li.active').next() : $('.autocomplete li:first');
-            nxt.length || (nxt = $('.autocomplete li:first'));
-            $('.autocomplete li.active').removeClass('active');
-            nxt.addClass('active');
-        } else if(ev.which == 38) {
-            var nxt = $('.autocomplete li.active').length > 0 ? $('.autocomplete li.active').prev() : $('.autocomplete li:last');
-            nxt.length || (nxt = $('.autocomplete li:last'));
-            $('.autocomplete li.active').removeClass('active');
-            nxt.addClass('active');
-        } else if(ev.which == 13 || ev.which == 9) {
-            ev.preventDefault();
-            ev.stopImmediatePropagation();
-            $('.autocomplete li.active').trigger('click');
-            return false;
-        } else if($.inArray(ev.which, [16, 17, 18, 91, 93, 20]) == -1) {
-            $('.autocomplete').html('');
-            for(var i = 0; i < countries.length; i++) {
-                if(val.length > 0 && new RegExp(val, 'ig').test(countries[i][1])) {
-                    if ($('.autocomplete li').length < 5) {
-                        $('.autocomplete').append($('<li/>').data('cid', countries[i][0])
-                            .text(countries[i][1]));
-                    }
-                }
-            }
-        }
-        if ($('.autocomplete li').length > 0) {
-            $('.autocomplete').show();
-        } else {
-            $('.autocomplete').hide();
-        }
-    });
-
-    $('.autocomplete li').live('mouseover', function () {
-        $(this).addClass('active');
-    }).live('mouseleave', function () {
-        $(this).removeClass('active');
-    }).live('click', function () {
-        $('#country_birth').val($(this).text());
-        $('input:hidden.country_id').val($(this).data('cid'));
-        $('.autocomplete').html('').hide();
-    });
-    
     var editForm = $('.edit-form');
     editForm.find('input[type=submit]').formValidator({
         'errors': {  
