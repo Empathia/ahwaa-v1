@@ -117,9 +117,12 @@ $.fn.comments = function(options){
         var link = $(this),
             parag = link.parent(),             
             index = $('.topic-content .icn.' + getLevel(link.attr('class'))).index(this),
-            tt = link.find('.tt');
-            parentComments = link.closest('.comments.clon');                                                                                 
-            parentComments.length && (index = parentComments.attr('id').replace('_clon', '').replace('comments_', '') + '_' + index);
+            tt = link.find('.tt'),
+            parentComments = link.parents('.comments.clon');                                                                                 
+        if(parentComments.length) {
+            index = link.parents('.comments.clon').find('.icn.' + getLevel(link.attr('class'))).index(link);
+            index = parentComments.attr('id').replace('_clon', '').replace('comments_', '') + '_' + index;
+        }
         var comments = parag.next('#comments_' + index +'_clon');
         !comments.length && (comments = parag.next('#comments_add_' + index + '_clon'));
         if(comments.length){
@@ -216,7 +219,7 @@ $.fn.comments = function(options){
         $('.comments:not(.clon)').each(function(){
             var comments = $(this),
                 id = comments.attr('id').replace('comments_', '');
-            $('#comments_' +  id +'_clon').length == 0 && allComments.push(cloneComments($('#add_' + id), comments.outerHTML(), id, true)[0]);
+            $('#comments_' + id +'_clon').length == 0 && allComments.push(cloneComments($('#add_' + id), comments.outerHTML(), id, true)[0]);
         });         
        $(allComments).slideDownComments();
        $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
@@ -224,20 +227,22 @@ $.fn.comments = function(options){
     } 
     
     function cloneComments(link, comments, index, has_comments){
-        var parag = link.parent(),
-            linkOuterHTML = link.outerHTML(),
-            chunks = parag.html().split(linkOuterHTML),
-            left = link.position().left;
-        parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
-        comments = parag.next();
-        comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
-        comments.find('.comm-arrow:first').css('left', left);
-        index.toString().split('_').length < 2 && comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
-        $('.icn.level_2').each(function() {
-            var ix = $(this).parents('.comments.clon').find('.icn.level_2').index($(this));
-            var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
-            $(this).attr('id', 'add_' + id + '_' + ix);
-        });
+        if(link.length) {
+            var parag = link.parent(),
+                linkOuterHTML = link.outerHTML(),
+                chunks = parag.html().split(linkOuterHTML),
+                left = link.position().left;
+            parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
+            comments = parag.next();
+            comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
+            comments.find('.comm-arrow:first').css('left', left);
+            index.toString().split('_').length < 2 && comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
+            $('.icn.level_2').each(function() {
+                var ix = $(this).parents('.comments.clon').find('.icn.level_2').index($(this));
+                var id = /comments_(\d+)_clon/.exec($(this).parents('.comments').attr('id'))[1];
+                $(this).attr('id', 'add_' + id + '_' + ix);
+            });
+        }
         return comments;
     }   
 
