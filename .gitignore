@@ -15,4 +15,5 @@ public/system/**/*
 tags
 coverage/**
 Gemfile.lock
+.rspec
 
