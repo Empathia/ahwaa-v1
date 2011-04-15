@@ -34,7 +34,7 @@ module Lgbt
     # config.i18n.default_locale = :de
 
     # JavaScript files you want as :defaults (application.js is always included).
-    config.action_view.javascript_expansions[:defaults] = %w(include/jquery include/rails locales ext/string application)
+    config.action_view.javascript_expansions[:defaults] = %w(include/jquery.min include/rails locales ext/string application)
 
     config.generators do |g|
       g.integration_tool    :rspec
