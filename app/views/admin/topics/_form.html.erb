@@ -1,4 +1,3 @@
-<% javascript :form_validator, :form_script, 'jquery.fcbkcomplete.min' %>
 <% stylesheet :fcbkcomplete %>
 <% head do %>
   <script type="text/javascript" >
@@ -43,7 +42,7 @@
   </p>
   <p class="field">
     <%= f.label :tag_list %>
-    <%= select_tag 'topic[tag_list]', [], :multiple => true %>
+    <%= select_tag 'topic[tag_list]', '', :multiple => true %>
   </p>
   <p>
     <%= f.submit %>

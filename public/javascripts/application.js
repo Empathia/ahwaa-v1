@@ -65,7 +65,6 @@ $(function() {
         $(this).find('.more-tags').hide();
     });
 
-
     /* Preload images */
     $('<img />').attr('src', '/images/loading-s-gray.gif');
     $('<img />').attr('src', '/images/loading-s-white.gif');

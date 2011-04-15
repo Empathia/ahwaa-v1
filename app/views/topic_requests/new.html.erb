@@ -2,8 +2,7 @@
   <div class="header">
     <h2><%= t('.title') %></h2>
     <a href="#" class="pageslide-close"><%= t('layouts.application.header.request_topic.back_button')%></a>
-  </div>        
-  <% javascript :form_validator, :form_script %>
+  </div>
   <%= form_for @topic_request do |f| %>
     <div class="flash-privacy">
       <div class="border-all"><%= t('layouts.application.header.request_topic.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>

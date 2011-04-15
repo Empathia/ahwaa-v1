@@ -9,8 +9,8 @@
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
   <% end %>
-  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/neon', 'authForms', 'messageSender', 'avatars', 'tagList', 'sitescript', 'include/jquery.pageslide', :cache => true %>
-  <link rel="shortcut icon" href="<%= root_url %>favicon.ico">
+  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/neon', 'authForms', 'messageSender', 'avatars', 'tagList', :cache => true %>
+  <link rel="shortcut icon" href="/favicon.ico">
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
   <!--[if lt IE 9]>

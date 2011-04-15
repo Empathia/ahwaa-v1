@@ -1,13 +1,13 @@
 <% stylesheet 'index' %>
 <% javascript 'include/jquery.overlay', 'index' %>
 
-<div class="aligned">  
+<div class="aligned">
   <section>
     <hgroup class="slogan">
       <h1><%= t('.title') %></h1>
       <h2><%= t('.legend') %></h2>
-    </hgroup>      
-    <div class="watch-video"> 
+    </hgroup>
+    <div class="watch-video">
       <div>
         <a href="#" class="border-all"><span><%= t('.watch_video')%></span></a>
       </div>
@@ -29,7 +29,7 @@
         <p><%= t('.offer') %></p>
       </li>
     </ul>
-  </section>       
+  </section>
   <div class="items-wrapper">
     <section class="topics">
       <h2><%= t('.popular_topics') %></h2>
@@ -49,7 +49,7 @@
                 <span class="avatar">
                   <%= image_tag(reply.author_avatar, :width => '56') %>
                 </span>
-              <% end %>  
+              <% end %>
               <% unless reply.anonymous? %>
                 <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
               <% end %>
