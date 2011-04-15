@@ -195,4 +195,3 @@ var Class = function Class(classNameOrNameSpace, className){
 
 	return classFactory;
 };
-

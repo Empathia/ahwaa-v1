@@ -1,16 +1,15 @@
+<% javascript 'admin/profileMatches' %>
+<% head do %>
+  <script type="text/javascript" >
+    currentTopicId = <%= @topic.id %>;
+    $(getProfileTopicMatches);
+  </script>
+<% end %>
 <div class="adm-title">
   <h1>Topic Profile Matches</h1> 
 </div>
 <h2><%= @topic.title %></h2>
 <p><%= @topic.content %></p>
-<% head do %>
-  <script type="text/javascript" >
-    currentTopicId = '<%= @topic.id %>';
-    $(document).ready(function() {
-      getProfileTopicMatches();
-    });
-  </script>
-<% end %>
 <%= form_tag(list_matches_admin_topic_profile_matches_path(@topic, :format => 'js'), :id => 'profile_match_filters_form') do %>
   <ul class="profile-match-filters">
     <li class="field">
