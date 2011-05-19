@@ -8,6 +8,10 @@ class RepliesController < ApplicationController
     @reply.parent = @topic.replies.find(params[:reply_to]) unless params[:reply_to].blank?
     @reply.user = current_user if logged_in?
     @reply.save
+    respond_to do |format|
+      format.html {redirect_to @topic}
+      format.js {respond_with(@reply)}
+    end
   end
 
   def flag
