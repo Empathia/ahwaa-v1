@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+gem 'rake', '0.8.7'
 gem 'json', '~> 1.4.6'
 gem 'home_run', '~> 0.9.3'
 gem 'rails', '3.0.4'  
