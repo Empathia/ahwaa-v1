@@ -21,7 +21,7 @@
     <%= avatar_span(user, user.is_expert?, true) %>
     <br class="clear" />
   </div>
-  <%= form_for PrivateMessage.new, :url => user_private_messages_path(user, :js), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
+  <%= form_for PrivateMessage.new, :url => user_private_messages_path(user), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
     <div class="flash-privacy">
       <div class="border-all"><%=  t('private_message.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
     </div>

@@ -1,6 +1,6 @@
 class PrivateMessagesController < ApplicationController
   before_filter :find_conversation, :only => [:show, :destroy]
-  respond_to :html, :only => [:destroy]
+  respond_to :html, :only => [:create, :destroy]
   respond_to :js, :only => [:index, :create, :show, :destroy]
 
   def index
@@ -15,7 +15,10 @@ class PrivateMessagesController < ApplicationController
   def create
     @message = PrivateMessage.build_from_params(params, current_user)
     @message.save
-    respond_with(@message)
+    respond_to do |format|
+      format.html {redirect_to :back, :notice => t('private_message.message_sent')}
+      format.js {respond_with(@message)}
+    end
   end
 
   def destroy
