@@ -541,3 +541,10 @@ form + .recently-topics{padding-top:18px;}
 .slide-controls > div > a:first-child {margin-right: 10px;}
 .psMessage {margin: 5px 0 0 5px; font-size: 11px; color: #848484; float: left;}
 #glueButton {position: relative;}
+
+.items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; float: left; margin-bottom: 10px;}
+.item-data{float: right;}
+.item-data > div {color: #898f93}
+.item-data > div > a{color:#bdc6cb}
+.item-data > p{color:#898f93}
+.item-data > p a + a{font-weight:bold}

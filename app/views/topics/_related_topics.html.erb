@@ -3,32 +3,22 @@
     <div>  
       <hr>      
       <h2 class="sec-title-med">
-        <%= t('.title') %>
-      </h2>   
-      <div class="blue-btn-wrapper">
-        <% if related_topics.length > 6 %>
-          <a href="#" class="view-more blue-btn">
-            <span>
-              <span>
-                <span class="w-arrow"><%= t('.view_more') %></span>
-                <span class="more-arrow"></span>
-              </span>
-            </span>
-          </a>
-        <% end %>
-      </div>
+        <span><%= t('.title') %></span>
+      </h2>
     </div>
     <div class="related-carrousel">
-      <ul>
-        <% related_topics.each_with_index do |content, index| %>
-          <li class="<%= "rd-related-content" if index > 0 && index.succ % 3 == 0 %> <%= "hidden" if index > 8 %>">
-            <%= link_to content do %>
-              <b><%= truncate(content.title, :length => 55) %></b>
-              <%= truncate(content.content, :length => 68) %>
-            <% end %>
-          </li>
-        <% end %>
+      <ul class="items">
+        <%= render :partial => related_topics, :locals => {:leng => related_topics.length} %>
       </ul>
     </div>
+    <div class="related-content-line"></div>
+    <div class="view-more-wrapper">
+      <% if related_topics.length > 4 %>
+        <a href="#" class="view-more">
+          <span><%= t('.view_more') %></span>
+        </a>
+      <% end %>
+    </div>
+    <br class="clear">
   </section>
 <% end %>

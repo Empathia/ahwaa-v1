@@ -10,16 +10,16 @@
             <%= link_to t('.sort_by.responses'), {:by_responses => 1}, :class => active_class(true) %>
           </p>
         </div>
-        <div class="items topic-avatars">
+        <div class="tag-items topic-avatars">
           <% @topics.each do | group_topics | %>
-            <div class="item-row">
+            <div class="tag-item-row">
               <% group_topics.each do | topic | %>
-                <div class="item">                                                                                            
+                <div class="tag-item">
                   <div class="avatar-wrapper">
                     <%= avatar_span(topic.user, topic.user.is_expert?) %>
                     <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
                   </div>
-                  <div class="item-data">
+                  <div class="tag-item-data">
                     <%= link_to topic.title, topic, :class => 'dark-lk' %>           
                     <%= t('topics.topic.popular.by', :author => topic.user.username).html_safe %>
                     <br />

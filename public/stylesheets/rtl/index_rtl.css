@@ -6,13 +6,8 @@ body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92p
 .features{overflow: hidden; margin-bottom: 72px;}
 .items-wrapper > section{width: 460px; float:right;}
 .items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
-.items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; width: 440px; float:right; margin-bottom: 10px;}
-
-.item-data{float:left; width: 365px; line-height: 20px;}
-.item-data > div {color: #898f93}
-.item-data > div > a{color:#bdc6cb}
-.item-data > p{color:#898f93}
-.item-data > p a + a{font-weight:bold}
+.items > li{width: 440px;}
+.item-data{width: 365px; line-height: 20px;}
 .topics{margin-left: 20px;}
 .feeds{margin-right: 20px;}
 .item-data .feed-date{font-size: 11px; color: #bdc6cb;}

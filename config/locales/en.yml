@@ -159,7 +159,7 @@ en:
   topics:
     related_topics:
       title: Related Content
-      view_more: View More
+      view_more: view more
     topic:
       popular:
         by: By %{author}

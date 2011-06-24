@@ -6,13 +6,8 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 .features{overflow: hidden; margin-bottom: 72px;}
 .items-wrapper > section{width: 460px; float: left;}
 .items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
-.items > li{background-color: rgba(255, 255, 255, 0.4); padding: 10px; width: 440px; float: left; margin-bottom: 10px;}
-
-.item-data{float: right; width: 365px; line-height: 20px;}
-.item-data > div {color: #898f93}
-.item-data > div > a{color:#bdc6cb}
-.item-data > p{color:#898f93}
-.item-data > p a + a{font-weight:bold}
+.items > li{width: 440px;}
+.item-data{width: 365px; line-height: 20px;}
 .topics{margin-right: 20px;}
 .feeds{margin-left: 20px;}
 .item-data .feed-date{font-size: 11px; color: #bdc6cb;}
@@ -40,7 +35,7 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 
 .presentation{color: #ffffff; font-family: "GothamBoldRegular"; text-align: center; font-size: 28px; font-weight: normal; overflow: hidden; text-indent: -9999px;}
 
-.watch-video{position: relative; height: 32px;}                    
+.watch-video{position: relative; height: 32px;}
 .watch-video > div{position: absolute; left: 50%; top: 0;}
 .watch-video > div > a{position: relative; left: -50%; border: 1px solid #6f9bb5; float: left;
   -moz-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);

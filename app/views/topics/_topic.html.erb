@@ -1,4 +1,4 @@
-<li>                                                                                            
+<li class="<%= topic_counter % 2 == 0 ? 'odd' : 'even' %>">
   <div class="avatar-wrapper" style="z-index: <%= leng - topic_counter %>">
     <%= avatar_span(topic.user, topic.user.is_expert?) %>
     <%= render :partial => 'users/card', :locals => {:user => topic.user} %>

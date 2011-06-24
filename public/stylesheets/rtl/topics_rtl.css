@@ -7,12 +7,13 @@ body > div{background: url('../../images/topic-bg.jpg') repeat-x fixed 0 105px;}
 .article-tags{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 0; margin-top: 10px; padding-right: 32px; color: #468AC4; float:right}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
-.related-content{overflow: hidden; background-color: #ffffff; padding:16px 20px 0 20px;}
+.related-content{background-color: #ffffff; padding:16px 20px 0 20px; position: relative;}
 .related-content > div:first-child{position: relative; overflow: hidden; height: 25px; margin-bottom: 15px;}
-.related-content > div > h2{float:right; position: absolute; background-color: #ffffff; margin-right: 5px; padding: 0 5px; top: 5px; right: 5px;}
+.related-content > div > h2{float:right; position: absolute; margin-right: 5px; top: 5px; right: 50%;}
+.related-content > div > h2 > span {position: relative; right: -50%; float: right; top: 0; padding: 0 5px; background-color: #ffffff;}
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; right: 0;}
 
-.related-content li{width: 150px; float:right;}
+
 article{padding: 40px; background: #ffffff url('../../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
 .topic-content p{margin-top: 10px; line-height: 22px; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
@@ -94,7 +95,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .comments-ls > li{position: relative; padding-top: 10px;}
 .comm-wrap{background-color: #f2f9fc; border: 1px solid #daecf3;}
 .comments-ls > li:last-child{margin-bottom: 5px;}
-                                                                
+
 
 .comments-ls .comments-ls .comm-wrap{background-color: #ffffff;}
 .comments-ls .comments-ls .comm-arrow{background-position:100% -13px;}
@@ -177,14 +178,7 @@ a.no_comments{
 .icn:hover > span{display: block;}
 p:hover .icn{display: inline;}
 
-.related-carrousel{overflow: hidden; width: 660px; float:right; position: relative;}
-.related-carrousel > ul{overflow: hidden;}
-.related-carrousel > ul > li{width: 206px; overflow: hidden; float:right; margin:0 0 20px 20px;}
-.related-carrousel > ul > li > a{color: #61656A; padding:0; display: block; font-size: 12px;}
-.related-carrousel > ul > li > a > b{display: block; font-size: 13px; margin-bottom: 2px; color: #393C3F; font-weight: normal;}
-.related-carrousel .avatar > span{padding: 0; width: 100%; height: 100%; position: relative; right: 0; top: 0;}
-.related-carrousel .rd-related-content{margin-left: 0;}
-
+.related-carrousel{width: 660px; float:right; position: relative; margin-bottom: 17px}
 .social-bookmarkers{background-color: #ffffff; padding:8px 8px 8px 4px; position: absolute; top: 0; right: -30px; margin:42px 0 20px 0; width: 18px;  float:right; z-index: 99;}
 .social-bookmarkers > a{float:right; height: 18px; margin-bottom: 9px; text-indent: -9999px; width: 18px; background-image: url('../../images/icn-social.png'); background-repeat: none; overflow: hidden;}
 .facebook{background-position:100% 0;}
@@ -218,8 +212,6 @@ p:hover .icn{display: inline;}
 .reply-to + .add_comments,
 .reply-new-response{margin-top: 9px; display: none;}
 
-.blue-btn-wrapper{padding-right: 10px; background-color: #ffffff; float:left; position: relative;}
-.blue-btn-wrapper .blue-btn{text-decoration: none;}
 .blue-btn,
 .blue-btn > span,
 .blue-btn > span > span{background-image: url('../../images/blue-btn-bg.png'); display: block;}
@@ -234,3 +226,33 @@ p:hover .icn{display: inline;}
 .social-bookmarkers > .flash-privacy > div{ padding-right: 50px; }
 .social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;} 
 .flash-arrow{position: absolute; top: 12px; right: 0; border-color: transparent #fffcd3 transparent transparent; border-style: solid; border-width:7px 0px 7px 7px; float:right; height: 0; width: 0;}
+
+.related-carrousel > .items {float: right; width: 100%}
+.related-carrousel > .items > li {width: 300px; background-color: #f7f9fa; display: none}
+.related-carrousel > .items > .odd {clear: right}
+.related-carrousel > .items > .even {float: left}
+.item-data{width: 225px; line-height: 20px;}
+.related-carrousel > .items > li:first-child,
+.related-carrousel > .items > li:first-child + li,
+.related-carrousel > .items > li:first-child + li + li,
+.related-carrousel > .items > li:first-child + li + li + li {display: block}
+
+.related-content-line {background-color: #f4f4f5; border-width: 1px 0; border-style: solid; border-color: #e0e0e3 transparent #d8dbde; width: 100%; position: absolute; bottom: 0; height: 2px; right: 0}
+.view-more-wrapper {float: right; position: relative; bottom: 3px; right: 50%}
+.view-more-wrapper > .view-more {position: relative; float: right; border-top: 1px solid #dcdcdf; height: 15px; padding: 0 6px; color: #b1b1b6; right: -50%;
+-moz-border-radius: 3px 3px 0 0;
+-webkit-border-radius: 3px 3px 0 0;
+border-radius: 3px 3px 0 0;
+-moz-background-clip: padding;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+background-color: #efeff0;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#efeff0), to(#f4f4f5));
+background-image: -webkit-linear-gradient(top, #efeff0, #f4f4f5);
+background-image: -moz-linear-gradient(top, #efeff0, #f4f4f5);
+background-image: -ms-linear-gradient(top, #efeff0, #f4f4f5);
+background-image: -o-linear-gradient(top, #efeff0, #f4f4f5);
+background-image: linear-gradient(top, #efeff0, #f4f4f5);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#efeff0', EndColorStr='#f4f4f5');
+}
+.view-more-wrapper > .view-more > span {padding-left: 15px; background: url('../../images/view-more-bg.jpg') no-repeat 0 3px}
