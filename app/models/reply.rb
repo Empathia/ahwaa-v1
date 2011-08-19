@@ -3,6 +3,8 @@ class Reply < ActiveRecord::Base
   CATEGORIES = %w[advice comment experience]
   
   # TODO: attr_accessible
+  
+  attr_accessor :check_field
 
   belongs_to :topic, :counter_cache => true
   belongs_to :user
@@ -18,6 +20,7 @@ class Reply < ActiveRecord::Base
   validates :topic_id, :presence => true
   validates :category, :presence => true
   validate :type_of_reply, :unless => "category.blank?"
+  validate :not_spam
 
   before_validation :set_topic_from_parent, :unless => "parent.nil?"
   before_save :check_bad_words
@@ -108,5 +111,11 @@ class Reply < ActiveRecord::Base
 
   def type_of_reply
     errors.add(:category, :invalid) unless CATEGORIES.include?(category)
-  end  
+  end
+
+  # :check_field is a hidden field that should come empty unless
+  # the submiter of the form is a bot. To avoid spam
+  def not_spam
+    errors.add(:base, "invalid reply") if check_field.present?
+  end
 end
