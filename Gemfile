@@ -18,10 +18,8 @@ gem 'nokogiri', '~> 1.4.3.1'
 gem 'delayed_job', '~> 2.1.4'
 
 group :development, :test do
-  gem 'rcov'
   gem "shoulda", '~> 2.11.3'
   gem "rspec-rails", "~> 2.3.0"
-  gem "autotest", '~> 4.4.1'
   gem "factory_girl_rails", '~> 1.0'
   gem 'no_peeping_toms'
   gem 'ruby-debug'
