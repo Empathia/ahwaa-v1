@@ -79,7 +79,7 @@ en:
       header:
         switch_to_english: 'تصفّح النسخة العربية'
         auth:
-          sign_up: Sign Up
+          sign_up: Sign-Up
           login: Login
         request_topic:
           button: Request a topic

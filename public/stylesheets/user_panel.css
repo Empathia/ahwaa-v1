@@ -1,4 +1,4 @@
-.page-wrapper{background: url('../images/topic-bg.jpg') repeat-x fixed 0 105px;}
+.page-wrapper{background:url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent}
 aside{overflow: hidden;}                          
 .inner-shadow{background: url('../images/inner-shadow-right.png') repeat-y right 0;   padding: 23px;}
 .user-sb{width: 240px; float: right;}
