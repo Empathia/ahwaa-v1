@@ -30,20 +30,20 @@ Lgbt::Application.routes.draw do
 
   resources :bad_words, :only => [:index]
 
-  # scope '(:locale)', :locale => /en|ar/ do
-    resources :topics, :only => [:show] do
-      resources :replies, :only => [:create] do
-        member do
-          post :flag
-          post :vote_up
-        end
+  resources :topics, :only => [:show] do
+    resources :replies, :only => [:create] do
+      member do
+        post :flag
+        post :vote_up
       end
     end
+  end
 
-    get '/tag/:tag' => "topics#tag", :as => :topic_tag
+  get '/tag/:tag' => "topics#tag", :as => :topic_tag
 
-    root :to => "home#index"
-  # end
+  get '/stream' => "home#stream", :as => :stream
+
+  root :to => "home#index"
 
   namespace :admin do
     resources :tags,  :only => [:index, :destroy]
