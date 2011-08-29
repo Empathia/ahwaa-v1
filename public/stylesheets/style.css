@@ -1,6 +1,6 @@
 html{height: 100%;}
 body{font-size: 13px; color: #61656a; background-color: #e3ecf0; background-image: url('../images/bg-noise.jpg'); height: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility}
-h1{font-size: 22px;}
+h1{font-size: 24px;}
 h1, h2{color: #393c3f;}
 .sec-title, .sec-title-med, .h2{font-size: 16px; color: #393c3f; font-weight: normal; padding-bottom: 10px;}
 h3,.regular{font-size: 13px; color: #61656a;}
@@ -28,6 +28,57 @@ input[type=text],
 input[type=password],
 input[type=email],
 textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor:text; font-size:13px;}
+
+.light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
+.light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; color: #297acc; text-align: center; font-weight: bold;
+  background-color: #297acc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
+  background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+          box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+}
+a.light-button:hover,
+a.light-button > span:hover {
+  background-color: #297acc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf4f9), to(#fafcfd));
+  background-image: -webkit-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:    -moz-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:     -ms-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:      -o-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:         linear-gradient(top, #ecf4f9, #fafcfd);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf4f9', EndColorStr='#fafcfd');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf4f9, EndColorStr='#fafcfd')";
+}
+.secondary-button {border: 1px solid; border-color: #D2E3EC #CDDFE9 #A0BFD1; background-color: #297acc; font-weight: bold; text-shadow: 0 1px 0 #fff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ecf7fd));
+  background-image: -webkit-linear-gradient(top, #fff, #ecf7fd);
+  background-image:    -moz-linear-gradient(top, #fff, #ecf7fd);
+  background-image:     -ms-linear-gradient(top, #fff, #ecf7fd);
+  background-image:      -o-linear-gradient(top, #fff, #ecf7fd);
+  background-image:         linear-gradient(top, #fff, #ecf7fd);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#ecf7fd');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#ecf7fd')";
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+     -moz-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+}
+.secondary-button:hover {text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf7fd), to(#fff));
+  background-image: -webkit-linear-gradient(top, #ecf7fd, #fff);
+  background-image:    -moz-linear-gradient(top, #ecf7fd, #fff);
+  background-image:     -ms-linear-gradient(top, #ecf7fd, #fff);
+  background-image:      -o-linear-gradient(top, #ecf7fd, #fff);
+  background-image:         linear-gradient(top, #ecf7fd, #fff);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf7fd', EndColorStr='#fff');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf7fd', EndColorStr='#fff')";
+}
 
 input.error[type=text],
 input.error[type=password],
@@ -230,28 +281,12 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .more-tags > .scroll-up {border-bottom: 1px solid #eaeef0;}
 .more-tags > .scroll-down {border-top: 1px solid #eaeef0;}
 
-
 .more:hover {background-color:#f9f9f9; border-right-color:#dfe1ed}
 .request-topic-wrapper{float: right; position: relative; margin-top: 21px;}
 /*.auth-wrapper > a {position: absolute; z-index: 1000; left: 0; height: 26px; border: 1px solid #3c7ebb; text-align: center; overflow: hidden;}*/
-/*.request-topic,
-.request-topic > span,
-.request-topic > span > span{background-image: url('../images/blue-btn-bg.png');} */
 .request-topic{float: right; margin: 0 10px 0 0; height: 26px; outline:0;}
-/*.request-topic > span{float: right; height: 100%; background-repeat: no-repeat; background-position: 0 0; padding-left:31px;}
-.request-topic > span > span{float:right; padding-right: 21px; font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position: 100% -50px}*/
-.request-topic {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
-.request-topic > span {float: left; padding: 5px 8px 0; border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; height: 19px; font-family: Arial, Helvetica; font-size: 13px; color: #297acc; text-align: center; font-weight: bold;
-  background-color: #297acc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
-  background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
-}
+
+.request-topic > span {float: left; padding: 5px 8px 0; height: 19px; font-family: Arial, Helvetica; font-size: 13px;}
 
 .tags > li{margin-right: 4px;}
 .by-author{margin-right: 14px}
@@ -643,19 +678,7 @@ form + .recently-topics{padding-top:18px;}
 .user-logged-info .user-data b {display: block; margin: 2px 0 9px; font-size: 14px; color: #454545}
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
-.user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px; border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0; background-color: #f7fafc;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
-  background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
-  background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
-  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-  -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-  box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-}
+.user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px;}
 .user-logged-info .user-data .points-wrapper-small {padding: 0; }
 .user-logged-info .points-wrapper-small > .level,
 .user-logged-info .points-wrapper-small > .points {border: none}
@@ -688,3 +711,6 @@ form + .recently-topics{padding-top:18px;}
                 
 }
 .activity-btns a:hover {text-decoration: none}
+
+.follow-topic-wrapper {float: right; margin-top: 7px}
+.follow-topic-wrapper .secondary-button {padding: 3px 10px 0; height: 18px; font-size: 12px; display: block}

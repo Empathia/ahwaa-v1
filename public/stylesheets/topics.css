@@ -27,7 +27,7 @@ article > header{display: block; position: static; padding: 20px; background-col
 }
 article > header > h1{}
 article > header > div{float: left;}
-article > header > div.right{float: right; width: 581px; padding-bottom: 15px; margin-top: 7px;}
+article > header > div.right{float: right; width: 581px; padding-bottom: 15px;}
 article > header em{display: block; clear: left; text-align: center; color: #468AC4; padding: 5px 0 15px 0;}
 aside{font-size: 12px; float: right; width: 200px; padding: 0 18px; background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #ffffff; float: right; z-index: 99;}
 aside section.show-hide{border-top:none; padding:19px 0 25px;}

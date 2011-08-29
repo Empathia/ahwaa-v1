@@ -50,12 +50,16 @@
                    <%= avatar_span(current_user, current_user.is_expert?, false) %>
                    <div class="user-data">
                      <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %> </b>
-                     <p class="points-wrapper-small border-all">
+                     <p class="points-wrapper-small border-all light-button">
                         <span class="level green-heart"></span>
                         <span class="points">610</span>
                      </p>
-                     <ul class="activity-btns border-all">
-                       <li><a href="#" title="activity"><span class="activity">Activity</span<>></a></li>
+                     <ul class="activity-btns border-all light-button">
+                       <li>
+                         <a href="#" title="activity">
+                           <span class="activity">Activity</span>
+                         </a>
+                       </li>
                        <li>
                         <a href="#" title="messages">
                           <span class="messages">Messages</span>
@@ -63,7 +67,7 @@
                         </a>
                       </li>
                      </ul>
-                     <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all"  %>
+                     <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button"  %>
                    </div>
                 </div>
               <% else %>
@@ -135,7 +139,7 @@
                 </div>
               </div>
               <div class="request-topic-wrapper">
-                <a href="<%= new_topic_request_path %>" class="request-topic border-all <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                <a href="<%= new_topic_request_path %>" class="request-topic border-all light-button <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
                   <span class="border-all">
                     <span><%= t('.header.request_topic.button')%></span>
                   </span>

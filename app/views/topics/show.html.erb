@@ -23,14 +23,14 @@
             <p class="article-tags">
               <%= linked_tag_list @topic.tags %>
             </p>
+            <p class="follow-topic-wrapper">
+              <% if logged_in? && @topic.subscribed?(current_user) %>
+                <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following secondary-button border-all" %>
+              <% else %>
+                <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic secondary-button border-all #{'disabled' unless logged_in?}" %>
+              <% end %>
+            </p>
           </div>
-          <p>
-            <% if logged_in? && @topic.subscribed?(current_user) %>
-              <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following" %>
-            <% else %>
-              <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic #{'disabled' unless logged_in?}" %>
-            <% end %>
-          </p>
           <br class="clear">
         </header>
         <div class="topic-content">
@@ -97,9 +97,9 @@
 <%= form_for Reply.new, :url => topic_replies_path(@topic), :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
   <span class="comm-arrow"></span>
   <div class="response-wrapper border-all">
-    <div>                
-      <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>     
-      <% unless logged_in? %>                     
+    <div>
+      <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>
+      <% unless logged_in? %>
         <div  class="sign-up-or-continue response-padding">
           <div class="border-all">       
             <span class="legend-text"><%= t('.form.anonymous_legend') %></span>
@@ -110,9 +110,9 @@
           </div>
           <br class="clear">
         </div>
-      <% end %>  
-      <div class="response <%= "hidden" unless logged_in? %>">        
-        <div class="response-padding">                        
+      <% end %>
+      <div class="response <%= "hidden" unless logged_in? %>">
+        <div class="response-padding">
           <em class="add_comments_top"><%= current_username %></em>
           <div class="flash-privacy">
             <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
