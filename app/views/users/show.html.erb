@@ -19,10 +19,7 @@
         <%= avatar_span(current_user, current_user.is_expert?, false) %>
         <div class="user-details">
           <div class="username"><%= current_user.username %></div>
-          <div class="points-wrapper">
-              <span class="level border-left <%= level_css_class_for_user(current_user) %>"></span>
-              <span class="points border-right"><%= t('.sidebar.points', {:points => current_user.score_board.current_points}) %></span>
-          </div>
+         
         </div>
       </div>                    
       <div class="edit-profile">

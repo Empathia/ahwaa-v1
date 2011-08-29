@@ -36,6 +36,7 @@
         <header>
           <div class="rainbow"></div>
           <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
+          <div class="logo-wrapper <%= current_page?(root_path) ? 'light' : 'dark' %>">
           <div class="aligned">
             <div class="header-top <%= current_page?(root_path) ? 'homepage' : 'topic' %>">
               <div class="links">
@@ -45,11 +46,21 @@
                 <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
               </div>
               <% if logged_in? %>
-                <ul class="logged_opts">
+                <!--<ul class="logged_opts">
                   <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
                   <li><%= link_to t('.header.logged_in.my_account'), user_path %></li>
                   <li><%= link_to t('.header.logged_in.sign_out'), logout_path %></li>
-                </ul>
+                </ul>-->
+                <div class="user-logged-info">
+                   <%= avatar_span(current_user, current_user.is_expert?, false) %>
+                   <div class="user-data">
+                     <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b>
+                     <p class="points-wrapper">
+
+                     </p>
+                     <a href="#"><%= link_to t('.header.logged_in.sign_out'), logout_path %></a>
+                   </div>
+                </div>
               <% else %>
                 <div class="sign-up">
                   <div class="auth-wrapper">
@@ -118,7 +129,23 @@
                   <a href="#" class="arrow scroll-down"><div><div></div></div></a>
                 </div>
               </div>
+              <div class="request-topic-wrapper">
+                <a href="<%= new_topic_request_path %>" class="request-topic border-all <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                  <span class="border-all">
+                    <span><%= t('.header.request_topic.button')%></span>
+                  </span>
+                </a>
+                <div class="request-error">
+                  <span></span>
+                  <div class="border-all">
+                    <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
+                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+                  </div>
+                  <br class="clear">
+                </div>
+              </div>
             </div>
+          </div>
           </div>
           <div class="header-wrapper">
             <div class="header-tags aligned">
@@ -140,21 +167,6 @@
                   </div>
                 </li>
               </ul>
-              <div class="request-topic-wrapper">
-                <a href="<%= new_topic_request_path %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
-                  <span>
-                    <span><%= t('.header.request_topic.button')%></span>
-                  </span>
-                </a>
-                <div class="request-error">
-                  <span></span>
-                  <div>
-                    <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
-                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
-                  </div>
-                  <br class="clear">
-                </div>
-              </div>
             </div>
           </div>
         </header>
@@ -162,13 +174,14 @@
       <%= yield %>
     </div>
     <footer>
-      <div class="footer-shadow"></div>
-      <div class="aligned">
-        <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
-        <ul>
-          <li><%= link_to t('.footer.about'), about_path %> - </li>
-          <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
-        </ul>
+      <div class="footer-shadow">
+        <div class="aligned">
+          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
+          <ul>
+            <li><%= link_to t('.footer.about'), about_path %> - </li>
+            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </div>
