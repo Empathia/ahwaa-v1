@@ -8,7 +8,13 @@ class HomeController < ApplicationController
   end
 
   def stream
-    @stream = current_user.stream_messages
+    @stream = if params[:filter] == 'followed'
+      current_user.stream_users.followed
+    elsif params[:filter] == 'owned'
+      current_user.stream_users.owned
+    else
+      current_user.stream_users
+    end.page(params[:page]).per_page(15).map(&:stream_message)
   end
 
   def privacy_policy

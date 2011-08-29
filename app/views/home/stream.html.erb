@@ -1,3 +1,7 @@
+<% javascript 'stream' %>
+<%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
+  <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
+<% end %>
 <% @stream.each do |message| %>
   <p><%= message.title %></p>
   <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
