@@ -82,12 +82,12 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .lgbt{font-size: 24px; font-family: 'GothamBoldRegular'; text-indent: -9999em; float: left; width: 100%; height: 30px; outline:0; border:0;}
 .lan{font-size: 14px; color: #7194a7;}
 
-.sign-up{float: left; text-align: left; width: 240px;}
+.sign-up {float: left; text-align: left; width: 240px;}
 .header-top .sign-up {margin-top: 21px}
 .auth-wrapper{height: 28px; float: left; width: 92px; position: relative;}
 .auth-wrapper:first-child{margin-right: 2px;}
-/*.sign-up-lk{ border: 1px solid #4785bf; line-height: 2; float: left;}*/
-.auth-wrapper > .sign-up-lk{text-decoration: none;}
+.sign-up-lk {border: 1px solid #4785bf; line-height: 2; float: left;}
+.auth-wrapper > .sign-up-lk{text-decoration: none; line-height: inherit}
 .auth-wrapper > a {position: absolute; z-index: 1000; left: 0; height: 26px; border: 1px solid #3c7ebb; text-align: center; overflow: hidden;}
 
 .auth-wrapper > a.auth-form-active{height: 31px; text-decoration: none; border: none; left: -3px; padding: 1px 3px 0 3px;}
@@ -241,7 +241,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 /*.request-topic > span{float: right; height: 100%; background-repeat: no-repeat; background-position: 0 0; padding-left:31px;}
 .request-topic > span > span{float:right; padding-right: 21px; font-size:12px; height: 100%; line-height: 25px; background-repeat: no-repeat; background-position: 100% -50px}*/
 .request-topic {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
-.request-topic > span {float: left; padding: 5px 8px 0; border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; height: 19px; font-family: Arial, Helvetica; font-size: 13px; color: #297acc; text-align: center;
+.request-topic > span {float: left; padding: 5px 8px 0; border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; height: 19px; font-family: Arial, Helvetica; font-size: 13px; color: #297acc; text-align: center; font-weight: bold;
   background-color: #297acc;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
@@ -383,7 +383,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 }
 .request-error > div.clear{width:auto; height:auto; float:none; border:none; padding:0}
 .sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin: 0 0 8px 0; font-size: 12px;}
-.request-error > div > a{height: 26px; overflow: hidden; text-decoration: none; border: 1px solid #3C7EBB; display: inline-block}
+.request-error > div > a{height: 26px; overflow: hidden; text-decoration: none; border: 1px solid #3C7EBB; display: inline-block; line-height: inherit; float: none}
 .request-error > div > a > span{padding: 5px 8px 0; border: 1px solid; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; height: 19px; display: block}
 
 .disabled{-moz-opacity:.50; filter:alpha(opacity=50); opacity:.50; }
@@ -640,7 +640,7 @@ form + .recently-topics{padding-top:18px;}
 }
 .user-logged-info .avatar img {width: 42px; height: 42px}
 .user-logged-info .user-data {float: left; margin-left: 10px}
-.user-logged-info .user-data b {display: block; margin: 3px 0 9px}
+.user-logged-info .user-data b {display: block; margin: 2px 0 9px; font-size: 14px; color: #454545}
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
 .user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px; border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0; background-color: #f7fafc;
@@ -660,7 +660,6 @@ form + .recently-topics{padding-top:18px;}
 .user-logged-info .points-wrapper-small > .level,
 .user-logged-info .points-wrapper-small > .points {border: none}
 .user-logged-info .points-wrapper-small > .points {height: 20px; line-height: 20px; color: #707b8b; font-weight: bold}
-.user-logged-info .user-data ul {}
 .user-logged-info .user-data .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px}
 .user-logged-info .user-data .log-out:hover {text-decoration: none}
 
@@ -671,13 +670,13 @@ form + .recently-topics{padding-top:18px;}
 .activity-btns li span {display: block; position: relative}
 .activity-btns .activity {width: 14px; height: 17px; left: 11px; top: 1px; background: url("../images/icn-activity.png") 0 0 no-repeat}
 .activity-btns .messages {width: 15px; height: 11px; left: 10px; top: 4px; background: url("../images/icn-messages-2.png") 0 0 no-repeat}
-.activity-btns li .new-message-container {color: #fff; background-color: #2E8AE5; border: 1px solid #2D88E3; font-size: 10px; padding: 1px 4px 0; display: inherit; right: -21px; top: -22px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+.activity-btns li .new-message-container {color: #fff; background-color: #2E8AE5; border: 1px solid #2D88E3; font-size: 11px; padding: 0.5px 4px; display: inherit; right: -21px; top: -22px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
      -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
           border-radius: 10px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset;
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset;
     background-image: -webkit-gradient(linear, left top, left bottom, from(#40b9ef), to(#2e8ae5));
     background-image: -webkit-linear-gradient(top, #40b9ef, #2e8ae5);
     background-image:    -moz-linear-gradient(top, #40b9ef, #2e8ae5);
