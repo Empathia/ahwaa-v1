@@ -4,4 +4,7 @@ class StreamUser < ActiveRecord::Base
 
   validates_presence_of :stream_message_id, :user_id
   validates_uniqueness_of :stream_message_id, :scope => :user_id
+
+  scope :followed, where(:source => 'followed')
+  scope :owned, where(:source => 'owned')
 end
