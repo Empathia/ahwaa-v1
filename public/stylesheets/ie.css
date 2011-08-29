@@ -13,7 +13,7 @@
 .tta{border-color: #3c454f transparent transparent;}  
 input.placeimg.error{background: #ffffff url('../images/pass_placeholder_error.png') no-repeat 0 0}
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top: 1px; border-style: solid; border-color: #f3f3f3 #d4dce2 transparent #d4dce2; border-width: 1px;}
+.auth-wrapper .auth-form-active > span:hover{padding-top: 1px; border-width: 1px; border-style: solid; border-color: #f3f3f3 #d4dce2 transparent #d4dce2;}
 .over-form{border: 1px solid #d4dce2;}
 
 .auth-wrapper > a{height: auto; left: 0; padding: 0;}
