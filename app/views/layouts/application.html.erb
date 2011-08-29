@@ -46,11 +46,21 @@
                 <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
               </div>
               <% if logged_in? %>
-                <ul class="logged_opts">
+                <!--<ul class="logged_opts">
                   <li><b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b></li>
                   <li><%= link_to t('.header.logged_in.my_account'), user_path %></li>
                   <li><%= link_to t('.header.logged_in.sign_out'), logout_path %></li>
-                </ul>
+                </ul>-->
+                <div class="user-logged-info">
+                   <%= avatar_span(current_user, current_user.is_expert?, false) %>
+                   <div class="user-data">
+                     <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %></b>
+                     <p class="points-wrapper">
+
+                     </p>
+                     <a href="#"><%= link_to t('.header.logged_in.sign_out'), logout_path %></a>
+                   </div>
+                </div>
               <% else %>
                 <div class="sign-up">
                   <div class="auth-wrapper">
@@ -164,13 +174,14 @@
       <%= yield %>
     </div>
     <footer>
-      <div class="footer-shadow"></div>
-      <div class="aligned">
-        <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
-        <ul>
-          <li><%= link_to t('.footer.about'), about_path %> - </li>
-          <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
-        </ul>
+      <div class="footer-shadow">
+        <div class="aligned">
+          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
+          <ul>
+            <li><%= link_to t('.footer.about'), about_path %> - </li>
+            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </div>

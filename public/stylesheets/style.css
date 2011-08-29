@@ -71,7 +71,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
    -webkit-box-shadow: inset 0 3px 0 #f7f7f7;
            box-shadow: inset 0 3px 0 #f7f7f7
 }
-.header-top{height: 48px; text-align: center; padding-top: 22px; position: relative; margin-top: -1px}
+.header-top{height: 71px; text-align: center; position: relative; margin-top: -1px}
 .topic{background: url('../images/ahwaa-logo.png') no-repeat center 0;}
 .homepage{background: url('../images/homepage.png') no-repeat center 0;}
 .clear{clear:both!important; float:none!important;}
@@ -170,7 +170,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .logged_opts{float:left; margin-top:12px}
 .logged_opts > li{float:left; margin-right:23px}
 .logged_opts > li > a{color: #9b9b9b}
-.search{float: right; position: relative;}
+.search{float: right; position: relative; margin-top: 21px;}
 .search > p {width: 210px; background-color: #fff; border: 1px solid #d9e2e6; border-top-color:#a7adb0; border-bottom-color:#e1eaee; height: 21px; padding: 5px 10px 0;}
 .search > p > input{width: 190px; height: 16px; border: none; float:left; font-size:13px; line-height:1em; padding:0;}
 .search > p > span{background:url('../images/icn-search.png') no-repeat 0 0 transparent; float: right; width: 17px; height: 17px; clear:none; margin-top: -1px}
@@ -231,7 +231,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
 
 .more:hover {background-color:#f9f9f9; border-right-color:#dfe1ed}
-.request-topic-wrapper{float: right; position: relative;}
+.request-topic-wrapper{float: right; position: relative; margin-top: 21px;}
 /*.auth-wrapper > a {position: absolute; z-index: 1000; left: 0; height: 26px; border: 1px solid #3c7ebb; text-align: center; overflow: hidden;}*/
 /*.request-topic,
 .request-topic > span,
@@ -261,12 +261,12 @@ h1 + .by-author {margin-top: 10px}
 
 .container{padding-top:126px}
 
-.footer-shadow{display: block; margin: 0 auto; display: block; background: url('../images/div-footer.png') no-repeat 50% 0; margin-top: 30px; height: 29px;}
+.footer-shadow{display: block; margin: 0 auto; display: block; background: url("../images/bg-footer.png") repeat scroll 0 0 transparent; margin-top: 30px; height: 60px;}
 
-footer > .aligned{padding: 7px 0 36px 0;}
-footer > div > ul{float: right;}
-footer > div > ul > li{display: inline;}
-footer > div > span{float: left; color: #898f93;}
+footer > div > .aligned{padding: 25px 0 0;}
+footer > div > div > ul{float: right;}
+footer > div > div > ul > li{display: inline;}
+footer > div > div > span{float: left; color: #667580;}
 
 .over-form{position: absolute; top: 0; left: 0; width: 280px; background-color: #f6f9fb; display: none; padding: 15px; color: #797e84; z-index: 999; border-top: none;
      -moz-border-radius: 0 5px 5px 5px;
@@ -373,15 +373,15 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 }
 
 .request-error.auth-form-active{display: block;}
-.request-error{width: 195px; height: 97px; position:absolute; display:none; top: 32px; right:-35px; z-index: 999}
-.request-error > span{border-color: transparent transparent #faf8e5; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; margin: 0px 87px; width: 0px;}
-.request-error > div{width: 169px; height: 71px; float: left; border-bottom: 1px solid #cac8b1; padding: 12px; background-color: #fffcd9; background-color: rgba(255, 252, 217, .97);
+.request-error{width: 265px; height: 97px; position: absolute; display: none; top: 32px; right: -75px; z-index: 999}
+.request-error > span{border-color: transparent transparent #faf8e5; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; margin: 0px 116px; width: 0px;}
+.request-error > div{float: left; border-bottom: 1px solid #cac8b1; padding: 13px 15px 10px; background-color: #fffcd9; background-color: rgba(255, 252, 217, .97);
   -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
   -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
 }
 .request-error > div.clear{width:auto; height:auto; float:none; border:none; padding:0}
-.sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin: 0 0 8px 0;}
+.sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin: 0 0 8px 0; font-size: 12px;}
 .request-error > div > a{height: 26px; overflow: hidden; text-decoration: none; border: 1px solid #3C7EBB; display: inline-block}
 .request-error > div > a > span{padding: 5px 8px 0; border: 1px solid; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; height: 19px; display: block}
 
@@ -620,3 +620,16 @@ form + .recently-topics{padding-top:18px;}
 .item-data > div > a{color:#bdc6cb}
 .item-data > p{color:#898f93}
 .item-data > p a + a{font-weight:bold}
+
+.header-top .user-logged-info {float: left; text-align: left; width: 350px; margin-top: 11px;}
+.header-top .user-logged-info .avatar {
+    background: #fff;
+    border: 1px solid rgba(59, 64, 67, 0.25);
+    float: left;
+    height: 42px;
+    padding: 3px;
+    position: relative;
+    width: 42px;
+}
+.header-top .user-logged-info .avatar img {width: 42px; height: 42px}
+.header-top .user-logged-info .user-data {float: left; margin-left: 10px}
