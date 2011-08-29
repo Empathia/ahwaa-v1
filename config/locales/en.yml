@@ -128,6 +128,7 @@ en:
           hi: 'Hi %{username}'
           my_account: "My Profile + Messages"
           sign_out: Sign Out
+          logout: Logout
         search_topics: Search topics
       footer:
         all_rights: "© Ahwaa - All Rights Reserved %{year}"

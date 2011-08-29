@@ -83,6 +83,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .lan{font-size: 14px; color: #7194a7;}
 
 .sign-up{float: left; text-align: left; width: 240px;}
+.header-top .sign-up {margin-top: 21px}
 .auth-wrapper{height: 28px; float: left; width: 92px; position: relative;}
 .auth-wrapper:first-child{margin-right: 2px;}
 /*.sign-up-lk{ border: 1px solid #4785bf; line-height: 2; float: left;}*/
@@ -621,6 +622,12 @@ form + .recently-topics{padding-top:18px;}
 .item-data > p{color:#898f93}
 .item-data > p a + a{font-weight:bold}
 
+.points-wrapper-small > .level {background: url("../images/hearts-small.png") no-repeat transparent; width: 20px; height: 20px; display: block; float: left}
+.points-wrapper-small > .level.green-heart {background-position: 0 0}
+.points-wrapper-small > .level.bronze-heart {background-position: 0 -20px}
+.points-wrapper-small > .level.silver-heart {background-position: 0 -60px}
+.points-wrapper-small > .level.gold-heart {background-position: 0 -80px}
+
 .header-top .user-logged-info {float: left; text-align: left; width: 350px; margin-top: 11px;}
 .header-top .user-logged-info .avatar {
     background: #fff;
@@ -631,5 +638,54 @@ form + .recently-topics{padding-top:18px;}
     position: relative;
     width: 42px;
 }
-.header-top .user-logged-info .avatar img {width: 42px; height: 42px}
-.header-top .user-logged-info .user-data {float: left; margin-left: 10px}
+.user-logged-info .avatar img {width: 42px; height: 42px}
+.user-logged-info .user-data {float: left; margin-left: 10px}
+.user-logged-info .user-data b {display: block; margin: 3px 0 9px}
+.user-logged-info .user-data .points-wrapper-small,
+.user-logged-info .user-data ul,
+.user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px; border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0; background-color: #f7fafc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
+  background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+  -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+  box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+}
+.user-logged-info .user-data .points-wrapper-small {padding: 0; }
+.user-logged-info .points-wrapper-small > .level,
+.user-logged-info .points-wrapper-small > .points {border: none}
+.user-logged-info .points-wrapper-small > .points {height: 20px; line-height: 20px; color: #707b8b; font-weight: bold}
+.user-logged-info .user-data ul {}
+.user-logged-info .user-data .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px}
+.user-logged-info .user-data .log-out:hover {text-decoration: none}
+
+.user-logged-info .user-data .points-wrapper-small {padding: 0 10px 0 5px}
+.activity-btns li {float: left; height: 20px; width: 35px; border-right: 1px solid #cfdae6; }
+.activity-btns li:last-child {border-right: none}
+.activity-btns li a {text-indent: -999px}
+.activity-btns li span {display: block; position: relative}
+.activity-btns .activity {width: 14px; height: 17px; left: 11px; top: 1px; background: url("../images/icn-activity.png") 0 0 no-repeat}
+.activity-btns .messages {width: 15px; height: 11px; left: 10px; top: 4px; background: url("../images/icn-messages-2.png") 0 0 no-repeat}
+.activity-btns li .new-message-container {color: #fff; background-color: #2E8AE5; border: 1px solid #2D88E3; font-size: 10px; padding: 1px 4px 0; display: inherit; right: -21px; top: -22px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+     -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+          border-radius: 10px;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
+     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 2px rgba(255, 255, 255, 0.7) inset;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#40b9ef), to(#2e8ae5));
+    background-image: -webkit-linear-gradient(top, #40b9ef, #2e8ae5);
+    background-image:    -moz-linear-gradient(top, #40b9ef, #2e8ae5);
+    background-image:     -ms-linear-gradient(top, #40b9ef, #2e8ae5);
+    background-image:      -o-linear-gradient(top, #40b9ef, #2e8ae5);
+    background-image:         linear-gradient(top, #40b9ef, #2e8ae5);
+              filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#40b9ef', EndColorStr='#2e8ae5');
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#40b9ef', EndColorStr='#2e8ae5')";
+                
+}
+.activity-btns a:hover {text-decoration: none}
