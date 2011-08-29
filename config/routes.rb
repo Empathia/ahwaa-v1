@@ -37,6 +37,9 @@ Lgbt::Application.routes.draw do
         post :vote_up
       end
     end
+
+    post :follow, :on => :member
+    post :unfollow, :on => :member
   end
 
   get '/tag/:tag' => "topics#tag", :as => :topic_tag

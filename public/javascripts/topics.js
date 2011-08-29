@@ -1,4 +1,17 @@
 $(function(){
+    $('.follow-topic').bind('ajax:success', function () {
+        var self = $(this);
+        if (!self.hasClass('disabled')) {
+            if (self.hasClass('following')) {
+                self.removeClass('following').text(I18n.t('topics.show.follow'));
+                self.attr('href', self.attr('href').replace('/unfollow.json', '/follow.json'));
+            } else {
+                self.addClass('following').text(I18n.t('topics.show.unfollow'));
+                self.attr('href', self.attr('href').replace('/follow.json', '/unfollow.json'));
+            }
+        }
+    });
+
     $('.topic-content > p').comments({color: '#FFFF00'});
 
     /* The Browser Sniff is pending*/

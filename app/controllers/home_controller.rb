@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, :except => [:stream]
 
   def index
     redirect_to stream_path and return if logged_in?
@@ -8,6 +8,7 @@ class HomeController < ApplicationController
   end
 
   def stream
+    @stream = current_user.stream_messages
   end
 
   def privacy_policy

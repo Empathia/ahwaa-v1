@@ -15,6 +15,7 @@ class Reply < ActiveRecord::Base
     :conditions => { :vote => Rating::FLAG }
   has_many :ratings, :dependent => :destroy
   has_many :replies, :foreign_key => :parent_id, :conditions => { :contextual_index => nil }
+  has_many :stream_messages, :dependent => :destroy
 
   validates :content, :presence => true
   validates :topic_id, :presence => true

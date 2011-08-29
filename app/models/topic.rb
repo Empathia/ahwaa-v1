@@ -19,6 +19,7 @@ class Topic < ActiveRecord::Base
   has_many :experts, :through => :topic_experts
   has_many :subscriptions
   has_many :subscribers, :through => :subscriptions, :source => :user
+  has_many :stream_messages, :dependent => :destroy
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -40,6 +41,10 @@ class Topic < ActiveRecord::Base
         UserMailer.delay.reply_notification(user, reply)
       end unless user == reply.user
     end
+  end
+
+  def subscribed?(user)
+    subscribers.include?(user)
   end
 
   def self.per_page

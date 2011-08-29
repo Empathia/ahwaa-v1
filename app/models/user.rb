@@ -16,6 +16,8 @@ class User < ActiveRecord::Base
     :dependent => :destroy, :group => :conversation_id
   has_many :topic_requests
   has_many :topics
+  has_many :stream_users, :dependent => :destroy
+  has_many :stream_messages, :through => :stream_users
 
   attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes
 
@@ -38,6 +40,11 @@ class User < ActiveRecord::Base
   # Adds a subscription for the user to the given topic
   def subscribe_to(topic)
     subscriptions << Subscription.new(:topic => topic)
+  end
+
+  # Removes subscriptions for this user to the given topic
+  def unsubscribe_from(topic)
+    subscriptions.find_by_topic_id(topic.id).try(:destroy)
   end
 
   # Finds subscription to the given topic

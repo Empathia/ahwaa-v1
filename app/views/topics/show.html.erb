@@ -24,6 +24,13 @@
               <%= linked_tag_list @topic.tags %>
             </p>
           </div>
+          <p>
+            <% if logged_in? && @topic.subscribed?(current_user) %>
+              <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following" %>
+            <% else %>
+              <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic #{'disabled' unless logged_in?}" %>
+            <% end %>
+          </p>
           <br class="clear">
         </header>
         <div class="topic-content">

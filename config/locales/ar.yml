@@ -173,6 +173,8 @@ ar:
         newest: الأجدد
         responses: "معظم الردود"
     show:
+      follow: تابع هذا الموضوع
+      unfollow: توقّف عن متابعة هذا الموضوع
       by: بواسطة %{author}
       contextual:
         add_comment: إضافة ردّ جديد
@@ -296,3 +298,9 @@ ar:
       flag: الإشارة
       anonymous: "لا يمكن التقييم للمستخدمين المجهولين"
       sign_up: أنشئ حسابًا جديدًا
+
+  stream:
+    title:
+      reply:
+        a: %{user} ترك %{reply_type} علي
+        an: %{user} ترك %{reply_type} علي

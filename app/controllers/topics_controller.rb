@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, :except => [:follow, :unfollow]
+  before_filter :find_topic, :only => [:follow, :unfollow]
 
   def show
     @topic = Topic.includes(:replies).find(params[:id])
@@ -10,6 +11,22 @@ class TopicsController < ApplicationController
     @topics = params[:by_responses] ? Topic.by_replies_count(I18n.locale) : Topic.newest(I18n.locale)
     @tag = ActsAsTaggableOn::Tag.find(params[:tag])
     @topics = @topics.tagged_with(@tag).in_groups_of(2, false)
+  end
+
+  def follow
+    current_user.subscribe_to(@topic) unless @topic.subscribed?(current_user)
+    render :json => {}, :status => :ok
+  end
+
+  def unfollow
+    current_user.unsubscribe_from(@topic) if @topic.subscribed?(current_user)
+    render :json => {}, :status => :ok
+  end
+
+  private
+
+  def find_topic
+    @topic = Topic.find(params[:id])
   end
 
 end

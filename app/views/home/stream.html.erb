@@ -1,0 +1,5 @@
+<% @stream.each do |message| %>
+  <p><%= message.title %></p>
+  <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
+  <%= simple_format truncate(message.reply.content, :length => 140) %>
+<% end %>
