@@ -1,11 +1,32 @@
+<% stylesheet 'stream' %>
 <% javascript 'stream' %>
 
 <div class="aligned">
   <div class="content stream-wrapper">
     <aside>
-      my menu sidebar
+      <ul class="sub-nav">
+        <li class="active">
+          <a href="#" title="Stream" class="stream">
+            <span class="icon"></span>
+            Stream
+          </a>
+        </li>
+        <li>
+          <a href="#" title="Messages" class="messages">
+            <span class="icon"></span>
+            Messages
+            <span>6</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="My Topics" class="my-topics">
+            <span class="icon"></span>
+            My Topics
+          </a>
+        </li>
+      </ul>
     </aside>
-    <div class="right-side">
+    <div class="right-side border-all container-soft-box-shadow">
       <section class="streams border-left">
         <div class="stream-title">
           <h2>Stream</h2>
@@ -24,5 +45,6 @@
         </div>
       </section>
     </div>
+    <br class="clear">
   </div>
 </div>

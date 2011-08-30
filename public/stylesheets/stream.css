@@ -1,0 +1,25 @@
+body > div {
+    background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
+}
+.stream-wrapper {position: relative}
+.stream-wrapper aside {width: 140px; float: left; margin-right: 20px}
+.stream-wrapper .sub-nav > li > a {color: #394551; text-sahdow: 0 1px 0 rgba(255, 255, 255, .35); display: block; height: 30px; line-height: 30px;}
+
+.stream-wrapper .sub-nav > li > a > .icon {background: url("../images/logged-in-nav-icons.png") 0 0; width: 30px; height: 30px; display: block; float: left; margin: 0 2px 0 3px}
+.stream-wrapper .sub-nav a.stream > .icon {background-position: 0 0}
+.stream-wrapper .sub-nav > .active a.stream > .icon {background-position: -30px 0}
+.stream-wrapper .sub-nav a.messages > .icon {background-position: 0 -30px}
+.stream-wrapper .sub-nav > .active a.messages > .icon {background-position: -30px -30px}
+.stream-wrapper .sub-nav a.my-topics > .icon {background-position: 0 -60px}
+.stream-wrapper .sub-nav > .active a.my-topics > .icon {background-position: -30px -60px}
+
+.stream-wrapper .sub-nav > .active {background-color: rgba(57, 69, 81, .4);
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), 0 1px 0 rgba(255, 255, 255, .3);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), 0 1px 0 rgba(255, 255, 255, .3);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), 0 1px 0 rgba(255, 255, 255, .3);
+}
+.stream-wrapper .sub-nav > .active > a {color: #fff; text-shadow: 0 1px 1px rgba(0, 0, 0, .75); font-weight: bold}
+.right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; min-height: 449px; width: 800px}
