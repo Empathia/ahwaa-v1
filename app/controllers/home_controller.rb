@@ -4,7 +4,7 @@ class HomeController < ApplicationController
   def index
     redirect_to stream_path and return if logged_in?
     @popular = Topic.popular(I18n.locale)
-    @latest = Topic.newest(I18n.locale)
+    @latest = Topic.newest(I18n.locale).limit(5)
   end
 
   def stream

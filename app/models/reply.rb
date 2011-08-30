@@ -31,6 +31,7 @@ class Reply < ActiveRecord::Base
   scope :latest, lambda { |*lang| by_topic_language(lang.first || 'en').order("replies.created_at DESC").limit(5) }
   scope :flagged, includes(:ratings).where("ratings.vote = :flag", :flag => Rating::FLAG)
   scope :by_category, lambda {|category| where(:category => category)}
+  scope :not_anonymous, where("user_id IS NOT NULL")
   
   # returns the amount of points granted this post produces
   def points_granted
