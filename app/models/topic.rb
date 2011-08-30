@@ -43,6 +43,10 @@ class Topic < ActiveRecord::Base
     end
   end
 
+  def recent_participants
+    replies.not_anonymous.where("created_at >= ?", 2.days.ago).map(&:user).uniq
+  end
+
   def subscribed?(user)
     subscribers.include?(user)
   end

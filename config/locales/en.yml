@@ -143,6 +143,12 @@ en:
           my_account: "My Profile + Messages"
           sign_out: Sign Out
   home:
+    grouped_topic:
+      by: By %{author}
+      recent_participants:
+        zero: no one have participated in this topic in the past 2 days
+        one: one person have participated in this topic in the past 2 days
+        other: %{count} people have participated in this topic in the past 2 days
     index:
       title: Ahwaa
       legend: A safe space to debate LGBTQ-related issues in the Middle East

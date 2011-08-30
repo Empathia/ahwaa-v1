@@ -8,7 +8,7 @@
     <div class="item-data">
       <%= link_to topic.title, topic, :class => 'title dark-lk' %>
       <div>
-        <span class="by-author"><%= t('.popular.by', :author => topic.user.username).html_safe %></span>
+        <span class="by-author"><%= t('.by', :author => topic.user.username).html_safe %></span>
         <%= link_to topic.replies.size, topic, :class => 'responses' %>
         <ul class="tags">
           <% topic.tags.each_with_index do |tag, i| %>
@@ -21,64 +21,15 @@
     </div>
   </div>
   <div class="topic-recent-historial border-bottom-3">
-    <p class="collaborations">7 people have participated in this topic in the past 2 days</p>
+    <p class="collaborations"><%= t '.recent_participants', :count => topic.recent_participants.size %></p>
     <ul class="small-avatars">
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar red-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar green-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar blue-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar red-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar blue-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar green-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
-      <li>
-        <div class="avatar-wrapper" style="z-index: 5">
-          <span class="avatar blue-heart">
-            <img width="24" height="24" src="/images/avatars/35-50_F_W_H1_F3.png?1313794155" alt="35-50_f_w_h1_f3">
-          <span></span>
-          </span>
-        </div>
-      </li>
+      <% topic.recent_participants.each do |user| %>
+        <li>
+          <div class="avatar-wrapper" style="z-index: 5">
+            <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+          </div>
+        </li>
+      <% end %>
     </ul>
   </div>
 </li>
