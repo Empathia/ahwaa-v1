@@ -16,7 +16,7 @@ body .hidden{display: none;}
 .info-page > section > p{line-height: 22px; margin-bottom: 10px;}
 .info-page > h1{margin-bottom: 30px;}
 .aligned{width: 960px; margin: 0 auto;}
-a{color: #468ac4}
+a {color: #2d70b3}
 input:active,
 a:active{outline:none;}
 button::-moz-focus-inner,
@@ -30,7 +30,7 @@ input[type=email],
 textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor:text; font-size:13px;}
 
 .light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
-.light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; color: #297acc; text-align: center; font-weight: bold;
+.light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; text-align: center; font-weight: bold;
   background-color: #fafcfd;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
@@ -260,7 +260,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .header-tags{height: 100%; position:relative; overflow: hidden;}
 .header-tags > ul{border-left: 1px solid #e0e9ee; float: left; height: 100%;}
 .header-tags > ul > li{float: left; height: 100%; border-right: 1px solid #e0e9ee;}
-.header-tags > ul > li > a{color: #2d70b3; text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight:bold;}
+.header-tags > ul > li > a{text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight: bold}
 .header-tags .more {position:relative;}
 .header-tags .more > a{padding: 0 16px 0 20px;}
 .more > a{text-decoration:none; outline:0 none;}
@@ -759,11 +759,10 @@ form + .recently-topics{padding-top:18px;}
     background-image:         linear-gradient(top, #40b9ef, #2e8ae5);
               filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#40b9ef', EndColorStr='#2e8ae5');
           -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#40b9ef', EndColorStr='#2e8ae5')";
-                
 }
 .activity-btns a:hover {text-decoration: none}
 
-.follow-topic-wrapper {float: right; margin-top: 7px}
+.follow-topic-wrapper {float: right; margin-left: 10px}
 .follow-topic-wrapper .secondary-button {padding: 3px 10px 0; height: 18px; font-size: 12px; display: block}
 
 .edit-secondary {width: 13px; height: 14px; overflow: hidden; text-indent: -999; font-size: 0; line-height: 0; background: url("../images/icn-pencil-2.png") 0 0 no-repeat; float: left}

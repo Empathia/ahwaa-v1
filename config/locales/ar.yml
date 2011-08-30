@@ -130,6 +130,8 @@ ar:
           messages: رسائلي
           my_account: "حسابي+رسائلي"
           sign_out: تسجيل الخروج
+          logout: تسجيل الخروج
+          edit_profile: تعديل الملف الشخصي
         search_topics: موضوعات البحث
       footer:
         all_rights: "© %{year} أهواء - جميع الحقوق محفوظة"
