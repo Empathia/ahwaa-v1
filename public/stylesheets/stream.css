@@ -22,4 +22,19 @@ body > div {
           box-shadow: inset 0 1px 1px rgba(0, 0, 0, .2), 0 1px 0 rgba(255, 255, 255, .3);
 }
 .stream-wrapper .sub-nav > .active > a {color: #fff; text-shadow: 0 1px 1px rgba(0, 0, 0, .75); font-weight: bold}
-.right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; min-height: 449px; width: 800px}
+.stream-wrapper .right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 800px}
+
+.stream-wrapper .right-side .stream-title {border-bottom: 1px solid #dbdfe3; padding: 10px 20px 0; background: #fcfcfc; height: 30px; 
+  -webkit-border-radius: 3px 0 0 0;
+     -moz-border-radius: 3px 0 0 0;
+          border-radius: 3px 0 0 0
+}
+.stream-wrapper .right-side .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float: left}
+.stream-wrapper .right-side .stream-title .filter {float: right}
+
+.stream-wrapper .right-side .streams {float: left; width: 559px; border-right: 1px solid #dae0e6; min-height: 449px;}
+.stream-wrapper .right-side .recommended-topics {float: left; width: 200px; padding: 15px 20px}
+.stream-wrapper .right-side .recommended-topics h3 {font-family: 'GothamMediumRegular'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
+.stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
+.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px}
+.recommended-topics li > a {display: block; padding: 10px}

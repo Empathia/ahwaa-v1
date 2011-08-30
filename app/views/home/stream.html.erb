@@ -30,7 +30,7 @@
       <section class="streams border-left">
         <div class="stream-title">
           <h2>Stream</h2>
-          <p class="order">
+          <div class="filter">
             <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
               <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
             <% end %>
@@ -39,10 +39,42 @@
               <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
               <%= simple_format truncate(message.reply.content, :length => 140) %>
             <% end %>
-          </p>
+          </div>
         </div>
         <div class="">
         </div>
+      </section>
+      <section class="recommended-topics">
+        <h3>Recommended Topics</h3>
+        <ul>
+          <li class="border-all">
+            <a href="#" title="How can I tell my religious parents that I am bisexual">How can I tell my religious parents that I am bisexual?</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">I had a homophobic family so I moved out</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">Welcome to Ahwaa!</a>
+          </li>
+        </ul>
+        <h3>Newest Topics</h3>
+        <ul>
+          <li class="border-all">
+            <a href="#" title="Can come up with one... it's too broad">Can come up with one&hellip; it's too broad</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">Worried about what lies ahead</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">I just wanna do it</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">Worried about the wel being of my family</a>
+          </li>
+          <li class="border-all">
+            <a href="#" title="">Are abrahamic religions all against homosexuality?</a>
+          </li>
+        </ul>
       </section>
     </div>
     <br class="clear">
