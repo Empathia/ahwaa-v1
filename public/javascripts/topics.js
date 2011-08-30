@@ -20,12 +20,12 @@ $(function(){
     });
 
     var article = $(".article-wrapper"),
-        socialBookmarkers = $('.social-bookmarkers'),
         sidebar = article.find('aside'),
+        socialBookmarkers = $('.social-bookmarkers'),
         leftSideWidth = 720,
         windowObj = $(window),
         rtl = $('html').attr('dir') == 'rtl';
-
+        
     socialBookmarkers.mouseleave(function(){
         $(this).children('.flash-privacy').hide();
     }).find('a').hover(function(){
@@ -33,7 +33,7 @@ $(function(){
     });
 
     windowObj.load(function(){
-        sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 126}).data('fixed', true);
+        sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 139}).data('fixed', true);
     });
 
 
@@ -92,8 +92,8 @@ $(function(){
     }
 
     windowObj.scroll(function(e){
-        sidebar.add(socialBookmarkers).each(function(){
-            var selfOffset = article.offset().top-126,
+        sidebar.each(function(){
+            var selfOffset = article.offset().top-139,
                 selfHeight = article.outerHeight(),
                 windowOffset = windowObj.scrollTop(),
                 fixedElement = $(this);
@@ -105,7 +105,7 @@ $(function(){
                     fixedElement.data("fixed", false);
                 } else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
                 windowObj.scrollLeft() && (fixedElementPosX = calculatePosX(fixedElement));
-                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto", top: 126}
+                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto", top: 139}
                     fixedElement.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
                     fixedElement.data("fixed", true);
                 } else {
