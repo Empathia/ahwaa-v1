@@ -152,7 +152,7 @@ ar:
       share: تبادل القصص والخبرات
       offer: أعطِ وتلقّى المشورة والدعم
       popular_topics: أكثر الموضوعات شعبية
-      feeds: "ما يحدث الآن"
+      feeds: "أحدث الموضوعات"
       latest:
         has_left_a_comment: "%{author} قد ترك %{comment} على %{topic}"
         has_left_an_comment: "%{author} قد ترك %{comment} على %{topic}"

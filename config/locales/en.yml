@@ -153,7 +153,7 @@ en:
       share: Share stories and experiences
       offer: Offer and receive support
       popular_topics: Most Popular Topics
-      feeds: "What's Going on Now"
+      feeds: "Newests Topics"
       latest:
         has_left_a_comment: %{author} has left a %{comment} on %{topic}
         has_left_an_comment: %{author} has left an %{comment} on %{topic}

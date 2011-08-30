@@ -163,7 +163,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#6eade1', EndColorStr='#5296d6')";
 }
 
-.auth-wrapper > #login {border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
+.auth-wrapper > #login {border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1; text-decoration: none}
 .auth-wrapper > #login > span {float: left; padding: 5px 8px 0; border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; height: 19px; font-family: Arial, Helvetica; font-size: 13px; color: #297acc; text-align: center;
   background-color: #297acc;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
@@ -180,7 +180,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 #login span{padding:1px 0 0 1px;}
 #login.auth-form-active span{padding:0;}*/
 .header-top .sign-up .auth-form-active,
-#sign-up.auth-form-active{outline:0 none;}
+#sign-up.auth-form-active{outline:0 none}
 
 .auth-wrapper #sign-up.auth-form-active > span,
 .auth-wrapper #sign-up.auth-form-active > span:hover{height: 25px; background: #f6f9fb; color: #66a8d6; border-style: none; border-color: transparent; padding: 6px 9px 0;

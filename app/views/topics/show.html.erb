@@ -25,14 +25,18 @@
             </p>
             <p class="follow-topic-wrapper">
               <% if logged_in? && @topic.subscribed?(current_user) %>
-                <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following secondary-button border-all" %>
+                <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following secondary-button border-all-2" %>
               <% else %>
-                <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic secondary-button border-all #{'disabled' unless logged_in?}" %>
+                <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic secondary-button border-all-2 #{'disabled' unless logged_in?}" %>
               <% end %>
             </p>
             <div class="social-bookmarkers border-left">
-              <%= link_to t('.icons.social.facebook'), facebook_share_url(@topic), :target => "_blank", :class => 'facebook secondary-button border-left-2' %>
-              <%= link_to t('.icons.social.twitter'), twitter_share_url(@topic), :target => "_blank", :class => 'twitter secondary-button border-right-2' %>
+              <%= link_to facebook_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-left-2' do %>
+                <span class="facebook">t('.icons.social.facebook')</span>
+              <% end %>
+              <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-left-2' do %>
+                <span class="twitter">t('.icons.social.twitter')</span>
+              <% end %>
               <div class="flash-privacy">
                 <div class="border-all"><%= t('.icons.social.flash_alert')%><span class="flash-arrow"></span><span class="icn-cross"></span><span class="exclamation-center"></span></div>
               </div>

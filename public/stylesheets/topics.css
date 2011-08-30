@@ -185,10 +185,11 @@ a.no_comments{
 p:hover .icn{display: inline;}
 
 .related-carrousel{width: 660px; float: left; position: relative; margin-bottom: 17px}
-.social-bookmarkers{float: right; margin-top: 7px; margin-right: 10px}
-.social-bookmarkers > a{float: left; height: 16px; text-indent: -9999px; width: 18px; background-image: url('../images/icn-social.png'); background-repeat: none; overflow: hidden;}
-.facebook{background-position: 0 0;}
-.social-bookmarkers > .twitter{background-position: 0 -16px; margin-bottom: 0;}
+.social-bookmarkers{float: right; margin: 7px 10px 0 0}
+.social-bookmarkers > a {float: left; height: 21px; text-indent: -9999px; width: 21px; overflow: hidden;}
+.social-bookmarkers > a > span {background-image: url('../images/icn-social.png'); background-repeat: none; width: 14px; height: 14px; display: block}
+.social-bookmarkers .facebook{background-position: 0 0; position: relative; top: 3px; left: 3px}
+.social-bookmarkers .twitter{background-position: 0 -16px; position: relative; left: 3px; top: 2px}
 
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
 .filter-responses > .even{margin-right: 0; float: right}

@@ -1,9 +1,28 @@
 <% javascript 'stream' %>
-<%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
-  <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
-<% end %>
-<% @stream.each do |message| %>
-  <p><%= message.title %></p>
-  <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
-  <%= simple_format truncate(message.reply.content, :length => 140) %>
-<% end %>
+
+<div class="aligned">
+  <div class="content stream-wrapper">
+    <aside>
+      my menu sidebar
+    </aside>
+    <div class="right-side">
+      <section class="streams border-left">
+        <div class="stream-title">
+          <h2>Stream</h2>
+          <p class="order">
+            <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
+              <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
+            <% end %>
+            <% @stream.each do |message| %>
+              <p><%= message.title %></p>
+              <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
+              <%= simple_format truncate(message.reply.content, :length => 140) %>
+            <% end %>
+          </p>
+        </div>
+        <div class="">
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
