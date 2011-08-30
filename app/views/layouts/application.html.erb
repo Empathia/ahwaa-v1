@@ -49,22 +49,24 @@
                 <div class="user-logged-info">
                    <%= avatar_span(current_user, current_user.is_expert?, false) %>
                    <div class="user-data">
-                     <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %> </b>
+                     <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %> <%= link_to 'edit', user_path %></b>
                      <p class="points-wrapper-small small-hearts border-all light-button">
-                        <span class="level green-heart"></span>
-                        <span class="points">610</span>
+                         <span class="level <%= current_user.current_level || 'no-level' %>"></span>
+                        <span class="points"><%= current_user.score_board.current_points %></span>
                      </p>
                      <ul class="activity-btns border-all light-button">
                        <li>
-                         <a href="#" title="activity">
-                           <span class="activity">Activity</span>
-                         </a>
+                         <%= link_to stream_path, :title => t('.header.logged_in.stream') do %>
+                           <span class="activity"><%= t('.header.ogged_in.stream') %></span>
+                         <% end %>
                        </li>
                        <li>
-                        <a href="#" title="messages">
-                          <span class="messages">Messages</span>
-                          <span class="new-message-container">2</span>
-                        </a>
+                         <%= link_to '#', :title => t('.header.logged_in.messages') do %>
+                           <span class="messages"><%= t('.header.logged_in.messages') %></span>
+                           <% if current_user.received_messages.unread.size > 0 %>
+                             <span class="new-message-container"><%= current_user.received_messages.unread.size %></span>
+                           <% end %>
+                         <% end %>
                       </li>
                      </ul>
                      <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button"  %>

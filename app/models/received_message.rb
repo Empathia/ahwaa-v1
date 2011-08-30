@@ -4,6 +4,8 @@ class ReceivedMessage < ActiveRecord::Base
 
   validates :recipient_id, :presence => true
 
+  scope :unread, where(:read_at => nil)
+
   delegate :sender, :content, :to => :private_message
 
   # Wether or not the message has been read
