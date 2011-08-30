@@ -1,4 +1,4 @@
-<% javascript 'include/ba-bbq', 'user_panel' %>
+<% javascript 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all"> 
   <div class="pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
@@ -8,9 +8,6 @@
         <section class='avatars-list'>
           <ul class="avatars"></ul>
         </section>
-      </section>
-      <section id="pm-wrapper"> 
-        <%= render :partial => 'inbox', :object => @messages %>
       </section>
   </div>
   <aside class="user-sb">
@@ -22,9 +19,6 @@
          
         </div>
       </div>                    
-      <div class="edit-profile">
-        <a href="#"><%= t('.sidebar.edit_profile') %></a>
-      </div>
       <div class="white-area">
         <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>        
           <section>      
@@ -133,7 +127,6 @@
                   <div class="label"></div>
                   <div class="field">                                                                             
                     <input type="submit" class="auth-submit border-all" value="<%= t('.sidebar.buttons.save') %>">
-                    <input type="button" class="cancel" value="<%= t('.sidebar.buttons.cancel') %>">                                        
                   </div>
                 </li>
               </ul>                           
@@ -144,15 +137,6 @@
       </div>
     </div>   
     <br class="clear"> 
-    <% if current_user.profile.empty? %>
-      <div class="new-user-msg-wrapper">
-        <div class="new-user-arrow"></div>
-        <div class="new-user-msg dark border-all">
-          <h3><%= t('.sidebar.new_user.question') %></h3>
-          <p><%= t('.sidebar.new_user.legend_st_line') %><br><%= t('.sidebar.new_user.legend_nd_line') %></p>
-        </div>
-      </div>
-    <% end %> 
   </aside>
   <br class="clear">  
 </div>
