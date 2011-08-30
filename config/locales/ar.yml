@@ -126,6 +126,8 @@ ar:
           empty: اسم المستخدم أو البريد الإلكتروني فارغ
         logged_in:
           hi: "مرحبًا %{username}"
+          stream: آخر المشاركات
+          messages: رسائلي
           my_account: "حسابي+رسائلي"
           sign_out: تسجيل الخروج
         search_topics: موضوعات البحث

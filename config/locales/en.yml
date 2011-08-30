@@ -126,6 +126,8 @@ en:
           empty: Username or Email is empty
         logged_in:
           hi: 'Hi %{username}'
+          stream: Stream
+          messages: Messages
           my_account: "My Profile + Messages"
           sign_out: Sign Out
           logout: Logout

@@ -9,7 +9,7 @@ Class('TagList')({
             headerTags.css('width', '9999em').children(':not(.more)').each(function(){
                 tag =  $(this);
                 count += tag.outerWidth();
-                if(count > 650) {
+                if(count > 890) {
                     moreTags.append(tag.clone());
                     tag.addClass('to-more');
                 }
