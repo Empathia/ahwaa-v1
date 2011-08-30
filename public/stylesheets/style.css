@@ -1,4 +1,4 @@
-html{height: 100%;}
+stylehtml{height: 100%;}
 body{font-size: 13px; color: #61656a; background-color: #e3ecf0; background-image: url('../images/bg-noise.jpg'); height: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility}
 h1{font-size: 24px;}
 h1, h2{color: #393c3f;}
@@ -31,7 +31,7 @@ textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #
 
 .light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;}
 .light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; color: #297acc; text-align: center; font-weight: bold;
-  background-color: #297acc;
+  background-color: #fafcfd;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
   background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
@@ -45,8 +45,8 @@ textarea{border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #
           box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
 }
 a.light-button:hover,
-a.light-button > span:hover {
-  background-color: #297acc;
+a.light-button > span:hover {text-decoration: none;
+  background-color: #ecf4f9;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf4f9), to(#fafcfd));
   background-image: -webkit-linear-gradient(top, #ecf4f9, #fafcfd);
   background-image:    -moz-linear-gradient(top, #ecf4f9, #fafcfd);
