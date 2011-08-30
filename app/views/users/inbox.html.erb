@@ -1,0 +1,10 @@
+<% javascript 'include/ba-bbq', 'inbox' %>
+<% stylesheet 'user_panel' %>
+<div class="aligned panel border-all"> 
+  <div class="pm-panel border-all">
+      <section id="pm-wrapper"> 
+        <%= render :partial => 'inbox', :object => @messages %>
+      </section>
+  </div>
+  <br class="clear">
+</div>

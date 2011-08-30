@@ -1,15 +1,9 @@
 var form = $('.edit-form');
-form.find('.pm-flash').remove();
 <% if @user.errors.empty? %>
   var successMsg = $('<div class="pm-flash success border-all"><p><%= escape_javascript t('users.show.sidebar.saved') %></p></div>').insertAfter(form.find('.user-edit:last'));
   setTimeout(function(){
       $('.user-profile img').attr('src', '<%= escape_javascript current_user.profile.avatar.url %>');
-      avatars.hide();  
-      $('.white-area').slideUp(function(){
-          successMsg.remove();          
-          $('.new-user-msg').remove();
-          $('.edit-profile').slideDown();
-      });
+      successMsg.remove();
   }, 2000);
 <% else %>
 $('<div class="pm-flash error border-all"><p><%= escape_javascript @user.errors.full_messages.first %></p></div>').insertAfter(form.find('.user-edit:last'));

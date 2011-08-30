@@ -61,7 +61,7 @@
                          <% end %>
                        </li>
                        <li>
-                         <%= link_to '#', :title => t('.header.logged_in.messages') do %>
+                         <%= link_to inbox_user_path, :title => t('.header.logged_in.messages') do %>
                            <span class="messages"><%= t('.header.logged_in.messages') %></span>
                            <% if current_user.received_messages.unread.size > 0 %>
                              <span class="new-message-container"><%= current_user.received_messages.unread.size %></span>
