@@ -131,6 +131,7 @@ en:
           my_account: "My Profile + Messages"
           sign_out: Sign Out
           logout: Logout
+          edit_profile: edit profile
         search_topics: Search topics
       footer:
         all_rights: "© Ahwaa - All Rights Reserved %{year}"

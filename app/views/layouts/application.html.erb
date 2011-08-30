@@ -49,7 +49,7 @@
                 <div class="user-logged-info">
                    <%= avatar_span(current_user, current_user.is_expert?, false) %>
                    <div class="user-data">
-                     <b><%= t('.header.logged_in.hi', {:username => current_user.username}) %> <%= link_to 'edit', user_path %></b>
+                     <b><span><%= t('.header.logged_in.hi', {:username => current_user.username}) %></span><%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %></b>
                      <p class="points-wrapper-small small-hearts border-all light-button">
                          <span class="level <%= current_user.current_level || 'no-level' %>"></span>
                         <span class="points"><%= current_user.score_board.current_points %></span>

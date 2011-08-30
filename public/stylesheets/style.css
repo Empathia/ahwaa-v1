@@ -724,7 +724,9 @@ form + .recently-topics{padding-top:18px;}
 }
 .user-logged-info .avatar img {width: 42px; height: 42px}
 .user-logged-info .user-data {float: left; margin-left: 10px}
-.user-logged-info .user-data b {display: block; margin: 2px 0 9px; font-size: 14px; color: #454545}
+.user-logged-info .user-data b {display: block; overflow: hidden; margin: 2px 0 9px; font-size: 14px; color: #454545}
+.user-logged-info .user-data b span {float: left; margin-right: 7px}
+.user-logged-info .user-data b .edit-secondary {margin-top: 2px}
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
 .user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px;}
@@ -763,3 +765,5 @@ form + .recently-topics{padding-top:18px;}
 
 .follow-topic-wrapper {float: right; margin-top: 7px}
 .follow-topic-wrapper .secondary-button {padding: 3px 10px 0; height: 18px; font-size: 12px; display: block}
+
+.edit-secondary {width: 13px; height: 14px; overflow: hidden; text-indent: -999; font-size: 0; line-height: 0; background: url("../images/icn-pencil-2.png") 0 0 no-repeat; float: left}
