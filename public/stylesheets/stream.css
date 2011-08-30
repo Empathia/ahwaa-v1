@@ -4,6 +4,7 @@ body > div {
 .stream-wrapper {position: relative}
 .stream-wrapper aside {width: 140px; float: left; margin-right: 20px}
 .stream-wrapper .sub-nav > li > a {color: #394551; text-sahdow: 0 1px 0 rgba(255, 255, 255, .35); display: block; height: 30px; line-height: 30px;}
+.stream-wrapper .sub-nav > .active a:hover {text-decoration: none} 
 
 .stream-wrapper .sub-nav > li > a > .icon {background: url("../images/logged-in-nav-icons.png") 0 0; width: 30px; height: 30px; display: block; float: left; margin: 0 2px 0 3px}
 .stream-wrapper .sub-nav a.stream > .icon {background-position: 0 0}
@@ -31,10 +32,31 @@ body > div {
 }
 .stream-wrapper .right-side .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float: left}
 .stream-wrapper .right-side .stream-title .filter {float: right}
+.stream-title  .filter-label {float: left}
 
 .stream-wrapper .right-side .streams {float: left; width: 559px; border-right: 1px solid #dae0e6; min-height: 449px;}
 .stream-wrapper .right-side .recommended-topics {float: left; width: 200px; padding: 15px 20px}
 .stream-wrapper .right-side .recommended-topics h3 {font-family: 'GothamMediumRegular'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
 .stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
-.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px}
+.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fbfc), to(#f4f6f9));
+  background-image: -webkit-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image:    -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image:     -ms-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image:      -o-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image:         linear-gradient(top, #f9fbfc, #f4f6f9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9')";
+}
 .recommended-topics li > a {display: block; padding: 10px}
+
+.streams .stream-items-wrapper {margin: 0 20px}
+.streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0}
+.stream-item-data {float: right; width: 440px}
+.stream-item-data > div {margin-top: 1px}
+.stream-item-data > div > .user-comment {color: #8a9199; float: left}
+.stream-item-data > div > .user-comment a {font-weight: bold}
+.stream-item-data > div > .time-ago {float: right; font-size: 11px; color: #b6babf;
+  background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; margin-top: -1px; height: 14px}
+.stream-item-data > p.title {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 16px; margin: 10px 0}
+.stream-item-data > blockquote {color: #494b4c; margin: 0; line-height: 20px}

@@ -34,14 +34,29 @@
             <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
               <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
             <% end %>
-            <% @stream.each do |message| %>
-              <p><%= message.title %></p>
-              <h3><%= link_to message.reply.topic.title, message.reply.topic %></h3>
-              <%= simple_format truncate(message.reply.content, :length => 140) %>
-            <% end %>
           </div>
         </div>
-        <div class="">
+        <div class="stream-items-wrapper">
+          <% @stream.each do |message| %>
+          <div class="stream-item">
+            <div class="avatar-wrapper">
+              <%= avatar_span(message.reply.user, message.reply.user.is_expert?) %>
+              <%= render :partial => 'users/card', :locals => {:user => message.reply.user} %>
+            </div>
+            <div class="stream-item-data">
+              <div>
+                <span class="user-comment"><%= message.title %></span>
+                <span class="time-ago"><%= time_ago_in_words message.reply.created_at %></span>
+                <br class="clear" />
+              </div>
+              <p class="title"><%= link_to message.reply.topic.title, message.reply.topic %></p>
+              <blockquote>
+                 <%= simple_format truncate(message.reply.content, :length => 140) %>
+              </blockquote>
+            </div>
+            <br class="clear" />
+          </div>
+          <% end %>
         </div>
       </section>
       <section class="recommended-topics">
