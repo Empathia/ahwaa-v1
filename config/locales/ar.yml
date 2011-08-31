@@ -264,6 +264,7 @@ ar:
           custom_avatar: خصص صورة جديدة
         private_messages:
           title: الرسائل الخاصة
+          my_messages: My Messages
           delete: حذف
           confirm_delete: هل أنت متأكد أنك تريد حذف هذه الرسالة؟ لا يمكنك التراجع فيما بعد.
           by: بواسطة %{sender}
