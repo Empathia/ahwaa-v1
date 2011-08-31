@@ -144,10 +144,6 @@ ar:
           my_account: "ملفاتي + رسائل"
           sign_out: تسجيل الخروج
   home:
-    stream:
-      messages: Messages
-      my_topics: My Topics
-      stream: Stream
     grouped_topic:
       by: بواسطة %{author}
       recent_participants:
@@ -301,6 +297,10 @@ ar:
         subject: إشعار من أهواء
 
   shared:
+    user_nav:
+      messages: رسائلي
+      my_topics: My Topics
+      stream: آخر المشاركات
     new_response:
        new_response: إضافة ردّ جديد
     useful_flag_buttons:
