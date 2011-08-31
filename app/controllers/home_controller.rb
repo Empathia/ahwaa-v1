@@ -8,14 +8,18 @@ class HomeController < ApplicationController
   end
 
   def stream
-    @stream = if params[:filter] == 'followed'
-      current_user.stream_users.followed
-    elsif params[:filter] == 'owned'
-      current_user.stream_users.owned
-    else
-      current_user.stream_users
+    stream_users = current_user.filtered_stream_users(params[:filter])
+    @stream_messages = stream_users.page(params[:page]).per_page(15)
+    @stream = @stream_messages.map(&:stream_message)
+    if request.format == :html && !request.xhr?
+      @recommended = current_user.recommended_topics(5)
+      @newest = Topic.newest(I18n.locale).limit(5)
     end
-    @stream = @stream.order("created_at DESC").page(params[:page]).per_page(15).map(&:stream_message)
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def my_topics

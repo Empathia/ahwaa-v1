@@ -15,64 +15,32 @@
           </div>
         </div>
         <div class="stream-items-wrapper">
-          <% @stream.each do |message| %>
-          <div class="stream-item">
-            <div class="avatar-wrapper">
-              <% unless message.reply.anonymous? %>
-                <%= avatar_span(message.reply.user, message.reply.user.is_expert?) %>
-                <%= render :partial => 'users/card', :locals => {:user => message.reply.user} %>
-              <% else %>
-                <span class="avatar">
-                  <%= image_tag(message.reply.author_avatar, :width => '56') %>
-                </span>
-              <% end %>
-            </div>
-            <div class="stream-item-data">
-              <div>
-                <span class="user-comment"><%= message.title %></span>
-                <span class="time-ago"><%= time_ago_in_words message.reply.created_at %></span>
-                <br class="clear" />
-              </div>
-              <p class="title"><%= link_to message.reply.topic.title, message.reply.topic %></p>
-              <blockquote>
-                 <%= simple_format truncate(message.reply.content, :length => 140) %>
-              </blockquote>
-            </div>
-            <br class="clear" />
-          </div>
-          <% end %>
+          <%= render @stream %>
         </div>
+        <% if @stream_messages.current_page < @stream_messages.total_pages %>
+          <p>
+            <%= link_to 'More', stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'more-stream' %>
+          </p>
+        <% end %>
       </section>
       <section class="recommended-topics">
-        <h3>Recommended Topics</h3>
+        <% unless @recommended.empty? %>
+          <h3><%= t '.sidebar.recommended_topics' %></h3>
+          <ul>
+            <% @recommended.each do |topic| %>
+              <li class="border-all">
+                <%= link_to topic.title, topic %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <h3><%= t '.sidebar.newest_topics' %></h3>
         <ul>
-          <li class="border-all">
-            <a href="#" title="How can I tell my religious parents that I am bisexual">How can I tell my religious parents that I am bisexual?</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">I had a homophobic family so I moved out</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Welcome to Ahwaa!</a>
-          </li>
-        </ul>
-        <h3>Newest Topics</h3>
-        <ul>
-          <li class="border-all">
-            <a href="#" title="Can come up with one... it's too broad">Can come up with one&hellip; it's too broad</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Worried about what lies ahead</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">I just wanna do it</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Worried about the wel being of my family</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Are abrahamic religions all against homosexuality?</a>
-          </li>
+          <% @newest.each do |topic| %>
+            <li class="border-all">
+              <%= link_to topic.title, topic %>
+            </li>
+          <% end %>
         </ul>
       </section>
     </div>
