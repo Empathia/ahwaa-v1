@@ -35,10 +35,10 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 .items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
 .items > li{width: 440px;}
 .item-data{width: 365px; line-height: 20px;}
-.topics{margin-right: 20px;}
-.feeds{margin-left: 20px;}
+.topics{margin-right: 10px;}
+.feeds{margin-left: 10px;}
 .item-data .feed-date{font-size: 11px; color: #bdc6cb;}
-.feature-wrapper{width: 302px; margin: 5px 21px 5px 5px; float: left; text-align: center;}
+.feature-wrapper{width: 302px; margin: 5px 11px 5px 5px; float: left; text-align: center;}
 .feature{background-color: #ffffff; height: 175px; border: 1px solid #a8bfcb; float: left; width: 100%; margin-top: 9px;}
 .features li:first-child{margin-left: 1px;}
 .features > .last-feature{margin-right: 1px;}

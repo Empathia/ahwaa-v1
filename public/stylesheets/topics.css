@@ -29,8 +29,8 @@ article > header > h1{}
 article > header > div{float: left;}
 article > header > div.right{float: right; width: 581px;}
 article > header em{display: block; clear: left; text-align: center; color: #468AC4; padding: 5px 0 15px 0;}
-aside{font-size: 12px; float: right; width: 200px; padding: 0 18px; background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; border-left: 2px solid #ffffff; border-right: 2px solid #ffffff; float: right; z-index: 99;}
-aside section.show-hide{border-top:none; padding:19px 0 25px;}
+aside{font-size: 12px; float: right; width: 200px; padding: 0 10px; background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; float: right; z-index: 99;}
+aside section.show-hide{border-top: none; padding: 20px 0}
 aside section.show-hide a{text-align: left; text-decoration: none; padding-left: 23px; outline: 0 none; float: none!important; height: 31px; display: block;
     background-image: -moz-linear-gradient(top, #fff, #eaf7fd);
     background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
@@ -59,7 +59,7 @@ aside section.filter h2, aside section.experts h2{border-top:1px solid #ddd;}
 aside section.filter h2 span, aside section.experts h2 span{padding:0 4px; background-color: #ffffff; margin:-7px 0 0 6px; display:block; float:left; color:#38414e}
 aside section.helpful{padding:13px 0}
 aside section.helpful label{margin-left:4px}
-aside section.experts{padding:32px 0 25px; border-bottom:1px solid #f3f3f3}
+aside section.experts{padding: 25px 0; border-bottom:1px solid #f3f3f3}
 aside section.need-help{padding:13px 0; text-align:center}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
 .add_comments.no-arrow{padding-top: 0; margin-top: 0;}

@@ -2,7 +2,7 @@ body > div {
     background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
 }
 .stream-wrapper {position: relative}
-.stream-wrapper .right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 800px}
+.stream-wrapper .right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px}
 
 .stream-wrapper .right-side .stream-title {border-bottom: 1px solid #dbdfe3; padding: 10px 20px 0; background: #fcfcfc; height: 30px; 
   -webkit-border-radius: 3px 0 0 0;
@@ -13,7 +13,7 @@ body > div {
 .stream-wrapper .right-side .stream-title .filter {float: right}
 .stream-title  .filter-label {float: left}
 
-.stream-wrapper .right-side .streams {float: left; width: 559px; border-right: 1px solid #dae0e6; min-height: 449px;}
+.stream-wrapper .right-side .streams {float: left; width: 539px; border-right: 1px solid #dae0e6; min-height: 449px;}
 .stream-wrapper .right-side .recommended-topics {float: left; width: 200px; padding: 15px 20px}
 .stream-wrapper .right-side .recommended-topics h3 {font-family: 'GothamMediumRegular'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
 .stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
@@ -31,7 +31,7 @@ body > div {
 
 .streams .stream-items-wrapper {margin: 0 20px}
 .streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0}
-.stream-item-data {float: right; width: 440px}
+.stream-item-data {float: right; width: 420px}
 .stream-item-data > div {margin-top: 1px}
 .stream-item-data > div > .user-comment {color: #8a9199; float: left}
 .stream-item-data > div > .user-comment a {font-weight: bold}

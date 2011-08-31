@@ -1,4 +1,6 @@
-<h2 class="regular pm-panel-padding"><%= t('users.show.content.private_messages.title') %></h2>
+<div class="messages-title border-top">
+  <h2><%= t('users.show.content.private_messages.title') %></h2>
+</div>
 <% unless inbox.empty? %>
   <ul class="messages">
     <% inbox.each_with_index do |pm, i| %>

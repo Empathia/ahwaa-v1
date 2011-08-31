@@ -1,33 +1,36 @@
 <% javascript 'include/ba-bbq', 'inbox' %>
-<% stylesheet 'user_panel' %>
-<div class="my-messages aligned panel border-all"> 
-  <aside class="panel-sub-nav">
-    <ul class="sub-nav">
-      <li>
-        <a href="#" title="Stream" class="stream">
-          <span class="icon"></span>
-          Stream
-        </a>
-      </li>
-      <li class="active">
-        <a href="#" title="Messages" class="messages">
-          <span class="icon"></span>
-          Messages
-          <span class="badge">6</span>
-        </a>
-      </li>
-      <li>
-        <a href="#" title="My Topics" class="my-topics">
-          <span class="icon"></span>
-          My Topics
-        </a>
-      </li>
-    </ul>
-  </aside>
-  <div class="pm-panel border-all container-soft-box-shadow">
-      <section id="pm-wrapper"> 
-        <%= render :partial => 'inbox', :object => @messages %>
-      </section>
+<% stylesheet 'messages' %>
+
+<div class="aligned">
+  <div class="content messages-wrapper">
+    <aside class="panel-sub-nav">
+      <ul class="sub-nav">
+        <li>
+          <a href="#" title="Stream" class="stream">
+            <span class="icon"></span>
+            Stream
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" title="Messages" class="messages">
+            <span class="icon"></span>
+            Messages
+            <span class="badge">6</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" title="My Topics" class="my-topics">
+            <span class="icon"></span>
+            My Topics
+          </a>
+        </li>
+      </ul>
+    </aside>
+    <div class="right-side border-all container-soft-box-shadow">
+        <section id="pm-wrapper"> 
+          <%= render :partial => 'inbox', :object => @messages %>
+        </section>
+    </div>
+    <br class="clear">
   </div>
-  <br class="clear">
 </div>
