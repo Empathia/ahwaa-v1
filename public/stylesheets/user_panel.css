@@ -39,12 +39,9 @@ aside{overflow: hidden;}
 .pm-panel.new-user{min-height: 240px;}
 .pm-panel > section > .regular{border-bottom: 1px solid #efeff0; margin-bottom: 20px; overflow: hidden;}
 .pm-panel > section > .messages{padding:20px 40px}
-.pm-panel-padding{padding:0 38px 10px}
+.pm-panel-padding{padding: 0 30px 10px}
 
 .bar{background-color: #fbfbfb; border-bottom: 1px solid #e1e3e5; height: 30px; overflow: hidden; margin-bottom: 18px; position: relative;}
-
-.back-to-msgs{color: #468ac4; float: right; font-size: 12px;}
-.back-to-msgs .arrow{border-color: transparent #a7c7e3 transparent transparent; border-style: solid; border-width: 4px 4px 4px 0; float: left; height: 0; margin: 2px 8px 0 0; width: 0;}
 
 .pagination{text-align:center;line-height:31px;}
 .pagination .arrow{width: 6px; height: 9px; background-image: url('../images/pagination-arrows.png'); background-repeat: no-repeat; margin-top: 3px;display:inline-block;zoom:1;/* IE7 (hasLayout)*/*display: inline; /* IE */}
@@ -54,7 +51,7 @@ aside{overflow: hidden;}
 .pag-numbers > li{display:inline; margin: 0 6px;}
 .pag-numbers > li > a{color: #cbcfd2;}
 .pag-numbers .active a{color: #808386;}
-
+/*
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
 .messages > li{background-color:#fbfbfb; margin-bottom:15px; padding:14px 11px; width:586px; border-bottom:1px solid #e1e3e5; position:relative; clear: both;}
@@ -85,6 +82,7 @@ aside{overflow: hidden;}
 .from .display-pm{color: #468ac4; font-weight: bold;}
 .from .display-pm:hover{text-decoration: underline;}
 .msg a{color: #838383; font-size: 12px; text-decoration: none;}
+*/
 .avatars-wrapper{display: none;}
 .avatars-wrapper > p{text-align: center; color: #a8adb4; font-size: 13px; font-weight: bold; margin: 60px 0 40px 0;}
 .avatars-list{display: none; overflow: hidden; padding-left: 10px}
@@ -101,17 +99,9 @@ aside{overflow: hidden;}
 
 .checkmark{position:absolute;right:-7px;top:-5px;background-image:none!important;display:none;}
 li.active > .checkmark{display:block;}
-
+/*
 #pm-wrapper strong{color:black}
-.pm-details{font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
-.pm-user{margin-bottom: 20px}
-.pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
-.pm-user-response > a{color: #5e5e5e; font-weight: bold;}
-.pm-user .avatar-wrapper{margin-right: 14px; z-index: 1;}
-.pm-user-details{color: #b3b8bc; margin-top: 10px; float: left; width: 536px;}
-.pm-user-details > div{margin-bottom: 5px;}
-.pm-user-details a{color: #468ac4; font-weight: bold;}
-.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #d5dae1; padding-bottom: 15px;}
+
 .response{color: #999999}
 .hide{display: none;}   
 .response-wrapper{margin: 4px 0 11px 0; width: 608px; float: left;border:none;}
@@ -129,7 +119,7 @@ li.active > .checkmark{display:block;}
 .new-user-msg > h3{font-size: 20px; padding-bottom: 10px; font-weight: normal;}
 .new-user-msg.dark > h3{color: #ffffff;}
 .new-user-msg.yellow > h3{color: #38414e;font-weight:bold;}
-
+*/
 .custom-avatar{padding: 15px; width: 119px; height: 26px; border: 1px solid #becad7; color: #6d91a9; text-align: right; float: left; font-size: 12px; font-weight: bold; line-height: 2.2;
   background-image: -moz-linear-gradient(top, #f8fcfe, #ecf8fd);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8fcfe),color-stop(1, #ecf8fd));

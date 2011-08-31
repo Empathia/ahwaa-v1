@@ -261,12 +261,13 @@ en:
           custom_avatar: Custom Avatar
         private_messages:
           title: Private Messages
+          my_messages: My Messages
           delete: Delete
           confirm_delete: Are you sure you want to delete this conversation? This cannot be undo.
           by: by %{sender}
           at_date: in %{date}
           reply: Reply
-          back_to_msgs: Back to messages
+          back_to_msgs: Back to Messages
           add_reply: Click here to add a reply.
           send_reply: Send Reply
     inbox:
