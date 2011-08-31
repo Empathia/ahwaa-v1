@@ -83,7 +83,7 @@ body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
 }
   
 .watch-video > div > a:hover{text-decoration: none;}
-.watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px 8px 0 8px; float: left; padding: 0 0 8px 22px; letter-spacing: 1px; font-weight: bold}
+.watch-video > div > a > span{background-image: url('../images/icn-film.png'); background-repeat: no-repeat; background-position: 0 1px; margin: 8px 8px 0 8px; float: left; padding: 0 0 8px 22px; font-weight: bold; text-shadow: 0 1px 0 #fff}
 
 #watch-video-overlay{width: 790px;}
 .overlay-wrapper{position: absolute; left: 0; top: 0; display: none; z-index: 10000; background-color: #fcfaf4; float: left;

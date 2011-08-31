@@ -9,6 +9,12 @@ $(function() {
             $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
         }
     });
+    
+    $("#query").focus(function() {
+        $(this).parent().addClass("focus");
+    }), $("#query").focusout(function() {
+        $(this).parent().removeClass("focus");
+    });
 
     new AuthForms();
     new MessageSender();
@@ -84,5 +90,3 @@ $(window).load(function () {
         container.css('min-height', self.height() - delta);
     });
 });
-
-

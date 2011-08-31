@@ -82,7 +82,7 @@ en:
           sign_up: Sign-Up
           login: Login
         request_topic:
-          button: Request a topic
+          button: Request a Topic
           legend: "You must be signed in to request a topic."
           sign_up: Sign Up
           error_login_empty: Sign Up
@@ -153,7 +153,7 @@ en:
     index:
       title: Ahwaa
       legend: A safe space to debate LGBTQ-related issues in the Middle East
-      watch_video: Watch a video
+      watch_video: Watch the video
       community: "We're a community that is..."
       private: Private
       engaging: Engaging
