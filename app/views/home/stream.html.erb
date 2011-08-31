@@ -18,8 +18,10 @@
           <%= render @stream %>
         </div>
         <% if @stream_messages.current_page < @stream_messages.total_pages %>
-          <p>
-            <%= link_to 'More', stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'more-stream' %>
+          <p class="load-more-wrapper">
+            <%= link_to stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'clean-button border-all' do %>
+              <span class="more-stream border-all">View More</span>
+            <% end %>
           </p>
         <% end %>
       </section>

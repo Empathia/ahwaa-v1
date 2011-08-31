@@ -9,7 +9,7 @@ class HomeController < ApplicationController
 
   def stream
     stream_users = current_user.filtered_stream_users(params[:filter])
-    @stream_messages = stream_users.page(params[:page]).per_page(15)
+    @stream_messages = stream_users.page(params[:page]).per_page(1)
     @stream = @stream_messages.map(&:stream_message)
     if request.format == :html && !request.xhr?
       @recommended = current_user.recommended_topics(5)

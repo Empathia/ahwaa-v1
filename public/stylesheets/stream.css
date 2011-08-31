@@ -39,3 +39,7 @@ body > div {
   background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; margin-top: -1px; height: 14px}
 .stream-item-data > p.title {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 16px; margin: 10px 0}
 .stream-item-data > blockquote {color: #494b4c; margin: 0; line-height: 20px}
+
+.load-more-wrapper {margin: 27px 0 20px 183px; overflow: hidden}
+.load-more-wrapper a {float: left}
+.load-more-wrapper .more-stream {display: block; height: 19px; padding: 5px 44px 0}
