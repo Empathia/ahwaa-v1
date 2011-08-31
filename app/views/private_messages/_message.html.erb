@@ -6,22 +6,27 @@
     <span class="border-all"><%= t('users.show.content.private_messages.back_to_msgs') %></span>
   <% end %>
 </div>
-
 <div class="pm-panel-padding">
-  <div class="pm-details">
+  <div class="replies-wrapper">
     <%= render :partial => 'reply', :object => message %>
   </div>
   <div class="replies-wrapper <% 'pm-details' unless message.replies.blank? %>">
     <%= render :partial => 'reply', :collection => message.replies %>
-  </div>  
-  <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>
-    <div class="new-response response-wrapper reply-pm">
-      <div class="response border-all">
-        <%= hidden_field_tag :reply_to, message.id %>                                  
-        <%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :placeholder => t('users.show.content.private_messages.add_reply') %>
-      </div>
+  </div>
+  <div class="my-messages-reply-wrapper">
+    <div class="avatar-wrapper">
+      <%= avatar_span(current_user, current_user.is_expert?) %>
+      <%= render :partial => 'users/card', :locals => {:user => current_user} %>
     </div>
-    <%= f.submit t('users.show.content.private_messages.send_reply'), :class => 'light-btn-input' %>
-  <% end %>
+    <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>  
+      <div class="new-response response-wrapper reply-pm">
+        <div class="response border-all">
+          <%= hidden_field_tag :reply_to, message.id %>
+          <%= f.text_area :content, :class => 'border-all', :rows => '1', :cols => '78', :placeholder => t('users.show.content.private_messages.add_reply') %>
+        </div>
+      </div>
+      <%= f.submit t('users.show.content.private_messages.send_reply'), :class => 'btn-gradient light-btn-input' %>
+    <% end %>
+  </div>
 </div>
 
