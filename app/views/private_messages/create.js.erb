@@ -3,7 +3,7 @@
   w.hasClass('pm-details');
   w.append('<%= escape_javascript render(:partial => 'reply', :object => @message) %>');
   $('#reply-form').show()[0].reset();
-  $('#reply-form > .btn-gradient').hide();
+  //$('#reply-form > .light-btn-input').hide();
   $('#reply-form textarea').css({'height':'16px', 'min-height':'16px'});
   !$.browser.webkit && $('#reply-form textarea').val().length == 0 && $('#reply-form textarea').val($('#reply-form textarea').attr('placeholder'));
 <% else %>

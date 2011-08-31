@@ -49,22 +49,21 @@ body > div {
           box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff
 }
 
-.pm-panel-padding {padding: 20px}
+.pm-panel-padding {padding: 0 20px 20px 20px}
 
-.pm-details{font-size: 12px; margin: 5px 0 16px 0; border-bottom: 1px solid #e9eef2;}
+.pm-details{font-size: 12px; padding-top: 20px}
 .pm-user{margin-bottom: 20px}
-.pm-user-response{color: #b3b8bc; margin-bottom: 12px;}
+.pm-user-response{color: #b3b8bc; padding: 20px 0 10px}
 .pm-user-response > a{color: #5e5e5e; font-weight: bold;}
 .pm-user .avatar-wrapper{margin-right: 14px; z-index: 1;}
 .pm-user-details{color: #b3b8bc; margin-top: 10px; float: left; width: 536px;}
 .pm-user-details > div{margin-bottom: 5px;}
 .pm-user-details a{color: #468ac4; font-weight: bold;}
-.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #d5dae1; padding-bottom: 15px;}
+.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #dae0e5; padding-bottom: 20px}
 
 #pm-wrapper strong{color:black}
-.response{color: #999999}
 .hide{display: none;}   
-.response-wrapper{margin: 4px 0 11px 0; width: 608px; float: left;border:none;}
+.response-wrapper{margin: 20px 0 11px 0; width: 670px; float: left; border:none;}
 .new_private_message > .btn-gradient{padding: 5px 9px; display: none;}
 
 .pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
@@ -72,3 +71,5 @@ body > div {
 
 .back-to-msgs {float: right; font-size: 12px; margin-top: -3px}
 .back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
+
+.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px}
