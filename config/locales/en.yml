@@ -144,6 +144,10 @@ en:
           my_account: "My Profile + Messages"
           sign_out: Sign Out
   home:
+    stream:
+      messages: Messages
+      my_topics: My Topics
+      stream: Stream
     grouped_topic:
       by: By %{author}
       recent_participants:

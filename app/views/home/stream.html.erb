@@ -6,23 +6,23 @@
     <aside class="panel-sub-nav">
       <ul class="sub-nav">
         <li class="active">
-          <a href="#" title="Stream" class="stream">
+          <%= link_to stream_path, :class => 'stream' do %>
             <span class="icon"></span>
-            Stream
-          </a>
+            <%= t '.stream' %>
+          <% end %>
         </li>
         <li>
-          <a href="#" title="Messages" class="messages">
+          <%= link_to inbox_user_path, :class => 'messages' do %>
             <span class="icon"></span>
-            Messages
-            <span class="badge">6</span>
-          </a>
+            <%= t '.messages' %>
+            <span class="badge"><%= current_user.received_messages.unread.size %></span>
+          <% end %>
         </li>
         <li>
-          <a href="#" title="My Topics" class="my-topics">
+          <%= link_to '#', :class => 'my-topics' do %>
             <span class="icon"></span>
-            My Topics
-          </a>
+            <%= t '.my_topics' %>
+          <% end %>
         </li>
       </ul>
     </aside>
