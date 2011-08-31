@@ -40,8 +40,14 @@
           <% @stream.each do |message| %>
           <div class="stream-item">
             <div class="avatar-wrapper">
-              <%= avatar_span(message.reply.user, message.reply.user.is_expert?) %>
-              <%= render :partial => 'users/card', :locals => {:user => message.reply.user} %>
+              <% unless message.reply.anonymous? %>
+                <%= avatar_span(message.reply.user, message.reply.user.is_expert?) %>
+                <%= render :partial => 'users/card', :locals => {:user => message.reply.user} %>
+              <% else %>
+                <span class="avatar">
+                  <%= image_tag(message.reply.author_avatar, :width => '56') %>
+                </span>
+              <% end %>
             </div>
             <div class="stream-item-data">
               <div>
