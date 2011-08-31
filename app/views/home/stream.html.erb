@@ -30,7 +30,7 @@
             <div class="stream-item-data">
               <div>
                 <span class="user-comment"><%= message.title %></span>
-                <span class="time-ago"><%= time_ago_in_words message.reply.created_at %></span>
+                <span class="time-ago"><%= t 'helpers.ago', :time => time_ago_in_words(message.reply.created_at) %></span>
                 <br class="clear" />
               </div>
               <p class="title"><%= link_to message.reply.topic.title, message.reply.topic %></p>
