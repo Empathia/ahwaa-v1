@@ -14,7 +14,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
 
 article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
-.topic-content p{margin-top: 10px; line-height: 22px; position: relative; word-wrap: break-word}
+.topic-content p{margin-top: 20px; line-height: 22px; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic} 
 article > header{display: block; position: static; padding: 20px 20px 15px; background-color: #fcfcfc; border-bottom: 1px solid #dbdfe3;
@@ -188,8 +188,9 @@ p:hover .icn{display: inline;}
 .social-bookmarkers{float: right; margin-top: 7px}
 .social-bookmarkers > a {float: left; height: 21px; text-indent: -9999px; width: 21px; overflow: hidden;}
 .social-bookmarkers > a > span {background-image: url('../images/icn-social.png'); background-repeat: none; width: 14px; height: 14px; display: block}
-.social-bookmarkers .facebook{background-position: 0 0; position: relative; top: 3px; left: 3px}
-.social-bookmarkers .twitter{background-position: 0 -16px; position: relative; left: 3px; top: 2px}
+.social-bookmarkers .facebook{background-position: 0 0; position: relative; top: 4px; left: 3px}
+.social-bookmarkers .twitter{background-position: 0 -16px; position: relative; left: 3px; top: 3px}
+.social-bookmarkers > a:first-child {border-right-width: 0}
 
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
 .filter-responses > .even{margin-right: 0; float: right}
@@ -200,7 +201,7 @@ p:hover .icn{display: inline;}
 .topic-avatars .avatar{margin-bottom: 10px}
 .topic-avatars em{color:#468AC4}
 
-.expand-btn{height: 31px; line-height: 2.5em; font-size: 13px}    
+.expand-btn{height: 31px; line-height: 31px; font-size: 14px; font-weight: bold; text-shadow: 0 1px 0 #fff}
   
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 .help{background-image: url('../images/question-mark.png'); background-repeat: no-repeat; background-position: 0 0; padding: 2px 0 2px 22px; line-height: 1em;}

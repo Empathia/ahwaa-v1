@@ -144,3 +144,16 @@ p.error{clear: both; padding: 10px 0 2px 0;}
 .autocomplete {border: 1px solid #ccc;display:none;}
 .autocomplete li {background: #eee;border:1px solid #ccc;padding: 3px 2px;cursor:pointer;}
 .autocomplete li.active{background: #4173CC;color: #fff;}
+
+.my-messages > .pm-panel {width: 800px; float: left}
+.my-messages > .pm-panel .messages {padding: 20px 20px 40px 30px}
+.my-messages > .pm-panel .messages > li {width: auto; background-color: #FBFBFB; border: 1px solid #dfe2e6; margin-bottom: 20px; padding: 10px 11px 10px 9px;
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+     -moz-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+}
+.my-messages > .pm-panel .messages > li.new {background-color: #f2f9ff; border-color: #398fe5;
+  -webkit-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+     -moz-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+          box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff
+}

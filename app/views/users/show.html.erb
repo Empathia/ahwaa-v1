@@ -1,7 +1,7 @@
 <% javascript 'user_panel' %>
 <% stylesheet 'user_panel' %>
 <div class="aligned panel border-all"> 
-  <div class="pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
+  <div class="container-soft-box-shadow pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
       <section class="avatars-wrapper"> 
         <h2 class="regular pm-panel-padding"><%= t('.content.avatars.suggested') %></h2>
         <p class="loading-avatar"><%= image_tag 'loading.gif', :width => "32", :height => "32"%><br/><%= t('.content.avatars.loading') %></p>
@@ -11,7 +11,7 @@
       </section>
   </div>
   <aside class="user-sb">
-    <div class="user-sb-white border-left">
+    <div class="user-sb-white border-all container-soft-box-shadow">
       <div class="user-profile">
         <%= avatar_span(current_user, current_user.is_expert?, false) %>
         <div class="user-details">

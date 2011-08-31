@@ -47,20 +47,23 @@
               </div>
               <% if logged_in? %>
                 <div class="user-logged-info">
-                   <%= avatar_span(current_user, current_user.is_expert?, false) %>
-                   <div class="user-data">
-                     <b><span><%= t('.header.logged_in.hi', {:username => current_user.username}) %></span><%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %></b>
-                     <p class="points-wrapper-small small-hearts border-all light-button">
+                  <%= avatar_span(current_user, current_user.is_expert?, false) %>
+                  <div class="user-data">
+                    <b>
+                      <span><%= t('.header.logged_in.hi', {:username => current_user.username}) %></span>
+                      <%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %>
+                    </b>
+                     <p class="points-wrapper-small small-hearts border-all">
                          <span class="level <%= current_user.current_level || 'no-level' %>"></span>
                         <span class="points"><%= current_user.score_board.current_points %></span>
                      </p>
-                     <ul class="activity-btns border-all light-button">
-                       <li>
+                     <ul class="activity-btns">
+                       <li class="light-button border-left">
                          <%= link_to stream_path, :title => t('.header.logged_in.stream') do %>
-                           <span class="activity"><%= t('.header.ogged_in.stream') %></span>
+                           <span class="activity"><%= t('.header.logged_in.stream') %></span>
                          <% end %>
                        </li>
-                       <li>
+                       <li class="light-button border-right">
                          <%= link_to inbox_user_path, :title => t('.header.logged_in.messages') do %>
                            <span class="messages"><%= t('.header.logged_in.messages') %></span>
                            <% if current_user.received_messages.unread.size > 0 %>
@@ -69,7 +72,7 @@
                          <% end %>
                       </li>
                      </ul>
-                     <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button"  %>
+                     <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button disabled"  %>
                    </div>
                 </div>
               <% else %>
@@ -99,7 +102,7 @@
                     <% end %>
                   </div>
                   <div class="auth-wrapper">
-                    <a href="#" id="login" class="border-all"><span class="border-all"><%= t('.header.auth.login') %></span></a>
+                    <a href="#" id="login" class="border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
                       <ul>
                         <li class="login">
