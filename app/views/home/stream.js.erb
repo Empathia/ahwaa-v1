@@ -1,0 +1,10 @@
+(function() {
+  var more = $('<%= escape_javascript render(@stream) %>').hide();
+  $('.stream-items-wrapper').append(more);
+  more.fadeIn('slow');
+  <% if @stream_messages.current_page == @stream_messages.total_pages %>
+  $('.more-stream').hide();
+  <% else %>
+    $('.more-stream').attr('href', '<%= stream_path(:page => params[:page].succ, :format => :js, :filter => params[:filter]) %>');
+  <% end %>
+})();

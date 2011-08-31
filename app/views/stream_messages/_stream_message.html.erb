@@ -1,0 +1,24 @@
+<div class="stream-item">
+  <div class="avatar-wrapper">
+    <% unless stream_message.reply.anonymous? %>
+      <%= avatar_span(stream_message.reply.user, stream_message.reply.user.is_expert?) %>
+      <%= render :partial => 'users/card', :locals => {:user => stream_message.reply.user} %>
+    <% else %>
+      <span class="avatar">
+        <%= image_tag(stream_message.reply.author_avatar, :width => '56') %>
+      </span>
+    <% end %>
+  </div>
+  <div class="stream-item-data">
+    <div>
+      <span class="user-comment"><%= stream_message.title %></span>
+      <span class="time-ago"><%= t 'helpers.ago', :time => time_ago_in_words(stream_message.reply.created_at) %></span>
+      <br class="clear" />
+    </div>
+    <p class="title"><%= link_to stream_message.reply.topic.title, stream_message.reply.topic %></p>
+    <blockquote>
+       <%= simple_format truncate(stream_message.reply.content, :length => 140) %>
+    </blockquote>
+  </div>
+  <br class="clear" />
+</div>

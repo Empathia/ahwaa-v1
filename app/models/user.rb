@@ -48,6 +48,16 @@ class User < ActiveRecord::Base
     visited_topics.order("visits DESC, updated_at DESC").limit(limit).map(&:topic).map { |t| t.find_related_tags.limit(2) }.flatten[0...limit]
   end
 
+  def filtered_stream_users(filter)
+    if filter == 'followed'
+      stream_users.followed
+    elsif filter == 'owned'
+      stream_users.owned
+    else
+      stream_users
+    end.order('created_at DESC')
+  end
+
   # Adds a subscription for the user to the given topic
   def subscribe_to(topic)
     subscriptions << Subscription.new(:topic => topic)

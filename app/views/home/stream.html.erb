@@ -15,33 +15,13 @@
           </div>
         </div>
         <div class="stream-items-wrapper">
-          <% @stream.each do |message| %>
-          <div class="stream-item">
-            <div class="avatar-wrapper">
-              <% unless message.reply.anonymous? %>
-                <%= avatar_span(message.reply.user, message.reply.user.is_expert?) %>
-                <%= render :partial => 'users/card', :locals => {:user => message.reply.user} %>
-              <% else %>
-                <span class="avatar">
-                  <%= image_tag(message.reply.author_avatar, :width => '56') %>
-                </span>
-              <% end %>
-            </div>
-            <div class="stream-item-data">
-              <div>
-                <span class="user-comment"><%= message.title %></span>
-                <span class="time-ago"><%= t 'helpers.ago', :time => time_ago_in_words(message.reply.created_at) %></span>
-                <br class="clear" />
-              </div>
-              <p class="title"><%= link_to message.reply.topic.title, message.reply.topic %></p>
-              <blockquote>
-                 <%= simple_format truncate(message.reply.content, :length => 140) %>
-              </blockquote>
-            </div>
-            <br class="clear" />
-          </div>
-          <% end %>
+          <%= render @stream %>
         </div>
+        <% if @stream_messages.current_page < @stream_messages.total_pages %>
+          <p>
+            <%= link_to 'More', stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'more-stream' %>
+          </p>
+        <% end %>
       </section>
       <section class="recommended-topics">
         <% unless @recommended.empty? %>
