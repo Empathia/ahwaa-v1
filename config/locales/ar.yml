@@ -318,3 +318,6 @@ ar:
       reply:
         a: %{user} ترك %{reply_type} علي
         an: %{user} ترك %{reply_type} علي
+    sidebar:
+      recommended_topics: Recommended Topics
+      newest_topics: Newest Topics

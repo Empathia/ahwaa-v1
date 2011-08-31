@@ -109,6 +109,11 @@ describe TopicsController do
         do_request :id => 1
       end
 
+      it "visits that topic" do
+        current_user.should_receive(:visit_topic!).once.with(@topic)
+        do_request :id => 1
+      end
+
     end
 
   end

@@ -173,5 +173,17 @@ describe User do
 
   end
 
+  describe "#recommended_topics" do
+
+    it "fetches recommended topics from visited topics" do
+      topic1 = Factory(:topic, :tag_list => "hoge,piyo")
+      topic2 = Factory(:topic, :tag_list => "foo,bar")
+      topic3 = Factory(:topic, :tag_list => "foo,hoge")
+      @user.visit_topic! topic3
+      @user.recommended_topics.should include(topic1, topic2)
+    end
+
+  end
+
 end
 

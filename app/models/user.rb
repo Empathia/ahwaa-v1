@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   has_many :topics
   has_many :stream_users, :dependent => :destroy
   has_many :stream_messages, :through => :stream_users
+  has_many :visited_topics, :dependent => :destroy
 
   attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes
 
@@ -36,6 +37,16 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
 
   scope :admins, where(:is_admin => true)
+
+  def visit_topic!(topic)
+    VisitedTopic.visit!(topic, self)
+  end
+
+  # Gets recommended topics for the user based on the
+  # topics he have visited
+  def recommended_topics(limit = 10)
+    visited_topics.order("visits DESC, updated_at DESC").limit(limit).map(&:topic).map { |t| t.find_related_tags.limit(2) }.flatten[0...limit]
+  end
 
   # Adds a subscription for the user to the given topic
   def subscribe_to(topic)

@@ -16,6 +16,8 @@ class HomeController < ApplicationController
       current_user.stream_users
     end
     @stream = @stream.order("created_at DESC").page(params[:page]).per_page(15).map(&:stream_message)
+    @recommended = current_user.recommended_topics(5)
+    @newest = Topic.newest(I18n.locale).limit(5)
   end
 
   def my_topics

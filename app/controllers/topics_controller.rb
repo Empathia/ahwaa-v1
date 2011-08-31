@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.includes(:replies).find(params[:id])
     @replies = @topic.replies.group_by(&:contextual_index)
+    current_user.visit_topic!(@topic) if logged_in?
   end
 
   def tag

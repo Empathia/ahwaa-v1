@@ -44,35 +44,23 @@
         </div>
       </section>
       <section class="recommended-topics">
-        <h3>Recommended Topics</h3>
+        <% unless @recommended.empty? %>
+          <h3><%= t '.sidebar.recommended_topics' %></h3>
+          <ul>
+            <% @recommended.each do |topic| %>
+              <li class="border-all">
+                <%= link_to topic.title, topic %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+        <h3><%= t '.sidebar.newest_topics' %></h3>
         <ul>
-          <li class="border-all">
-            <a href="#" title="How can I tell my religious parents that I am bisexual">How can I tell my religious parents that I am bisexual?</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">I had a homophobic family so I moved out</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Welcome to Ahwaa!</a>
-          </li>
-        </ul>
-        <h3>Newest Topics</h3>
-        <ul>
-          <li class="border-all">
-            <a href="#" title="Can come up with one... it's too broad">Can come up with one&hellip; it's too broad</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Worried about what lies ahead</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">I just wanna do it</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Worried about the wel being of my family</a>
-          </li>
-          <li class="border-all">
-            <a href="#" title="">Are abrahamic religions all against homosexuality?</a>
-          </li>
+          <% @newest.each do |topic| %>
+            <li class="border-all">
+              <%= link_to topic.title, topic %>
+            </li>
+          <% end %>
         </ul>
       </section>
     </div>

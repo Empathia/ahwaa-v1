@@ -315,3 +315,6 @@ en:
       reply:
         a: %{user} left a %{reply_type} on
         an: %{user} left an %{reply_type} on
+    sidebar:
+      recommended_topics: Recommended Topics
+      newest_topics: Newest Topics
