@@ -1,35 +1,15 @@
-<% if reply.sender == current_user %>
-  <div class="discussion-wrapper">
-    <div class="avatar-wrapper">
-      <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
-      <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
+<div class="discussion-wrapper">
+  <div class="avatar-wrapper">
+    <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
+    <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
+  </div>
+  <div class="message-data">
+    <div class="from">
+      <a href="#"><%= reply.sender.username %></a>
+      <span class="date"><%= l(reply.created_at.to_date, :format => :inbox) %></span>
     </div>
-    <div class="message-data">
-      <div class="from">
-        <a href="#"><%= reply.sender.username %></a>
-        <span class="date"><%= t('users.show.content.private_messages.at_date', :date => l(reply.created_at, :format => :long)) %></span>
-      </div>
-      <div class="msg">
-        <%= reply.content %>
-      </div>
+    <div class="msg">
+      <%= reply.content %>
     </div>
   </div>
-<% else %>
-  <div class="discussion-wrapper">
-    <div class="avatar-wrapper">
-      <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
-      <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
-    </div>
-    <div class="message-data">
-      <div class="from">
-        <a href="#">
-          <%= t('users.show.content.private_messages.by', :sender => reply.sender.username) %>
-        </a>
-        <span class="date"><%= t 'users.show.content.private_messages.at_date', :date => l(reply.created_at, :format => :long) %></span>
-      </div>
-      <div class="msg">
-        <%= reply.content %>
-      </div>
-    </div>
-  </div>
-<% end %>
+</div>

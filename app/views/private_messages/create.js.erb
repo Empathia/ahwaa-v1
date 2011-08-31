@@ -1,5 +1,5 @@
 <% if params[:reply_to] %>
-  var w = $('.replies-wrapper');
+  var w = $('.message-replies');
   w.hasClass('pm-details');
   w.append('<%= escape_javascript render(:partial => 'reply', :object => @message) %>');
   $('#reply-form').show()[0].reset();

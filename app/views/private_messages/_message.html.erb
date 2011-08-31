@@ -10,7 +10,7 @@
   <div class="replies-wrapper">
     <%= render :partial => 'reply', :object => message %>
   </div>
-  <div class="replies-wrapper <% 'pm-details' unless message.replies.blank? %>">
+  <div class="replies-wrapper message-replies <% 'pm-details' unless message.replies.blank? %>">
     <%= render :partial => 'reply', :collection => message.replies %>
   </div>
   <div class="my-messages-reply-wrapper">
