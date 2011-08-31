@@ -297,6 +297,10 @@ ar:
         subject: إشعار من أهواء
 
   shared:
+    user_nav:
+      messages: رسائلي
+      my_topics: My Topics
+      stream: آخر المشاركات
     new_response:
        new_response: إضافة ردّ جديد
     useful_flag_buttons:

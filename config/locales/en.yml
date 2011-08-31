@@ -144,10 +144,6 @@ en:
           my_account: "My Profile + Messages"
           sign_out: Sign Out
   home:
-    stream:
-      messages: Messages
-      my_topics: My Topics
-      stream: Stream
     grouped_topic:
       by: By %{author}
       recent_participants:
@@ -298,6 +294,10 @@ en:
         subject: Notification from Ahwaa
 
   shared:
+    user_nav:
+      messages: Messages
+      my_topics: My Topics
+      stream: Stream
     new_response:
        new_response: New Response
     useful_flag_buttons:

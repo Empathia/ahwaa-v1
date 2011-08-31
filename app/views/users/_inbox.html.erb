@@ -17,7 +17,7 @@
           </div>
           <div class="msg">
             <%= link_to inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
-              <p><%= truncate pm.conversation_replies.last.content, :length => 125 %></p>
+              <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
             <% end %>
           </div>
         </div>
@@ -25,7 +25,7 @@
           <%= link_to private_message_path(pm), :class => 'light-button border-all-2', :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete'), :remote => true do %>
             <span class="opt-delete">t('users.show.content.private_messages.delete')</span>
           <% end %>
-          <span class="date"><%= t 'users.show.content.private_messages.at_date', :date => l(pm.conversation_replies.last.created_at, :format => :long) %></span>
+          <span class="date"><%= l pm.conversation_replies.last.created_at.to_date, :format => :inbox %></span>
         </div>
         <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
         <br class="clear">

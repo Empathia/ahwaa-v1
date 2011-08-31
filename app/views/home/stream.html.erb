@@ -3,29 +3,7 @@
 
 <div class="aligned">
   <div class="content stream-wrapper">
-    <aside class="panel-sub-nav">
-      <ul class="sub-nav">
-        <li class="active">
-          <%= link_to stream_path, :class => 'stream' do %>
-            <span class="icon"></span>
-            <%= t '.stream' %>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to inbox_user_path, :class => 'messages' do %>
-            <span class="icon"></span>
-            <%= t '.messages' %>
-            <span class="badge"><%= current_user.received_messages.unread.size %></span>
-          <% end %>
-        </li>
-        <li>
-          <%= link_to '#', :class => 'my-topics' do %>
-            <span class="icon"></span>
-            <%= t '.my_topics' %>
-          <% end %>
-        </li>
-      </ul>
-    </aside>
+    <%= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow">
       <section class="streams border-left">
         <div class="stream-title">
