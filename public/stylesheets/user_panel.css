@@ -55,6 +55,41 @@ aside{overflow: hidden;}
 .pag-numbers > li > a{color: #cbcfd2;}
 .pag-numbers .active a{color: #808386;}
 
+/*my classes overrating current style for messages*/
+.my-messages .pm-wrapper h2 {font-family: 'GothamMediumRegular'; font-size: 17px}
+.my-messages .pm-panel > section > .regular {font-family: 'GothamMediumRegular'; font-size: 17px; font-weight: normal; margin-bottom: 0; background: none repeat scroll 0 0 #FCFCFC; border-bottom: 1px solid #DBDFE3;  height: 28px; padding: 12px 20px 0;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0
+}
+.my-messages .messages > li > .message-data {float: left; width: 520px}
+.my-messages .messages > li > .message-data .msg a {color: #494b4c; font-size: 13px}
+.my-messages .messages > li > .message-data  > .from > a {font-size: 13px; float: left; padding-top: 11px}
+.my-messages .messages > li > .delete-message {float: right; width: 110px; position: relative; top: 22px}
+.my-messages .messages > li > .delete-message > .date {font-size: 11px; color: #a1aab2; float: right; padding: 3px 10px 0 0}
+.my-messages .messages > li > .delete-message > a {float: right; padding: 2px 2px 2px 3px; width: 12px; height: 12px}
+.my-messages .messages > li > .delete-message > a > .opt-delete {background-image: url('../images/icn-options-user.png'); margin-top: -1px; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
+.my-messages .messages > li > .opt-reply {height: 16px; left: -22px; top: 33px; padding: 0; position: absolute; width: 16px; text-indent: -9999px; font-size: 0; line-height: 0;
+  background-image: url('../images/icn-reply-drk.png'); background-repeat: no-repeat;
+}
+.my-messages .messages > .new > .opt-reply {background-image: url('../images/icn-new-message-indicator.png'); background-repeat: no-repeat}
+
+.my-messages > .pm-panel {width: 800px; min-height: 500px; float: left; padding: 0}
+.my-messages > .pm-panel .messages {padding: 20px 20px 40px 30px}
+.my-messages > .pm-panel .messages > li {width: auto; background-color: #FBFBFB; border: 1px solid #dfe2e6; margin-bottom: 20px; padding: 10px 11px 10px 9px;
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+     -moz-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+}
+.my-messages > .pm-panel .messages > li.new {background-color: #f2f9ff; border-color: #398fe5;
+  -webkit-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+     -moz-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+          box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff
+}
+/*reply*/
+.my-messages .pm-panel-padding {padding: 20px}
+/* end my new overrating classes */
+
 .messages > li > input{float: left; margin: 20px 10px 0 0;}
 .messages .avatar-wrapper{margin-right: 10px; background-color: #ffffff;}
 .messages > li{background-color:#fbfbfb; margin-bottom:15px; padding:14px 11px; width:586px; border-bottom:1px solid #e1e3e5; position:relative; clear: both;}
@@ -144,16 +179,3 @@ p.error{clear: both; padding: 10px 0 2px 0;}
 .autocomplete {border: 1px solid #ccc;display:none;}
 .autocomplete li {background: #eee;border:1px solid #ccc;padding: 3px 2px;cursor:pointer;}
 .autocomplete li.active{background: #4173CC;color: #fff;}
-
-.my-messages > .pm-panel {width: 800px; float: left}
-.my-messages > .pm-panel .messages {padding: 20px 20px 40px 30px}
-.my-messages > .pm-panel .messages > li {width: auto; background-color: #FBFBFB; border: 1px solid #dfe2e6; margin-bottom: 20px; padding: 10px 11px 10px 9px;
-  -webkit-box-shadow: inset 0 0 0 1px #fff;
-     -moz-box-shadow: inset 0 0 0 1px #fff;
-          box-shadow: inset 0 0 0 1px #fff;
-}
-.my-messages > .pm-panel .messages > li.new {background-color: #f2f9ff; border-color: #398fe5;
-  -webkit-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
-     -moz-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
-          box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff
-}

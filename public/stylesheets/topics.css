@@ -173,7 +173,7 @@ a.no_comments{
   -moz-opacity: 0.5;
   opacity: 0.5;
   background-image: -moz-linear-gradient(top, #f8fbfc, #dee5e9);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f8fbfc),color-stop(1, #dee5e9));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #f8fbfc), color-stop(1, #dee5e9));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9')";
 }

@@ -16,9 +16,8 @@
         <%= avatar_span(current_user, current_user.is_expert?, false) %>
         <div class="user-details">
           <div class="username"><%= current_user.username %></div>
-         
         </div>
-      </div>                    
+      </div>
       <div class="white-area">
         <%= form_for current_user, :url => user_path, :html => { :method => :put, :class => 'edit-form profile' }, :remote => true do |user| %>        
           <section>      
