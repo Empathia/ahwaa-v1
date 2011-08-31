@@ -12,6 +12,9 @@ body > div {
     border-bottom: 1px solid #DBDFE3;
     height: 30px;
     padding: 10px 20px 0;
+    -webkit-box-shadow: 0 1px 0 #fff inset;
+    -moz-box-shadow: 0 1px 0 #fff inset;
+    box-shadow: 0 1px 0 #fff inset;
 }
 .messages-wrapper .right-side .messages-title h2 {
     float: left;
@@ -72,7 +75,7 @@ body > div {
 .back-to-msgs {float: right; font-size: 12px; margin-top: -3px}
 .back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
 
-.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px}
+.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px; width: 646px; max-width: 646px}
 
 .replies-wrapper {float: left}
 .replies-wrapper > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0; float: left}
