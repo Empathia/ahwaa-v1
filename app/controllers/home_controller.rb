@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-  skip_before_filter :authenticate_user!, :except => [:stream]
+  skip_before_filter :authenticate_user!, :except => [:stream, :my_topics]
 
   def index
     redirect_to stream_path and return if logged_in?
@@ -14,7 +14,12 @@ class HomeController < ApplicationController
       current_user.stream_users.owned
     else
       current_user.stream_users
-    end.page(params[:page]).per_page(15).map(&:stream_message)
+    end
+    @stream = @stream.order("created_at DESC").page(params[:page]).per_page(15).map(&:stream_message)
+  end
+
+  def my_topics
+    @topics = current_user.topics
   end
 
   def privacy_policy

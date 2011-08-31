@@ -144,6 +144,10 @@ ar:
           my_account: "ملفاتي + رسائل"
           sign_out: تسجيل الخروج
   home:
+    stream:
+      messages: Messages
+      my_topics: My Topics
+      stream: Stream
     grouped_topic:
       by: بواسطة %{author}
       recent_participants:
