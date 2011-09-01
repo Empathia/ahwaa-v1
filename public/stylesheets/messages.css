@@ -63,13 +63,13 @@ body > div {
 .pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
 .pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
 
-.back-to-msgs {float: right; font-size: 12px; margin-top: -3px}
+.back-to-msgs {float: right; font-size: 12px; margin-top: -7px}
 .back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
 
 .new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px; width: 646px; max-width: 646px}
 
 .replies-wrapper {float: left}
-.replies-wrapper > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0; float: left}
+.replies-wrapper > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0 17px; float: left}
 .replies-wrapper > .discussion-wrapper > .avatar-wrapper {margin-right: 10px}
 .replies-wrapper > .discussion-wrapper > .message-data {float: left; margin-left: 0; width: 666px;}
 .replies-wrapper > .discussion-wrapper > .message-data > .from {padding-bottom: 5px}

@@ -881,7 +881,7 @@ form + .recently-topics{padding-top:18px;}
 .panel-sub-nav .sub-nav li:first-child {border-top: 0 none}
 .panel-sub-nav .sub-nav li:last-child {border-bottom: 0 none}
 
-.header-title-bg {background-color: #FCFCFC; border-bottom: 1px solid #DBDFE3; height: 30px; padding: 10px 20px 0;
+.header-title-bg {background-color: #FCFCFC; border-bottom: 1px solid #DBDFE3; height: 25px; padding: 15px 20px 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#eceff3), to(#f9f9f9));
   background-image: -webkit-linear-gradient(top, #eceff3, #f9f9f9);
   background-image:    -moz-linear-gradient(top, #eceff3, #f9f9f9);

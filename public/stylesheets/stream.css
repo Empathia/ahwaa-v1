@@ -12,7 +12,7 @@ body > div {
 
 .stream-wrapper .right-side .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float: left}
 .stream-wrapper .right-side .stream-title .filter {float: right}
-.stream-wrapper .filter div.selector {margin-top: -4px; width: 140px}
+.stream-wrapper .filter div.selector {margin-top: -7px; width: 140px}
 .stream-wrapper .filter div.selector span {width: 108px}
 .stream-wrapper .filter label {color: #8a9199}
 .stream-title  .filter-label {float: left}
@@ -34,14 +34,14 @@ body > div {
 .recommended-topics li > a {display: block; padding: 10px}
 
 .streams .stream-items-wrapper {margin: 0 20px}
-.streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0}
+.streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0 25px}
 .stream-item-data {float: right; width: 420px}
 .stream-item-data > div {margin-top: 1px}
 .stream-item-data > div > .user-comment {color: #8a9199; float: left}
 .stream-item-data > div > .user-comment a {font-weight: bold}
 .stream-item-data > div > .time-ago {float: right; font-size: 11px; color: #b6babf;
   background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; margin-top: -1px; height: 14px}
-.stream-item-data > p.title {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 16px; margin: 10px 0}
+.stream-item-data > p.title {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 16px; margin: 13px 0 8px}
 .stream-item-data > blockquote {color: #494b4c; margin: 0; line-height: 20px}
 
 .load-more-wrapper {margin: 27px 0 20px 183px; overflow: hidden}

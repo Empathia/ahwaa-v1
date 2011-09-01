@@ -1,9 +1,9 @@
-body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 119px}
-.container{background: url('../images/bg-color-text-home.jpg') no-repeat 50% 119px}
-.slogan{height:165px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
+body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 106px}
+.container{background: url('../images/bg-color-text-home.jpg') no-repeat 50% 106px}
+.slogan{height: 142px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 57px 0}
-.features{overflow: hidden; margin-bottom: 72px;}
+.features{overflow: hidden; margin: -18px 0 42px;}
 
 .items-frontpage > li {float: left; margin-bottom: 20px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
