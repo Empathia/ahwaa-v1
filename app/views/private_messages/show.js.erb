@@ -3,15 +3,18 @@ $('#pm-wrapper').html('<%= escape_javascript render(:partial => 'private_message
 var textarea = $('#reply-form textarea');
 
 !$.browser.webkit && textarea.attr('placeholder').length > 0 && textarea.attr('value', textarea.attr('placeholder'));
-    
+
 textarea.bind('focus',function(){
     !$.browser.webkit && textarea.val() == textarea.attr('placeholder') && textarea.val('');
     textarea.css({'height':'auto', 'min-height':'31px'});
     $('.new_private_message > .btn-gradient').show();
+    $(this).parent('.response').addClass("focus").parent('.new-response').css("border-color", "transparent");
 }).blur(function(){
   !$.browser.webkit && textarea.val().length == 0 && textarea.val(textarea.attr('placeholder'));
   if(!$(this).val()) {
     textarea.css({'height':'16px', 'min-height':'16px'});
     $('.new_private_message > .btn-gradient').hide();
+    $(this).parent('.response').removeClass("focus").parent('.new-response').css("border-color", "#F0F5F8")
+
   }
 });

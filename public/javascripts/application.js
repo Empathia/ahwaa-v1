@@ -18,7 +18,7 @@ $(function() {
 
     new AuthForms();
     new MessageSender();
-    new Avatars();
+    //new Avatars();
     new TagList();
 
     $('.sign-up-form #user_email').change(function () {
@@ -74,6 +74,31 @@ $(function() {
     /* Preload images */
     $('<img />').attr('src', '/images/loading-s-gray.gif');
     $('<img />').attr('src', '/images/loading-s-white.gif');
+    
+    /* Avatars RollOver */
+    $('body').click(function(e){
+      $(e.target);
+      !$(e.target).is('.private-msg *') && $('.private-msg').hide();
+    });
+    $('.avatar-wrapper:not(.no-rollover) .avatar').mouseenter(function(e){
+        clearTimeout(timer1);
+        $(this).siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
+    });
+    $('.avatar-wrapper:not(.no-rollover)').hoverIntent(function () {
+        var that = $(this);
+        that.css('z-index', '9998').find('.private-msg').fadeIn(100);
+    }, function () { console.log('d')
+        var that = $(this);
+        timer1 = setTimeout(function(){
+            that.find('.private-msg').fadeOut(100);
+        }, 1000);
+    });
+    $('.private-msg').mouseenter(function () {
+        clearTimeout(timer1);
+    });
+    $('.private-msg').mouseleave(function () {
+        $(this).hide();
+    });
 });
 
 $(window).load(function () {

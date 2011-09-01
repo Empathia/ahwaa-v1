@@ -9,7 +9,7 @@
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
   <% end %>
-  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/neon', 'authForms', 'messageSender', 'avatars', 'tagList', :cache => true %>
+  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'avatars', 'tagList', :cache => true %>
   <link rel="shortcut icon" href="/favicon.ico">
   <%= csrf_meta_tag %>
   <%= yield(:head) %>
@@ -33,157 +33,157 @@
 <body>
   <div class="page-wrapper">
     <%= print_flash %>
-        <header>
-          <div class="rainbow"></div>
-          <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
-          <div class="logo-wrapper <%= current_page?(root_path) ? 'light' : 'dark' %>">
-          <div class="aligned">
-            <div class="header-top <%= current_page?(root_path) ? 'homepage' : 'topic' %>">
-              <div class="links">
-                <% if !current_page?(root_path) %>
-                  <div><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
-                <% end %>
-                <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
-              </div>
-              <% if logged_in? %>
-                <div class="user-logged-info">
-                  <%= avatar_span(current_user, current_user.is_expert?, false) %>
-                  <div class="user-data">
-                    <b>
-                      <span><%= t('.header.logged_in.hi', {:username => current_user.username}) %></span>
-                      <%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %>
-                    </b>
-                     <p class="points-wrapper-small small-hearts border-all">
-                         <span class="level <%= current_user.current_level || 'no-level' %>"></span>
-                        <span class="points"><%= current_user.score_board.current_points %></span>
-                     </p>
-                     <ul class="activity-btns">
-                       <li class="light-button border-left">
-                         <%= link_to stream_path, :title => t('.header.logged_in.stream') do %>
-                           <span class="activity"><%= t('.header.logged_in.stream') %></span>
-                         <% end %>
-                       </li>
-                       <li class="light-button border-right">
-                         <%= link_to inbox_user_path, :title => t('.header.logged_in.messages') do %>
-                           <span class="messages"><%= t('.header.logged_in.messages') %></span>
-                           <% if current_user.received_messages.unread.size > 0 %>
-                             <span class="new-message-container"><%= current_user.received_messages.unread.size %></span>
-                           <% end %>
-                         <% end %>
-                      </li>
-                     </ul>
-                     <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button disabled"  %>
-                   </div>
-                </div>
-              <% else %>
-                <div class="sign-up">
-                  <div class="auth-wrapper">
-                    <a href="#" id="sign-up" class="sign-up-lk border-all">
-                      <span class="sign-up-btn border-all"><%= t('.header.auth.sign_up') %></span>
-                    </a>
-                    <%= form_for User.new, :html => {:class => "over-form sign-up-form ie8-hide"}, :remote => true do |f| %>
-                      <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
-                      <ul>
-                        <li class="email">
-                          <label><%= t('.header.sign_up_form.email') %></label>
-                          <%= f.email_field :email, :required => "true", :maxlength => 35 %>
-                        </li>
-                        <li class="username">
-                          <label><%= t('.header.sign_up_form.username') %></label>
-                          <%= f.text_field :username, :required => "true", :maxlength => 35 %>
-                        </li>
-                      </ul>
-                      <div class="flash-privacy">
-                        <div class="border-all"><%= t('.header.sign_up_form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
-                      </div>
-                      <div class="errors"></div>
-                      <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path %> <%=t('.header.sign_up_form.note_pt3')%></p>
-                      <%= f.submit t('.header.sign_up_form.sign_up'), :class => "auth-submit border-all" %>
-                    <% end %>
-                  </div>
-                  <div class="auth-wrapper">
-                    <a href="#" id="login" class="border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
-                    <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
-                      <ul>
-                        <li class="login">
-                          <label><%= t('.header.login_form.login') %></label>
-                          <%= text_field_tag :login, nil, :required => "true", 'id' => "login-input" %>
-                        </li>
-                        <li class="password">
-                          <label><%= t('.header.login_form.password') %></label>
-                          <%= password_field_tag :password, nil, :required => "true" %></li>
-                      </ul>
-                      <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
-                      <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
-                    <% end %>
-                    <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
-                      <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
-                      <ul>
-                        <li class="login">
-                          <label><%= t('.header.forgot_pass_form.login') %></label>
-                          <%= text_field_tag :login, nil, :required => "true" %>
-                        </li>
-                      </ul>
-                      <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all", :disable_with => '...', :'data-enable-with' => t('.header.forgot_pass_form.send') %>
-                        <a href="#" class="cancel-forgot action-lk"><%= t('.header.forgot_pass_form.cancel') %></a>
-                    <% end %>
-                   </div>
-                </div>
+      <header>
+        <div class="rainbow"></div>
+        <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
+        <div class="logo-wrapper <%= current_page?(root_path) ? 'light' : 'dark' %>">
+        <div class="aligned">
+          <div class="header-top <%= current_page?(root_path) ? 'homepage' : 'topic' %>">
+            <div class="links">
+              <% if !current_page?(root_path) %>
+                <div><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
               <% end %>
-              <div class="search">
-                <p class="border-all">
-                  <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
-                  <span></span>
-                </p>
-                <div class="search-results-wrapper">
-                  <a href="#" class="arrow scroll-up"><div><div></div></div></a>
-                  <div class="search-results-scroller">
-                    <ul class='search-results'></ul>
-                  </div>
-                  <a href="#" class="arrow scroll-down"><div><div></div></div></a>
-                </div>
-              </div>
-              <div class="request-topic-wrapper">
-                <a href="<%= new_topic_request_path %>" class="request-topic border-all light-button <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
-                  <span class="border-all">
-                    <span><%= t('.header.request_topic.button')%></span>
-                  </span>
-                </a>
-                <div class="request-error">
-                  <span></span>
-                  <div class="border-all">
-                    <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
-                    <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
-                  </div>
-                  <br class="clear">
-                </div>
-              </div>
+              <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
             </div>
-          </div>
-          </div>
-          <div class="header-wrapper">
-            <div class="header-tags aligned">
-              <ul id="header-tags">
-                <% Topic.by_language(I18n.locale).tag_counts.each do |tag| %>
-                  <li><%= link_to tag, topic_tag_path(tag.id) %></li>
-                <% end %>
-                <li class="more">
-                  <%= link_to nil do %>
-                    <span>More</span>
-                  <% end %>
-                  <div class="scroll-tags more-tags">
-                    <a class="arrow scroll-up" href="#"><div><div></div></div></a>
-                    <div class="scroller">
-                      <ul id="moretags" class="border-all border-menu">
-                      </ul>
+            <% if logged_in? %>
+              <div class="user-logged-info">
+                <%= avatar_span(current_user, current_user.is_expert?, false, "42x42") %>
+                <div class="user-data">
+                  <b>
+                    <span><%= t('.header.logged_in.hi', {:username => current_user.username}) %></span>
+                    <%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %>
+                  </b>
+                   <p class="points-wrapper-small small-hearts border-all">
+                      <span class="level <%= current_user.current_level || 'no-level' %>"></span>
+                      <span class="points"><%= current_user.score_board.current_points %></span>
+                   </p>
+                   <ul class="activity-btns">
+                     <li class="light-button border-left">
+                       <%= link_to stream_path, :title => t('.header.logged_in.stream') do %>
+                         <span class="activity"><%= t('.header.logged_in.stream') %></span>
+                       <% end %>
+                     </li>
+                     <li class="light-button border-right">
+                       <%= link_to inbox_user_path, :title => t('.header.logged_in.messages') do %>
+                         <span class="messages"><%= t('.header.logged_in.messages') %></span>
+                         <% if current_user.received_messages.unread.size > 0 %>
+                           <span class="new-message-container"><%= current_user.received_messages.unread.size %></span>
+                         <% end %>
+                       <% end %>
+                    </li>
+                   </ul>
+                   <%= link_to t('.header.logged_in.logout'), logout_path, :class => "log-out border-all light-button disabled"  %>
+                 </div>
+              </div>
+            <% else %>
+              <div class="sign-up">
+                <div class="auth-wrapper">
+                  <a href="#" id="sign-up" class="sign-up-lk border-all">
+                    <span class="sign-up-btn border-all"><%= t('.header.auth.sign_up') %></span>
+                  </a>
+                  <%= form_for User.new, :html => {:class => "over-form sign-up-form ie8-hide"}, :remote => true do |f| %>
+                    <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
+                    <ul>
+                      <li class="email">
+                        <label><%= t('.header.sign_up_form.email') %></label>
+                        <%= f.email_field :email, :required => "true", :maxlength => 35 %>
+                      </li>
+                      <li class="username">
+                        <label><%= t('.header.sign_up_form.username') %></label>
+                        <%= f.text_field :username, :required => "true", :maxlength => 35 %>
+                      </li>
+                    </ul>
+                    <div class="flash-privacy">
+                      <div class="border-all"><%= t('.header.sign_up_form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
                     </div>
-                    <a class="arrow scroll-down" href="#"><div><div></div></div></a>
-                  </div>
-                </li>
-              </ul>
+                    <div class="errors"></div>
+                    <p class="legend"><%= t('.header.sign_up_form.note_pt1') %> <%= link_to t('.header.sign_up_form.terms_of_use'), terms_path %> <%= t('.header.sign_up_form.note_pt2') %> <%= link_to t('.header.sign_up_form.privacy_policy'), privacy_policy_path %> <%=t('.header.sign_up_form.note_pt3')%></p>
+                    <%= f.submit t('.header.sign_up_form.sign_up'), :class => "auth-submit border-all" %>
+                  <% end %>
+                </div>
+                <div class="auth-wrapper">
+                  <a href="#" id="login" class="border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
+                  <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
+                    <ul>
+                      <li class="login">
+                        <label><%= t('.header.login_form.login') %></label>
+                        <%= text_field_tag :login, nil, :required => "true", 'id' => "login-input" %>
+                      </li>
+                      <li class="password">
+                        <label><%= t('.header.login_form.password') %></label>
+                        <%= password_field_tag :password, nil, :required => "true" %></li>
+                    </ul>
+                    <%= submit_tag t('.header.login_form.sign_in'), :class => "auth-submit border-all" %>
+                    <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
+                  <% end %>
+                  <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
+                    <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
+                    <ul>
+                      <li class="login">
+                        <label><%= t('.header.forgot_pass_form.login') %></label>
+                        <%= text_field_tag :login, nil, :required => "true" %>
+                      </li>
+                    </ul>
+                    <%= submit_tag t('.header.forgot_pass_form.send'), :class => "auth-submit border-all", :disable_with => '...', :'data-enable-with' => t('.header.forgot_pass_form.send') %>
+                      <a href="#" class="cancel-forgot action-lk"><%= t('.header.forgot_pass_form.cancel') %></a>
+                  <% end %>
+                 </div>
+              </div>
+            <% end %>
+            <div class="search">
+              <p class="border-all">
+                <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
+                <span></span>
+              </p>
+              <div class="search-results-wrapper">
+                <a href="#" class="arrow scroll-up"><div><div></div></div></a>
+                <div class="search-results-scroller">
+                  <ul class='search-results'></ul>
+                </div>
+                <a href="#" class="arrow scroll-down"><div><div></div></div></a>
+              </div>
+            </div>
+            <div class="request-topic-wrapper">
+              <a href="<%= new_topic_request_path %>" class="request-topic border-all light-button <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                <span class="border-all">
+                  <span><%= t('.header.request_topic.button')%></span>
+                </span>
+              </a>
+              <div class="request-error">
+                <span></span>
+                <div class="border-all">
+                  <p class="sign-up-legend"><%= t('.header.request_topic.legend') %></p>
+                  <a href="#" class="sign-up-lk border-all"><span class="sign-up-btn"><%= t('.header.request_topic.sign_up') %></span></a>
+                </div>
+                <br class="clear">
+              </div>
             </div>
           </div>
-        </header>
+        </div>
+        </div>
+        <div class="header-wrapper">
+          <div class="header-tags aligned">
+            <ul id="header-tags">
+              <% Topic.by_language(I18n.locale).tag_counts.each do |tag| %>
+                <li><%= link_to tag, topic_tag_path(tag.id) %></li>
+              <% end %>
+              <li class="more">
+                <%= link_to nil do %>
+                  <span>More</span>
+                <% end %>
+                <div class="scroll-tags more-tags">
+                  <a class="arrow scroll-up" href="#"><div><div></div></div></a>
+                  <div class="scroller">
+                    <ul id="moretags" class="border-all border-menu">
+                    </ul>
+                  </div>
+                  <a class="arrow scroll-down" href="#"><div><div></div></div></a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
     <div class="container">
       <%= yield %>
     </div>

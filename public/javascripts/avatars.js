@@ -1,4 +1,4 @@
-Class('Avatars')({
+/*Class('Avatars')({
     prototype: {
         init: function() {
             $('.avatar > img').live('mouseover',function(){ 
@@ -25,4 +25,4 @@ Class('Avatars')({
             });
         }
     }
-});
+});*/

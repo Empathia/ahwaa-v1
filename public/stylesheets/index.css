@@ -1,5 +1,5 @@
-body > div > div{ background: url('../images/bg-gradient.jpg') repeat-x 0 92px}
-.container{background: url('../images/bg-color-text-600.jpg') no-repeat 50% 107px}
+body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 119px}
+.container{background: url('../images/bg-color-text-home.jpg') no-repeat 50% 119px}
 .slogan{height:165px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 57px 0}

@@ -1,4 +1,5 @@
 $(function(){
+    $("input:checkbox").uniform();
     $('.follow-topic').bind('ajax:success', function () {
         var self = $(this);
         if (!self.hasClass('disabled')) {

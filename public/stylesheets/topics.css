@@ -1,9 +1,6 @@
 .content{position: relative; margin-bottom: 20px;}
-body{                                               
-  background: url('../images/bg-noise-topic.jpg') repeat fixed top left;
-  background:url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent, url('../images/bg-noise-topic.jpg') top left repeat;
-}
-body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent}
+
+body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
 .article-tags{background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 0; margin-top: 10px; padding-left: 22px; color: #468AC4; float: left;}
 .article-tags > li{display: inline;}     
 .left-side{float: left; width:700px;}
@@ -54,11 +51,13 @@ aside section.show-hide a.hide{
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
 aside section.filter{padding: 7px 0 14px; overflow:hidden; border-bottom:1px solid #f3f3f3;}
-aside section.filter ul,aside section.experts ul{margin-top:10px}
+aside section.filter ul,
+aside section.experts ul {margin-top:10px}
+aside section.filter ul div.checker {margin-right: 0}
 aside section.filter h2, aside section.experts h2{border-top:1px solid #ddd;}
-aside section.filter h2 span, aside section.experts h2 span{padding:0 4px; background-color: #ffffff; margin:-7px 0 0 6px; display:block; float:left; color:#38414e}
+aside section.filter h2 span, aside section.experts h2 span{padding:0 4px; background-color: #ffffff; margin:-7px 0 0 6px; display:block; float:left; color:#38414e; font-family: arial; font-weight: bold}
 aside section.helpful{padding:13px 0}
-aside section.helpful label{margin-left:4px}
+aside section.helpful div.checker {margin-right: 0}
 aside section.experts{padding: 25px 0; border-bottom:1px solid #f3f3f3}
 aside section.need-help{padding:13px 0; text-align:center}
 .add_comments{display: none; margin-top: 14px; padding-top: 10px; position: relative;}
@@ -195,7 +194,7 @@ p:hover .icn{display: inline;}
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
 .filter-responses > .even{margin-right: 0; float: right}
 .filter-responses > li:last-child{margin-bottom: 0;}
-.filter-responses > li > label{margin-left:4px;}
+.filter-responses > li > label > span {color: #7d96b2}
 
 .topic-avatars > li{float:left; width:64px; text-align:center; font-size:12px; position:relative; margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px}
@@ -229,7 +228,7 @@ p:hover .icn{display: inline;}
 .w-arrow{float: left;}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width: 5px 0px 5px 5px; float: right; height: 0; width: 0; margin: 7px 0 0 5px;}
 
-.social-bookmarkers > .flash-privacy{position: absolute; left: 31px; top: 0; white-space: nowrap; padding-left: 6px; margin-top: 0; display: none;}
+.social-bookmarkers > .flash-privacy{position: absolute; right: 215px; top: 0; white-space: nowrap; padding-left: 6px; margin-top: 50px; display: none; z-index: 100}
 .social-bookmarkers > .flash-privacy > div{ padding-left: 50px; }
 .social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;} 
 .flash-arrow{position: absolute; top: 12px; left: 0; border-color: transparent #fffcd3 transparent transparent; border-style: solid; border-width: 7px 7px 7px 0px; float: left; height: 0; width: 0;}
@@ -263,3 +262,5 @@ background-image: linear-gradient(top, #efeff0, #f4f4f5);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#efeff0', EndColorStr='#f4f4f5');
 }
 .view-more-wrapper > .view-more > span {padding-right: 15px; background: url('../images/view-more-bg.jpg') no-repeat 100% 3px}
+
+.container > .aligned > .left-side {margin-bottom: 10px}

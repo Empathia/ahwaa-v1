@@ -1,15 +1,16 @@
-<% stylesheet 'stream' %>
-<% javascript 'stream' %>
+<% stylesheet 'stream', 'uniform.default' %>
+<% javascript 'stream', 'include/jquery.uniform.min' %>
 
 <div class="aligned">
   <div class="content stream-wrapper">
     <%= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow">
       <section class="streams border-left">
-        <div class="stream-title">
+        <div class="stream-title header-title-bg border-top-left">
           <h2>Stream</h2>
           <div class="filter">
             <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
+              <label><%= t 'stream.forms.labels.filter' %></label>
               <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
             <% end %>
           </div>

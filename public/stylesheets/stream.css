@@ -4,20 +4,24 @@ body > div {
 .stream-wrapper {position: relative}
 .stream-wrapper .right-side {float: left; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px}
 
-.stream-wrapper .right-side .stream-title {border-bottom: 1px solid #dbdfe3; padding: 10px 20px 0; background: #fcfcfc; height: 30px; 
+.stream-wrapper .right-side .stream-title {
   -webkit-border-radius: 3px 0 0 0;
      -moz-border-radius: 3px 0 0 0;
           border-radius: 3px 0 0 0
 }
+
 .stream-wrapper .right-side .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float: left}
 .stream-wrapper .right-side .stream-title .filter {float: right}
+.stream-wrapper .filter div.selector {margin-top: -4px; width: 140px}
+.stream-wrapper .filter div.selector span {width: 108px}
+.stream-wrapper .filter label {color: #8a9199}
 .stream-title  .filter-label {float: left}
 
 .stream-wrapper .right-side .streams {float: left; width: 539px; border-right: 1px solid #dae0e6; min-height: 449px;}
 .stream-wrapper .right-side .recommended-topics {float: left; width: 200px; padding: 15px 20px}
 .stream-wrapper .right-side .recommended-topics h3 {font-family: 'GothamMediumRegular'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
 .stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
-.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px;
+.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px; font-family: 'GothamMediumRegular';
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fbfc), to(#f4f6f9));
   background-image: -webkit-linear-gradient(top, #f9fbfc, #f4f6f9);
   background-image:    -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
