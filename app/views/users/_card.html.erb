@@ -9,8 +9,8 @@
       <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
       <ul class="activity-btns">
         <li class="light-button">
-          <%= link_to '#' do  %>
-            <span class="view-profile">view profile</span>
+          <%= link_to '#', :title => t('private_message.view_profile') do  %>
+            <span class="view-profile"><%= t('private_message.view_profile') %></span>
           <% end %>
          </li>
          <% unless current_user == user || !logged_in? %>
@@ -23,7 +23,7 @@
         </ul>
         <p class="points-wrapper-small small-hearts border-all">
           <span class="level <%= level_css_class_for_user(user) %>"></span>
-          <span class="points"><%= t('private_message.points', {:points => user.score_board.current_points})%></span>
+          <span class="points"><%= user.score_board.current_points %></span>
         </p>
     </div>
     <br class="clear" />

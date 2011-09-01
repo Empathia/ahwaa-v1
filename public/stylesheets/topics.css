@@ -1,7 +1,7 @@
 .content{position: relative; margin-bottom: 20px;}
 
 body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 0; margin-top: 10px; padding-left: 22px; color: #468AC4; float: left;}
+.article-tags{background-image: url('../images/tag.png'); width: 290px; background-repeat: no-repeat; background-position: 0 0; margin-top: 10px; padding-left: 22px; color: #468AC4; float: left;}
 .article-tags > li{display: inline;}     
 .left-side{float: left; width:700px;}
 .related-content{background-color: #ffffff; padding: 16px 20px 0 20px; position: relative;}
@@ -228,10 +228,10 @@ p:hover .icn{display: inline;}
 .w-arrow{float: left;}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width: 5px 0px 5px 5px; float: right; height: 0; width: 0; margin: 7px 0 0 5px;}
 
-.social-bookmarkers > .flash-privacy{position: absolute; right: 215px; top: 0; white-space: nowrap; padding-left: 6px; margin-top: 50px; display: none; z-index: 100}
-.social-bookmarkers > .flash-privacy > div{ padding-left: 50px; }
+.social-bookmarkers > .flash-privacy{position: absolute; right: 220px; top: 0; white-space: nowrap; padding-left: 6px; margin-top: 45px; display: none; z-index: 100}
+.social-bookmarkers > .flash-privacy > div{padding-left: 50px}
 .social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;} 
-.flash-arrow{position: absolute; top: 12px; left: 0; border-color: transparent #fffcd3 transparent transparent; border-style: solid; border-width: 7px 7px 7px 0px; float: left; height: 0; width: 0;}
+.flash-arrow{position: absolute; top: -13px; left: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float: left; height: 0; width: 0;}
 
 .related-carrousel > .items {float: left; width: 100%}
 .related-carrousel > .items > li {width: 300px; background-color: #f7f9fa; display: none}

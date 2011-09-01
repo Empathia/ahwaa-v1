@@ -13,9 +13,9 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .items-frontpage > li > .topic-spotlight,
 .items-frontpage > li > .topic-recent-historial {width: 440px; float: left; padding: 10px;}
 .items-frontpage > li > .topic-spotlight {background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #dae0e6}
-.items-frontpage > li > .topic-recent-historial {background-color: rgba(255, 255, 255, 0.4);}
+.items-frontpage > li > .topic-recent-historial {background-color: rgba(255, 255, 255, 0.4)}
 .items-frontpage .topic-spotlight .avatar {width: 42px; height: 42px; padding: 3px}
-.topic-spotlight .avatar > span {top: 32px; left: 10px}
+.topic-spotlight .avatar > span {top: 32px; left: 9px}
 .topic-spotlight .avatar img {width: 42px; height: 42px}
 .topic-spotlight .item-data {width: 380px}
 .topic-spotlight .item-data > div {margin-top: 3px}
@@ -32,7 +32,12 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .small-avatars .avatar img {width: 24px; height: 24px}
 
 .items-wrapper > section{width: 460px; float: left;}
-.items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
+.items-wrapper > section > h2 {text-transform: uppercase; text-align: center; font-size: 16px; color: #546e86; float: left; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); padding-bottom: 6px; margin-bottom: 15px;}
+.items-wrapper > section > h2 > span {float: left; margin: 0 10px}
+.items-wrapper > section > h2 > .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 6px 0 0}
+.items-wrapper > .topics > h2 > .line {width: 119px}
+.items-wrapper > .feeds > h2 > .line {width: 145px}
+
 .items > li{width: 440px;}
 .item-data{width: 365px; line-height: 20px;}
 .topics{margin-right: 10px;}
@@ -43,7 +48,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .features li:first-child{margin-left: 1px;}
 .features > .last-feature{margin-right: 1px;}
 
-.feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin-bottom: 7px;}
+.feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin: -1px 0 4px;}
 .feature-wrapper p{color: #707f8a; font-size: 16px; text-shadow: 0 1px 1px #f7fbfe;}
 .feature-image{position: relative; height: 200px;} 
 .feature-image > img{position: absolute; bottom: 0; left: 0;}
@@ -64,7 +69,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 
 .watch-video{position: relative; height: 32px;}
 .watch-video > div{position: absolute; left: 50%; top: 0;}
-.watch-video > div > a{position: relative; left: -50%; border: 1px solid #6f9bb5; float: left; background-color: #edf6fa;
+.watch-video > div > a{position: relative; display: block; left: -50%; border: 1px solid #6f9bb5; float: left; background-color: #edf6fa;
   -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;
      -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;
           box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;

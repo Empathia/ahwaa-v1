@@ -22,14 +22,17 @@
   </div>
   <div class="topic-recent-historial border-bottom-3">
     <p class="collaborations"><%= t '.recent_participants', :count => topic.recent_participants.size %></p>
+    <% if topic.recent_participants.length > 0 %>
     <ul class="small-avatars">
       <% topic.recent_participants.each do |user| %>
         <li>
           <div class="avatar-wrapper">
             <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+            <%= render :partial => 'users/card', :locals => {:user => user} %>
           </div>
         </li>
       <% end %>
     </ul>
+    <% end %>
   </div>
 </li>

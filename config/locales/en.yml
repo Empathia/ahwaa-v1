@@ -74,6 +74,7 @@ en:
     no_activity: No recent activity                  
     flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
     send_pm: Send Private Message
+    view_profile: View Profile
   layouts:
     application:
       header:

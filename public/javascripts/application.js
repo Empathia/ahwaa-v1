@@ -80,20 +80,29 @@ $(function() {
       $(e.target);
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
-    $('.avatar-wrapper:not(.no-rollover) .avatar').mouseenter(function(e){
+    $('.avatar > img').mouseenter(function(e){
         clearTimeout(timer1);
-        $(this).siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
+        $(this).parent('.avatar').siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
     });
-    $('.avatar-wrapper:not(.no-rollover)').hoverIntent(function () {
-        var that = $(this);
-        that.css('z-index', '9998').find('.private-msg').fadeIn(100);
-    }, function () { console.log('d')
+    $('.avatar').hoverIntent(function () {
+        var that = $(this),
+        rollover = that.siblings('.private-msg'),
+        rollover_right = ((rollover.width() - $('img', this).width()) / 2),
+        rollover_top = ($('img', this).height() + 15),
+        indicator = that.siblings('.private-msg').find('.origin'),
+        indicator_border_width = 10,
+        ind_right = ((rollover.width() - indicator_border_width) / 2);
+
+        indicator.css({'right': ind_right});
+        rollover.css({'right': -rollover_right, 'top': rollover_top});
+        rollover.fadeIn(100)
+    }, function () {
         var that = $(this);
         timer1 = setTimeout(function(){
-            that.find('.private-msg').fadeOut(100);
+            that.siblings('.private-msg').fadeOut(100);
         }, 1000);
     });
-    $('.private-msg').mouseenter(function () {
+    $('.private-msg').mouseover(function () {
         clearTimeout(timer1);
     });
     $('.private-msg').mouseleave(function () {

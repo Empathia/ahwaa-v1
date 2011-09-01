@@ -32,14 +32,14 @@
   </section>
   <div class="items-wrapper">
     <section class="topics">
-      <h2><%= t('.popular_topics') %></h2>
+      <h2><span class="line"></span><span><%= t('.popular_topics') %></span><span class="line"></span></h2>
       <ul class="items-frontpage topic-avatars">
         <%= render :partial => 'grouped_topic', :collection => @popular, :locals => {:leng => @popular.length} %>
       </ul>
     </section>
 
     <section class="feeds">
-      <h2><%= t('.feeds') %></h2>
+      <h2><span class="line"></span><span><%= t('.feeds') %></span><span class="line"></span></h2>
       <ul class="items-frontpage topic-avatars">
         <%= render :partial => 'grouped_topic', :collection => @latest, :locals => {:leng => @latest.length} %>
       </ul>
