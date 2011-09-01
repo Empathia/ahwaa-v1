@@ -95,6 +95,22 @@ $(function() {
 
         indicator.css({'right': ind_right});
         rollover.css({'right': -rollover_right, 'top': rollover_top});
+        /*pm.show(0, function () {
+            if(pm.offset().left < 0 || pm.offset().left + pm.outerWidth() > $(window).width()) {
+                pm.addClass('inside');
+            }
+        });*/
+        /*
+        var xleft = rollover.offset().left,
+            xright = rollover.offset().left + rollover.width(),
+            ytop = rollover.offset().top,
+            ybottom = rollover.offset().top + rollover.height();
+        if (e.pageX > xright) {
+            rollover.addClass('inside');
+        } else if (e.pageX < xleft) {
+            rollover.removeClass('inside');
+        }*/
+        
         rollover.fadeIn(100)
     }, function () {
         var that = $(this);

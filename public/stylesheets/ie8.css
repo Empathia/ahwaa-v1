@@ -1,3 +1,8 @@
 .ie8-hide{display: block; padding: 0; height: 0; overflow: hidden;}
 .only-3-values{padding: 0 119px;}
 .header-wrapper {border-bottom: 1px solid #C3D2D9}
+.private-msg {border: 1px solid #ccc}
+.items-frontpage > li {border: 1px solid #DAE0E6}
+.panel-sub-nav .sub-nav > .active {background-image: url('../images/bg-sub-nav-active.png'); height: 31px}
+.panel-sub-nav .sub-nav li {border-top: 1px solid #b0b8c9; border-bottom: 1px solid #898d9f}
+.panel-sub-nav .sub-nav li.last-child {border-bottom: 0 none}

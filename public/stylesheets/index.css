@@ -35,7 +35,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .items-wrapper > section > h2 {text-transform: uppercase; text-align: center; font-size: 16px; color: #546e86; float: left; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); padding-bottom: 6px; margin-bottom: 15px;}
 .items-wrapper > section > h2 > span {float: left; margin: 0 10px}
 .items-wrapper > section > h2 > .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 6px 0 0}
-.items-wrapper > .topics > h2 > .line {width: 119px}
+.items-wrapper > .topics > h2 > .line {width: 115px}
 .items-wrapper > .feeds > h2 > .line {width: 145px}
 
 .items > li{width: 440px;}

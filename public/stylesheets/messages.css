@@ -24,7 +24,7 @@ body > div {
 
 .delete-message {float: right; width: 110px; position: relative; top: 22px}
 .delete-message > .date {font-size: 11px; color: #a1aab2; float: right; padding: 3px 10px 0 0}
-.delete-message > a {float: right; padding: 2px 2px 2px 3px; width: 12px; height: 12px;}
+.delete-message > a {float: right; padding: 2px 2px 2px 3px; width: 12px; height: 12px; margin-top: -2px}
 .messages-wrapper .delete-message .opt-delete {background-image: url('../images/icn-options-user.png'); background-position: 0 -13px; border-color: transparent; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
 .opt-reply {height: 16px; left: -22px; top: 33px; padding: 0; position: absolute; width: 16px; text-indent: -9999px; font-size: 0; line-height: 0;
   background-image: url('../images/icn-reply-drk.png'); background-repeat: no-repeat;
@@ -75,7 +75,7 @@ body > div {
 .replies-wrapper > .discussion-wrapper > .message-data > .from {padding-bottom: 5px}
 .replies-wrapper > .discussion-wrapper > .message-data > .from > a {float: left; font-size: 13px; font-weight: bold; padding-top: 0}
 .replies-wrapper > .discussion-wrapper > .message-data > .from > .date {color: #A1AAB2; float: right; font-size: 11px}
-.replies-wrapper > .discussion-wrapper > .message-data > .msg {}
+.replies-wrapper > .discussion-wrapper > .message-data > .msg {line-height: 20px; width: 550px}
   
 .my-messages-reply-wrapper {float: left; padding: 20px 0}
 .my-messages-reply-wrapper > .avatar-wrapper {margin-right: 10px}

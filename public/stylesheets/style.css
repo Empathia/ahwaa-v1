@@ -33,7 +33,20 @@ input[type=password],
 input[type=email],
 textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor: text; font-size:13px}
 
-.light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1}
+.points-wrapper-small > span {border: 0 none}
+.light-button,
+.points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
+  background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
+  background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+          box-shadow: inset 0 0 1px rgba(255, 255, 255, .75)
+}
 .light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; text-align: center; font-weight: bold; background-color: #fafcfd;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
@@ -191,6 +204,13 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .logo-wrapper.light {border-top: 1px solid #c0c9ce;}
 .logo-wrapper.dark {border-top: 1px solid #aabac9;}
 .header-wrapper{background-color: #ffffff; border-top: 1px solid #c3d2d9; height: 39px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f0f0f0));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f0f0f0);
+  background-image:    -moz-linear-gradient(top, #ffffff, #f0f0f0);
+  background-image:     -ms-linear-gradient(top, #ffffff, #f0f0f0);
+  background-image:      -o-linear-gradient(top, #ffffff, #f0f0f0);
+  background-image:         linear-gradient(top, #ffffff, #f0f0f0);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f0f0f0')";
       -moz-box-shadow: inset 0 3px 0 #f7f7f7;
    -webkit-box-shadow: inset 0 3px 0 #f7f7f7;
            box-shadow: inset 0 3px 0 #f7f7f7
@@ -629,6 +649,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .avatar.gold-heart > span,
 .points-wrapper > span.gold-heart  {background-position:0 -240px}
 
+.small-hearts > .level.no-level {background: none; display: none}
 .small-hearts > .level,
 .small-avatars .avatar > span {background: url("../images/heart-badges-small-sprite.png") no-repeat transparent; width: 20px; height: 19px; display: block; float: left}
 .small-hearts > .level.red-heart,
@@ -654,11 +675,21 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > span{left: 8px; top: 29px;}
 
-.private-msg{display:none; position: absolute; width: 290px; background-color: #f0f6fc; padding: 3px; border: 1px solid rgba(0, 0, 0, .2); top: 70px; right: -80px; text-align:left; z-index:999; font-size:12px;
+.private-msg{display:none; position: absolute; width: 290px; background-color: #f0f6fc; padding: 3px; border: 1px solid rgba(0, 0, 0, .2); top: 70px; /*right: -80px; right: -210px; */text-align:left; z-index:999; font-size:12px;
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)
 }
+
+.private-msg .origin,
+.private-msg .origin span {border: 10px solid; height: 0; position: absolute; width: 0}
+.private-msg .origin {border-color: transparent transparent #ccc; /*left: 20px;*/ top: -20px}
+.private-msg .origin > span {border-color: transparent transparent #FAFCFF; left: -10px; top: -8px}
+.private-msg .origin > span > span {border-color: transparent transparent #fff; top: -7px; left: -10px}
+/*
+.private-msg.inside{right: 0}
+.private-msg.inside .origin {left: 255px; top: -20px}
+*/
 .private-msg > form{display: block; background:#ffffff; display: none; padding: 7px 16px 0; margin:0;}
 .private-msg > form > textarea{min-width: 234px; width: 234px; max-width: 234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
 .private-msg-btns{text-align:right}
@@ -666,11 +697,11 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:13px;}
 .private-msg > .avatar{float: right;}
 .form-private-msg > .flash-privacy{margin: 0 0 15px 0;}
-
+/*
 .inside{left:-20px}
 .inside .user-info{float:right}
 .inside .user-wrapper > .avatar{float:left}
-
+*/
 .user-wrapper {padding: 9px 9px 0; background:#ffffff;
   border-top-right-radius:3px;
   -moz-border-radius-topright:3px;
@@ -695,7 +726,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .user-wrapper .send-private-msg {background: url("../images/icn-tooltip-send-msg.png") no-repeat; left: 7px; top: -1px}
 .user-wrapper .view-profile {background: url("../images/icn-tooltip-view-profile.png") no-repeat; left: 7px; top: -1px}
 
-.user-logged-info .user-data .points-wrapper-small {padding: 0; }
+.user-wrapper .user-data .points-wrapper-small {padding: 0; }
 .recently-topics {padding-top:28px; background:#ffffff}
 form + .recently-topics{padding-top:18px;}
 .recently-topics > p{line-height: 1em!important; margin-top: 0px !important; padding: 0 0 10px 15px; font-style: italic; color: #a1aab2}
@@ -708,12 +739,6 @@ form + .recently-topics{padding-top:18px;}
   -webkit-border-bottom-left-radius:3px;
 }
 .recently-topics > ul > li{padding: 9px 16px 7px; border-top: 1px solid #cfdae6; font-size: 12px; font-weight: bold}
-
-.private-msg .origin,
-.private-msg .origin span { border: 10px solid; height: 0; position: absolute; width: 0}
-.private-msg .origin { border-color: transparent transparent #ccc; right: 100px; top: -20px}
-.private-msg .origin > span { border-color: transparent transparent #FAFCFF; left: -10px; top: -8px}
-.private-msg .origin > span > span {border-color: transparent transparent #fff; top: -7px; left: -10px}
 
 .custom > a{text-decoration: none;}
 
@@ -794,14 +819,14 @@ form + .recently-topics{padding-top:18px;}
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
 .user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px;}
-.user-logged-info .user-data .points-wrapper-small {padding: 0; }
 .user-logged-info .points-wrapper-small > .level,
 .user-logged-info .points-wrapper-small > .points {border: none}
 .user-logged-info .points-wrapper-small > .points {height: 20px; line-height: 20px; color: #707b8b; font-weight: bold}
 .user-logged-info .user-data .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px}
 .user-logged-info .user-data .log-out:hover {text-decoration: none}
 
-.user-logged-info .user-data .points-wrapper-small {padding: 0 10px 0 5px}
+.user-logged-info .points-wrapper-small {padding: 0 8px}
+.user-logged-info .points-wrapper-small > .level {margin-right: 4px}
 .activity-btns li {float: left; height: 20px; width: 35px; border-right: 1px solid #cfdae6}
 .user-logged-info .activity-btns li:first-child {border-right-width: 0}
 .activity-btns li a {text-indent: -999px}
@@ -825,21 +850,7 @@ form + .recently-topics{padding-top:18px;}
 }
 .activity-btns a:hover {text-decoration: none}
 .points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1}
-.points-wrapper-small > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; text-align: center; font-weight: bold;
-    background-color: #fafcfd;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
-    background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
-    background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
-    background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
-    background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
-    background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
-          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
-    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-       -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-            box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-}
-  
-  
+
 .follow-topic-wrapper {float: left; margin-left: 10px}
 .follow-topic-wrapper .secondary-button {padding: 4px 10px 0; height: 17px; font-size: 12px; display: block}
 
@@ -849,7 +860,7 @@ form + .recently-topics{padding-top:18px;}
 .panel-sub-nav {float: left; margin-right: 20px; width: 140px}
 .panel-sub-nav .sub-nav > li > a {color: #394551; text-sahdow: 0 1px 0 rgba(255, 255, 255, .35); display: block; height: 30px; line-height: 30px; text-shadow: 0 1px 0 rgba(255, 255, 255, .2);}
 .panel-sub-nav .sub-nav > li > a > .badge {
-  color: #fff; background-color: #2E8AE5; background-color: rgba(0, 0, 0, .3); font-size: 12px; line-height: 15px; margin: 7px 6px 0 0; float: right; font-weight: bold; padding: 1px 5px; text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
+  color: #fff; background-color: #61738b; background-color: rgba(0, 0, 0, .3); font-size: 12px; line-height: 15px; margin: 7px 6px 0 0; float: right; font-weight: bold; padding: 1px 5px; text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
        -moz-border-radius: 10px;
     -webkit-border-radius: 10px;
             border-radius: 10px;
@@ -879,7 +890,8 @@ form + .recently-topics{padding-top:18px;}
 .panel-sub-nav .sub-nav > .active > a {color: #fff; text-shadow: 0 1px 1px rgba(0, 0, 0, .75); font-weight: bold}
 .panel-sub-nav .sub-nav li {border-top: 1px solid rgba(255, 255, 255, .2); border-bottom: 1px solid rgba(0, 0, 0, .2)}
 .panel-sub-nav .sub-nav li:first-child {border-top: 0 none}
-.panel-sub-nav .sub-nav li:last-child {border-bottom: 0 none}
+.panel-sub-nav .sub-nav li:last-child,
+.panel-sub-nav .sub-nav li .last-child {border-bottom: 0 none}
 
 .header-title-bg {background-color: #FCFCFC; border-bottom: 1px solid #DBDFE3; height: 25px; padding: 15px 20px 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#eceff3), to(#f9f9f9));

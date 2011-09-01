@@ -54,7 +54,7 @@
                     <%= link_to 'edit', user_path, :class => 'edit-secondary', :title => t('.header.logged_in.edit_profile')  %>
                   </b>
                    <p class="points-wrapper-small small-hearts border-all">
-                      <span class="level <%= current_user.current_level || 'no-level' %>"></span>
+                      <span class="level <%= level_css_class_for_user(current_user) || 'no-level' %>"></span>
                       <span class="points"><%= current_user.score_board.current_points %></span>
                    </p>
                    <ul class="activity-btns">

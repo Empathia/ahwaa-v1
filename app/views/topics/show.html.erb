@@ -34,7 +34,14 @@
                   <span class="facebook">t('.icons.social.facebook')</span>
                 <% end %>
               <div class="flash-privacy">
-                <div class="border-all"><%= t('.icons.social.flash_alert')%><span class="flash-arrow"></span><span class="icn-cross"></span><span class="exclamation-center"></span></div>
+                <div class="border-all">
+                  <%= t('.icons.social.flash_alert')%>
+                  <span class="flash-arrow-shadow">
+                    <span class="flash-arrow"></span>
+                  </span>
+                  <span class="icn-cross"></span>
+                  <span class="exclamation-center"></span>
+                </div>
               </div>
               <p class="follow-topic-wrapper">
                 <% if logged_in? && @topic.subscribed?(current_user) %>
