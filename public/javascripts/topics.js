@@ -7,6 +7,23 @@ $(function(){
                 self.removeClass('following').text(I18n.t('topics.show.follow'));
                 self.attr('href', self.attr('href').replace('/unfollow.json', '/follow.json'));
             } else {
+                var x,
+                animationDelay = 200,
+                animationIterations = 5;
+                for(var x=0; x<animationIterations; x++) {
+                    self.queue(function() {
+                        setTimeout(function() {
+                            self.dequeue();
+                        }, animationDelay);
+                    });
+                    self.toggleClass('btn-animation-feedback', 10);
+                    self.queue(function() {
+                        setTimeout(function() {
+                            self.dequeue();
+                        }, animationDelay);
+                    });
+                    self.toggleClass('btn-animation-feedback', 10);
+                }
                 self.addClass('following').text(I18n.t('topics.show.unfollow'));
                 self.attr('href', self.attr('href').replace('/follow.json', '/unfollow.json'));
             }

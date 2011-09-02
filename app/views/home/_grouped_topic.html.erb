@@ -2,7 +2,7 @@
 <li class="border-all">
   <div class="topic-spotlight border-top-3">
     <div class="avatar-wrapper" style="z-index: <%= leng - grouped_topic_counter %>">
-      <%= avatar_span(topic.user, topic.user.is_expert?) %>
+      <%= avatar_span(topic.user, topic.user.is_expert?, true, "24x42") %>
       <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
     </div>
     <div class="item-data">

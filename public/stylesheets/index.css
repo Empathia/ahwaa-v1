@@ -27,6 +27,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .items-frontpage .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; line-height: 14px}
 .items-frontpage .small-avatars {margin: 10px 0 5px; float: left}
 .items-frontpage .small-avatars li {float: left; margin-right: 15px}
+.items-frontpage .small-avatars .recently-topics > ul > li {float: none; margin-right: 0}
 .small-avatars .avatar {width: 24px; height: 24px; padding: 3px}
 .small-avatars .avatar > span {top: 20px; left: 5px}
 .small-avatars .avatar img {width: 24px; height: 24px}
@@ -59,7 +60,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5191c3),color-stop(1, #2865a3));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3')";
-}    
+}
 #join > a{color: #ffffff; text-decoration: none; text-shadow: 0px -2px 2px #255890; height: 121px; display: block; border: 1px solid #8CB7D8; overflow: hidden;}
 #join > a > span{display: block; height: 51px; padding: 34px 0; border: 1px solid #669ecb;}
 .join-st-line{font-size: 36px; display: block;}
