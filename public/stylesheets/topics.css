@@ -53,6 +53,7 @@ aside section.show-hide a.hide{
 aside section.filter{padding: 7px 0 14px; overflow:hidden; border-bottom:1px solid #f3f3f3;}
 aside section.filter ul,
 aside section.experts ul {margin-top:10px}
+aside section.experts .recently-topics > ul {margin-top: 0}
 aside section.filter ul div.checker {margin-right: 0}
 aside section.filter h2, aside section.experts h2{border-top:1px solid #ddd;}
 aside section.filter h2 span, aside section.experts h2 span{padding:0 4px; background-color: #ffffff; margin:-7px 0 0 6px; display:block; float:left; color:#38414e; font-family: arial; font-weight: bold}
