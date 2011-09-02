@@ -1,7 +1,7 @@
 .content{position: relative; margin-bottom: 20px;}
 
 body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{background-image: url('../images/tag.png'); width: 290px; background-repeat: no-repeat; background-position: 0 0; margin-top: 10px; padding-left: 22px; color: #468AC4; float: left;}
+.article-tags{background-image: url('../images/tag.png'); width: 290px; background-repeat: no-repeat; background-position: 0 0; margin-top: 15px; padding-left: 22px; color: #468AC4; float: left;}
 .article-tags > li{display: inline;}     
 .left-side{float: left; width:700px;}
 .related-content{background-color: #ffffff; padding: 16px 20px 0 20px; position: relative;}
@@ -185,7 +185,7 @@ a.no_comments{
 p:hover .icn{display: inline;}
 
 .related-carrousel{width: 660px; float: left; position: relative; margin-bottom: 17px}
-.social-bookmarkers{float: right; margin-top: 7px}
+.social-bookmarkers{float: right; margin-top: 10px}
 .social-bookmarkers > a {float: left; height: 21px; text-indent: -9999px; width: 21px; overflow: hidden;}
 .social-bookmarkers > a > span {background-image: url('../images/icn-social.png'); background-repeat: none; width: 14px; height: 14px; display: block}
 .social-bookmarkers .facebook{background-position: 0 0; position: relative; top: 4px; left: 3px}
@@ -265,4 +265,4 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#efeff0', EndC
 }
 .view-more-wrapper > .view-more > span {padding-right: 15px; background: url('../images/view-more-bg.jpg') no-repeat 100% 3px}
 
-.container > .aligned > .left-side {margin-bottom: 10px}
+.container > .aligned > .left-side {margin-bottom: 15px}

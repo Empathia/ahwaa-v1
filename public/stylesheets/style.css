@@ -1,6 +1,6 @@
 html {height: 100%}
 body {font-size: 13px; color: #61656a; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background-color: #e3ecf0; background-image: url('../images/bg-noise-home.jpg'); background-repeat: repeat; background-attachment: fixed; height: 100%}
-h1 {font-size: 24px}
+h1 {font-size: 24px; line-height: 32px}
 h1,
 h2 {color: #393c3f}
 .sec-title,
@@ -43,9 +43,9 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
   background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
   background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
-  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-          box-shadow: inset 0 0 1px rgba(255, 255, 255, .75)
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1);
+     -moz-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1);
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 1)
 }
 .light-button > span {border: 1px solid; border-color: #fefefe #fcfdfe #fafdfc; text-align: center; font-weight: bold; background-color: #fafcfd;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
@@ -55,9 +55,9 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
   background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
   background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
-  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
-          box-shadow: inset 0 0 1px rgba(255, 255, 255, .75)
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 1);
+     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 1);
+          box-shadow: inset 0 0 1px rgba(255, 255, 255, 1)
 }
 .light-button:hover,
 .light-button > span:hover {text-decoration: none; background-color: #ecf4f9;
@@ -361,12 +361,12 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .header-tags .more {position:relative;}
 .header-tags .more > a{padding: 0 16px 0 20px;}
 .more > a{text-decoration:none; outline:0 none;}
-.more:hover > a{color:#61656a!important}       
+.more:hover > a{border-bottom: 1px solid #EAEEF0}
 
 .more > a > span{background-image: url('../images/more.png'); background-repeat: no-repeat; background-position: 100% 6px; padding-right: 12px;}
 .more:hover > a > span{background-position: 100% -19px;}
 
-.more-tags{background-color: #f6f9fb; position: absolute; top: 39px; display: none; left: 0;
+.more-tags{min-width: 130px; background-color: #f6f9fb; position: absolute; top: 39px; display: none; left: 0; z-index: -1;
   -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
