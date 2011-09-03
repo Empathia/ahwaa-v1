@@ -247,21 +247,20 @@ p:hover .icn{display: inline;}
 
 .related-content-line {background-color: #f4f4f5; border-width: 1px 0; border-style: solid; border-color: #e0e0e3 transparent #d8dbde; width: 100%; position: absolute; bottom: 0; height: 2px; left: 0}
 .view-more-wrapper {float: left; position: relative; bottom: 3px; left: 50%}
-.view-more-wrapper > .view-more {position: relative; float: left; border-top: 1px solid #dcdcdf; height: 15px; padding: 0 6px; color: #b1b1b6; left: -50%;
--moz-border-radius: 3px 3px 0 0;
--webkit-border-radius: 3px 3px 0 0;
-border-radius: 3px 3px 0 0;
--moz-background-clip: padding;
--webkit-background-clip: padding-box;
-background-clip: padding-box;
-background-color: #efeff0;
-background-image: -webkit-gradient(linear, left top, left bottom, from(#efeff0), to(#f4f4f5));
-background-image: -webkit-linear-gradient(top, #efeff0, #f4f4f5);
-background-image: -moz-linear-gradient(top, #efeff0, #f4f4f5);
-background-image: -ms-linear-gradient(top, #efeff0, #f4f4f5);
-background-image: -o-linear-gradient(top, #efeff0, #f4f4f5);
-background-image: linear-gradient(top, #efeff0, #f4f4f5);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#efeff0', EndColorStr='#f4f4f5');
+.view-more-wrapper > .view-more {position: relative; float: left; border-top: 1px solid #dcdcdf; height: 15px; padding: 0 6px; color: #b1b1b6; left: -50%; background-color: #efeff0;
+     -moz-border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+          border-radius: 3px 3px 0 0;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#efeff0), to(#f4f4f5));
+  background-image: -webkit-linear-gradient(top, #efeff0, #f4f4f5);
+  background-image:    -moz-linear-gradient(top, #efeff0, #f4f4f5);
+  background-image:     -ms-linear-gradient(top, #efeff0, #f4f4f5);
+  background-image:      -o-linear-gradient(top, #efeff0, #f4f4f5);
+  background-image:         linear-gradient(top, #efeff0, #f4f4f5);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#efeff0', EndColorStr='#f4f4f5');
 }
 .view-more-wrapper > .view-more > span {padding-right: 15px; background: url('../images/view-more-bg.jpg') no-repeat 100% 3px}
 
