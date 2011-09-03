@@ -19,7 +19,7 @@ body > div {
 
 .stream-wrapper .right-side .streams {float: left; width: 539px; border-right: 1px solid #dae0e6; min-height: 449px;}
 .stream-wrapper .right-side .recommended-topics {float: left; width: 200px; padding: 15px 20px}
-.stream-wrapper .right-side .recommended-topics h3 {font-family: 'GothamMediumRegular'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
+.stream-wrapper .right-side .recommended-topics h3 {font-family: 'Gotham-Light'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
 .stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
 .stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px; font-family: 'GothamMediumRegular';
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fbfc), to(#f4f6f9));
