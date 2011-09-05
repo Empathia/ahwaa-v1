@@ -1,0 +1,118 @@
+body > div {
+    background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent;
+}
+.messages-wrapper h3.pm-panel-padding {margin-top: 20px}
+.messages-wrapper .right-side {
+    background: url("../../images/bg-article.png") repeat-x scroll 0 1px #FFFFFF;
+    float:right;
+    width: 780px;
+}
+.messages-wrapper .right-side .messages-title h2 {
+    float:right;
+    font-family: 'GothamMediumRegular';
+    font-size: 17px;
+    font-weight: normal;
+}
+.message-data {float:right; width: 520px; margin-right: 10px}
+.message-data .msg a {color: #494b4c; font-size: 13px}
+.message-data  > .from > a {font-size: 13px; float:right; padding-top: 11px}
+
+.from {padding-bottom: 10px; overflow: hidden;}
+.from > a > span{float:right; margin-left: 3px;}
+.from .display-pm{color: #468ac4; font-weight: bold;}
+.from .display-pm:hover{text-decoration: underline;}
+
+.delete-message {float:left; width: 110px; position: relative; top: 22px}
+.delete-message > .date {font-size: 11px; color: #a1aab2; float:left; padding:3px 0 0 10px}
+.delete-message > a {float:left; padding:2px 3px 2px 2px; width: 12px; height: 12px; margin-top: -2px}
+.messages-wrapper .delete-message .opt-delete {background-image: url('../../images/icn-options-user.png'); background-position:100% -13px; border-color: transparent; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
+.opt-reply {height: 16px; right: -22px; top: 33px; padding: 0; position: absolute; width: 16px; text-indent: -9999px; font-size: 0; line-height: 0;
+  background-image: url('../../images/icn-reply-drk.png'); background-repeat: no-repeat;
+}
+.new > .opt-reply {background-image: url('../../images/icn-new-message-indicator.png'); background-repeat: no-repeat}
+
+#pm-wrapper .messages {padding:20px 30px 40px 20px}
+.messages > li {position: relative; width: auto; background-color: #FBFBFB; border: 1px solid #dfe2e6; margin-bottom: 20px; padding:10px 9px 10px 11px;
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+     -moz-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+}
+.messages > li.new {background-color: #f2f9ff; border-color: #398fe5;
+  -webkit-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+     -moz-box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff;
+          box-shadow: 0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff
+}
+
+.pm-panel-padding {padding:0 20px 20px 20px}
+
+.pm-details{font-size: 12px; padding-top: 20px}
+.pm-user{margin-bottom: 20px}
+.pm-user-response{color: #b3b8bc; padding: 20px 0 10px}
+.pm-user-response > a{color: #5e5e5e; font-weight: bold;}
+.pm-user .avatar-wrapper{margin-left: 14px; z-index: 1;}
+.pm-user-details{color: #b3b8bc; margin-top: 10px; float:right; width: 536px;}
+.pm-user-details > div{margin-bottom: 5px;}
+.pm-user-details a{color: #468ac4; font-weight: bold;}
+.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #dae0e5; padding-bottom: 20px}
+
+#pm-wrapper strong{color:black}
+.hide{display: none;}   
+.response-wrapper{margin:0 0 11px 0; width: 660px; border: none;}
+.new_private_message > .btn-gradient{padding: 5px 9px; display: none;}
+
+.pm-flash.success{margin:4px 0 20px 0; padding: 7px;}
+.pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
+
+.back-to-msgs {float:left; font-size: 12px; margin-top: -7px}
+.back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
+
+.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px; width: 646px; max-width: 646px}
+
+.replies-wrapper {float:right}
+.replies-wrapper > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0 17px; float:right}
+.replies-wrapper > .discussion-wrapper > .avatar-wrapper {margin-left: 10px}
+.replies-wrapper > .discussion-wrapper > .message-data {float:right; margin-right: 0; width: 666px;}
+.replies-wrapper > .discussion-wrapper > .message-data > .from {padding-bottom: 5px}
+.replies-wrapper > .discussion-wrapper > .message-data > .from > a {float:right; font-size: 13px; font-weight: bold; padding-top: 0}
+.replies-wrapper > .discussion-wrapper > .message-data > .from > .date {color: #A1AAB2; float:left; font-size: 11px}
+.replies-wrapper > .discussion-wrapper > .message-data > .msg {line-height: 20px; width: 550px}
+  
+.my-messages-reply-wrapper {float:right; padding: 20px 0}
+.my-messages-reply-wrapper > .avatar-wrapper {margin-left: 10px}
+.my-messages-reply-wrapper > form {float:right}
+.my-messages-reply-wrapper > form > a {font-weight: bold; padding-bottom: 5px; display: block}
+
+.btn-gradient {clear: right; border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1; text-align: center; font-weight: bold; height: 24px; font-family: Arial; font-size: 12px; color: #2D70B3; text-shadow: 0 1px 0 #fff; background-color: #fafcfd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
+    background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
+    background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
+    background-image:     -ms-linear-gradient(top, #fafcfd, #ecf4f9);
+    background-image:      -o-linear-gradient(top, #fafcfd, #ecf4f9);
+    background-image:         linear-gradient(top, #fafcfd, #ecf4f9);
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fafcfd', EndColorStr='#ecf4f9')";
+    -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+       -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+            box-shadow: inset 0 0 1px rgba(255, 255, 255, .75);
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px
+}
+.btn-gradient:hover {cursor: pointer; background-color: #ecf4f9;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf4f9), to(#fafcfd));
+  background-image: -webkit-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:    -moz-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:     -ms-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:      -o-linear-gradient(top, #ecf4f9, #fafcfd);
+  background-image:         linear-gradient(top, #ecf4f9, #fafcfd);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf4f9', EndColorStr='#fafcfd')";
+}
+.btn-gradient:active {
+  border-color: #a0b0c0 #c8d4e1 #cfdae6;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eaf7fd), to(#f9fdfe));
+  background-image: -webkit-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background-image:    -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background-image:     -ms-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background-image:      -o-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background-image:         linear-gradient(top, #eaf7fd, #f9fdfe);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
+}

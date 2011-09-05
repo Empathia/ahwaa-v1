@@ -27,10 +27,10 @@
               <%= linked_tag_list @topic.tags %>
             </p>
             <div class="social-bookmarkers border-left">
-              <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-left-2' do %>
+              <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-left-2 btn-twitter' do %>
                 <span class="twitter">t('.icons.social.twitter')</span>
               <% end %>
-               <%= link_to facebook_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-right-2' do %>
+               <%= link_to facebook_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-right-2 btn-facebook' do %>
                   <span class="facebook">t('.icons.social.facebook')</span>
                 <% end %>
               <div class="flash-privacy">

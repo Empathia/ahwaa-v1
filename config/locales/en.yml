@@ -313,6 +313,7 @@ en:
       sign_up: Sign Up
 
   stream:
+    stream: Stream
     title:
       reply:
         a: %{user} left a %{reply_type} on
@@ -323,3 +324,5 @@ en:
     sidebar:
       recommended_topics: Recommended Topics
       newest_topics: Newest Topics
+  my_topics:
+    title: My Topics

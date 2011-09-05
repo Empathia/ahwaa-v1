@@ -6,8 +6,8 @@
     <%= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow">
       <section class="streams border-left">
-        <div class="stream-title header-title-bg border-top-left">
-          <h2>Stream</h2>
+        <div class="stream-title header-title-bg border-all">
+          <h2><%= t 'stream.stream' %></h2>
           <div class="filter">
             <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
               <label><%= t 'stream.forms.labels.filter' %></label>
@@ -28,7 +28,7 @@
       </section>
       <section class="recommended-topics">
         <% unless @recommended.empty? %>
-          <h3><%= t '.sidebar.recommended_topics' %></h3>
+          <h3><%= t 'stream.sidebar.recommended_topics' %></h3>
           <ul>
             <% @recommended.each do |topic| %>
               <li class="border-all">
@@ -37,7 +37,7 @@
             <% end %>
           </ul>
         <% end %>
-        <h3><%= t '.sidebar.newest_topics' %></h3>
+        <h3><%= t 'stream.sidebar.newest_topics' %></h3>
         <ul>
           <% @newest.each do |topic| %>
             <li class="border-all">

@@ -1,10 +1,10 @@
 body {background-image:url("../../images/bg-noise-topic.jpg")}
-body > div {background:url("../../images/topic-bg.jpg") repeat-x fixed 0 105px transparent}
-.topics{background-color: #ffffff; margin-top:13px;border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
+body > div {background:url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent}
+.topics{background-color: #ffffff; border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
 .tag-items{padding:0 40px 14px;}
 .tag-item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative;}
-.tag-item-row .tag-item + div{padding-right:50px;}
-.tag-item-row .tag-item {width:415px; padding:25px 0; float:right}
+.tag-item-row .tag-item + div{padding-right: 30px;}
+.tag-item-row .tag-item {width: 415px; padding: 25px 0; float:right}
 .tag-items > div > div.bottom{border:none; padding:0;}
 .item-img > img {border:2px solid #FFFFFF; float:right}
 .item-img {border:1px solid #dadee0; float:right}

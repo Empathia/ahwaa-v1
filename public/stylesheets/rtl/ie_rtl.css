@@ -5,15 +5,18 @@
 .points-wrapper > span.silver-heart span{background-position:0 -60px}
 .points-wrapper > span.gold-heart span{background-position:0 -90px}
 
-.points-wrapper > .level span{float:right;height:30px;width:30px;background:url("../../images/hearts.png") no-repeat 0 0}
+.items-frontpage > li > .topic-spotlight {background-color: #fbfdfe; border-bottom: 1px solid #dae0e6}
+.items-frontpage > li > .topic-recent-historial {background-color: #f1f6f8}
+
+.points-wrapper > .level span{float:right; height: 30px; width: 30px; background: url("../../images/hearts.png") no-repeat 0 0}
 .points-wrapper > .level{background:#f3f3f3 url("../../images/hearts.png") no-repeat 0 0;}
 .avatar{border:1px solid rgb(206, 207, 208)}
 .items > li {background-color:rgb(234, 240, 243)}
-.icn > span{background-color: #3c454f;}         
-.tta{border-color: #3c454f transparent transparent;}  
+.icn > span{background-color: #3c454f;}
+.tta{border-color: #3c454f transparent transparent}
 input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_error.png') no-repeat 0 0}
 .auth-wrapper .auth-form-active > span,
-.auth-wrapper .auth-form-active > span:hover{padding-top: 1px; border-style: solid; border-color: #f3f3f3 #d4dce2 transparent #d4dce2; border-width: 1px;}
+.auth-wrapper .auth-form-active > span:hover{padding-top: 1px; border-width: 1px; border-style: solid; border-color: #f3f3f3 #d4dce2 transparent #d4dce2;}
 .over-form{border: 1px solid #d4dce2;}
 
 .auth-wrapper > a{height: auto; right: 0; padding: 0;}
@@ -22,3 +25,8 @@ input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_erro
 .over-form > ul > li > input[type="email"],
 .over-form > ul > li > input[type="password"]{line-height: 2.8;}
 .opacityWrapper{background: url('../../images/black-opacity.png')}
+
+.auth-wrapper #login.auth-form-active > span,
+.auth-wrapper #login.auth-form-active > span:hover,
+.auth-wrapper #sign-up.auth-form-active > span,
+.auth-wrapper #sign-up.auth-form-active > span:hover {border: 1px solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; margin-top: -1px}

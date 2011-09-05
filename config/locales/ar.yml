@@ -316,6 +316,7 @@ ar:
       sign_up: أنشئ حسابًا جديدًا
 
   stream:
+    stream: آخر المشاركات
     title:
       reply:
         a: %{user} ترك %{reply_type} علي
@@ -326,3 +327,5 @@ ar:
     sidebar:
       recommended_topics: المواضيع المرشحة
       newest_topics: أحدث المواضيع
+  my_topics:
+    title: موضوعاتي

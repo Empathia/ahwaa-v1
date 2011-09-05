@@ -1,13 +1,31 @@
 .topic > .links > div{padding-top: 4px;}
 .homepage > .links > div{padding-top: 8px;}
 
-.request-topic,
-.request-topic > span,
-.request-topic > span > span {background-image: url('../images/blue-btn-bg-rtl.png');}
+.auth-wrapper > #sign-up > span {padding: 2px 8px 0; height: 22px}
 
 #pm-wrapper .back-to-msgs .arrow{border-color: transparent transparent transparent #A7C7E3; border-width: 4px 0 4px 4px; margin: 2px 0 0 8px;}
 
 .placeimg{background-image: url('../images/pass_placeholder_ar.png');}
 
-.page-wrapper > .container{background: url('../images/bg-color-text-600-ar.jpg') no-repeat 50% 107px}
-.watch-video{margin-top: 20px;}
+.watch-video{margin-top: 50px;}
+
+.items-wrapper > .topics > h2 > .line {width: 157px}
+.items-wrapper > .feeds > h2 > .line {width: 172px}
+
+.social-bookmarkers > .btn-twitter {border-right-width: 1px !important}
+.social-bookmarkers > .btn-facebook {border-right-width: 0}
+.user-logged-info .activity-btns li:first-child {border-right-width: 1px !important}
+.user-logged-info .activity-btns li:last-child {border-right-width: 0 !important}
+.article-wrapper .article-tags {width: 275px}
+.user-wrapper .view-profile,
+.user-wrapper .send-private-msg {right: inherit}
+.view-more-wrapper > .view-more > span {background: url("../../images/view-more-bg.jpg") no-repeat scroll 0 3px transparent !important}
+.private-msg {left: -25px; right: inherit}
+.private-msg .origin {left: 40px; right: inherit}
+
+.panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
+
+/* UNIFORM */
+div.checker span {background-position: 0px -260px;}
+div.selector span {padding: 0 25px 0 2px !important; text-align: right}
+div.selector select {left: 0; right: inherit}

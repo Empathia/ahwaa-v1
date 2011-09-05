@@ -1,22 +1,55 @@
-body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92px}
-.container{background: url('../../images/bg-color-text-600.jpg') no-repeat 50% 107px}
-.slogan{height:165px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
+body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 0 106px}
+.container{background: url('../../images/bg-color-text-home.jpg') no-repeat 50% 106px}
+.slogan{height: 142px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 57px 0}
-.features{overflow: hidden; margin-bottom: 72px;}
+.features{overflow: hidden; margin: -18px 0 42px;}
+
+.items-frontpage > li {float:right; margin-bottom: 20px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+.items-frontpage > li > .topic-spotlight,
+.items-frontpage > li > .topic-recent-historial {width: 440px; float:right; padding: 10px;}
+.items-frontpage > li > .topic-spotlight {background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #dae0e6}
+.items-frontpage > li > .topic-recent-historial {background-color: rgba(255, 255, 255, 0.4)}
+.items-frontpage .topic-spotlight .avatar {width: 42px; height: 42px; padding: 3px}
+.topic-spotlight .avatar > span {top: 32px; right: 9px}
+.topic-spotlight .avatar img {width: 42px; height: 42px}
+.topic-spotlight .item-data {width: 380px}
+.topic-spotlight .item-data > div {margin-top: 3px}
+.items-frontpage .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
+.items-frontpage .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
+.items-frontpage .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 4px; background-repeat: no-repeat;}
+.items-frontpage .topic-spotlight .tags {font-size: 11px}
+.items-frontpage .topic-spotlight .tags > li:first-child {background-image: url("../../images/tag-horizontal.png"); background-position:100% 5px; background-repeat: no-repeat; padding-right: 20px}
+.items-frontpage .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../../images/icn-white-bubble-talk.png"); background-position:100% 0; background-repeat: no-repeat; padding-right: 17px; line-height: 14px}
+.items-frontpage .small-avatars {margin: 10px 0 5px; float:right}
+.items-frontpage .small-avatars li {float:right; margin-left: 15px}
+.items-frontpage .small-avatars .recently-topics > ul > li {float: none; margin-left: 0}
+.small-avatars .avatar {width: 24px; height: 24px; padding: 3px}
+.small-avatars .avatar > span {top: 20px; right: 5px}
+.small-avatars .avatar img {width: 24px; height: 24px}
+
 .items-wrapper > section{width: 460px; float:right;}
-.items-wrapper > section > h2{font-size: 16px; color: #3b3f42; border-bottom: 1px solid #c1d2de; padding-bottom: 7px; margin-bottom: 15px;}
+.items-wrapper > section > h2 {text-transform: uppercase; text-align: center; font-size: 16px; color: #546e86; float:right; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); padding-bottom: 6px; margin-bottom: 15px;}
+.items-wrapper > section > h2 > span {float:right; margin: 0 10px}
+.items-wrapper > section > h2 > .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 6px 0 0}
+.items-wrapper > .topics > h2 > .line {width: 115px}
+.items-wrapper > .feeds > h2 > .line {width: 145px}
+
 .items > li{width: 440px;}
 .item-data{width: 365px; line-height: 20px;}
-.topics{margin-left: 20px;}
-.feeds{margin-right: 20px;}
+.topics{margin-left: 10px;}
+.feeds{margin-right: 10px;}
 .item-data .feed-date{font-size: 11px; color: #bdc6cb;}
-.feature-wrapper{width: 302px; margin:5px 5px 5px 21px; float:right; text-align: center;}
+.feature-wrapper{width: 302px; margin:5px 5px 5px 11px; float:right; text-align: center;}
 .feature{background-color: #ffffff; height: 175px; border: 1px solid #a8bfcb; float:right; width: 100%; margin-top: 9px;}
 .features li:first-child{margin-right: 1px;}
 .features > .last-feature{margin-left: 1px;}
 
-.feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin-bottom: 7px;}
+.feature-wrapper h2{color: #275777; font-size: 28px; text-shadow: 1px 1px 1px #ffffff; margin: -1px 0 4px;}
 .feature-wrapper p{color: #707f8a; font-size: 16px; text-shadow: 0 1px 1px #f7fbfe;}
 .feature-image{position: relative; height: 200px;} 
 .feature-image > img{position: absolute; bottom: 0; right: 0;}
@@ -27,7 +60,7 @@ body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92p
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #5191c3),color-stop(1, #2865a3));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#5191c3', EndColorStr='#2865a3')";
-}    
+}
 #join > a{color: #ffffff; text-decoration: none; text-shadow: 0px -2px 2px #255890; height: 121px; display: block; border: 1px solid #8CB7D8; overflow: hidden;}
 #join > a > span{display: block; height: 51px; padding: 34px 0; border: 1px solid #669ecb;}
 .join-st-line{font-size: 36px; display: block;}
@@ -35,28 +68,28 @@ body > div > div{ background: url('../../images/bg-gradient.jpg') repeat-x 0 92p
 
 .presentation{color: #ffffff; font-family: "GothamBoldRegular"; text-align: center; font-size: 28px; font-weight: normal; overflow: hidden; text-indent: -9999px;}
 
-.watch-video{position: relative; height: 32px;}                    
+.watch-video{position: relative; height: 32px;}
 .watch-video > div{position: absolute; right: 50%; top: 0;}
-.watch-video > div > a{position: relative; right: -50%; border: 1px solid #6f9bb5; float:right;
-  -moz-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
-  -webkit-box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.07);
-  background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
-  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(1, #f9fdfe));
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";  
+.watch-video > div > a{position: relative; display: block; right: -50%; border: 1px solid #6f9bb5; float:right; background-color: #edf6fa;
+  -webkit-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;
+     -moz-box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;
+          box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5), inset 0 -1px 0 #fff;
+  background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #f9fdfe, #eaf7fd);
+  background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fdfe),color-stop(1, #eaf7fd));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd')";  
 
-}                         
+} 
 
 .watch-video > div > a:hover{
-  background-image: -moz-linear-gradient(top, #f9fdfe, #eaf7fd);
-  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fdfe),color-stop(1, #eaf7fd));
-  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd')";
+  background-image: -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
+  background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(0, #f9fdfe));
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
   
 .watch-video > div > a:hover{text-decoration: none;}
-.watch-video > div > a > span{background-image: url('../../images/icn-film.png'); background-repeat: no-repeat; background-position:100% 1px; margin:8px 8px 0 8px; float:right; padding:0 22px 8px 0;}
+.watch-video > div > a > span{background-image: url('../../images/icn-film.png'); background-repeat: no-repeat; background-position:100% 1px; margin:8px 8px 0 8px; float:right; padding:0 22px 8px 0; font-weight: bold; text-shadow: 0 1px 0 #fff}
 
 #watch-video-overlay{width: 790px;}
 .overlay-wrapper{position: absolute; right: 0; top: 0; display: none; z-index: 10000; background-color: #fcfaf4; float:right;

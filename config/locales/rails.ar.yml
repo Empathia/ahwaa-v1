@@ -52,19 +52,19 @@ ar:
         other: "%{count} دقيقة"
       about_x_hours:
         one:   "حوالي ساعة واحدة"
-        other: "حول %{count} ساعات"
+        other: "حوالي %{count} ساعات"
       x_days:
         one:   "يوم واحد"
         other: "%{count} أيام"
       about_x_months:
         one:   "حوالي شهر واحد"
-        other: "حول %{count} أشهر"
+        other: "حوالي %{count} أشهر"
       x_months:
         one:   "شهر واحد"
         other: "%{count} أشهر"
       about_x_years:
         one:   "حوالي سنة واحدة"
-        other: "حول %{count} سنة"
+        other: "حوالي %{count} سنة"
       over_x_years:
         one:   "أكثر من سنة"
         other: "أكثر من %{count} سنة"
@@ -121,6 +121,7 @@ ar:
       default: "%d-%m-%Y"
       short: "%b %d"
       long: "%B %d, %Y"
+      inbox: "%b %d, %Y"
       
     day_names: [الأحد ، الإثنين ، الثلاثاء، الأربعاء، الخميس، الجمعة، السبت]
     abbr_day_names: [الأحد، الإثنين ، الثلاثاء، الأربعاء ، الخميس ، الجمعة ، السبت]

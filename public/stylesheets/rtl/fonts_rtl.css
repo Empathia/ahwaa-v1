@@ -14,8 +14,18 @@
   font-style: normal;
 }
 
+@font-face {
+    font-family: 'Gotham-Light';
+    src: url('/stylesheets/fonts/gotham-light.eot');
+    src: url('/stylesheets/fonts/gotham-light.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/gotham-light.woff') format('woff'),
+         url('/stylesheets/fonts/gotham-light.ttf') format('truetype'),
+         url('/stylesheets/fonts/gotham-light.svg#gotham-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-h1{font-family: 'GothamMediumRegular'; font-weight: normal;}
+h1{font-family: 'Gotham-Light'; font-weight: normal;}
 body{font-family: Arial, Helvetica;}
 .sec-title, .h2{font-family: 'GothamBoldRegular';}
 .sec-title-med{font-family: 'GothamMediumRegular';}
@@ -23,7 +33,6 @@ body{font-family: Arial, Helvetica;}
 .items-wrapper > section > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
 .feature-wrapper h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
 .related-content > div > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
-.expand-btn{font-family: 'GothamBoldRegular';}
 .sign-up-btn{font-family: "GothamMediumRegular";}
 #pageslide-slide-wrap > div h2 {font-family: 'GothamMediumRegular';}
 
