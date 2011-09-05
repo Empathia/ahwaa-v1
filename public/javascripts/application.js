@@ -84,33 +84,31 @@ $(function() {
         clearTimeout(timer1);
         $(this).parent('.avatar').siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
     });
-    $('.avatar').hoverIntent(function () {
+    $('.avatar').hoverIntent(function (e) {
         var that = $(this),
-        rollover = that.siblings('.private-msg'),
-        rollover_right = ((rollover.width() - $('img', this).width()) / 2),
-        rollover_top = ($('img', this).height() + 15),
-        indicator = that.siblings('.private-msg').find('.origin'),
-        indicator_border_width = 10,
-        ind_right = ((rollover.width() - indicator_border_width) / 2);
+            rollover = that.siblings('.private-msg'),
+            rollover_left = rollover.css('left') ? rollover.css('left') : 0,
+            rollover_top = ($('img', this).height() + 10),
+            indicator = that.siblings('.private-msg').find('.origin'),
+            ind_width = 20,
+            ind_left = (( $('img', this).width() / 2) + ind_width),
+            xleft = rollover.offset().left,
+            xright = rollover.offset().left + rollover.outerWidth();
 
-        indicator.css({'right': ind_right});
-        rollover.css({'right': -rollover_right, 'top': rollover_top});
-        /*pm.show(0, function () {
-            if(pm.offset().left < 0 || pm.offset().left + pm.outerWidth() > $(window).width()) {
-                pm.addClass('inside');
-            }
-        });*/
-        /*
-        var xleft = rollover.offset().left,
-            xright = rollover.offset().left + rollover.width(),
-            ytop = rollover.offset().top,
-            ybottom = rollover.offset().top + rollover.height();
-        if (e.pageX > xright) {
+        if ((e.pageX + xright) > $(window).width()) {
             rollover.addClass('inside');
-        } else if (e.pageX < xleft) {
-            rollover.removeClass('inside');
-        }*/
-        
+            rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
+            indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
+            console.log(rollover_left)
+        } else {
+            if(rollover.hasClass('inside')) {
+                rollover.removeClass('inside')
+            } else {
+                indicator.css({'left': ind_left});
+            }
+        }
+        rollover.css({'top': rollover_top});
+
         rollover.fadeIn(100)
     }, function () {
         var that = $(this);
