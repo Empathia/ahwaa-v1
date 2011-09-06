@@ -947,7 +947,7 @@ form + .recently-topics{padding-top:18px;}
 .follow-topic-wrapper .secondary-button {padding: 4px 10px 0; height: 17px; font-size: 12px; display: block}
 
 .edit-secondary {width: 13px; height: 14px; overflow: hidden; text-indent: -999; font-size: 0; line-height: 0; background: url("../images/icn-pencil-2.png") 0 0 no-repeat; float: left}
-.edit-secondary:hover {text-decoration: none}
+.edit-secondary:hover {text-decoration: none; background-position: -14px 0}
 
 .panel-sub-nav {float: left; margin-right: 20px; width: 140px}
 .panel-sub-nav .sub-nav > li > a {color: #394551; text-sahdow: 0 1px 0 rgba(255, 255, 255, .35); display: block; height: 30px; line-height: 30px; text-shadow: 0 1px 0 rgba(255, 255, 255, .2);}

@@ -23,12 +23,12 @@ body > div {
 .topic-participation .topic-spotlight .item-data > div {margin-top: 3px}
 .topic-participation .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
 .topic-participation .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
-.topic-participation .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 4px; background-repeat: no-repeat;}
+.topic-participation .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 1px; background-repeat: no-repeat;}
 .topic-participation .topic-spotlight .tags {font-size: 11px}
-.topic-participation .topic-spotlight .tags > li:first-child {background-image: url("../../images/tag-horizontal.png"); background-position:100% 5px; background-repeat: no-repeat; padding-right: 20px}
+.topic-participation .topic-spotlight .tags > li:first-child {background-image: url("../../images/tag-horizontal.png"); background-position:100% 2px; background-repeat: no-repeat; padding-right: 20px}
 .topic-participation .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../../images/icn-white-bubble-talk.png"); background-position:100% 0; background-repeat: no-repeat; padding-right: 17px; line-height: 14px}
 .topic-participation .small-avatars {margin: 10px 0 5px; float:right}
-.topic-participation .small-avatars li {float:right; margin-left: 15px}
+.topic-participation .small-avatars > li {float:right; margin-left: 15px}
 .topic-participation .small-avatars .recently-topics > ul > li {float: none; margin-left: 0}
 .topic-participation .small-avatars .avatar {width: 24px; height: 24px; padding: 3px}
 .topic-participation .small-avatars .avatar > span {top: 20px; right: 5px}

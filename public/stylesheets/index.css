@@ -27,7 +27,7 @@ body > div > div{ background: url('../images/bg-gradient-home.jpg') repeat-x 0 1
 .items-frontpage .topic-spotlight .tags > li:first-child {background-image: url("../images/tag-horizontal.png"); background-position: 0 5px; background-repeat: no-repeat; padding-left: 20px}
 .items-frontpage .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; line-height: 14px}
 .items-frontpage .small-avatars {margin: 10px 0 5px; float: left}
-.items-frontpage .small-avatars li {float: left; margin-right: 15px}
+.items-frontpage .small-avatars > li {float: left; margin-right: 15px}
 .items-frontpage .small-avatars .recently-topics > ul > li {float: none; margin-right: 0}
 .small-avatars .avatar {width: 24px; height: 24px; padding: 3px}
 .small-avatars .avatar > span {top: 20px; left: 5px}

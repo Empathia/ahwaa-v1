@@ -27,8 +27,9 @@ body > div {
 .delete-message > a {float: right; padding: 2px 2px 2px 3px; width: 12px; height: 12px; margin-top: -2px}
 .messages-wrapper .delete-message .opt-delete {background-image: url('../images/icn-options-user.png'); background-position: 0 -13px; border-color: transparent; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
 .opt-reply {height: 16px; left: -22px; top: 33px; padding: 0; position: absolute; width: 16px; text-indent: -9999px; font-size: 0; line-height: 0;
-  background-image: url('../images/icn-reply-drk.png'); background-repeat: no-repeat;
+  background: url('../images/icn-reply-drk.png') 0 0; background-repeat: no-repeat;
 }
+.opt-reply:hover {background-position: -16px 0 }
 .new > .opt-reply {background-image: url('../images/icn-new-message-indicator.png'); background-repeat: no-repeat}
 
 #pm-wrapper .messages {padding: 20px 20px 40px 30px}

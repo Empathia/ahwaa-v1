@@ -19,7 +19,7 @@
               <div class="item-data">
                 <%= link_to topic.title, topic, :class => 'title dark-lk' %>
                 <div>
-                  <span class="by-author"><%= t('my_topics.grouped_topic.by', :author => topic.user).html_safe %></span>
+                  <span class="by-author"><%= t('my_topics.grouped_topic.by', :author => topic.user.username).html_safe %></span>
                   <%= link_to topic.replies.size, topic, :class => 'responses' %>
                   <ul class="tags">
                     <% topic.tags.each_with_index do |tag, i| %>

@@ -26,9 +26,7 @@
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
 
 .header-title-bg {height: 32px; padding: 6px 20px 0}
-
-.topic-participation .topic-spotlight .tags > li:first-child {background-position: 100% 2px !important}
-.topic-participation .topic-spotlight .responses {background-position: 100% 1px !important}
+.stream-wrapper .filter div.selector {margin-top: 0 !important}
 
 /* UNIFORM */
 div.checker span {background-position: 0px -260px;}
