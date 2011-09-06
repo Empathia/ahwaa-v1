@@ -15,13 +15,13 @@ body > div {
 .topic-participation > li > .topic-spotlight,
 .topic-participation > li > .topic-recent-historial {width: 720px; float:right; padding: 10px;}
 .topic-participation  > li > .topic-spotlight {background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #dae0e6}
-.topic-participation  > li > .topic-recent-historial {background-color: rgba(255, 255, 255, 0.4)}
+.topic-participation  > li > .topic-recent-historial {background-color: #f7f9fa}
 .topic-participation .topic-spotlight .avatar {width: 42px; height: 42px; padding: 3px}
 .topic-participation .topic-spotlight .avatar > span {top: 32px; right: 9px}
 .topic-participation .topic-spotlight .avatar img {width: 42px; height: 42px}
-.topic-participation .topic-spotlight .item-data {width: 660px}
+.topic-participation .topic-spotlight .item-data {width: 100%}
 .topic-participation .topic-spotlight .item-data > div {margin-top: 3px}
-.topic-participation .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
+.topic-participation .topic-spotlight .title {font-size: 18px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter; display: block; margin: 5px 0}
 .topic-participation .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
 .topic-participation .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 1px; background-repeat: no-repeat;}
 .topic-participation .topic-spotlight .tags {font-size: 11px}
