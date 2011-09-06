@@ -11,7 +11,13 @@
   </div>
   <div class="stream-item-data">
     <div>
-      <span class="user-comment"><%= stream_message.title %></span>
+      <span class="user-comment">
+        <% if stream_message.reply.user %>
+          <%= link_to stream_message.reply.user.username, user_stream_path(stream_message.reply.user.username) %>
+        <% else %>
+          <%= Reply.human_attribute_name(:anonymous) %>
+        <% end %>
+        <%= stream_message.title %></span>
       <span class="time-ago"><%= t 'helpers.ago', :time => time_ago_in_words(stream_message.reply.created_at) %></span>
       <br class="clear" />
     </div>

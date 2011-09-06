@@ -5,7 +5,7 @@
   </div>
   <div class="message-data">
     <div class="from">
-      <a href="#"><%= reply.sender.username %></a>
+      <%= link_to reply.sender.username, user_stream_path(reply.sender.username) %>
       <span class="date"><%= l(reply.created_at.to_date, :format => :inbox) %></span>
     </div>
     <div class="msg">

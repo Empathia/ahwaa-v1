@@ -47,6 +47,7 @@ Lgbt::Application.routes.draw do
   get '/tag/:tag' => "topics#tag", :as => :topic_tag
 
   get '/stream' => "home#stream", :as => :stream
+  get '/stream/:username' => "home#stream", :as => :user_stream
   get '/my_topics' => 'home#my_topics', :as => :my_topics
 
   root :to => "home#index"

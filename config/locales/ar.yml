@@ -319,14 +319,19 @@ ar:
     stream: آخر المشاركات
     title:
       reply:
-        a: %{user} ترك %{reply_type} علي
-        an: %{user} ترك %{reply_type} علي
+        a: ترك %{reply_type} علي
+        an: ترك %{reply_type} علي
     forms:
       labels:
         filter: من
     sidebar:
       recommended_topics: المواضيع المرشحة
       newest_topics: أحدث المواضيع
+    filters:
+      all: All topics
+      followed: Followed Topics
+      my_topics: My Topics
+      user_topics: %{username} Topics
   my_topics:
     title: موضوعاتي
     grouped_topic:

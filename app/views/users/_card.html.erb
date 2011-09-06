@@ -9,7 +9,7 @@
       <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
       <ul class="activity-btns">
         <li class="light-button  border-all-2<% unless current_user == user || !logged_in? %> border-right-2<% end %>">
-          <%= link_to '#', :title => t('private_message.view_profile') do  %>
+          <%= link_to user_stream_path(user.username), :title => t('private_message.view_profile') do  %>
             <span class="view-profile"><%= t('private_message.view_profile') %></span>
           <% end %>
          </li>

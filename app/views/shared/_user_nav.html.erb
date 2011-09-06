@@ -1,25 +1,26 @@
 <% javascript 'user-nav' %>
-
-<aside class="panel-sub-nav">
-  <ul class="sub-nav">
-    <li class="<%= 'active' if current_page?(stream_path) %>">
-      <%= link_to stream_path, :class => 'stream' do %>
-        <span class="icon"></span>
-        <%= t '.stream' %>
-      <% end %>
-    </li>
-    <li class="<%= 'active' if current_page?(inbox_user_path) %>">
-      <%= link_to inbox_user_path, :class => 'messages' do %>
-        <span class="icon"></span>
-        <%= t '.messages' %>
-        <span class="badge"><%= current_user.received_messages.unread.size %></span>
-      <% end %>
-    </li>
-    <li class="<%= 'active' if current_page?(my_topics_path) %>">
-      <%= link_to my_topics_path, :class => 'my-topics' do %>
-        <span class="icon"></span>
-        <%= t '.my_topics' %>
-      <% end %>
-    </li>
-  </ul>
-</aside>
+<% if logged_in? %>
+  <aside class="panel-sub-nav">
+    <ul class="sub-nav">
+      <li class="<%= 'active' if current_page?(stream_path) %>">
+        <%= link_to stream_path, :class => 'stream' do %>
+          <span class="icon"></span>
+          <%= t '.stream' %>
+        <% end %>
+      </li>
+      <li class="<%= 'active' if current_page?(inbox_user_path) %>">
+        <%= link_to inbox_user_path, :class => 'messages' do %>
+          <span class="icon"></span>
+          <%= t '.messages' %>
+          <span class="badge"><%= current_user.received_messages.unread.size %></span>
+        <% end %>
+      </li>
+      <li class="<%= 'active' if current_page?(my_topics_path) %>">
+        <%= link_to my_topics_path, :class => 'my-topics' do %>
+          <span class="icon"></span>
+          <%= t '.my_topics' %>
+        <% end %>
+      </li>
+    </ul>
+  </aside>
+<% end %>

@@ -17,7 +17,7 @@
       <%= render :partial => 'users/card', :locals => {:user => current_user} %>
     </div>
     <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>
-      <a href="#"><%= current_user.username %></a>
+      <%= link_to current_user.username, stream_path %>
       <div class="new-response response-wrapper reply-pm">
         <div class="response border-all">
           <%= hidden_field_tag :reply_to, message.id %>

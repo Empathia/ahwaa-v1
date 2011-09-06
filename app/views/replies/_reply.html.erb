@@ -19,7 +19,7 @@
         </div>
         <div class="res-username">
           <% unless reply.anonymous? %>
-            <span><%= reply.user.username %></span>
+            <span><%= link_to reply.user.username, user_stream_path(reply.user.username) %></span>
           <% else %>
             <%= t(".anonymous") %>
           <% end %>
