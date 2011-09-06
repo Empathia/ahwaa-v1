@@ -9,9 +9,9 @@
         <div class="stream-title header-title-bg border-all">
           <h2><%= t 'stream.stream' %></h2>
           <div class="filter">
-            <%= form_tag '/stream', :method => 'get', :class => 'filter-stream' do %>
+            <%= form_tag "/stream/#{params[:username]}", :method => 'get', :class => 'filter-stream' do %>
               <label><%= t 'stream.forms.labels.filter' %></label>
-              <%= select_tag :filter, options_for_select([['All Topics', 'all'], ['Followed Topics', 'followed'], ['My Topics', 'owned']], params[:filter]), :id => nil %>
+              <%= select_tag :filter, options_for_select(stream_filter_options(@user), params[:filter]), :id => nil %>
             <% end %>
           </div>
         </div>

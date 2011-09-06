@@ -9,8 +9,7 @@ class StreamMessage < ActiveRecord::Base
   def title
     @title ||= begin
       key = "stream.title.reply.#{reply.category == 'comment' ? 'a' : 'an'}"
-      user = reply.anonymous? ? Reply.human_attribute_name(:anonymous) : reply.user.username
-      I18n.t(key, :user => user, :reply_type => reply.i18n_category)
+      I18n.t(key, :reply_type => reply.i18n_category)
      end
   end
 

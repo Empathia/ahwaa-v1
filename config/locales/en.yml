@@ -316,14 +316,19 @@ en:
     stream: Stream
     title:
       reply:
-        a: %{user} left a %{reply_type} on
-        an: %{user} left an %{reply_type} on
+        a: left a %{reply_type} on
+        an: left an %{reply_type} on
     forms:
       labels:
         filter: From
     sidebar:
       recommended_topics: Recommended Topics
       newest_topics: Newest Topics
+    filters:
+      all: All topics
+      followed: Followed Topics
+      my_topics: My Topics
+      user_topics: %{username} Topics
   my_topics:
     title: My Topics
     grouped_topic:
