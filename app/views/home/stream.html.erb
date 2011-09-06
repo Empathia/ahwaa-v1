@@ -8,12 +8,14 @@
       <section class="streams border-left">
         <div class="stream-title header-title-bg border-all">
           <h2><%= t 'stream.stream' %></h2>
-          <div class="filter">
-            <%= form_tag "/stream/#{params[:username]}", :method => 'get', :class => 'filter-stream' do %>
-              <label><%= t 'stream.forms.labels.filter' %></label>
-              <%= select_tag :filter, options_for_select(stream_filter_options(@user), params[:filter]), :id => nil %>
-            <% end %>
-          </div>
+          <% if @user == current_user %>
+            <div class="filter">
+              <%= form_tag "/stream/#{params[:username]}", :method => 'get', :class => 'filter-stream' do %>
+                <label><%= t 'stream.forms.labels.filter' %></label>
+                <%= select_tag :filter, options_for_select(stream_filter_options(@user), params[:filter]), :id => nil %>
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="stream-items-wrapper">
           <%= render @stream %>

@@ -328,10 +328,10 @@ ar:
       recommended_topics: المواضيع المرشحة
       newest_topics: أحدث المواضيع
     filters:
-      all: All topics
-      followed: Followed Topics
-      my_topics: My Topics
-      user_topics: %{username} Topics
+      all: جميع الموضوعات
+      followed: موضوعاتي المتبعه
+      my_topics: موضوعاتي
+      user_topics: موضوعات %{username}
   my_topics:
     title: موضوعاتي
     grouped_topic:

@@ -1,5 +1,5 @@
 <% javascript 'user-nav' %>
-<% if logged_in? %>
+<% if @user == current_user %>
   <aside class="panel-sub-nav">
     <ul class="sub-nav">
       <li class="<%= 'active' if current_page?(stream_path) %>">

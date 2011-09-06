@@ -173,7 +173,7 @@ en:
       view_more: view more
     topic:
       popular:
-        by: By %{author}
+        by: by %{author}
         response: Response
     tag:
       sort_by:
