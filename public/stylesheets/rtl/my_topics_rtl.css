@@ -2,16 +2,12 @@ body > div {
     background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
 }
 .my-topics-wrapper {position: relative}
-.content.my-topics-wrapper .right-side {float:right; background: url("../../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 449px}
+.content.my-topics-wrapper .right-side {float:left; background: url("../../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 449px}
 
 .content.my-topics-wrapper .right-side h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float:right}
 
 .topic-participation {margin: 20px}
-.topic-participation > li {float:right; margin-bottom: 20px;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
-}
+.topic-participation > li {float:right; margin-bottom: 20px; border: 1px solid #dfe2e5}
 .topic-participation > li > .topic-spotlight,
 .topic-participation > li > .topic-recent-historial {width: 720px; float:right; padding: 10px;}
 .topic-participation  > li > .topic-spotlight {background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #dae0e6}

@@ -327,6 +327,7 @@ ar:
     sidebar:
       recommended_topics: المواضيع المرشحة
       newest_topics: أحدث المواضيع
+      send_message: Send Message
     filters:
       all: جميع الموضوعات
       followed: موضوعاتي المتبعه

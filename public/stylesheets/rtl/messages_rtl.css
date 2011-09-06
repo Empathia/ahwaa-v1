@@ -4,7 +4,7 @@ body > div {
 .messages-wrapper h3.pm-panel-padding {margin-top: 20px}
 .messages-wrapper .right-side {
     background: url("../../images/bg-article.png") repeat-x scroll 0 1px #FFFFFF;
-    float:right;
+    float:left;
     width: 780px;
 }
 .messages-wrapper .right-side .messages-title h2 {

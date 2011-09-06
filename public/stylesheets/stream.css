@@ -22,7 +22,6 @@ body > div {
   background-image:     -ms-linear-gradient(top, #f9fbfc, #f4f6f9);
   background-image:      -o-linear-gradient(top, #f9fbfc, #f4f6f9);
   background-image:         linear-gradient(top, #f9fbfc, #f4f6f9);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9')";
 }
 .recommended-topics li > a {display: block; padding: 10px}
@@ -38,21 +37,30 @@ body > div {
 .load-more-wrapper a {float: left}
 .load-more-wrapper .more-stream {display: block; height: 19px; padding: 5px 44px 0}
 
-.stream-wrapper .right-side {float: right; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff}
+.stream-wrapper .right-side {float: right; width: 780px; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff}
 .stream-wrapper .filter div.selector {margin-top: -7px; width: 140px}
 .stream-wrapper .filter div.selector span {width: 108px}
-.stream-wrapper .right-side .streams {float: left; border-right: 1px solid #dae0e6; min-height: 449px}
-.stream-item-data {float: right}
-.load-more-wrapper {overflow: hidden}
+.stream-wrapper .right-side .streams {float: left; width: 539px; border-right: 1px solid #dae0e6; min-height: 449px}
+.stream-item-data {float: right; width: 420px}
+.load-more-wrapper {overflow: hidden; margin: 27px 0 20px 183px}
 
-/* logged in */
-#logged_in .right-side {width: 780px}
-#logged_in .right-side .streams {width: 539px}
-#logged_in .stream-item-data {width: 420px}
-#logged_in .load-more-wrapper {margin: 27px 0 20px 183px}
-
-/* offline */
-.stream-wrapper .right-side {width: 100%}
-.stream-wrapper .right-side .streams {width: 699px}
-.stream-wrapper .stream-item-data {width: 585px}
-.stream-wrapper .load-more-wrapper {margin: 27px 0 20px 257px}
+.panel-sub-nav.user-info-wrapper {background-color: #fff; padding-top: 10px}
+.user-info-wrapper .user-info {margin-left: 60px}
+.user-info-wrapper .user-info .username { font-size: 13px; word-wrap: break-word}
+.user-info-wrapper .avatar {height: 34px; padding: 3px; width: 34px; margin-left: 10px}
+.user-info-wrapper .user-info .user-points {overflow: hidden; margin: 5px 0 10px 0}
+.user-info-wrapper .user-info .points {font-weight: bold; font-size: 12px; float: left; margin: 2px 0 0 2px}
+.user-info-wrapper > .send-msg {padding: 10px; border-top: 1px solid #cfdee6; display: block; color: #468ac4; font-size: 11px; line-height: 11px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#deeef6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #deeef6);
+  background-image:    -moz-linear-gradient(top, #ffffff, #deeef6);
+  background-image:     -ms-linear-gradient(top, #ffffff, #deeef6);
+  background-image:      -o-linear-gradient(top, #ffffff, #deeef6);
+  background-image:         linear-gradient(top, #ffffff, #deeef6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#deeef6');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#deeef6')";
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+     -moz-box-shadow: 0 1px 0 #fff inset;
+          box-shadow: 0 1px 0 #fff inset;
+}
+.user-info-wrapper > .send-msg > span {float: left; background: url("../images/icn-messages-2.png") no-repeat scroll 0 0 transparent; width: 15px; height: 11px; left: 10px; top: 4px; margin-right: 8px}

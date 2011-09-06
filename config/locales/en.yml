@@ -324,6 +324,7 @@ en:
     sidebar:
       recommended_topics: Recommended Topics
       newest_topics: Newest Topics
+      send_message: Send Message
     filters:
       all: All topics
       followed: Followed Topics

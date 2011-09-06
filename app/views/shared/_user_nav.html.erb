@@ -23,4 +23,21 @@
       </li>
     </ul>
   </aside>
+<% else %>
+  <aside class="panel-sub-nav user-info-wrapper border-all container-soft-box-shadow">
+     <div class="avatar-wrapper">
+        <%= avatar_span(@user, @user.is_expert?, false, "34x34") %>
+      </div>
+      <div class="user-info">
+         <h2 class="username"><%= @user.username.html_safe %></h2>
+         <div class="user-points small-hearts">
+            <span class="level <%= level_css_class_for_user(@user) %>"></span>
+            <span class="points"><%= @user.score_board.current_points %></span>
+        </div>
+      </div>
+      <a href="#" title="" class="send-msg border-bottom">
+        <span></span>
+        <%= t 'stream.sidebar.send_message' %>
+      </a>
+  </aside>
 <% end %>
