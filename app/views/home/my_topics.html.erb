@@ -12,14 +12,9 @@
         <% @topics.each do |topic| %>
           <li class="border-all">
             <div class="topic-spotlight border-top-3">
-              <div class="avatar-wrapper">
-                <%= avatar_span(topic.user, topic.user.is_expert?, true, "42x42") %>
-                <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
-              </div>
               <div class="item-data">
-                <%= link_to topic.title, topic, :class => 'title dark-lk' %>
+                <%= link_to topic.title, topic, :class => 'title' %>
                 <div>
-                  <span class="by-author"><%= t('my_topics.grouped_topic.by', :author => topic.user.username).html_safe %></span>
                   <%= link_to topic.replies.size, topic, :class => 'responses' %>
                   <ul class="tags">
                     <% topic.tags.each_with_index do |tag, i| %>
