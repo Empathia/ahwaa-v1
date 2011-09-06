@@ -622,20 +622,22 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
   box-shadow: 0 0 3px rgba(0, 0, 0, .25);
 }
 .request-error.auth-form-active{display: block;}
-.request-error{width: 265px; height: 97px; position: absolute; display: none; top: 32px; right: -75px; z-index: 999}
-.request-error > span{border-color: transparent transparent #faf8e5; border-style: solid; border-width: 0px 10px 10px; float: left; height: 0px; margin: 0px 116px; width: 0px;}
-.request-error > div{float: left; border-bottom: 1px solid #cac8b1; padding: 13px 15px 10px; background-color: #fffcd9; background-color: rgba(255, 252, 217, .97);
-  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
-  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
+.request-error{width: 265px; height: 97px; position: absolute; display: none; top: 32px; right: -67px; z-index: 999}
+.request-error > .arrow-shadow {border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 0px 10px 10px; float: left; position: relative; bottom: -1px; height: 0px; margin: 0px 122px; width: 0px;}
+.request-error > .arrow-shadow > .arrow {border-color: transparent transparent #faf8e5; border-style: solid; border-width: 0px 8px 8px; position: relative; left: -8px; top: -13px}
+
+.request-error > div {float: left; border: 1px solid #F4F0B8; border-bottom: 1px solid #cac8b1; padding: 13px 15px 10px; background-color: #fffcd9; background-color: rgba(255, 252, 217, .97);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 0 1px #fffeeb;
 }
 .request-error > div.clear{width:auto; height:auto; float:none; border:none; padding:0}
 .sign-up-legend{font-weight: bold; text-align: center; color: #52503b; line-height: 1.3; margin: 0 0 8px 0; font-size: 12px;}
 .request-error > div > a{height: 26px; overflow: hidden; text-decoration: none; border: 1px solid #3C7EBB; display: inline-block; line-height: inherit; float: none}
 .request-error > div > a > span{padding: 5px 8px 0; border: 1px solid; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; height: 19px; display: block}
 
-.disabled{-moz-opacity: .50; filter: alpha(opacity=50); opacity: .50;}
-.request-topic.disabled{-moz-opacity: 0.5; filter: alpha(opacity=50); opacity:.0.5;}
+.disabled{-moz-opacity: .5; opacity: .5}
+.request-topic.disabled{-moz-opacity: .5; opacity: .5}
 
 .btn-gradient{text-align: center; float: left; border-style: solid; border-width: 1px; border-color: #d2e3ec #cddfe9 #a0bfd1;
   background-image: -moz-linear-gradient(top, #fff, #eaf7fd);
