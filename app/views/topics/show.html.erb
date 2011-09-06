@@ -22,7 +22,7 @@
           </div>
           <div class="right">
             <h1><%= @topic.title %></h1>
-            <span class="by-author"><%= t '.by', :author => @topic.user.username %></span>
+            <span class="by-author"><%= raw t '.by', :author => link_to(@topic.user.username, user_stream_path(@topic.user.username)) %></span>
             <p class="article-tags">
               <%= linked_tag_list @topic.tags %>
             </p>

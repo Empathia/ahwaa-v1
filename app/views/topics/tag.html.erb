@@ -20,8 +20,8 @@
                     <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
                   </div>
                   <div class="tag-item-data">
-                    <%= link_to topic.title, topic, :class => 'dark-lk' %>           
-                    <%= t('topics.topic.popular.by', :author => topic.user.username).html_safe %>
+                    <%= link_to topic.title, topic, :class => 'dark-lk' %>
+                    <%= raw t 'topics.topic.popular.by', :author => link_to(topic.user.username, user_stream_path(topic.user.username)) %>
                     <br />
                     <ul class="tags">
                       <% topic.tags.each_with_index do |tag, i| %>

@@ -14,7 +14,7 @@ class HomeController < ApplicationController
     @stream_messages = stream_users.page(params[:page]).per_page(15)
     @stream = @stream_messages.map(&:stream_message)
     if request.format == :html && !request.xhr?
-      @recommended = @user.recommended_topics(5)
+      @recommended = @user == current_user ? @user.recommended_topics(5) : []
       @newest = Topic.newest(I18n.locale).limit(5)
     end
 
