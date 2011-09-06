@@ -1,5 +1,6 @@
 body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 0 106px}
 .container{background: url('../../images/bg-color-text-home.jpg') no-repeat 50% 106px}
+.rtl .container{background: url('../../../images/bg-color-text-home-ar.jpg') no-repeat 50% 106px}
 .slogan{height: 142px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 57px 0}
@@ -18,11 +19,11 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .topic-spotlight .avatar > span {top: 32px; right: 9px}
 .topic-spotlight .avatar img {width: 42px; height: 42px}
 .topic-spotlight .item-data {width: 380px}
-.topic-spotlight .item-data > div {margin-top: 3px}
+.topic-spotlight .item-data > div {margin-top: 3px; overflow: hidden}
 .items-frontpage .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
 .items-frontpage .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
 .items-frontpage .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 4px; background-repeat: no-repeat;}
-.items-frontpage .topic-spotlight .tags {font-size: 11px}
+.items-frontpage .topic-spotlight .tags {font-size: 11px; float:right}
 .items-frontpage .topic-spotlight .tags > li:first-child {background-image: url("../../images/tag-horizontal.png"); background-position:100% 5px; background-repeat: no-repeat; padding-right: 20px}
 .items-frontpage .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../../images/icn-white-bubble-talk.png"); background-position:100% 0; background-repeat: no-repeat; padding-right: 17px; line-height: 14px}
 .items-frontpage .small-avatars {margin: 10px 0 5px; float:right}

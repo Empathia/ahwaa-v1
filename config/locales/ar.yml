@@ -329,3 +329,9 @@ ar:
       newest_topics: أحدث المواضيع
   my_topics:
     title: موضوعاتي
+    grouped_topic:
+      by: بواسطة %{author}
+      recent_participants:
+        zero: لم يشارك أحد في هذا الموضوع منذ يومين
+        one: شخص واحد فقط شارك في هذا الموضوع منذ يومين
+        other: %{count} شخص شارك في هذا الموضوع منذ يومين

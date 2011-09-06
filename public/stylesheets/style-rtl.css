@@ -9,9 +9,9 @@
 
 .watch-video{margin-top: 50px;}
 
-.items-wrapper > .topics > h2 > .line {width: 157px}
-.items-wrapper > .feeds > h2 > .line {width: 172px}
-
+.items-wrapper > .topics > h2 > .line {width: 157px !important}
+.items-wrapper > .feeds > h2 > .line {width: 172px !important}
+.items-wrapper > section > h2 > .line {margin-top: 11px !important}
 .social-bookmarkers > .btn-twitter {border-right-width: 1px !important}
 .social-bookmarkers > .btn-facebook {border-right-width: 0}
 .user-logged-info .activity-btns li:first-child {border-right-width: 1px !important}
@@ -24,6 +24,11 @@
 .private-msg .origin {left: 40px; right: inherit}
 
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
+
+.header-title-bg {height: 32px; padding: 6px 20px 0}
+
+.topic-participation .topic-spotlight .tags > li:first-child {background-position: 100% 2px !important}
+.topic-participation .topic-spotlight .responses {background-position: 100% 1px !important}
 
 /* UNIFORM */
 div.checker span {background-position: 0px -260px;}

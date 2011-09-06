@@ -5,3 +5,31 @@ body > div {
 .content.my-topics-wrapper .right-side {float:right; background: url("../../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 449px}
 
 .content.my-topics-wrapper .right-side h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float:right}
+
+.topic-participation {margin: 20px}
+.topic-participation > li {float:right; margin-bottom: 20px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+     -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+.topic-participation > li > .topic-spotlight,
+.topic-participation > li > .topic-recent-historial {width: 720px; float:right; padding: 10px;}
+.topic-participation  > li > .topic-spotlight {background-color: rgba(255, 255, 255, 0.8); border-bottom: 1px solid #dae0e6}
+.topic-participation  > li > .topic-recent-historial {background-color: rgba(255, 255, 255, 0.4)}
+.topic-participation .topic-spotlight .avatar {width: 42px; height: 42px; padding: 3px}
+.topic-participation .topic-spotlight .avatar > span {top: 32px; right: 9px}
+.topic-participation .topic-spotlight .avatar img {width: 42px; height: 42px}
+.topic-participation .topic-spotlight .item-data {width: 660px}
+.topic-participation .topic-spotlight .item-data > div {margin-top: 3px}
+.topic-participation .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
+.topic-participation .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
+.topic-participation .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 4px; background-repeat: no-repeat;}
+.topic-participation .topic-spotlight .tags {font-size: 11px}
+.topic-participation .topic-spotlight .tags > li:first-child {background-image: url("../../images/tag-horizontal.png"); background-position:100% 5px; background-repeat: no-repeat; padding-right: 20px}
+.topic-participation .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../../images/icn-white-bubble-talk.png"); background-position:100% 0; background-repeat: no-repeat; padding-right: 17px; line-height: 14px}
+.topic-participation .small-avatars {margin: 10px 0 5px; float:right}
+.topic-participation .small-avatars li {float:right; margin-left: 15px}
+.topic-participation .small-avatars .recently-topics > ul > li {float: none; margin-left: 0}
+.topic-participation .small-avatars .avatar {width: 24px; height: 24px; padding: 3px}
+.topic-participation .small-avatars .avatar > span {top: 20px; right: 5px}
+.topic-participation .small-avatars .avatar img {width: 24px; height: 24px}

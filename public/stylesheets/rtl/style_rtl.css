@@ -378,7 +378,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .header-tags{height: 100%; position:relative; overflow: hidden;}
 .header-tags > ul{border-right: 1px solid #e0e9ee; float:right; height: 100%;}
 .header-tags > ul > li{float:right; height: 100%; border-left: 1px solid #e0e9ee;}
-.header-tags > ul > li > a{text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float:right; font-weight: bold}
+.header-tags > ul > li > a{text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float:right; font-weight: bold; text-shadow: 0 1px 1px rgba(255, 255, 255, 1)}
 .header-tags .more {position:relative;}
 .header-tags .more > a{padding:0 20px 0 16px;}
 .more > a{text-decoration:none; outline:0 none;}
@@ -387,14 +387,15 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .more > a > span{background-image: url('../../images/more.png'); background-repeat: no-repeat; background-position:0 6px; padding-left: 12px;}
 .more:hover > a > span{background-position:0 -19px;}
 
-.more-tags{min-width: 130px; background-color: #f6f9fb; position: absolute; top: 39px; display: none; right: 0; z-index: -1;
+.more-tags{min-width: 130px; background-color: #f6f9fc; position: absolute; top: 39px; display: none; right: 0; z-index: -1;
   -moz-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 2px rgba(42, 83, 110, .6);
 }
 .more-tags > .scroller { overflow:hidden; }
-.more-tags ul > li{height: 36px; border-bottom: 1px solid #eaeef0; padding:0 15px; line-height: 3; font-weight:bold; white-space:nowrap;}
+.more-tags ul > li {height: 36px; border-bottom: 1px solid #e0e9ee; padding:0 15px; line-height: 3; font-weight:bold; white-space:nowrap;}
 .more-tags ul > li:last-child{border-bottom: none;}
+.more-tags ul > li > a {display: block}
 .more-tags > .arrow {text-align:center; background-color:#fff; display: block; position: relative; overflow: hidden; text-decoration:none; padding: 6px 0;}
 .more-tags > .scroll-up {border-bottom: 1px solid #eaeef0;}
 .more-tags > .scroll-down {border-top: 1px solid #eaeef0;}
@@ -648,7 +649,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 }
 
 .responses {background-color: transparent; background-image: url("../../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position:100% 4px; padding-right:15px; display:inline!important; white-space:nowrap; float:right; font-size: 11px;}
-.tags{margin: 0 10px;}   
+.tags{margin-left: 10px; margin-right: 10px}   
 .tags > li:first-child{background-image: url('../../images/tag.png'); background-repeat: no-repeat; background-position:100% 3px; padding-right: 20px;}
 .tags > .last-tag{margin-left: 10px;}
 .response-wrapper{border: 1px solid #daecf3; position: relative;}

@@ -326,3 +326,9 @@ en:
       newest_topics: Newest Topics
   my_topics:
     title: My Topics
+    grouped_topic:
+      by: By %{author}
+      recent_participants:
+        zero: no one has participated in this topic in the past 2 days
+        one: one person has participated in this topic in the past 2 days
+        other: %{count} people have participated in this topic in the past 2 days

@@ -19,7 +19,7 @@
               <div class="item-data">
                 <%= link_to topic.title, topic, :class => 'title dark-lk' %>
                 <div>
-                  <span class="by-author"><%= t('.by', :author => topic.user).html_safe %></span>
+                  <span class="by-author"><%= t('my_topics.grouped_topic.by', :author => topic.user).html_safe %></span>
                   <%= link_to topic.replies.size, topic, :class => 'responses' %>
                   <ul class="tags">
                     <% topic.tags.each_with_index do |tag, i| %>
@@ -32,7 +32,7 @@
               </div>
             </div>
             <div class="topic-recent-historial border-bottom-3">
-              <p class="collaborations"><%= t '.recent_participants', :count => topic.recent_participants.size %></p>
+              <p class="collaborations"><%= t 'my_topics.grouped_topic.recent_participants', :count => topic.recent_participants.size %></p>
               <% if topic.recent_participants.length > 0 %>
               <ul class="small-avatars">
                 <% topic.recent_participants.each do |user| %>

@@ -31,7 +31,7 @@
   <![endif]-->
 </head>
 <body>
-  <div class="page-wrapper">
+  <div class="page-wrapper <%= 'rtl'.html_safe if rtl? %>">
     <%= print_flash %>
       <header>
         <div class="rainbow"></div>
