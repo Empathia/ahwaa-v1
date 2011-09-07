@@ -1,12 +1,23 @@
-env = node['environment']['framework_env']
-current_path = "/data/transcend/current"
-shared_path = "/data/transcend/shared"
-shared_locales_js = "#{shared_path}/javascripts/locales.js"
-locales_js = "#{current_path}/public/javascripts/locales.js"
-all_js = "#{current_path}/public/javascripts/all.js"
+cmd_prefix = "GEM_HOME=#{status.gem_home} RAILS_ENV=#{node.environment.framework_env}"
 
-puts "Copying babilu locales for javascript"
-run "cd #{current_path} && rake babilu:generate RAILS_ENV=#{env}"
-run "cp #{shared_locales_js} #{locales_js}"
-run "rm #{all_js}" if ::File.exists?(all_js)
+execute "Generate babilu js files" do
+  always_run true
+  owner app[:user]
+  path release_path
+  command "#{cmd_prefix} rake babilu:generate"
+end
+
+execute "Copy generated I18n files" do
+  always_run true
+  owner app[:user]
+  path release_path
+  command "cp /data/ahwaa/shared/javascripts/locales.js public/javascripts/locales.js"
+end
+
+execute "Remove all.js file" do
+  always_run true
+  owner app[:user]
+  path release_path
+  command "rm -f public/javascripts/all.js"
+end
 
