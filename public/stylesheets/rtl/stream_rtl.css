@@ -50,7 +50,7 @@ body > div {
 .user-info-wrapper .avatar {height: 34px; padding: 3px; width: 34px; margin-right: 10px}
 .user-info-wrapper .user-info .user-points {overflow: hidden; margin:5px 0 10px 0}
 .user-info-wrapper .user-info .points {font-weight: bold; font-size: 12px; float:right; margin:2px 2px 0 0}
-.user-info-wrapper > .send-msg {padding: 10px; border-top: 1px solid #cfdee6; display: block; color: #468ac4; font-size: 11px; line-height: 11px;
+.user-info-wrapper > .send-msg {padding: 10px; border-top: 1px solid #cfdee6; display: block; color: #468ac4; font-size: 11px; font-weight: bold; line-height: 11px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#deeef6));
   background-image: -webkit-linear-gradient(top, #ffffff, #deeef6);
   background-image:    -moz-linear-gradient(top, #ffffff, #deeef6);
@@ -63,4 +63,22 @@ body > div {
      -moz-box-shadow: 0 1px 0 #fff inset;
           box-shadow: 0 1px 0 #fff inset;
 }
+.user-info-wrapper > .send-msg:hover {text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#deeef6), to(#ffffff));
+  background-image: -webkit-linear-gradient(top, #deeef6, #ffffff);
+  background-image:    -moz-linear-gradient(top, #deeef6, #ffffff);
+  background-image:     -ms-linear-gradient(top, #deeef6, #ffffff);
+  background-image:      -o-linear-gradient(top, #deeef6, #ffffff);
+  background-image:         linear-gradient(top, #deeef6, #ffffff);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#deeef6', EndColorStr='#ffffff');
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#deeef6', EndColorStr='#ffffff')";
+  -webkit-box-shadow: 0 1px 0 #fff inset;
+     -moz-box-shadow: 0 1px 0 #fff inset;
+          box-shadow: 0 1px 0 #fff inset;
+}
+.user-info-wrapper > .send-msg:active {background-image: none; background-color: #deeef6;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset;
+     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset;
+          box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset
+} 
 .user-info-wrapper > .send-msg > span {float:right; background: url("../../images/icn-messages-2.png") no-repeat scroll 0 0 transparent; width: 15px; height: 11px; right: 10px; top: 4px; margin-left: 8px}
