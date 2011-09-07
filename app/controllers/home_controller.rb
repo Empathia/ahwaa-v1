@@ -26,6 +26,7 @@ class HomeController < ApplicationController
 
   def my_topics
     @topics = current_user.topics
+    @user = current_user
   end
 
   def privacy_policy
