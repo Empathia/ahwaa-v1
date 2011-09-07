@@ -769,7 +769,9 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > span{left: 8px; top: 29px;}
 
-.private-msg.send-from-stream {top: 95px}
+.send-from-stream {top: 95px; background-color: #F0F6FC; border: 1px solid rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px rgba(42, 83, 110, 0.6); display: none; font-size: 12px; left: -25px; padding: 3px; position: absolute; text-align: left; width: 290px; z-index: 9999}
+.send-from-stream > form {display: block; background:#ffffff; padding: 16px; margin:0}
+
 .private-msg {display:none; position: absolute; top: 70px; left: -25px; width: 290px; background-color: #f0f6fc; padding: 3px; border: 1px solid rgba(0, 0, 0, .2); text-align:left; z-index:999; font-size:12px;
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
@@ -777,14 +779,19 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 }
 
 .private-msg .origin,
-.private-msg .origin span {border: 10px solid; height: 0; position: absolute; width: 0}
-.private-msg .origin {border-color: transparent transparent #ccc; left: 40px; top: -20px}
-.private-msg .origin > span {border-color: transparent transparent #FAFCFF; left: -10px; top: -8px}
-.private-msg .origin > span > span {border-color: transparent transparent #fff; top: -7px; left: -10px}
+.private-msg .origin span,
+.send-from-stream .origin,
+.send-from-stream .origin span {border: 10px solid; height: 0; position: absolute; width: 0}
+.private-msg .origin,
+.send-from-stream .origin {border-color: transparent transparent #ccc; left: 40px; top: -20px}
+.private-msg .origin > span,
+.send-from-stream .origin > span {border-color: transparent transparent #FAFCFF; left: -10px; top: -8px}
+.private-msg .origin > span > span,
+.send-from-stream .origin > span > span {border-color: transparent transparent #fff; top: -7px; left: -10px}
 
-.private-msg.send-from-stream > form {display: block; background:#ffffff; padding: 16px; margin:0}
 .private-msg > form {display: block; background:#ffffff; display: none; padding: 7px 16px 0; margin:0;}
-.private-msg > form > textarea{min-width: 234px; width: 234px; max-width: 234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
+.private-msg > form > textarea,
+.send-from-stream > form > textarea {min-width: 234px; width: 234px; max-width: 234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
 .private-msg-btns{text-align:right}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
 .private-msg-btns > a.cancel{margin-right:8px; color: #404750; font-size:13px;}
