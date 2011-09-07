@@ -22,6 +22,7 @@
 .view-more-wrapper > .view-more > span {background: url("../../images/view-more-bg.jpg") no-repeat scroll 0 3px transparent !important}
 .private-msg {left: -25px; right: inherit}
 .private-msg .origin {left: 40px; right: inherit}
+.private-msg.send-from-stream .origin {right: 40px}
 
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
 
