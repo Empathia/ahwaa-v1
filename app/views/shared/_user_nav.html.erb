@@ -35,9 +35,11 @@
             <span class="points"><%= @user.score_board.current_points %></span>
         </div>
       </div>
+      <% unless !logged_in? %>
       <a href="#" title="" class="send-msg border-bottom">
         <span></span>
         <%= t 'stream.sidebar.send_message' %>
       </a>
+      <% end %>
   </aside>
 <% end %>
