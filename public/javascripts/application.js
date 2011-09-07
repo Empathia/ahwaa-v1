@@ -120,7 +120,7 @@ $(function() {
         clearTimeout(timer1);
     });
     $('.private-msg').mouseleave(function () {
-        $(this).hide();
+        $(this).fadeOut(100);
     });
 });
 

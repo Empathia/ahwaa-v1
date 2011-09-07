@@ -36,10 +36,28 @@
         </div>
       </div>
       <% unless !logged_in? %>
-      <a href="#" title="" class="send-msg border-bottom">
+      <a href="#" title="<%= t 'stream.sidebar.send_message' %>" class="send-msg border-bottom js-stream-send-msg">
         <span></span>
         <%= t 'stream.sidebar.send_message' %>
       </a>
+      <div class="private-msg send-from-stream border-all">
+        <span class="origin">
+          <span>
+            <span></span>
+          </span>
+        </span>
+        <form class="form-private-msg">
+          <div class="flash-privacy">
+            <div class="border-all"><%=  t('private_message.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+          </div>
+          <textarea class="border-all" placeholder="<%= t('private_message.write_msg') %>"></textarea>
+          <div class="private-msg-btns">
+            <%= link_to t('private_message.cancel'), '#', :class => 'cancel' %>
+           <input id="private_message_submit" class="btn-gradient" type="submit" value="Submit" name="commit">
+          </div>
+        </form>
+      </div>
+      
       <% end %>
   </aside>
 <% end %>
