@@ -58,11 +58,16 @@ $(function() {
      });
 
     $(".request-topic.active").pageSlide({ width: "556px", direction: I18n.locale == 'ar' ? 'right' : "left", modal: true }).click(function(){
-        var sidebar = $(".article-wrapper").find('aside');
+        var sidebar = $(".article-wrapper").find('aside'),
+        nav_user = $("aside.panel-sub-nav"),
+        nav_user_top,
+        rtl = $('html').attr('dir') == 'rtl';
         sidebar.length && sidebar.data('fixed') == true && sidebar.css({position : "absolute", bottom: "auto", right: 0, left: "auto", top: sidebar.position().top - 126}) && sidebar.data("fixed", false);
+        //($.browser.webkit && rtl) ? (nav_user_top = nav_user.position().top-70)  : (nav_user_top = nav_user.position().top);
+        nav_user_top = nav_user.position().top - 70;
+        nav_user.css({position: 'absolute', top: nav_user_top}).fadeOut();
         $('#pageslide-blanket').css('min-height', $(document).height());
         $('.pageslide-body-wrap').addClass('jlo');
-        $('.flash-privacy').show();
     });
 
     $('.more').hover(function () {
@@ -99,7 +104,6 @@ $(function() {
             rollover.addClass('inside');
             rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
             indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
-            console.log(rollover_left)
         } else {
             if(rollover.hasClass('inside')) {
                 rollover.removeClass('inside')

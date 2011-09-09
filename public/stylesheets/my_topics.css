@@ -1,6 +1,3 @@
-body > div {
-    background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
-}
 .my-topics-wrapper {position: relative}
 .content.my-topics-wrapper .right-side {float: right; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 449px}
 

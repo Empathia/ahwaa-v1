@@ -1,3 +1,4 @@
+body > div {background: none}
 body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 0 106px}
 .container{background: url('../../images/bg-color-text-home.jpg') no-repeat 50% 106px}
 .rtl .container{background: url('../../../images/bg-color-text-home-ar.jpg') no-repeat 50% 106px}

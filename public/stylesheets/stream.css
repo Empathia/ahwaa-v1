@@ -1,8 +1,4 @@
-body > div {
-    background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
-}
 .stream-wrapper {position: relative}
-
 .stream-wrapper .right-side .stream-title {
       -moz-border-radius-topleft: 3px;
   -webkit-border-top-left-radius: 3px;

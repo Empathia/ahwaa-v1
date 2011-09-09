@@ -269,6 +269,8 @@ $.fn.pageSlide = function(opts) {
               psBodyWrap.css('overflow', '');
               _overflowFixRemove();
           });
+          var nav_user = $('aside.panel-sub-nav');
+          nav_user.css({position: 'fixed', top: 'auto'}).fadeIn(1000);
           ($.browser.webkit || $.browser.msie) && header.animate(direction);
         }
       }

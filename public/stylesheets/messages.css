@@ -1,6 +1,4 @@
-body > div {
-    background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent;
-}
+.messages-wrapper {position: relative}
 .messages-wrapper h3.pm-panel-padding {margin-top: 20px}
 .messages-wrapper .right-side {
     background: url("../images/bg-article.png") repeat-x scroll 0 1px #FFFFFF;

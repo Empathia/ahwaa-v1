@@ -1,5 +1,6 @@
 html {height: 100%}
 body {font-size: 13px; color: #61656a; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background-color: #e3ecf0; background-image: url('../../images/bg-noise-home.jpg'); background-repeat: repeat; background-attachment: fixed; height: 100%}
+body > div {background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
 h1 {font-size: 24px; line-height: 32px}
 h1,
 h2 {color: #393c3f}
@@ -9,7 +10,7 @@ h2 {color: #393c3f}
 h3,
 .regular {font-size: 13px; color: #61656a}
 body .hidden {display: none}
-.page-wrapper {min-height: 100%}
+.page-wrapper {min-height: 100%; overflow: hidden}
 .page-wrapper > header {background-color:#f7fafc; position: fixed; width: 100%; z-index: 1000;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .6);
      -moz-box-shadow: 0 0 3px rgba(0, 0, 0, .6);
@@ -798,7 +799,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .private-msg > .avatar{float:left;}
 .form-private-msg > .flash-privacy{margin:0 0 15px 0;}
 
-.user-wrapper {padding: 9px 9px 0; background:#ffffff;
+.user-wrapper {padding: 9px 9px 0; background:#ffffff; overflow: hidden;
   border-top-left-radius:3px;
   -moz-border-radius-topleft:3px;
   -webkit-border-top-left-radius:3px;
@@ -953,7 +954,7 @@ form + .recently-topics{padding-top:18px;}
 .edit-secondary {width: 13px; height: 14px; overflow: hidden; text-indent: -999; font-size: 0; line-height: 0; background: url("../../images/icn-pencil-2.png") 0 0 no-repeat; float:right}
 .edit-secondary:hover {text-decoration: none; background-position: -14px 0}
 
-.panel-sub-nav {position: fixed; width: 140px}
+.panel-sub-nav {width: 140px; margin-left: 800px; position: fixed; z-index: 99}
 .panel-sub-nav .sub-nav > li > a {color: #394551; text-sahdow: 0 1px 0 rgba(255, 255, 255, .35); display: block; height: 30px; line-height: 30px; text-shadow: 0 1px 0 rgba(255, 255, 255, .2);}
 .panel-sub-nav .sub-nav > li > a > .badge {
   color: #fff; background-color: #61738b; background-color: rgba(0, 0, 0, .3); font-size: 12px; line-height: 15px; margin:7px 0 0 6px; float:left; font-weight: bold; padding: 1px 5px; text-shadow: 0 1px 0 rgba(0, 0, 0, 1);
