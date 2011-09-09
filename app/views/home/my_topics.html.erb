@@ -7,43 +7,47 @@
        <div class="my-topics-title header-title-bg border-all">
         <h2><%= t 'my_topics.title' %></h2>
       </div>
-      <ul class="topic-participation">
+      <% if @topics.empty? %>
+        <p>You haven't started any topics yet! Navigate to <strong>"Request a Topic"</strong> in the header to create one.</p>
+      <% else %>
+        <ul class="topic-participation">
 
-        <% @topics.each do |topic| %>
-          <li class="border-all">
-            <div class="topic-spotlight border-top-3">
-              <div class="item-data">
-                <%= link_to topic.title, topic, :class => 'title' %>
-                <div>
-                  <%= link_to topic.replies.size, topic, :class => 'responses' %>
-                  <ul class="tags">
-                    <% topic.tags.each_with_index do |tag, i| %>
-                      <li class="<%= "last-tag" if i == topic.tags.length-1 %>">
-                        <%= link_to tag, topic_tag_path(tag.id) %><%= ',' unless i == topic.tags.length-1 %>
-                      </li>
-                    <% end %>
-                  </ul>
+          <% @topics.each do |topic| %>
+            <li class="border-all">
+              <div class="topic-spotlight border-top-3">
+                <div class="item-data">
+                  <%= link_to topic.title, topic, :class => 'title' %>
+                  <div>
+                    <%= link_to topic.replies.size, topic, :class => 'responses' %>
+                    <ul class="tags">
+                      <% topic.tags.each_with_index do |tag, i| %>
+                        <li class="<%= "last-tag" if i == topic.tags.length-1 %>">
+                          <%= link_to tag, topic_tag_path(tag.id) %><%= ',' unless i == topic.tags.length-1 %>
+                        </li>
+                      <% end %>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div class="topic-recent-historial border-bottom-3">
-              <p class="collaborations"><%= t 'my_topics.grouped_topic.recent_participants', :count => topic.recent_participants.size %></p>
-              <% if topic.recent_participants.length > 0 %>
-              <ul class="small-avatars">
-                <% topic.recent_participants.each do |user| %>
-                  <li>
-                    <div class="avatar-wrapper">
-                      <%= avatar_span(user, user.is_expert?, true, "24x24") %>
-                      <%= render :partial => 'users/card', :locals => {:user => user} %>
-                    </div>
-                  </li>
+              <div class="topic-recent-historial border-bottom-3">
+                <p class="collaborations"><%= t 'my_topics.grouped_topic.recent_participants', :count => topic.recent_participants.size %></p>
+                <% if topic.recent_participants.length > 0 %>
+                <ul class="small-avatars">
+                  <% topic.recent_participants.each do |user| %>
+                    <li>
+                      <div class="avatar-wrapper">
+                        <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+                        <%= render :partial => 'users/card', :locals => {:user => user} %>
+                      </div>
+                    </li>
+                  <% end %>
+                </ul>
                 <% end %>
-              </ul>
-              <% end %>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </div>
     <br class="clear">
   </div>
