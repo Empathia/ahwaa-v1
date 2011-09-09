@@ -16,13 +16,16 @@
 .social-bookmarkers > .btn-facebook {border-right-width: 0}
 .user-logged-info .activity-btns li:first-child {border-right-width: 1px !important}
 .user-logged-info .activity-btns li:last-child {border-right-width: 0 !important}
-.article-wrapper .article-tags {width: 275px}
+.article-wrapper .article-tags {width: 240px}
 .user-wrapper .view-profile,
 .user-wrapper .send-private-msg {right: inherit}
 .view-more-wrapper > .view-more > span {background: url("../../images/view-more-bg.jpg") no-repeat scroll 0 3px transparent !important}
 .private-msg {left: -25px; right: inherit}
 .private-msg .origin {left: 40px; right: inherit}
 .private-msg.send-from-stream .origin {right: 40px}
+
+.social-bookmarkers > iframe {width: 51px !important}
+.follow-topic-wrapper {margin-right: 5px}
 
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
 

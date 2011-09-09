@@ -126,6 +126,7 @@ $(function() {
     $('.private-msg').mouseleave(function () {
         $(this).fadeOut(100);
     });
+    
 });
 
 $(window).load(function () {

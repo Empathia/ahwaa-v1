@@ -1,7 +1,7 @@
 .content{position: relative; margin-bottom: 20px;}
 
 body > div{background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{background-image: url('../../images/tag.png'); width: 290px; background-repeat: no-repeat; background-position:100% 0; margin-top: 15px; padding-right: 22px; color: #468AC4; float:right;}
+.article-tags{background-image: url('../../images/tag.png'); width: 250px; background-repeat: no-repeat; background-position:100% 0; margin-top: 15px; padding-right: 22px; color: #468AC4; float:right;}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
 .related-content{background-color: #ffffff; padding:16px 20px 0 20px; position: relative;}
@@ -29,10 +29,17 @@ article > header em{display: block; clear: right; text-align: center; color: #46
 aside{font-size: 12px; float:left; width: 200px; padding: 0 10px; background: url('../../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; float:left; z-index: 99;}
 aside section.show-hide{border-top: none; padding: 20px 0}
 aside section.show-hide a{text-align: right; text-decoration: none; padding-right: 23px; outline: 0 none; float: none!important; height: 31px; display: block;
-    background-image: -moz-linear-gradient(top, #fff, #eaf7fd);
-    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #eaf7fd));
-    filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#eaf7fd')";
+   border: 1px solid; border-color: #D2E3EC #CDDFE9 #A0BFD1; background-color: #cf7Ffd; font-weight: bold; text-shadow: 0 1px 0 #fff;
+   background-image: -webkit-gradient(linear, left top, left bottom, from(#f6f9fc), to(#deeaf6));
+   background-image: -webkit-linear-gradient(top, #f6f9fc, #deeaf6);
+   background-image:    -moz-linear-gradient(top, #f6f9fc, #deeaf6);
+   background-image:     -ms-linear-gradient(top, #f6f9fc, #deeaf6);
+   background-image:      -o-linear-gradient(top, #f6f9fc, #deeaf6);
+   background-image:         linear-gradient(top, #f6f9fc, #deeaf6);
+         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6f9fc', EndColorStr='#deeaf6')";
+   -webkit-box-shadow: inset 0 0 0 1px #fff;
+      -moz-box-shadow: inset 0 0 0 1px #fff;
+           box-shadow: inset 0 0 0 1px #fff
 }
 
 aside section.show-hide a span{display: block; padding-right: 25px; background-image: url('../../images/icn-show-hide.png'); background-repeat:no-repeat; background-position:100% 11px; height: 100%;} 
@@ -44,11 +51,22 @@ aside section.show-hide a:hover{
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e3f1ff')";
 }
 aside section.show-hide a.hide{
-    border-color:#a6b8c5 #dde6ec #dae4eb;
+    /*border-color:#a6b8c5 #dde6ec #dae4eb;
     background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
     background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eaf7fd),color-stop(1, #f9fdfe));
     filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";*/
+    border-color: #A0BFD1 #CDDFE9 #D2E3EC;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ecf7fd), to(#fff));
+    background-image: -webkit-linear-gradient(top, #deeaf6, #f6f9fc);
+    background-image:    -moz-linear-gradient(top, #deeaf6, #f6f9fc);
+    background-image:     -ms-linear-gradient(top, #deeaf6, #f6f9fc);
+    background-image:      -o-linear-gradient(top, #deeaf6, #f6f9fc);
+    background-image:         linear-gradient(top, #deeaf6, #f6f9fc);
+          -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ecf7fd', EndColorStr='#ffffff')";
+    -webkit-box-shadow: inset 0 2px 5px rgba(0, 0, 0, .2);
+       -moz-box-shadow: inset 0 2px 5px rgba(0, 0, 0, .2);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, .2)
 }
 aside section.filter{padding: 7px 0 14px; overflow:hidden; border-bottom:1px solid #f3f3f3;}
 aside section.filter ul,
@@ -190,7 +208,8 @@ p:hover .icn{display: inline;}
 .social-bookmarkers > a > span {background-image: url('../../images/icn-social.png'); background-repeat: none; width: 14px; height: 14px; display: block}
 .social-bookmarkers .facebook{background-position:100% 0; position: relative; top: 4px; right: 3px}
 .social-bookmarkers .twitter{background-position:100% -16px; position: relative; right: 3px; top: 3px}
-.social-bookmarkers > .btn-twitter {border-right-width: 0}
+.social-bookmarkers > .btn-twitter {border-left: 0; margin-left: -1px}
+.social-bookmarkers > iframe {float:right}
 
 .filter-responses > li{margin-bottom: 12px; float:right; min-width: 100px;}
 .filter-responses > .even{margin-left: 0; float:left}

@@ -1,5 +1,6 @@
 .my-topics-wrapper {position: relative}
-.content.my-topics-wrapper .right-side {float: right; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 449px}
+.my-topics-wrapper .is_empty {margin-top: 100px; text-align: center}
+.content.my-topics-wrapper .right-side {float: right; background: url("../images/bg-article.png") repeat-x scroll 0 1px #fff; width: 780px; min-height: 280px}
 
 .content.my-topics-wrapper .right-side h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float: left}
 

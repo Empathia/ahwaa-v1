@@ -7,3 +7,4 @@
 .panel-sub-nav .sub-nav > .active {background-image: url('../images/bg-sub-nav-active.png'); height: 31px}
 .panel-sub-nav .sub-nav li {border-top: 1px solid #b0b8c9; border-bottom: 1px solid #898d9f}
 .panel-sub-nav .sub-nav li.last-child {border-bottom: 0 none}
+.auth-wrapper > #sign-up > span {padding: 2px 8px 0; height: 22px}
