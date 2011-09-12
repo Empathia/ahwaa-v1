@@ -134,6 +134,7 @@ en:
           logout: Logout
           edit_profile: edit profile
         search_topics: Search topics
+        tags_more: More
       footer:
         all_rights: "© Ahwaa - All Rights Reserved %{year}"
         about: About
@@ -163,7 +164,7 @@ en:
       share: Share stories and experiences
       offer: Offer and receive support
       popular_topics: Most Popular Topics
-      feeds: "Newests Topics"
+      feeds: "Newest Topics"
       latest:
         has_left_a_comment: %{author} has left a %{comment} on %{topic}
         has_left_an_comment: %{author} has left an %{comment} on %{topic}

@@ -134,6 +134,7 @@ ar:
           logout: تسجيل الخروج
           edit_profile: تعديل الملف الشخصي
         search_topics: موضوعات البحث
+        tags_more: المزيد
       footer:
         all_rights: "© %{year} أهواء - جميع الحقوق محفوظة"
         about: من نحن؟
