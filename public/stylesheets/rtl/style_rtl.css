@@ -21,7 +21,7 @@ body .hidden {display: none}
 .info-page > section > p {line-height: 22px; margin-bottom: 10px}
 .info-page > h1 {margin-bottom: 30px}
 .aligned {width: 940px; padding: 0 10px; margin: 0 auto}
-a {color: #2d70b3}
+a {color: #2d70b3; outline: none}
 input:active,
 a:active {outline: none}
 button::-moz-focus-inner,

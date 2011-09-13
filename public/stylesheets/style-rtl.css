@@ -24,7 +24,7 @@
 .private-msg .origin {left: 40px; right: inherit}
 .private-msg.send-from-stream .origin {right: 40px}
 
-.social-bookmarkers > iframe {width: 51px !important}
+.social-bookmarkers > iframe {margin-left: 0 !important}
 .follow-topic-wrapper {margin-right: 5px}
 
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}
