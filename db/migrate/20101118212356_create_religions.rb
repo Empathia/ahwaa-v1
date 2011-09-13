@@ -6,7 +6,7 @@ class CreateReligions < ActiveRecord::Migration
     end
 
     Religion.create(%w[agnostic bahai druze buddhism christianity confucianism hinduism
-    islam jainism judaism shinto sikhism taoism yazidi zoroastrianism atheism none other].map { |i|
+    islam jainism judaism shinto sikhism taoism yazidi zoroastrianism atheism none other secular not_say].map { |i|
       {:i18n_name => i} })
 
     add_index :religions, :i18n_name, :unique => true

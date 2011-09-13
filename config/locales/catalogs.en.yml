@@ -22,6 +22,8 @@ en:
       atheism: Atheism
       none: None
       other: Other
+      secular: Secular
+      not_say: Would rather not say
 
     gender:
       male: Male
@@ -62,7 +64,6 @@ en:
       qatar: Qatar
       saudi_arabia: Saudi Arabia
       ethiopia: Ethiopia
-      sudan: Sudan
       syrian: Syrian
       tunisia: Tunisia
       turkey: Turkey
@@ -70,6 +71,9 @@ en:
       yemen: Yemen
       pakistan: Pakistan
       other: Other
+      sudan_republic: Sudan
+      south_sudan: South Sudan
+      western_sahara: Western Sahara
 
     political_view:
       libertarian: Libertarian

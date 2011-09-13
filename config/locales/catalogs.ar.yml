@@ -22,6 +22,8 @@ ar:
       atheism: ملحد
       none: لا شيء
       other: أخرى
+      secular: علماني
+      not_say: لا أريد الإفصاح
 
     gender:
       male: ذكر
@@ -62,7 +64,6 @@ ar:
       qatar: قطر
       saudi_arabia: "المملكة العربية السعودية"
       ethiopia: اثيوبيا
-      sudan: السودان
       syrian: السورية
       tunisia: تونس
       turkey: تركيا
@@ -70,6 +71,9 @@ ar:
       yemen: اليمن
       pakistan: باكستان
       other: أخرى
+      sudan_republic: جمهورية السودان
+      south_sudan: جنوب السودان
+      western_sahara: الصحراء الغربية
 
     political_view:
       libertarian: ليبرتاري
