@@ -1,5 +1,5 @@
 $(function(){
-    $("input:checkbox").uniform();
+    $("input:visible:checkbox").uniform();
     $('.follow-topic').bind('ajax:success', function () {
         var self = $(this);
         if (!self.hasClass('disabled')) {
@@ -58,17 +58,6 @@ $(function(){
     windowObj.resize(function() {
         socialBookmarkers.data("fixed") == true && socialBookmarkers.css('left', calculatePosX(socialBookmarkers));
         sidebar.data("fixed") == true && sidebar.css('left', calculatePosX(sidebar));
-    });
-
-    $('.continue').live('click', function(){
-       $(this).closest('.sign-up-or-continue').slideUp(function(){
-           var signUp = $(this),
-               form = signUp.next();
-           form.slideDown();
-           !$.browser.webkit && form.find('textarea').focus();
-           signUp.remove();
-       });
-       return false;
     });
 
     /* Avatar span someway blocks the click to the anchor and it doesn't do the default action. */

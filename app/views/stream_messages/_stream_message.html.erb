@@ -12,7 +12,7 @@
   <div class="stream-item-data">
     <div>
       <span class="user-comment">
-        <% if stream_message.reply.user %>
+        <% unless stream_message.reply.anonymous? %>
           <%= link_to stream_message.reply.user.username, user_stream_path(stream_message.reply.user.username) %>
         <% else %>
           <%= Reply.human_attribute_name(:anonymous) %>

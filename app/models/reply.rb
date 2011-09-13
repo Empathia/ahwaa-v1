@@ -20,6 +20,7 @@ class Reply < ActiveRecord::Base
   validates :content, :presence => true
   validates :topic_id, :presence => true
   validates :category, :presence => true
+  validates :user_id, :presence => true
   validate :type_of_reply, :unless => "category.blank?"
   validate :not_spam
 
@@ -31,7 +32,7 @@ class Reply < ActiveRecord::Base
   scope :latest, lambda { |*lang| by_topic_language(lang.first || 'en').order("replies.created_at DESC").limit(5) }
   scope :flagged, includes(:ratings).where("ratings.vote = :flag", :flag => Rating::FLAG)
   scope :by_category, lambda {|category| where(:category => category)}
-  scope :not_anonymous, where("user_id IS NOT NULL")
+  scope :not_anonymous, where("user_id IS NOT NULL AND as_anonymous = 0")
   
   # returns the amount of points granted this post produces
   def points_granted
@@ -75,7 +76,7 @@ class Reply < ActiveRecord::Base
 
   # Wether the user of the reply is null or not
   def anonymous?
-    user.nil?
+    user.nil? || as_anonymous?
   end
 
   # Gets user's username, or 'anonymous'

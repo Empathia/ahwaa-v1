@@ -139,6 +139,7 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
+            commentsClon.find('input:checkbox').uniform();
         }
         return false;
     });
@@ -284,6 +285,7 @@ $.fn.comments = function(options){
         addCommentForm.find('.comment_content').TextAreaExpander(16);
         newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
         newResponse.replaceWith(addCommentForm);
+        addCommentForm.find('input:checkbox').uniform();
         $('#' + id).data('newResponse', newResponseClon).slideDown(function(){
             $.browser.msie && $.browser.version == '7.0' && $(this).css('opacity', '1');
         }).find('textarea').focus();

@@ -107,7 +107,7 @@ ar:
           error_username_not: اسم المستخدم غير موجود
           error_password_empty: كلمة المرور فارغة
           error_password_short: كلمة المرور غير صالحة 
-          flash_alert: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
+          * flash_alert: برجاء التسجيل للتمتّع بكافة مزايا أهواء!
         login_form:
           login: البريد الإلكتروني أو اسم المستخدم
           password: كلمة المرور
@@ -208,11 +208,11 @@ ar:
          title: خبراء الموضوع
         need_help: بحاجة للمساعدة؟
       form:
-        cancel: إلغاء
+        cancel: X
         write_response: انقر هنا لكتابة الردّ.
         post_response: أرسِل
         type_response: "نوع الاستجابة:"
-        anonymous_legend: لإضافة ردّ، فضلًا 
+        * anonymous_legend: لإضافة ردّ، فضلًا 
         continue: أو ابقَ مجهولًا
         sign_up: أنشيء حسابًا
         flash_alert: يُرجى الامتناع عن كشف هويتك أو هوية الآخرين، لو كان هذا قد يسبب ضررًا لك أو لهم، عند إضافة ردّك.

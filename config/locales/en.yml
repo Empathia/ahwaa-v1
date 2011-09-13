@@ -107,7 +107,7 @@ en:
           error_username_not: This username is not available
           error_password_empty: The password is empty
           error_password_short: The password is invalid
-          flash_alert: You are encouraged to use a pseudonym. Each user is responsible for protecting their own identity.
+          flash_alert: You are encouraged to use a pseudonym. Each user is responsible for protecting their own identity. You will be able to post comments and request topics anonymously once you are logged in.
         login_form:
           login: Email or Username
           password: Password
@@ -205,14 +205,15 @@ en:
           title: Topic experts
         need_help: Need help?
       form:
-        cancel: Cancel
+        cancel: X
         write_response: Click here to write your response.
         type_response: 'This is a:'
         post_response: Post Response
-        anonymous_legend: To respond please
+        anonymous_legend: Please Sign Up to leave a response. You will have the option of responding anonymously
         continue: or Stay Anonymous
         sign_up: Sign Up
         flash_alert: "Please refrain from revealing your or someone else's identity when posting comments."
+        as_anonymous: Post Anonymously
     comments:
       new_response: New Response
   replies:

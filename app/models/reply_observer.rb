@@ -6,7 +6,9 @@ class ReplyObserver < ActiveRecord::Observer
     if user
       user.update_score_board(reply.points_granted)
 
-      reply.user.subscribe_to(reply.topic) unless reply.topic.subscribed?(reply.user)
+      if !reply.as_anonymous? && !reply.topic.subscribed?(reply.user)
+        reply.user.subscribe_to(reply.topic)
+      end
     end
 
     StreamMessage.create(:reply => reply)

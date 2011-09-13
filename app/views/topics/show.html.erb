@@ -17,7 +17,7 @@
       <article class="border-all container-soft-box-shadow">
         <header>
           <div class="avatar-wrapper">
-            <%= avatar_span(@topic.user, @topic.user.is_expert?) %> 
+            <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
             <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
           </div>
           <div class="right">
@@ -79,14 +79,14 @@
       <section class="helpful <%= "disabled" if @replies.length == 0 %>">
         <%= check_box_tag :filter_helpful, true, false, :disabled => @replies.length == 0 %>
         <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
-      </section>    
+      </section>
       <% if @topic.leaderboard.length > 0 %>
       <section class="experts">
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
           <% @topic.leaderboard.each_with_index do |user, i| %>
             <li>
-              <%= avatar_span(user, user.is_expert?) %> 
+              <%= avatar_span(user, user.is_expert?) %>
               <em><%= link_to user.username, user_stream_path(user.username) %></em>
               <%= render :partial => 'users/card', :locals => {:user => user} %>
             </li>
@@ -104,7 +104,7 @@
   <div class="left-side container-soft-box-shadow">
     <%= render :partial => 'related_topics', :locals => {:related_topics => @topic.related_topics} %>
   </div>
-  <br class="clear">  
+  <br class="clear">
 </div>
 <%= form_for Reply.new, :url => topic_replies_path(@topic), :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
   <span class="comm-arrow"></span>
@@ -113,24 +113,26 @@
       <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>
       <% unless logged_in? %>
         <div  class="sign-up-or-continue response-padding">
-          <div class="border-all">       
+          <div class="border-all">
             <span class="legend-text"><%= t('.form.anonymous_legend') %></span>
             <a href="#" class="sign-up-lk border-all">
               <span class="sign-up-btn border-all"><%= t('.form.sign_up') %></span>
             </a>
-            <%= link_to t('.form.continue'), '#', :class => 'continue legend-text' %>
           </div>
           <br class="clear">
         </div>
       <% end %>
       <div class="response <%= "hidden" unless logged_in? %>">
         <div class="response-padding">
-          <em class="add_comments_top"><%= current_username %></em>
+          <em class="add_comments_top">
+            <%= current_username %>
+          </em>
+            <%= f.check_box :as_anonymous %><%= t('.form.as_anonymous') %>
           <div class="flash-privacy">
             <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
           </div>
           <%= f.text_area :content, :id => nil, :class => 'comment_content', :placeholder => t('.form.write_response') %>
-        </div> 
+        </div>
         <div class="res-types-wrapper response-padding">
           <div class="radios">
              <span class="res-lbl"><%= t('.form.type_response') %></span>
@@ -140,7 +142,7 @@
                   <%= f.radio_button 'category', hash.first, :checked => i == 0 %>
                   <%= label_tag "reply_category_#{hash.first}", hash.last %>
                  </li>
-             <% end %>    
+             <% end %>
              </ul>
           </div>
           <div class="error"></div>
@@ -148,11 +150,11 @@
             <%= f.submit t('.form.post_response'), :class => "submit-reply" %>
           </div>
         </div>
-      </div>              
-    </div>                
+      </div>
+    </div>
   <%= f.hidden_field :contextual_index, :class => 'contextual_index' %>
   <%= f.hidden_field :check_field %>
-  <%= hidden_field_tag :reply_to, nil, :class => 'reply_to' %>    
-  </div>  
+  <%= hidden_field_tag :reply_to, nil, :class => 'reply_to' %>
+  </div>
 <% end %>
 <%= render :partial => 'comments', :object => @replies %>

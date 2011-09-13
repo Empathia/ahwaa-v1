@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
 
   has_many :ratings, :dependent => :destroy
   has_many :replies, :dependent => :destroy
-  has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id
+  has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id, :conditions => "as_anonymous = 0"
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :received_messages, :foreign_key => :recipient_id,
     :dependent => :destroy, :group => :conversation_id # NOTE: for some reason, group option it's ignored when doing .paginate() so calling .group() manually on controllers is needed

@@ -1,12 +1,11 @@
 class RepliesController < ApplicationController
   respond_to :js
   before_filter :find_topic
-  skip_before_filter :authenticate_user!, :except => [:flag, :vote_up]
 
   def create
     @reply = @topic.replies.build(params[:reply])
     @reply.parent = @topic.replies.find(params[:reply_to]) unless params[:reply_to].blank?
-    @reply.user = current_user if logged_in?
+    @reply.user = current_user
     @reply.save
     respond_to do |format|
       format.html {redirect_to @topic}
