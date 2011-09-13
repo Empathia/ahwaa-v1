@@ -18,7 +18,6 @@ $(function() {
 
     new AuthForms();
     new MessageSender();
-    //new Avatars();
     new TagList();
 
     $('.sign-up-form #user_email').change(function () {
@@ -63,8 +62,7 @@ $(function() {
         nav_user_top,
         rtl = $('html').attr('dir') == 'rtl';
         sidebar.length && sidebar.data('fixed') == true && sidebar.css({position : "absolute", bottom: "auto", right: 0, left: "auto", top: sidebar.position().top - 126}) && sidebar.data("fixed", false);
-        //($.browser.webkit && rtl) ? (nav_user_top = nav_user.position().top-70)  : (nav_user_top = nav_user.position().top);
-        nav_user_top = nav_user.position().top - 70;
+        nav_user_top = nav_user.position().top - 139;
         nav_user.css({position: 'absolute', top: nav_user_top}).fadeOut();
         $('#pageslide-blanket').css('min-height', $(document).height());
         $('.pageslide-body-wrap').addClass('jlo');
