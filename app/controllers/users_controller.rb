@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:create]
 
   def show
-    @messages = @user.received_messages.paginate(:page => params[:page], :per_page => 10)
+    @messages = @user.received_messages.group(:conversation_id).paginate(:page => params[:page], :per_page => 10).all
   end
 
   def create
