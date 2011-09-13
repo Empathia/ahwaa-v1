@@ -205,7 +205,7 @@ header > .right > .by-author {margin-top: 15px}
 .social-bookmarkers .facebook{background-position:100% 0; position: relative; top: 4px; right: 3px}
 .social-bookmarkers .twitter{background-position:100% -16px; position: relative; right: 3px; top: 3px}
 .social-bookmarkers > .btn-twitter {margin-left: 5px}
-.social-bookmarkers > iframe {float:right; margin-left: 4px}
+.social-bookmarkers > iframe {float:right; margin-left: 4px; width: 51px; height: 25px; overflow: hidden}
 
 .filter-responses > li{margin-bottom: 12px; float:right; min-width: 100px;}
 .filter-responses > .even{margin-left: 0; float:left}

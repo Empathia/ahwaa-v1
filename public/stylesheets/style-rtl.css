@@ -12,11 +12,11 @@
 .items-wrapper > .topics > h2 > .line {width: 157px !important}
 .items-wrapper > .feeds > h2 > .line {width: 172px !important}
 .items-wrapper > section > h2 > .line {margin-top: 11px !important}
-.social-bookmarkers > .btn-twitter {border-right-width: 1px !important}
+.social-bookmarkers > .btn-twitter {margin-right: 5px !important; margin-left: 0 !important}
 .social-bookmarkers > .btn-facebook {border-right-width: 0}
 .user-logged-info .activity-btns li:first-child {border-right-width: 1px !important}
 .user-logged-info .activity-btns li:last-child {border-right-width: 0 !important}
-.article-wrapper .article-tags {width: 240px}
+.article-wrapper .article-tags {width: 205px}
 .user-wrapper .view-profile,
 .user-wrapper .send-private-msg {right: inherit}
 .view-more-wrapper > .view-more > span {background: url("../../images/view-more-bg.jpg") no-repeat scroll 0 3px transparent !important}
@@ -24,7 +24,7 @@
 .private-msg .origin {left: 40px; right: inherit}
 .private-msg.send-from-stream .origin {right: 40px}
 
-.social-bookmarkers > iframe {margin-left: 0 !important}
+.social-bookmarkers > iframe {margin-left: 0 !important; width: 65px !important}
 .follow-topic-wrapper {margin-right: 5px}
 
 .panel-sub-nav .sub-nav a.stream > .icon {background-position: 0 0}

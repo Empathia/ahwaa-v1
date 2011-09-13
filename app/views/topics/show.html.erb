@@ -27,10 +27,10 @@
               <%= linked_tag_list @topic.tags %>
             </p>
             <div class="social-bookmarkers border-left">
+              <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
               <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-all-2 btn-twitter' do %>
                 <span class="twitter">t('.icons.social.twitter')</span>
               <% end %>
-              <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=77&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:77px; height:30px;" allowTransparency="true"></iframe>
               <div class="flash-privacy">
                 <div class="border-all">
                   <%= t('.icons.social.flash_alert')%>
