@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def inbox
-    @messages = @user.received_messages.paginate(:page => params[:page], :per_page => 10)
+    @messages = @user.received_messages.group(:conversation_id).paginate(:page => params[:page], :per_page => 10).all
   end
 
   def create
