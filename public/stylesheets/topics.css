@@ -233,7 +233,7 @@ header > .right > .by-author {margin-top: 15px}
 .response > div > .post_as_anonymous {font-size: 11px; font-weight: bold; color: #6A7988}
 .response > div > .post_as_anonymous .checker {margin: -5px 5px 0 10px}
 
-.cancel-logged-out {background: url('../images/icn-cross.png') no-repeat 0 0; width: 7px; height: 7px; text-indent: -9999px; display: block; right: 7px}
+.cancel-logged-out {background: url('../images/icn-cross-2.png') no-repeat 0 0; width: 7px; height: 7px; text-indent: -9999px; display: block; right: 7px}
 .comm-wrap form > .response-wrapper .sign-up-or-continue > div {padding: 5px 0px 5px 10px}
 .comm-wrap form > .response-wrapper .sign-up-or-continue .legend-text {margin: 7px 2px 0 0}
 .comm-wrap form > .response-wrapper .sign-up-or-continue .sign-up-lk {margin: 0 5px}
