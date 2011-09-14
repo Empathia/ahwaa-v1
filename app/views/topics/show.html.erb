@@ -110,7 +110,7 @@
   <span class="comm-arrow"></span>
   <div class="response-wrapper border-all">
     <div>
-      <%= link_to t('.form.cancel'), '#', :class => 'cancel-comment' %>
+      <a href="#" title="<%= t('.form.cancel') %>" class="cancel-comment <%= "cancel-logged-out" unless logged_in?  %>"><%= t('.form.cancel') %></a>
       <% unless logged_in? %>
         <div  class="sign-up-or-continue response-padding">
           <div class="border-all">
@@ -127,7 +127,9 @@
           <em class="add_comments_top">
             <%= current_username %>
           </em>
+          <span class="post_as_anonymous">
             <%= f.check_box :as_anonymous %><%= t('.form.as_anonymous') %>
+          </span>
           <div class="flash-privacy">
             <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
           </div>

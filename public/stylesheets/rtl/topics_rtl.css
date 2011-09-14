@@ -221,14 +221,22 @@ header > .right > .by-author {margin-top: 15px}
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 .help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0; line-height: 1em;}
 
-.sign-up-or-continue > div{color: #52503b; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}
-.sign-up-or-continue .sign-up-lk{margin:0 5px 0 10px; border: 1px solid #3C7EBB}
+.sign-up-or-continue > div{color: #52503b; font-size: 11px; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}
+.sign-up-or-continue .sign-up-lk {margin:0 10px 0 0; border: 1px solid #3C7EBB}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-right: 17px;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
 }
 .continue{color: #a6a48b;}
 .legend-text{margin:7px 0 0 5px; float:right;}
+
+.response > div > .post_as_anonymous {font-size: 11px; font-weight: bold; color: #6A7988}
+.response > div > .post_as_anonymous .checker {margin: -5px 5px 0 10px}
+
+.cancel-logged-out {background: url('../../images/icn-cross.png') no-repeat 0 0; width: 7px; height: 7px; text-indent: -9999px; display: block; left: 7px}
+.comm-wrap form > .response-wrapper .sign-up-or-continue > div {padding:5px 10px 5px 0px}
+.comm-wrap form > .response-wrapper .sign-up-or-continue .legend-text {margin:7px 0 0 2px}
+.comm-wrap form > .response-wrapper .sign-up-or-continue .sign-up-lk {margin: 0 5px}
 
 .reply-to + .new-response,
 .reply-to + .add_comments,
