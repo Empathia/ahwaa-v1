@@ -1,6 +1,8 @@
 .topic > .links > div{padding-top: 4px;}
 .homepage > .links > div{padding-top: 8px;}
 
+.sign-up {width: 300px}
+.auth-wrapper {width: 141px}
 .auth-wrapper > #sign-up > span {padding: 2px 8px 0; height: 22px}
 
 #pm-wrapper .back-to-msgs .arrow{border-color: transparent transparent transparent #A7C7E3; border-width: 4px 0 4px 4px; margin: 2px 0 0 8px;}
@@ -9,7 +11,8 @@
 
 .watch-video{margin-top: 50px}
 .request-error {left: -85px}
-.flash-privacy > div {word-wrap: break-word}
+.sign-up-or-continue > div {font-size: 13px}
+
 .items-wrapper > .topics > h2 > .line {width: 157px !important}
 .items-wrapper > .feeds > h2 > .line {width: 172px !important}
 .items-wrapper > section > h2 > .line {margin-top: 11px !important}

@@ -295,9 +295,9 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   -webkit-box-shadow: 0 1px 3px #6b8b9f;
      -moz-box-shadow: 0 1px 3px #6b8b9f;
           box-shadow: 0 1px 3px #6b8b9f;
-  -webkit-box-shadow: 0 1px 3px rgba(42, 83, 110, .6);
-  -moz-box-shadow: 0 1px 3px rgba(42, 83, 110, .6);
-       box-shadow: 0 1px 3px rgba(42, 83, 110, .6);
+  -webkit-box-shadow: 0 0 3px rgba(42, 83, 110, .6);
+     -moz-box-shadow: 0 0 3px rgba(42, 83, 110, .6);
+          box-shadow: 0 0 3px rgba(42, 83, 110, .6);
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
@@ -327,9 +327,9 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   -webkit-box-shadow: 0 1px 3px #6b8b9f, inset 0 1px 0 #fff;
      -moz-box-shadow: 0 1px 3px #6b8b9f, inset 0 1px 0 #fff;
           box-shadow: 0 1px 3px #6b8b9f, inset 0 1px 0 #fff;
-  -webkit-box-shadow: 0 1px 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
-  -moz-box-shadow: 0 1px 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
-       box-shadow: 0 1px 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
+  -webkit-box-shadow: 0 0 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
+     -moz-box-shadow: 0 0 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
+          box-shadow: 0 0 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff;
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 
