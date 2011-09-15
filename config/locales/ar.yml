@@ -208,7 +208,7 @@ ar:
          title: خبراء الموضوع
         need_help: بحاجة للمساعدة؟
       form:
-        cancel: X
+        cancel: إلغاء
         write_response: انقر هنا لكتابة الردّ.
         post_response: أرسِل
         type_response: "نوع الاستجابة:"
