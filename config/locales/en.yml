@@ -205,7 +205,7 @@ en:
           title: Topic experts
         need_help: Need help?
       form:
-        cancel: Cancel
+        cancel: X
         write_response: Click here to write your response.
         type_response: 'This is a:'
         post_response: Post Response
