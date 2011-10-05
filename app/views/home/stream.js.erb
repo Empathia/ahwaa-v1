@@ -1,6 +1,7 @@
 (function() {
-  var more = $('<%= escape_javascript render(@stream) %>').hide();
+  var more = $('<%= escape_javascript render(@stream) %>');
   $('.stream-items-wrapper').append(more);
+  more.hide();
   more.fadeIn('slow');
   <% if @stream_messages.current_page == @stream_messages.total_pages %>
   $('.load-more-wrapper').hide();
