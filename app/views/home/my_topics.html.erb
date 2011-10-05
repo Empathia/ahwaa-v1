@@ -36,8 +36,14 @@
                   <% topic.recent_participants.each do |user| %>
                     <li>
                       <div class="avatar-wrapper">
-                        <%= avatar_span(user, user.is_expert?, true, "24x24") %>
-                        <%= render :partial => 'users/card', :locals => {:user => user} %>
+                        <% if user %>
+                          <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+                          <%= render :partial => 'users/card', :locals => {:user => user} %>
+                        <% else %>
+                          <span class="avatar">
+                            <%= image_tag(Avatar.default.url, :width => '24') %>
+                          </span>
+                        <% end %>
                       </div>
                     </li>
                   <% end %>
