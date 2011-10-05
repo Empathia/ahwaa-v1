@@ -11,7 +11,7 @@ class HomeController < ApplicationController
     redirect_to stream_path and return if current_user && params[:username] == current_user.username
     @user = params[:username] ? User.find_by_username(params[:username]) : current_user
     redirect_to root_path and return unless @user
-    stream_users = @user.filtered_stream_users(params[:filter])
+    stream_users = @user.filtered_stream_users(params[:filter], I18n.locale)
     @stream_messages = stream_users.page(params[:page]).per_page(15)
     @stream = @stream_messages.map(&:stream_message)
     if request.format == :html && !request.xhr?

@@ -48,14 +48,15 @@ class User < ActiveRecord::Base
     visited_topics.order("visits DESC, updated_at DESC").limit(limit).map(&:topic).map { |t| t.find_related_tags.limit(2) }.flatten[0...limit]
   end
 
-  def filtered_stream_users(filter)
-    if filter == 'followed'
+  def filtered_stream_users(filter, lang = 'en')
+    su = if filter == 'followed'
       stream_users.followed
     elsif filter == 'owned'
       stream_users.owned
     else
       stream_users
-    end.order('created_at DESC')
+    end
+    su.joins(:stream_message => { :reply => :topic }).where("topics.language = ?", lang).order('stream_users.created_at DESC')
   end
 
   # Adds a subscription for the user to the given topic
