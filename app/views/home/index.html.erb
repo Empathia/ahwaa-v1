@@ -7,28 +7,65 @@
       <h1><%= t('.title') %></h1>
       <h2><%= t('.legend') %></h2>
     </hgroup>
-    <div class="watch-video">
-      <div>
-        <a href="#" class="border-all"><span><%= t('.watch_video')%></span></a>
+    <!-- Start New Header -->
+    <div class="right video-player">
+
+      <div class="preview-image">
+        <a href="" title="Preview">
+          <span><%= image_tag 'icn-play-video.png', :width => "20", :height => "25"%></span>
+        </a>
+      </div>
+      <div class="preview-video">
+        <iframe width="389" height="249" src="http://www.youtube.com/embed/GWEt2zCV0sk?wmode=opaque&rel=0" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    </div>
+    <div class="left features-holder">
+      <ul class="features">
+        <li id="anonymity" class="feature-wrapper">
+          <span class="feature-image"><%= image_tag 'feature-private.png', :width => "45", :height => "40"%></span>
+          <h2><%= t('.private') %>&nbsp;&nbsp;<span><%= t('.choose') %></span></h2>
+        </li>
+        <li id="community" class="feature-wrapper">
+          <span class="feature-image"><%= image_tag 'feature-engaging.png', :width => "45", :height => "40"%></span>
+          <h2><%= t('.engaging') %>&nbsp;&nbsp;<span><%= t('.share') %></span></h2>
+        </li>
+        <li id="trustworthy" class="feature-wrapper last-feature">
+          <span class="feature-image"><%= image_tag 'feature-positive.png', :width => "45", :height => "40"%></span>
+          <h2><%= t('.positive') %>&nbsp;&nbsp;<span><%= t('.offer') %></span></h2>
+        </li>
+      </ul>
+      <div class="gloabl-counter">
+        <div class="members-count">
+          <ul>
+            <li class="first">1</li>
+            <li>2</li>
+            <li>6</li>
+            <li class="last">8</li>
+          </ul>
+          <span>Caring Members</span>
+        </div>
+        <div class="topics-count">
+          <ul>
+            <li class="first">3</li>
+            <li>4</li>
+            <li class="last">6</li>
+          </ul>
+          <span>Intimate Topics</span>
+        </div>
+        <div class="advices-count">
+          <ul>
+            <li class="first">1</li>
+            <li>5</li>
+            <li>4</li>
+            <li class="last">7</li>
+          </ul>
+          <span>Pieces of Advice</span>
+        </div>
       </div>
     </div>
-    <ul class="features">
-      <li id="anonymity" class="feature-wrapper">
-        <div class="feature-image"><%= image_tag 'feature-private.png', :width => "302", :height => "186"%></div>
-        <h2><%= t('.private') %></h2>
-        <p><%= t('.choose') %></p>
-      </li>
-      <li id="community" class="feature-wrapper">
-        <div class="feature-image"><%= image_tag 'feature-engaging.png', :width => "287", :height => "188"%></div>
-        <h2><%= t('.engaging') %></h2>
-        <p><%= t('.share') %></p>
-      </li>
-      <li id="trustworthy" class="feature-wrapper last-feature">
-        <div class="feature-image"><%= image_tag 'feature-positive.png', :width => "302", :height => "186"%></div>
-        <h2><%= t('.positive') %></h2>
-        <p><%= t('.offer') %></p>
-      </li>
-    </ul>
+    <!-- End New Header -->
+    
   </section>
   <div class="items-wrapper">
     <section class="topics">
@@ -47,12 +84,4 @@
 
     <br class="clear">
   </div>
-</div>
-<div class="overlay-wrapper rounded-border" id="watch-video-overlay">
-  <div class="overlay">
-    <div class="overlay-padding">
-      <object width="780" height="520"><param name="movie" value="http://www.youtube.com/v/GWEt2zCV0sk?fs=1&amp;hl=en_US&amp;rel=0"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><param name="wmode" value="opaque"><embed src="http://www.youtube.com/v/GWEt2zCV0sk?fs=1&amp;hl=en_US&amp;rel=0" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="780" height="520" wmode="transparent"></embed></object>
-    </div>
-  </div>
-  <div class="close"></div>
 </div>

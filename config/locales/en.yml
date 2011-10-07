@@ -78,7 +78,7 @@ en:
   layouts:
     application:
       header:
-        switch_to_english: 'تصفّح النسخة العربية'
+        switch_to_english: 'في العربية'
         auth:
           sign_up: Sign-Up
           login: Login
