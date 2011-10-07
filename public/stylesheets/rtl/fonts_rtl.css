@@ -25,15 +25,64 @@
     font-style: normal;
 }
 
-h1{font-family: 'Gotham-Light'; font-weight: normal;}
-body{font-family: Arial, Helvetica;}
-.sec-title, .h2{font-family: 'GothamBoldRegular';}
-.sec-title-med{font-family: 'GothamMediumRegular';}
+@font-face {
+    font-family: 'Museo500-Light';
+    src: url('/stylesheets/fonts/museo500-light.eot');
+    src: url('/stylesheets/fonts/museo500-light.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/museo500-light.woff') format('woff'),
+         url('/stylesheets/fonts/museo500-light.ttf') format('truetype'),
+         url('/stylesheets/fonts/museo500-light.svg#gotham-light') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
 
-.items-wrapper > section > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
-.feature-wrapper h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
-.related-content > div > h2{font-family: 'GothamMediumRegular'; font-weight: normal;}
-.sign-up-btn{font-family: "GothamMediumRegular";}
-#pageslide-slide-wrap > div h2 {font-family: 'GothamMediumRegular';}
+@font-face {
+    font-family: 'Museo700-Sans';
+    src: url('/stylesheets/fonts/museosans_700.eot');
+    src: url('/stylesheets/fonts/museosans_700.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/museosans_700.woff') format('woff'),
+         url('/stylesheets/fonts/museosans_700.ttf') format('truetype'),
+         url('/stylesheets/fonts/museosans_700.svg#gotham-light') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
 
-#join > a{font-family: "GothamBoldRegular";}
+@font-face {
+    font-family: 'Museo900-Bold';
+    src: url('/stylesheets/fonts/museo900-bold.eot');
+    src: url('/stylesheets/fonts/museo900-bold.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/museo900-bold.woff') format('woff'),
+         url('/stylesheets/fonts/museo900-bold.ttf') format('truetype'),
+         url('/stylesheets/fonts/museo900-bold.svg#gotham-light') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+h1 {font-family: 'Gotham-Light'; font-weight: normal}
+body {font-family: Arial, Helvetica;}
+
+.gloabl-counter > div > span,
+.gloabl-counter > div > ul > li {font-family: 'Museo700-Sans'; font-weight: 100}
+
+.feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: 100}
+.feature-wrapper > h2 > span {font-family: 'Museo500-Light'; font-weight: 100}
+
+.items-wrapper > section > h2,
+.related-content > div > h2 {font-family: 'GothamMediumRegular'; font-weight: 100}
+
+.sign-up-btn,
+.sec-title-med,
+#pageslide-slide-wrap > div h2 {font-family: "GothamMediumRegular"}
+
+.sec-title,
+.h2 {font-family: 'GothamBoldRegular'}
+
+#join > a {font-family: "GothamBoldRegular"}
+
+.feature-wrapper > h2 {font-weight: bold}
+.feature-wrapper > h2 > span {font-weight: normal}
+
+@-moz-document url-prefix() {
+  .feature-wrapper > h2,
+  .feature-wrapper > h2 > span {font-weight: 100}
+}
