@@ -44,7 +44,7 @@ class Topic < ActiveRecord::Base
   end
 
   def recent_participants
-    all_replies.where("created_at >= ?", 7.days.ago).map { |r| r.anonymous? ? nil : r.user }.uniq
+    all_replies.map { |r| r.anonymous? ? nil : r.user }.uniq[0...10]
   end
 
   def subscribed?(user)
