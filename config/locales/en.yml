@@ -165,6 +165,9 @@ en:
       offer: Offer and receive support
       popular_topics: Most Popular Topics
       feeds: "Newest Topics"
+      members_count: Caring Members
+      topics_count: Intimate Topics
+      advices_count: Pieces of Advice
       latest:
         has_left_a_comment: %{author} has left a %{comment} on %{topic}
         has_left_an_comment: %{author} has left an %{comment} on %{topic}

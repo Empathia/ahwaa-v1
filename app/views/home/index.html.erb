@@ -38,29 +38,33 @@
       <div class="gloabl-counter">
         <div class="members-count">
           <ul>
-            <li class="first">1</li>
-            <li>2</li>
-            <li>6</li>
-            <li class="last">8</li>
+            <% users = User.all.size.to_s.split('') %>
+            <li class="first"><%= users[-4] || 0 %></li>
+            <li><%= users[-3] || 0 %></li>
+            <li><%= users[-2] || 0 %></li>
+            <li class="last"><%= users[-1] || 0 %></li>
           </ul>
-          <span>Caring Members</span>
+          <span><%= t '.members_count' %></span>
         </div>
         <div class="topics-count">
           <ul>
-            <li class="first">3</li>
-            <li>4</li>
-            <li class="last">6</li>
+            <% topics = Topic.all.size.to_s.split('') %>
+            <li class="first"><%= topics[-4] || 0 %></li>
+            <li><%= topics[-3] || 0 %></li>
+            <li><%= topics[-2] || 0 %></li>
+            <li class="last"><%= topics[-1] || 0 %></li>
           </ul>
-          <span>Intimate Topics</span>
+          <span><%= t '.topics_count' %></span>
         </div>
         <div class="advices-count">
           <ul>
-            <li class="first">1</li>
-            <li>5</li>
-            <li>4</li>
-            <li class="last">7</li>
+            <% advices = Reply.where(:category => 'advice').size.to_s.split('') %>
+            <li class="first"><%= advices[-4] || 0 %></li>
+            <li><%= advices[-3] || 0 %></li>
+            <li><%= advices[-2] || 0 %></li>
+            <li class="last"><%= advices[-1] || 0 %></li>
           </ul>
-          <span>Pieces of Advice</span>
+          <span><%= t '.advices_count' %></span>
         </div>
       </div>
     </div>
