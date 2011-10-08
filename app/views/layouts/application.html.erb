@@ -187,6 +187,27 @@
     <div class="container">
       <%= yield %>
     </div>
+    <div class="hall-of-fame">
+      <div class="hall-header">
+        <h4>Hall of Fame<span></span></h4>
+        <span></span>
+      </div>
+      <div class="hall-footer">
+        <div class="aligned">Contents</div>
+      </div>
+    </div>
+    <div class="footer">
+        <div class="aligned">
+          <div class="footer-container">
+          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
+          <ul>
+            <li><%= link_to t('.footer.about'), about_path %> - </li>
+            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 
     <footer>
       <div class="footer-shadow">
         <div class="aligned">
@@ -198,6 +219,7 @@
         </div>
       </div>
     </footer>
+    -->
   </div>
   <!-- Start of StatCounter Code -->
   <script type="text/javascript">
