@@ -46,7 +46,7 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .topics{margin-left: 10px;}
 .feeds{margin-right: 10px;}
 .item-data .feed-date{font-size: 11px; color: #bdc6cb;}
-.feature-wrapper {margin-bottom: 20px; width: width: 460px}
+.feature-wrapper {margin-bottom: 20px; width: 460px}
 .feature{background-color: #ffffff; height: 175px; border: 1px solid #a8bfcb; float:right; width: 100%; margin-top: 9px;}
 .features li:first-child{margin-right: 1px;}
 .features > .last-feature{margin-left: 1px;}
