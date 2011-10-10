@@ -44,7 +44,7 @@ class Topic < ActiveRecord::Base
   end
 
   def recent_participants
-    all_replies.map { |r| r.anonymous? ? nil : r.user }.uniq[0...10]
+    all_replies.map { |r| r.anonymous? ? nil : r.user }.uniq[0...9]
   end
 
   def subscribed?(user)
