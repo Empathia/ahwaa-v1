@@ -62,7 +62,9 @@ h1 {font-family: 'Gotham-Light'; font-weight: normal}
 body {font-family: Arial, Helvetica;}
 
 .gloabl-counter > div > span,
-.gloabl-counter > div > ul > li {font-family: 'Museo700-Sans'; font-weight: 100}
+.gloabl-counter > div > ul > li,
+.hall-of-fame > .hall-header > h4 > a,
+.honor-member-info > span {font-family: 'Museo700-Sans'; font-weight: 100}
 
 .feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: 100}
 .feature-wrapper > h2 > span {font-family: 'Museo500-Light'; font-weight: 100}
@@ -79,8 +81,9 @@ body {font-family: Arial, Helvetica;}
 
 #join > a {font-family: "GothamBoldRegular"}
 
-.feature-wrapper > h2 {font-weight: bold}
 .feature-wrapper > h2 > span {font-weight: normal}
+
+.feature-wrapper > h2 {font-weight: bold}
 
 @-moz-document url-prefix() {
   .feature-wrapper > h2,

@@ -46,3 +46,5 @@
 div.checker span {background-position: 0px -260px;}
 div.selector span {padding: 0 25px 0 2px !important; text-align: right}
 div.selector select {left: 0; right: inherit}
+
+.gloabl-counter > div > ul > li {float: left !important}
