@@ -155,9 +155,9 @@ en:
     grouped_topic:
       by: By %{author}
       recent_participants:
-        zero: no one has participated in this topic in the past days
-        one: one person has participated in this topic in the past days
-        other: %{count} people have participated in this topic in the past days
+        zero: no one has recently participated in this topic
+        one: one person has recently participated in this topic
+        other: %{count} people have recently participated in this topic
     index:
       title: Ahwaa
       legend: A safe space to debate LGBTQ-related issues in the Middle East
