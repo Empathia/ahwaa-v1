@@ -80,6 +80,9 @@ en:
       hall_of_fame:
         tab: Hall of Fame
         most_helpful_advice: Most Helpful Advice
+        most_active_user: Most Active User
+        most_topics_posted: Most Topics Posted
+        highest_points_acquired: Highest Points Acquired
       header:
         switch_to_english: 'في العربية'
         auth:

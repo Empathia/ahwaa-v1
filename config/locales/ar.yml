@@ -77,6 +77,12 @@ ar:
     view_profile: الملف الشخصي
   layouts:
     application:
+      hall_of_fame:
+        tab: قاعة المشاهير
+        most_helpful_advice: أكثر مشورة مفيدة
+        most_active_user: العضو الأكثر نشاطا
+        most_topics_posted: أكثر الموضوعات نشراً
+        highest_points_acquired: أعلي نقاطاً مكتسبة
       header:
         switch_to_english: View in English
         auth:
@@ -165,8 +171,8 @@ ar:
       offer: أعطِ وتلقّى المشورة والدعم
       popular_topics: أكثر الموضوعات شعبية
       feeds: "أحدث الموضوعات"
-      members_count: رعاية أعضاء
-      topics_count: موضوعات حميمة
+      members_count: أعضاء دائمون
+      topics_count: موضوعات ساخنة
       advices_count: قطعة من مشورة
       latest:
         has_left_a_comment: "%{author} قد ترك %{comment} على %{topic}"
