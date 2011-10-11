@@ -78,11 +78,11 @@ ar:
   layouts:
     application:
       hall_of_fame:
-        tab: قاعة المشاهير
-        most_helpful_advice: أكثر مشورة مفيدة
-        most_active_user: العضو الأكثر نشاطا
-        most_topics_posted: أكثر الموضوعات نشراً
-        highest_points_acquired: أعلي نقاطاً مكتسبة
+        tab: الأعضاء المتميّزون
+        most_helpful_advice: أكثر الأعضاء مساعدةً
+        most_active_user: أكثر الأعضاء نشاطًا
+        most_topics_posted: أكثر الأعضاء نشرًا للموضوعات
+        highest_points_acquired: أكثر الأعضاء نقاطًا
       header:
         switch_to_english: View in English
         auth:
@@ -171,9 +171,9 @@ ar:
       offer: أعطِ وتلقّى المشورة والدعم
       popular_topics: أكثر الموضوعات شعبية
       feeds: "أحدث الموضوعات"
-      members_count: أعضاء دائمون
-      topics_count: موضوعات ساخنة
-      advices_count: قطعة من مشورة
+      members_count: أعضاء
+      topics_count: موضوعات شخصية
+      advices_count: نصائح الأعضاء
       latest:
         has_left_a_comment: "%{author} قد ترك %{comment} على %{topic}"
         has_left_an_comment: "%{author} قد ترك %{comment} على %{topic}"

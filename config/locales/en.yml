@@ -84,7 +84,7 @@ en:
         most_topics_posted: Most Topics Posted
         highest_points_acquired: Highest Points Acquired
       header:
-        switch_to_english: 'في العربية'
+        switch_to_english: 'النسخة العربية'
         auth:
           sign_up: Sign-Up
           login: Login
