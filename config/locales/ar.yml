@@ -139,7 +139,7 @@ ar:
           sign_out: تسجيل الخروج
           logout: تسجيل الخروج
           edit_profile: تعديل الملف الشخصي
-        search_topics: موضوعات البحث
+        search_topics: إبحث عن موضوع
         tags_more: المزيد
       footer:
         all_rights: "© %{year} أهواء - جميع الحقوق محفوظة"
@@ -155,7 +155,7 @@ ar:
     grouped_topic:
       by: بواسطة %{author}
       recent_participants:
-        zero:  لم يشارك أحد منذ أيام  في هذا الموضوع
+        zero: لم يشارك أحد في هذا الموضوع بعد
         one: شخص واحد فقط شارك في هذا الموضوع
         other: %{count} اشخاص شاركوا في هذا الموضوع
     index:
@@ -168,7 +168,7 @@ ar:
       positive: مجموعات الدعم الإلكترونية
       choose: لك كامل الحرية في اختيار ما تحب أن تشاركه مع الآخرين
       share: تبادل القصص والخبرات
-      offer: أعطِ وتلقّى المشورة والدعم
+      offer: "أعطِ وتلقّى المشورة والدعم"
       popular_topics: أكثر الموضوعات شعبية
       feeds: "أحدث الموضوعات"
       members_count: أعضاء
@@ -180,7 +180,7 @@ ar:
   topics:
     related_topics:
       title: محتوى ذات صلة
-      view_more: عرض مزيد من
+      view_more: عرض المزيد
     topic:
       popular:
         by: بواسطة %{author}
@@ -220,7 +220,7 @@ ar:
         cancel: إلغاء
         write_response: انقر هنا لكتابة الردّ.
         post_response: أرسِل
-        type_response: "نوع الاستجابة:"
+        type_response: "نوع الردّ:"
         anonymous_legend: "برجاء تسجيل الدخول حتي يمكنك أضافة تعليق. يمكنك أضافة الرد بدون عرض هويتك"
         continue: أو ابقَ مجهولًا
         sign_up: أنشيء حسابًا
@@ -335,12 +335,12 @@ ar:
       labels:
         filter: من
     sidebar:
-      recommended_topics: المواضيع المرشحة
-      newest_topics: أحدث المواضيع
+      recommended_topics: الموضوعات
+      newest_topics: أحدث الموضوعات
       send_message: ارسل رساله
     filters:
       all: جميع الموضوعات
-      followed: موضوعاتي المتبعه
+      followed: متابعاتي
       my_topics: موضوعاتي
       user_topics: موضوعات %{username}
   my_topics:
