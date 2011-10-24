@@ -37,7 +37,7 @@
                 <li>             
                   <div class="label"><%= UserProfile.human_attribute_name(:religion_id) %></div>
                   <div class="field">
-                    <%= profile.collection_select :religion_id, Religion.all, :id, :name %>
+                    <%= profile.collection_select :religion_id, Religion.order('i18n_name').all, :id, :name %>
                   </div>
                 </li>
                 <li>
@@ -61,7 +61,7 @@
                 <li>             
                   <div class="label"><%= UserProfile.human_attribute_name(:country_id) %></div>
                   <div class="field">
-                    <%= profile.collection_select :country_id, Country.all, :id, :name %>
+                    <%= profile.collection_select :country_id, Country.order('i18n_name').all, :id, :name %>
                   </div>
                 </li>
                 <li>             
