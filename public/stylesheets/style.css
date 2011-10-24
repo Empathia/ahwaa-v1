@@ -1017,7 +1017,7 @@ form + .recently-topics{padding-top:18px;}
 .hall-of-fame > .hall-header {width: 196px; height: 31px; margin: 0 auto; text-shadow: 0 1px 0 #ffffff; position: relative}
 
 .hall-of-fame > .hall-header > h4 {position: absolute; margin: 0; background: transparent url('../images/hall-of-fame-header.png') no-repeat 0 0; text-align: center; height: 31px; width: 191px; top: 1px}
-.hall-of-fame > .hall-header > h4 > a {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 100%; text-align
+.hall-of-fame > .hall-header > h4 > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 100%; text-align
 : center; padding: 12px 0 8px; height: 19px; left: 36px; position: absolute; text-transform: uppercase}
 
 .hall-of-fame > .hall-footer {background-color: #edf2f4; border-top: 1px #c5cace solid;

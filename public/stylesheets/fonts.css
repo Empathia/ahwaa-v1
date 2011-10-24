@@ -63,7 +63,7 @@ body {font-family: Arial, Helvetica;}
 
 .gloabl-counter > div > span,
 .gloabl-counter > div > ul > li,
-.hall-of-fame > .hall-header > h4 > a,
+.hall-of-fame > .hall-header > h4 > span,
 .honor-member-info > span {font-family: 'Museo700-Sans'; font-weight: 100}
 
 .feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: 100}
