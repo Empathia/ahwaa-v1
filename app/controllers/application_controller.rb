@@ -41,10 +41,10 @@ class ApplicationController < ActionController::Base
   private
 
   def hall_of_fame
-    @fame_helpful = Rating.select('reply_id, user_id, sum(vote) as sum_vote').order('sum_vote desc').group(:reply_id).first.try(:user)
-    @fame_active = Reply.select('user_id, count(user_id) as replies_count').group(:user_id).order('replies_count desc').first.try(:user)
-    @fame_topics = Topic.select('user_id, count(user_id) as topics_count').group(:user_id).order('topics_count desc').first.try(:user)
-    @fame_points = ScoreBoard.select('user_id, max(current_points)').first.try(:user)
+    @fame_helpful = Rating.select('reply_id, user_id, sum(vote) as sum_vote').where("user_id <> 1").order('sum_vote desc').group(:reply_id).first.try(:user)
+    @fame_active = Reply.select('user_id, count(user_id) as replies_count').where("user_id <> 1").group(:user_id).order('replies_count desc').first.try(:user)
+    @fame_topics = Topic.select('user_id, count(user_id) as topics_count').where("user_id <> 1").group(:user_id).order('topics_count desc').first.try(:user)
+    @fame_points = ScoreBoard.select('user_id, max(current_points)').where("user_id <> 1").first.try(:user)
   end
     
   def record_not_found
