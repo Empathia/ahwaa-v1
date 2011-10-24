@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   before_filter :set_locale
+  before_filter :hall_of_fame
   helper_method :current_user, :logged_in?, :rtl?
 
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
@@ -38,42 +39,49 @@ class ApplicationController < ActionController::Base
   # end
 
   private
+
+  def hall_of_fame
+    @fame_helpful = Rating.select('reply_id, user_id, sum(vote) as sum_vote').order('sum_vote desc').group(:reply_id).first.try(:user)
+    @fame_active = Reply.select('user_id, count(user_id) as replies_count').group(:user_id).order('replies_count desc').first.try(:user)
+    @fame_topics = Topic.select('user_id, count(user_id) as topics_count').group(:user_id).order('topics_count desc').first.try(:user)
+    @fame_points = ScoreBoard.select('user_id, max(current_points)').first.try(:user)
+  end
     
-    def record_not_found
-      render :file => "#{Rails.root}/public/404.#{I18n.locale}.html", :layout => false
-    end
+  def record_not_found
+    render :file => "#{Rails.root}/public/404.#{I18n.locale}.html", :layout => false
+  end
 
-    # [Callback] sets locale or in the locale param or defaults to en
-    def set_locale
-      locale = request.subdomains.first
-      locale = (logged_in? ?
-                current_user.profile.language :
-                browser_language) if locale.blank? || !I18n.available_locales.include?(locale.to_sym)
-      I18n.locale = locale
-    end
+  # [Callback] sets locale or in the locale param or defaults to en
+  def set_locale
+    locale = request.subdomains.first
+    locale = (logged_in? ?
+              current_user.profile.language :
+              browser_language) if locale.blank? || !I18n.available_locales.include?(locale.to_sym)
+    I18n.locale = locale
+  end
 
-    def browser_language
-      request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
-    end
+  def browser_language
+    request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
+  end
 
-    def authenticate_user!
-      unless logged_in?
-        flash[:alert] = t('flash.application.not_logged_in')
-        respond_to do |format|
-          format.json { render :json => {}, :location => root_path, :status => :unauthorized }
-          format.html { redirect_to root_path }
-        end
+  def authenticate_user!
+    unless logged_in?
+      flash[:alert] = t('flash.application.not_logged_in')
+      respond_to do |format|
+        format.json { render :json => {}, :location => root_path, :status => :unauthorized }
+        format.html { redirect_to root_path }
       end
     end
+  end
 
-    # Validate admin authentication if route is within the /admin path
-    def authenticate_admin!
-      if self.class.name =~ /Admin/ && !current_user.is_admin?
-        flash[:alert] = t('flash.application.should_be_admin')
-        (redirect_to :back rescue redirect_to root_path)
-        false
-      else
-        true
-      end
+  # Validate admin authentication if route is within the /admin path
+  def authenticate_admin!
+    if self.class.name =~ /Admin/ && !current_user.is_admin?
+      flash[:alert] = t('flash.application.should_be_admin')
+      (redirect_to :back rescue redirect_to root_path)
+      false
+    else
+      true
     end
+  end
 end

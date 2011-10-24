@@ -1,4 +1,4 @@
-var lastSearchValue;
+var lastSearchValue, timer1;
 
 $(function() {
     /* Search field bind */
@@ -88,30 +88,32 @@ $(function() {
         $(this).parent('.avatar').siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
     });
     $('.avatar').hoverIntent(function (e) {
-        var that = $(this),
-            rollover = that.siblings('.private-msg'),
-            rollover_left = rollover.css('left') ? rollover.css('left') : 0,
-            rollover_top = ($('img', this).height() + 10),
-            indicator = that.siblings('.private-msg').find('.origin'),
-            ind_width = 20,
-            ind_left = (( $('img', this).width() / 2) + ind_width),
-            xleft = rollover.offset().left,
-            xright = rollover.offset().left + rollover.outerWidth();
+        var rollover = $(this).siblings('.private-msg');
+        if (rollover.length) {
+            var that = $(this),
+                rollover_left = rollover.css('left') ? rollover.css('left') : 0,
+                rollover_top = ($('img', this).height() + 10),
+                indicator = that.siblings('.private-msg').find('.origin'),
+                ind_width = 20,
+                ind_left = (( $('img', this).width() / 2) + ind_width),
+                xleft = rollover.offset().left,
+                xright = rollover.offset().left + rollover.outerWidth();
 
-        if ((e.pageX + xright) > $(window).width()) {
-            rollover.addClass('inside');
-            rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
-            indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
-        } else {
-            if(rollover.hasClass('inside')) {
-                rollover.removeClass('inside')
+            if ((e.pageX + xright) > $(window).width()) {
+                rollover.addClass('inside');
+                rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
+                indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
             } else {
-                indicator.css({'left': ind_left});
+                if(rollover.hasClass('inside')) {
+                    rollover.removeClass('inside')
+                } else {
+                    indicator.css({'left': ind_left});
+                }
             }
-        }
-        rollover.css({'top': rollover_top});
+            rollover.css({'top': rollover_top});
 
-        rollover.fadeIn(100)
+            rollover.fadeIn(100)
+        }
     }, function () {
         var that = $(this);
         timer1 = setTimeout(function(){
