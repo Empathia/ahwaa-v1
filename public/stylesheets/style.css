@@ -1038,6 +1038,7 @@ form + .recently-topics{padding-top:18px;}
 .hall-people .avatar > .honor-member {width: 72px; height: 52px; position: absolute; z-index: 1; background-image: url('../images/honor-member.png'); background-repeat: no-repeat; background-position: 0 0; top: 4px; left: -12px}
 
 .hall-people > li > .honor-member-info {margin-left: 69px}
+.hall-people > li > .honor-member-info > a {text-transform: capitalize}
 .honor-member-info > span {display: block; font-size: 13px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; margin-bottom: 3px; width: 100px}
 
 /* New Footer Style 

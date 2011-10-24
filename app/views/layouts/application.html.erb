@@ -187,91 +187,91 @@
     <div class="container">
       <%= yield %>
     </div>
-    <div class="hall-of-fame">
-      <div class="hall-header">
-        <h4>
-         <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
-        </h4>
-      </div>
-      <div class="hall-footer">
-        <div class="aligned">
-          <ul class="hall-people">
-            <% if @fame_helpful %>
-              <li>
-                <div class="avatar-wrapper">
-                  <span class="avatar">
-                    <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
-                    <span class="honor-member"></span>
-                    <span class="<%= level_css_class_for_user @fame_helpful %>"></span>
-                  </span>
-                </div>
-                <div class="honor-member-info">
-                  <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
-                  <%= link_to @fame_helpful.username, user_stream_path(@fame_helpful.username) %>
-                </div>
-              </li>
-            <% end %>
-            <% if @fame_active %>
-              <li>
-                <div class="avatar-wrapper">
-                  <span class="avatar">
-                    <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
-                    <span class="honor-member"></span>
-                    <span class="<%= level_css_class_for_user @fame_active %>"></span>
-                  </span>
-                </div>
-                <div class="honor-member-info">
-                  <span><%= t '.hall_of_fame.most_active_user' %></span>
-                  <%= link_to @fame_active.username, user_stream_path(@fame_active.username) %>
-                </div>
-              </li>
-            <% end %>
-            <% if @fame_topics %>
-              <li>
-                <div class="avatar-wrapper">
-                  <span class="avatar">
-                    <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
-                    <span class="honor-member"></span>
-                    <span class="<%= level_css_class_for_user @fame_topics %>"></span>
-                  </span>
-                </div>
-                <div class="honor-member-info">
-                  <span><%= t '.hall_of_fame.most_topics_posted' %></span>
-                  <%= link_to @fame_topics.username, user_stream_path(@fame_topics.username) %>
-                </div>
-              </li>
-            <% end %>
-            <% if @fame_points %>
-              <li class="last">
-                <div class="avatar-wrapper">
-                  <span class="avatar">
-                    <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
-                    <span class="honor-member"></span>
-                    <span class="<%= level_css_class_for_user @fame_points %>"></span>
-                  </span>
-                </div>
-                <div class="honor-member-info">
-                  <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
-                  <%= link_to @fame_points.username, user_stream_path(@fame_points.username) %>
-                </div>
-              </li>
-            <% end %>
-          </ul>
+    <!-- <div class="hall-of-fame">
+          <div class="hall-header">
+            <h4>
+             <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
+            </h4>
+          </div>
+          <div class="hall-footer">
+            <div class="aligned">
+              <ul class="hall-people">
+                <% if @fame_helpful %>
+                  <li>
+                    <div class="avatar-wrapper">
+                      <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
+                        <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
+                        <span class="honor-member"></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="honor-member-info">
+                      <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
+                      <%= link_to @fame_helpful.username, user_stream_path(@fame_helpful.username) %>
+                    </div>
+                  </li>
+                <% end %>
+                <% if @fame_active %>
+                  <li>
+                    <div class="avatar-wrapper">
+                      <span class="avatar <%= level_css_class_for_user @fame_active %>">
+                        <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
+                        <span class="honor-member"></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="honor-member-info">
+                      <span><%= t '.hall_of_fame.most_active_user' %></span>
+                      <%= link_to @fame_active.username, user_stream_path(@fame_active.username) %>
+                    </div>
+                  </li>
+                <% end %>
+                <% if @fame_topics %>
+                  <li>
+                    <div class="avatar-wrapper">
+                      <span class="avatar <%= level_css_class_for_user @fame_topics %>">
+                        <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
+                        <span class="honor-member"></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="honor-member-info">
+                      <span><%= t '.hall_of_fame.most_topics_posted' %></span>
+                      <%= link_to @fame_topics.username, user_stream_path(@fame_topics.username) %>
+                    </div>
+                  </li>
+                <% end %>
+                <% if @fame_points %>
+                  <li class="last">
+                    <div class="avatar-wrapper">
+                      <span class="avatar <%= level_css_class_for_user @fame_points %>">
+                        <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
+                        <span class="honor-member"></span>
+                        <span></span>
+                      </span>
+                    </div>
+                    <div class="honor-member-info">
+                      <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
+                      <%= link_to @fame_points.username, user_stream_path(@fame_points.username) %>
+                    </div>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="footer">
-        <div class="aligned">
-          <div class="footer-container">
-          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
-          <ul>
-            <li><%= link_to t('.footer.about'), about_path %> - </li>
-            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!--<footer>
+        <div class="footer">
+            <div class="aligned">
+              <div class="footer-container">
+              <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
+              <ul>
+                <li><%= link_to t('.footer.about'), about_path %> - </li>
+                <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+    <footer>
       <div class="footer-shadow">
         <div class="aligned">
           <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
@@ -281,7 +281,7 @@
           </ul>
         </div>
       </div>
-      </footer>-->
+      </footer>
   </div>
   <!-- Start of StatCounter Code -->
   <script type="text/javascript">
