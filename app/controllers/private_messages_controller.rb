@@ -4,7 +4,7 @@ class PrivateMessagesController < ApplicationController
   respond_to :js, :only => [:index, :create, :show, :destroy]
 
   def index
-    @messages = current_user.received_messages.group(:conversation_id).paginate(:page => params[:page], :per_page => 10).all
+    @messages = current_user.received_messages.group(:conversation_id).paginate(:page => params[:page], :per_page => 100).all
   end
 
   def show

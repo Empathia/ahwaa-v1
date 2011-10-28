@@ -349,7 +349,7 @@ $.fn.comments = function(options){
             });
             filter = filter.replace(/(\s+)?.$/, "");
             allComments.each(function(){
-               var comments = $(this);
+               var comments = $(this),
                    commentsClon = $('#' + comments.attr('id') + '_clon');
                if(comments.find(filter).length == 0){
                    commentsClon.length && commentsGroupToSlideUp.push(commentsClon);
@@ -361,8 +361,8 @@ $.fn.comments = function(options){
                    else{
                        var index = comments.attr('id').replace('comments_', ''),
                            link = $('#add_' + index);
-                       var commentsClon = cloneComments(link, comments.outerHTML(), index, link.hasClass('has_comments'));
-                       commentsClon.slideDownComments(comments);
+                       commentsClon = cloneComments(link, comments.outerHTML(), index, link.hasClass('has_comments'));
+                       $(commentsClon).slideDownComments(comments);
                    }
                }
             });
