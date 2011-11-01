@@ -143,3 +143,10 @@ $(window).load(function () {
         container.css('min-height', self.height() - delta);
     });
 });
+
+$('.hall-header > h4').live({
+  click: function() {
+    $(this).toggleClass('closed');
+    $(this).parents('.hall-of-fame').find('.hall-footer').toggleClass('collapsed');
+  }
+});

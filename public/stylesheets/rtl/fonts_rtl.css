@@ -48,6 +48,28 @@
 }
 
 @font-face {
+    font-family: 'Museo500-Regular';
+    src: url('/stylesheets/fonts/Museo500-Regular.eot');
+    src: url('/stylesheets/fonts/Museo500-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/Museo500-Regular.woff') format('woff'),
+         url('/stylesheets/fonts/Museo500-Regular.ttf') format('truetype'),
+         url('/stylesheets/fonts/Museo500-Regular.svg#gotham-light') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Museo700-Regular';
+    src: url('/stylesheets/fonts/Museo700-Regular.eot');
+    src: url('/stylesheets/fonts/Museo700-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/stylesheets/fonts/Museo700-Regular.woff') format('woff'),
+         url('/stylesheets/fonts/Museo700-Regular.ttf') format('truetype'),
+         url('/stylesheets/fonts/Museo700-Regular.svg#gotham-light') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'Museo900-Bold';
     src: url('/stylesheets/fonts/museo900-bold.eot');
     src: url('/stylesheets/fonts/museo900-bold.eot?#iefix') format('embedded-opentype'),
@@ -62,30 +84,41 @@ h1 {font-family: 'Gotham-Light'; font-weight: normal}
 body {font-family: Arial, Helvetica;}
 
 .gloabl-counter > div > span,
-.gloabl-counter > div > ul > li,
-.hall-of-fame > .hall-header > h4 > span,
-.honor-member-info > span {font-family: 'Museo700-Sans'; font-weight: 100}
+.gloabl-counter > div > ul > li {font-family: 'Museo700-Sans'; font-weight: 100}
 
 .feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: 100}
 .feature-wrapper > h2 > span {font-family: 'Museo500-Light'; font-weight: 100}
 
-.items-wrapper > section > h2,
 .related-content > div > h2 {font-family: 'GothamMediumRegular'; font-weight: 100}
 
 .sign-up-btn,
 .sec-title-med,
-#pageslide-slide-wrap > div h2 {font-family: "GothamMediumRegular"}
+#pageslide-slide-wrap > div h2,
+.hall-people > li > .honor-member-info > a {font-family: "GothamMediumRegular"}
 
 .sec-title,
 .h2 {font-family: 'GothamBoldRegular'}
 
 #join > a {font-family: "GothamBoldRegular"}
 
-.feature-wrapper > h2 > span {font-weight: normal}
+/* Museo700-Regular */
+.honor-member-info > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 > span {font-family: 'Museo700-Regular', Helvetica, Arial}
+
+/* Museo500-Regular */
+.items-frontpage .topic-spotlight .title {font-family: 'Museo500-Regular', Helvetica, Arial}
 
 .feature-wrapper > h2 {font-weight: bold}
+
+.feature-wrapper > h2 > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 {font-weight: normal}
 
 @-moz-document url-prefix() {
   .feature-wrapper > h2,
   .feature-wrapper > h2 > span {font-weight: 100}
 }
+
+html,
+body {-webkit-font-smoothing: antialiased}

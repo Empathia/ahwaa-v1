@@ -21,7 +21,7 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .topic-spotlight .avatar img {width: 42px; height: 42px}
 .topic-spotlight .item-data {width: 380px}
 .topic-spotlight .item-data > div {margin-top: 3px; overflow: hidden}
-.items-frontpage .topic-spotlight .title {font-size: 16px; line-height: 21px; font-family: 'GothamMediumRegular'; font-weight: lighter}
+.items-frontpage .topic-spotlight .title {line-height: 21px; font-size: 16px}
 .items-frontpage .topic-spotlight .by-author {font-size: 11px; margin-left: 15px}
 .items-frontpage .topic-spotlight .responses {margin-left: 10px; background-image: url("../../images/icn-responses-dark.png"); background-position:100% 4px; background-repeat: no-repeat;}
 .items-frontpage .topic-spotlight .tags {font-size: 11px}
@@ -37,7 +37,7 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .items-wrapper > section{width: 460px; float:right;}
 .items-wrapper > section > h2 {text-transform: uppercase; text-align: center; font-size: 16px; color: #546e86; float:right; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); padding-bottom: 6px; margin-bottom: 15px;}
 .items-wrapper > section > h2 > span {float:right; margin: 0 10px}
-.items-wrapper > section > h2 > .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 6px 0 0}
+.items-wrapper > section > h2 > .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 9px 0 0}
 .items-wrapper > .topics > h2 > .line {width: 115px}
 .items-wrapper > .feeds > h2 > .line {width: 145px}
 

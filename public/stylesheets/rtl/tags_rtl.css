@@ -1,23 +1,23 @@
 body {background-image:url("../../images/bg-noise-topic.jpg")}
-.topics{background-color: #ffffff; border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;}
-.tag-items{padding:0 40px 14px;}
-.tag-item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative;}
-.tag-item-row .tag-item + div{padding-right: 30px;}
+.topics{background-color: #ffffff; border-top-right-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
+.tag-items{padding:0 40px 14px}
+.tag-item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative}
+.tag-item-row .tag-item + div{padding-right: 30px}
 .tag-item-row .tag-item {width: 415px; padding: 25px 0; float:right}
-.tag-items > div > div.bottom{border:none; padding:0;}
+.tag-items > div > div.bottom{border:none; padding:0}
 .item-img > img {border:2px solid #FFFFFF; float:right}
 .item-img {border:1px solid #dadee0; float:right}
 .tag-item-data {float:right; width:335px; padding-right:15px; font-size:12px}
-.tag-item-data .dark-lk {color:#5D646A; font-weight:bold; font-size:14px;}
+.tag-item-data .dark-lk {color:#5D646A; font-size:14px}
 
 .tag-item-data{color:#a4a7ab}
-.tag-item-data > a{color: #a4a7ab;}
+.tag-item-data > a{color: #a4a7ab}
 .tag-item-data > div > span {display:block}
 .tags{margin:0}
-.tags-title{overflow: hidden; padding: 0 40px; height: 59px; border-bottom: 1px solid #edf2f7;}
-.tags-title > h2{float:right; font-size: 15px; font-weight: bold; color: #4c5563;  line-height: 4.1;}
-.order{color:#9da2a8; float:left; line-height: 4.9;}
-.order a{padding-right:5px; color:#9da2a8;}
-.order .active {color:#6c6f71; font-weight:bold;}                              
-.white-area{background-color: #ffffff; position: absolute; bottom: -1px; right: 415px; height: 1px;}
+.tags-title{overflow: hidden; padding: 0 40px; height: 59px; border-bottom: 1px solid #edf2f7}
+.tags-title > h2{float:right; font-size: 15px; font-weight: bold; color: #4c5563;  line-height: 4.1}
+.order{color:#9da2a8; float:left; line-height: 4.9}
+.order a{padding-right:5px; color:#9da2a8}
+.order .active {color:#6c6f71; font-weight:bold}                              
+.white-area{background-color: #ffffff; position: absolute; bottom: -1px; right: 415px; height: 1px}
 /*background:url("../../images/border-topics.gif") repeat-x 0 100% transparent; */

@@ -27,7 +27,7 @@ a:active {outline: none}
 button::-moz-focus-inner,
 input::-moz-focus-inner,
 a::-moz-focus-inner {border: 0; outline: 0}
-.dark-lk {color: #5d646a; font-weight: bold}
+.dark-lk {color: #364759}
 em {font-style: normal}
 input[type=text],
 input[type=password],
@@ -1013,12 +1013,12 @@ form + .recently-topics{padding-top:18px;}
 }
 
 /* Hall of Fame */
-.hall-of-fame {padding-top: 31px; position: relative}
+.hall-of-fame {position: fixed; bottom: 26px; width: 100%; z-index: 999; padding: 0}
 .hall-of-fame > .hall-header {width: 196px; height: 31px; margin: 0 auto; text-shadow: 0 1px 0 #ffffff; position: relative}
 
 .hall-of-fame > .hall-header > h4 {position: absolute; margin: 0; background: transparent url('../images/hall-of-fame-header.png') no-repeat 0 0; text-align: center; height: 31px; width: 191px; top: 1px}
-.hall-of-fame > .hall-header > h4 > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 100%; text-align
-: center; padding: 12px 0 8px; height: 19px; left: 36px; position: absolute; text-transform: uppercase}
+.hall-of-fame > .hall-header > h4 > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 0; text-align
+: center; padding: 6px 0 0; height: 22px; left: 36px; position: absolute; text-transform: uppercase; cursor: pointer; top: 9px}
 
 .hall-of-fame > .hall-footer {background-color: #edf2f4; border-top: 1px #c5cace solid;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#edf2f4), to(#e4eaed)); 
@@ -1041,11 +1041,17 @@ form + .recently-topics{padding-top:18px;}
 .hall-people > li > .honor-member-info > a {text-transform: capitalize}
 .honor-member-info > span {display: block; font-size: 13px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; margin-bottom: 3px; width: 100px}
 
+.hall-header > h4.closed > span {background-position: 50% 100%}
+.hall-of-fame > .collapsed {height: 15px}
+.hall-of-fame > .collapsed .hall-people {display: none}
+
 /* New Footer Style 
 / TBD: Change .footer class to footer to apply the new footer style ;
 */
 
-.footer {border-top: 1px #c9cdd0 solid;
+.container {padding-bottom: 150px}
+footer {position: fixed; bottom: 0; width: 100%; z-index: 999}
+footer {border-top: 1px #c9cdd0 solid;
 -webkit-box-shadow: inset 0 1px 0 #f6f9fa;
    -moz-box-shadow: inset 0 1px 0 #f6f9fa;
         box-shadow: inset 0 1px 0 #f6f9fa;
@@ -1063,3 +1069,5 @@ form + .recently-topics{padding-top:18px;}
 .footer-container > ul {float: right}
 .footer-container > ul > li {display: inline; color: #99b9d8}
 .footer-container > ul > li > a {color: #7aa4cd}
+
+.hall-people > li > .honor-member-info > a {font-size: 12px}
