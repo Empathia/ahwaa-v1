@@ -1033,13 +1033,14 @@ form + .recently-topics{padding-top:18px;}
 .hall-people > .last {margin-right: 0}
 .hall-people > li,
 .hall-people > li > .avatar-wrapper {float: left}
+.hall-people > li > .avatar-wrapper a {display: block; height: 50px; width: 50px}
 .hall-people .avatar {width: 42px; height: 42px; padding: 3px}
 .hall-people .avatar > span {top: 32px; left: 9px; z-index: 2}
 .hall-people .avatar > .honor-member {width: 72px; height: 52px; position: absolute; z-index: 1; background-image: url('../images/honor-member.png'); background-repeat: no-repeat; background-position: 0 0; top: 4px; left: -12px}
 
 .hall-people > li > .honor-member-info {margin-left: 69px}
 .hall-people > li > .honor-member-info > a {text-transform: capitalize}
-.honor-member-info > span {display: block; font-size: 13px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; margin-bottom: 3px; width: 100px}
+.honor-member-info > span {display: block; font-size: 11px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; width: 131px; margin: 8px 0 3px}
 
 .hall-header > h4.closed > span {background-position: 50% 100%}
 .hall-of-fame > .collapsed {height: 15px}

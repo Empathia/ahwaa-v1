@@ -199,11 +199,13 @@
                 <% if @fame_helpful %>
                   <li>
                     <div class="avatar-wrapper">
-                      <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
-                        <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
+                      <a href="#" title="">
+                        <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
+                          <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
+                          <span class="honor-member"></span>
+                          <span></span>
+                        </span>
+                      </a>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
@@ -214,11 +216,13 @@
                 <% if @fame_active %>
                   <li>
                     <div class="avatar-wrapper">
-                      <span class="avatar <%= level_css_class_for_user @fame_active %>">
-                        <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
+                      <a href="#" title="">
+                        <span class="avatar <%= level_css_class_for_user @fame_active %>">
+                          <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
+                          <span class="honor-member"></span>
+                          <span></span>
+                        </span>
+                      </a>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_active_user' %></span>
@@ -229,11 +233,13 @@
                 <% if @fame_topics %>
                   <li>
                     <div class="avatar-wrapper">
-                      <span class="avatar <%= level_css_class_for_user @fame_topics %>">
-                        <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
+                      <a href="#" title="">
+                        <span class="avatar <%= level_css_class_for_user @fame_topics %>">
+                          <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
+                          <span class="honor-member"></span>
+                          <span></span>
+                        </span>
+                      </a>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_topics_posted' %></span>
@@ -244,11 +250,13 @@
                 <% if @fame_points %>
                   <li class="last">
                     <div class="avatar-wrapper">
-                      <span class="avatar <%= level_css_class_for_user @fame_points %>">
-                        <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
+                      <a href="#" title="">
+                        <span class="avatar <%= level_css_class_for_user @fame_points %>">
+                          <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
+                          <span class="honor-member"></span>
+                          <span></span>
+                        </span>
+                      </a>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
@@ -271,17 +279,6 @@
             </div>
           </div>
         </footer>
-    <!-- <footer>
-      <div class="footer-shadow">
-        <div class="aligned">
-          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
-          <ul>
-            <li><%= link_to t('.footer.about'), about_path %> - </li>
-            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
-          </ul>
-        </div>
-      </div>
-      </footer> -->
   </div>
   <!-- Start of StatCounter Code -->
   <script type="text/javascript">
