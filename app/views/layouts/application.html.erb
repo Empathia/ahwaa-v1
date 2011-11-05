@@ -199,13 +199,13 @@
                 <% if @fame_helpful %>
                   <li>
                     <div class="avatar-wrapper">
-                      <a href="#" title="">
+                      <%= link_to user_stream_path(@fame_helpful.username), :title => @fame_helpful.username do %>
                         <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
                           <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
                           <span class="honor-member"></span>
                           <span></span>
                         </span>
-                      </a>
+                      <% end %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
@@ -216,13 +216,13 @@
                 <% if @fame_active %>
                   <li>
                     <div class="avatar-wrapper">
-                      <a href="#" title="">
+                      <%= link_to user_stream_path(@fame_active.username), :title => @fame_active.username do %>
                         <span class="avatar <%= level_css_class_for_user @fame_active %>">
                           <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
                           <span class="honor-member"></span>
                           <span></span>
                         </span>
-                      </a>
+                      <% end %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_active_user' %></span>
@@ -250,13 +250,13 @@
                 <% if @fame_points %>
                   <li class="last">
                     <div class="avatar-wrapper">
-                      <a href="#" title="">
+                      <%= link_to user_stream_path(@fame_points.username), :title => @fame_points.username do %>
                         <span class="avatar <%= level_css_class_for_user @fame_points %>">
                           <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
                           <span class="honor-member"></span>
                           <span></span>
                         </span>
-                      </a>
+                      <% end %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
