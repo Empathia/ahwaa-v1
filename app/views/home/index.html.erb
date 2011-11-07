@@ -58,7 +58,7 @@
         </div>
         <div class="advices-count">
           <ul>
-            <% advices = Reply.where(:category => 'advice').size.to_s.split('') %>
+            <% advices = Reply.all.size.to_s.split('') %>
             <li class="first"><%= advices[-4] || 0 %></li>
             <li><%= advices[-3] || 0 %></li>
             <li><%= advices[-2] || 0 %></li>

@@ -87,7 +87,7 @@ class Topic < ActiveRecord::Base
 
   # Finds most active users in the topic
   def most_active_users
-    ids = replies.count(:user_id,
+    ids = replies.not_anonymous.count(:user_id,
                         :group => :user_id,
                         :order => "count_user_id DESC",
                         :limit => (4 - experts.length)).keys
