@@ -1,8 +1,7 @@
 Lgbt::Application.routes.draw do
-  get "subscriptions/unsubscribe"
-
   resources :subscriptions, :only => [] do
     get 'unsubscribe', :on => :member
+    get 'unsubscribe_author', :on => :member
   end
 
   get "search/topics"

@@ -39,4 +39,10 @@ class UserMailer < ActionMailer::Base
     mail :to => @user.email,
       :subject => I18n.t('mailers.user.reply_notification.subject')
   end
+
+  def author_reply_notification(user, reply)
+    @user, @reply = user, reply
+    mail :to => @user.email,
+      :subject => I18n.t('mailers.user.reply_notification.subject')
+  end
 end

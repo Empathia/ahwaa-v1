@@ -14,6 +14,7 @@ class ReplyObserver < ActiveRecord::Observer
     StreamMessage.create(:reply => reply)
 
     reply.topic.notify_subscribers_about_new_response(reply)
+    reply.topic.notify_author_about_new_response(reply)
   end
 
 end

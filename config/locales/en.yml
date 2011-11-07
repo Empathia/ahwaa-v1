@@ -26,6 +26,9 @@ en:
       unsubscribe:
         notice: You have been ubsubscribed from this topic.
         alert: "Could'nt find any subscription with that email"
+      unsubscribe_author:
+        notice: You will no longer receive notifications for replies on this topic.
+        alert: "Couldn't find any topic subscription"
 
   activerecord:
     models:

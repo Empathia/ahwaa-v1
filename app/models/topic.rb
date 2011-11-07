@@ -25,6 +25,7 @@ class Topic < ActiveRecord::Base
   validates :content, :presence => true
   validates :user_id, :presence => true
 
+  before_create :generate_author_notification
   after_save :update_tank_indexes, :if => 'Rails.env.production?'
   after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
   after_create :ensure_topic_request_deletion, :if => "from_request.present?"
@@ -41,6 +42,20 @@ class Topic < ActiveRecord::Base
         UserMailer.delay.reply_notification(user, reply)
       end unless user == reply.user
     end
+  end
+
+  def notify_author_about_new_response(reply)
+    user.with_user_locale do
+      UserMailer.author_reply_notification(user, reply).deliver
+    end if reply.topic.should_notify_author? && user != reply.user
+  end
+
+  def should_notify_author?
+    author_subscription.present?
+  end
+
+  def unsubscribe_author!
+    update_attribute(:author_subscription, nil)
   end
 
   def recent_participants
@@ -82,6 +97,10 @@ class Topic < ActiveRecord::Base
   # Get topic users leaderboard
   def leaderboard
     (experts + most_active_users).uniq
+  end
+
+  def generate_author_notification
+    self.author_subscription = Digest::SHA1.hexdigest([Time.now.to_i, rand(1000), rand(100)].join('--'))
   end
 
   private

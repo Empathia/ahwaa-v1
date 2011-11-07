@@ -1,0 +1,7 @@
+مرحباً <%= @user.username %>,
+لقد ترك شخص تعليق علي موضوعك في أهواء. شاهد الرد الأن <%= topic_url(@reply.topic) %>
+
+لا تريد أستقبال هذه الرسائل في المستقبل ؟ برجاء الضغط علي الرابط التالي:<%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %>
+
+شكراً
+أهواء

@@ -11,4 +11,13 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+  def unsubscribe_author
+    topic = Topic.find_by_author_subscription(params[:id])
+    if topic && topic.unsubscribe_author!
+      redirect_to topic, :notice => t('flash.subscriptions.unsubscribe_author.notice')
+    else
+      redirect_to root_path, :alert => t('flash.subscriptions.unsubscribe_author.alert')
+    end
+  end
+
 end
