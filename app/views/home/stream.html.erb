@@ -22,7 +22,7 @@
         </div>
         <% if @stream_messages.current_page < @stream_messages.total_pages %>
           <p class="load-more-wrapper">
-            <%= link_to params[:username] ? user_stream_path(params[:username], :page => (params[:page] || 1).succ) : stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'clean-button border-all' do %>
+            <%= link_to stream_path(:page => (params[:page] || 1).succ, :format => :js), :remote => true, :class => 'clean-button border-all' do %>
               <span class="more-stream border-all">View More</span>
             <% end %>
           </p>

@@ -21,7 +21,7 @@
                   </div>
                   <div class="tag-item-data">
                     <%= link_to topic.title, topic, :class => 'dark-lk' %>
-                    <%= raw t 'topics.topic.popular.by', :author => link_to(topic.user.username, user_stream_path(topic.user.username)) %>
+                    <%= t 'topics.topic.popular.by', :author => topic.user.username %>
                     <br />
                     <ul class="tags">
                       <% topic.tags.each_with_index do |tag, i| %>

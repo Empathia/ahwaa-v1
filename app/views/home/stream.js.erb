@@ -4,6 +4,6 @@
   <% if @stream_messages.current_page == @stream_messages.total_pages %>
     $('.load-more-wrapper').hide();
   <% else %>
-    $('.load-more-wrapper > a').attr('href', '<%= params[:username] ? user_stream_path(params[:username], :page => params[:page].succ) : stream_path(:page => params[:page].succ, :format => :js, :filter => params[:filter]) %>');
+    $('.load-more-wrapper > a').attr('href', '<%= stream_path(:page => params[:page].succ, :format => :js, :filter => params[:filter]) %>');
   <% end %>
 })();

@@ -8,7 +8,7 @@
     <div class="item-data">
       <%= link_to topic.title, topic, :class => 'title dark-lk' %>
       <div>
-        <span class="by-author"><%= raw t('.by', :author => link_to(topic.user.username, user_stream_path(topic.user.username))) %></span>
+        <span class="by-author"><%= t('.by', :author => topic.user.username) %></span>
         <%= link_to topic.all_replies.size, topic, :class => 'responses' %>
         <ul class="tags">
           <% topic.tags.each_with_index do |tag, i| %>

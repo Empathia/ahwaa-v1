@@ -6,7 +6,7 @@
   <div class="item-data">
     <%= link_to topic.title, topic, :class => 'dark-lk' %>
     <div>            
-      <span class="by-author"><%= raw t('.popular.by', :author => link_to(topic.user.username, user_stream_path(topic.user.username))).html_safe %></span>
+      <span class="by-author"><%= t('.popular.by', :author => topic.user.username) %></span>
       <ul class="tags">
         <% topic.tags.each_with_index do |tag, i| %>
           <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.id) %></li>
