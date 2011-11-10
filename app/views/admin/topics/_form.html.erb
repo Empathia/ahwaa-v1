@@ -44,6 +44,14 @@
     <%= f.label :tag_list %>
     <%= select_tag 'topic[tag_list]', '', :multiple => true %>
   </p>
+  <p class="field">
+    <%= f.label :meta_description %>
+    <%= f.text_field :meta_description %>
+  </p>
+  <p class="field">
+    <%= f.label :meta_keywords %>
+    <%= f.text_field :meta_keywords %>
+  </p>
   <p>
     <%= f.submit %>
   </p>

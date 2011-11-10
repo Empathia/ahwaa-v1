@@ -5,6 +5,8 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.includes(:replies).find(params[:id])
     @replies = @topic.replies.group_by(&:contextual_index)
+    @meta_description = @topic.meta_description
+    @meta_keywords = @topic.meta_keywords
     current_user.visit_topic!(@topic) if logged_in?
   end
 
