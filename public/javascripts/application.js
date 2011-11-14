@@ -77,17 +77,15 @@ $(function() {
     /* Preload images */
     $('<img />').attr('src', '/images/loading-s-gray.gif');
     $('<img />').attr('src', '/images/loading-s-white.gif');
-    
+
     /* Avatars RollOver */
     $('body').click(function(e){
       $(e.target);
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
-    $('.avatar > img').mouseenter(function(e){
-        clearTimeout(timer1);
-        $(this).parent('.avatar').siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
-    });
-    $('.avatar').hoverIntent(function (e) {
+    
+    setTimeout(function() {
+   $('.avatar').hoverIntent(function (e) {
         var rollover = $(this).siblings('.private-msg');
         if (rollover.length) {
             var that = $(this),
@@ -132,8 +130,8 @@ $(function() {
     });
     $('.private-msg').mouseleave(function () {
         $(this).fadeOut(100);
-    });
-    
+    }); 
+}, 2000);
 });
 
 $(window).load(function () {
