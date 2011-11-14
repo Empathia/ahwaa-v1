@@ -93,16 +93,24 @@ $(function() {
             var that = $(this),
                 rollover_left = rollover.css('left') ? rollover.css('left') : 0,
                 rollover_top = ($('img', this).height() + 10),
+                rollover_bottom = ($('img', this).height() + $(rollover).height() + 10),
                 indicator = that.siblings('.private-msg').find('.origin'),
                 ind_width = 20,
                 ind_left = (( $('img', this).width() / 2) + ind_width),
+                // pbottom = $(window).height(),
+                xtop = rollover.offset().top,
                 xleft = rollover.offset().left,
                 xright = rollover.offset().left + rollover.outerWidth();
-
+                
+            
+                rollover.css({'top': rollover_top});
             if ((e.pageX + xright) > $(window).width()) {
                 rollover.addClass('inside');
                 rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
                 indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
+            } else if ($(rollover).parent().is('.footer-avatar')) {
+                rollover.addClass('bottom-avatar');
+                rollover.css({'top': -((rollover.outerHeight() + 3)) })
             } else {
                 if(rollover.hasClass('inside')) {
                     rollover.removeClass('inside')
@@ -110,7 +118,6 @@ $(function() {
                     indicator.css({'left': ind_left});
                 }
             }
-            rollover.css({'top': rollover_top});
 
             rollover.fadeIn(100)
         }

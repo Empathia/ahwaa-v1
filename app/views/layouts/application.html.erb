@@ -199,12 +199,13 @@
               <ul class="hall-people">
                 <% if @fame_helpful %>
                   <li>
-                    <div class="avatar-wrapper">
+                    <div class="avatar-wrapper footer-avatar">
                       <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
                         <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
                         <span class="honor-member"></span>
                         <span></span>
                       </span>
+                      <%= render :partial => 'users/card', :locals => {:user => @fame_helpful} %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
@@ -214,12 +215,13 @@
                 <% end %>
                 <% if @fame_active %>
                   <li>
-                    <div class="avatar-wrapper">
+                    <div class="avatar-wrapper footer-avatar">
                       <span class="avatar <%= level_css_class_for_user @fame_active %>">
                         <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
                         <span class="honor-member"></span>
                         <span></span>
                       </span>
+                      <%= render :partial => 'users/card', :locals => {:user => @fame_active} %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_active_user' %></span>
@@ -229,12 +231,13 @@
                 <% end %>
                 <% if @fame_topics %>
                   <li>
-                    <div class="avatar-wrapper">
+                    <div class="avatar-wrapper footer-avatar">
                       <span class="avatar <%= level_css_class_for_user @fame_topics %>">
                         <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
                         <span class="honor-member"></span>
                         <span></span>
                       </span>
+                      <%= render :partial => 'users/card', :locals => {:user => @fame_topics} %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.most_topics_posted' %></span>
@@ -244,12 +247,13 @@
                 <% end %>
                 <% if @fame_points %>
                   <li class="last">
-                    <div class="avatar-wrapper">
+                    <div class="avatar-wrapper footer-avatar">
                       <span class="avatar <%= level_css_class_for_user @fame_points %>">
                         <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
                         <span class="honor-member"></span>
                         <span></span>
                       </span>
+                      <%= render :partial => 'users/card', :locals => {:user => @fame_points} %>
                     </div>
                     <div class="honor-member-info">
                       <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
