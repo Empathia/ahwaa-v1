@@ -14,6 +14,6 @@ class TopicRequestsController < ApplicationController
       flash[:notice] = t('flash.topic_requests.create.notice')
     end
 
-    redirect_to '/'
+    redirect_to stream_path
   end
 end
