@@ -106,9 +106,15 @@ $(function() {
                 rollover.addClass('inside');
                 rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
                 indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
+                if ($(rollover).parents('.footer-avatar').length) {
+                    rollover.addClass('bottom-avatar');
+                    rollover.css({'top': -(rollover_bottom) });    
+                } else {
+                    rollover.css({'top': rollover_top});                    
+                }
             } else if ($(rollover).parents('.footer-avatar').length) {
                 rollover.addClass('bottom-avatar');
-                rollover.css({'top': -(rollover_bottom) })
+                rollover.css({'top': -(rollover_bottom) });
             } else {
                 if(rollover.hasClass('inside')) {
                     rollover.removeClass('inside')
