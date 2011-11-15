@@ -77,23 +77,21 @@ $(function() {
     /* Preload images */
     $('<img />').attr('src', '/images/loading-s-gray.gif');
     $('<img />').attr('src', '/images/loading-s-white.gif');
-    
+
     /* Avatars RollOver */
     $('body').click(function(e){
       $(e.target);
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
-    $('.avatar > img').mouseenter(function(e){
-        clearTimeout(timer1);
-        $(this).parent('.avatar').siblings('.private-msg').is(':hidden') && $('.private-msg').hide();
-    });
-    $('.avatar').hoverIntent(function (e) {
+    
+    setTimeout(function() {
+   $('.avatar').hoverIntent(function (e) {
         var rollover = $(this).siblings('.private-msg');
         if (rollover.length) {
             var that = $(this),
                 rollover_left = rollover.css('left') ? rollover.css('left') : 0,
                 rollover_top = ($('img', this).height() + 10),
-                rollover_bottom = ($('img', this).height() + $(rollover).height() + 10),
+                rollover_bottom = (rollover.outerHeight() + 3),
                 indicator = that.siblings('.private-msg').find('.origin'),
                 ind_width = 20,
                 ind_left = (( $('img', this).width() / 2) + ind_width),
@@ -102,15 +100,21 @@ $(function() {
                 xleft = rollover.offset().left,
                 xright = rollover.offset().left + rollover.outerWidth();
                 
-            
                 rollover.css({'top': rollover_top});
+
             if ((e.pageX + xright) > $(window).width()) {
                 rollover.addClass('inside');
                 rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
                 indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
-            } else if ($(rollover).parent().is('.footer-avatar')) {
+                if ($(rollover).parents('.footer-avatar').length) {
+                    rollover.addClass('bottom-avatar');
+                    rollover.css({'top': -(rollover_bottom) });    
+                } else {
+                    rollover.css({'top': rollover_top});                    
+                }
+            } else if ($(rollover).parents('.footer-avatar').length) {
                 rollover.addClass('bottom-avatar');
-                rollover.css({'top': -((rollover.outerHeight() + 3)) })
+                rollover.css({'top': -(rollover_bottom) });
             } else {
                 if(rollover.hasClass('inside')) {
                     rollover.removeClass('inside')
@@ -132,8 +136,8 @@ $(function() {
     });
     $('.private-msg').mouseleave(function () {
         $(this).fadeOut(100);
-    });
-    
+    }); 
+}, 2000);
 });
 
 $(window).load(function () {
