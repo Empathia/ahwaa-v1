@@ -20,6 +20,7 @@ class Topic < ActiveRecord::Base
   has_many :subscriptions
   has_many :subscribers, :through => :subscriptions, :source => :user
   has_many :stream_messages, :dependent => :destroy
+  has_many :visited_topics, :dependent => :destroy
 
   validates :title, :presence => true
   validates :content, :presence => true
