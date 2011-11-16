@@ -1,4 +1,5 @@
 en:
+  user_deleted: User Deleted
   flash:
     actions:
       create:

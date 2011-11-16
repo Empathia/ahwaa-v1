@@ -1,4 +1,5 @@
 ar:
+  user_deleted: "المستخدم المحذوف"
   flash:
     actions:
       create:

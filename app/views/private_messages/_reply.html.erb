@@ -1,11 +1,17 @@
 <div class="discussion-wrapper">
   <div class="avatar-wrapper">
-    <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
-    <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
+    <% if reply.sender %>
+      <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
+      <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
+    <% else %>
+      <span class="avatar no-level">
+        <%= image_tag Avatar.default.url, :size => '56x56' %>
+      </span>
+    <% end %>
   </div>
   <div class="message-data">
     <div class="from">
-      <%= reply.sender.username %>
+      <%= reply.sender ? reply.sender.username : t('user_deleted') %>
       <span class="date"><%= l(reply.created_at.to_date, :format => :inbox) %></span>
     </div>
     <div class="msg">
