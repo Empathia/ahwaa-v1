@@ -1,4 +1,4 @@
-<p>Dear <%= @user.username %></p>,
+<p>Dear <%= @user.username %>,</p>
 
 <p>A user has just responded to your comment on <%= @reply.topic.title %> at Ahwaa.org. To read the response, click <%= link_to "here", topic_url(@reply.topic) %>.</p>
 
