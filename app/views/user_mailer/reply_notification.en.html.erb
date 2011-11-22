@@ -1,6 +1,6 @@
 <p>Dear <%= @user.username %>,</p>
 
-<p>A user has just responded to your comment on <b><%= link_to @reply.topic.title, topic_url(@reply.topic) %> on Ahwaa!</b>. To read the response, click <b><%= link_to "here", topic_url(@reply.topic) %></b>.</p>
+<p>A user has just responded to your comment on <b><%= link_to "#{@reply.topic.title} on Ahwaa!", topic_url(@reply.topic) %></b>. To read the response, click <b><%= link_to "here", topic_url(@reply.topic) %></b>.</p>
 
 <p>Thanks,<br/>
 Ahwaa</p>
