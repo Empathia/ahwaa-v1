@@ -1,9 +1,8 @@
 <p>مرحباً <%= @user.username %>,</p>
-<p>
-لقد ترك شخص تعليق علي موضوعك في أهواء. شاهد الرد الأن <%= topic_url(@reply.topic) %>
-</p>
-<p>
-  لا تريد أستقبال هذه الرسائل في المستقبل ؟ برجاء الضغط علي الرابط التالي:<%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %>
-</p>
+
+<p>لقد ترك شخص تعليق علي موضوعك في أهواء. شاهد الرد الأن <b><%= @reply.topic.title, topic_url(@reply.topic) %></b></p>
+
 <p>شكراً<br/>
 أهواء</p>
+
+<p><font color="#999999" size="1">لا تريد أستقبال هذه الرسائل في المستقبل ؟ برجاء الضغط علي الرابط التالي:<%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %></font></p>

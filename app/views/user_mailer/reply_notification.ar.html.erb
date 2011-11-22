@@ -1,8 +1,8 @@
 <p>عزيزي <%= @user.username %>,</p>
 
-<p>نوجه عناية سيادتكم وجود ردّ على <%= @reply.topic.title %> على موقع أهواء. للإطلاع عليه, إضغط <%= link_to "هنا", topic_url(@reply.topic) %>.</p>
-
-<p><small>إذا كنت لا ترغب في استلام هذه التنبيهات من موقع أهواء في المستقبل، ألغِ اشتراكك<%= link_to 'بالضغط هنا', unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key) %>.</small></p>
+<p>نوجه عناية سيادتكم وجود ردّ على <b><%= link_to @reply.topic.title, topic_url(@reply.topic) %></b> على موقع أهواء. للإطلاع عليه, إضغط <b><%= link_to "هنا", topic_url(@reply.topic) %></b>.</p>
 
 <p>شكرًا،<br/>
 فريق</p>
+
+<p><font color="#999999" size="1">إذا كنت لا ترغب في استلام هذه التنبيهات من موقع أهواء في المستقبل، ألغِ اشتراكك<%= link_to 'بالضغط هنا', unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key) %>.</font></p>

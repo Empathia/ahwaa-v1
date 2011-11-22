@@ -1,7 +1,8 @@
 <p>Hello <%= @user.username %>,</p>
-<p>Someone has just responded to a topic you started on Ahwaa. Check it out! <%= topic_url(@reply.topic) %></p>
 
-<p>Don't want to receive these notifications? Unsubscribe by visiting this link: <%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %></p>
+<p>Someone has just responded to a topic you started on Ahwaa. Check it out! <b><%= link_to @reply.topic.title, topic_url(@reply.topic) %></b></p>
 
 <p>Thanks,<br/>
   Ahwaa</p>
+
+<p><font color="#999999" size="1">Don't want to receive these notifications? Unsubscribe by visiting this link: <%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %></font></p>
