@@ -1,6 +1,6 @@
 <p>مرحباً <%= @user.username %>,</p>
 
-<p>لقد ترك شخص تعليق علي موضوعك في أهواء. شاهد الرد الأن <b><%= @reply.topic.title, topic_url(@reply.topic) %></b></p>
+<p>لقد ترك شخص تعليق علي موضوعك في أهواء. شاهد الرد الأن <b><%= link_to @reply.topic.title, topic_url(@reply.topic) %></b></p>
 
 <p>شكراً<br/>
 أهواء</p>
