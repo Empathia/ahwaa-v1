@@ -6,6 +6,7 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .rvmrc
+*.swp
 public/javascripts/locales.js
 public/javascripts/common.js
 public/javascripts/all.js

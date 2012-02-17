@@ -14,7 +14,7 @@
 <div class="aligned">
   <div class="content article-wrapper">
     <div class="left-side">
-      <article class="border-all container-soft-box-shadow">
+      <article class="border-all container-soft-box-shadow" data-hansel-component-id="topic-main-section">
         <header>
           <div class="avatar-wrapper">
             <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
@@ -57,7 +57,7 @@
         </div>
       </article>
     </div>
-    <aside class="border-all container-soft-box-shadow">
+    <aside class="border-all container-soft-box-shadow" data-hansel-component-id="topic-side-bar">
       <section class="show-hide">
         <%= link_to nil, :class => "expand-btn border-all" do %>
           <span><%= t('.sidebar.hide_all_responses')%></span>

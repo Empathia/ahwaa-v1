@@ -47,7 +47,7 @@
               <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
             </div>
             <% if logged_in? %>
-              <div class="user-logged-info">
+              <div class="user-logged-info" data-hansel-component-id="user-logged-box">
                 <%= avatar_span(current_user, current_user.is_expert?, false, "42x42") %>
                 <div class="user-data">
                   <b>
@@ -78,7 +78,7 @@
               </div>
             <% else %>
               <div class="sign-up">
-                <div class="auth-wrapper">
+                <div class="auth-wrapper" data-hansel-component-id="sign-up">
                   <a href="#" id="sign-up" class="sign-up-lk border-all">
                     <span class="sign-up-btn border-all"><%= t('.header.auth.sign_up') %></span>
                   </a>
@@ -102,7 +102,7 @@
                     <%= f.submit t('.header.sign_up_form.sign_up'), :class => "auth-submit border-all" %>
                   <% end %>
                 </div>
-                <div class="auth-wrapper">
+                <div class="auth-wrapper" data-hansel-component-id="sign-in">
                   <a href="#" id="login" class="border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
                   <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
                     <ul>
@@ -131,7 +131,7 @@
                  </div>
               </div>
             <% end %>
-            <div class="search">
+            <div class="search" data-hansel-component-id="search">
               <p class="border-all">
                 <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
                 <span></span>
@@ -188,7 +188,7 @@
     <div class="container">
       <%= yield %>
     </div>
-    <div class="hall-of-fame">
+    <div class="hall-of-fame" data-hansel-component-id="hall-of-fame">
           <div class="hall-header">
             <h4 class="closed">
              <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
