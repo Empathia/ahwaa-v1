@@ -49,4 +49,13 @@
 	} else {
 		document.write(unescape("%3Cscript src='http://50.16.153.9/js/hansel.js' type='text/javascript'%3E%3C/script%3E"));
 	}
-
+	window.gretel.init = function() {
+		if (!window.gretelParams.gretelOpen) {
+			var head = document.getElementsByTagName("head")[0];
+			var newScript = document.createElement("script");
+			newScript.type = 'text/javascript';
+			newScript.src = 'http://50.16.153.9/js/gretel.js';
+			head.appendChild(newScript);
+    	}
+	}
+	
