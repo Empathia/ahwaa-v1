@@ -21,6 +21,5 @@ group :development, :test do
   gem "rspec-rails", "~> 2.3.0"
   gem "factory_girl_rails", '~> 1.0'
   gem 'no_peeping_toms'
-  gem 'ruby-debug'
 end
 
