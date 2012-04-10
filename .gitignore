@@ -15,6 +15,5 @@ db/development_structure.sql
 public/system/**/*
 tags
 coverage/**
-Gemfile.lock
 .rspec
 

@@ -15,6 +15,7 @@ gem 'rio', '~> 0.4.2'
 gem 'random_data'
 gem 'nokogiri', '~> 1.4.3.1'
 gem 'delayed_job', '~> 2.1.4'
+gem 'unicorn', '1.0.0'
 
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
