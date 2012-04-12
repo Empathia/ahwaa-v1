@@ -3,13 +3,13 @@ class Topic < ActiveRecord::Base
 
   # TODO: attr_accessible
   
-  include Tanker
+  # include Tanker
 
-  tankit 'lgbt' do
-    indexes :title
-    indexes :content
-    indexes :tag_list
-  end
+  # tankit 'lgbt' do
+  #   indexes :title
+  #   indexes :content
+  #   indexes :tag_list
+  # end
 
   belongs_to :user
   has_many :replies, :dependent => :destroy, :conditions => "contextual_index IS NOT NULL"
@@ -27,8 +27,8 @@ class Topic < ActiveRecord::Base
   validates :user_id, :presence => true
 
   before_create :generate_author_notification
-  after_save :update_tank_indexes, :if => 'Rails.env.production?'
-  after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
+  # after_save :update_tank_indexes, :if => 'Rails.env.production?'
+  # after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
   after_create :ensure_topic_request_deletion, :if => "from_request.present?"
 
   scope :by_language, lambda { |lang| where("language = :lang", :lang => lang) }
