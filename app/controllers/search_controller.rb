@@ -4,15 +4,7 @@ class SearchController < ApplicationController
   respond_to :json, :js
 
   def topics
-    @results = if Rails.env == 'production'
-      if !params[:query].blank? && params[:query].length > 0
-        Topic.search_tank(params[:query])
-      else
-        []
-      end
-    else
-      Topic.where("title LIKE :input",{:input => "%#{params[:query]}%"}).paginate(:page => 1)
-    end
+    @results = Topic.where("title LIKE :input",{:input => "%#{params[:query]}%"}).paginate(:page => 1)
     respond_with(@results)
   end
 
