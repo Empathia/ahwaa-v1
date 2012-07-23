@@ -1,8 +1,8 @@
 $(function(){
     $("input:visible:checkbox, input:radio").uniform();
 
-    $('.follow-topic').bind('ajax:beforeSend', function(){
-        if ($(this).hasClass('disabled')){
+    $('.follow-topic').bind('ajax:beforeSend', function (){
+        if ($(this).hasClass('disabled')) {
             $('#login').trigger('click');
             return false;
         }
