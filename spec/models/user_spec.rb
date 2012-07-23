@@ -13,6 +13,8 @@ describe User do
 
   it { should validate_uniqueness_of(:username) }
   it { should validate_uniqueness_of(:email) }
+  it { should validate_presence_of(:username) }
+  it { should validate_presence_of(:password) }
   it { should_not allow_mass_assignment_of(:encrypted_password) }
   it { should_not allow_mass_assignment_of(:password_salt) }
   it { should_not allow_mass_assignment_of(:responses_count) }
@@ -30,7 +32,7 @@ describe User do
   end
 
   context "upon creation" do
-    
+
     it "should have a profile" do
       @user.profile.should_not be_nil
     end
@@ -38,12 +40,6 @@ describe User do
     it "should not be expert nor admin" do
       @user.is_expert?.should_not be_true
       @user.is_admin?.should_not be_true
-    end
-
-    it "should generate a temporary password if none" do
-      @user = Factory(:user, :password => nil)
-      @user.password.should_not be_blank
-      @user.authenticate!(@user.password).should be_true
     end
 
     it 'should have a scoreboard' do
@@ -55,7 +51,7 @@ describe User do
   context 'level badge prize assignation' do
     it 'should assign a reward' do
       @level = Factory(:level)
-      @user.set_reward(@level) 
+      @user.set_reward(@level)
       @user.reload.current_level.should == @level
     end
   end
@@ -71,7 +67,7 @@ describe User do
   describe 'notify_about_topic!' do
     it 'should send email when notified to participate on a topic' do
       @topic = Factory(:topic)
-      mock_mailer = mock('mailer', :deliver => true) 
+      mock_mailer = mock('mailer', :deliver => true)
       UserMailer.should_receive(:topic_match_notification).with(@user,@topic).and_return(mock_mailer)
       @user.notify_about_topic!(@topic)
     end

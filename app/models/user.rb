@@ -24,14 +24,13 @@ class User < ActiveRecord::Base
 
   before_create :build_profile
   before_create :build_score_board
-  before_validation :set_temp_password, :on => :create, :if => "password.blank?"
-  before_save :set_encrypted_password, :if => :should_require_password?
+  before_save :set_encrypted_password
   before_destroy :change_topics_owner
 
   validates :username, :uniqueness => true, :presence => true,
     :format => { :with => /^[\w-]+$/ }
   validates :password, :confirmation => true,
-    :presence => { :if => :should_require_password? }
+    :presence => true
   validates :email, :uniqueness => true, :email => true
 
   accepts_nested_attributes_for :profile
@@ -85,7 +84,7 @@ class User < ActiveRecord::Base
   def to_param
     username
   end
-  
+
   # send notification to participate in a topic
   def notify_about_topic!(topic)
     with_user_locale do
@@ -97,7 +96,7 @@ class User < ActiveRecord::Base
   def notify_password_reset!
     with_user_locale do
       reset_single_access_token!
-      UserMailer.password_reset(self).deliver 
+      UserMailer.password_reset(self).deliver
     end
   end
 
@@ -126,7 +125,7 @@ class User < ActiveRecord::Base
   def set_reward(reward)
     self.send("current_#{reward.class.to_s.underscore}=",reward)
   end
-  
+
   # updates the scoreboard
   def update_score_board(by)
     self.score_board.update_attributes!(:current_points => self.score_board.current_points + by)
@@ -169,14 +168,6 @@ class User < ActiveRecord::Base
   end
 
   private
-
-  def set_temp_password
-    self.password = User.encrypt_token("temp_password", Time.now.to_i)[0...6]
-  end
-
-  def should_require_password?
-    !password.blank? ||  encrypted_password.blank?
-  end
 
   def set_password_salt
     self.password_salt = User.encrypt_token("hey there! #{rand(1000)}", Time.now.to_i)
