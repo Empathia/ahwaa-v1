@@ -37,6 +37,10 @@ Class('AuthForms')({
                         'empty': I18n.t('layouts.application.header.sign_up_form.error_email_empty'),
                         'invalid': I18n.t('layouts.application.header.sign_up_form.error_email_invalid')
                     },
+                    'password': {
+                        'invalid': I18n.t('layouts.application.header.sign_up_form.error_password_short'),
+                        'empty': I18n.t('layouts.application.header.sign_up_form.error_password_empty')
+                    },
                     'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
                 }
             });

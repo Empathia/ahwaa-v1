@@ -93,6 +93,10 @@
                         <label><%= t('.header.sign_up_form.username') %></label>
                         <%= f.text_field :username, :required => "true", :maxlength => 35 %>
                       </li>
+                      <li class="password">
+                        <label><%= t('.header.sign_up_form.password') %></label>
+                        <%= f.password_field :password, :required => "true", :maxlength => 35 %>
+                      </li>
                     </ul>
                     <div class="flash-privacy">
                       <div class="border-all"><%= t('.header.sign_up_form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
@@ -279,9 +283,9 @@
   </div>
   <!-- Start of StatCounter Code -->
   <script type="text/javascript">
-    var sc_project=6758319; 
-    var sc_invisible=1; 
-    var sc_security="9423d6a1"; 
+    var sc_project=6758319;
+    var sc_invisible=1;
+    var sc_security="9423d6a1";
   </script>
 
   <script type="text/javascript" src="http://www.statcounter.com/counter/counter.js"></script>
