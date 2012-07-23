@@ -1,6 +1,12 @@
 $(function(){
     $("input:visible:checkbox, input:radio").uniform();
-    $('.follow-topic').bind('ajax:success', function () {
+
+    $('.follow-topic').bind('ajax:beforeSend', function () {
+        if ($(this).hasClass('disabled')) {
+            $('#login').trigger('click');
+            return false;
+        }
+    }).bind('ajax:success', function () {
         var self = $(this);
         if (!self.hasClass('disabled')) {
             if (self.hasClass('following')) {
@@ -43,7 +49,7 @@ $(function(){
         leftSideWidth = 720,
         windowObj = $(window),
         rtl = $('html').attr('dir') == 'rtl';
-        
+
     socialBookmarkers.mouseleave(function(){
         $(this).children('.flash-privacy').hide();
     }).find('a').hover(function(){
