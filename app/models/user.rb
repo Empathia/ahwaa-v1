@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
   validates :username, :uniqueness => true, :presence => true,
     :format => { :with => /^[\w-]+$/ }
   validates :password, :confirmation => true,
-    :presence => true
+    :presence => { :if => :should_require_password? }
   validates :email, :uniqueness => true, :email => true
 
   accepts_nested_attributes_for :profile
@@ -168,6 +168,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def should_require_password?
+     !password.blank? ||  encrypted_password.blank?
+  end
 
   def set_password_salt
     self.password_salt = User.encrypt_token("hey there! #{rand(1000)}", Time.now.to_i)
