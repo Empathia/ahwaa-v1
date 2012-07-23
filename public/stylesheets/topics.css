@@ -122,7 +122,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .comm-arrow{position: absolute; right: 0; top: 0; height:13px; width: 14px; background-image: url('../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
 
 .add_comments .comm-arrow{background-position: 0 -13px;}
-.comm-wrap > div{border: 2px solid #e9f0f3; padding: 20px;}
+.comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
 
 .comments .expert > .comm-wrap{border: 1px solid #e7e8e6; background-color: #f9fcf8}
 .expert > .comm-wrap > div{border: 2px solid #f2f5f1}
