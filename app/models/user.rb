@@ -170,7 +170,7 @@ class User < ActiveRecord::Base
   private
 
   def should_require_password?
-     !password.blank? ||  encrypted_password.blank?
+    !password.blank? || encrypted_password.blank?
   end
 
   def set_password_salt
