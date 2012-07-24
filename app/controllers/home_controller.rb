@@ -12,8 +12,15 @@ class HomeController < ApplicationController
     @user = params[:username] ? User.find_by_username(params[:username]) : current_user
     redirect_to root_path and return unless @user
     stream_users = @user.filtered_stream_users(params[:filter], I18n.locale)
-    @stream_messages = stream_users.page(params[:page]).per_page(15)
-    @stream = @stream_messages.map(&:stream_message)
+
+    if params[:filter] == 'featured'
+      @stream_messages = Topic.featured.page(params[:page]).per_page(15)
+      @stream = @stream_messages.map{ |topic| topic.stream_messages.last }
+    else
+      @stream_messages = stream_users.page(params[:page]).per_page(15)
+      @stream = @stream_messages.map(&:stream_message)
+    end
+
     if request.format == :html && !request.xhr?
       @recommended = @user == current_user ? @user.recommended_topics(5) : []
       @newest = Topic.newest(I18n.locale).limit(5)

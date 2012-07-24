@@ -1,0 +1,2 @@
+module Admin::FeaturedTopicsHelper
+end

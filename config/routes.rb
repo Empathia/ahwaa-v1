@@ -56,16 +56,20 @@ Lgbt::Application.routes.draw do
       put 'unflag', :on => :member
     end
     resource  :bad_words, :only => [:show, :update]
-    resources :topic_requests, :only => [:index, :destroy] do
-    end
+    resources :topic_requests, :only => [:index, :destroy]
     resources :topics, :except => [:show] do
-      resources :profile_matches, :only => [:index] do 
+      resources :profile_matches, :only => [:index] do
         collection do
           post :list_matches
         end
         member do
           post :notify
         end
+      end
+    end
+    resources :featured_topics, :only => [:index] do
+      member do
+        post :toggle
       end
     end
     resources :users, :only => [:index, :destroy, :edit, :update] do
