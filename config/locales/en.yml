@@ -75,7 +75,7 @@ en:
     recently_participated: 'Recently participated in these topics:'
     message_sent: Your message was sent successfully!
     message_empty: The message is empty
-    no_activity: No recent activity                  
+    no_activity: No recent activity
     flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
     send_pm: Send Private Message
     view_profile: View Profile
@@ -343,6 +343,7 @@ en:
     filters:
       all: All topics
       followed: Followed Topics
+      featured: Featured Topics
       my_topics: My Topics
       user_topics: %{username} Topics
   my_topics:

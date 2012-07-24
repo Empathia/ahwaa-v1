@@ -7,6 +7,7 @@ module HomeHelper
                   end
     [
       [t('stream.filters.all'), 'all'],
+      [t('stream.filters.featured'), 'featured'],
       [t('stream.filters.followed'), 'followed'],
       [user_topics, 'owned']
     ]

@@ -1,0 +1,30 @@
+<% head do %>
+  <script type="text/javascript">
+      $(function(){
+          $('.featured-link').bind('ajax:success', function (data){
+              var checkbox = $(this).find('input');
+              checkbox.attr('checked', !checkbox.attr('checked'));
+          });
+      });
+  </script>
+<% end %>
+
+<div class="adm-title">
+  <h1>Tags</h1>
+</div>
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+  <tr>
+    <th class="name">Name</th>
+    <th class="actions border-right">Actions</th>
+  </tr>
+  <% @topics.each do |topic| %>
+    <tr>
+      <td><%= topic.title %></td>
+      <td class="featured">
+        <%= link_to toggle_admin_featured_topic_path(topic), :method => :post, :remote => true, "data-type" => :json, :class => 'featured-link' do %>
+          <%= check_box_tag 'featured[]', value = "1", topic.featured %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>

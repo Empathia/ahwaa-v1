@@ -2,7 +2,7 @@ class Topic < ActiveRecord::Base
   acts_as_taggable
 
   # TODO: attr_accessible
-  
+
   # include Tanker
 
   # tankit 'lgbt' do
@@ -35,6 +35,7 @@ class Topic < ActiveRecord::Base
   scope :by_replies_count, lambda { |*lang| by_language(lang.first || 'en').order("replies_count DESC") }
   scope :newest, lambda { |*lang| by_language(lang.first || 'en').order("created_at DESC") }
   scope :popular, lambda { |*lang| by_replies_count(lang.first || 'en').limit(5) }
+  scope :featured, lambda { |*lang| by_language(lang.first || 'en').where(:featured => true).order("created_at DESC") }
 
   # Notifies all subscribers to this topic about a new response
   def notify_subscribers_about_new_response(reply)

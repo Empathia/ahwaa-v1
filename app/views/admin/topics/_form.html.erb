@@ -49,6 +49,10 @@
     <%= select_tag 'topic[tag_list]', '', :multiple => true %>
   </p>
   <p class="field">
+    <%= f.label :featured %>
+    <%= f.check_box :featured %>
+  </p>
+  <p class="field">
     <%= f.label :meta_description %>
     <%= f.text_field :meta_description %>
   </p>
