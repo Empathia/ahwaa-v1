@@ -1,3 +1,11 @@
+<%= stylesheet_link_tag 'jquery.wysiwyg.css', :cache => true %>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#topic_request_content').wysiwyg().wysiwyg('clear');
+    });
+</script>
+
 <div class="request-topic-section" data-hansel-component-id="request-topic">
   <div class="header">
     <h2><%= t('.title') %></h2>
@@ -19,4 +27,3 @@
     </fieldset>
   <% end %>
 </div>
-
