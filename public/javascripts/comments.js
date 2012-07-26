@@ -327,11 +327,14 @@ $.fn.comments = function(options){
 
     $('.filter-responses input:checkbox, #filter_helpful').click(function(){
         var cbs = $('.filter-responses input:checkbox:checked'),
-            show_useful = $(this).filter('#filter_helpful').is(':checked'),
+            show_useful = $('#filter_helpful').is(':checked'),
             allComments = $('.comments:not(.clon)'),
             expandBtn = $('.expand-btn'),
             commentsGroupToSlideUp = [],
             commentsGroupToSlideDown = [];
+
+        $('.comments.clon').find('li').show();
+
         if(cbs.length === 0) {
             if(show_useful){
                 allComments.each(function(){
@@ -339,7 +342,6 @@ $.fn.comments = function(options){
                     commentsClon.length && ($(this).find('.useful').length == 0 ? commentsGroupToSlideUp.push(commentsClon) : commentsClon.filter2ndLevelComments('.useful'));
                 });
             }else{
-               $('.comments.clon').find('li:not(.useful)').show();
                expandBtn.hasClass('hide') ? expandAll() : collapseAllComments();
             }
         } else {
