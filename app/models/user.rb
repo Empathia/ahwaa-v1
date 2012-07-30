@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   before_create :build_score_board
   before_save :set_encrypted_password
   before_destroy :change_topics_owner
+  after_create :subscribe_to_campaign_monitor
 
   validates :username, :uniqueness => true, :presence => true,
     :format => { :with => /^[\w-]+$/ }
@@ -36,6 +37,18 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :profile
 
   scope :admins, where(:is_admin => true)
+  scope :idle, select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, users.*')\
+                .joins("LEFT OUTER JOIN replies ON replies.user_id = users.id")\
+                .joins("LEFT OUTER JOIN topic_requests ON topic_requests.user_id = users.id")\
+                .group('users.id')\
+                .having('replies_count <= 1 AND topic_requests_count <= 1')
+  scope :inactive, select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, COUNT(visited_topics.user_id) as visited_topics_count, users.*')\
+                .joins("LEFT OUTER JOIN replies ON (replies.user_id = users.id AND replies.created_at > date_sub(users.created_at, interval 3 month))")\
+                .joins("LEFT OUTER JOIN topic_requests ON (topic_requests.user_id = users.id AND topic_requests.created_at > date_sub(users.created_at, interval 3 month))")\
+                .joins("LEFT OUTER JOIN visited_topics ON (visited_topics.user_id = users.id AND visited_topics.created_at > date_sub(users.created_at, interval 3 month))")\
+                .group('visited_topics.user_id, users.id')\
+                .having('replies_count <= 1 AND topic_requests_count <= 1 AND visited_topics_count <= 1')
+
 
   def visit_topic!(topic)
     VisitedTopic.visit!(topic, self)
@@ -168,6 +181,10 @@ class User < ActiveRecord::Base
   end
 
   private
+
+  def subscribe_to_campaign_monitor
+    CampaignMonitor.add_subscriber(self, 'all')
+  end
 
   def should_require_password?
     !password.blank? || encrypted_password.blank?

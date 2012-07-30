@@ -11,11 +11,7 @@ namespace :Campaign_monitor do
   desc "Update idle subscribers list (note: run after update_inactive)"
   task :update_idle => :environment do
     #Get users without replies nor topic requests
-    users = User.select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, users.*')\
-                .joins("LEFT OUTER JOIN replies ON replies.user_id = users.id")\
-                .joins("LEFT OUTER JOIN topic_requests ON topic_requests.user_id = users.id")\
-                .group('users.id')\
-                .having('replies_count <= 1 AND topic_requests_count <= 1')
+    users = User.idle
 
     # Remove users out the list returned
     users_emails = users.map(&:email)
@@ -42,12 +38,7 @@ namespace :Campaign_monitor do
   desc "Update inactive subscribers list (note: run before update_idle)"
   task :update_inactive => :environment do
     #Get users without recent visited topics nor recent replies nor topic requests
-    users = User.select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, COUNT(visited_topics.user_id) as visited_topics_count, users.*')\
-                .joins("LEFT OUTER JOIN replies ON (replies.user_id = users.id AND replies.created_at > date_sub(users.created_at, interval 3 month))")\
-                .joins("LEFT OUTER JOIN topic_requests ON (topic_requests.user_id = users.id AND topic_requests.created_at > date_sub(users.created_at, interval 3 month))")\
-                .joins("LEFT OUTER JOIN visited_topics ON (visited_topics.user_id = users.id AND visited_topics.created_at > date_sub(users.created_at, interval 3 month))")\
-                .group('visited_topics.user_id, users.id')\
-                .having('replies_count <= 1 AND topic_requests_count <= 1 AND visited_topics_count <= 1')
+    users = User.inactive
 
     # Remove users out the list returned
     users_emails = users.map(&:email)
