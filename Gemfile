@@ -16,12 +16,13 @@ gem 'random_data'
 gem 'nokogiri', '~> 1.4.3.1'
 gem 'delayed_job', '~> 2.1.4'
 gem 'unicorn', '1.0.0'
+gem 'createsend'
 
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
   gem "rspec-rails", "~> 2.3.0"
   gem "factory_girl_rails", '~> 1.0'
   gem 'no_peeping_toms'
+  gem 'fakeweb'
   gem 'ruby-debug'
 end
-

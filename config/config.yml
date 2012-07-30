@@ -1,1 +1,7 @@
 flickr_api_key: '25c5bc8b3b993308342cc20c12e02aff'
+campaign_monitor:
+  key: '763059dd24619b8234caa7eb5cdcde34'
+  lists:
+    all: '2946ed8aa9a997ea19eebd68de4cd01a'
+    idle: 'f1f8fcf9ba4201a360c5460442ec8bf2'
+    inactive: '728e98e28bbe5204c944701fc659a5bc'
