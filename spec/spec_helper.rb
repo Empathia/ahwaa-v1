@@ -28,6 +28,12 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 end
 
+def fixture_file(filename)
+  return '' if filename == ''
+  file_path = File.expand_path(File.dirname(__FILE__) + '/fixtures/' + filename)
+  File.read(file_path)
+end
+
 # Delegate current_user
 def current_user
   controller.current_user
@@ -39,4 +45,26 @@ end
 
 def sign_out(user = nil)
   controller.send(:sign_out_current_user)
+end
+
+# Campaign Monitor Helpers
+def stub_get(*args); stub_request(:get, *args) end
+def stub_post(*args); stub_request(:post, *args) end
+def stub_put(*args); stub_request(:put, *args) end
+def stub_delete(*args); stub_request(:delete, *args) end
+
+def createsend_url(api_key, url, method)
+  if api_key.nil?
+    url
+  else
+    url =~ /^http/ ? url : "http://#{api_key}:x@api.createsend.com/api/v3/#{url}"
+  end
+end
+
+def stub_request(method, api_key, url, filename, status=nil)
+  options = {:body => ""}
+  options.merge!({:body => fixture_file(filename)}) if filename
+  options.merge!({:status => status}) if status
+  options.merge!(:content_type => "application/json; charset=utf-8")
+  FakeWeb.register_uri(method, createsend_url(api_key, url, method), options)
 end

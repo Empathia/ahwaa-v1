@@ -1,0 +1,18 @@
+{
+  "Results": [
+    {
+      "EmailAddress": "subscriber@ahwaa.org",
+      "Name": "Deleted One",
+      "Date": "2012-07-30 13:11:00",
+      "State": "Deleted",
+      "CustomFields": []
+    },
+  ],
+  "ResultsOrderedBy": "email",
+  "OrderDirection": "asc",
+  "PageNumber": 1,
+  "PageSize": 1000,
+  "RecordsOnThisPage": 1,
+  "TotalNumberOfRecords": 1,
+  "NumberOfPages": 1
+}
