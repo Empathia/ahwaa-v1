@@ -12,7 +12,7 @@ class CampaignMonitor
     list_id = self.get_list_id(list)
     if already_subscribed_to?(user, list)
       list = CreateSend::Subscriber.new(list_id, user.email)
-      list.delete
+      list.unsubscribe
     end
   end
 
