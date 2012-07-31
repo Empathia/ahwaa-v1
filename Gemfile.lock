@@ -31,6 +31,7 @@ GEM
     acts-as-taggable-on (2.0.6)
     arel (2.0.10)
     builder (2.1.2)
+    chronic (0.6.7)
     cocaine (0.2.1)
     columnize (0.3.2)
     crack (0.1.8)
@@ -131,6 +132,9 @@ GEM
     tzinfo (0.3.33)
     unicorn (1.0.0)
       rack
+    whenever (0.7.3)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
     will_paginate (3.0.3)
 
 PLATFORMS
@@ -160,4 +164,5 @@ DEPENDENCIES
   shoulda (~> 2.11.3)
   tanker (~> 0.5.6)
   unicorn (= 1.0.0)
+  whenever
   will_paginate (~> 3.0.pre2)

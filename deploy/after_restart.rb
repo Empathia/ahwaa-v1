@@ -14,6 +14,13 @@ execute "Copy generated I18n files" do
   command "cp /data/ahwaa/shared/javascripts/locales.js public/javascripts/locales.js"
 end
 
+execute 'Installing cron jobs' do
+  always_run true
+  owner app[:user]
+  path release_path
+  command "#{cmd_prefix} whenever --load-file cron/schedule.rb -w"
+end
+
 execute "Remove all.js file" do
   always_run true
   owner app[:user]
