@@ -93,7 +93,7 @@ en:
           sign_up: Sign-Up
           login: Login
         request_topic:
-          button: Request a Topic
+          button: Start a Discussion
           legend: "You must be signed in to request a topic."
           sign_up: Sign Up
           error_login_empty: Sign Up

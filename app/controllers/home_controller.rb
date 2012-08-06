@@ -26,6 +26,12 @@ class HomeController < ApplicationController
       @newest = Topic.newest(I18n.locale).limit(5)
     end
 
+    if @stream.empty?
+      @stream_for_new_users = [@recommended, @newest].flatten.compact.map{|t| t.stream_messages.last }.compact.sort{|a,b| b.created_at <=> a.created_at }
+    else
+      @stream_for_new_users = []
+    end
+
     respond_to do |format|
       format.html
       format.js
