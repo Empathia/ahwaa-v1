@@ -94,7 +94,8 @@ body {font-family: Arial, Helvetica;}
 .sign-up-btn,
 .sec-title-med,
 #pageslide-slide-wrap > div h2,
-.hall-people > li > .honor-member-info > a {font-family: "GothamMediumRegular"}
+.hall-people > li > .honor-member-info > a,
+.my-topics-wrapper .is_empty .title {font-family: "GothamMediumRegular"}
 
 .sec-title,
 .h2 {font-family: 'GothamBoldRegular'}
