@@ -214,6 +214,7 @@ $.fn.pageSlide = function(opts) {
 
                       // add hook for a close button
                       $('.request-topic-section').find('.pageslide-close').unbind('click').click(function (elm) {
+                          elm.preventDefault();
                           collection.trigger('closePageSlide');
                       });
                       $('.new_topic_request').find('input[type=submit]').formValidator(
