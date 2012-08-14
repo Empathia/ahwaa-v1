@@ -94,6 +94,7 @@ ar:
           login: تسجيل الدخول
         request_topic:
           button: "طلب موضوع"
+          tooltip: "Find support & help more people"
           legend: "يجب أن تكون مُسجلًا على موقع أهواء لطلب الموضوع."
           sign_up: أنشئ حسابًا جديدًا!
           error_login_empty: تسجيل الدخول
