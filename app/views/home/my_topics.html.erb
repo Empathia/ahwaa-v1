@@ -8,7 +8,19 @@
         <h2><%= t 'my_topics.title' %></h2>
       </div>
       <% if @topics.empty? %>
-        <p class="is_empty">You haven't started any topics yet! Navigate to <strong>"Request a Topic"</strong> in the header to create one.</p>
+        <div class="is_empty">
+          <div>
+            <p class="title"><%= t('my_topics.is_empty.title') %></p>
+          </div>
+          <div class="help-box">
+            <p>
+              <a href="<%= new_topic_request_path %>" title="<%= t('my_topics.is_empty.request_topic') %>" class="request-topic <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
+                <strong><%= t('my_topics.is_empty.request_topic') %></strong>
+              </a>
+              <%= t('my_topics.is_empty.message') %>
+            </p>
+          </div>
+        </div>
       <% else %>
         <ul class="topic-participation">
 

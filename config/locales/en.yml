@@ -349,6 +349,10 @@ en:
       user_topics: %{username} Topics
   my_topics:
     title: My Topics
+    is_empty:
+      title: "You Haven’t Started a Discussion Yet"
+      message: "and get advice from other people like you with the same concerns, challenges and experiences. We’re sure that your story will help more people too."
+      request_topic: Start a discussion
     grouped_topic:
       by: By %{author}
       recent_participants:
