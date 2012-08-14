@@ -38,14 +38,16 @@ class User < ActiveRecord::Base
 
   scope :admins, where(:is_admin => true)
   scope :idle, select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, users.*')\
-                .joins("LEFT OUTER JOIN replies ON replies.user_id = users.id")\
-                .joins("LEFT OUTER JOIN topic_requests ON topic_requests.user_id = users.id")\
+                .joins("LEFT OUTER JOIN replies ON (replies.user_id = users.id AND replies.created_at > date_sub(CURDATE(), interval 3 month))")\
+                .joins("LEFT OUTER JOIN topic_requests ON (topic_requests.user_id = users.id AND topic_requests.created_at > date_sub(CURDATE(), interval 3 month))")\
+                .where("users.created_at < date_sub(CURDATE(), interval 3 month)")\
                 .group('users.id')\
                 .having('replies_count <= 1 AND topic_requests_count <= 1')
   scope :inactive, select('COUNT(replies.user_id) AS replies_count, COUNT(topic_requests.user_id) as topic_requests_count, COUNT(visited_topics.user_id) as visited_topics_count, users.*')\
-                .joins("LEFT OUTER JOIN replies ON (replies.user_id = users.id AND replies.created_at > date_sub(users.created_at, interval 3 month))")\
-                .joins("LEFT OUTER JOIN topic_requests ON (topic_requests.user_id = users.id AND topic_requests.created_at > date_sub(users.created_at, interval 3 month))")\
-                .joins("LEFT OUTER JOIN visited_topics ON (visited_topics.user_id = users.id AND visited_topics.created_at > date_sub(users.created_at, interval 3 month))")\
+                .joins("LEFT OUTER JOIN replies ON (replies.user_id = users.id AND replies.created_at > date_sub(CURDATE(), interval 6 month))")\
+                .joins("LEFT OUTER JOIN topic_requests ON (topic_requests.user_id = users.id AND topic_requests.created_at > date_sub(CURDATE(), interval 6 month))")\
+                .joins("LEFT OUTER JOIN visited_topics ON (visited_topics.user_id = users.id AND visited_topics.created_at > date_sub(CURDATE(), interval 6 month))")\
+                .where("users.created_at < date_sub(CURDATE(), interval 6 month)")\
                 .group('visited_topics.user_id, users.id')\
                 .having('replies_count <= 1 AND topic_requests_count <= 1 AND visited_topics_count <= 1')
 
