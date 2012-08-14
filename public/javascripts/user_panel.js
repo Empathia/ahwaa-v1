@@ -39,7 +39,8 @@ $(function(){
     editForm.find('input[type=submit]').formValidator({
         'errors': {
             'email': I18n.t('users.show.sidebar.my_account.errors.invalid_email'),
-            'password': I18n.t('users.show.sidebar.my_account.errors.password_too_short')
+            'password': I18n.t('users.show.sidebar.my_account.errors.password_too_short'),
+            'text': I18n.t('layouts.application.header.sign_up_form.error_username_empty')
         }
     }).click(function(e){
         if($('#user_password').val() !== $('#user_password_confirmation').val()) {
