@@ -95,7 +95,8 @@ body {font-family: Arial, Helvetica;}
 .sec-title-med,
 #pageslide-slide-wrap > div h2,
 .hall-people > li > .honor-member-info > a,
-.my-topics-wrapper .is_empty .title {font-family: "GothamMediumRegular"}
+.my-topics-wrapper .is_empty .title,
+.stream-wrapper .is-empty {font-family: "GothamMediumRegular"}
 
 .sec-title,
 .h2 {font-family: 'GothamBoldRegular'}

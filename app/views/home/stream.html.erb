@@ -6,6 +6,7 @@
     <%= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow" data-hansel-container-id="user-stream">
       <section class="streams border-left">
+        
         <div class="stream-title header-title-bg border-all">
           <h2><%= t 'stream.stream' %></h2>
           <% if @user == current_user %>
@@ -17,6 +18,13 @@
             </div>
           <% end %>
         </div>
+        
+        <% if current_user.subscriptions.count == 0 %>
+          <div class="is-empty">
+            <%= t('stream.no_following_topics') %> <span class="arrow"></span>
+          </div>
+        <% end %>
+        
         <div class="stream-items-wrapper">
           <%= render @stream, :object => { :enable_follow => false } %>
           <%= render @stream_for_new_users, :object => { :enable_follow => true }%>
