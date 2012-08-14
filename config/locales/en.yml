@@ -94,6 +94,7 @@ en:
           login: Login
         request_topic:
           button: Start a Discussion
+          tooltip: "Find support & help more people"
           legend: "You must be signed in to request a topic."
           sign_up: Sign Up
           error_login_empty: Sign Up
