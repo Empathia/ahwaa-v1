@@ -52,4 +52,8 @@ class HomeController < ApplicationController
   def terms
   end
 
+  def email_tester
+    render :layout => 'email'
+  end
+
 end
