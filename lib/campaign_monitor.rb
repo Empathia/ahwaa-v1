@@ -35,7 +35,7 @@ class CampaignMonitor
     load
     list_id = self.get_list_id(list)
     list = CreateSend::List.new(list_id)
-    list.active(Date.today.to_s)
+    list.active('2010-01-01')
   end
 
   private
