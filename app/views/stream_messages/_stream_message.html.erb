@@ -17,7 +17,13 @@
         <% else %>
           <%= Reply.human_attribute_name(:anonymous) %>
         <% end %>
-        <%= stream_message.title %></span>
+        <%= stream_message.title %>
+      </span>
+      <% if object[:enable_follow] && logged_in? && !stream_message.topic.subscribed?(current_user) %>
+        <p >
+          <%= link_to t('.follow'), follow_topic_path(stream_message.topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic" %>
+        </p>
+      <% end %>
       <span class="time-ago"><%= t 'helpers.ago', :time => time_ago_in_words(stream_message.reply.created_at) %></span>
       <br class="clear" />
     </div>

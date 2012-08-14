@@ -1,5 +1,6 @@
 class StreamMessage < ActiveRecord::Base
   belongs_to :reply
+  belongs_to :topic
   has_many :stream_users, :dependent => :destroy
 
   before_save :set_topic_id
