@@ -11,15 +11,17 @@ namespace :Campaign_monitor do
   desc "Update idle subscribers list (note: run after update_inactive)"
   task :update_idle => :environment do
     #Get users without replies nor topic requests
-    users = User.idle
+    users = User.idle - User.inactive
 
     # Remove users out the list returned
     users_emails = users.map(&:email)
     CampaignMonitor.get_subscribed_list('idle')['Results'].each do |subscriber|
       unless users_emails.include?(subscriber['EmailAddress'])
         user = User.find_by_email(subscriber['EmailAddress'])
-        print "\n#{user.id} - #{user.email} => REMOVED"
-        CampaignMonitor.remove_subscriber(user, 'idle')
+        if user
+          print "\n#{user.id} - #{user.email} => REMOVED"
+          CampaignMonitor.remove_subscriber(user, 'idle')
+        end
       end
     end
 
@@ -45,8 +47,10 @@ namespace :Campaign_monitor do
     CampaignMonitor.get_subscribed_list('inactive')['Results'].each do |subscriber|
       unless users_emails.include?(subscriber['EmailAddress'])
         user = User.find_by_email(subscriber['EmailAddress'])
-        print "\n#{user.id} - #{user.email} => REMOVED"
-        CampaignMonitor.remove_subscriber(user, 'inactive')
+        if user
+          print "\n#{user.id} - #{user.email} => REMOVED"
+          CampaignMonitor.remove_subscriber(user, 'inactive')
+        end
       end
     end
 
