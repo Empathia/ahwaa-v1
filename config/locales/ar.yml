@@ -81,6 +81,12 @@ ar:
     view_profile: الملف الشخصي
   layouts:
     application:
+      modals:
+        about_points:
+          title: "What are the Points?"
+          body: "You earn points commenting, posting, lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor."
+          words:
+            points: "Points"
       hall_of_fame:
         tab: الأعضاء المتميّزون
         most_helpful_advice: أكثر الأعضاء مساعدةً
@@ -144,6 +150,9 @@ ar:
           sign_out: تسجيل الخروج
           logout: تسجيل الخروج
           edit_profile: تعديل الملف الشخصي
+          tooltip:
+            earned_points: Earned Points
+            learn_more: Learn More
         search_topics: إبحث عن موضوع
         tags_more: المزيد
       footer:
