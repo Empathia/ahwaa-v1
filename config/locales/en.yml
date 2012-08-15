@@ -330,6 +330,8 @@ en:
 
   stream:
     stream: Stream
+    follow_topic: Follow Topic
+    no_following_topics: "Currently you don’t follow any topic. Start following some"
     title:
       reply:
         a: left a %{reply_type} on
