@@ -18,9 +18,9 @@
                   </tr>
                 </tbody>
               </table>
-              
+
               <%= yield %>
-              
+
               <table width="620" align="center" border="0" cellspacing="0" cellpadding="0" style="display:block; width:620px;">
                 <tbody>
                   <tr>
@@ -33,8 +33,12 @@
                   <tr>
                     <td valign="top">
                       <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:12px; line-height:17px; color:#666c71; margin:0; padding-top:25px; padding-left:0; padding-right:0; padding-bottom:25px;">
-                        If you do not want to receive emails when someone respond to your comments, you can <a href="#" title="Unsubscribe" style="font-weight:bold; color:#3171b1; text-decoration:none;">unsubscribe</a>.
-                        To manage other notifications, visit your <a href="#" title="Account Settings" style="font-weight:bold; color:#3171b1; text-decoration:none;">account settings</a>.
+                        <% if defined?(@reply) && defined?(@user) %>
+                          If you do not want to receive emails when someone respond to your comments, you can <%= link_to 'unsubscribe', unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>
+                        <% elsif defined?(@reply) %>
+                          If you do not want to receive emails when someone respond to your comments, you can <%= link_to 'unsubscribe', unsubscribe_author_subscription_url(@reply.topic.author_subscription), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>
+                        <% end %>
+                        To manage other notifications, visit your <%= link_to 'account settings', user_url, :title => "Account Settings", :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>.
                       </div>
                     </td>
                   </tr>

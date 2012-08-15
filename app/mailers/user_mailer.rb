@@ -1,6 +1,8 @@
 class UserMailer < ActionMailer::Base
   default :from => "no-reply@ahwaa.org"
 
+  layout 'email'
+
   def sign_up_confirmation(user)
     @user = user
     mail :to => @user.email,
