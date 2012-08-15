@@ -13,6 +13,11 @@ class HomeController < ApplicationController
     redirect_to root_path and return unless @user
     stream_users = @user.filtered_stream_users(params[:filter], I18n.locale)
 
+    if request.format == :html && !request.xhr?
+      @recommended = @user == current_user ? @user.recommended_topics(5) : []
+      @newest = Topic.newest(I18n.locale).limit(5)
+    end
+
     if params[:filter] == 'featured'
       @stream_messages = Topic.featured.page(params[:page]).per_page(15)
       @stream = @stream_messages.map{ |topic| topic.stream_messages.last }
@@ -21,15 +26,10 @@ class HomeController < ApplicationController
       @stream = @stream_messages.map(&:stream_message)
     end
 
-    if request.format == :html && !request.xhr?
-      @recommended = @user == current_user ? @user.recommended_topics(5) : []
-      @newest = Topic.newest(I18n.locale).limit(5)
-    end
-
-    if @stream.empty?
+    @stream_for_new_users = []
+    # For new users get the recommended a newest topic stream messages
+    if @stream.empty? && @user.new_user? && params[:filter] != 'owned'
       @stream_for_new_users = [@recommended, @newest].flatten.compact.map{|t| t.stream_messages.last }.compact.sort{|a,b| b.created_at <=> a.created_at }
-    else
-      @stream_for_new_users = []
     end
 
     respond_to do |format|
