@@ -73,6 +73,11 @@ class User < ActiveRecord::Base
     su.joins(:stream_message => { :reply => :topic }).where("topics.language = ?", lang).order('stream_users.created_at DESC')
   end
 
+  # Get if is a new user or not
+  def new_user?
+    self.created_at > 1.month.ago
+  end
+
   # Adds a subscription for the user to the given topic
   def subscribe_to(topic)
     subscriptions << Subscription.new(:topic => topic)

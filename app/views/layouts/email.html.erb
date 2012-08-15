@@ -33,9 +33,9 @@
                   <tr>
                     <td valign="top">
                       <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:12px; line-height:17px; color:#666c71; margin:0; padding-top:25px; padding-left:0; padding-right:0; padding-bottom:25px;">
-                        <% if defined?(@reply) && defined?(@user) %>
+                        <% if !defined?(@for_authors) && defined?(@reply) && defined?(@user) %>
                           If you do not want to receive emails when someone respond to your comments, you can <%= link_to 'unsubscribe', unsubscribe_subscription_url(@user.subscription_for(@reply.topic).hash_key), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>
-                        <% elsif defined?(@reply) %>
+                        <% elsif defined?(@for_authors) && defined?(@reply) %>
                           If you do not want to receive emails when someone respond to your comments, you can <%= link_to 'unsubscribe', unsubscribe_author_subscription_url(@reply.topic.author_subscription), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>
                         <% end %>
                         To manage other notifications, visit your <%= link_to 'account settings', user_url, :title => "Account Settings", :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>.
