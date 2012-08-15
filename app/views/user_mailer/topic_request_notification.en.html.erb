@@ -1,13 +1,27 @@
-<p>Hello <%= @user.username %>,</p>
+<table width="620" align="center" border="0" cellspacing="0" cellpadding="0" style="display:block; width:620px; vertical-align:top; min-height:330px;">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:45px; padding-left:0; padding-right:0; padding-bottom:0;">
+          Dear <span style="font-weight:bold;"><%= @user.username %></span>,
+        </div>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          A new topic has been request on Ahwaa.
+        </div>
 
-<p>A new topic has been request on Ahwaa.</p>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          The topic title is <strong>"<%= @topic_request.title %>"</strong>
+        </div>
 
-<p>The topic title is <strong>"<%= @topic_request.title %>"</strong></p>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          Please review it and approve it so it can be visible in the public page.
+        </div>
 
-<p>Please review it and approve it so it can be visible in the public page.</p>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          Go to <%= link_to "view all topic requests", admin_topic_requests_url, :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %>.
+        </div>
 
-<p>Go to <%= link_to "view all topic requests", admin_topic_requests_url %>.</p>
-
-<p>Thanks,<br/>
-  Ahwaa</p>
-
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,8 +1,21 @@
-<p>Hello <%= @user.username %>,</p>
-
-<p>Someone has just responded to a topic you started on Ahwaa. Check it out! <b><%= link_to @reply.topic.title, topic_url(@reply.topic) %></b></p>
-
-<p>Thanks,<br/>
-  Ahwaa</p>
-
-<p><font color="#999999" size="1">Don't want to receive these notifications? Unsubscribe by visiting this link: <%= unsubscribe_author_subscription_url(@reply.topic.author_subscription) %></font></p>
+<table width="620" align="center" border="0" cellspacing="0" cellpadding="0" style="display:block; width:620px; vertical-align:top; min-height:330px;">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:45px; padding-left:0; padding-right:0; padding-bottom:0;">
+          Dear <span style="font-weight:bold;"><%= @user.username %></span>,
+        </div>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          A user has just responded to your comment on <%= link_to @reply.topic.title, topic_url(@reply.topic) %>.
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top">
+        <%= link_to topic_url(@reply.topic), :style => "color:#3171b1; text-decoration:none; display:block;", :title => "View Reponse" do %>
+          <img src="http://ahwaa-notifier-mailer.s3.amazonaws.com/_cta/view-response.jpg" alt="View Response" style="padding-top:45px; padding-left:0; padding-right:0; padding-bottom:0;" />
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

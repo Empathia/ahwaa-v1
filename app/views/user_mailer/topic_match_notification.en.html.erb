@@ -1,13 +1,25 @@
-<p>Dear <%= @user.username %>,</p>
+<table width="620" align="center" border="0" cellspacing="0" cellpadding="0" style="display:block; width:620px; vertical-align:top; min-height:330px;">
+  <tbody>
+    <tr>
+      <td valign="top">
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:45px; padding-left:0; padding-right:0; padding-bottom:0;">
+          Dear <span style="font-weight:bold;"><%= @user.username %></span>,
+        </div>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          You've been selected to participate in the <%= link_to @topic.title, topic_url(@topic), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %> topic. We would greatly appreciate it if you would take a moment to read this topic and share your thoughts!
+        </div>
 
-<p>You've been selected to participate in the <%= link_to @topic.title, topic_url(@topic) %> topic. We would greatly appreciate it if you would take a moment to read this topic and share your thoughts!</p>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          <strong>Why do you need my participation?</strong><br>
+          Ahwaa is built around the idea of sharing your stories, ideas, and advice. Every time someone shares, the whole community gains from their experience.
+        </div>
 
-<p><strong>Why do you need my participation?</strong><br/>
-  Ahwaa is built around the idea of sharing your stories, ideas, and advice. Every time someone shares, the whole community gains from their experience.</p>
+        <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
+          <strong>Why have I been selected?</strong><br>
+          It could be because of your previous participation or your profile information.
+        </div>
 
-<p><strong>Why have I been selected?</strong><br/>
-  It could be because of your previous participation or your profile information.</p>
-
-<p>Thanks,<br/>
-  The Ahwaa Team</p>
-
+      </td>
+    </tr>
+  </tbody>
+</table>
