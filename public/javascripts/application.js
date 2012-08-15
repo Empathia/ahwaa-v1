@@ -1,6 +1,22 @@
-var lastSearchValue, timer1;
+var lastSearchValue, timer1, aboutPointsLink, modal, closeModal;
 
 $(function() {
+    
+    modal = $('#modal');
+    aboutPointsLink = $('.learn-about-points');
+    
+    if (aboutPointsLink.length && modal.length) {
+        aboutPointsLink.click(function (e) {
+            e.preventDefault();
+            modal.fadeIn(100);
+        });
+        modal.click(function (ev) {
+            if ($(ev.target).is('#modal, .close')) {
+                modal.fadeOut(100);
+            }
+        });
+    }
+    
     /* Search field bind */
     $("#query").keyup(function(e) {
         var val = $.trim($(this).val());

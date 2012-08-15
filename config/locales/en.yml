@@ -81,6 +81,12 @@ en:
     view_profile: View Profile
   layouts:
     application:
+      modals:
+        about_points:
+          title: "What are the Points?"
+          body: "You earn points commenting, posting, lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor."
+          words:
+            points: "Points"
       hall_of_fame:
         tab: Hall of Fame
         most_helpful_advice: Most Helpful Advice
@@ -144,6 +150,9 @@ en:
           sign_out: Sign Out
           logout: Logout
           edit_profile: edit profile
+          tooltip:
+            earned_points: Earned Points
+            learn_more: Learn More
         search_topics: Search topics
         tags_more: More
       footer:

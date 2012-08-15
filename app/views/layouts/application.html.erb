@@ -59,6 +59,17 @@
                    <p class="points-wrapper-small small-hearts border-all">
                       <span class="level <%= level_css_class_for_user(current_user) || 'no-level' %>"></span>
                       <span class="points"><%= current_user.score_board.current_points %></span>
+                      <span class="tooltip-wrapper">
+                        <span class="tooltip">
+                          <span class="msg">
+                            <%= t('.header.logged_in.tooltip.earned_points') %>
+                            <%= link_to t('.header.logged_in.tooltip.earned_points'), '#', :title => t('.header.logged_in.tooltip.learn_more'), :class => 'learn-about-points' %>
+                          </span>
+                          <span class="arrow">
+                            <span></span>
+                          </span>
+                        </span>
+                      </span>
                    </p>
                    <ul class="activity-btns">
                      <li class="light-button border-left">
@@ -156,10 +167,12 @@
                   <span><%= t('.header.request_topic.button')%></span>
                 </span>
               </a>
-              <span class="tooltip">
-                <span class="msg"><%= t('.header.request_topic.tooltip') %></span>
-                <span class="arrow">
-                  <span></span>
+              <span class="tooltip-wrapper">
+                <span class="tooltip">
+                  <span class="msg"><%= t('.header.request_topic.tooltip') %></span>
+                  <span class="arrow">
+                    <span></span>
+                  </span>
                 </span>
               </span>
               <div class="request-error">
@@ -201,93 +214,128 @@
       <%= yield %>
     </div>
     <div class="hall-of-fame" data-hansel-component-id="hall-of-fame">
-          <div class="hall-header">
-            <h4 class="closed">
-             <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
-            </h4>
-          </div>
-          <div class="hall-footer collapsed">
-            <div class="aligned">
-              <ul class="hall-people">
-                <% if @fame_helpful %>
-                  <li>
-                    <div class="avatar-wrapper footer-avatar">
-                      <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
-                        <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
-                      <%= render :partial => 'users/card', :locals => {:user => @fame_helpful} %>
-                    </div>
-                    <div class="honor-member-info">
-                      <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
-                      <%= @fame_helpful.username %>
-                    </div>
-                  </li>
-                <% end %>
-                <% if @fame_active %>
-                  <li>
-                    <div class="avatar-wrapper footer-avatar">
-                      <span class="avatar <%= level_css_class_for_user @fame_active %>">
-                        <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
-                      <%= render :partial => 'users/card', :locals => {:user => @fame_active} %>
-                    </div>
-                    <div class="honor-member-info">
-                      <span><%= t '.hall_of_fame.most_active_user' %></span>
-                      <%= @fame_active.username %>
-                    </div>
-                  </li>
-                <% end %>
-                <% if @fame_topics %>
-                  <li>
-                    <div class="avatar-wrapper footer-avatar">
-                      <span class="avatar <%= level_css_class_for_user @fame_topics %>">
-                        <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
-                      <%= render :partial => 'users/card', :locals => {:user => @fame_topics} %>
-                    </div>
-                    <div class="honor-member-info">
-                      <span><%= t '.hall_of_fame.most_topics_posted' %></span>
-                      <%= @fame_topics.username %>
-                    </div>
-                  </li>
-                <% end %>
-                <% if @fame_points %>
-                  <li class="last">
-                    <div class="avatar-wrapper footer-avatar">
-                      <span class="avatar <%= level_css_class_for_user @fame_points %>">
-                        <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
-                        <span class="honor-member"></span>
-                        <span></span>
-                      </span>
-                      <%= render :partial => 'users/card', :locals => {:user => @fame_points} %>
-                    </div>
-                    <div class="honor-member-info">
-                      <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
-                      <%= @fame_points.username %>
-                    </div>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
+      <div class="hall-header">
+        <h4 class="closed">
+          <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
+        </h4>
+      </div>
+      <div class="hall-footer collapsed">
+        <div class="aligned">
+          <ul class="hall-people">
+            <% if @fame_helpful %>
+              <li>
+                <div class="avatar-wrapper footer-avatar">
+                  <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
+                    <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
+                    <span class="honor-member"></span>
+                    <span></span>
+                  </span>
+                  <%= render :partial => 'users/card', :locals => {:user => @fame_helpful} %>
+                </div>
+                <div class="honor-member-info">
+                  <span><%= t '.hall_of_fame.most_helpful_advice' %></span>
+                  <%= @fame_helpful.username %>
+                </div>
+              </li>
+            <% end %>
+            <% if @fame_active %>
+              <li>
+                <div class="avatar-wrapper footer-avatar">
+                  <span class="avatar <%= level_css_class_for_user @fame_active %>">
+                    <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
+                    <span class="honor-member"></span>
+                    <span></span>
+                  </span>
+                  <%= render :partial => 'users/card', :locals => {:user => @fame_active} %>
+                </div>
+                <div class="honor-member-info">
+                  <span><%= t '.hall_of_fame.most_active_user' %></span>
+                  <%= @fame_active.username %>
+                </div>
+              </li>
+            <% end %>
+            <% if @fame_topics %>
+              <li>
+                <div class="avatar-wrapper footer-avatar">
+                  <span class="avatar <%= level_css_class_for_user @fame_topics %>">
+                    <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
+                    <span class="honor-member"></span>
+                    <span></span>
+                  </span>
+                  <%= render :partial => 'users/card', :locals => {:user => @fame_topics} %>
+                </div>
+                <div class="honor-member-info">
+                  <span><%= t '.hall_of_fame.most_topics_posted' %></span>
+                  <%= @fame_topics.username %>
+                </div>
+              </li>
+            <% end %>
+            <% if @fame_points %>
+              <li class="last">
+                <div class="avatar-wrapper footer-avatar">
+                  <span class="avatar <%= level_css_class_for_user @fame_points %>">
+                    <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
+                    <span class="honor-member"></span>
+                    <span></span>
+                  </span>
+                  <%= render :partial => 'users/card', :locals => {:user => @fame_points} %>
+                </div>
+                <div class="honor-member-info">
+                  <span><%= t '.hall_of_fame.highest_points_acquired' %></span>
+                  <%= @fame_points.username %>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         </div>
-        <footer>
-            <div class="aligned">
-              <div class="footer-container">
-              <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
-              <ul>
-                <li><%= link_to t('.footer.about'), about_path %> - </li>
-                <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+      </div>
+    </div>
+    <footer>
+      <div class="aligned">
+        <div class="footer-container">
+          <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
+          <ul>
+            <li><%= link_to t('.footer.about'), about_path %> - </li>
+            <li><%= link_to t('.footer.privacy_policy'), privacy_policy_path %></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+    
+    <% if logged_in? %>
+      <div id="modal">
+        <div id="modals-wrapper">
+          
+          <div class="modal about-points">
+            <header><%= t('.modals.about_points.title') %> <span class="close">&times;</span></header>
+            <div class="body">
+              <p><%= t('.modals.about_points.body') %></p>
+              <div class="separator"></div>
+              <ul class="points-table">
+                <li>
+                  <em class="heart green-heart"></em>
+                  <span class="points">10 - 49 <%= t('.modals.about_points.words.points') %></span>
+                </li>
+                <li>
+                  <em class="heart silver-heart"></em>
+                  <span class="points">100 - 499 <%= t('.modals.about_points.words.points') %></span>
+                </li>
+                <li>
+                  <em class="heart bronze-heart"></em>
+                  <span class="points">50 - 99 <%= t('.modals.about_points.words.points') %></span>
+                </li>
+                <li>
+                  <em class="heart gold-heart"></em>
+                  <span class="points">500+ <%= t('.modals.about_points.words.points') %></span>
+                </li>
               </ul>
             </div>
           </div>
-        </footer>
+          
+        </div>
+      </div>
+    <% end %>
+  
   </div>
   <!-- Start of StatCounter Code -->
   <script type="text/javascript">

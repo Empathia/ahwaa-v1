@@ -34,7 +34,7 @@ input[type=password],
 input[type=email],
 textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor: text; font-size:13px}
 
-.points-wrapper-small > span {border: 0 none}
+.points-wrapper-small > span {border-width: 0}
 .light-button,
 .points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
@@ -414,8 +414,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .request-topic-wrapper{float: right; position: relative; margin-top: 21px;}
 .request-topic {float: right; margin: 0 10px 0 0; height: 26px; outline:0}
 .request-topic > span {float: left; padding: 5px 8px 0; height: 19px; font-family: Arial, Helvetica; font-size: 13px;}
-.request-topic-wrapper .tooltip {left: -30px}
-.request-topic-wrapper:hover .tooltip {display: block}
+.request-topic-wrapper:hover .tooltip-wrapper {display: block}
 
 .tags > li {margin-right: 4px}
 .by-author {margin-right: 14px}
@@ -734,26 +733,35 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #c3cfbe),color-stop(1, #dee5da));
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#c3cfbe', EndColorStr='#dee5da')";
 }             
-.avatar > span{width:30px; height:30px; display:block; position:absolute; left:17px; top:44px; background:url("../images/heart-badges-sprite.png") no-repeat transparent}
+.avatar > span {width:30px; height:30px; display:block; position:absolute; left:17px; top:44px; background:url("../images/heart-badges-sprite.png") no-repeat transparent}
 .avatar.no-level > span{background:none;}
 .avatar.red-heart > span,
-.points-wrapper > span.red-heart   {background-position:0 0}
+.points-wrapper > span.red-heart,
+.points-table .red-heart           {background-position:0 0}
 .avatar.pink-heart > span,
-.points-wrapper > span.pink-heart  {background-position:0 -30px}
+.points-wrapper > span.pink-heart,
+.points-table .pink-heart          {background-position:0 -30px}
 .avatar.purple-heart > span,
-.points-wrapper > span.purple-heart{background-position:0 -60px}
+.points-wrapper > span.purple-heart,
+.points-table .purple-heart        {background-position:0 -60px}
 .avatar.blue-heart > span,
-.points-wrapper > span.blue-heart  {background-position:0 -90px}
+.points-wrapper > span.blue-heart,
+.points-table .blue-heart          {background-position:0 -90px}
 .avatar.cyan-heart > span,
-.points-wrapper > span.cyan-heart  {background-position:0 -120px}
+.points-wrapper > span.cyan-heart,
+.points-table .cyan-heart          {background-position:0 -120px}
 .avatar.green-heart > span,
-.points-wrapper > span.green-heart {background-position:0 -150px}
+.points-wrapper > span.green-heart,
+.points-table .green-heart         {background-position:0 -150px}
 .avatar.bronze-heart > span,
-.points-wrapper > span.bronze-heart{background-position:0 -180px}
+.points-wrapper > span.bronze-heart,
+.points-table .bronze-heart        {background-position:0 -180px}
 .avatar.silver-heart > span,
-.points-wrapper > span.silver-heart{background-position:0 -210px}
+.points-wrapper > span.silver-heart,
+.points-table .silver-heart        {background-position:0 -210px}
 .avatar.gold-heart > span,
-.points-wrapper > span.gold-heart  {background-position:0 -240px}
+.points-wrapper > span.gold-heart,
+.points-table .gold-heart         {background-position:0 -240px}
 
 .small-hearts > .level.no-level {background: none; display: none}
 .small-hearts > .level,
@@ -941,8 +949,11 @@ form + .recently-topics{padding-top:18px;}
 .user-logged-info .user-data .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px}
 .user-logged-info .user-data .log-out:hover {text-decoration: none}
 
-.user-logged-info .points-wrapper-small {padding: 0 8px}
+.user-logged-info .points-wrapper-small {padding: 0 8px; position: relative}
+.user-logged-info .points-wrapper-small:hover .tooltip-wrapper {display: block}
 .user-logged-info .points-wrapper-small > .level {margin-right: 4px}
+.points-wrapper-small .tooltip-wrapper {top: -26px}
+.points-wrapper-small .tooltip {border-width: 1px}
 .activity-btns li {float: left; height: 20px; width: 35px; border-right: 1px solid #cfdae6}
 .user-logged-info .activity-btns li:first-child {border-right-width: 0}
 .activity-btns li a {text-indent: -999px}
@@ -1079,7 +1090,8 @@ footer {border-top: 1px #c9cdd0 solid;
 
 .hall-people > li > .honor-member-info > a {font-size: 12px}
 
-.tooltip {display: none; position: absolute; top: -25px; font-size: 12px; background-color: #eff5fa; border: 1px solid #a0b0c0; color: #464f5d; text-shadow: 0 1px 0 rgba(255, 255, 255, .75);
+.tooltip-wrapper {display: none; position: absolute; top: -25px; left: 50%}
+.tooltip {position: relative; display: block; left: -50%; font-size: 12px; background-color: #eff5fa; border: 1px solid #a0b0c0; color: #464f5d; text-shadow: 0 1px 0 rgba(255, 255, 255, .75);
   -webkit-border-radius: 3px;
      -moz-border-radius: 3px;
           border-radius: 3px;
@@ -1089,7 +1101,52 @@ footer {border-top: 1px #c9cdd0 solid;
      -moz-border-radius: 2px;
           border-radius: 2px;
 }
-.tooltip .arrow,
-.tooltip .arrow span {position: absolute; width: 0; height: 0; border-width: 4px 4px 0; border-style: solid;}
-.tooltip .arrow {bottom: -4px; left: 48%; border-color: #a0b0c0 transparent transparent;}
-.tooltip .arrow span {top: -5px; left: -4px; border-color: #eff5fa transparent transparent;}
+.tooltip .arrow {position: absolute; bottom: -5px; width: 100%; height: 5px}
+.tooltip .arrow span,
+.tooltip .arrow span::after {position: relative; display: block; width: 0; height: 0; border-width: 4px 4px 0; border-style: solid;}
+.tooltip .arrow span {left: 48%; border-color: #a0b0c0 transparent transparent;}
+.tooltip .arrow span::after {content: ''; top: -5px; left: -4px; border-color: #eff5fa transparent transparent;}
+
+#modal {display: none; position: absolute; top: 0; left: 0; z-index: 9999; width: 100%; height: 100%; background-color: rgba(0, 0, 0, .6)}
+#modals-wrapper {position: fixed; top: 180px; left: 50%; margin-left: -214px; padding: 5px; width: 415px;
+  background-color: #f0f6fc; border: 1px solid rgba(0, 0, 0, .8);
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+     -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+          box-shadow: inset 0 1px 3px rgba(0, 0, 0, .25);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.modal header {position: relative; font-size: 17px; color: #3d464c; border-bottom: 1px solid #dbdfe3; padding: 10px 20px 9px; background-color: #fcfcfc;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#f9f9f9)); 
+  background-image: -webkit-linear-gradient(top, #fdfdfd, #f9f9f9); 
+  background-image:    -moz-linear-gradient(top, #fdfdfd, #f9f9f9); 
+  background-image:     -ms-linear-gradient(top, #fdfdfd, #f9f9f9); 
+  background-image:      -o-linear-gradient(top, #fdfdfd, #f9f9f9); 
+  background-image:         linear-gradient(top, #fdfdfd, #f9f9f9);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fdfdfd', EndColorStr='#f9f9f9');
+  -webkit-border-radius: 2px 2px 0 0;
+     -moz-border-radius: 2px 2px 0 0;
+          border-radius: 2px 2px 0 0;
+}
+.modal header .close {cursor: pointer; width: 18px; height: 18px; display: block; position: absolute; top: 8px; right: 8px;
+  background: #c2d2e5; color: #fafbfb; text-align: center; font-size: 15px; line-height: 18px;
+  -webkit-border-radius: 9px;
+     -moz-border-radius: 9px;
+          border-radius: 9px;
+}
+.modal header .close:hover {background: #afc4de;}
+.modal header .close:active {background: #d6e0ed;}
+.modal .body {background-color: #fff; color: #3d464c; padding: 20px; font-size: 13px; line-height: 21px;
+  -webkit-border-radius: 0 0 3px 3px;
+     -moz-border-radius: 0 0 3px 3px;
+          border-radius: 0 0 3px 3px;
+}
+.modal .body p {margin-bottom: 20px}
+.modal .separator {height: 1px; background-color: #e6ecf2; margin-bottom: 20px}
+.points-table {margin-bottom: 3px}
+.points-table li {width: 50%; float: left}
+.points-table li > em {width:30px; height:30px; display:block; float: left; background:url("../images/heart-badges-sprite.png") no-repeat transparent}
+.points-table .points {display:block; float: left; padding: 5px 0 0 10px; font-size: 14px}
+.points-table::after,
+.points-table li::after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
