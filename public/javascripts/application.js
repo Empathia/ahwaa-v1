@@ -1,9 +1,9 @@
-var lastSearchValue, timer1, aboutPointsLink, modal, closeModal;
+var lastSearchValue, timer1;
 
 $(function() {
     
-    modal = $('#modal');
-    aboutPointsLink = $('.learn-about-points');
+    var modal = $('#modal'),
+        aboutPointsLink = $('.learn-about-points');
     
     if (aboutPointsLink.length && modal.length) {
         aboutPointsLink.click(function (e) {
