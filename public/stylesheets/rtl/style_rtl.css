@@ -761,7 +761,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .points-table .silver-heart        {background-position:0 -210px}
 .avatar.gold-heart > span,
 .points-wrapper > span.gold-heart,
-.points-table .gold-heart         {background-position:0 -240px}
+.points-table .gold-heart          {background-position:0 -240px}
 
 .small-hearts > .level.no-level {background: none; display: none}
 .small-hearts > .level,
@@ -792,22 +792,32 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .private-msg.send-from-stream {top: 95px; background-color: #F0F6FC; border: 1px solid rgba(0, 0, 0, 0.2); box-shadow: 0 1px 3px rgba(42, 83, 110, 0.6); display: none; font-size: 12px; right: -25px; padding: 3px; position: absolute; text-align: right; width: 290px; z-index: 9999}
 .private-msg.send-from-stream > form {display: block !important; background:#ffffff; padding: 16px; margin:0}
 
+.has-tooltip {position: relative}
+.tooltip-box,
 .private-msg {display:none; position: absolute; top: 70px; right: -25px; width: 290px; background-color: #f0f6fc; padding: 3px; border: 1px solid rgba(0, 0, 0, .2); text-align: right; z-index:999; font-size:12px;
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, .6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, .6)
 }
+.tooltip-box .left {float: right}
+.tooltip-box .right {float: left}
 
+.tooltip-box .origin,
 .private-msg .origin,
+.tooltip-box .origin span,
 .private-msg .origin span,
 .send-from-stream .origin,
 .send-from-stream .origin span {border: 10px solid; height: 0; position: absolute; width: 0}
+.tooltip-box .origin,
 .private-msg .origin,
 .send-from-stream .origin {border-color: transparent transparent #ccc; right: 40px; top: -20px}
+.tooltip-box .origin > span,
 .private-msg .origin > span,
 .send-from-stream .origin > span {border-color: transparent transparent #FAFCFF; right: -10px; top: -8px}
+.tooltip-box .origin > span > span,
 .private-msg .origin > span > span,
 .send-from-stream .origin > span > span {border-color: transparent transparent #fff; top: -7px; right: -10px}
+.tooltip-box .title {font-size: 13px; line-height: 19px; font-weight: bold; color: #464c52}
 
 /* Hall of Fame Origin */
 .private-msg.bottom-avatar .origin,
@@ -819,20 +829,26 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 
 .private-msg > form {display: block; background:#ffffff; display: none; padding: 7px 16px 0; margin:0;}
 .private-msg > form > textarea,
-.send-from-stream > form > textarea {min-width: 234px; width: 234px; max-width: 234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
+.send-from-stream > form > textarea,
+.tooltip-box textarea {min-width: 234px; width: 234px; max-width: 234px; height:112px; margin-top:0; margin-bottom:8px; padding:10px; font-family:Arial, Sans-serif; font-size:12px; color:#aeb4bd;}
+.tooltip-box textarea {min-width: 244px; width: 244px; max-width: 244px; height: 74px}
 .private-msg-btns{text-align: left}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
 .private-msg-btns > a.cancel{margin-left:8px; color: #404750; font-size:13px;}
 .private-msg > .avatar{float:left;}
 .form-private-msg > .flash-privacy{margin:0 0 15px 0;}
 
-.user-wrapper {padding: 9px 9px 0; background:#ffffff; overflow: hidden;
-  border-top-left-radius:3px;
-  -moz-border-radius-topleft:3px;
-  -webkit-border-top-left-radius:3px;
-  border-top-right-radius:3px;
-  -moz-border-radius-topright:3px;
-  -webkit-border-top-right-radius:3px;
+.tooltip-box-inside,
+.user-wrapper {background:#ffffff; overflow: hidden}
+.tooltip-box-inside {padding: 9px 12px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.user-wrapper {padding-bottom: 9px 9px 0;
+  -webkit-border-radius: 3px 3px 0 0;
+     -moz-border-radius: 3px 3px 0 0;
+          border-radius: 3px 3px 0 0;
 }
 .private-msg .user-info {float:right; width: 100%}
 .user-wrapper .username {float:right; width: 135px; color: #454545; font-size: 18px; font-weight: bold; margin-top: 0; word-wrap: break-word}

@@ -22,33 +22,78 @@
           </div>
           <div class="right">
             <h1><%= @topic.title %></h1>
-            <span class="by-author"><%= t '.by', :author => @topic.user.username %></span>
-            <p class="article-tags">
-              <%= linked_tag_list @topic.tags %>
-            </p>
-            <div class="social-bookmarkers border-left">
-              <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
-              <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-all-2 btn-twitter' do %>
-                <span class="twitter">t('.icons.social.twitter')</span>
-              <% end %>
-              <div class="flash-privacy">
-                <div class="border-all">
-                  <%= t('.icons.social.flash_alert')%>
-                  <span class="flash-arrow-shadow">
-                    <span class="flash-arrow"></span>
-                  </span>
-                  <span class="icn-cross"></span>
-                  <span class="exclamation-center"></span>
+            <ul class="topic-info">
+              <li class="by-author"><%= t '.by', :author => @topic.user.username %></li>
+              <li class="article-tags"><%= linked_tag_list @topic.tags %></li>
+            </ul>
+            <ul class="social-bookmarkers">
+              <li class="facebook">
+                <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
+                <div class="flash-privacy">
+                  <div class="border-all">
+                    <%= t('.icons.social.flash_alert')%>
+                    <span class="flash-arrow-shadow">
+                      <span class="flash-arrow"></span>
+                    </span>
+                    <span class="icn-cross"></span>
+                    <span class="exclamation-center"></span>
+                  </div>
                 </div>
-              </div>
-              <p class="follow-topic-wrapper">
-                <% if logged_in? && @topic.subscribed?(current_user) %>
-                  <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following secondary-button border-all-2" %>
-                <% else %>
-                  <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic secondary-button border-all-2 #{'disabled' unless logged_in?}" %>
+              </li>
+              <li class="twitter">
+                <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-all-2 btn-twitter' do %>
+                  <span class="icn-social twitter"><%= t('.icons.social.twitter') %></span>
                 <% end %>
-              </p>
-            </div>
+                <div class="flash-privacy">
+                  <div class="border-all">
+                    <%= t('.icons.social.flash_alert')%>
+                    <span class="flash-arrow-shadow">
+                      <span class="flash-arrow"></span>
+                    </span>
+                    <span class="icn-cross"></span>
+                    <span class="exclamation-center"></span>
+                  </div>
+                </div>
+              </li>
+              <li class="follow">
+                <p class="follow-topic-btn">
+                  <% if logged_in? && @topic.subscribed?(current_user) %>
+                    <%= link_to t('.unfollow'), unfollow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic following secondary-button border-all-2" %>
+                  <% else %>
+                    <%= link_to t('.follow'), follow_topic_path(@topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic secondary-button border-all-2 #{'disabled' unless logged_in?}" %>
+                  <% end %>
+                </p>
+              </li>
+              <li class="thank has-tooltip">
+                <p class="thank-btn">
+                  <a href="#" rel="Thank Topic" class="secondary-button border-all-2">Thank Topic</a>
+                </p>
+                
+                <div class="tooltip-box tt-thank-msg border-all">
+                  <span class="origin"><span><span></span></span></span>
+                  <div class="tooltip-box-inside">
+                    <p class="title"><%= t('.thank.title_prefix') %> <i>NoelDelgado</i> <%= t('.thank.title_suffix') %></p>
+                    <br class="clear" />
+                    <form action="#">
+                      <div class="content-wrapper">
+                        <textarea id="thank-msg-content" class="border-all" placeholder="<%= t('.thank.placeholder') %>"></textarea>
+                      </div>
+                      <div class="left">
+                        <label for="include-message">
+                          <input id="include-message" type="checkbox" checked="checked">
+                          <span class="chck"><%= t('.thank.include_message') %></span>
+                        </label>
+                      </div>
+                      <p class="right">
+                        <a href="#" class="secondary-button border-all-2"><%= t('.thank.send') %></a>
+                      </p>
+                      <span class="clear"></span>
+                    </form>
+                  </div>
+                </div>
+                
+              </li>
+            </ul>
           </div>
           <br class="clear">
         </header>

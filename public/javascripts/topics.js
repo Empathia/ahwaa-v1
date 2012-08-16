@@ -1,6 +1,47 @@
 $(function(){
-    $("input:visible:checkbox, input:radio").uniform();
-
+    
+    $("input:checkbox, input:radio").uniform();
+    
+    var thankMsg = {
+        speed: 250,
+        button: $('.thank-btn a'),
+        tooltip: $('.tt-thank-msg'),
+        contentWrapper: null,
+        checkbox: null,
+        init: function () {
+            this.contentWrapper = this.tooltip.find('.content-wrapper');
+            this.checkbox = this.tooltip.find('#include-message');
+            this.checkbox.is(':checked') ? this.contentWrapper.slideDown(this.speed) : this.contentWrapper.slideUp(this.speed);
+            this.bindEvents();
+        },
+        bindEvents: function () {
+            var timer;
+            this.button.click(function (e) {
+                e.preventDefault();
+            });
+            this.checkbox.change(function (e) {
+                var $this = $(e.target);
+                if ($this.is(':checked')) {
+                    thankMsg.contentWrapper.slideDown(thankMsg.speed);
+                } else {
+                    thankMsg.contentWrapper.slideUp(thankMsg.speed);
+                }
+            });
+            this.tooltip.mouseleave(function () {
+                this.style.display = 'block';
+                if (timer) {
+                    clearTimeout(timer);
+                    timer = null;
+                }
+                timer = setTimeout(function () {
+                    thankMsg.tooltip[0].style.display = '';
+                }, 1500);
+            });
+        }
+    };
+    thankMsg.tooltip.length ? thankMsg.init() : null;
+    
+    
     $('.follow-topic').bind('ajax:beforeSend', function () {
         if ($(this).hasClass('disabled')) {
             $('#login').trigger('click');
@@ -49,12 +90,6 @@ $(function(){
         leftSideWidth = 720,
         windowObj = $(window),
         rtl = $('html').attr('dir') == 'rtl';
-
-    socialBookmarkers.mouseleave(function(){
-        $(this).children('.flash-privacy').hide();
-    }).find('a').hover(function(){
-        $(this).parent().children('.flash-privacy:not(.closed-once)').css('top', $(this).position().top - 10).show();
-    });
 
     windowObj.load(function(){
         sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 139}).data('fixed', true);
