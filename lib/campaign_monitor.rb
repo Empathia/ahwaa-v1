@@ -4,7 +4,7 @@ class CampaignMonitor
   def self.add_subscriber(user, list, custom_fields = nil)
     load
     list_id = self.get_list_id(list)
-    CreateSend::Subscriber.add(list_id, user.email, user.username, custom_fields, true) unless already_subscribed_to?(user, list)
+    CreateSend::Subscriber.add(list_id, user.email, user.username, custom_fields, true)
   end
 
   def self.remove_subscriber(user, list)
