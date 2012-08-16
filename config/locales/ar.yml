@@ -211,6 +211,13 @@ ar:
       follow: تابع هذا الموضوع
       unfollow: توقّف عن متابعة هذا الموضوع
       by: بواسطة %{author}
+      thank:
+        button: Thank Topic
+        title_prefix: Thank
+        title_suffix: for this topic!
+        placeholder: Type in your message
+        include_message: Include a message
+        send: Thanks!
       contextual:
         add_comment: إضافة ردّ جديد
         reply_here: أضف ردًا هنا

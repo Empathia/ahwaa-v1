@@ -1,9 +1,36 @@
 .content{position: relative; margin-bottom: 20px;}
 
 body > div{background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{background-image: url('../../images/tag.png'); width: 250px; background-repeat: no-repeat; background-position:100% 0; margin-top: 15px; padding-right: 22px; color: #468AC4; float:right;}
+.article-tags{max-width: 160px; background-image: url('../../images/tag.png'); width: 220px; background-repeat: no-repeat; background-position:100% 3px; padding-right: 22px; color: #468AC4; float:right;}
 .article-tags > li{display: inline;}     
 .left-side{float:right; width:700px;}
+
+.topic-info {overflow: hidden; float: right; width: 290px; margin-top: 15px}
+.social-bookmarkers {position: relative; float: left; margin-top: 10px}
+.social-bookmarkers li {float: right; padding-left: 5px}
+.social-bookmarkers .icn-social {display: block; position: relative; width: 14px; height: 14px; background-image: url('../../images/icn-social.png');}
+.social-bookmarkers .icn-social.twitter {top: 3px; right: 4px; background-position: 0 -32px; background-repeat: none;}
+.social-bookmarkers .facebook iframe {width: 67px!important}
+.social-bookmarkers .twitter > a {display: block; height: 21px; margin-bottom: 10px; text-indent: -9999px; width: 21px; overflow: hidden;}
+.social-bookmarkers .facebook:hover .flash-privacy:not(.closed-once),
+.social-bookmarkers .twitter:hover .flash-privacy:not(.closed-once) {display: block}
+.social-bookmarkers .follow-topic-btn a,
+.social-bookmarkers .thank-btn a {padding: 4px 10px 0; margin-bottom: 15px; height: 17px; font-size: 12px; display: block;}
+.social-bookmarkers .thank {padding-left: 0}
+.social-bookmarkers .has-tooltip:hover .tooltip-box {display: block}
+
+.social-bookmarkers .flash-privacy{position: absolute; top: 12px; left: 54px; margin-top: 20px; white-space: nowrap; padding-left: 6px; display: none; z-index: 100}
+.social-bookmarkers .flash-privacy > div{padding-left: 50px}
+.social-bookmarkers .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;} 
+.flash-arrow-shadow {position: absolute; top: -13px; left: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float: left; height: 0; width: 0;}
+.flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; left: -7px; top: -5px}
+
+.tt-thank-msg {left: -15px; right: inherit; top: 36px}
+.tt-thank-msg .origin {left: 48px; right: inherit}
+.tt-thank-msg label {font-size: 13px; color: #677b8c}
+.tt-thank-msg label .chck {position: relative; right: -4px; top: 2px}
+.tt-thank-msg a {padding: 4px 10px 0; height: 17px; font-size: 12px; display: block;}
+
 .related-content{background-color: #ffffff; padding:16px 20px 0 20px; position: relative;}
 .related-content > div:first-child{position: relative; overflow: hidden; height: 25px; margin-bottom: 15px;}
 .related-content > div > h2{float:right; position: absolute; margin-right: 5px; top: 5px; right: 50%;}
@@ -199,14 +226,6 @@ p:hover .icn{display: inline;}
 header > .right > .by-author {margin-top: 15px} 
 
 .related-carrousel{width: 660px; float:right; position: relative; margin-bottom: 17px}
-.social-bookmarkers{float:left; margin-top: 10px}
-.social-bookmarkers > a {float:right; height: 21px; text-indent: -9999px; width: 21px; overflow: hidden;}
-.social-bookmarkers > a > span {background-image: url('../../images/icn-social.png'); background-repeat: none; width: 14px; height: 14px; display: block}
-.social-bookmarkers .facebook{background-position:100% 0; position: relative; top: 4px; right: 3px}
-.social-bookmarkers .twitter{background-position:100% -16px; position: relative; right: 3px; top: 3px}
-.social-bookmarkers > .btn-twitter {margin-left: 5px}
-.social-bookmarkers > iframe {float:right; margin-left: 4px; width: 51px; height: 25px; overflow: hidden}
-
 .filter-responses > li{margin-bottom: 12px; float:right; min-width: 100px;}
 .filter-responses > .even{margin-left: 0; float:left}
 .filter-responses > li:last-child{margin-bottom: 0;}
