@@ -20,6 +20,9 @@
           <span class="level <%= level_css_class_for_user(user) %>"></span>
           <span class="points"><%= user.score_board.current_points %></span>
         </p>
+        <% if user.new_user? %>
+            <!-- New User -->
+        <% end %>
     </div>
     <br class="clear" />
   </div>
@@ -37,7 +40,7 @@
     <p><%= t('private_message.recently_participated') %></p>
     <ul>
       <% unless user.recent_replies.empty? %>
-        <% user.recent_replies.each do |reply| %> 
+        <% user.recent_replies.each do |reply| %>
           <li><%= link_to truncate(reply.topic.title, :length => 50), reply.topic %></li>
         <% end %>
       <% else %>

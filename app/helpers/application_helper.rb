@@ -43,11 +43,12 @@ module ApplicationHelper
   def current_username
     logged_in? ? current_user.username : Reply.human_attribute_name(:anonymous)
   end
-  
+
   # create avatar span
   def avatar_span(user, expert = false, level = true, size = "56x56")
     css_classes = ['avatar']
     css_classes << 'expert' if expert
+    css_classes << 'new' if user.new_user?
     css_classes << (level ? level_css_class_for_user(user) : 'no-level')
     content_tag(:span, :class => css_classes.join(' ') ) do
       image_tag(user.profile.avatar.url, :size => size) + ( user.current_level || level ? content_tag(:span): '')
