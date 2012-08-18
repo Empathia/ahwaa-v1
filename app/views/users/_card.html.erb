@@ -1,4 +1,4 @@
-<div class="private-msg border-all" data-hansel-component-id="private-message">
+<div class="private-msg tooltip-box border-all" data-hansel-component-id="private-message">
   <span class="origin">
     <span>
       <span></span>
@@ -7,22 +7,24 @@
   <div class="user-wrapper">
     <div class="user-info">
       <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
-      <ul class="activity-btns">
-         <% unless current_user == user || !logged_in? %>
-         <li class="light-button border-all-2 border-right-2">
-            <%= link_to '#', :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do  %>
-              <span class="send-private-msg"></span>
-            <% end %>
-          </li>
-          <% end %>
+      <% unless current_user == user || !logged_in? %>
+        <ul class="activity-btns">
+           <li class="light-button border-all-2">
+              <%= link_to '#', :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do  %>
+                <span class="send-private-msg"></span>
+              <% end %>
+            </li>
         </ul>
-        <p class="points-wrapper-small small-hearts border-all">
-          <span class="level <%= level_css_class_for_user(user) %>"></span>
-          <span class="points"><%= user.score_board.current_points %></span>
-        </p>
         <% if user.new_user? %>
-            <!-- New User -->
+          <p class="light-button border-all-2 welcome-btn">
+            <a href="#" class="">Welcome</a>
+          </p>
         <% end %>
+      <% end %>
+      <p class="points-wrapper-small small-hearts">
+        <span class="level <%= level_css_class_for_user(user) %>"></span>
+        <span class="points"><%= user.score_board.current_points %></span>
+      </p>
     </div>
     <br class="clear" />
   </div>
@@ -36,6 +38,25 @@
       <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
     </div>
   <% end %>
+  
+  <form action="#" class="form-welcome-msg">
+    <div class="flash-privacy">
+      <div class="border-all"><%=  t('private_message.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+    </div>
+    <textarea class="welcome-msg-content border-all" placeholder="<%= t('welcome_message.placeholder') %>"></textarea>
+    <div class="form-welcome-options">
+      <label>
+        <input class="include-message" type="checkbox" checked="checked">
+        <span class="chck"><%= t('welcome_message.options') %></span>
+      </label>
+    </div>
+    <p class="form-welcome-buttons">
+      <a href="#" class="cancel"><%= t('welcome_message.cancel')%></a>
+      <input type="submit" value="<%= t('welcome_message.submit') %>" class="secondary-button border-all-2" />
+    </p>
+    <div class="clear"></div>
+  </form>
+  
   <div class="recently-topics">
     <p><%= t('private_message.recently_participated') %></p>
     <ul>

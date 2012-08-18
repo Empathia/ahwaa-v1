@@ -27,7 +27,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .tt-thank-msg {left: inherit; right: -15px; top: 36px}
 .tt-thank-msg .origin {left: inherit; right: 48px}
 .tt-thank-msg label {font-size: 13px; color: #677b8c}
-.tt-thank-msg label .chck {position: relative; left: -4px; top: 2px}
+.tt-thank-msg label .chck {position: relative; left: -4px; top: 1px}
 .tt-thank-msg a {padding: 4px 10px 0; height: 17px; font-size: 12px; display: block;}
 
 .related-content{background-color: #ffffff; padding: 16px 20px 0 20px; position: relative;}

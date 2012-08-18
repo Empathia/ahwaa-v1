@@ -51,7 +51,7 @@ module ApplicationHelper
     css_classes << 'new' if user.new_user?
     css_classes << (level ? level_css_class_for_user(user) : 'no-level')
     content_tag(:span, :class => css_classes.join(' ') ) do
-      image_tag(user.profile.avatar.url, :size => size) + ( user.current_level || level ? content_tag(:span): '')
+      image_tag(user.profile.avatar.url, :size => size) + (content_tag(:em) if user.new_user?) + ( user.current_level || level ? content_tag(:span): '')
     end
   end
 

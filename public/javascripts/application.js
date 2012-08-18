@@ -154,6 +154,7 @@ $(function() {
         $(this).fadeOut(100);
     }); 
 }, 2000);
+
 });
 
 $(window).load(function () {
