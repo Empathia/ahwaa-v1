@@ -63,4 +63,14 @@ module ApplicationHelper
       'no-level'
     end
   end
+
+  def notification_title(notification)
+    #TODO: Move texts to locate file
+    if notification.category == 'thanks'
+      ' thanked your post'
+    else
+      ''
+
+    end
+  end
 end
