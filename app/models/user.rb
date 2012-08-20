@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :received_messages, :foreign_key => :recipient_id,
     :dependent => :destroy, :group => :conversation_id # NOTE: for some reason, group option it's ignored when doing .paginate() so calling .group() manually on controllers is needed
+  has_many :notifications, :foreign_key => :receiver_id
   has_many :topic_requests
   has_many :topics
   has_many :stream_users, :dependent => :destroy
@@ -76,6 +77,12 @@ class User < ActiveRecord::Base
   # Get if is a new user or not
   def new_user?
     self.created_at > 1.month.ago
+  end
+
+  # Get if the user already thanked the topic specified
+  def already_thanked?(topic)
+    notification = Notification.thankeb_by(self.id, topic.id)
+    !notification.empty?
   end
 
   # Adds a subscription for the user to the given topic

@@ -4,6 +4,7 @@ class PrivateMessage < ActiveRecord::Base
   belongs_to :recipient, :class_name => "User"
   has_many :replies, :class_name => "PrivateMessage", :foreign_key => :parent_id
   has_one :received_message
+  has_one :notification
 
   before_create :prepare_copies
   after_create :send_notifications
@@ -12,6 +13,8 @@ class PrivateMessage < ActiveRecord::Base
   validates :content, :presence => true
   validates :sender_id, :presence => true
   validates :recipient_id, :presence => true
+
+  attr_protected  :is_template
 
   # Builds an instance setting the available params,
   # like recipient and parent

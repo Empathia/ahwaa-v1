@@ -1,0 +1,21 @@
+<div class="stream-item interaction-thanks">
+  <div class="avatar-wrapper">
+    <%= avatar_span(notification.sender, notification.sender.is_expert?) %>
+    <%= render :partial => 'users/card', :locals => {:user => notification.sender} %>
+  </div>
+  <div class="stream-item-data">
+    <div>
+      <span class="user-comment">
+        <%= notification.sender.username %>
+        <%= notification_title(notification) %>
+      </span>
+      <span class="time-ago">
+        <%= t 'helpers.ago', :time => time_ago_in_words(notification.created_at) %>
+      </span>
+
+      <br class="clear" />
+    </div>
+    <p class="title"><%= link_to notification.topic.title, notification.topic %></p>
+  </div>
+  <br class="clear" />
+</div>
