@@ -9,7 +9,7 @@ class Topic < ActiveRecord::Base
   #   indexes :title
   #   indexes :content
   #   indexes :tag_list
-  # enr
+  # end
 
   belongs_to :user
   has_many :replies, :dependent => :destroy, :conditions => "contextual_index IS NOT NULL"
