@@ -14,10 +14,10 @@ class Notification < ActiveRecord::Base
   scope :unread, where(:read => false)
 
   def title
-    if notification.category == 'thanks'
-      t('private_message.thanked_title')
+    if category == 'thanks'
+      I18n.t('private_message.thanked_title')
     else
-      t('private_message.welcome_title')
+      I18n.t('private_message.welcome_title')
     end
   end
 end
