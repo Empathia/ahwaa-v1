@@ -4,8 +4,6 @@ Lgbt::Application.routes.draw do
     get 'unsubscribe_author', :on => :member
   end
 
-  get "email_tester" => "home#email_tester"
-
   get "search/topics"
   post "avatars/matches"
 
