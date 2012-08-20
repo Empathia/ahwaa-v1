@@ -22,10 +22,4 @@ class GreetingsSender
 
   def send_welcome(recipient)
   end
-
-  private
-  def thanks_content(topic)
-    topic = Topic.find(topic)
-    content = I18n.t('.private_message.thanked_message', :topic => topic.title) + '<br/>' + @message.html_safe
-  end
 end

@@ -7,7 +7,7 @@
     <div>
       <span class="user-comment">
         <%= notification.sender.username %>
-        <%= notification_title(notification) %>
+        <%= notification.title %>
       </span>
       <span class="time-ago">
         <%= t 'helpers.ago', :time => time_ago_in_words(notification.created_at) %>

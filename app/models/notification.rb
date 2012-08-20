@@ -12,4 +12,12 @@ class Notification < ActiveRecord::Base
 
   scope :thanked_by, lambda{|user_id, topic_id| where(:sender_id => user_id, :topic_id => topic_id, :category => 'thanks')}
   scope :unread, where(:read => false)
+
+  def title
+    if notification.category == 'thanks'
+      t('private_message.thanked_title')
+    else
+      t('private_message.welcome_title')
+    end
+  end
 end

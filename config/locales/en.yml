@@ -80,6 +80,9 @@ en:
     send_pm: Send Private Message
     view_profile: View Profile
     thanked_message: "Thanked your post %{topic} and wrote you:"
+    thanked_title: ' thanked your post'
+    welcome_message: ""
+    welcome_title: ''
   layouts:
     application:
       modals:
