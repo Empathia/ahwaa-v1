@@ -66,32 +66,38 @@
               </li>
               <li class="thank has-tooltip">
                 <p class="thank-btn">
-                  <a href="#" rel="Thank Topic" class="secondary-button border-all-2">Thank Topic</a>
+                  <a href="#" rel="Thank Topic" class="secondary-button border-all-2 <%= 'disabled' if !logged_in? || logged_in? && (@topic.thanked_by?(current_user) || @topic.user == current_user) %>">Thank Topic</a>
                 </p>
-                
-                <div class="tooltip-box tt-thank-msg border-all">
-                  <span class="origin"><span><span></span></span></span>
-                  <div class="tooltip-box-inside">
-                    <p class="title"><%= t('.thank.title_prefix') %> <i>NoelDelgado</i> <%= t('.thank.title_suffix') %></p>
-                    <br class="clear" />
-                    <form action="#">
-                      <div class="content-wrapper">
-                        <textarea id="thank-msg-content" class="border-all" placeholder="<%= t('.thank.placeholder') %>"></textarea>
-                      </div>
-                      <div class="left">
-                        <label for="include-message">
-                          <input id="include-message" type="checkbox" checked="checked">
-                          <span class="chck"><%= t('.thank.include_message') %></span>
-                        </label>
-                      </div>
-                      <p class="right">
-                        <a href="#" class="secondary-button border-all-2"><%= t('.thank.send') %></a>
-                      </p>
-                      <span class="clear"></span>
-                    </form>
+
+                <% unless logged_in? && @topic.thanked_by?(current_user) %>
+                  <div class="tooltip-box tt-thank-msg border-all">
+                    <span class="origin"><span><span></span></span></span>
+                    <div class="tooltip-box-inside">
+                      <p class="title"><%= t('.thank.title_prefix') %> <i><%= @topic.user.username %></i> <%= t('.thank.title_suffix') %></p>
+                      <br class="clear" />
+
+                      <%= form_for(Notification.new, :html => { :method => :post }) do |f| %>
+                        <%= f.hidden_field :topic_id, :value => @topic.id %>
+                        <%= f.hidden_field :receiver_id, :value => @topic.user.id %>
+                        <%= f.hidden_field :category, :value => 'thanks' %>
+                        <div class="content-wrapper">
+                          <%= f.text_area :content, :class => 'border-all', :placeholder => t('.thank.placeholder'), :id => 'thank-msg-content' %>
+                        </div>
+                        <div class="left">
+                          <label for="include-message">
+                            <%= f.check_box :include_message, {:id => 'include-message', :checked => 'checked'}, true, false %>
+                            <span class="chck"><%= t('.thank.include_message') %></span>
+                          </label>
+                        </div>
+                        <p class="right">
+                          <%= f.submit t('.thank.send'), :class => "secondary-button border-all-2" %>
+                        </p>
+                        <span class="clear"></span>
+                      <% end %>
+                    </div>
                   </div>
-                </div>
-                
+              <% end %>
+
               </li>
             </ul>
           </div>
