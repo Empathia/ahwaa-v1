@@ -21,6 +21,7 @@ class Topic < ActiveRecord::Base
   has_many :subscribers, :through => :subscriptions, :source => :user
   has_many :stream_messages, :dependent => :destroy
   has_many :visited_topics, :dependent => :destroy
+  has_many :notifications
 
   validates :title, :presence => true
   validates :content, :presence => true
@@ -36,6 +37,12 @@ class Topic < ActiveRecord::Base
   scope :newest, lambda { |*lang| by_language(lang.first || 'en').order("created_at DESC") }
   scope :popular, lambda { |*lang| by_replies_count(lang.first || 'en').limit(5) }
   scope :featured, lambda { |*lang| by_language(lang.first || 'en').where(:featured => true).order("created_at DESC") }
+
+  # Check if the user already thanked the post
+  def thanked_by?(user)
+    result = self.notifications.where(:sender_id => user.id)
+    !result.empty?
+  end
 
   # Notifies all subscribers to this topic about a new response
   def notify_subscribers_about_new_response(reply)

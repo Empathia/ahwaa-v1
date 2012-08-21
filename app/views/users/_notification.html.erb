@@ -1,0 +1,35 @@
+<%= content_tag_for :li, pm, :class => ('new' if pm.conversation.unread_by?(current_user)), :style => "z-index: #{inbox.length - i}" do %>
+  <div class="avatar-wrapper">
+    <% if pm.conversation_replies.last.sender %>
+      <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
+      <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
+    <% else %>
+      <span class="avatar no-level">
+        <%= image_tag Avatar.default.url, :size => '56x56' %>
+      </span>
+    <% end %>
+  </div>
+  <div class="message-data">
+    <div class="from">
+      <%= link_to  inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
+          <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
+      <% end %>
+    </div>
+    <div class='message-title'>
+      <%= t('private_message.thanked_message', :topic => link_to(topic.title, topic_path(topic)) ).html_safe %>
+    </div>
+    <div class="msg for-notification">
+        <%= link_to inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
+        <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
+      <% end %>
+    </div>
+  </div>
+  <div class="delete-message">
+    <%= link_to private_message_path(pm), :class => 'light-button border-all-2', :method => :delete, :confirm => t('users.show.content.private_messages.confirm_delete'), :remote => true do %>
+      <span class="opt-delete">t('users.show.content.private_messages.delete')</span>
+    <% end %>
+    <span class="date"><%= l pm.conversation_replies.last.created_at.to_date, :format => :inbox %></span>
+  </div>
+  <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
+  <br class="clear">
+<% end %>
