@@ -35,8 +35,7 @@ input[type=email],
 textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor: text; font-size:13px}
 
 .points-wrapper-small > span {border-width: 0}
-.light-button,
-.points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
+.light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
   background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
@@ -785,6 +784,10 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .small-hearts > .level.gold-heart,
 .small-avatars .avatar.gold-heart  > span {background-position: 0 -160px}
 
+.avatar > em {display: none; position: absolute; top: 0; right: 0; width: 27px; height: 26px; padding: 0; background-image: url('../../images/new-user-ribbon.png'); background-position: 0 0; background-repeat: no-repeat;}
+.avatar-wrapper:hover .avatar > em,
+.topic-avatars li:hover em {display: block}
+
 .response-user > .avatar-wrapper > .avatar {width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > span{right: 8px; top: 29px;}
@@ -834,9 +837,16 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .tooltip-box textarea {min-width: 244px; width: 244px; max-width: 244px; height: 74px}
 .private-msg-btns{text-align: left}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
-.private-msg-btns > a.cancel{margin-left:8px; color: #404750; font-size:13px;}
+.private-msg-btns > a.cancel,
+.form-welcome-buttons > a.cancel {margin-left:8px; color: #404750; font-size:13px; font-style: normal}
 .private-msg > .avatar{float:left;}
-.form-private-msg > .flash-privacy{margin:0 0 15px 0;}
+.form-private-msg > .flash-privacy,
+.form-welcome-msg > .flash-privacy {margin:0 0 15px 0;}
+.form-welcome-options {float: right}
+.form-welcome-options .chck {position: relative; right: -4px; top: 1px;}
+.form-welcome-buttons {float: left}
+.form-welcome-buttons input {font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #2D70B3}
+.form-welcome-msg .welcome-msg-content {height: 73px}
 
 .tooltip-box-inside,
 .user-wrapper {background:#ffffff; overflow: hidden}
@@ -845,7 +855,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
      -moz-border-radius: 3px;
           border-radius: 3px;
 }
-.user-wrapper {padding-bottom: 9px 9px 0;
+.user-wrapper {padding: 9px 9px 0;
   -webkit-border-radius: 3px 3px 0 0;
      -moz-border-radius: 3px 3px 0 0;
           border-radius: 3px 3px 0 0;
@@ -855,16 +865,19 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .user-wrapper .points-wrapper,
 .user-wrapper .light-button, 
 .user-wrapper .points-wrapper-small {float:left}
-.user-wrapper .points-wrapper-small .points {line-height: 22px}
-.user-wrapper .points-wrapper-small {margin:0 0 0 5px; padding: 0 5px; height: 21px}
-.user-wrapper .activity-btns {float:left; height: 20px; margin: 0}
+.user-wrapper .points-wrapper-small .points {line-height: 22px; font-weight: bold}
+.user-wrapper .points-wrapper-small {margin:0 0 0 5px; height: 21px}
+.user-wrapper .points-wrapper-small .level {position: relative; top: 2px; margin-right: 2px}
+.user-wrapper .activity-btns {float:left; margin: 0}
 .user-wrapper .activity-btns li {float:left; height: 21px}
 .user-wrapper .activity-btns li.first {border-left: 0 none}
 .user-wrapper .activity-btns li a {text-indent: -9999px; font-size: 0; line-height: 0; display: block}
 .user-wrapper .send-private-msg,
 .user-wrapper .view-profile {height: 21px; width: 28px;}
-.user-wrapper .send-private-msg {background: url("../../images/icn-tooltip-send-msg.png") no-repeat; right: 7px; top: -1px}
+.user-wrapper .send-private-msg {background: url("../../images/icn-tooltip-send-msg.png") no-repeat; right: 5px; left: 3px; top: 0}
 .user-wrapper .view-profile {background: url("../../images/icn-tooltip-view-profile.png") no-repeat; right: 7px; top: -1px}
+.user-wrapper .welcome-btn {padding: 4px 4px 3px; margin-left: 5px; font-weight: bold; font-size: 12px; line-height: 14px}
+.user-wrapper .welcome-btn a {text-decoration: none}
 
 .user-wrapper .user-data .points-wrapper-small {padding: 0; }
 .recently-topics {padding-top:28px; background:#ffffff}
@@ -968,9 +981,10 @@ form + .recently-topics{padding-top:18px;}
 .user-logged-info .points-wrapper-small {padding: 0 8px; position: relative}
 .user-logged-info .points-wrapper-small:hover .tooltip-wrapper {display: block}
 .user-logged-info .points-wrapper-small > .level {margin-left: 4px}
+.user-logged-info .activity-btns li {width: 35px; height: 20px}
 .points-wrapper-small .tooltip-wrapper {top: -26px}
 .points-wrapper-small .tooltip {border-width: 1px}
-.activity-btns li {float:right; height: 20px; width: 35px; border-left: 1px solid #cfdae6}
+.activity-btns li {float:right; width: 30px;}
 .user-logged-info .activity-btns li:first-child {border-right-width: 0}
 .activity-btns li a {text-indent: -999px}
 .activity-btns li span {display: block; position: relative}
@@ -992,7 +1006,6 @@ form + .recently-topics{padding-top:18px;}
           -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#40b9ef', EndColorStr='#2e8ae5')";
 }
 .activity-btns a:hover {text-decoration: none}
-.points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1}
 
 .follow-topic-wrapper {float:right}
 .follow-topic-wrapper .secondary-button {padding: 4px 10px 0; height: 17px; font-size: 12px; display: block}

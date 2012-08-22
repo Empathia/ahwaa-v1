@@ -75,7 +75,6 @@
                     <div class="tooltip-box-inside">
                       <p class="title"><%= t('.thank.title_prefix') %> <i><%= @topic.user.username %></i> <%= t('.thank.title_suffix') %></p>
                       <br class="clear" />
-
                       <%= form_for(Notification.new, :html => { :method => :post }) do |f| %>
                         <%= f.hidden_field :topic_id, :value => @topic.id %>
                         <%= f.hidden_field :receiver_id, :value => @topic.user.id %>
@@ -84,8 +83,8 @@
                           <%= f.text_area :content, :class => 'border-all', :placeholder => t('.thank.placeholder'), :id => 'thank-msg-content' %>
                         </div>
                         <div class="left">
-                          <label for="include-message">
-                            <%= f.check_box :include_message, {:id => 'include-message', :checked => 'checked'}, true, false %>
+                          <label>
+                            <%= f.check_box :include_message, {:class => 'include-message', :checked => 'checked'}, true, false %>
                             <span class="chck"><%= t('.thank.include_message') %></span>
                           </label>
                         </div>
@@ -96,7 +95,7 @@
                       <% end %>
                     </div>
                   </div>
-              <% end %>
+                <% end %>
 
               </li>
             </ul>

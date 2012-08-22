@@ -83,6 +83,12 @@ en:
     thanked_title: ' thanked your post'
     welcome_message: ""
     welcome_title: ''
+  welcome_message:
+    placeholder: Type in your message
+    options: Include a message
+    cancel: Cancel
+    submit: Welcome!
+  
   layouts:
     application:
       modals:

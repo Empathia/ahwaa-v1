@@ -1,6 +1,5 @@
 $(function(){
-    
-    $("input:checkbox, input:radio").uniform();
+    $("input:radio, input:visible:checkbox").uniform();
     
     var thankMsg = {
         speed: 250,
@@ -10,7 +9,7 @@ $(function(){
         checkbox: null,
         init: function () {
             this.contentWrapper = this.tooltip.find('.content-wrapper');
-            this.checkbox = this.tooltip.find('#include-message');
+            this.checkbox = this.tooltip.find('.include-message');
             this.checkbox.is(':checked') ? this.contentWrapper.slideDown(this.speed) : this.contentWrapper.slideUp(this.speed);
             this.bindEvents();
         },
@@ -40,7 +39,6 @@ $(function(){
         }
     };
     thankMsg.tooltip.length ? thankMsg.init() : null;
-    
     
     $('.follow-topic').bind('ajax:beforeSend', function () {
         if ($(this).hasClass('disabled')) {
