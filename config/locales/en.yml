@@ -88,6 +88,7 @@ en:
     options: Include a message
     cancel: Cancel
     submit: Welcome!
+    
   layouts:
     application:
       modals:

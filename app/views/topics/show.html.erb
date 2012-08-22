@@ -75,7 +75,6 @@
                     <div class="tooltip-box-inside">
                       <p class="title"><%= t('.thank.title_prefix') %> <i><%= @topic.user.username %></i> <%= t('.thank.title_suffix') %></p>
                       <br class="clear" />
-
                       <%= form_for(Notification.new, :html => { :method => :post }) do |f| %>
                         <%= f.hidden_field :topic_id, :value => @topic.id %>
                         <%= f.hidden_field :receiver_id, :value => @topic.user.id %>
