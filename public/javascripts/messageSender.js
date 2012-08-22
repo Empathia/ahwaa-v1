@@ -4,8 +4,16 @@ Class('MessageSender')({
             
             $('.send-private-msg').live('click', function() {
                 if(!$(this).hasClass('disabled')) {
-                    var private_form = $(this).addClass('disabled').closest('.private-msg');
-                    private_form.children('form').slideDown();
+                    var private_form = $(this).addClass('disabled').closest('.private-msg'),
+                        hasMoreForms = private_form.find('form').length > 1;
+                    
+                    if (hasMoreForms) {
+                        private_form.children('form').slideUp(250);
+                        private_form.find('.welcome-btn > a').removeClass('disabled'); 
+                    }
+                    
+                    private_form.find('.form-private-msg').slideDown(250);
+                    
                     if (!$.browser.webkit) {
                         var textarea = private_form.find('textarea');
                         textarea.attr('value', textarea.attr('placeholder'));

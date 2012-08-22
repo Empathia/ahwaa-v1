@@ -784,7 +784,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .small-hearts > .level.gold-heart,
 .small-avatars .avatar.gold-heart  > span {background-position: 0 -160px}
 
-.avatar > em {display: none; position: absolute; top: 0; right: 0; width: 27px; height: 26px; padding: 0; background-image: url('../images/new-user-ribbon.png'); background-position: 0 0; background-repeat: no-repeat;}
+.avatar > em {display: none; position: absolute; top: 0; right: 0; width: 27px; height: 26px; padding: 0; background-image: url('../../images/new-user-ribbon.png'); background-position: 0 0; background-repeat: no-repeat;}
 .avatar-wrapper:hover .avatar > em,
 .topic-avatars li:hover em {display: block}
 
@@ -838,7 +838,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .private-msg-btns{text-align: left}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
 .private-msg-btns > a.cancel,
-.form-welcome-buttons > a.cancel {margin-left:8px; color: #404750; font-size:13px;}
+.form-welcome-buttons > a.cancel {margin-left:8px; color: #404750; font-size:13px; font-style: normal}
 .private-msg > .avatar{float:left;}
 .form-private-msg > .flash-privacy,
 .form-welcome-msg > .flash-privacy {margin:0 0 15px 0;}
@@ -874,9 +874,9 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 .user-wrapper .activity-btns li a {text-indent: -9999px; font-size: 0; line-height: 0; display: block}
 .user-wrapper .send-private-msg,
 .user-wrapper .view-profile {height: 21px; width: 28px;}
-.user-wrapper .send-private-msg {background: url("../../images/icn-tooltip-send-msg.png") no-repeat; right: 5px; top: 0}
+.user-wrapper .send-private-msg {background: url("../../images/icn-tooltip-send-msg.png") no-repeat; right: 5px; left: 3px; top: 0}
 .user-wrapper .view-profile {background: url("../../images/icn-tooltip-view-profile.png") no-repeat; right: 7px; top: -1px}
-.user-wrapper .welcome-btn {padding: 4px 4px 3px; margin-right: 5px; font-weight: bold}
+.user-wrapper .welcome-btn {padding: 4px 4px 3px; margin-left: 5px; font-weight: bold; font-size: 12px; line-height: 14px}
 .user-wrapper .welcome-btn a {text-decoration: none}
 
 .user-wrapper .user-data .points-wrapper-small {padding: 0; }

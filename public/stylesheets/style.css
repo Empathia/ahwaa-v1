@@ -838,7 +838,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .private-msg-btns{text-align:right}
 .private-msg-btns > input{height: 24px; float:none!important; font-family: Arial, Helvetica, sans-serif; font-size: 13px;}
 .private-msg-btns > a.cancel,
-.form-welcome-buttons > a.cancel {margin-right:8px; color: #404750; font-size:13px;}
+.form-welcome-buttons > a.cancel {margin-right:8px; color: #404750; font-size:13px; font-style: normal}
 .private-msg > .avatar{float: right;}
 .form-private-msg > .flash-privacy,
 .form-welcome-msg > .flash-privacy {margin: 0 0 15px 0;}
