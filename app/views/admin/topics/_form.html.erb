@@ -1,4 +1,4 @@
-<% stylesheet :fcbkcomplete, 'jquery.wysiwyg.css' %>
+<% stylesheet :fcbkcomplete %>
 
 <% head do %>
   <script type="text/javascript">
@@ -15,8 +15,6 @@
           <% @topic_tags.each do |topic_tag| %>
             $("#topic_tag_list").trigger("addItem", [<%= topic_tag.to_json.html_safe %>] );
           <% end %>
-
-          $('#topic_content').wysiwyg().wysiwyg('clear');
       });
   </script>
 <% end %>

@@ -79,6 +79,10 @@ en:
     flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
     send_pm: Send Private Message
     view_profile: View Profile
+    thanked_message: "Thanked your post %{topic} and wrote you:"
+    thanked_title: ' thanked your post'
+    welcome_message: ""
+    welcome_title: ''
   welcome_message:
     placeholder: Type in your message
     options: Include a message

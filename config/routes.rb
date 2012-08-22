@@ -4,8 +4,6 @@ Lgbt::Application.routes.draw do
     get 'unsubscribe_author', :on => :member
   end
 
-  get "email_tester" => "home#email_tester"
-
   get "search/topics"
   post "avatars/matches"
 
@@ -30,7 +28,6 @@ Lgbt::Application.routes.draw do
     end
   end
 
-
   resources :bad_words, :only => [:index]
 
   resources :topics, :only => [:show] do
@@ -46,7 +43,7 @@ Lgbt::Application.routes.draw do
   end
 
   get '/tag/:tag' => "topics#tag", :as => :topic_tag
-
+  post "/notifications" => "notifications#create"
   get '/stream' => "home#stream", :as => :stream
   get '/my_topics' => 'home#my_topics', :as => :my_topics
 
