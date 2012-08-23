@@ -81,7 +81,13 @@ class User < ActiveRecord::Base
 
   # Get if the user already thanked the topic specified
   def already_thanked?(topic)
-    notification = Notification.thankeb_by(self.id, topic.id)
+    notification = Notification.thanked_by(self.id, topic.id)
+    !notification.empty?
+  end
+
+  # Get if the user already welcomed the user specified
+  def already_welcomed?(user)
+    notification = Notification.welcomed_by(self.id, user.id)
     !notification.empty?
   end
 

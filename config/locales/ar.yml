@@ -79,6 +79,10 @@ ar:
     flash_alert: لا تُفصح عن هويتك الحقيقية أو أيّ تفاصيل شخصية أخرى، كوننا لا نستطيع ضمانة جميع مستخدمي هذا الموقع، توخّى الحذر عند التواصل مع أيّ شخص جديد!
     send_pm: أرسل رسالة خاصة
     view_profile: الملف الشخصي
+    thanked_message: "Thanked your post %{topic} and wrote you:"
+    thanked_title: ' thanked your post'
+    welcome_message: "Welcomed you and wrote:"
+    welcome_title: '"hey welcome to Ahwaa!"'
   welcome_message:
     placeholder: Type in your message
     options: Include a message
@@ -128,7 +132,7 @@ ar:
           error_username_empty: اسم المستخدم فارغ
           error_username_not: اسم المستخدم غير موجود
           error_password_empty: كلمة المرور فارغة
-          error_password_short: كلمة المرور غير صالحة 
+          error_password_short: كلمة المرور غير صالحة
           flash_alert: "بأمكانك أستخدام أسم مستعار. كل مستخدم مسئول مسئولية تامة عن حماية هويته الحقيقية. يمكنك اضافة تعليقات و طلب موضوعات في سرية تامة بمجرد تسجيل الدخول  "
         login_form:
           login: البريد الإلكتروني أو اسم المستخدم

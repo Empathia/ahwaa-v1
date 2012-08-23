@@ -15,11 +15,24 @@ class GreetingsSender
       pm.content = @message
       pm.save
       greeting.private_message_id = pm.id
+      greeting.content = @message
     end
 
     greeting.save
   end
 
-  def send_welcome(recipient)
+  def send_welcome
+    greeting = Notification.new(:receiver_id => @receiver, :category => 'welcome')
+    greeting.sender_id = @sender
+
+    if @message.present?
+      pm = PrivateMessage.new(:sender_id => @sender, :recipient_id => @receiver)
+      pm.content = @message
+      pm.save
+      greeting.private_message_id = pm.id
+      greeting.content = @message
+    end
+
+    greeting.save
   end
 end
