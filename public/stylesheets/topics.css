@@ -280,7 +280,7 @@ header > .right > .by-author {margin-top: 15px}
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
 .filter-responses > .even{margin-right: 0; float: right}
 .filter-responses > li:last-child{margin-bottom: 0;}
-.filter-responses > li > label > span {color: #7d96b2}
+.filter-responses > li > label > span {color: #7d96b2; font-size: 11px}
 
 .topic-avatars > li{float:left; width:64px; text-align:center; font-size:12px; position:relative; margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px}
