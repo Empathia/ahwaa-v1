@@ -3,7 +3,7 @@ $(function(){
     
     var fontSizeControls = {
         MAX_SIZE: 20,
-        MIN_SIZE: 14,
+        MIN_SIZE: 12,
         MOD_INTERVAL: 1,
         LINE_HEIGHT: 1.6,
         increase_button: $('#font-size-controls .increase'),

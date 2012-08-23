@@ -217,7 +217,7 @@ a.no_comments{
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9');
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f8fbfc', EndColorStr='#dee5e9')";
 }
-.topic-content {padding: 24px 30px}
+.topic-content {padding: 14px 30px 24px}
 .topic-content .icn{position: relative; text-decoration: none; text-align: center; z-index: 1;}
 .icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; left: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5; background-color: #3c454f; background-color: rgba(60, 69, 79, .92); text-align: center;}
 .tta{border-style: solid; border-width: 5px 5px 0px; float: left; height: 0px; left: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}  
@@ -228,20 +228,53 @@ header > .right > .by-author {margin-top: 15px}
 
 #font-size-controls > span {float: right}
 #font-size-controls .increase,
-#font-size-controls .decrease {float: left; background-color: #fafafa; border: 1px solid #aaa; padding: 0 5px}
-#font-size-controls .increase:hover,
-#font-size-controls .decrease:hover {background-color: #f0f0f0}
-#font-size-controls .increase {
-  border-right-width: 0;
+#font-size-controls .decrease {float: left; background-color: #fafafa; border: 1px solid #d5d5d5; padding: 3px 5px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f6f6f6));
+  background-image: -webkit-linear-gradient(top, #ffffff, #f6f6f6);
+  background-image:    -moz-linear-gradient(top, #ffffff, #f6f6f6);
+  background-image:     -ms-linear-gradient(top, #ffffff, #f6f6f6);
+  background-image:      -o-linear-gradient(top, #ffffff, #f6f6f6);
+  background-image:         linear-gradient(top, #ffffff, #f6f6f6);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#f6f6f6');
+}
+#font-size-controls .increase {border-right-width: 0;
   -webkit-border-radius: 2px 0 0 2px;
      -moz-border-radius: 2px 0 0 2px;
           border-radius: 2px 0 0 2px;
+  -webkit-box-shadow: inset 0 -1px 0 #fff, inset 1px 0 0 #fff;
+     -moz-box-shadow: inset 0 -1px 0 #fff, inset 1px 0 0 #fff;
+          box-shadow: inset 0 -1px 0 #fff, inset 1px 0 0 #fff;
 }
 #font-size-controls .decrease {
   -webkit-border-radius: 0 2px 2px 0;
      -moz-border-radius: 0 2px 2px 0;
           border-radius: 0 2px 2px 0;
+  -webkit-box-shadow: inset 0 -1px 0 #fff, inset -1px 0 0 #fff;
+     -moz-box-shadow: inset 0 -1px 0 #fff, inset -1px 0 0 #fff;
+          box-shadow: inset 0 -1px 0 #fff, inset -1px 0 0 #fff;
 }
+#font-size-controls .increase:hover,
+#font-size-controls .decrease:hover {background: #ffffff}
+#font-size-controls .increase:active,
+#font-size-controls .decrease:active {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#fefefe));
+  background-image: -webkit-linear-gradient(top, #ececec, #fefefe);
+  background-image:    -moz-linear-gradient(top, #ececec, #fefefe);
+  background-image:     -ms-linear-gradient(top, #ececec, #fefefe);
+  background-image:      -o-linear-gradient(top, #ececec, #fefefe);
+  background-image:         linear-gradient(top, #ececec, #fefefe);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#ececec', EndColorStr='#fefefe');
+  -webkit-box-shadow: inset 0 0 0 1px #fff;
+     -moz-box-shadow: inset 0 0 0 1px #fff;
+          box-shadow: inset 0 0 0 1px #fff;
+}
+#font-size-controls a > span {display: block; width: 21px; height: 12px; background-image: url('../images/font-size-controllers.png'); text-indent: -9999px; line-height: 0}
+#font-size-controls .increase span {background-position: 0 0}
+#font-size-controls .decrease span {background-position: -21px 0}
+#font-size-controls .increase:hover span,
+#font-size-controls .increase:active span {background-position: 0 -12px}
+#font-size-controls .decrease:hover span,
+#font-size-controls .decrease:active span {background-position: -21px -12px}
 
 .related-carrousel {width: 660px; float: left; position: relative; margin-bottom: 17px}
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
