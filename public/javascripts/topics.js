@@ -1,7 +1,5 @@
 $(function(){
-    
-    $("input:radio, input:visible:checkbox, .include-message:checkbox").uniform();
-    //$('.include-message, input:visible:checkbox').parent(':not(.checked)').end().uniform();
+    $("input:radio, input:visible:checkbox").uniform();
     
     var thankMsg = {
         speed: 250,

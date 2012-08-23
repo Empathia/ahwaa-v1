@@ -41,6 +41,8 @@ article{background: #ffffff url('../../images/bg-article.png') repeat-x 0 1px; d
 .topic-content p{margin-top: 20px; line-height: 22px; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic}
+.topic-content .form-welcome-buttons,
+.topic-content .welcome-btn {margin-top: 0}
 .article-wraper .by-author {margin-top: 15px}
 article > header{display: block; position: static; padding: 20px 20px 15px; background-color: #fcfcfc; border-bottom: 1px solid #dbdfe3;
   -webkit-border-radius: 3px 3px 0 0;

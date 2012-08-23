@@ -26,6 +26,8 @@
 .recommended-topics li > a {display: block; padding: 10px}
 .streams .stream-items-wrapper {margin: 0 20px}
 .streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0 25px}
+.streams .interaction-thanks {background-color: #fffef4}
+.streams .interaction-welcome {background-color: #f8fdff}
 .stream-item-data > div {margin-top: 1px}
 .stream-item-data > div > .user-comment {color: #8a9199; float:right}
 .stream-item-data > div > .user-comment a {font-weight: bold}

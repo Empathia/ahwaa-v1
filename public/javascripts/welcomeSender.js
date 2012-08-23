@@ -1,92 +1,127 @@
 (function ($, window) {
     $(function () {
-        var welcomeMessage, WM;
-        welcomeMessage = WM = {
+        
+        var welcomeMessage, wm;
+        
+        welcomeMessage = wm = {
             tooltip: null,
             frm: null,
             btn: null,
+            checkbox: null,
+            cancel: null,
             tooltipClassName: 'private-msg',
             formClassName: 'form-welcome-msg',
             btnClassName: 'welcome-btn > a',
             speed: 250,
+            placeholderFlag: false,
             
             init: function () {
+                this.placeholderFlag = this.isPlaceholderSupported();
                 this.tooltip = $('.' + this.tooltipClassName);
                 this.frm = this.tooltip.find('.' + this.formClassName);
                 this.btn = this.tooltip.find('.' + this.btnClassName);
-                if (this.frm.length && this.btn.length && this.tooltip.length) {
-                    this.bindEvents();
-                } else {
-                    console.error("something is wrong!")
-                }
+                this.cancel = this.tooltip.find('.cancel');
+                this.checkbox = this.tooltip.find('.include-message');
+                this.bindEvents();
+            },
+            
+            isPlaceholderSupported: function () {
+                var test = document.createElement('input');
+                return ('placeholder' in test);
             },
             
             bindEvents: function () {
                 var frm;
-                this.btn.live('click', function (e) {
+                
+                wm.btn.live('click', function (e) {
                     e.preventDefault();
-                    WM.showForm(this);
-                });
-                this.frm.submit(function () {
-                    frm = $(this);
-                    WM.sending(frm);
-                }).find('input[type=submit]').click(function (e) {
-                    WM.sendForm(frm, e);
-                });
-                this.frm.find('.cancel').live('click', function (e) {
-                    e.preventDefault();
-                    WM.frm.slideUp(WM.speed);
-                    WM.btn.removeClass('disabled');
-                });
-                this.frm.find('.include-message').live('change', function (e) {
-                    var $this = $(e.target),
-                        tooltip = $this.closest('.' + WM.tooltipClassName),
-                        frm = tooltip.find('.' + WM.formClassName);
-                    if ($this.is(':checked')) {
-                        frm.find('textarea').slideDown(WM.speed);
-                    } else {
-                        frm.find('textarea').slideUp(WM.speed);
+                    if (!$(this).hasClass('disabled')) {
+                        wm.showForm(this);
                     }
+                });
+                wm.frm.find('input[type=submit]').live('click', function (e) {
+                    wm.sendForm(this, e);
+                });
+                wm.cancel.live('click', function (e) {
+                    e.preventDefault();
+                    wm.closeForm(this);
+                });
+                wm.checkbox.live('change', function (e) {
+                    var $this = $(e.target),
+                        tooltip = $this.closest('.' + wm.tooltipClassName),
+                        frm = tooltip.find('.' + wm.formClassName);
+                    
+                    $.uniform.update('.include-message');
+                    
+                    if ($this.is(':checked')) {
+                        frm.find('textarea').slideDown(wm.speed);
+                    } else {
+                        frm.find('textarea').slideUp(wm.speed);
+                    }
+                });
+                wm.frm.submit(function () {
+                    wm.sending(this);
                 });
             },
             
             showForm: function (btn) {
                 var btn = $(btn),
-                    tooltip = btn.closest('.' + WM.tooltipClassName),
-                    frm = tooltip.find('.' + WM.formClassName);
+                    tooltip = btn.closest('.' + wm.tooltipClassName),
+                    frm = tooltip.find('.' + wm.formClassName);
                 
-                tooltip.find('form').slideUp(WM.speed);
-                tooltip.find('.' + WM.btnClassName).not(this).removeClass('disabled');
-                if (!btn.hasClass('disabled')) {
-                    btn.addClass('disabled');
-                    frm.slideDown(WM.speed);
-                    if (!$.browser.webkit) {
-                        var textarea = frm.find('textarea');
-                        textarea.attr('value', textarea.attr('placeholder'));
-                        textarea.focus(function() {
-                            textarea.val() == textarea.attr('placeholder') && textarea.val('');
-                            textarea.blur(function() {
-                                (textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')) && textarea.attr('value', textarea.attr('placeholder'));
-                            });
-                        });
-                    }
+                tooltip.find('form').slideUp(wm.speed);
+                tooltip.find('.send-private-msg').removeClass('disabled'); 
+                btn.addClass('disabled');
+                frm.slideDown(wm.speed);
+                
+                if (!wm.placeholderFlag) {
+                    var textarea = frm.find('textarea');
+                    textarea[0].value = textarea[0].getAttribute('placeholder');
+                    textarea.live('focus', function () {
+                        textarea.val() == textarea.attr('placeholder') && textarea.val('');
+                    });
+                    textarea.live('blur',function () {
+                        if (textarea[0].value.length <= 1 || textarea[0].value === textarea[0].getAttribute('placeholder')) {
+                            textarea[0].value = textarea[0].getAttribute('placeholder');
+                        }
+                    });
                 }
             },
             
+            closeForm: function (cancel_btn) {
+                var cancel_btn = $(cancel_btn),
+                    tooltip = cancel_btn.closest('.' + wm.tooltipClassName),
+                    frm = tooltip.find('.' + wm.formClassName),
+                    btn = tooltip.find('.' + wm.btnClassName);
+                frm.slideUp(wm.speed);
+                btn.removeClass('disabled');
+            },
+            
             sending: function (frm) {
-                frm.find('.cancel').addClass('loading');
+                $(frm).find('.cancel').addClass('loading');
             },
 
-            sendForm: function (frm, e) {
-                var textarea = frm.find('textarea');
+            sendForm: function (btn, e) {
+                var btn = $(btn),
+                    tooltip = btn.closest('.' + wm.tooltipClassName),
+                    frm = tooltip.find('.' + wm.formClassName),
+                    textarea = frm.find('textarea'),
+                    is_checked = frm.find('.include-message').is(':checked'),
+                    is_textarea_empty = textarea[0].getAttribute('placeholder') === textarea[0].value || $.trim(textarea[0].value) === '';
+                
                 frm.find('.error').remove();
-                if (!frm.find('.include-message').is(':checked')) {
+                
+                if (is_checked && is_textarea_empty) {
                     frm.prepend('<div class="pm-flash error border-all"><p>' + I18n.t('private_message.message_empty') + '</p></div>');
                     e.preventDefault();
                     e.stopPropagation();
                 }
             }
         };
-        WM.init();
+        
+        if ($('.' + wm.formClassName).length && $('.' + wm.btnClassName).length) {
+            wm.init();
+        }
+        
     });
 }(jQuery, window));
