@@ -83,7 +83,7 @@
                           <%= f.text_area :content, :class => 'border-all', :placeholder => t('.thank.placeholder'), :id => 'thank-msg-content' %>
                         </div>
                         <div class="left">
-                          <label for="include-message">
+                          <label>
                             <%= f.check_box :include_message, {:class => 'include-message', :checked => 'checked'}, true, false %>
                             <span class="chck"><%= t('.thank.include_message') %></span>
                           </label>
@@ -103,6 +103,13 @@
           <br class="clear">
         </header>
         <div class="topic-content">
+          <div id="font-size-controls">
+            <span>
+              <a href="#" class="increase">A+</a>
+              <a href="#" class="decrease">A-</a>
+            </span>
+            <br class="clear" />
+          </div>
           <%= simple_format auto_link(@topic.content) %>
         </div>
       </article>

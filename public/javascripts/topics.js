@@ -1,6 +1,51 @@
 $(function(){
     $("input:radio, input:visible:checkbox").uniform();
     
+    var fontSizeControls = {
+        MAX_SIZE: 20,
+        MIN_SIZE: 14,
+        MOD_INTERVAL: 1,
+        LINE_HEIGHT: 1.6,
+        increase_button: $('#font-size-controls .increase'),
+        decrease_button: $('#font-size-controls .decrease'),
+        targets: null,
+        init: function () {
+            this.targets = $('.topic-content p:not(.private-msg p)');
+            this.bindEvents();
+        },
+        bindEvents: function () {
+            this.increase_button.click(function (e) {
+                e.preventDefault();
+                fontSizeControls.increaseFont();
+            });
+            this.decrease_button.click(function (e) {
+                e.preventDefault();
+                fontSizeControls.decreaseFont();
+            });
+        },
+        increaseFont: function () {
+            var currentSize = parseInt(fontSizeControls.targets.css('fontSize'), 10);
+            if (currentSize + fontSizeControls.MOD_INTERVAL <= fontSizeControls.MAX_SIZE) {
+                fontSizeControls.targets.css({
+                    fontSize: currentSize + fontSizeControls.MOD_INTERVAL,
+                    lineHeight: Math.round(currentSize * fontSizeControls.LINE_HEIGHT) + 'px'
+                });
+            }
+        },
+        decreaseFont: function () {
+            var currentSize =  parseInt(fontSizeControls.targets.css('fontSize'), 10);
+            if (currentSize - fontSizeControls.MOD_INTERVAL >= fontSizeControls.MIN_SIZE) {
+                fontSizeControls.targets.css({
+                    fontSize: currentSize - fontSizeControls.MOD_INTERVAL,
+                    lineHeight: Math.round(currentSize * fontSizeControls.LINE_HEIGHT) + 'px'
+                });
+            }
+        }
+    };
+    $(window).load(function () {
+        fontSizeControls.init();
+    });
+    
     var thankMsg = {
         speed: 250,
         button: $('.thank-btn a'),

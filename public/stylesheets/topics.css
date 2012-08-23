@@ -37,7 +37,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
 
 article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
-.topic-content p{margin-top: 20px; line-height: 22px; position: relative; word-wrap: break-word}
+.topic-content p{margin-top: 20px; font-size: 14px; line-height: 22px; color: #5c6166; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic}
 .topic-content .form-welcome-buttons,
@@ -225,6 +225,23 @@ a.no_comments{
 p:hover .icn{display: inline;}
 
 header > .right > .by-author {margin-top: 15px} 
+
+#font-size-controls > span {float: right}
+#font-size-controls .increase,
+#font-size-controls .decrease {float: left; background-color: #fafafa; border: 1px solid #aaa; padding: 0 5px}
+#font-size-controls .increase:hover,
+#font-size-controls .decrease:hover {background-color: #f0f0f0}
+#font-size-controls .increase {
+  border-right-width: 0;
+  -webkit-border-radius: 2px 0 0 2px;
+     -moz-border-radius: 2px 0 0 2px;
+          border-radius: 2px 0 0 2px;
+}
+#font-size-controls .decrease {
+  -webkit-border-radius: 0 2px 2px 0;
+     -moz-border-radius: 0 2px 2px 0;
+          border-radius: 0 2px 2px 0;
+}
 
 .related-carrousel {width: 660px; float: left; position: relative; margin-bottom: 17px}
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
