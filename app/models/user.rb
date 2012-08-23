@@ -51,7 +51,18 @@ class User < ActiveRecord::Base
                 .where("users.created_at < date_sub(CURDATE(), interval 6 month)")\
                 .group('visited_topics.user_id, users.id')\
                 .having('replies_count <= 1 AND topic_requests_count <= 1 AND visited_topics_count <= 1')
-
+  scope :suggestions_with_similar_topics, lambda{ |user|
+                select('count(users.id) as similars, users.*, subscriptions.topic_id')\
+                .joins("LEFT OUTER JOIN subscriptions ON (subscriptions.user_id = users.id AND subscriptions.topic_id IN (#{user.subscriptions.map(&:topic_id).uniq.join(',')}))")\
+                .where("users.id != ?", user.id)\
+                .group('users.id')\
+                .having('subscriptions.topic_id is not NULL and similars >= 2')\
+                .order('similars desc, RAND()')
+              }
+  scope :suggestions_with_similar_profile, lambda{ |user_profile|
+                includes(:profile)\
+                .where(:user_profiles => {:country_id => user_profile.country_id, :sexual_orientation_id => user_profile.sexual_orientation_id, :religion_id => user_profile.religion_id, :language => user_profile.language } )
+              }
 
   def visit_topic!(topic)
     VisitedTopic.visit!(topic, self)
@@ -81,7 +92,13 @@ class User < ActiveRecord::Base
 
   # Get if the user already thanked the topic specified
   def already_thanked?(topic)
-    notification = Notification.thankeb_by(self.id, topic.id)
+    notification = Notification.thanked_by(self.id, topic.id)
+    !notification.empty?
+  end
+
+  # Get if the user already welcomed the user specified
+  def already_welcomed?(user)
+    notification = Notification.welcomed_by(self.id, user.id)
     !notification.empty?
   end
 

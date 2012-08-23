@@ -7,7 +7,7 @@
     <div>
       <span class="user-comment">
         <%= notification.sender.username %>
-        <%= notification.title %>
+        <%= notification.title if notification.category == 'thanks' %>
       </span>
       <span class="time-ago">
         <%= t 'helpers.ago', :time => time_ago_in_words(notification.created_at) %>
@@ -15,7 +15,11 @@
 
       <br class="clear" />
     </div>
-    <p class="title"><%= link_to notification.topic.title, notification.topic %></p>
+    <% if notification.topic %>
+      <p class="title"><%= link_to notification.topic.title, notification.topic %></p>
+    <% else %>
+      <blockquote><%= notification.title %></blockquote>
+    <% end %>
   </div>
   <br class="clear" />
 </div>

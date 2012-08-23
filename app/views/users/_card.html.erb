@@ -15,7 +15,7 @@
               <% end %>
             </li>
         </ul>
-        <% if user.new_user? %>
+        <% if user.new_user? && !current_user.already_welcomed?(user) %>
           <p class="light-button border-all-2 welcome-btn">
             <a href="#" class="">Welcome</a>
           </p>
@@ -38,25 +38,27 @@
       <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
     </div>
   <% end %>
-  
-  <form action="#" class="form-welcome-msg">
+
+  <%= form_for(Notification.new, :html => { :method => :post, :class => "form-welcome-msg" }) do |f| %>
+    <%= f.hidden_field :receiver_id, :value => user.id %>
+    <%= f.hidden_field :category, :value => 'welcome' %>
     <div class="flash-privacy">
       <div class="border-all"><%=  t('private_message.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
     </div>
-    <textarea class="welcome-msg-content border-all" placeholder="<%= t('welcome_message.placeholder') %>"></textarea>
+    <%= f.text_area :content, :class => 'welcome-msg-content border-all', :placeholder => t('welcome_message.placeholder') %>
     <div class="form-welcome-options">
       <label>
-        <input class="include-message" type="checkbox" checked="checked">
+        <%= f.check_box :include_message, {:class => 'include-message', :checked => 'checked'}, true, false %>
         <span class="chck"><%= t('welcome_message.options') %></span>
       </label>
     </div>
     <p class="form-welcome-buttons">
       <a href="#" class="cancel"><%= t('welcome_message.cancel')%></a>
-      <input type="submit" value="<%= t('welcome_message.submit') %>" class="secondary-button border-all-2" />
+      <%= f.submit t('welcome_message.submit'), :class => "secondary-button border-all-2" %>
     </p>
-    <div class="clear"></div>
-  </form>
-  
+    <span class="clear"></span>
+  <% end %>
+
   <div class="recently-topics">
     <p><%= t('private_message.recently_participated') %></p>
     <ul>
