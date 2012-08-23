@@ -11,6 +11,7 @@ class Notification < ActiveRecord::Base
   attr_protected :sender_id, :private_message_id
 
   scope :thanked_by, lambda{|user_id, topic_id| where(:sender_id => user_id, :topic_id => topic_id, :category => 'thanks')}
+  scope :welcomed_by, lambda{|user_id, receiver_id| where(:sender_id => user_id, :receiver_id => receiver_id, :category => 'welcome')}
   scope :unread, where(:read => false)
 
   def title
