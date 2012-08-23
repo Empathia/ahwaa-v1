@@ -88,7 +88,7 @@ en:
     options: Include a message
     cancel: Cancel
     submit: Welcome!
-  
+    
   layouts:
     application:
       modals:
@@ -107,6 +107,7 @@ en:
         switch_to_english: 'النسخة العربية'
         auth:
           sign_up: Sign-Up
+          sign_up_tooltip: "Your identity will be anonymous"
           login: Login
         request_topic:
           button: Start a Discussion

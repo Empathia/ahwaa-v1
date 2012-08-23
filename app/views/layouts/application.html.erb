@@ -95,6 +95,16 @@
                   <a href="#" id="sign-up" class="sign-up-lk border-all">
                     <span class="sign-up-btn border-all"><%= t('.header.auth.sign_up') %></span>
                   </a>
+                  <span class="tooltip-wrapper">
+                    <span class="tooltip">
+                      <span class="msg">
+                        <%= t('.header.auth.sign_up_tooltip') %>
+                      </span>
+                      <span class="arrow">
+                        <span></span>
+                      </span>
+                    </span>
+                  </span>
                   <%= form_for User.new, :html => {:class => "over-form sign-up-form ie8-hide"}, :remote => true do |f| %>
                     <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                     <ul>

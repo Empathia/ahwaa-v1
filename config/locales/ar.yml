@@ -102,6 +102,7 @@ ar:
         switch_to_english: View in English
         auth:
           sign_up: "أنشئ حسابًا جديدًا!"
+          sign_up_tooltip: "Your identity will be anonymous"
           login: تسجيل الدخول
         request_topic:
           button: "طلب موضوع"
