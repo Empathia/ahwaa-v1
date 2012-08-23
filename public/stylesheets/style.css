@@ -246,6 +246,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .sign-up {float: left; text-align: left; width: 240px;}
 .header-top .sign-up {margin-top: 21px}
 .auth-wrapper{height: 28px; float: left; width: 92px; position: relative;}
+#sign-up:hover + .tooltip-wrapper {display: block}
 .auth-wrapper:first-child{margin-right: 2px;}
 .sign-up-lk {border: 1px solid #4785bf; line-height: 2; float: left;}
 .auth-wrapper > .sign-up-lk{text-decoration: none; line-height: inherit}
