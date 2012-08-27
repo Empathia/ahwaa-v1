@@ -7,14 +7,17 @@
      -moz-border-radius: 0 3px 0 0;
           border-radius: 0 3px 0 0;
 }
-.stream-wrapper .right-side .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float:right}
-.stream-wrapper .right-side .stream-title .filter {float:left}
+.stream-wrapper .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float:right}
+.stream-wrapper .stream-title .filter {float:left}
 .stream-wrapper .filter label {color: #8a9199}
 .stream-title  .filter-label {float:right}
-.stream-wrapper .right-side .recommended-topics {float:right; width: 200px; padding: 15px 20px}
-.stream-wrapper .right-side .recommended-topics h3 {font-family: 'Gotham-Light'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
-.stream-wrapper .right-side .recommended-topics ul {margin-bottom: 30px}
-.stream-wrapper .right-side .recommended-topics li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px; font-family: 'GothamMediumRegular';
+.stream-wrapper .recommended-topics {float:right; width: 200px; padding: 15px 20px; border-right: 1px solid #dae0e6}
+.stream-wrapper .recommended-topics h3 {font-family: 'Gotham-Light'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
+.recommended-topics h4 {margin: 0 0 15px}
+.stream-wrapper .recommended,
+.stream-wrapper .newest {margin-bottom: 30px}
+.stream-wrapper .recommended li,
+.stream-wrapper .newest li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px; font-family: 'GothamMediumRegular';
   background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fbfc), to(#f4f6f9));
   background-image: -webkit-linear-gradient(top, #f9fbfc, #f4f6f9);
   background-image:    -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
@@ -23,7 +26,8 @@
   background-image:         linear-gradient(top, #f9fbfc, #f4f6f9);
         -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9')";
 }
-.recommended-topics li > a {display: block; padding: 10px}
+.stream-wrapper .recommended a,
+.stream-wrapper .newest a {display: block; padding: 10px}
 .streams .stream-items-wrapper {margin: 0 20px}
 .streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0 25px}
 .streams .interaction-thanks {background-color: #fffef4}
@@ -42,7 +46,7 @@
 .stream-wrapper .right-side {float:left; width: 780px; background: url("../../images/bg-article.png") repeat-x scroll 0 1px #fff}
 .stream-wrapper .filter div.selector {margin-top: -7px; width: 140px}
 .stream-wrapper .filter div.selector span {width: 108px}
-.stream-wrapper .right-side .streams {float:right; width: 539px; border-left: 1px solid #dae0e6; min-height: 449px}
+.stream-wrapper .right-side .streams {float:right; width: 539px; min-height: 449px}
 .stream-item-data {float:left; width: 420px}
 .load-more-wrapper {overflow: hidden; margin:27px 183px 20px 0}
 
@@ -84,3 +88,8 @@
           box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset
 } 
 .user-info-wrapper > .send-msg > span {float:right; background: url("../../images/icn-messages-2.png") no-repeat scroll 0 0 transparent; width: 15px; height: 11px; right: 10px; top: 4px; margin-left: 8px}
+.topic-avatars::after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
+.recommended-topics .topic-avatars {margin-bottom: 16px}
+.topic-avatars > li {float: left; width: 64px; text-align: center; font-size: 12px; position: relative; margin: 0 18px 14px}
+.topic-avatars .avatar {margin-bottom: 10px}
+.topic-avatars em {color: #468AC4}
