@@ -56,32 +56,34 @@
             </li>
           <% end %>
         </ul>
-        <% unless @users_similar_profile.empty? || @users_similar_interests.empty? %>
-          <h3><%= t 'stream.sidebar.people_like_you' %></h3>
-          <% unless @users_similar_profile.empty? %>
-            <h4><%= t 'stream.sidebar.similar_profile' %></h4>
-            <ul class="topic-avatars">
-              <% @users_similar_profile.each do |user| %>
-                <li>
-                  <%= avatar_span(user, user.is_expert?) %>
-                  <em><%= user.username %></em>
-                  <%= render :partial => 'users/card', :locals => {:user => user} %>
-                </li>
-              <% end %>
-            </ul>
-          <% end %>
-          <% unless @users_similar_interests.empty? %>
-            <h4><%= t 'stream.sidebar.similar_interests' %></h4>
-            <ul class="topic-avatars">
-              <% @users_similar_interests.each do |user| %>
-                <li>
-                  <%= avatar_span(user, user.is_expert?) %>
-                  <em><%= user.username %></em>
-                  <%= render :partial => 'users/card', :locals => {:user => user} %>
-                </li>
-              <% end %>
-            </ul>
-          <% end %>
+
+        <h3><%= t 'stream.sidebar.people_like_you' %></h3>
+        <% unless @users_similar_profile.empty? %>
+          <h4><%= t 'stream.sidebar.similar_profile' %></h4>
+          <ul class="topic-avatars">
+            <% @users_similar_profile.each do |user| %>
+              <li>
+                <%= avatar_span(user, user.is_expert?) %>
+                <em><%= user.username %></em>
+                <%= render :partial => 'users/card', :locals => {:user => user} %>
+              </li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <h4><%= t 'stream.sidebar.similar_interests' %></h4>
+        <% if @users_similar_interests.empty? %>
+          <div class="no-users-msg"><%= t 'stream.sidebar.no_users_msg' %></div>
+        <% else %>
+          <ul class="topic-avatars">
+            <% @users_similar_interests.each do |user| %>
+              <li>
+                <%= avatar_span(user, user.is_expert?) %>
+                <em><%= user.username %></em>
+                <%= render :partial => 'users/card', :locals => {:user => user} %>
+              </li>
+            <% end %>
+          </ul>
         <% end %>
       </section>
     </div>
