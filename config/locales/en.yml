@@ -370,6 +370,9 @@ en:
       recommended_topics: Recommended Topics
       newest_topics: Newest Topics
       send_message: Send Message
+      people_like_you: Users Like You
+      similar_profile: Similar Profile
+      similar_interests: Similar Interests
     filters:
       all: All topics
       followed: Followed Topics

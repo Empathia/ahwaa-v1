@@ -13,6 +13,9 @@ class HomeController < ApplicationController
     redirect_to root_path and return unless @user
     stream_users = @user.filtered_stream_users(params[:filter], I18n.locale)
 
+    @users_similar_profile = User.suggestions_with_similar_profile(current_user.profile)
+    @users_similar_interests = User.suggestions_with_similar_topics(current_user)
+
     if request.format == :html && !request.xhr?
       @recommended = @user == current_user ? @user.recommended_topics(5) : []
       @newest = Topic.newest(I18n.locale).limit(5)

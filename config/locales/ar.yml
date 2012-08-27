@@ -371,6 +371,9 @@ ar:
       recommended_topics: الموضوعات
       newest_topics: أحدث الموضوعات
       send_message: ارسل رساله
+      people_like_you: Users Like You
+      similar_profile: Similar Profile
+      similar_interests: Similar Interests
     filters:
       all: جميع الموضوعات
       followed: متابعاتي
