@@ -40,7 +40,7 @@
       <section class="recommended-topics">
         <% unless @recommended.empty? %>
           <h3><%= t 'stream.sidebar.recommended_topics' %></h3>
-          <ul>
+          <ul class="recommended">
             <% @recommended.each do |topic| %>
               <li class="border-all">
                 <%= link_to topic.title, topic %>
@@ -49,17 +49,14 @@
           </ul>
         <% end %>
         <h3><%= t 'stream.sidebar.newest_topics' %></h3>
-        <ul>
+        <ul class="newest">
           <% @newest.each do |topic| %>
             <li class="border-all">
               <%= link_to topic.title, topic %>
             </li>
           <% end %>
         </ul>
-      </section>
-
-      <% unless @users_similar_profile.empty? || @users_similar_interests.empty? %>
-        <section class="experts">
+        <% unless @users_similar_profile.empty? || @users_similar_interests.empty? %>
           <h3><%= t 'stream.sidebar.people_like_you' %></h3>
           <% unless @users_similar_profile.empty? %>
             <h4><%= t 'stream.sidebar.similar_profile' %></h4>
@@ -85,9 +82,8 @@
               <% end %>
             </ul>
           <% end %>
-        </section>
-      <% end %>
-
+        <% end %>
+      </section>
     </div>
     <br class="clear">
   </div>

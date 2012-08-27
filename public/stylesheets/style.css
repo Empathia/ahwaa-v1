@@ -35,7 +35,8 @@ input[type=email],
 textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor: text; font-size:13px}
 
 .points-wrapper-small > span {border-width: 0}
-.light-button {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
+.light-button,
+.user-logged-info .points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fafcfd), to(#ecf4f9));
   background-image: -webkit-linear-gradient(top, #fafcfd, #ecf4f9);
   background-image:    -moz-linear-gradient(top, #fafcfd, #ecf4f9);
