@@ -84,18 +84,18 @@ ar:
     welcome_message: "Welcomed you and wrote:"
     welcome_title: '"hey welcome to Ahwaa!"'
   welcome_message:
-    placeholder: Type in your message
-    options: Include a message
+    placeholder: "أكتب رسالتك"
+    options: "أدرج رسالة"
     cancel: Cancel
     submit: Welcome!
   layouts:
     application:
       modals:
         about_points:
-          title: "What are the Points?"
-          body: "You earn points commenting, posting, lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor."
+          title: "How do I get more points?"
+          body: "You earn points by starting discussion and participating in conversations in any way."
           words:
-            points: "Points"
+            points: "نقاط"
       hall_of_fame:
         tab: الأعضاء المتميّزون
         most_helpful_advice: أكثر الأعضاء مساعدةً
@@ -110,7 +110,7 @@ ar:
           login: تسجيل الدخول
         request_topic:
           button: "طلب موضوع"
-          tooltip: "Find support & help more people"
+          tooltip: "أعثر على الدعم المعنوي، وساعد المستخدمين الآخرين"
           legend: "يجب أن تكون مُسجلًا على موقع أهواء لطلب الموضوع."
           sign_up: أنشئ حسابًا جديدًا!
           error_login_empty: تسجيل الدخول
@@ -161,8 +161,8 @@ ar:
           logout: تسجيل الخروج
           edit_profile: تعديل الملف الشخصي
           tooltip:
-            earned_points: Earned Points
-            learn_more: Learn More
+            earned_points: النقاط المكتسبة
+            learn_more: تعلّم المزيد
         search_topics: إبحث عن موضوع
         tags_more: المزيد
       footer:
@@ -222,11 +222,11 @@ ar:
       unfollow: توقّف عن متابعة هذا الموضوع
       by: بواسطة %{author}
       thank:
-        button: Thank Topic
-        title_prefix: Thank
-        title_suffix: for this topic!
-        placeholder: Type in your message
-        include_message: Include a message
+        button: صوّت بالشكر لهذا الموضوع
+        title_prefix: أشكر
+        title_suffix: لأجل هذا الموضوع!
+        placeholder: أكتب رسالتك
+        include_message: أدرج رسالة
         send: Thanks!
       contextual:
         add_comment: إضافة ردّ جديد
@@ -358,8 +358,8 @@ ar:
 
   stream:
     stream: آخر المشاركات
-    follow_topic: Follow Topic
-    no_following_topics: "Currently you don’t follow any topic. Start following some"
+    follow_topic: تابع هذا الموضوع
+    no_following_topics: "أنت لا تتابع أي من الموضوعات حاليًا، إبدأ بمتابعة البعض الآن"
     title:
       reply:
         a: ترك %{reply_type} علي
@@ -380,12 +380,13 @@ ar:
       followed: متابعاتي
       my_topics: موضوعاتي
       user_topics: موضوعات %{username}
+      featured: الموضوعات المختارة
   my_topics:
     title: موضوعاتي
     is_empty:
-      title: "You Haven’t Started a Discussion Yet"
-      message: "and get advice from other people like you with the same concerns, challenges and experiences. We’re sure that your story will help more people too."
-      request_topic: Start a discussion
+      title: "أنت لم تبادر ببدء مناقشة بعد"
+      message: "واحصل على مشورة مستخدمين آخرين يشاركوك نفس المخاوف، التحديات والخبرات. ونحن على يقين أن قصتك سوف تساعد الآخرين كذلك."
+      request_topic: إبدأ مناقشة
     grouped_topic:
       by: بواسطة %{author}
       recent_participants:

@@ -93,8 +93,8 @@ en:
     application:
       modals:
         about_points:
-          title: "What are the Points?"
-          body: "You earn points commenting, posting, lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor."
+          title: "How do I get more points?"
+          body: "You earn points by starting discussion and participating in conversations in any way."
           words:
             points: "Points"
       hall_of_fame:
