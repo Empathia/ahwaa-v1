@@ -373,6 +373,7 @@ en:
       people_like_you: Users Like You
       similar_profile: Similar Profile
       similar_interests: Similar Interests
+      no_users_msg: You need to follow some topics!
     filters:
       all: All topics
       followed: Followed Topics

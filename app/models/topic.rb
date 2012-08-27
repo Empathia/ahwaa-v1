@@ -32,11 +32,16 @@ class Topic < ActiveRecord::Base
   # after_destroy :delete_tank_indexes, :if => 'Rails.env.production?'
   after_create :ensure_topic_request_deletion, :if => "from_request.present?"
 
+  scope :by_tags_in, lambda {|ids| where(:id => ids).limit(4).map(&:tags).flatten[0..4].map{|t| t.taggings }.flatten.uniq[0..4].map{|t| t.taggable}.uniq }
   scope :by_language, lambda { |lang| where("language = :lang", :lang => lang) }
   scope :by_replies_count, lambda { |*lang| by_language(lang.first || 'en').order("replies_count DESC") }
   scope :newest, lambda { |*lang| by_language(lang.first || 'en').order("created_at DESC") }
   scope :popular, lambda { |*lang| by_replies_count(lang.first || 'en').limit(5) }
   scope :featured, lambda { |*lang| by_language(lang.first || 'en').where(:featured => true).order("created_at DESC") }
+
+  def topic_id
+    self.id
+  end
 
   # Check if the user already thanked the post
   def thanked_by?(user)
