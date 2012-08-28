@@ -84,6 +84,11 @@ class Topic < ActiveRecord::Base
     10
   end
 
+  # Return a list of topics of interest for the user selected
+  def self.of_interest_for(user)
+    self.by_tags_in((user.subscriptions + user.visited_topics.limit(4)).map(&:topic_id).uniq).map(&:topic_id)
+  end
+
   # Creates an instance from the request attributes
   def self.build_from_request(request_id)
     topic_request = TopicRequest.find_by_id(request_id)
