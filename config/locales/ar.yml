@@ -79,10 +79,10 @@ ar:
     flash_alert: لا تُفصح عن هويتك الحقيقية أو أيّ تفاصيل شخصية أخرى، كوننا لا نستطيع ضمانة جميع مستخدمي هذا الموقع، توخّى الحذر عند التواصل مع أيّ شخص جديد!
     send_pm: أرسل رسالة خاصة
     view_profile: الملف الشخصي
-    thanked_message: "Thanked your post %{topic} and wrote you:"
-    thanked_title: ' thanked your post'
-    welcome_message: "Welcomed you and wrote:"
-    welcome_title: '"hey welcome to Ahwaa!"'
+    thanked_message: "صوَّت بالشكر لموضوعك %{topic} وكتب إليك:"
+    thanked_title: ' صوَّت بالشكر لموضوعك'
+    welcome_message: "رحَّب بك وكتب:"
+    welcome_title: '“مرحبًا بك على أهواء!”'
   welcome_message:
     placeholder: "أكتب رسالتك"
     options: "أدرج رسالة"
@@ -92,8 +92,8 @@ ar:
     application:
       modals:
         about_points:
-          title: "How do I get more points?"
-          body: "You earn points by starting discussion and participating in conversations in any way."
+          title: "كيف أحصل على نقاط إضافية؟"
+          body: "تحصل على نقاط إضافية عندما تبادر ببدء مناقشة جديدة أو تنخرط في مناقشات قائمة"
           words:
             points: "نقاط"
       hall_of_fame:
@@ -106,7 +106,7 @@ ar:
         switch_to_english: View in English
         auth:
           sign_up: "أنشئ حسابًا جديدًا!"
-          sign_up_tooltip: "Your identity will be anonymous"
+          sign_up_tooltip: "سوف تظل هويتك مجهولة"
           login: تسجيل الدخول
         request_topic:
           button: "طلب موضوع"
@@ -371,10 +371,10 @@ ar:
       recommended_topics: الموضوعات
       newest_topics: أحدث الموضوعات
       send_message: ارسل رساله
-      people_like_you: Users Like You
-      similar_profile: Similar Profile
-      similar_interests: Similar Interests
-      no_users_msg: You need to follow some topics!
+      people_like_you: المستخدمون المُفضّلون
+      similar_profile: ملف شخصي مشابه
+      similar_interests: اهتمامات مشابهة
+      no_users_msg: لما لا تبدأ في متابعة بعض المواضيع؟!
     filters:
       all: جميع الموضوعات
       followed: متابعاتي
