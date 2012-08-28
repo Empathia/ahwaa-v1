@@ -14,7 +14,8 @@ class HomeController < ApplicationController
     stream_users = @user.filtered_stream_users(params[:filter], I18n.locale)
 
     @users_similar_profile = User.suggestions_with_similar_profile(current_user.profile)
-    @users_similar_interests = User.suggestions_with_similar_topics(current_user)
+    similar_topics_ids = Topic.by_tags_in((current_user.subscriptions + current_user.visited_topics.limit(4)).map(&:topic_id).uniq).map(&:topic_id)
+    @users_similar_interests = similar_topics_ids.empty? ? [] : User.suggestions_with_similar_topics(current_user, similar_topics_ids.join(',') )
 
     if request.format == :html && !request.xhr?
       @recommended = @user == current_user ? @user.recommended_topics(5) : []
