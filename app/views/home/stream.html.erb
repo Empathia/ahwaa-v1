@@ -19,15 +19,18 @@
           <% end %>
         </div>
 
-        <% if current_user.subscriptions.count == 0 %>
+        <% if @stream.count == 0 && params[:filter] != 'owned' %>
           <div class="is-empty">
             <%= t('stream.no_following_topics') %> <span class="arrow"></span>
           </div>
         <% end %>
 
         <div class="stream-items-wrapper">
-          <%= render @stream, :object => { :enable_follow => false } %>
-          <%= render @stream_for_new_users, :object => { :enable_follow => true }%>
+          <% unless @stream.count == 0 %>
+            <%= render @stream, :object => { :enable_follow => false } %>
+          <% else %>
+            <%= render @stream_for_new_users, :object => { :enable_follow => true }%>
+          <% end %>
         </div>
         <% if @stream_messages.current_page < @stream_messages.total_pages %>
           <p class="load-more-wrapper">

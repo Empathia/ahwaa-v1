@@ -18,12 +18,14 @@ class TopicsController < ApplicationController
 
   def follow
     current_user.subscribe_to(@topic) unless @topic.subscribed?(current_user)
-    render :json => {}, :status => :ok
+    stream_message = @topic.stream_messages.last
+    StreamUser.create(:user => current_user, :stream_message => stream_message, :source => 'followed') if stream_message
+    redirect_to :back
   end
 
   def unfollow
     current_user.unsubscribe_from(@topic) if @topic.subscribed?(current_user)
-    render :json => {}, :status => :ok
+    redirect_to :back
   end
 
   private

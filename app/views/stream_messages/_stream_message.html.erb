@@ -23,10 +23,10 @@
         <%= t 'helpers.ago', :time => time_ago_in_words(stream_message.reply.created_at) %>
         <% if object[:enable_follow] && logged_in? && !stream_message.topic.subscribed?(current_user) %>
           <span class="separator">&middot;</span>
-          <%= link_to t('stream.follow_topic'), follow_topic_path(stream_message.topic, :format => :json), :remote => true, :method => :post, :class => "follow-topic" %>
+          <%= link_to t('stream.follow_topic'), follow_topic_path(stream_message.topic, :format => :json), :method => :post, :class => "follow-topic" %>
         <% end %>
       </span>
-        
+
       <br class="clear" />
     </div>
     <p class="title"><%= link_to stream_message.reply.topic.title, stream_message.reply.topic %></p>
