@@ -51,8 +51,8 @@ class User < ActiveRecord::Base
                 .where("users.created_at < date_sub(CURDATE(), interval 6 month)")\
                 .group('visited_topics.user_id, users.id')\
                 .having('replies_count <= 1 AND topic_requests_count <= 1 AND visited_topics_count <= 1')
-  scope :suggestions_with_similar_topics, lambda{ |user|
-                joins("LEFT OUTER JOIN subscriptions ON (subscriptions.user_id = users.id AND subscriptions.topic_id IN (#{Topic.by_tags_in((user.subscriptions + user.visited_topics.limit(4)).map(&:topic_id).uniq).map(&:topic_id).join(',')}))")\
+  scope :suggestions_with_similar_topics, lambda{ |user, topic_ids|
+                joins("LEFT OUTER JOIN subscriptions ON (subscriptions.user_id = users.id AND subscriptions.topic_id IN (#{topic_ids}))")\
                 .where("users.id != ? and subscriptions.topic_id is not NULL", user.id)\
                 .group('users.id')\
                 .having('count(users.id) >= 2')\
