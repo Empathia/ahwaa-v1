@@ -806,6 +806,7 @@ p.success{color:#6fa677; margin:0 1px 5px 0; font-size:11px; line-height:1em; bo
 }
 .tooltip-box .left {float: right}
 .tooltip-box .right {float: left}
+.form-welcome-msg {padding-bottom: 30px!important}
 
 .tooltip-box .origin,
 .private-msg .origin,

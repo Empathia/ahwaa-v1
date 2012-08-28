@@ -87,7 +87,7 @@ en:
     placeholder: Type in your message
     options: Include a message
     cancel: Cancel
-    submit: Welcome!
+    submit: Send
 
   layouts:
     application:
