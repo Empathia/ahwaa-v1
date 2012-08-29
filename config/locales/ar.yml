@@ -227,7 +227,7 @@ ar:
         title_suffix: لأجل هذا الموضوع!
         placeholder: أكتب رسالتك
         include_message: أدرج رسالة
-        send: Thanks!
+        send: شكرًا لك!
       contextual:
         add_comment: إضافة ردّ جديد
         reply_here: أضف ردًا هنا
