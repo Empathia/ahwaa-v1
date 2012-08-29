@@ -87,7 +87,7 @@ ar:
     placeholder: "أكتب رسالتك"
     options: "أدرج رسالة"
     cancel: Cancel
-    submit: Welcome!
+    submit: Send
   layouts:
     application:
       modals:
