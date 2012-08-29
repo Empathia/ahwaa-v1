@@ -5,9 +5,9 @@
   <ul class="messages">
     <% inbox.each_with_index do |pm, i| %>
       <% if pm.private_message.notification %>
-        <%= render 'notification', {:inbox => inbox, :pm => pm, :i => i, :topic => pm.private_message.notification.topic } %>
+        <%= render 'users/notification', {:inbox => inbox, :pm => pm, :i => i, :topic => pm.private_message.notification.topic } %>
       <% else %>
-        <%= render 'private_message', {:inbox => inbox, :pm => pm, :i => i} %>
+        <%= render 'users/private_message', {:inbox => inbox, :pm => pm, :i => i} %>
       <% end %>
     <% end %>
   </ul>
