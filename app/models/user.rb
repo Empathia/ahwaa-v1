@@ -61,6 +61,7 @@ class User < ActiveRecord::Base
               }
   scope :suggestions_with_similar_profile, lambda{ |user_profile|
                 includes(:profile)\
+                .where('users.id != ?', user_profile.user_id)\
                 .where(:user_profiles => {:country_id => user_profile.country_id, :sexual_orientation_id => user_profile.sexual_orientation_id, :religion_id => user_profile.religion_id, :language => user_profile.language } )\
                 .limit(4)
               }
