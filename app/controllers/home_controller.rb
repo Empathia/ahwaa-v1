@@ -24,7 +24,7 @@ class HomeController < ApplicationController
 
     if params[:filter] == 'featured'
       @stream_messages = Topic.featured.page(params[:page]).per_page(15)
-      @stream = @stream_messages.map{ |topic| topic.stream_messages.last }
+      @stream = @stream_messages.map{ |topic| topic.stream_messages.last }.compact
     else
       notifications = Notification.where(:receiver_id => current_user.id, :content => nil).limit(5)
       @stream_messages = stream_users.page(params[:page]).per_page(15)

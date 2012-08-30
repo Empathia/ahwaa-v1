@@ -4,7 +4,7 @@ class Admin::FeaturedTopicsController < ApplicationController
   respond_to :json, :only => [:toggle]
 
   def index
-    @topics = Topic.featured.paginate(:page => params[:page])
+    @topics = Topic.where(:featured => true).order("created_at DESC").paginate(:page => params[:page])
   end
 
   def toggle
