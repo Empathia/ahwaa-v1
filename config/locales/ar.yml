@@ -270,6 +270,7 @@ ar:
   users:
     show:
       sidebar:
+        point: "نقطة واحده"
         points: "%{points} نقاط"
         edit_profile: تحرير الملف الشخصي
         buttons:
@@ -393,3 +394,5 @@ ar:
         zero: لم يشارك أحد في هذا الموضوع منذ يومين
         one: شخص واحد فقط شارك في هذا الموضوع منذ يومين
         other: %{count} شخص شارك في هذا الموضوع منذ يومين
+  emails:
+    reset_password_link: إعادة تعيين كلمة المرور
