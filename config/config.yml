@@ -1,7 +1,16 @@
 flickr_api_key: '25c5bc8b3b993308342cc20c12e02aff'
 campaign_monitor:
-  key: '763059dd24619b8234caa7eb5cdcde34'
+  key: 'f95be41e61a8ba95436f418cb1d98cb5'
   lists:
-    all: '2946ed8aa9a997ea19eebd68de4cd01a'
-    idle: 'f1f8fcf9ba4201a360c5460442ec8bf2'
-    inactive: '728e98e28bbe5204c944701fc659a5bc'
+    all: 'c57e9f92df7e36a617b082d1f79c23a2'
+    idle: '28987ae2aedede0b5bdedae0f77a3807'
+    inactive: 'db951d51ef9668b3d665848147658631'
+
+staging:
+  campaign_monitor:
+    key: '763059dd24619b8234caa7eb5cdcde34'
+    lists:
+      all: '2946ed8aa9a997ea19eebd68de4cd01a'
+      idle: 'f1f8fcf9ba4201a360c5460442ec8bf2'
+      inactive: '728e98e28bbe5204c944701fc659a5bc'
+
