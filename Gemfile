@@ -18,6 +18,7 @@ gem 'delayed_job', '~> 2.1.4'
 gem 'unicorn', '1.0.0'
 gem 'createsend'
 gem 'whenever', :require => false
+gem 'airbrake'
 
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
