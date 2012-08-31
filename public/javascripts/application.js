@@ -1,10 +1,10 @@
 var lastSearchValue, timer1;
 
 $(function() {
-    
+
     var modal = $('#modal'),
         aboutPointsLink = $('.learn-about-points');
-    
+
     if (aboutPointsLink.length && modal.length) {
         aboutPointsLink.click(function (e) {
             e.preventDefault();
@@ -16,7 +16,7 @@ $(function() {
             }
         });
     }
-    
+
     /* Search field bind */
     $("#query").keyup(function(e) {
         var val = $.trim($(this).val());
@@ -25,7 +25,7 @@ $(function() {
             $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
         }
     });
-    
+
     $("#query").focus(function() {
         $(this).parent().addClass("focus");
     }), $("#query").focusout(function() {
@@ -99,9 +99,11 @@ $(function() {
       $(e.target);
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
-    
+
     setTimeout(function() {
    $('.avatar').hoverIntent(function (e) {
+        $('.private-msg.tooltip-box').fadeOut(100);
+
         var rollover = $(this).siblings('.private-msg');
         if (rollover.length) {
             var that = $(this),
@@ -115,7 +117,7 @@ $(function() {
                 xtop = rollover.offset().top,
                 xleft = rollover.offset().left,
                 xright = rollover.offset().left + rollover.outerWidth();
-                
+
                 rollover.css({'top': rollover_top});
 
             if ((e.pageX + xright) > $(window).width()) {
@@ -124,9 +126,9 @@ $(function() {
                 indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
                 if ($(rollover).parents('.footer-avatar').length) {
                     rollover.addClass('bottom-avatar');
-                    rollover.css({'top': -(rollover_bottom) });    
+                    rollover.css({'top': -(rollover_bottom) });
                 } else {
-                    rollover.css({'top': rollover_top});                    
+                    rollover.css({'top': rollover_top});
                 }
             } else if ($(rollover).parents('.footer-avatar').length) {
                 rollover.addClass('bottom-avatar');
@@ -152,12 +154,12 @@ $(function() {
     });
     $('.private-msg').mouseleave(function () {
         $(this).fadeOut(100);
-    }); 
+    });
 }, 2000);
 });
 
 $(window).load(function () {
-    
+
     var container = $('.container'),
         siblings = container.siblings(),
         header = siblings.filter('header'),
