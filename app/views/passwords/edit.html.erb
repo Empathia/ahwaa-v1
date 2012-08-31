@@ -2,7 +2,7 @@
 <div class="aligned">
   <%= form_tag password_path(@user.single_access_token), :method => :put do %>
     <p>
-      <%= label_tag :new_password %>
+      <%= label_tag t('users.show.sidebar.password.new_password') %>
       <%= password_field_tag :password %>
     </p>
     <p>
