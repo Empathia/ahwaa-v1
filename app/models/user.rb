@@ -106,6 +106,7 @@ class User < ActiveRecord::Base
 
   # Adds a subscription for the user to the given topic
   def subscribe_to(topic)
+    StreamUser.create(:user => self, :stream_message => topic.stream_messages.last, :source => 'followed') if topic.stream_messages.last
     subscriptions << Subscription.new(:topic => topic)
   end
 
