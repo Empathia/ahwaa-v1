@@ -37,7 +37,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .related-content > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
 
 article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;}
-.topic-content p{margin-top: 20px; font-size: 14px; line-height: 22px; color: #5c6166; position: relative; word-wrap: break-word}
+.topic-content p{margin-top: 20px; font-size: 13px; line-height: 22px; color: #5c6166; position: relative; word-wrap: break-word}
 .topic-content > p:first-child{margin-top: 0;}
 .topic-content p > a{font-style: italic}
 .topic-content .form-welcome-buttons,
