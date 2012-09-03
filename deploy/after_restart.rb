@@ -29,9 +29,9 @@ execute "Remove all.js file" do
 end
 
 # Delayed job is used to send emails in background for subscribers
-execute "Start delayed jobs." do
-  always_run true
-  owner app[:user]
-  path release_path
-  command "#{cmd_prefix} script/delayed_job start"
-end
+# execute "Start delayed jobs." do
+#   always_run true
+#   owner app[:user]
+#   path release_path
+#   command "#{cmd_prefix} script/delayed_job start"
+# end
