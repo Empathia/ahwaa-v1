@@ -285,7 +285,8 @@ header > .right > .by-author {margin-top: 15px}
 
 .topic-avatars > li{float:right; width:64px; text-align:center; font-size:12px; position:relative; margin:0 18px 14px;}
 .topic-avatars .avatar{margin-bottom: 10px}
-.topic-avatars em{color:#468AC4}
+.topic-avatars em{color:#468AC4; white-space: nowrap; width: 100%; overflow: hidden; display: inline-block; text-overflow: ellipsis}
+
 
 .expand-btn{height: 31px; line-height: 31px; font-size: 14px; font-weight: bold; text-shadow: 0 1px 0 #fff}
   

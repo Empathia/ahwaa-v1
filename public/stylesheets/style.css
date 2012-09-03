@@ -786,9 +786,10 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .small-hearts > .level.gold-heart,
 .small-avatars .avatar.gold-heart  > span {background-position: 0 -160px}
 
-.avatar > em {display: none; position: absolute; top: 0; right: 0; width: 27px; height: 26px; padding: 0; background-image: url('../images/new-user-ribbon.png'); background-position: 0 0; background-repeat: no-repeat;}
+.topic-avatars .avatar > em {display: none; position: absolute; top: 0; right: 0; width: 27px; height: 26px; padding: 0; background-image: url('../images/new-user-ribbon.png'); background-position: 0 0; background-repeat: no-repeat;}
 .avatar-wrapper:hover .avatar > em,
 .topic-avatars li:hover em {display: block}
+.topic-avatars em {color:#468AC4; white-space: nowrap; width: 100%; overflow: hidden; display: inline-block; text-overflow: ellipsis}
 
 .response-user > .avatar-wrapper > .avatar {width: 40px; height: 40px;}
 .response-user > .avatar-wrapper > .avatar > img{width: 40px; height: 40px;}
