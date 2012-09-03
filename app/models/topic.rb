@@ -53,8 +53,7 @@ class Topic < ActiveRecord::Base
   def notify_subscribers_about_new_response(reply)
     subscribers.each do |user|
       user.with_user_locale do
-        #Don't deliver, raise an undefined method `deliver'
-        UserMailer.delay.reply_notification(user, reply)
+        UserMailer.reply_notification(user, reply).deliver
       end unless user == reply.user
     end
   end
