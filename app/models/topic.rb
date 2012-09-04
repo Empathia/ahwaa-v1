@@ -60,7 +60,7 @@ class Topic < ActiveRecord::Base
 
   def notify_author_about_new_response(reply)
     user.with_user_locale do
-      UserMailer.author_reply_notification(user, reply).deliver
+      UserMailer.author_reply_notification(user, reply).deliver!
     end if reply.topic.should_notify_author? && user != reply.user
   end
 
