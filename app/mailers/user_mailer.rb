@@ -1,4 +1,6 @@
 class UserMailer < ActionMailer::Base
+  include Resque::Mailer
+
   default :from => "no-reply@ahwaa.org"
 
   layout 'email'
@@ -36,8 +38,8 @@ class UserMailer < ActionMailer::Base
       :subject => I18n.t('mailers.user.topic_request_notification.subject')
   end
 
-  def reply_notification(user, reply)
-    @user, @reply = user, reply
+  def reply_notification(user_id, reply_id)
+    @user, @reply = User.find(user_id), Reply.find(reply_id)
     mail :to => @user.email,
       :subject => I18n.t('mailers.user.reply_notification.subject')
   end
