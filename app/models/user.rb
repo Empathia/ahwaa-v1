@@ -135,7 +135,7 @@ class User < ActiveRecord::Base
   # send notification to participate in a topic
   def notify_about_topic!(topic)
     with_user_locale do
-      UserMailer.topic_match_notification(self, topic).deliver
+      UserMailer.topic_match_notification(self, topic).deliver!
     end
   end
 
@@ -143,19 +143,19 @@ class User < ActiveRecord::Base
   def notify_password_reset!
     with_user_locale do
       reset_single_access_token!
-      UserMailer.password_reset(self).deliver
+      UserMailer.password_reset(self).deliver!
     end
   end
 
   # sends notification for sign up confirmation
   def notify_sign_up_confirmation!
-    UserMailer.sign_up_confirmation(self).deliver
+    UserMailer.sign_up_confirmation(self).deliver!
   end
 
   # sends notification for private message
   def notify_private_message!(sender)
     with_user_locale do
-      UserMailer.private_message_notification(self, sender).deliver
+      UserMailer.private_message_notification(self, sender).deliver!
     end
   end
 
@@ -163,7 +163,7 @@ class User < ActiveRecord::Base
   def self.notify_about_topic_request!(topic)
     admins.each do |admin|
       admin.with_user_locale do
-        UserMailer.topic_request_notification(admin, topic).deliver
+        UserMailer.topic_request_notification(admin, topic).deliver!
       end
     end
   end
