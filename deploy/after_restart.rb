@@ -47,7 +47,7 @@ execute 'Generate foreman environment file' do
   always_run true
   owner app[:user]
   path current_path
-  command "/bin/sh -l -c 'echo \"#{cmd_prefix}\" > .env'"
+  command "/bin/sh -l -c 'echo -e \"#{cmd_prefix.split(' ').join('\n')}\" > .env'"
 end
 
 execute 'Run foreman to generate upstart services' do
