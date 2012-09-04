@@ -1,4 +1,19 @@
+# ==============================================================================
+# SETUP
+# ==============================================================================
 cmd_prefix = "GEM_HOME=#{status.gem_home} RAILS_ENV=#{node.environment.framework_env}"
+pid_dir    = '/data/ahwaa/shared/tmp/pids'
+pid_file   = 'tmp/pids/resque_worker_QUEUE.pid'
+
+# ==============================================================================
+# CREATE PIDS DIR ONLY IF IT DOES NOT EXIST
+# ==============================================================================
+directory pid_dir do
+  owner app[:user]
+  group app[:user]
+  mode 0777
+  always_run true
+end
 
 execute "Generate babilu js files" do
   always_run true
@@ -26,6 +41,34 @@ execute "Remove all.js file" do
   owner app[:user]
   path release_path
   command "rm -f public/javascripts/all.js"
+end
+
+execute 'Generate foreman environment file' do
+  always_run true
+  owner app[:user]
+  path current_path
+  command "/bin/sh -l -c 'echo \"#{cmd_prefix}\" > .env'"
+end
+
+execute 'Run foreman to generate upstart services' do
+  always_run true
+  owner app[:user]
+  path current_path
+  command "/bin/sh -l -c 'sudo foreman export upstart /etc/init -a ahwaa -l /data/ahwaa/current/log -u deploy'"
+end
+
+execute 'Stop resque jobs' do
+  always_run true
+  owner app[:user]
+  path current_path
+  command "/bin/sh -l -c 'sudo stop ahwaa'"
+end
+
+execute 'Start resque jobs' do
+  always_run true
+  owner app[:user]
+  path current_path
+  command "/bin/sh -l -c 'sudo start ahwaa'"
 end
 
 # Delayed job is used to send emails in background for subscribers

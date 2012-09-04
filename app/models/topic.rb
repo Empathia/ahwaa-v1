@@ -51,11 +51,7 @@ class Topic < ActiveRecord::Base
 
   # Notifies all subscribers to this topic about a new response
   def notify_subscribers_about_new_response(reply)
-    subscribers.each do |user|
-      user.with_user_locale do
-        UserMailer.reply_notification(user, reply).deliver
-      end unless user == reply.user
-    end
+    Resque.enqueue(SubscribersNotifier, self.id, reply.id)
   end
 
   def notify_author_about_new_response(reply)

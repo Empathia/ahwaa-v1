@@ -1,4 +1,11 @@
+require 'resque/server'
+
 Lgbt::Application.routes.draw do
+  Resque::Server.use Rack::Auth::Basic do |username, password|
+    password == 'ahwaa477!' && username == 'admin'
+  end
+  mount Resque::Server.new, :at => "/resque"
+
   resources :subscriptions, :only => [] do
     get 'unsubscribe', :on => :member
     get 'unsubscribe_author', :on => :member
