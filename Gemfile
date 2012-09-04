@@ -18,6 +18,8 @@ gem 'unicorn', '1.0.0'
 gem 'createsend'
 gem 'whenever', :require => false
 gem 'airbrake'
+gem 'foreman', '~> 0.37.2'
+gem 'resque', '~> 1.19.0'
 
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
