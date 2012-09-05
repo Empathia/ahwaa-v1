@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 
   has_many :ratings, :dependent => :destroy
   has_many :replies, :dependent => :destroy
-  has_many :recent_replies, :class_name => "Reply", :limit => 3, :group => :topic_id, :conditions => "as_anonymous = 0", :order => 'id desc'
   has_many :rated_replies, :through => :ratings, :source => :reply
   has_many :received_messages, :foreign_key => :recipient_id,
     :dependent => :destroy, :group => :conversation_id # NOTE: for some reason, group option it's ignored when doing .paginate() so calling .group() manually on controllers is needed
@@ -65,6 +64,10 @@ class User < ActiveRecord::Base
                 .where(:user_profiles => {:country_id => user_profile.country_id, :sexual_orientation_id => user_profile.sexual_orientation_id, :religion_id => user_profile.religion_id, :language => user_profile.language } )\
                 .limit(4)
               }
+
+  def recent_replies
+    Reply.where(:id => self.replies.select('max(id) as id').group(:topic_id).where("as_anonymous = 0").order('id desc').limit(3).map(&:id))
+  end
 
   def visit_topic!(topic)
     VisitedTopic.visit!(topic, self)
