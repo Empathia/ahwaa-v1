@@ -1,5 +1,5 @@
 (function() {
-  var more = $('<%= escape_javascript render(@stream) %>');
+  var more = $('<%= escape_javascript render(@stream, :object => { :enable_follow => false }) %>');
   $('.stream-items-wrapper').append(more);
   <% if @stream_messages.current_page == @stream_messages.total_pages %>
     $('.load-more-wrapper').hide();
