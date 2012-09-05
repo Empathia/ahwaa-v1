@@ -3,7 +3,7 @@ class StreamUser < ActiveRecord::Base
   belongs_to :user
 
   validates_presence_of :stream_message_id, :user_id
-  validates_uniqueness_of :stream_message_id, :scope => :user_id
+  validates_uniqueness_of :stream_message_id, :scope => [:user_id, :source]
 
   scope :followed, where(:source => 'followed')
   scope :owned, where(:source => 'owned')
