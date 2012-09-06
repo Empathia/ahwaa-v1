@@ -22,7 +22,10 @@ class HomeController < ApplicationController
       @newest = Topic.newest(I18n.locale).limit(5)
     end
 
-    if params[:filter] == 'featured'
+    if params[:filter].nil? || params[:filter] == 'all'
+       @stream = StreamMessage.joins(:reply).order('replies.created_at desc').page(params[:page]).per_page(15)
+       @stream_messages =  @stream
+    elsif params[:filter] == 'featured'
       @stream_messages = Topic.featured(I18n.locale).page(params[:page]).per_page(15)
       @stream = @stream_messages.map{ |topic| topic.stream_messages.last }.compact
     else
