@@ -28,7 +28,7 @@ class HomeController < ApplicationController
     else
       notifications = Notification.where(:receiver_id => current_user.id, :content => nil).limit(5)
       @stream_messages = stream_users.page(params[:page]).per_page(15)
-      @stream = @stream_messages.map(&:stream_message)
+      @stream = @stream_messages.map(&:stream_message).uniq
       @stream = (@stream + notifications).compact.sort{|a,b| b.created_at <=> a.created_at }
     end
 

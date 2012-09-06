@@ -1,6 +1,6 @@
 $(function(){
     $("input:radio, input:visible:checkbox").uniform();
-    
+
     var fontSizeControls = {
         MAX_SIZE: 20,
         MIN_SIZE: 12,
@@ -45,7 +45,7 @@ $(function(){
     $(window).load(function () {
         fontSizeControls.init();
     });
-    
+
     var thankMsg = {
         speed: 250,
         button: $('.thank-btn a'),
@@ -61,7 +61,12 @@ $(function(){
         bindEvents: function () {
             var timer;
             this.button.click(function (e) {
-                e.preventDefault();
+              if ($(this).closest('li').hasClass('disabled')) {
+                  $('#login').trigger('click');
+                  return false;
+              }
+
+              e.preventDefault();
             });
             this.checkbox.change(function (e) {
                 var $this = $(e.target);
@@ -84,13 +89,15 @@ $(function(){
         }
     };
     thankMsg.tooltip.length ? thankMsg.init() : null;
-    
-    $('.follow-topic').bind('ajax:beforeSend', function () {
+
+    $('.follow-topic').bind('click', function () {
         if ($(this).hasClass('disabled')) {
             $('#login').trigger('click');
             return false;
         }
-    }).bind('ajax:success', function () {
+    })
+
+    $('.follow-topic').bind('ajax:success', function () {
         var self = $(this);
         if (!self.hasClass('disabled')) {
             if (self.hasClass('following')) {

@@ -64,9 +64,9 @@
                   <% end %>
                 </p>
               </li>
-              <li class="thank has-tooltip">
+              <li class="thank has-tooltip <%= 'disabled' if !logged_in? || logged_in? && (@topic.thanked_by?(current_user) || @topic.user == current_user) %>">
                 <p class="thank-btn">
-                  <a href="#" rel="Thank Topic" class="secondary-button border-all-2 <%= 'disabled' if !logged_in? || logged_in? && (@topic.thanked_by?(current_user) || @topic.user == current_user) %>">Thank Topic</a>
+                <a href="#" rel="Thank Topic" class="secondary-button border-all-2"><%= t('.thank.button') %></a>
                 </p>
 
                 <% unless logged_in? && @topic.thanked_by?(current_user) %>
