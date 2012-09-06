@@ -11,33 +11,42 @@
     $('.comments.clon li[data-id=<%= @reply.parent_id %>]').parents('.comments.clon').prev('p').find('a:last-child').addClass(stamp).trigger('click');
     setTimeout(function() {
       $('a.' + stamp).trigger('click');
+      scollerToBootom();
     }, 500);
   <% else %>
     if($('#comments_<%= @reply.contextual_index %>').length == 0) {
       $('.container').append('<%= escape_javascript render(:partial => 'topics/comments', :object => [[@reply.contextual_index,[@reply]]]) %>');
     } else {
       $('#comments_<%= @reply.contextual_index %> > ul').append('<%= escape_javascript render(@reply) %>');
-    }   
+    }
     var link = $('#add_<%= @reply.contextual_index %>');
     if(link.hasClass('no_comments')){
         var mark = link.html()[0];
         link.html(link.html().replace(mark, '&nbsp'));
         link[0].previousSibling.nodeValue += mark + ' ';
         link.addClass('has_comments').removeClass('no_comments');
-    }        
+    }
     link.trigger('click');
     setTimeout(function() {
       $('#add_<%= @reply.contextual_index %>').trigger('click');
+      scollerToBootom();
     }, 500);
-  <% end %>                        
-  
+  <% end %>
+
   var filter = $('.filter'),
       span = filter.children().removeClass('disabled').find('label.<%= @reply.category%> span'),
       count = parseInt(span.text().replace(/[\(\)]/, ''));
   span.parent().removeClass('disabled').siblings('input').attr('disabled', false);
   span.text('(' + (count+1) + ')');
   $('.helpful').removeClass('disabled');
-<% else %>                           
+
+  var scollerToBootom = function(){
+    setTimeout(function() {
+      var position = $('.comments-ls:visible').children(':last-child').offset();
+      scroll(0,position.top - 150);
+    }, 500);
+  };
+<% else %>
   var responseWrapper = $('.response-wrapper:visible');
   responseWrapper.find('.error').text("<%= @reply.errors.full_messages.first %>");
   responseWrapper.find('.loading').removeClass('loading');
