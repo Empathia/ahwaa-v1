@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   before_create :build_profile
   before_create :build_score_board
-  before_save :set_encrypted_password
+  before_save :set_encrypted_password, :if => :should_require_password?
   before_destroy :change_topics_owner
   after_create :subscribe_to_campaign_monitor
 
