@@ -39,7 +39,9 @@ class UserMailer < ActionMailer::Base
   end
 
   def reply_notification(user_id, reply_id)
-    @user, @reply = User.find(user_id), Reply.find(reply_id)
+    @user = User.find(user_id)
+    @reply = Reply.find(reply_id)
+
     mail :to => @user.email,
       :subject => I18n.t('mailers.user.reply_notification.subject')
   end
