@@ -42,8 +42,7 @@
 
   var scollerToBootom = function(){
     setTimeout(function() {
-      var position = $('.comments-ls:visible').children(':last-child').offset();
-      scroll(0,position.top - 150);
+      $('body').scrollTop($("body").attr("scrollHeight"));
     }, 500);
   };
 <% else %>
