@@ -23,7 +23,7 @@ class HomeController < ApplicationController
     end
 
     if params[:filter].nil? || params[:filter] == 'all'
-       @stream = StreamMessage.joins(:reply).order('replies.created_at desc').page(params[:page]).per_page(15)
+       @stream = StreamMessage.joins(:reply => :topic).where('topics.language = ?', I18n.locale).order('replies.created_at desc').page(params[:page]).per_page(15)
        @stream_messages =  @stream
     elsif params[:filter] == 'featured'
       @stream_messages = Topic.featured(I18n.locale).page(params[:page]).per_page(15)
