@@ -76,7 +76,7 @@ class User < ActiveRecord::Base
   # Gets recommended topics for the user based on the
   # topics he have visited
   def recommended_topics(limit = 10)
-    visited_topics.order("visits DESC, updated_at DESC").limit(limit).map(&:topic).map { |t| t.find_related_tags.limit(2) }.flatten[0...limit]
+    visited_topics.joins(:topic).where('topics.language = ?', I18n.locale).group('topic_id').order("visits DESC, updated_at DESC").limit(limit).map(&:topic).map { |t| t.find_related_tags.limit(2) }.flatten.uniq[0...limit]
   end
 
   def filtered_stream_users(filter, lang = 'en')
