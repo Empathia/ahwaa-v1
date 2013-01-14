@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   before_filter :set_locale
-  before_filter :secure_with_ssl
+  #before_filter :secure_with_ssl
   before_filter :hall_of_fame
   helper_method :current_user, :logged_in?, :rtl?
 
