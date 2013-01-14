@@ -19,6 +19,10 @@ class ApplicationController < ActionController::Base
     !current_user.nil?
   end
 
+  def subdomain_present?
+    request.subdomain.present? && request.subdomain != "www"
+  end
+
   # Retrieves current logged in user from the session
   def current_user
     @current_user ||= User.find_by_id(session[:current_user])
