@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :authenticate_admin!
   before_filter :set_locale
+  before_filter :secure_with_ssl
   before_filter :hall_of_fame
   helper_method :current_user, :logged_in?, :rtl?
 
@@ -29,10 +30,10 @@ class ApplicationController < ActionController::Base
     session[:current_user] = @current_user = nil
   end
 
-  def rtl?      
+  def rtl?
     I18n.locale.to_s == 'ar'
   end
-  
+
   # Include selected locale in links
   # def default_url_options(options = {})
   #   {:locale => I18n.locale}
@@ -46,10 +47,18 @@ class ApplicationController < ActionController::Base
     @fame_topics = Topic.select('user_id, count(user_id) as topics_count').where("user_id <> 1").group(:user_id).order('topics_count desc').limit(1).first.try(:user)
     @fame_points = ScoreBoard.select('user_id').where("user_id <> 1").order("current_points DESC").limit(1).first.try(:user)
   end
-    
+
   def record_not_found
     render :file => "#{Rails.root}/public/404.#{I18n.locale}.html", :layout => false
   end
+
+   def secure_with_ssl
+      if subdomain_present? && request.subdomain == 'www'
+         redirect_to :protocol => 'https'
+       elsif !subdomain_present?
+        redirect_to :protocol => 'https'
+      end
+    end
 
   # [Callback] sets locale or in the locale param or defaults to en
   def set_locale
