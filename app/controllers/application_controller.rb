@@ -74,7 +74,7 @@ class ApplicationController < ActionController::Base
   end
 
   def browser_language
-    request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : 'en'
+    request.env['HTTP_ACCEPT_LANGUAGE'] =~ /ar/i ? 'ar' : ''
   end
 
   def authenticate_user!
