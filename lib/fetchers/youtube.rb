@@ -9,7 +9,7 @@ module Fetchers
 
     # Fetchs xml from YouTube API
     def self.parse(url)
-      url = "http://gdata.youtube.com/feeds/api/videos/#{extract_id url}"
+      url = "https://gdata.youtube.com/feeds/api/videos/#{extract_id url}"
       response = get(url)['entry']
       if response
         yield new(response['title'],
