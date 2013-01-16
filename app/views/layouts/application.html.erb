@@ -46,7 +46,7 @@
               <% if !current_page?(root_path) %>
                 <div class="logo-link"><%= link_to 'TRANSCEND', root_path, :class => 'lgbt' %></div>
               <% end %>
-              <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? '' : 'ar')), :class => 'lan' %></div>
+              <div><%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %></div>
             </div>
             <% if logged_in? %>
               <div class="user-logged-info" data-hansel-component-id="user-logged-box">
