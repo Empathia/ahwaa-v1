@@ -4,9 +4,9 @@
     <a href="#" class="pageslide-close"><%= t('layouts.application.header.request_topic.back_button')%></a>
   </div>
   <%= form_for @topic_request do |f| %>
-    <div class="flash-privacy">
+    <!-- <div class="flash-privacy">
       <div class="border-all"><%= t('layouts.application.header.request_topic.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
-    </div>
+    </div> -->
     <fieldset>
       <%= f.label :title %>
       <%= f.text_field :title, :required => "true" %>

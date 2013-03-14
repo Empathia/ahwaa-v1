@@ -90,6 +90,10 @@ $(function() {
         $(this).find('.more-tags').hide();
     });
 
+    $('.need-help').click(function (e) {
+        $('.help-msg.tooltip-box').fadeIn(100);
+    });
+
     /* Preload images */
     $('<img />').attr('src', '/images/loading-s-gray.gif');
     $('<img />').attr('src', '/images/loading-s-white.gif');

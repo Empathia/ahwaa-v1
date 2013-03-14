@@ -4,6 +4,10 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.includes(:replies).find(params[:id])
+    @content = @topic.content
+    unless @content.match(/[.,?!;]\z/)
+      @content = @content + "."
+    end
     @replies = @topic.replies.group_by(&:contextual_index)
     @meta_description = @topic.meta_description
     @meta_keywords = @topic.meta_keywords

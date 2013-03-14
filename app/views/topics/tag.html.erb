@@ -16,22 +16,30 @@
               <% group_topics.each do | topic | %>
                 <div class="tag-item">
                   <div class="avatar-wrapper">
-                    <%= avatar_span(topic.user, topic.user.is_expert?) %>
-                    <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
+                    <% unless topic.is_anonymous %>
+                      <%= avatar_span(topic.user, topic.user.is_expert?) %>
+                    <% else %>
+                      <span class="avatar no-level">
+                        <%= image_tag(topic.author_avatar) %>
+                      </span>
+                    <% end %>
+                    <% unless topic.is_anonymous %>
+                      <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
+                    <% end %>
                   </div>
                   <div class="tag-item-data">
                     <%= link_to topic.title, topic, :class => 'dark-lk' %>
-                    <%= t 'topics.topic.popular.by', :author => topic.user.username %>
+                    <%= t 'topics.topic.popular.by', :author => topic.author_username %>
                     <br />
                     <ul class="tags">
                       <% topic.tags.each_with_index do |tag, i| %>
                         <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.id) %></li>
                       <% end %>
-                    </ul>                                                                         
+                    </ul>
                     <%= link_to pluralize_with_i18n(topic.replies.size, 'topics.topic.popular.response'), topic, :class => "responses"  %>
                   </div>
                 </div>
-              <% end %>       
+              <% end %>
               <div class="white-area"></div>
               <br class="clear">
             </div>

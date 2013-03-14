@@ -96,7 +96,17 @@ class Topic < ActiveRecord::Base
     topic = new(topic_request.attributes.slice("title", "content", "language", "user_id"))
     topic.from_request = request_id
     topic.user_id = nil if topic_request.anonymous_post?
+    topic.is_anonymous = 1 if topic_request.anonymous_post?
     topic
+  end
+
+  def author_username
+    is_anonymous ? Reply.human_attribute_name(:anonymous) : user.username
+  end
+
+  # URL for the avatar of the user, or default image if anonymous
+  def author_avatar
+    is_anonymous ? Avatar.default.url : user.profile.avatar.url
   end
 
   # Finds related topics by tag

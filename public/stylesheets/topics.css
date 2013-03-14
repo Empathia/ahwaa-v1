@@ -351,3 +351,8 @@ header > .right > .by-author {margin-top: 15px}
 .view-more-wrapper > .view-more > span {padding-right: 15px; background: url('../images/view-more-bg.jpg') no-repeat 100% 3px}
 
 .container > .aligned > .left-side {margin-bottom: 15px}
+.help-msg {
+left: inherit;
+right: -87px;
+top: 60px;
+}

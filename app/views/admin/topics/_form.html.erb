@@ -39,6 +39,10 @@
     <%= f.collection_select :user_id, User.all, :id, :username, :required => "true" %>
   </p>
   <p class="field">
+    <%= f.label :anonymous %>
+    <%= f.check_box :is_anonymous %>
+  </p>
+  <p class="field">
     <%= f.label :language %>
     <%= f.select :language, [['English', 'en'], ['Arabic', 'ar']] %>
   </p>

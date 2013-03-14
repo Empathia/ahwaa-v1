@@ -17,13 +17,21 @@
       <article class="border-all container-soft-box-shadow" data-hansel-component-id="topic-main-section">
         <header>
           <div class="avatar-wrapper">
-            <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
-            <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
+            <% unless @topic.is_anonymous %>
+              <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
+            <% else %>
+              <span class="avatar no-level">
+                <%= image_tag(@topic.author_avatar) %>
+              </span>
+            <% end %>
+            <% unless @topic.is_anonymous %>
+              <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
+            <% end %>
           </div>
           <div class="right">
             <h1><%= @topic.title %></h1>
             <ul class="topic-info">
-              <li class="by-author"><%= t '.by', :author => @topic.user.username %></li>
+              <li class="by-author"><%= t '.by', :author => @topic.author_username %></li>
               <li class="article-tags"><%= linked_tag_list @topic.tags %></li>
             </ul>
             <ul class="social-bookmarkers">
@@ -70,10 +78,10 @@
                 </p>
 
                 <% unless logged_in? && @topic.thanked_by?(current_user) %>
-                  <div class="tooltip-box tt-thank-msg border-all">
+                  <div class="tooltip-box tt-thank-msg border-all" style="<%='display:none' unless logged_in?%>">
                     <span class="origin"><span><span></span></span></span>
                     <div class="tooltip-box-inside">
-                      <p class="title"><%= t('.thank.title_prefix') %> <i><%= @topic.user.username %></i> <%= t('.thank.title_suffix') %></p>
+                      <p class="title"><%= t('.thank.title_prefix') %> <i><%= @topic.author_username %></i> <%= t('.thank.title_suffix') %></p>
                       <br class="clear" />
                       <%= form_for(Notification.new, :html => { :method => :post }) do |f| %>
                         <%= f.hidden_field :topic_id, :value => @topic.id %>
@@ -110,7 +118,7 @@
             </span>
             <br class="clear" />
           </div>
-          <%= simple_format auto_link(@topic.content) %>
+          <%= simple_format auto_link(@content) %>
         </div>
       </article>
     </div>
@@ -152,8 +160,22 @@
         <br class="clear">
       </section>
       <% end %>
-      <section class="need-help">
-        <%= link_to t('.sidebar.need_help'), 'http://ahwaa.zendesk.com/home', :class => "help", :target => "_blank" %>
+      <section class="need-help has-tooltip">
+        <%= link_to t('.sidebar.need_help'), 'javascript:', :class => "help" %>
+        <div class="tooltip-box help-msg border-all" >
+          <span class="origin"><span><span></span></span></span>
+          <div class="tooltip-box-inside">
+            <!-- <p class="title"><%#= t('.thank.title_prefix') %> <i><%= @topic.author_username %></i> <%#= t('.thank.title_suffix') %></p> -->
+            <br class="clear" />
+            <%= form_for PrivateMessage.new, :url => user_private_messages_path("test1"), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
+              <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>
+              <div class="private-msg-btns">
+                <%= link_to t('private_message.cancel'), '#', :class => 'cancel' %>
+                <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </section>
     </aside>
     <br class="clear">

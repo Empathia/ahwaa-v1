@@ -1,17 +1,25 @@
 <li class="<%= topic_counter % 2 == 0 ? 'odd' : 'even' %>">
   <div class="avatar-wrapper" style="z-index: <%= leng - topic_counter %>">
-    <%= avatar_span(topic.user, topic.user.is_expert?) %>
-    <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
+    <% unless topic.is_anonymous %>
+      <%= avatar_span(topic.user, topic.user.is_expert?) %>
+    <% else %>
+      <span class="avatar no-level">
+        <%= image_tag(topic.author_avatar) %>
+      </span>
+    <% end %>
+    <% unless topic.is_anonymous %>
+      <%= render :partial => 'users/card', :locals => {:user => topic.user} %>
+    <% end %>
   </div>
   <div class="item-data">
     <%= link_to topic.title, topic, :class => 'dark-lk' %>
-    <div>            
-      <span class="by-author"><%= t('.popular.by', :author => topic.user.username) %></span>
+    <div>
+      <span class="by-author"><%= t('.popular.by', :author => topic.author_username) %></span>
       <ul class="tags">
         <% topic.tags.each_with_index do |tag, i| %>
           <li class="<%= "last-tag" if i == topic.tags.length-1 %>"><%= link_to tag, topic_tag_path(tag.id) %></li>
         <% end %>
-      </ul>                                                                         
+      </ul>
       <%= link_to pluralize_with_i18n(topic.all_replies.size, '.popular.response'), topic, :class => "responses"  %>
     </div>
   </div>
