@@ -1,19 +1,27 @@
+<style>
+.acts_as_taggable_on_tag{
+  cursor:move;
+}
+</style>
 <div class="adm-title">
   <h1>Tags</h1>
 </div>
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
-  <tr>
-    <th class="name">Name</th>
-    <th class="tag_count">Tag Count</th>
-    <th class="actions border-right">Actions</th>
-  </tr>
-  <% @tags.each do |tag| %>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" >
+  <tbody id="tagsTable" data-update-url="<%= sort_admin_tags_url %>">
     <tr>
-      <td><%= tag.name %></td>
-      <td><%= tag.count %></td>
-      <td>
-        <%= link_to 'Delete', admin_tag_path(tag), :method => :delete %></td>
-      </td>
+      <th class="name">Name</th>
+      <th class="tag_count">Tag Count</th>
+      <th class="actions border-right">Actions</th>
     </tr>
-  <% end %>
+    <% @tags.each do |tag| %>
+      <% @tags.order('position').each do |tag| %>
+        <%= content_tag_for :tr, tag do %>
+          <td><%= tag.name %></td>
+          <td><%= tag.count %></td>
+          <td>
+            <%= link_to 'Delete', admin_tag_path(tag), :method => :delete %></td>
+          </td>
+      <% end %>
+    <% end %>
+  </tbody>
 </table>

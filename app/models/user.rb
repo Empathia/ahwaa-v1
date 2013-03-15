@@ -20,6 +20,9 @@ class User < ActiveRecord::Base
   has_many :stream_messages, :through => :stream_users
   has_many :visited_topics, :dependent => :destroy
 
+  has_many :blocks
+  has_many :users, :through => :blocks, :uniq => true
+
   attr_accessible :username, :email, :password, :password_confirmation, :profile_attributes
 
   before_create :build_profile

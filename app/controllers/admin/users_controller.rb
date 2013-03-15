@@ -1,10 +1,10 @@
 class Admin::UsersController < ApplicationController
   layout 'admin'
-  
+
   def index
     @users = User.paginate(:page => params[:page])
   end
-  
+
   def toggle_expert
     @user = User.find(params[:id])
     if @user.toggle!(:is_expert)
@@ -17,6 +17,7 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
+    debugger
     @user.destroy
     respond_with(@user, :location => [:admin, :users])
   end

@@ -26,6 +26,11 @@
         <span class="points"><%= user.score_board.current_points %></span>
       </p>
     </div>
+    <% if user != current_user %>
+      <%= link_to blocks_path(:blocked_id => user.id), :method => :post, :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do %>
+        <span class="block_user"></span>
+      <% end %>
+    <% end %>
     <br class="clear" />
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>

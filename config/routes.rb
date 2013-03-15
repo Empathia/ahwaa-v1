@@ -19,7 +19,7 @@ Lgbt::Application.routes.draw do
   get "logout" => "sessions#destroy"
 
   resources :topic_requests, :only => [:new, :create]
-
+  resources :blocks, :only => [:create, :destroy]
   resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update] do
     get "inbox"
   end
@@ -57,7 +57,10 @@ Lgbt::Application.routes.draw do
   root :to => "home#index"
 
   namespace :admin do
-    resources :tags,  :only => [:index, :destroy]
+
+    resources :tags, :only => [:index, :destroy] do
+      post 'sort', :on => :collection
+    end
     resources :flagged_replies, :only => [:index, :destroy] do
       put 'unflag', :on => :member
     end

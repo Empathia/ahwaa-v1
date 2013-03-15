@@ -16,4 +16,12 @@ class Admin::TagsController < ApplicationController
     @tag.destroy
     respond_with(@tag, :location => [:admin, :tags])
   end
+
+  def sort
+    params[:acts_as_taggable_on_tag].each_with_index do |id, index|
+      tag = ActsAsTaggableOn::Tag.find(id)
+      tag.update_attribute(:position, index)
+    end
+    render :nothing => true
+  end
 end
