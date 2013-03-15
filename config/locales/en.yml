@@ -78,6 +78,7 @@ en:
     no_activity: No recent activity
     flash_alert: Please do not share your identity and personal details. We cannot guarantee that all users of this site can be trusted. Be cautious when communicating with others on the site.
     send_pm: Send Private Message
+    block: Mute User
     view_profile: View Profile
     thanked_message: "Thanked your post %{topic} and wrote you:"
     thanked_title: ' thanked your post'

@@ -31,7 +31,11 @@
     </div>
     <p class="title"><%= link_to stream_message.reply.topic.title, stream_message.reply.topic %></p>
     <blockquote>
+      <% if current_user.blocks.map{|u| u.block}.include? stream_message.reply.user%>
+        <span><i>user blocked</i></span>
+      <% else %>
        <%= simple_format truncate(stream_message.reply.content, :length => 140) %>
+      <% end %>
     </blockquote>
   </div>
   <br class="clear" />
