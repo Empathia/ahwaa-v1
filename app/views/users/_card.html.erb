@@ -7,7 +7,7 @@
   <div class="user-wrapper">
     <div class="user-info">
       <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
-      <% unless current_user == user || !logged_in? || (current_user.blocks.map{|u| u.block}.include? user) || current_user.blocked_user?(user) %>
+      <% unless current_user == user || !logged_in? || (logged_in? && (current_user.blocks.map{|u| u.block}.include? user)) || current_user.blocked_user?(user) %>
         <ul class="activity-btns">
            <li class="light-button border-all-2">
               <%= link_to '#', :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do  %>
@@ -26,12 +26,16 @@
         <span class="points"><%= user.score_board.current_points %></span>
       </p>
     </div>
-    <% if user != current_user && (!current_user.blocks.map{|u| u.block}.include? user) %>
-      <%= link_to blocks_path(:blocked_id => user.id), :method => :post, :title => t('private_message.block'), :class => "#{'disabled' unless logged_in?}" do %>
-        <span class="block_user"></span>
-      <% end %>
-    <% end %>
     <br class="clear" />
+    <% if user != current_user && (logged_in? && (!current_user.blocks.map{|u| u.block}.include? user)) %>
+        <%= link_to blocks_path(:blocked_id => user.id), :method => :post, :title => t('private_message.block'), :class => "points-wrapper-small #{'disabled' unless logged_in?}" do %>
+          <span class="block_user"></span>
+        <% end %>
+      <% else %>
+        <%= link_to unblock_blocks_path(:blocked_id => user.id), :method => :delete, :title => t('private_message.unblock'), :class => "#{'disabled' unless logged_in?}" do %>
+          <span class="unblock_user"></span>
+        <% end %>
+      <% end %>
   </div>
   <%= form_for PrivateMessage.new, :url => user_private_messages_path(user), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
     <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>

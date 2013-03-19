@@ -1184,8 +1184,16 @@ footer {border-top: 1px #c9cdd0 solid;
 .points-table::after,
 .points-table li::after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
 .block_user {
-  background: url("../images/close-overlay.png") no-repeat transparent; width: 25px;
-  height: 25px;
+  background: url("../images/block_icon.png") no-repeat transparent; width: 15px;
+  height: 15px;
   display: block;
+  background-size: 15px;
+  float: right
+}
+.unblock_user {
+  background: url("../images/check-mark.png") no-repeat transparent; width: 15px;
+  height: 15px;
+  display: block;
+  background-size: 15px;
   float: right
 }

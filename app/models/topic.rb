@@ -49,6 +49,10 @@ class Topic < ActiveRecord::Base
     !result.empty?
   end
 
+  def not_blocked
+
+  end
+
   # Notifies all subscribers to this topic about a new response
   def notify_subscribers_about_new_response(reply)
    subscribers.each do |user|

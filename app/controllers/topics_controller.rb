@@ -17,7 +17,11 @@ class TopicsController < ApplicationController
   def tag
     @topics = params[:by_responses] ? Topic.by_replies_count(I18n.locale) : Topic.newest(I18n.locale)
     @tag = ActsAsTaggableOn::Tag.find(params[:tag])
-    @topics = @topics.tagged_with(@tag).in_groups_of(2, false)
+    if logged_in?
+      @topics = @topics.tagged_with(@tag).reject {|k| current_user.blocks.map{|u| u.blocked_id}.include? k.user.id}.in_groups_of(2, false)
+    else
+      @topics = @topics.tagged_with(@tag).in_groups_of(2, false)
+    end
   end
 
   def follow

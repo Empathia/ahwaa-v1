@@ -19,7 +19,9 @@ Lgbt::Application.routes.draw do
   get "logout" => "sessions#destroy"
 
   resources :topic_requests, :only => [:new, :create]
-  resources :blocks, :only => [:create, :destroy]
+  resources :blocks, :only => [:create, :destroy] do
+    post :unblock, :on => :collection
+  end
   resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update] do
     get "inbox"
   end

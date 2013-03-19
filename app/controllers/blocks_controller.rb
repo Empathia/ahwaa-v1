@@ -11,9 +11,9 @@ class BlocksController < ApplicationController
   end
 
   def destroy
-    @unlocked = current_user.blocks.find(params[:id])
+    @unlocked = current_user.blocks.find_by_blocked_id(params[:blocked_id])
     @unlocked.destroy
     flash[:notice] = "Removed block."
-    redirect_to current_user
+    redirect_to root_url
   end
 end
