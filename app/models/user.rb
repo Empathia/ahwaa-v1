@@ -67,6 +67,9 @@ class User < ActiveRecord::Base
                 .where(:user_profiles => {:country_id => user_profile.country_id, :sexual_orientation_id => user_profile.sexual_orientation_id, :religion_id => user_profile.religion_id, :language => user_profile.language } )\
                 .limit(4)
               }
+  scope :blocked_by, lambda{ |current_user,user|
+        joins("LEFT OUTER JOIN blocks ON (blocks.blocked_id = users.id)")\
+        .where("users.id = ? and blocks.user_id = ?", current_user.id, user.id)}
 
   def recent_replies
     Reply.where(:id => self.replies.select('max(id) as id').group(:topic_id).where("as_anonymous = 0").order('id desc').limit(3).map(&:id))
@@ -96,6 +99,10 @@ class User < ActiveRecord::Base
   # Get if is a new user or not
   def new_user?
     self.created_at > 1.month.ago
+  end
+
+  def blocked_user?(user)
+    Block.where("user_id = #{user.id} AND blocked_id = #{self.id}").present?
   end
 
   # Get if the user already thanked the topic specified

@@ -7,7 +7,7 @@
   <div class="user-wrapper">
     <div class="user-info">
       <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
-      <% unless current_user == user || !logged_in? || (current_user.blocks.map{|u| u.block}.include? user) %>
+      <% unless current_user == user || !logged_in? || (current_user.blocks.map{|u| u.block}.include? user) || current_user.blocked_user?(user) %>
         <ul class="activity-btns">
            <li class="light-button border-all-2">
               <%= link_to '#', :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do  %>

@@ -1,51 +1,53 @@
-<%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id, :style => ("z-index: #{leng-reply_counter}" if defined?(leng)) do %>
-  <% if defined?(reply_counter) && reply_counter == 0 && reply.contextual_index.present? || (defined?(noArrow) && !noArrow) %>
-    <span class="comm-arrow"></span>
-  <% end %>
-  <div class="comm-wrap">
-    <div>
-      <div class="response-user">
-        <div class="avatar-wrapper">
-          <% unless reply.anonymous? %>
-            <%= avatar_span(reply.user, reply.user.is_expert?) %>
-          <% else %>
-            <span class="avatar">
-              <%= image_tag(reply.author_avatar, :width => '56') %>
-            </span>
-          <% end %>
-          <% unless reply.anonymous? %>
-            <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
-          <% end %>
-        </div>
-        <div class="res-username">
-          <% unless reply.anonymous? %>
-            <span><%= reply.user.username %></span>
-          <% else %>
-            <%= t(".anonymous") %>
-          <% end %>
-        </div>        
-        <div class="res-type-wrapper">
-          <div>
+<% unless current_user.blocks.map{|u| u.block}.include? reply.user %>
+  <%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id, :style => ("z-index: #{leng-reply_counter}" if defined?(leng)) do %>
+    <% if defined?(reply_counter) && reply_counter == 0 && reply.contextual_index.present? || (defined?(noArrow) && !noArrow) %>
+      <span class="comm-arrow"></span>
+    <% end %>
+    <div class="comm-wrap">
+      <div>
+        <div class="response-user">
+          <div class="avatar-wrapper">
+            <% unless reply.anonymous? %>
+              <%= avatar_span(reply.user, reply.user.is_expert?) %>
+            <% else %>
+              <span class="avatar">
+                <%= image_tag(reply.author_avatar, :width => '56') %>
+              </span>
+            <% end %>
+            <% unless reply.anonymous? %>
+              <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
+            <% end %>
+          </div>
+          <div class="res-username">
+            <% unless reply.anonymous? %>
+              <span><%= reply.user.username %></span>
+            <% else %>
+              <%= t(".anonymous") %>
+            <% end %>
+          </div>        
+          <div class="res-type-wrapper">
             <div>
-              <div class="topic-res-type advice"><%= reply.i18n_category %></div>
+              <div>
+                <div class="topic-res-type advice"><%= reply.i18n_category %></div>
+              </div>
             </div>
           </div>
         </div>
+        <%= simple_format reply.content %>
+        <% if reply.replies.size > 0 %>
+          <ul class="comments-ls">
+            <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.length}%>
+          </ul>
+        <% elsif reply.parent.nil? %>
+          <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' %>
+        <% end %>
+        <% if reply.parent.nil? %>
+          <%= render :partial => "shared/new_response", :locals => { :global => true } %>
+        <% end %>
       </div>
-      <%= simple_format reply.content %>
-      <% if reply.replies.size > 0 %>
-        <ul class="comments-ls">
-          <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.length}%>
-        </ul>
-      <% elsif reply.parent.nil? %>
-        <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' %>
-      <% end %>
-      <% if reply.parent.nil? %>
-        <%= render :partial => "shared/new_response", :locals => { :global => true } %>
-      <% end %>
     </div>
-  </div>
-  <% if !logged_in? || (reply.user != current_user) %>
-    <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply} %>  
+    <% if !logged_in? || (reply.user != current_user) %>
+      <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply} %>  
+    <% end %>
   <% end %>
-<% end %>
+<% end %>  

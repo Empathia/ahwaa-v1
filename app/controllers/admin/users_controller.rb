@@ -17,7 +17,6 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    debugger
     @user.destroy
     respond_with(@user, :location => [:admin, :users])
   end

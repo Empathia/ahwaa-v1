@@ -150,6 +150,7 @@
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
           <% @topic.leaderboard.each_with_index do |user, i| %>
+          <% next if current_user.blocks.map{|u| u.block}.include? user %>
             <li>
               <%= avatar_span(user, user.is_expert?) %>
               <em><%= user.username %></em>
@@ -181,7 +182,8 @@
     <br class="clear">
   </div>
   <div class="left-side container-soft-box-shadow">
-    <%= render :partial => 'related_topics', :locals => {:related_topics => @topic.related_topics} %>
+    <%related_topics=@topic.related_topics.reject!{|k| current_user.blocks.map{|u| u.block}.include? k.user}%>
+    <%= render :partial => 'related_topics', :locals => {:related_topics => related_topics} %>
   </div>
   <br class="clear">
 </div>
