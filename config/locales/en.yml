@@ -38,7 +38,7 @@ en:
       topic_request:
         title: Topic Title
         content: "Share your story. Request advice. Start a discussion about an issue that matters to you!"
-        anonymous_post: "Don't show any of my information when displaying this topic"
+        anonymous_post: "Post this topic anonymously"
       reply:
         anonymous: Anonymous
         advice: Advice

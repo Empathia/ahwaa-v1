@@ -37,31 +37,31 @@
             <ul class="social-bookmarkers">
               <li class="facebook">
                 <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
-                <div class="flash-privacy">
+                <!-- <div class="flash-privacy">
                   <div class="border-all">
-                    <%= t('.icons.social.flash_alert')%>
+                    <%#= t('.icons.social.flash_alert')%>
                     <span class="flash-arrow-shadow">
                       <span class="flash-arrow"></span>
                     </span>
                     <span class="icn-cross"></span>
                     <span class="exclamation-center"></span>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="twitter">
                 <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-all-2 btn-twitter' do %>
                   <span class="icn-social twitter"><%= t('.icons.social.twitter') %></span>
                 <% end %>
-                <div class="flash-privacy">
+                <!-- <div class="flash-privacy">
                   <div class="border-all">
-                    <%= t('.icons.social.flash_alert')%>
+                    <%#= t('.icons.social.flash_alert')%>
                     <span class="flash-arrow-shadow">
                       <span class="flash-arrow"></span>
                     </span>
                     <span class="icn-cross"></span>
                     <span class="exclamation-center"></span>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="follow">
                 <p class="follow-topic-btn">
@@ -150,7 +150,7 @@
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
           <% @topic.leaderboard.each_with_index do |user, i| %>
-          <% next if current_user.blocks.map{|u| u.block}.include? user %>
+          <% next if current_user && current_user.blocks.map{|u| u.block}.include?(user) %>
             <li>
               <%= avatar_span(user, user.is_expert?) %>
               <em><%= user.username %></em>
@@ -182,7 +182,8 @@
     <br class="clear">
   </div>
   <div class="left-side container-soft-box-shadow">
-    <%related_topics=@topic.related_topics.reject!{|k| current_user.blocks.map{|u| u.block}.include? k.user}%>
+    <% related_topics = @topic.related_topics.reject!{|k| current_user.blocks.map{|u| u.block}.include? k.user} if current_user %>
+    <% related_topics = @topic.related_topics unless current_user %>
     <%= render :partial => 'related_topics', :locals => {:related_topics => related_topics} %>
   </div>
   <br class="clear">

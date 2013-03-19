@@ -14,7 +14,6 @@
       <th class="actions border-right">Actions</th>
     </tr>
     <% @tags.each do |tag| %>
-      <% @tags.order('position').each do |tag| %>
         <%= content_tag_for :tr, tag do %>
           <td><%= tag.name %></td>
           <td><%= tag.count %></td>

@@ -8,6 +8,7 @@ class Admin::TagsController < ApplicationController
     else
       Topic.tag_counts
     end
+    @tags = @tags.order("position DESC")
     respond_with @tags
   end
 

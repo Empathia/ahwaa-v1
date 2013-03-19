@@ -10,7 +10,6 @@
   var _form = $('.form-private-msg');
   _form.find('.pm-flash').remove();
   <% if @message.valid? %>
-    debugger
     _form.each(function() { this.reset(); });
     _form.find('.loading').removeClass('loading');
     _form.prepend('<div class="pm-flash success border-all"><p>' + I18n.t('private_message.message_sent') + '</p></div>');

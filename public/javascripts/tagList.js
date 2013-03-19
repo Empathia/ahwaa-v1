@@ -9,7 +9,7 @@ Class('TagList')({
             headerTags.css('width', '9999em').children(':not(.more)').each(function(){
                 tag =  $(this);
                 count += tag.outerWidth();
-                if(count > 890) {
+                if(count > 850) {
                     moreTags.append(tag.clone());
                     tag.addClass('to-more');
                 }
@@ -18,7 +18,7 @@ Class('TagList')({
             headerTags.css('width', 'auto').parent().css('overflow', 'visible');
 
             if($('.more').length) {
-                $('.more-tags').show();                                   
+                $('.more-tags').show();
                 var newHeight = $(window).height() - $('.scroll-tags').offset().top - $('.scroll-tags > .scroll-down').height() - 40;
                 if(newHeight < $('#moretags').height()) {
                     $('.scroller').height(newHeight);

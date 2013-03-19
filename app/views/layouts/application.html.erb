@@ -199,7 +199,7 @@
         <div class="header-wrapper">
           <div class="header-tags aligned">
             <ul id="header-tags">
-              <% Topic.by_language(I18n.locale).tag_counts.each do |tag| %>
+              <% Topic.by_language(I18n.locale).tag_counts.order("position ASC").each do |tag| %>
                 <li><%= link_to tag, topic_tag_path(tag.id) %></li>
               <% end %>
               <li class="more">
