@@ -168,7 +168,7 @@
           <div class="tooltip-box-inside">
             <!-- <p class="title"><%#= t('.thank.title_prefix') %> <i><%= @topic.author_username %></i> <%#= t('.thank.title_suffix') %></p> -->
             <br class="clear" />
-            <%= form_for PrivateMessage.new, :url => user_private_messages_path(@admin), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
+            <%= form_for PrivateMessage.new, :url => user_private_messages_path("test1"), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
               <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>
               <div class="private-msg-btns">
                 <%= link_to t('private_message.cancel'), "javascript: $('.help-msg').hide()", :class => '' %>

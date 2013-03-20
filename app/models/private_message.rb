@@ -21,7 +21,12 @@ class PrivateMessage < ActiveRecord::Base
   def self.build_from_params(params, sender)
     new(params[:private_message]).tap do |pm|
       pm.recipient = User.find_by_username(params[:user_id])
-      pm.sender = sender
+      if sender
+        pm.sender = sender
+      else
+        pm.sender = User.where(:is_admin => true).first
+        pm.content = "(Help Message) " + pm.content
+      end
       pm.parent = PrivateMessage.find(params[:reply_to]) if params[:reply_to]
     end
   end

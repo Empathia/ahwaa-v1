@@ -37,6 +37,8 @@
     <% end %>
     <span class="date"><%= l pm.conversation_replies.last.created_at.to_date, :format => :inbox %></span>
   </div>
-  <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
+  <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) %>
+    <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
+  <% end %>
   <br class="clear">
 <% end %>
