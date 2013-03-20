@@ -344,6 +344,7 @@ ar:
         subject: إشعار من أهواء
 
   shared:
+    block: User Blocked
     user_nav:
       messages: رسائلي
       my_topics: مواضيعي

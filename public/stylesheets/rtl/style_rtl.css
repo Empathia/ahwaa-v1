@@ -1186,6 +1186,7 @@ footer {border-top: 1px #c9cdd0 solid;
   background: url("../../images/block_icon.png") no-repeat transparent; width: 15px;
   height: 15px;
   display: block;
+  margin-top: 3px;
   background-size: 15px;
   float: right
 }
@@ -1193,6 +1194,7 @@ footer {border-top: 1px #c9cdd0 solid;
   background: url("../../images/check-mark.png") no-repeat transparent; width: 15px;
   height: 15px;
   display: block;
+  margin-top: 3px;
   background-size: 15px;
   float: right
 }

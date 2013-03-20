@@ -31,7 +31,7 @@
         <%= link_to blocks_path(:blocked_id => user.id), :method => :post, :title => t('private_message.block'), :class => "points-wrapper-small #{'disabled' unless logged_in?}" do %>
           <span class="block_user"></span>
         <% end %>
-      <% else %>
+      <% elsif  user != current_user && (logged_in? && (current_user.blocks.map{|u| u.block}.include? user))  %>
         <%= link_to unblock_blocks_path(:blocked_id => user.id), :method => :delete, :title => t('private_message.unblock'), :class => "#{'disabled' unless logged_in?}" do %>
           <span class="unblock_user"></span>
         <% end %>

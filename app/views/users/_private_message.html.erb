@@ -11,14 +11,24 @@
   </div>
   <div class="message-data">
     <div class="from">
-      <%= link_to  inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
-          <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
+      <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) %>
+        <%= link_to  inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
+            <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
+        <% end %>
+      <% else %>
+         <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
       <% end %>
     </div>
     <div class="msg">
-      <%= link_to inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
+      <% if current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) %>
+        <p><%= t('shared.block') %></p>
+      <% elsif current_user.blocked_user?(pm.conversation_replies.last.sender) %>
         <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
-      <% end %>
+      <% else %>
+        <%= link_to inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
+          <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
+        <% end %>
+      <% end%>
     </div>
   </div>
   <div class="delete-message">

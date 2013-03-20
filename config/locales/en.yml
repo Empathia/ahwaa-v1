@@ -341,6 +341,7 @@ en:
         subject: Notification from Ahwaa
 
   shared:
+    block: User Blocked
     user_nav:
       messages: Messages
       my_topics: My Topics
