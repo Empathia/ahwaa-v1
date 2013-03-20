@@ -36,8 +36,8 @@
       <span class="opt-delete">t('users.show.content.private_messages.delete')</span>
     <% end %>
     <span class="date"><%= l pm.conversation_replies.last.created_at.to_date, :format => :inbox %></span>
-  </div>
-  <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) %>
+  </div><%debugger%>
+  <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) || current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.recipient) || current_user.blocked_user?(pm.conversation_replies.last.recipient) %>
     <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
   <% end %>
   <br class="clear">
