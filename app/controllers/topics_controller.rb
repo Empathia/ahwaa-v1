@@ -8,6 +8,7 @@ class TopicsController < ApplicationController
     unless @content.match(/[.,?!;]\z/)
       @content = @content + "."
     end
+    @admin = User.where(:is_admin => true).first
     @replies = @topic.replies.group_by(&:contextual_index)
     @meta_description = @topic.meta_description
     @meta_keywords = @topic.meta_keywords
