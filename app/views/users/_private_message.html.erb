@@ -11,7 +11,7 @@
   </div>
   <div class="message-data">
     <div class="from">
-      <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) %>
+      <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) || current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.recipient) || current_user.blocked_user?(pm.conversation_replies.last.recipient)  %>
         <%= link_to  inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
             <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
         <% end %>
