@@ -11,24 +11,14 @@
   </div>
   <div class="message-data">
     <div class="from">
-      <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) || current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.recipient) || current_user.blocked_user?(pm.conversation_replies.last.recipient)  %>
         <%= link_to  inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
             <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
         <% end %>
-      <% else %>
-         <span class="display-pm"><%= t('users.show.content.private_messages.by', :sender => pm.conversation_replies.last.sender ? pm.conversation_replies.last.sender.username : t('user_deleted')) %></span>
-      <% end %>
     </div>
     <div class="msg">
-      <% if current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) %>
-        <p><%= t('shared.block') %></p>
-      <% elsif current_user.blocked_user?(pm.conversation_replies.last.sender) %>
-        <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
-      <% else %>
         <%= link_to inbox_user_path({:anchor => {:m => pm.id}}), :'data-value' => pm.id do %>
           <p><%= truncate pm.conversation_replies.last.content, :length => 90 %></p>
         <% end %>
-      <% end%>
     </div>
   </div>
   <div class="delete-message">
@@ -36,9 +26,7 @@
       <span class="opt-delete">t('users.show.content.private_messages.delete')</span>
     <% end %>
     <span class="date"><%= l pm.conversation_replies.last.created_at.to_date, :format => :inbox %></span>
-  </div><%debugger%>
-  <% unless current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.sender) || current_user.blocked_user?(pm.conversation_replies.last.sender) || current_user.blocks.map{|u| u.block}.include?(pm.conversation_replies.last.recipient) || current_user.blocked_user?(pm.conversation_replies.last.recipient) %>
-    <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
-  <% end %>
+  </div>
+  <%= link_to t('users.show.content.private_messages.reply'), inbox_user_path({:anchor => {:m => pm.id, :reply => true}}), :class => "opt-reply", :'data-value' => pm.id %>
   <br class="clear">
 <% end %>

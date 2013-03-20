@@ -11,7 +11,7 @@
   <div class="replies-wrapper message-replies <% 'pm-details' unless message.replies.blank? %>">
     <%= render :partial => 'reply', :collection => message.replies %>
   </div>
-  <% if message.sender %>
+  <% if message.sender && !current_user.blocks.map{|u| u.block}.include?(message.sender) && !current_user.blocked_user?(message.sender) && !current_user.blocks.map{|u| u.block}.include?(message.recipient) && !current_user.blocked_user?(message.recipient) %>
     <div class="my-messages-reply-wrapper">
       <div class="avatar-wrapper">
         <%= avatar_span(current_user, current_user.is_expert?) %>
