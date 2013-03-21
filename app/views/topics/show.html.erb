@@ -167,13 +167,25 @@
           <span class="origin"><span><span></span></span></span>
           <div class="tooltip-box-inside">
             <!-- <p class="title"><%#= t('.thank.title_prefix') %> <i><%= @topic.author_username %></i> <%#= t('.thank.title_suffix') %></p> -->
-            <br class="clear" />
+
             <%= form_for PrivateMessage.new, :url => user_private_messages_path(@admin), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
-              <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>
-              <div class="private-msg-btns">
-                <%= link_to t('private_message.cancel'), "javascript: $('.help-msg').hide()", :class => '' %>
-                <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
-              </div>
+              <% unless logged_in? %>
+                <div  class="sign-up-or-continue">
+                  <div class="border-all">
+                    <span class="legend-text"><%= t('.form.anonymous_legend') %></span>
+                    <a href="#" class="sign-up-lk border-all help-sign">
+                      <span class="sign-up-btn border-all"><%= t('.form.sign_up') %></span>
+                    </a>
+                  </div>
+                  <br class="clear">
+                </div>
+              <% else %>
+                <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>
+                <div class="private-msg-btns">
+                  <%= link_to t('private_message.cancel'), "javascript: $('.help-msg').hide()", :class => '' %>
+                  <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </div>

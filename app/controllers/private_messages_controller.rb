@@ -2,7 +2,6 @@ class PrivateMessagesController < ApplicationController
   before_filter :find_conversation, :only => [:show, :destroy]
   respond_to :html, :only => [:create, :destroy]
   respond_to :js, :only => [:index, :create, :show, :destroy]
-  skip_before_filter :authenticate_user!, :only => [:create]
 
   def index
     @messages = current_user.received_messages.group(:conversation_id).paginate(:page => params[:page], :per_page => 100).all

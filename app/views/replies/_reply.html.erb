@@ -1,4 +1,4 @@
-<% if current_user && !current_user.blocks.map{|u| u.block}.include?(reply.user) %>
+<% if (current_user && !current_user.blocks.map{|u| u.block}.include?(reply.user)) || !current_user %>
   <%= content_tag :li, :class => reply_css_classes(reply), :'data-id' => reply.id, :style => ("z-index: #{leng-reply_counter}" if defined?(leng)) do %>
     <% if defined?(reply_counter) && reply_counter == 0 && reply.contextual_index.present? || (defined?(noArrow) && !noArrow) %>
       <span class="comm-arrow"></span>

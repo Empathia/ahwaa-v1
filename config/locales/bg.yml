@@ -1,0 +1,399 @@
+bg:
+  user_deleted: Изтрит потребител
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} Успешно създаване.'
+      update:
+        notice: '%{resource_name} Успешно обновяване.'
+      destroy:
+        notice: '%{resource_name} Успешно заличаване.'
+        alert: '%{resource_name} Потребителското име не може да бъде заличено.'
+    application:
+      should_be_admin: 'За достъп до тази част на сайта са необходими администраторски права.'
+      not_logged_in: Не си влязъл.
+    passwords:
+      update:
+        notice: Паролата ти бе променена. Вече можеш да влезеш с новата си парола.
+    users:
+      create:
+        notice: "Изпратихме ти потвърдително писмо. Моля, провери електронната си поща."
+      destroy:
+        notice: "Профилът ти беше изтрит."
+    topic_requests:
+      create:
+        notice: "Искането ти бе изпратено успешно и ще бъде разгледано от администратора. Благодарим ти!"
+    subscriptions:
+      unsubscribe:
+        notice: Беше отписан от тази тема.
+        alert: "Не беше открита регистрация с тази електронна поща."
+      unsubscribe_author:
+        notice: Няма да получаваш повече съобщения за разговорите по тази тема.
+        alert: "Не бяха открити никакви вписвания по темата."
+
+  activerecord:
+    models:
+      topic_request: Задаване на тема
+    attributes:
+      topic_request:
+        title: Заглавие на темата
+        content: "Сподели своята историята. Потърси съвет. Започни дискусия по проблем, който те вълнува!"
+        anonymous_post: "Публикувай анонимно."
+      reply:
+        anonymous: Анонимно
+        advice: Съвет
+        comment: Коментар
+        experience: Опит
+      user_profile:
+        religion_id: Религия
+        gender_id: Пол
+        sexual_orientation_id: Сексуална ориентация
+        age_id: Възраст
+        country_id: Страна на произход
+        political_view: Политически убеждения
+        en: English
+        ar: Arabic
+        bg: Български
+  errors:
+    messages:
+      voted: Вече гласувано
+      flagged: Вече отбелязано
+    template:
+      header:
+        one: "При запазването на съобщението настъпи грешка:"
+        other: "%{count} грешки попречиха вписването да бъде запазено:"
+
+  helpers:
+    ago: преди %{time}
+
+  private_message:
+    send_msg: Изпрати лично съобщение
+    write_msg: Напиши съобщението си
+    cancel: Отмени
+    submit: Изпрати
+    points: "%{points} точки"
+    expert: е експерт
+    recently_participated: 'Скорошно участие по следните теми:'
+    message_sent: Съобщението ти беше изпратено успешно!
+    message_empty: Съобщението е празно
+    no_activity: Няма скорошна активност
+    flash_alert:
+    send_pm: Изпрати лично съобщение
+    view_profile: Разгледай профила
+    thanked_message: "Благодари за публикацията %{topic} и ти написа:"
+    thanked_title: ' благодари за твоята публикация'
+    welcome_message: "Приветства те с добре дошъл и написа:"
+    welcome_title: 'Хей, добре дошъл в Килера!”'
+  welcome_message:
+    placeholder: Въведи съобщението си
+    options: Добави съобщение
+    cancel: Отмени
+    submit: Изпрати
+
+  layouts:
+    application:
+      modals:
+        about_points:
+          title: "Как да спечеля повече точки?"
+          body: "Печелиш точки при започване на дискусия и при всяко участие в разговори."
+          words:
+            points: "Точки"
+      hall_of_fame:
+        tab: Зала на славата
+        most_helpful_advice: Най-полезен съвет
+        most_active_user: Най-активен потребител
+        most_topics_posted: Най-много публикувани теми
+        highest_points_acquired: Най-много събрани точки
+      header:
+        switch_to_english: 'النسخة العربية'
+        auth:
+          sign_up: Регистрация
+          sign_up_tooltip: "Самоличността ти ще бъде запазена в анонимност"
+          login: Вход
+        request_topic:
+          button: Започни дискусия
+          tooltip: "Намери подкрепа & помогни на повече хора"
+          legend: "Трябва да си влязъл, за да заявиш тема."
+          sign_up: Регистрация
+          error_login_empty: Регистрация
+          title: "Липсва заглавие"
+          topic_details: "Липсва повече информация за темата"
+          back_button: назад
+          flash_alert:
+        sign_up_form:
+          sign_up: Регистрация
+          legend: Регистрирай се и се възползвай от всички предимства на Килера!
+          username: Твоето име или потребителско име
+          email: Твоята електронна поща
+          password: Парола
+          note_pt1: 'Чрез кликване върху Приеми потвърждаваш'
+          note_pt2: и
+          terms_of_use: Условията за ползване
+          privacy_policy: декларацията за поверителност
+          note_pt3: за използването на този сайт
+          error_email_empty: "Не е въведена електронна поща"
+          error_email_invalid: Електронната поща е невалидна
+          error_username_empty: Не е въведено потребителско име
+          error_username_not: Това потребителско име е недостъпно
+          error_password_empty: Не е въведена парола
+          error_password_short: Паролата е невалидна
+          flash_alert: Съветваме те да използваш псевдоним.
+        login_form:
+          login: Имейл или потребителско име
+          password: Парола
+          forgot_password: Забравена парола
+          sign_in: Влез
+          invalid: Грешно въведени електронна поща или парола. Моля, опитай пак.
+          wrong_password: Грешна парола
+          not_found: Потребителското име или електронната поща не бяха намерени
+          error_login_empty: Липсва потребителско име или електронна поща
+        forgot_pass_form:
+          not_found: Потребителското име или електронната поща не бяха намерени
+          legend: "Въведи своята електронна поща и ще получиш писмо, за да възстановиш паролата си."
+          sent: "Инструкциите бяха изпратени на твоята електронна поща."
+          login: Електронна поща
+          send: Изпрати паролата ми
+          cancel: Отмени
+          empty: Липсват потребителско име или електронна поща
+        logged_in:
+          hi: 'Здравей %{username}'
+          stream: Поток
+          messages: Съобщения
+          my_account: "Моят профил + съобщения"
+          sign_out: Излез
+          logout: Отписване
+          edit_profile: Създаване на профил
+          tooltip:
+            earned_points: Спечелени точки
+            learn_more: Научи повече
+        search_topics: Потърси тема
+        tags_more: Още
+      footer:
+        all_rights: "© Килера – Всички права запазени %{year}"
+        about: Относно
+        privacy_policy: Правила за поверителност
+    admin:
+      header:
+        logged_in:
+          hi: 'Здравей %{username}'
+          my_account: "Моят профил + съобщения"
+          sign_out: Излез
+  home:
+    about:
+      footer:
+        about: Относно
+    grouped_topic:
+      by: От %{author}
+      recent_participants:
+        zero: наскоро никой не е взимал участие по темата
+        one: един потребител наскоро взе участие по темата
+        other: %{count} човека наскоро взеха участие по темата
+    index:
+      title: Килера
+      legend: 'Килера: Отворено пространство за разговори на ЛГБТ теми в България'
+      watch_video: Виж видеото
+      community: "Ние сме общност, която..."
+      private: Поверителен
+      engaging: Ангажиращ
+      positive: Подкрепящ
+      choose: Избери какво да разкриеш
+      share: Сподели лични истории и опит
+      offer: Предложи и получи подкрепа
+      popular_topics: Най-четени теми
+      feeds: "Последни теми"
+      members_count: Ангажирани членове
+      topics_count: Лични теми
+      advices_count: Съвети
+      latest:
+        has_left_a_comment: %{author} написа %{comment} относно %{topic}
+        has_left_an_comment: %{author} написа  %{comment} относно %{topic}
+  topics:
+    related_topics:
+      title: Подобни теми
+      view_more: Виж още
+    topic:
+      popular:
+        by: от %{author}
+        response: Отговор
+    tag:
+      sort_by:
+        label: "Подреди по:"
+        newest: Последни
+        responses: Най-много отговори
+    show:
+      follow: Следи темата
+      unfollow: Прекрати следенето на темата
+      by: от %{author}
+      thank:
+        button: Благодарности за темата
+        title_prefix: Благодаря
+        title_suffix: за темата!
+        placeholder: Въведи съобщението си
+        include_message: Добави съобщение
+        send: Мерси!
+      contextual:
+        add_comment: Добавяне на отговор
+        reply_here: Отговори тук
+        hide: Скрий
+      icons:
+        social:
+          linked_in: Linked In
+          facebook: Facebook
+          twitter: Twitter
+          flash_alert: Информацията ще стане публична, щом бъде споделена
+      sidebar:
+        hide_all_responses: Скрий всички отговори
+        show_all_responses: Покажи всички отговори
+        filter_responses:
+          title: Филтрирай отговорите
+        filter_helpful: Покажи само полезните
+        experts:
+          title: Експерти по темата
+        need_help: Нужда от помощ?
+      form:
+        cancel: Отмени
+        write_response: Кликни тук, за да отговориш.
+        type_response: 'Това е:'
+        post_response: Добавяне на отговор
+        anonymous_legend: Моля, регистрирай се, за да напишеш отговор. Ще можеш да отговориш анонимно
+        continue: или Остани анонимнен
+        sign_up: Регистрирай се
+        flash_alert: "Избягвай да разкриваш своята или нечия чужда самоличност, когато добавяш коментар."
+        as_anonymous: Публикувай анонимно
+    comments:
+      new_response: Нов отговор
+  replies:
+    reply:
+      anonymous: Анонимен
+      reply_to: "Отговори на %{username}"
+  topic_requests:
+    new:
+      submit: Приеми
+      title: Потърси тема
+      content: Повече информация за темата
+  users:
+    show:
+      sidebar:
+        points: '%{points} точки'
+        edit_profile: Редактирай профила
+        buttons:
+          save: Запази
+          cancel: Отмени
+        profile:
+          title: Моят профил
+        password:
+          title: Смяна на парола
+          new_password: Нова парола
+          confirm_password: Потвърждаване на парола
+          errors:
+             new_password: Новата парола е прекалено кратка.
+             confirm_password: "Паролата не може да бъде потвърдена"
+        my_account:
+          title: Моят профил
+          nickname: 'Псевдоним'
+          mail: 'Електронна поща'
+          language: 'Език'
+          errors:
+            invalid_email: "Електронната поща е невалидна"
+            password_too_short: Новата парола е прекалено кратка.
+        terminate_account: Закрий профила
+        confirm_terminate: Сигурен ли си, че искаш да закриеш профила си? Няма връщане назад.
+        saved: "Профилът ти беше обновен!"
+        new_user:
+          question: "Кой си ти?"
+          legend_st_line: "Добави информация в профила си и"
+          legend_nd_line: "се свържи с хора като теб!"
+      content:
+        avatars:
+          suggested: Избери своя аватар
+          loading: Зареждане на аватари...
+          custom_avatar: Персонализиране на аватар
+        private_messages:
+          title: Лични съобщения
+          my_messages: Моите съобщения
+          delete: Изтрий
+          confirm_delete: Сигурен ли си, че искаш да изтриеш този разговор? Няма връщане назад.
+          by: от %{sender}
+          at_date: в %{date}
+          reply: Отговори
+          back_to_msgs: Назад към съобщенията
+          add_reply: Кликни тук, за да добавиш отговор.
+          send_reply: Отговори
+    inbox:
+      no_messages: Нямаш лични съобщения
+      empty_tip: "Съвет: За да изпратиш съобщение, прегледай нечий профил и напиши съобщение!"
+  private_messages:
+    message:
+      reply: Изпрати отговор
+  passwords:
+    edit:
+      submit: Смяна на парола
+  mailers:
+    user:
+      topic_match_notification:
+        subject: Поканен си да вземеш участие по тема
+      private_message_notification:
+        subject: Получи лично съобщение
+      password_reset:
+        subject: Възстановяване на парола
+      sign_up_confirmation:
+        subject: Добре дошъл в Килера
+      topic_request_notification:
+        subject: Беше създадена нова тема
+      reply_notification:
+        subject: Съобщение от Килера
+
+  shared:
+    user_nav:
+      messages: Съобщения
+      my_topics: Моите теми
+      stream: Поток
+    new_response:
+       new_response: Нов отговор
+    useful_flag_buttons:
+      voted: Гласувано
+      flagged: Отбелязано
+      already_flagged: Вече отбелязано
+      already_useful: Вече гласувано
+      useful: Това беше полезно!
+      flag: Маркирай
+      anonymous: "Анонимните потребители не могат да участват в класирането"
+      sign_up: Регистрация
+
+  stream:
+    stream: Поток
+    follow_topic: Следи темата
+    no_following_topics: "В момента не следиш никоя тема. Започни да следиш тема"
+    title:
+      reply:
+        a: остави %{reply_type} на
+        an: остави %{reply_type} на
+    forms:
+      labels:
+        filter: От
+    sidebar:
+      recommended_topics: Препоръчани теми
+      newest_topics: Най-нови теми
+      send_message: Изпрати съобщение
+      people_like_you: Потребители като теб
+      similar_profile: Сходни профили
+      similar_interests: Сходни интереси
+      no_users_msg: Трябва да следиш някакви теми!
+    filters:
+      all: Всички теми
+      followed: Следени теми
+      featured: Включени теми
+      my_topics: Моите теми
+      user_topics: %{username} теми
+  my_topics:
+    title: Моите теми
+    is_empty:
+      title: "Все още не си започнал дискусия"
+      message: "и потърси съвет от други хора като теб, които имат същите тревоги, съмнения и преживявания. Сигурни сме, че и твоята история ще помогне на много други"
+      request_topic: Започване на дискусия
+    grouped_topic:
+      by: От %{author}
+      recent_participants:
+        zero: никой не е писал по тази тема през последните 2 дни
+        one: един човек е писал по тази тема през последните 2 дни
+        other: %{count} човека са писали по тази тема през последните 2 дни
