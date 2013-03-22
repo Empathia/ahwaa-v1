@@ -2,7 +2,7 @@
 
 body > div{background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
 .article-tags{max-width: 160px; background-image: url('../../images/tag.png'); width: 220px; background-repeat: no-repeat; background-position:100% 3px; padding-right: 22px; color: #468AC4; float:right;}
-.article-tags > li{display: inline;}     
+.article-tags > li{display: inline;}
 .left-side{float:right; width:700px;}
 
 .topic-info {overflow: hidden; float: right; width: 290px; margin-top: 15px}
@@ -21,7 +21,7 @@ body > div{background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 
 
 .social-bookmarkers .flash-privacy{position: absolute; top: 12px; left: 54px; margin-top: 20px; white-space: nowrap; padding-left: 6px; display: none; z-index: 100}
 .social-bookmarkers .flash-privacy > div{padding-left: 50px}
-.social-bookmarkers .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;} 
+.social-bookmarkers .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;}
 .flash-arrow-shadow {position: absolute; top: -13px; left: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float: left; height: 0; width: 0;}
 .flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; left: -7px; top: -5px}
 
@@ -72,7 +72,7 @@ aside section.show-hide a{text-align: right; text-decoration: none; padding-righ
            box-shadow: inset 0 0 0 1px #fff
 }
 
-aside section.show-hide a span{display: block; padding-right: 25px; background-image: url('../../images/icn-show-hide.png'); background-repeat:no-repeat; background-position:100% 11px; height: 100%;} 
+aside section.show-hide a span{display: block; padding-right: 25px; background-image: url('../../images/icn-show-hide.png'); background-repeat:no-repeat; background-position:100% 11px; height: 100%;}
 
 aside section.show-hide a:hover{
     background: -moz-linear-gradient(top, #fff, #e3f1ff);
@@ -112,15 +112,15 @@ aside section.need-help{padding:13px 0; text-align:center}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; left: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
-.res-types-wrapper > div.error{float:right; color:red; line-height: 23px;}                                               
-.res-types-wrapper > .radios{float:right;}                              
+.res-types-wrapper > div.error{float:right; color:red; line-height: 23px;}
+.res-types-wrapper > .radios{float:right;}
 
 .res-lbl{float:right; margin-left: 10px; line-height: 1.8; color: #7d96b2;}
 
 .res-types{float:right; margin-top: 4px;}
 .res-type{float:right; display: inline; margin-left: 12px;}
 .res-type > label{color: #6a7988; font-size: 11px; font-weight: bold;}
-   
+
 .submit-reply-wrapper{float:left;}
 .submit-reply-wrapper.loading{background-image: url('../../images/loading-s-white.gif'); background-position:100% 50%;}
 .submit-reply{border-style: solid; border-width: 1px; border-color: transparent transparent #bcd0e7 #dee8f2; height: 22px;  float:left; position: relative; padding: 0 10px;  cursor: pointer; color: #7c99b6; font-weight:bold; font-family: Arial, Helvetica, sans-serif;
@@ -135,7 +135,7 @@ aside section.need-help{padding:13px 0; text-align:center}
   background-image: -moz-linear-gradient(top, #ebf6ff, #e7f1fa);
   background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #ebf6ff),color-stop(1, #f2f9ff));
             filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff')";  
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ebf6ff', EndColorStr='#f2f9ff')";
 }
 
 .comments{display: none; margin-top: 14px;}
@@ -143,7 +143,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .comments-ls > li{position: relative; padding-top: 10px;}
 .comm-wrap{background-color: #f2f9fc; border: 1px solid #daecf3;}
 .comments-ls > li:last-child{margin-bottom: 5px;}
-                                                                
+
 
 .comments-ls .comments-ls .comm-wrap{background-color: #ffffff;}
 .comments-ls .comments-ls .comm-arrow{background-position:100% -13px;}
@@ -180,7 +180,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 
 .topic-res-type{color: #6c899b; font-size: 10px; font-weight: bold}
 .topic-res-type.advice{background-position:100% -44px;}
-.topic-res-type.comment, 
+.topic-res-type.comment,
 .topic-res-type.comments{background-position:100% -60px;}
 .topic-res-type.story,
 .topic-res-type.experience{background-position:100% -75px;}
@@ -206,7 +206,7 @@ p:hover a.no_comments{
         filter: alpha(opacity=100);
         -moz-opacity: 1;
         opacity: 1;
-}     
+}
 
 a.no_comments{
   color: #61656A;
@@ -221,11 +221,11 @@ a.no_comments{
 .topic-content {padding: 14px 30px 24px}
 .topic-content .icn{position: relative; text-decoration: none; text-align: center; z-index: 1;}
 .icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; right: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5; background-color: #3c454f; background-color: rgba(60, 69, 79, .92); text-align: center;}
-.tta{border-style: solid; border-width: 5px 5px 0px; float:right; height: 0px; right: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}  
+.tta{border-style: solid; border-width: 5px 5px 0px; float:right; height: 0px; right: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}
 .icn:hover > span{display: block;}
 p:hover .icn{display: inline;}
 
-header > .right > .by-author {margin-top: 15px} 
+header > .right > .by-author {margin-top: 15px}
 
 #font-size-controls > span {float: left}
 #font-size-controls .increase,
@@ -287,15 +287,18 @@ header > .right > .by-author {margin-top: 15px}
 .topic-avatars .avatar{margin-bottom: 10px}
 
 .expand-btn{height: 31px; line-height: 31px; font-size: 14px; font-weight: bold; text-shadow: 0 1px 0 #fff}
-  
+
 .divide{border-bottom: 1px solid #e5e5e5; margin-bottom: 10px}
 .help{background-image: url('../../images/question-mark.png'); background-repeat: no-repeat; background-position:100% 0; padding:2px 22px 2px 0; line-height: 1em;}
 
 .sign-up-or-continue > div{color: #52503b; font-size: 11px; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}
 .sign-up-or-continue .sign-up-lk {margin:0 10px 0 0; border: 1px solid #3C7EBB}
+.sign-up-or-continue .sign-up-lk.help-sign {margin: 0 0 0 85px;}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-right: 17px;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
+}
+.need-help .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
 }
 .continue{color: #a6a48b;}
 .legend-text{margin:7px 0 0 5px; float:right;}
@@ -324,7 +327,7 @@ header > .right > .by-author {margin-top: 15px}
 
 .social-bookmarkers > .flash-privacy{position: absolute; left: 220px; top: 0; white-space: nowrap; padding-right: 6px; margin-top: 45px; display: none; z-index: 100}
 .social-bookmarkers > .flash-privacy > div{padding-right: 50px}
-.social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;} 
+.social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;}
 .flash-arrow-shadow {position: absolute; top: -13px; right: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float:right; height: 0; width: 0;}
 .flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; right: -7px; top: -5px}
 
@@ -358,3 +361,12 @@ header > .right > .by-author {margin-top: 15px}
 .view-more-wrapper > .view-more > span {padding-left: 15px; background: url('../../images/view-more-bg.jpg') no-repeat 100% 3px}
 
 .container > .aligned > .left-side {margin-bottom: 15px}
+.help-msg {
+left: inherit;
+right: -12px;
+top: 60px;
+
+}
+.help-msg.not_log{
+  width: 365px;
+}

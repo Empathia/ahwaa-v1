@@ -163,7 +163,7 @@
       <% end %>
       <section class="need-help has-tooltip">
         <%= link_to t('.sidebar.need_help'), 'javascript:', :class => "help" %>
-        <div class="tooltip-box help-msg border-all" >
+        <div class="tooltip-box help-msg border-all <%='not_log' unless logged_in?%>" >
           <span class="origin"><span><span></span></span></span>
           <div class="tooltip-box-inside">
             <!-- <p class="title"><%#= t('.thank.title_prefix') %> <i><%= @topic.author_username %></i> <%#= t('.thank.title_suffix') %></p> -->
