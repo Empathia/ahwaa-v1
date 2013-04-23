@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     redirect_to stream_path and return if logged_in?
     @popular = Topic.popular(I18n.locale)
     @latest = Topic.newest(I18n.locale).limit(5)
-    @video = I18n.locale == :ar ? "http://www.youtube.com/watch?v=2rHrZEHf2uM" : "https://www.youtube.com/embed/GWEt2zCV0sk?wmode=opaque&rel=0"
+    @video = I18n.locale == :ar ? "https://www.youtube.com/embed/2rHrZEHf2uM?wmode=opaque&rel=0" : "https://www.youtube.com/embed/GWEt2zCV0sk?wmode=opaque&rel=0"
   end
 
   def stream
