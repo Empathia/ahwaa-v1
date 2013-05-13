@@ -194,7 +194,7 @@
     <br class="clear">
   </div>
   <div class="left-side container-soft-box-shadow">
-    <% related_topics = @topic.related_topics.reject!{|k| current_user.blocks.map{|u| u.block}.include? k.user} if current_user %>
+    <% related_topics = @topic.related_topics.reject{|k| current_user.blocks.map{|u| u.block}.include? k.user} if current_user %>
     <% related_topics = @topic.related_topics unless current_user %>
     <%= render :partial => 'related_topics', :locals => {:related_topics => related_topics} %>
   </div>
