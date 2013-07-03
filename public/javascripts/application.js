@@ -164,7 +164,7 @@ $(function() {
 
 $(window).load(function () {
 
-    var container = $('.container'),
+    var container = $('.app-body-container'),
         siblings = container.siblings(),
         header = siblings.filter('header'),
         footer = siblings.filter('footer'),

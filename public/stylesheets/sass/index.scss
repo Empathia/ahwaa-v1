@@ -9,7 +9,7 @@ body {
 /*.rtl .container{background: url('../../images/home/bg-banner-ar.jpg') no-repeat 50% 106px}*/
 
 .banner {
-  padding-top: 19px;
+  padding: 19px 0 40px;
   background-color: #5e93c1;
   @include background-image(
     url('../images/noise.png'),
@@ -17,7 +17,7 @@ body {
     url('../images/home/banner-bg.png'),
     linear-gradient(top, #31467a, transparent)
   );
-  background-position: 0 0, 0 0, 50%, 0 0; background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 50% 100%, 0 0; background-repeat: repeat, no-repeat, no-repeat, no-repeat;
 }
 
 .slogan{height: 132px; overflow: hidden;
@@ -29,7 +29,36 @@ body {
   }
 }
 
-.features{overflow: hidden; margin: -18px 0 27px}
+.features{overflow: hidden; margin-bottom: 27px}
+
+.video-player,
+.video-player > .preview-image > a,
+.video-player > .preview-image > a > span {@include border-radius(3px)}
+.video-player {height: 259px; background-color: rgba(0, 0, 0, .16);
+  @include box-shadow(0 1px 0 0 rgba(255, 255, 255, .23), inset 0 0 1px 1px rgba(0, 0, 0, .39));
+}
+
+.video-player > .preview-image,
+.video-player > .preview-video {width: 389px; height: 248px; margin: 6px; position: relative}
+
+.video-player > .preview-image {background: transparent url('../images/img-video-preview.jpg') 0 0 no-repeat}
+.video-player > .preview-image > a {padding: 1px; position: absolute; z-index: 2; left: 154px; top: 100px;
+  @include box-shadow(0 0 5px 0 rgba(0, 26, 51, .8));
+  @include background-image(linear-gradient(top, rgba(3, 34, 71, .52), rgba(5, 79, 153, .52)));
+  > span {background-color: #edf6fa; float: left; width: 79px; height: 46px;
+    @include box-shadow(inset 0 0 0 1px #ffffff);
+    @include background-image(linear-gradient(top, #f6fafc, #dcedf5));
+  }
+}
+.video-player > .preview-image > a:hover,
+.video-player > .preview-image > a:active {background: #478acc none}
+.video-player > .preview-image > a:hover span {}
+.video-player > .preview-image > a:active span {background-color: #444444;
+  @include background-image(linear-gradient(top, #bad1dc, #ecf3f6));
+}
+.video-player > .preview-image > a img {margin: 11px 0 0 30px}
+.video-player > .preview-video {display: none}
+section > .features-holder {height: 277px; margin: 30px 425px 43px 35px}
 
 .items-frontpage {
   > li {float: left; margin-bottom: 20px;
@@ -123,36 +152,6 @@ body {
 .join-nd-line{font-size: 18px; color: #a9d0ef;}
 
 .presentation{color: #ffffff; font-family: "GothamBoldRegular"; text-align: center; font-size: 28px; font-weight: normal; overflow: hidden; text-indent: -9999px;}
-
-/* New Video Player Style */
-.video-player,
-.video-player > .preview-image > a,
-.video-player > .preview-image > a > span {@include border-radius(3px)}
-.video-player {width: 400px; height: 259px; margin-right: 31px; float: right; background-color: rgba(0, 0, 0, .16);
-  @include box-shadow(0 1px 0 0 rgba(255, 255, 255, .23), inset 0 0 1px 1px rgba(0, 0, 0, .39));
-}
-
-.video-player > .preview-image,
-.video-player > .preview-video {width: 389px; height: 248px; margin: 6px; position: relative}
-
-.video-player > .preview-image {background: transparent url('../images/img-video-preview.jpg') 0 0 no-repeat}
-.video-player > .preview-image > a {padding: 1px; position: absolute; z-index: 2; left: 154px; top: 100px;
-  @include box-shadow(0 0 5px 0 rgba(0, 26, 51, .8));
-  @include background-image(linear-gradient(top, rgba(3, 34, 71, .52), rgba(5, 79, 153, .52)));
-  > span {background-color: #edf6fa; float: left; width: 79px; height: 46px;
-    @include box-shadow(inset 0 0 0 1px #ffffff);
-    @include background-image(linear-gradient(top, #f6fafc, #dcedf5));
-  }
-}
-.video-player > .preview-image > a:hover,
-.video-player > .preview-image > a:active {background: #478acc none}
-.video-player > .preview-image > a:hover span {}
-.video-player > .preview-image > a:active span {background-color: #444444;
-  @include background-image(linear-gradient(top, #bad1dc, #ecf3f6));
-}
-.video-player > .preview-image > a img {margin: 11px 0 0 30px}
-.video-player > .preview-video {display: none}
-section > .features-holder {height: 277px; margin: 30px 425px 43px 35px}
 
 .corner-all2 {@include border-radius(2px)}
 .corner-all3 {@include border-radius(3px)}
