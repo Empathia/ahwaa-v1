@@ -1,76 +1,77 @@
 <% stylesheet 'index' %>
 <% javascript 'include/jquery.overlay', 'index' %>
 
+
+<section class="banner">
+  <hgroup class="slogan">
+    <h1><%= t('.title') %></h1>
+    <h2><%= t('.legend') %></h2>
+  </hgroup>
+  <!-- Start New Header -->
+  <div class="right video-player">
+
+    <div class="preview-image">
+      <a href="" title="Preview">
+        <span><%= image_tag 'icn-play-video.png', :width => "20", :height => "25"%></span>
+      </a>
+    </div>
+    <div class="preview-video">
+      <iframe width="389" height="249" src="<%=@video%>" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+  </div>
+  <div class="left features-holder">
+    <ul class="features">
+      <li id="anonymity" class="feature-wrapper">
+        <span class="feature-image"><%= image_tag 'feature-private.png', :width => "45", :height => "40"%></span>
+        <h2><%= t('.private') %>&nbsp;&nbsp;<span><%= t('.choose') %></span></h2>
+      </li>
+      <li id="community" class="feature-wrapper">
+        <span class="feature-image"><%= image_tag 'feature-engaging.png', :width => "45", :height => "40"%></span>
+        <h2><%= t('.engaging') %>&nbsp;&nbsp;<span><%= t('.share') %></span></h2>
+      </li>
+      <li id="trustworthy" class="feature-wrapper last-feature">
+        <span class="feature-image"><%= image_tag 'feature-positive.png', :width => "45", :height => "40"%></span>
+        <h2><%= t('.positive') %>&nbsp;&nbsp;<span><%= t('.offer') %></span></h2>
+      </li>
+    </ul>
+    <div class="gloabl-counter">
+      <div class="members-count">
+        <ul>
+          <% users = User.all.size.to_s.split('') %>
+          <li class="first"><%= users[-4] || 0 %></li>
+          <li><%= users[-3] || 0 %></li>
+          <li><%= users[-2] || 0 %></li>
+          <li class="last"><%= users[-1] || 0 %></li>
+        </ul>
+        <span><%= t '.members_count' %></span>
+      </div>
+      <div class="topics-count">
+        <ul>
+          <% topics = Topic.all.size.to_s.split('') %>
+          <li class="first"><%= topics[-4] || 0 %></li>
+          <li><%= topics[-3] || 0 %></li>
+          <li><%= topics[-2] || 0 %></li>
+          <li class="last"><%= topics[-1] || 0 %></li>
+        </ul>
+        <span><%= t '.topics_count' %></span>
+      </div>
+      <div class="advices-count">
+        <ul>
+          <% advices = Reply.all.size.to_s.split('') %>
+          <li class="first"><%= advices[-4] || 0 %></li>
+          <li><%= advices[-3] || 0 %></li>
+          <li><%= advices[-2] || 0 %></li>
+          <li class="last"><%= advices[-1] || 0 %></li>
+        </ul>
+        <span><%= t '.advices_count' %></span>
+      </div>
+    </div>
+  </div>
+  <!-- End New Header -->
+</section>
+
 <div class="aligned">
-  <section>
-    <hgroup class="slogan">
-      <h1><%= t('.title') %></h1>
-      <h2><%= t('.legend') %></h2>
-    </hgroup>
-    <!-- Start New Header -->
-    <div class="right video-player">
-
-      <div class="preview-image">
-        <a href="" title="Preview">
-          <span><%= image_tag 'icn-play-video.png', :width => "20", :height => "25"%></span>
-        </a>
-      </div>
-      <div class="preview-video">
-        <iframe width="389" height="249" src="<%=@video%>" frameborder="0" allowfullscreen></iframe>
-      </div>
-
-    </div>
-    <div class="left features-holder">
-      <ul class="features">
-        <li id="anonymity" class="feature-wrapper">
-          <span class="feature-image"><%= image_tag 'feature-private.png', :width => "45", :height => "40"%></span>
-          <h2><%= t('.private') %>&nbsp;&nbsp;<span><%= t('.choose') %></span></h2>
-        </li>
-        <li id="community" class="feature-wrapper">
-          <span class="feature-image"><%= image_tag 'feature-engaging.png', :width => "45", :height => "40"%></span>
-          <h2><%= t('.engaging') %>&nbsp;&nbsp;<span><%= t('.share') %></span></h2>
-        </li>
-        <li id="trustworthy" class="feature-wrapper last-feature">
-          <span class="feature-image"><%= image_tag 'feature-positive.png', :width => "45", :height => "40"%></span>
-          <h2><%= t('.positive') %>&nbsp;&nbsp;<span><%= t('.offer') %></span></h2>
-        </li>
-      </ul>
-      <div class="gloabl-counter">
-        <div class="members-count">
-          <ul>
-            <% users = User.all.size.to_s.split('') %>
-            <li class="first"><%= users[-4] || 0 %></li>
-            <li><%= users[-3] || 0 %></li>
-            <li><%= users[-2] || 0 %></li>
-            <li class="last"><%= users[-1] || 0 %></li>
-          </ul>
-          <span><%= t '.members_count' %></span>
-        </div>
-        <div class="topics-count">
-          <ul>
-            <% topics = Topic.all.size.to_s.split('') %>
-            <li class="first"><%= topics[-4] || 0 %></li>
-            <li><%= topics[-3] || 0 %></li>
-            <li><%= topics[-2] || 0 %></li>
-            <li class="last"><%= topics[-1] || 0 %></li>
-          </ul>
-          <span><%= t '.topics_count' %></span>
-        </div>
-        <div class="advices-count">
-          <ul>
-            <% advices = Reply.all.size.to_s.split('') %>
-            <li class="first"><%= advices[-4] || 0 %></li>
-            <li><%= advices[-3] || 0 %></li>
-            <li><%= advices[-2] || 0 %></li>
-            <li class="last"><%= advices[-1] || 0 %></li>
-          </ul>
-          <span><%= t '.advices_count' %></span>
-        </div>
-      </div>
-    </div>
-    <!-- End New Header -->
-
-  </section>
   <div class="items-wrapper">
     <section class="topics" data-hansel-component-id="home-topics">
       <h2><span class="line"></span><span><%= t('.popular_topics') %></span><span class="line"></span></h2>

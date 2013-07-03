@@ -1,7 +1,7 @@
 body > div {background: none}
-body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 0 106px}
-.container{background: url('../../images/bg-color-text-home.jpg') no-repeat 50% 106px}
-.rtl .container{background: url('../../../images/bg-color-text-home-ar.jpg') no-repeat 50% 106px}
+body > div > div{ background: url('../../images/home/bg-gradient.jpg') repeat-x 0 106px}
+.container{background: url('../../images/home/banner-bg.jpg') no-repeat 50% 106px}
+.rtl .container{background: url('../../../images/home/banner-bg-ar.jpg') no-repeat 50% 106px}
 .slogan{height: 132px; font-family: 'GothamBoldRegular'; text-indent: -9999px; overflow: hidden;}
 .slogan > h1{color: #ffffff; font-size: 100px; text-shadow: 0px 4px 4px #51839f;}
 .slogan > h2{color: #ffffff; text-shadow: 0px 2px 2px #51839f; font-size: 18px; margin:14px 0 75px 0}
@@ -52,7 +52,7 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .features > .last-feature{margin-left: 1px;}
 
 .feature-wrapper h2 {color: #e6edf2; font-size: 20px; margin-right: 55px; padding-top: 10px; text-shadow: 0 1px 2px rgba(0, 0, 0, .6)}
-.feature-image {float:right} 
+.feature-image {float:right}
 
 /* Counter */
 .gloabl-counter {padding-right: 7px}
@@ -138,11 +138,11 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
   -webkit-box-shadow: inset 0 0 0 1px #ffffff;
      -moz-box-shadow: inset 0 0 0 1px #ffffff;
           box-shadow: inset 0 0 0 1px #ffffff;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6fafc), to(#dcedf5)); 
-  background-image: -webkit-linear-gradient(top, #f6fafc, #dcedf5); 
-  background-image:    -moz-linear-gradient(top, #f6fafc, #dcedf5); 
-  background-image:     -ms-linear-gradient(top, #f6fafc, #dcedf5); 
-  background-image:      -o-linear-gradient(top, #f6fafc, #dcedf5); 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f6fafc), to(#dcedf5));
+  background-image: -webkit-linear-gradient(top, #f6fafc, #dcedf5);
+  background-image:    -moz-linear-gradient(top, #f6fafc, #dcedf5);
+  background-image:     -ms-linear-gradient(top, #f6fafc, #dcedf5);
+  background-image:      -o-linear-gradient(top, #f6fafc, #dcedf5);
   background-image:         linear-gradient(top, #f6fafc, #dcedf5);
             filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f6fafc', EndColorStr='#dcedf5')
 
@@ -151,13 +151,13 @@ body > div > div{ background: url('../../images/bg-gradient-home.jpg') repeat-x 
 .video-player > .preview-image > a:active {background: #478acc none}
 .video-player > .preview-image > a:hover span {}
 .video-player > .preview-image > a:active span {background-color: #444444;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#bad1dc), to(#ecf3f6)); 
-  background-image: -webkit-linear-gradient(top, #bad1dc, #ecf3f6); 
-  background-image:    -moz-linear-gradient(top, #bad1dc, #ecf3f6); 
-  background-image:     -ms-linear-gradient(top, #bad1dc, #ecf3f6); 
-  background-image:      -o-linear-gradient(top, #bad1dc, #ecf3f6); 
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#bad1dc), to(#ecf3f6));
+  background-image: -webkit-linear-gradient(top, #bad1dc, #ecf3f6);
+  background-image:    -moz-linear-gradient(top, #bad1dc, #ecf3f6);
+  background-image:     -ms-linear-gradient(top, #bad1dc, #ecf3f6);
+  background-image:      -o-linear-gradient(top, #bad1dc, #ecf3f6);
   background-image:         linear-gradient(top, #bad1dc, #ecf3f6);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bad1dc', EndColorStr='#ecf3f6'); 
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#bad1dc', EndColorStr='#ecf3f6');
 
 }
 .video-player > .preview-image > a img {margin:11px 30px 0 0}
@@ -177,9 +177,9 @@ section > .features-holder {height: 277px; margin:30px 35px 43px 425px}
   background: url('../../images/bg-hide.png') repeat-x 0 0, -moz-linear-gradient(top, #f9fdfe, #eaf7fd);
   background: -webkit-gradient(linear,left top,left bottom,color-stop(0, #f9fdfe),color-stop(1, #eaf7fd));
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd');
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd')";  
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fdfe', EndColorStr='#eaf7fd')";
 
-} 
+}
 
 .watch-video > div > a:hover{
   background-image: -moz-linear-gradient(top, #eaf7fd, #f9fdfe);
@@ -187,7 +187,7 @@ section > .features-holder {height: 277px; margin:30px 35px 43px 425px}
   filter:  progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf7fd', EndColorStr='#f9fdfe')";
 }
-  
+
 .watch-video > div > a:hover{text-decoration: none;}
 .watch-video > div > a > span{background-image: url('../../images/icn-film.png'); background-repeat: no-repeat; background-position:100% 1px; margin:8px 8px 0 8px; float:right; padding:0 22px 8px 0; font-weight: bold; text-shadow: 0 1px 0 #fff}
 
