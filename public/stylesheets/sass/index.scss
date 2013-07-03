@@ -10,20 +10,21 @@ body {
 
 .banner {
   padding-top: 19px;
-  background-color: #5175a0;
+  background-color: #5e93c1;
   @include background-image(
+    url('../images/noise.png'),
     radial-gradient(bottom, ellipse cover, transparent 30%, #042144 100%),
     url('../images/home/banner-bg.png'),
     linear-gradient(top, #31467a, transparent)
   );
-  background-position: 0 0, 50%, 0 0; background-repeat: no-repeat;
+  background-position: 0 0, 0 0, 50%, 0 0; background-repeat: repeat, no-repeat, no-repeat, no-repeat;
 }
 
 .slogan{height: 132px; overflow: hidden;
   h1 {width: 271px; height: 58px; margin: 0 auto; text-indent: -9999px;
     background: url('../images/home/banner-logo.png') no-repeat 50% 0px;
   }
-  h2 {font-family: 'Museo500-Regular'; font-size: 17px; margin:14px 0 75px 0;
+  h2 {font-family: 'Museo500-Regular'; font-size: 17px; margin:14px 0 75px 0; font-weight: normal;
     color: #c3d0d9; text-shadow: 0 2px 5px rgba(0, 0, 0, .7), 0 0 4px rgba(255, 255, 255, .15);
   }
 }
