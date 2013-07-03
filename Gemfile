@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 gem 'rake', '0.8.7'
 gem 'json', '~> 1.4.6'
-gem 'rails', '3.0.9'  
+gem 'rails', '3.0.9'
 gem "rails3-generators", '~> 0.14.0'
 gem 'mysql2', '0.2.6'
 gem 'jquery-rails', '~> 0.2.2'
@@ -21,6 +21,8 @@ gem 'airbrake'
 gem 'foreman', '~> 0.37.2'
 gem 'resque', '~> 1.19.0'
 gem 'resque_mailer'
+gem "sass", "~> 3.2.3"
+gem "compass-rails", "~> 1.0.3"
 
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
