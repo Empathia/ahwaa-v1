@@ -42,7 +42,7 @@ body > div > div {
   margin: 14px 0 75px 0;
   font-weight: normal;
   color: #c3d0d9;
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7), 0 0 4px rgba(255, 255, 255, 0.15);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 4px rgba(255, 255, 255, 0.15);
 }
 
 /* line 32, sass/index.scss */
