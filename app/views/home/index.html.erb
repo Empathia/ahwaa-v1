@@ -80,20 +80,21 @@
   </div>
 </section>
 
-<div class="aligned">
-  <div class="items-wrapper">
-    <section class="topics" data-hansel-component-id="home-topics">
-      <h2><span class="line"></span><span><%= t('.popular_topics') %></span><span class="line"></span></h2>
-      <ul class="items-frontpage topic-avatars">
-        <%= render :partial => 'grouped_topic', :collection => @popular, :locals => {:leng => @popular.length} %>
-      </ul>
-    </section>
-    <section class="feeds" data-hansel-component-id="home-feeds">
-      <h2><span class="line"></span><span><%= t('.feeds') %></span><span class="line"></span></h2>
-      <ul class="items-frontpage topic-avatars">
-        <%= render :partial => 'grouped_topic', :collection => @latest, :locals => {:leng => @latest.length} %>
-      </ul>
-    </section>
-    <br class="clear">
+<div class="home-topics">
+  <div class="container">
+    <div class="row-fluid">
+      <section class="span6 topics" data-hansel-component-id="home-topics">
+        <h2><span class="line"></span><span><%= t('.popular_topics') %></span><span class="line"></span></h2>
+        <ul class="items-frontpage topic-avatars">
+          <%= render :partial => 'grouped_topic', :collection => @popular, :locals => {:leng => @popular.length} %>
+        </ul>
+      </section>
+      <section class="span6 feeds" data-hansel-component-id="home-feeds">
+        <h2><span class="line"></span><span><%= t('.feeds') %></span><span class="line"></span></h2>
+        <ul class="items-frontpage topic-avatars">
+          <%= render :partial => 'grouped_topic', :collection => @latest, :locals => {:leng => @latest.length} %>
+        </ul>
+      </section>
+    </div>
   </div>
 </div>

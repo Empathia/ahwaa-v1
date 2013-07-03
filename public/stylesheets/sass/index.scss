@@ -8,6 +8,7 @@ body {
 /*.container{background: url('../images/home/banner-bg.jpg') no-repeat 50% 106px}*/
 /*.rtl .container{background: url('../../images/home/bg-banner-ar.jpg') no-repeat 50% 106px}*/
 
+/* BANNER */
 .banner {
   padding: 19px 0 40px;
   background-color: #5e93c1;
@@ -60,8 +61,11 @@ body {
 .video-player > .preview-video {display: none}
 section > .features-holder {height: 277px; margin: 30px 425px 43px 35px}
 
+/* end banner */
+
+/* TOPICS */
 .items-frontpage {
-  > li {float: left; margin-bottom: 20px;
+  > li {margin-bottom: 20px;
     @include box-shadow(0 1px 2px rgba(0, 0, 0, 0.25), inset 0 0 0 1px rgba(255, 255, 255, 0.8));
     > .topic-spotlight,
     > .topic-recent-historial {width: 440px; float: left; padding: 10px;}
@@ -95,15 +99,15 @@ section > .features-holder {height: 277px; margin: 30px 425px 43px 35px}
   img {width: 24px; height: 24px}
 }
 
-.items-wrapper {
-  > section{width: 460px; float: left;
+.home-topics {
+  section {width: 460px; float: left;
     > h2 {text-transform: uppercase; text-align: center; font-size: 16px; color: #546e86; float: left; text-shadow: 0 1px 0 rgba(255, 255, 255, .5); padding-bottom: 6px; margin-bottom: 15px;
       > span {float: left; margin: 0 10px}
       .line {border-bottom: 1px solid rgba(255, 255, 255, 0.3); border-top: 2px solid #C1D2DE; margin: 9px 0 0}
     }
   }
-  > .topics > h2 > .line {width: 115px}
-  > .feeds > h2 > .line {width: 145px}
+  .topics > h2 > .line {width: 115px}
+  .feeds > h2 > .line {width: 145px}
 }
 
 .items > li{width: 440px;}
