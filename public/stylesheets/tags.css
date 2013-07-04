@@ -1,23 +1,143 @@
-body {background-image:url("../images/bg-noise-topic.jpg")}
-.topics{background-color: #ffffff; border-top-left-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px}
-.tag-items{padding:0 40px 14px}
-.tag-item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative}
-.tag-item-row .tag-item + div{padding-left: 30px}
-.tag-item-row .tag-item {width: 415px; padding: 25px 0; float: left}
-.tag-items > div > div.bottom{border:none; padding:0}
-.item-img > img {border:2px solid #FFFFFF; float:left}
-.item-img {border:1px solid #dadee0; float:left}
-.tag-item-data {float:left; width:335px; padding-left:15px; font-size:12px}
-.tag-item-data .dark-lk {color:#5D646A; font-size:14px}
+/* line 3, sass/tags.scss */
+body {
+  background-image: url("../images/bg-noise-topic.jpg");
+}
 
-.tag-item-data{color:#a4a7ab}
-.tag-item-data > a{color: #a4a7ab}
-.tag-item-data > div > span {display:block}
-.tags{margin:0}
-.tags-title{overflow: hidden; padding: 0 40px; height: 59px; border-bottom: 1px solid #edf2f7}
-.tags-title > h2{float: left; font-size: 15px; font-weight: bold; color: #4c5563;  line-height: 4.1}
-.order{color:#9da2a8; float: right; line-height: 4.9}
-.order a{padding-left:5px; color:#9da2a8}
-.order .active {color:#6c6f71; font-weight:bold}                              
-.white-area{background-color: #ffffff; position: absolute; bottom: -1px; left: 415px; height: 1px}
-/*background:url("../images/border-topics.gif") repeat-x 0 100% transparent; */
+/* line 5, sass/tags.scss */
+.container {
+  padding-top: 20px;
+  /* Landscape phones and down */
+}
+@media (max-width: 480px) {
+  /* line 5, sass/tags.scss */
+  .container {
+    padding: 0 0 20px;
+  }
+}
+
+/* line 9, sass/tags.scss */
+.topics {
+  background-color: #ffffff;
+  border-top-left-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+
+/* line 13, sass/tags.scss */
+.tag-items {
+  padding: 0 40px 14px;
+  /* Landscape phones and down */
+}
+/* line 14, sass/tags.scss */
+.tag-items > div > div.bottom {
+  border: none;
+  padding: 0;
+}
+@media (max-width: 480px) {
+  /* line 13, sass/tags.scss */
+  .tag-items {
+    padding: 0 0 14px;
+  }
+}
+
+/* line 18, sass/tags.scss */
+.tag-item-row {
+  line-height: 19px;
+  border-bottom: 1px solid #f2f7fa;
+  position: relative;
+  /* Landscape phones and down */
+}
+/* line 19, sass/tags.scss */
+.tag-item-row .tag-item {
+  padding: 25px 0;
+}
+@media (max-width: 480px) {
+  /* line 18, sass/tags.scss */
+  .tag-item-row {
+    border-bottom: none;
+  }
+  /* line 22, sass/tags.scss */
+  .tag-item-row .tag-item {
+    border-bottom: 1px solid #f2f7fa;
+    padding: 25px 30px;
+  }
+}
+
+/* line 26, sass/tags.scss */
+.item-img {
+  border: 1px solid #dadee0;
+  float: left;
+}
+/* line 27, sass/tags.scss */
+.item-img > img {
+  border: 2px solid #FFFFFF;
+  float: left;
+}
+
+/* line 30, sass/tags.scss */
+.tag-item-data {
+  margin-left: 75px;
+  font-size: 12px;
+  color: #a4a7ab;
+}
+/* line 31, sass/tags.scss */
+.tag-item-data .dark-lk {
+  color: #5D646A;
+  font-size: 14px;
+}
+/* line 32, sass/tags.scss */
+.tag-item-data > a {
+  color: #a4a7ab;
+}
+/* line 33, sass/tags.scss */
+.tag-item-data > div > span {
+  display: block;
+}
+
+/* line 36, sass/tags.scss */
+.tags {
+  margin: 0;
+}
+
+/* line 37, sass/tags.scss */
+.tags-title {
+  overflow: hidden;
+  padding: 0 40px;
+  height: 59px;
+  border-bottom: 1px solid #edf2f7;
+  /* Landscape phones and down */
+}
+/* line 38, sass/tags.scss */
+.tags-title > h2 {
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  color: #4c5563;
+  line-height: 4.1;
+}
+@media (max-width: 480px) {
+  /* line 37, sass/tags.scss */
+  .tags-title {
+    padding: 0 30px;
+  }
+}
+
+/* line 41, sass/tags.scss */
+.order {
+  color: #9da2a8;
+  float: right;
+  line-height: 4.9;
+}
+/* line 42, sass/tags.scss */
+.order a {
+  padding-left: 5px;
+  color: #9da2a8;
+}
+/* line 43, sass/tags.scss */
+.order .active {
+  color: #6c6f71;
+  font-weight: bold;
+}

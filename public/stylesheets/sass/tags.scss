@@ -1,0 +1,44 @@
+@import "compass", "mixins";
+
+body {background-image:url("../images/bg-noise-topic.jpg")}
+
+.container {padding-top: 20px;
+  @include breakpoint(phone){padding: 0 0 20px}
+}
+
+.topics {background-color: #ffffff; border-top-left-radius:5px;
+  @include border-radius(5px);
+}
+
+.tag-items {padding: 0 40px 14px;
+    > div > div.bottom {border:none; padding:0}
+    @include breakpoint(phone) {padding: 0 0 14px}
+}
+
+.tag-item-row {line-height:19px; border-bottom: 1px solid #f2f7fa; position: relative;
+    .tag-item {padding: 25px 0}
+    @include breakpoint(phone) {
+      border-bottom: none;
+      .tag-item {border-bottom: 1px solid #f2f7fa; padding: 25px 30px}
+    }
+}
+
+.item-img {border:1px solid #dadee0; float:left;
+    > img {border:2px solid #FFFFFF; float:left}
+}
+
+.tag-item-data {margin-left: 75px; font-size: 12px; color:#a4a7ab;
+    .dark-lk {color:#5D646A; font-size:14px}
+    > a{color: #a4a7ab}
+    > div > span {display:block}
+}
+
+.tags {margin:0}
+.tags-title {overflow: hidden; padding: 0 40px; height: 59px; border-bottom: 1px solid #edf2f7;
+    > h2 {float: left; font-size: 15px; font-weight: bold; color: #4c5563;  line-height: 4.1}
+    @include breakpoint(phone) {padding: 0 30px}
+}
+.order {color:#9da2a8; float: right; line-height: 4.9;
+    a {padding-left:5px; color:#9da2a8}
+    .active {color:#6c6f71; font-weight:bold}
+}

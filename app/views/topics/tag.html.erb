@@ -1,5 +1,5 @@
 <% stylesheet 'tags' %>
-  <div class="aligned">
+  <div class="container">
     <div class="items-wrapper">
       <section class="topics border-all" data-hansel-component-id="topic-list">
         <div class="tags-title">
@@ -12,9 +12,9 @@
         </div>
         <div class="tag-items topic-avatars">
           <% @topics.each do | group_topics | %>
-            <div class="tag-item-row">
+            <div class="tag-item-row row-fluid">
               <% group_topics.each do | topic | %>
-                <div class="tag-item">
+                <div class="tag-item span6">
                   <div class="avatar-wrapper">
                     <% unless topic.is_anonymous %>
                       <%= avatar_span(topic.user, topic.user.is_expert?) %>
@@ -40,8 +40,6 @@
                   </div>
                 </div>
               <% end %>
-              <div class="white-area"></div>
-              <br class="clear">
             </div>
           <% end %>
           <p class="clear"></p>
