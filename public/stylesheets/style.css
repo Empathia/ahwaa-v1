@@ -5,6 +5,7 @@ html {
 
 /* line 4, sass/style.scss */
 body {
+  padding: 0;
   font-size: 13px;
   color: #61656a;
   -webkit-font-smoothing: antialiased;
@@ -3232,7 +3233,7 @@ form + .recently-topics {
 @media (max-width: 480px) {
   /* line 753, sass/style.scss */
   .app-body-container {
-    padding-bottom: 20px;
+    padding: 80px 0 20px;
   }
 }
 

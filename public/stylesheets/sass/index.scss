@@ -1,6 +1,6 @@
 @import "compass", "mixins";
 
-body {padding: 0;
+body {
   > div {background: none}
   > div > div{ background: url('../images/home/bg-gradient.jpg') repeat-x 0 106px}
 }
@@ -121,7 +121,9 @@ body {padding: 0;
     > li {float: left; margin-right: 15px}
     .recently-topics > ul > li {float: none; margin-right: 0}
   }
-  .avatar-wrapper {max-width: 50px}
+  .avatar-wrapper {max-width: 50px;
+    @include breakpoint(phone) {pointer-events: none}
+  }
   .item-data {float: none; margin-left: 60px; line-height: 20px;
     .feed-date {font-size: 11px; color: #bdc6cb;}
   }

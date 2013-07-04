@@ -8,7 +8,7 @@
   <% if rtl? %>
     <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
   <% else %>
-    <%= stylesheet_link_tag 'reset', 'fonts', 'style', :cache => true %>
+    <%= stylesheet_link_tag 'reset', 'fonts', 'bootstrap.min', 'bootstrap-responsive.min', 'style', :cache => true %>
   <% end %>
 
   <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'avatars', 'tagList', :cache => true %>
@@ -196,7 +196,7 @@
           </div>
         </div>
         </div>
-        <div class="header-wrapper">
+        <div class="header-wrapper hidden-phone">
           <div class="header-tags aligned">
             <ul id="header-tags">
               <% Topic.by_language(I18n.locale).tag_counts.order("position ASC").each do |tag| %>
