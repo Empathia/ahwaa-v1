@@ -6,7 +6,7 @@
 }
 .my-topics-wrapper .is_empty .title {font-size: 16px; margin: 7px 0 4px}
 .my-topics-wrapper .help-box {background-color: #f8fafa}
-.my-topics-wrapper .is_empty div {padding: 15px 12px; border-width: 0 1px 1px 1px; border-style: solid; border-color: transparent #ffffff #dae0e6}
+.my-topics-wrapper .is_empty div {padding: 15px 12px; border-width:0 1px 1px 1px; border-style: solid; border-color: transparent #ffffff #dae0e6}
 .my-topics-wrapper .is_empty div:first-child {
   -webkit-border-radius: 2px 2px 0 0;
      -moz-border-radius: 2px 2px 0 0;

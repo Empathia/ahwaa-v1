@@ -6,22 +6,21 @@ body {
 }
 
 /* BANNER */
-.banner {
-  padding: 19px 0 40px;
-  background-color: #5e93c1;
+.banner {padding-top: 19px; padding-bottom: 40px; background-color: #5e93c1;
   @include background-image(
     url('../images/noise.png'),
     radial-gradient(bottom, ellipse cover, transparent 30%, #042144 100%),
     url('../images/home/banner-bg.png'),
     linear-gradient(top, #31467a, transparent)
   );
-  background-position: 0 0, 0 0, 50% 100%, 0 0; background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-position: 0 0, 0 0, 50% 100%, 0 0;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
 }
 .slogan {overflow: hidden; margin-bottom: 15px;
   h1 {width: 100%; max-width: 271px; height: 58px; margin: 0 auto; text-indent: -9999px;
     background: url('../images/home/banner-logo.png') no-repeat 50% 0px; background-size: 100%;
   }
-  h2 {font-family: 'Museo500-Regular'; font-size: 17px; margin: 14px 20px 0; font-weight: normal;
+  h2 {font-size: 17px; font-weight: normal; margin: 14px 20px 0;
     color: #c3d0d9; text-shadow: 0 2px 5px rgba(0, 0, 0, .3), 0 0 4px rgba(255, 255, 255, .15);
   }
 }
@@ -42,7 +41,7 @@ body {
   .preview-image,
   .preview-video {height: 100%; position: relative}
   .preview-image {background: transparent url('../images/img-video-preview.jpg') 0 0 no-repeat; background-size: cover;
-    a {padding: 1px; position: absolute; z-index: 2; left: 50%; top: 50%; margin: -24px 0 0 -40px;
+    a {padding: 1px; position: absolute; z-index: 2; left: 50%; top: 50%; margin-top: -24px; margin-left: -40px;
       @include border-radius(3px);
       @include box-shadow(0 0 5px 0 rgba(0, 26, 51, .8));
       @include background-image(linear-gradient(top, rgba(3, 34, 71, .52), rgba(5, 79, 153, .52)));

@@ -6,9 +6,9 @@
   <meta name="description" content="<%= @meta_description.present? ? @meta_description : 'A safe space to debate LGBTQ-related issues in the Middle East' %>">
   <meta name="keywords" content="<%= @meta_keywords.present? ? @meta_keywords : 'gay,lesbian,lgbt,middle,east,discuss,forum,homosexual' %>">
   <% if rtl? %>
-    <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
+    <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'vendor/bootstrap.min', 'vendor/bootstrap-responsive.min', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
   <% else %>
-    <%= stylesheet_link_tag 'reset', 'fonts', 'bootstrap.min', 'bootstrap-responsive.min', 'style', :cache => true %>
+    <%= stylesheet_link_tag 'reset', 'fonts', 'vendor/bootstrap.min', 'vendor/bootstrap-responsive.min', 'style', :cache => true %>
   <% end %>
 
   <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'avatars', 'tagList', :cache => true %>

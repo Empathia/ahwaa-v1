@@ -17,6 +17,15 @@
 .request-error {left: -85px}
 .sign-up-or-continue > div {font-size: 13px}
 
+/* BANNER */
+.banner {
+  .slogan {
+    h1 {max-width: 168px; height: 96px;
+      background: url('../images/home/banner-logo-ar.png') no-repeat 50% 0px;
+    }
+  }
+}
+
 .items-wrapper > .topics > h2 > .line {width: 157px !important}
 .items-wrapper > .feeds > h2 > .line {width: 172px !important}
 .items-wrapper > section > h2 > .line {margin-top: 11px !important}

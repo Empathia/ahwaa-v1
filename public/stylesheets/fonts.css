@@ -1,127 +1,148 @@
-@font-face {
-  font-family: 'GothamMediumRegular';
-  src: url('/stylesheets/fonts/gotham-medium.eot');
-  src: local('☺'), url('/stylesheets/fonts/gotham-medium.woff') format('woff'), url('/stylesheets/fonts/gotham-medium.ttf') format('truetype'), url('/stylesheets/fonts/gotham-medium.svg#webfontzAljFo39') format('svg');
-  font-weight: normal;
-  font-style: normal;
+/* line 4, sass/fonts.scss */
+html,
+body {
+  -webkit-font-smoothing: antialiased;
 }
 
-@font-face {
-  font-family: 'GothamBoldRegular';
-  src: url('/stylesheets/fonts/gotham-bold.eot');
-  src: local('☺'), url('/stylesheets/fonts/gotham-bold.woff') format('woff'), url('/stylesheets/fonts/gotham-bold.ttf') format('truetype'), url('/stylesheets/fonts/gotham-bold.svg#webfontNoFfkWyt') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-    font-family: 'Gotham-Light';
-    src: url('/stylesheets/fonts/gotham-light.eot');
-    src: url('/stylesheets/fonts/gotham-light.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/gotham-light.woff') format('woff'),
-         url('/stylesheets/fonts/gotham-light.ttf') format('truetype'),
-         url('/stylesheets/fonts/gotham-light.svg#gotham-light') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Museo500-Light';
-    src: url('/stylesheets/fonts/museo500-light.eot');
-    src: url('/stylesheets/fonts/museo500-light.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/museo500-light.woff') format('woff'),
-         url('/stylesheets/fonts/museo500-light.ttf') format('truetype'),
-         url('/stylesheets/fonts/museo500-light.svg#gotham-light') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Museo700-Sans';
-    src: url('/stylesheets/fonts/museosans_700.eot');
-    src: url('/stylesheets/fonts/museosans_700.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/museosans_700.woff') format('woff'),
-         url('/stylesheets/fonts/museosans_700.ttf') format('truetype'),
-         url('/stylesheets/fonts/museosans_700.svg#gotham-light') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Museo500-Regular';
-    src: url('/stylesheets/fonts/Museo500-Regular.eot');
-    src: url('/stylesheets/fonts/Museo500-Regular.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/Museo500-Regular.woff') format('woff'),
-         url('/stylesheets/fonts/Museo500-Regular.ttf') format('truetype'),
-         url('/stylesheets/fonts/Museo500-Regular.svg#gotham-light') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Museo700-Regular';
-    src: url('/stylesheets/fonts/Museo700-Regular.eot');
-    src: url('/stylesheets/fonts/Museo700-Regular.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/Museo700-Regular.woff') format('woff'),
-         url('/stylesheets/fonts/Museo700-Regular.ttf') format('truetype'),
-         url('/stylesheets/fonts/Museo700-Regular.svg#gotham-light') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Museo900-Bold';
-    src: url('/stylesheets/fonts/museo900-bold.eot');
-    src: url('/stylesheets/fonts/museo900-bold.eot?#iefix') format('embedded-opentype'),
-         url('/stylesheets/fonts/museo900-bold.woff') format('woff'),
-         url('/stylesheets/fonts/museo900-bold.ttf') format('truetype'),
-         url('/stylesheets/fonts/museo900-bold.svg#gotham-light') format('svg');
-    font-weight: 100;
-    font-style: normal;
-}
-
-h1 {font-family: 'Gotham-Light'; font-weight: normal}
+/* line 7, sass/fonts.scss */
 body,
-input {font-family: Arial, Helvetica;}
+input {
+  font-family: Arial, Helvetica;
+}
 
-.gloabl-counter > div > span,
-.gloabl-counter > div > ul > li {font-family: 'Museo700-Sans'; font-weight: 100}
+/*a*/
+@font-face {
+  font-family: "GothamMediumRegular";
+  src: url(/stylesheets/fonts/gotham-medium.ttf) format('truetype'), url(/stylesheets/fonts/gotham-medium.eot) format('embedded-opentype'), url(/stylesheets/fonts/gotham-medium.woff) format('woff'), url(/stylesheets/fonts/gotham-medium.svg) format('svg');
+}
 
-.feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: 100}
-.feature-wrapper > h2 > span {font-family: 'Museo500-Light'; font-weight: 100}
+/*b*/
+@font-face {
+  font-family: "GothamBoldRegular";
+  src: url(/stylesheets/fonts/gotham-bold.ttf) format('truetype'), url(/stylesheets/fonts/gotham-bold.eot) format('embedded-opentype'), url(/stylesheets/fonts/gotham-bold.woff) format('woff'), url(/stylesheets/fonts/gotham-bold.svg) format('svg');
+}
 
-.related-content > div > h2 {font-family: 'GothamMediumRegular'; font-weight: 100}
+/*c*/
+@font-face {
+  font-family: "Gotham-Light";
+  src: url(/stylesheets/fonts/gotham-light.ttf) format('truetype'), url(/stylesheets/fonts/gotham-light.eot) format('embedded-opentype'), url(/stylesheets/fonts/gotham-light.woff) format('woff'), url(/stylesheets/fonts/gotham-light.svg) format('svg');
+}
 
+/*d*/
+@font-face {
+  font-family: "Museo500-Light";
+  src: url(/stylesheets/fonts/museo500-light.ttf) format('truetype'), url(/stylesheets/fonts/museo500-light.eot) format('embedded-opentype'), url(/stylesheets/fonts/museo500-light.woff) format('woff'), url(/stylesheets/fonts/museo500-light.svg) format('svg');
+}
+
+/*e*/
+@font-face {
+  font-family: "Museo700-Sans";
+  src: url(/stylesheets/fonts/museosans_700.ttf) format('truetype'), url(/stylesheets/fonts/museosans_700.eot) format('embedded-opentype'), url(/stylesheets/fonts/museosans_700.woff) format('woff'), url(/stylesheets/fonts/museosans_700.svg) format('svg');
+}
+
+/*f*/
+@font-face {
+  font-family: "Museo500-Regular";
+  src: url(/stylesheets/fonts/Museo500-Regular.ttf) format('truetype'), url(/stylesheets/fonts/Museo500-Regular.eot) format('embedded-opentype'), url(/stylesheets/fonts/Museo500-Regular.woff) format('woff'), url(/stylesheets/fonts/Museo500-Regular.svg) format('svg');
+}
+
+/*g*/
+@font-face {
+  font-family: "Museo700-Regular";
+  src: url(/stylesheets/fonts/Museo700-Regular.ttf) format('truetype'), url(/stylesheets/fonts/Museo700-Regular.eot) format('embedded-opentype'), url(/stylesheets/fonts/Museo700-Regular.woff) format('woff'), url(/stylesheets/fonts/Museo700-Regular.svg) format('svg');
+}
+
+/*h*/
+@font-face {
+  font-family: "Museo900-Bold";
+  src: url(/stylesheets/fonts/museo900-bold.ttf) format('truetype'), url(/stylesheets/fonts/museo900-bold.eot) format('embedded-opentype'), url(/stylesheets/fonts/museo900-bold.woff) format('woff'), url(/stylesheets/fonts/museo900-bold.svg) format('svg');
+}
+
+/*a*/
+/* line 26, sass/fonts.scss */
 .sign-up-btn,
 .sec-title-med,
 #pageslide-slide-wrap > div h2,
 .hall-people > li > .honor-member-info > a,
 .my-topics-wrapper .is_empty .title,
 .stream-wrapper .is-empty,
-.modal header {font-family: "GothamMediumRegular"}
-
-.sec-title,
-.h2,
-#join > a {font-family: "GothamBoldRegular"}
-
-/* Museo700-Regular */
-.honor-member-info > span,
-.items-wrapper > section > h2,
-.hall-of-fame > .hall-header > h4 > span {font-family: 'Museo700-Regular', Helvetica, Arial}
-
-/* Museo500-Regular */
-.items-frontpage .topic-spotlight .title {font-family: 'Museo500-Regular', Helvetica, Arial}
-
-.feature-wrapper > h2 {font-weight: bold}
-
-.feature-wrapper > h2 > span,
-.items-wrapper > section > h2,
-.hall-of-fame > .hall-header > h4 {font-weight: normal}
-
-@-moz-document url-prefix() {
-  .feature-wrapper > h2,
-  .feature-wrapper > h2 > span {font-weight: 100}
+.modal header,
+.related-content > div > h2 {
+  font-family: 'GothamMediumRegular';
+  font-weight: normal;
 }
 
-html,
-body {-webkit-font-smoothing: antialiased}
+/*b*/
+/* line 31, sass/fonts.scss */
+.sec-title,
+.h2,
+#join > a {
+  font-family: "GothamBoldRegular";
+  font-weight: normal;
+}
+
+/*c*/
+/* line 34, sass/fonts.scss */
+h1 {
+  font-family: 'Gotham-Light';
+  font-weight: normal;
+}
+
+/*d*/
+/* line 37, sass/fonts.scss */
+.feature-wrapper > h2 > span {
+  font-family: 'Museo500-Light';
+  font-weight: normal;
+}
+
+/*e*/
+/* line 41, sass/fonts.scss */
+.gloabl-counter > div > span,
+.gloabl-counter > div > ul > li {
+  font-family: 'Museo700-Sans';
+  font-weight: normal;
+}
+
+/*f*/
+/* line 45, sass/fonts.scss */
+.banner .slogan h2,
+.items-frontpage .topic-spotlight .title {
+  font-family: 'Museo500-Regular', Helvetica, Arial;
+  font-weight: normal;
+}
+
+/*g*/
+/* line 50, sass/fonts.scss */
+.honor-member-info > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 > span {
+  font-family: 'Museo700-Regular', Helvetica, Arial;
+  font-weight: normal;
+}
+
+/*h*/
+/* line 53, sass/fonts.scss */
+.feature-wrapper > h2 {
+  font-family: 'Museo900-Bold';
+  font-weight: normal;
+}
+
+/* line 55, sass/fonts.scss */
+.feature-wrapper > h2 {
+  font-weight: bold;
+}
+
+/* line 58, sass/fonts.scss */
+.feature-wrapper > h2 > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 {
+  font-weight: normal;
+}
+
+@-moz-document url-prefix() {
+  /* line 62, sass/fonts.scss */
+  .feature-wrapper > h2,
+  .feature-wrapper > h2 > span {
+    font-weight: 100;
+  }
+}

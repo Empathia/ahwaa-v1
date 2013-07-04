@@ -1,32 +1,31 @@
 .content{position: relative; margin-bottom: 20px;}
 
 body > div{background: url("../../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{max-width: 160px; background-image: url('../../images/tag.png'); width: 220px; background-repeat: no-repeat; background-position:100% 3px; padding-right: 22px; color: #468AC4; float:right;}
+.article-tags{max-width: 180px; background-image: url('../../images/tag.png'); width: 220px; background-repeat: no-repeat; background-position:100% 3px; padding-right: 22px; color: #468AC4; float:right;}
 .article-tags > li{display: inline;}
 .left-side{float:right; width:700px;}
 
-.topic-info {overflow: hidden; float: right; width: 290px; margin-top: 15px}
-.social-bookmarkers {position: relative; float: left; margin-top: 10px}
-.social-bookmarkers li {float: right; padding-left: 5px}
+.topic-info {overflow: hidden; float:right; width: 290px; margin-top: 15px}
+.social-bookmarkers {position: relative; float:left; margin-top: 10px}
+.social-bookmarkers li {float:right; padding-left: 5px}
 .social-bookmarkers .icn-social {display: block; position: relative; width: 14px; height: 14px; background-image: url('../../images/icn-social.png');}
-.social-bookmarkers .icn-social.twitter {top: 3px; right: 4px; background-position: 0 -32px; background-repeat: none;}
-.social-bookmarkers .facebook iframe {width: 67px!important}
+.social-bookmarkers .icn-social.twitter {top: 3px; right: 3px; background-position:100% -32px; background-repeat: none;}
 .social-bookmarkers .twitter > a {display: block; height: 21px; margin-bottom: 10px; text-indent: -9999px; width: 21px; overflow: hidden;}
 .social-bookmarkers .facebook:hover .flash-privacy:not(.closed-once),
 .social-bookmarkers .twitter:hover .flash-privacy:not(.closed-once) {display: block}
 .social-bookmarkers .follow-topic-btn a,
 .social-bookmarkers .thank-btn a {padding: 4px 10px 0; margin-bottom: 15px; height: 17px; font-size: 12px; display: block;}
 .social-bookmarkers .thank {padding-left: 0}
-.social-bookmarkers .has-tooltip:hover .tooltip-box {display: block}
+.social-bookmarkers .has-tooltip:not(.disabled):hover .tooltip-box {display: block}
 
-.social-bookmarkers .flash-privacy{position: absolute; top: 12px; left: 54px; margin-top: 20px; white-space: nowrap; padding-left: 6px; display: none; z-index: 100}
-.social-bookmarkers .flash-privacy > div{padding-left: 50px}
-.social-bookmarkers .flash-privacy .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;}
-.flash-arrow-shadow {position: absolute; top: -13px; left: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float: left; height: 0; width: 0;}
-.flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; left: -7px; top: -5px}
+.social-bookmarkers .flash-privacy{position: absolute; top: 12px; left: 60px; margin-top: 20px; white-space: nowrap; padding-right: 6px; display: none; z-index: 100}
+.social-bookmarkers .flash-privacy > div{padding-right: 50px}
+.social-bookmarkers .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;}
+.flash-arrow-shadow {position: absolute; top: -13px; right: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float:right; height: 0; width: 0;}
+.flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; right: -7px; top: -5px}
 
-.tt-thank-msg {left: -15px; right: inherit; top: 36px}
-.tt-thank-msg .origin {left: 48px; right: inherit}
+.tt-thank-msg {right: inherit; left: -15px; top: 36px}
+.tt-thank-msg .origin {right: inherit; left: 48px}
 .tt-thank-msg label {font-size: 13px; color: #677b8c}
 .tt-thank-msg label .chck {position: relative; right: -4px; top: 1px}
 .tt-thank-msg .secondary-button {cursor: pointer; font-size: 12px; padding: 5px 7px 4px; color: #2D70B3}
@@ -151,7 +150,7 @@ aside section.need-help{padding:13px 0; text-align:center}
 .comm-arrow{position: absolute; left: 0; top: 0; height:13px; width: 14px; background-image: url('../../images/arrows-up.png'); background-repeat: no-repeat; z-index: 1;}
 
 .add_comments .comm-arrow{background-position:100% -13px;}
-.comm-wrap > div{border: 2px solid #e9f0f3; padding: 20px;}
+.comm-wrap > div{border: 2px solid #e9f0f3; padding: 10px;}
 
 .comments .expert > .comm-wrap{border: 1px solid #e7e8e6; background-color: #f9fcf8}
 .expert > .comm-wrap > div{border: 2px solid #f2f5f1}
@@ -227,9 +226,9 @@ p:hover .icn{display: inline;}
 
 header > .right > .by-author {margin-top: 15px}
 
-#font-size-controls > span {float: left}
+#font-size-controls > span {float:left}
 #font-size-controls .increase,
-#font-size-controls .decrease {float: left; background-color: #fafafa; border: 1px solid #d5d5d5; padding: 3px 5px;
+#font-size-controls .decrease {float:right; background-color: #fafafa; border: 1px solid #d5d5d5; padding: 3px 5px;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f6f6f6));
   background-image: -webkit-linear-gradient(top, #ffffff, #f6f6f6);
   background-image:    -moz-linear-gradient(top, #ffffff, #f6f6f6);
@@ -270,14 +269,14 @@ header > .right > .by-author {margin-top: 15px}
           box-shadow: inset 0 0 0 1px #fff;
 }
 #font-size-controls a > span {display: block; width: 21px; height: 12px; background-image: url('../../images/font-size-controllers.png'); text-indent: -9999px; line-height: 0}
-#font-size-controls .increase span {background-position: 0 0}
+#font-size-controls .increase span {background-position:100% 0}
 #font-size-controls .decrease span {background-position: -21px 0}
 #font-size-controls .increase:hover span,
 #font-size-controls .increase:active span {background-position: 0 -12px}
 #font-size-controls .decrease:hover span,
 #font-size-controls .decrease:active span {background-position: -21px -12px}
 
-.related-carrousel{width: 660px; float:right; position: relative; margin-bottom: 17px}
+.related-carrousel {width: 660px; float:right; position: relative; margin-bottom: 17px}
 .filter-responses > li{margin-bottom: 12px; float:right; min-width: 100px;}
 .filter-responses > .even{margin-left: 0; float:left}
 .filter-responses > li:last-child{margin-bottom: 0;}
@@ -293,7 +292,7 @@ header > .right > .by-author {margin-top: 15px}
 
 .sign-up-or-continue > div{color: #52503b; font-size: 11px; background-color: #faf8dc; border-width: 1px; border-style: solid; border-color: transparent #f6f4de #cac8b1 #f6f4de; float:right; padding: 5px 15px; font-weight: bold;}
 .sign-up-or-continue .sign-up-lk {margin:0 10px 0 0; border: 1px solid #3C7EBB}
-.sign-up-or-continue .sign-up-lk.help-sign {margin: 0 0 0 85px;}
+.sign-up-or-continue .sign-up-lk.help-sign {margin:0 85px 0 0;}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-right: 17px;}
 .topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
@@ -324,12 +323,6 @@ header > .right > .by-author {margin-top: 15px}
 .blue-btn > span > span{background-position:100% -25px; float:right; background-repeat: repeat-x;}
 .w-arrow{float:right;}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width:5px 5px 5px 0px; float:left; height: 0; width: 0; margin:7px 5px 0 0;}
-
-.social-bookmarkers > .flash-privacy{position: absolute; left: 220px; top: 0; white-space: nowrap; padding-right: 6px; margin-top: 45px; display: none; z-index: 100}
-.social-bookmarkers > .flash-privacy > div{padding-right: 50px}
-.social-bookmarkers > .flash-privacy .exclamation-center{position: absolute; top: 6px; right: 22px; width: 25px; height: 25px; float:right; background-image: url('../../images/exclamation-mark.jpg'); background-position:100% 0; background-repeat: no-repeat;}
-.flash-arrow-shadow {position: absolute; top: -13px; right: 158px; border-color: transparent transparent #F4F0B8; border-style: solid; border-width: 7px; float:right; height: 0; width: 0;}
-.flash-arrow {position: absolute; border-color: transparent transparent #FFFCD3; border-style: solid; border-width: 7px; right: -7px; top: -5px}
 
 .related-carrousel > .items {float:right; width: 100%}
 .related-carrousel > .items > li {width: 300px; background-color: #f7f9fa; display: none}
@@ -362,11 +355,7 @@ header > .right > .by-author {margin-top: 15px}
 
 .container > .aligned > .left-side {margin-bottom: 15px}
 .help-msg {
-left: inherit;
-right: -12px;
+right: inherit;
+left: -87px;
 top: 60px;
-
-}
-.help-msg.not_log{
-  width: 365px;
 }

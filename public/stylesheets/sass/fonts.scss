@@ -1,0 +1,63 @@
+@import "compass";
+
+html,
+body {-webkit-font-smoothing: antialiased}
+
+body,
+input {font-family: Arial, Helvetica;}
+
+/*a*/ @include font-face('GothamMediumRegular', font-files("/stylesheets/fonts/gotham-medium.ttf", "/stylesheets/fonts/gotham-medium.eot", "/stylesheets/fonts/gotham-medium.woff", "/stylesheets/fonts/gotham-medium.svg"));
+/*b*/ @include font-face('GothamBoldRegular', font-files("/stylesheets/fonts/gotham-bold.ttf", "/stylesheets/fonts/gotham-bold.eot", "/stylesheets/fonts/gotham-bold.woff", "/stylesheets/fonts/gotham-bold.svg"));
+/*c*/ @include font-face('Gotham-Light', font-files("/stylesheets/fonts/gotham-light.ttf", "/stylesheets/fonts/gotham-light.eot", "/stylesheets/fonts/gotham-light.woff", "/stylesheets/fonts/gotham-light.svg"));
+/*d*/ @include font-face('Museo500-Light', font-files("/stylesheets/fonts/museo500-light.ttf", "/stylesheets/fonts/museo500-light.eot", "/stylesheets/fonts/museo500-light.woff", "/stylesheets/fonts/museo500-light.svg"));
+/*e*/ @include font-face('Museo700-Sans', font-files("/stylesheets/fonts/museosans_700.ttf", "/stylesheets/fonts/museosans_700.eot", "/stylesheets/fonts/museosans_700.woff", "/stylesheets/fonts/museosans_700.svg"));
+/*f*/ @include font-face('Museo500-Regular', font-files("/stylesheets/fonts/Museo500-Regular.ttf", "/stylesheets/fonts/Museo500-Regular.eot", "/stylesheets/fonts/Museo500-Regular.woff", "/stylesheets/fonts/Museo500-Regular.svg"));
+/*g*/ @include font-face('Museo700-Regular', font-files("/stylesheets/fonts/Museo700-Regular.ttf", "/stylesheets/fonts/Museo700-Regular.eot", "/stylesheets/fonts/Museo700-Regular.woff", "/stylesheets/fonts/Museo700-Regular.svg"));
+/*h*/ @include font-face('Museo900-Bold', font-files("/stylesheets/fonts/museo900-bold.ttf", "/stylesheets/fonts/museo900-bold.eot", "/stylesheets/fonts/museo900-bold.woff", "/stylesheets/fonts/museo900-bold.svg"));
+
+/*a*/
+.sign-up-btn,
+.sec-title-med,
+#pageslide-slide-wrap > div h2,
+.hall-people > li > .honor-member-info > a,
+.my-topics-wrapper .is_empty .title,
+.stream-wrapper .is-empty,
+.modal header,
+.related-content > div > h2 {font-family: 'GothamMediumRegular'; font-weight: normal}
+
+/*b*/
+.sec-title,
+.h2,
+#join > a {font-family: "GothamBoldRegular"; font-weight: normal}
+
+/*c*/
+h1 {font-family: 'Gotham-Light'; font-weight: normal}
+
+/*d*/
+.feature-wrapper > h2 > span {font-family: 'Museo500-Light'; font-weight: normal}
+
+/*e*/
+.gloabl-counter > div > span,
+.gloabl-counter > div > ul > li {font-family: 'Museo700-Sans'; font-weight: normal}
+
+/*f*/
+.banner .slogan h2,
+.items-frontpage .topic-spotlight .title {font-family: 'Museo500-Regular', Helvetica, Arial; font-weight: normal}
+
+/*g*/
+.honor-member-info > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 > span {font-family: 'Museo700-Regular', Helvetica, Arial; font-weight: normal}
+
+/*h*/
+.feature-wrapper > h2 {font-family: 'Museo900-Bold'; font-weight: normal}
+
+.feature-wrapper > h2 {font-weight: bold}
+.feature-wrapper > h2 > span,
+.items-wrapper > section > h2,
+.hall-of-fame > .hall-header > h4 {font-weight: normal}
+
+@-moz-document url-prefix() {
+  .feature-wrapper > h2,
+  .feature-wrapper > h2 > span {font-weight: 100}
+}
