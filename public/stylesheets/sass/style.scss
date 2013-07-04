@@ -34,6 +34,8 @@ input[type=password],
 input[type=email],
 textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 #e1eaee #d9e2e6; cursor: text; font-size:13px}
 
+.container {max-width: 940px}
+
 .points-wrapper-small > span {border-width: 0}
 .light-button,
 .user-logged-info .points-wrapper-small {border: 1px solid; border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
@@ -251,7 +253,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .by-author {margin-right: 14px}
 h1 + .by-author {margin-top: 10px}
 .by-author,
-.tags > li{float: left; color: #bfbfbf}
+.tags > li{display: inline-block; color: #bfbfbf}
 .tags{display: inline; margin-right: 5px;}
 
 .footer-shadow{display: block; margin: 0 auto; display: block; background: url("../images/bg-footer.png") repeat scroll 0 0 transparent; margin-top: 30px; height: 60px;}
@@ -373,7 +375,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
   @include background-image(linear-gradient(top, #fbfeff, #f2fbff));
 }
 
-.responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px; display:inline!important; white-space:nowrap; float: left; font-size: 11px;}
+.responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px; display:inline-block; white-space:nowrap; font-size: 11px;}
 .tags{margin-right: 10px; margin-left: 10px}
 .tags > li:first-child{background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 20px;}
 .tags > .last-tag{margin-right: 10px;}

@@ -1,8 +1,8 @@
 .auth-submit{padding: 0 2px; border-bottom: none;}
 .auth-submit:hover{border-bottom: none;}
-.request-topic-wrapper{width: 137px;}   
+.request-topic-wrapper{width: 137px;}
 .sign-up-btn{background-color: #3a7ab9;}
-.user-wrapper{overflow: hidden;}                          
+.user-wrapper{overflow: hidden;}
 article > header .avatar-wrapper{text-align: center; z-index: 99;}
 .view-more{width: 76px;}
 .edit-profile{float:right; width: 100%;}
@@ -14,4 +14,3 @@ article > header .avatar-wrapper{text-align: center; z-index: 99;}
 .comm-wrap > div > p{z-index: -1;}
 .private-msg p {z-index: 1;}
 .article-wrapper{width: 100%; float:right;}
-#join > a > span{height: 63px; padding: 28px 0;}
