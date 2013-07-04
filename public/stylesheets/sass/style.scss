@@ -1,4 +1,4 @@
-@import "compass";
+@import "compass", "mixins";
 
 html {height: 100%}
 body {font-size: 13px; color: #61656a; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; background-color: #e3ecf0; background-image: url('../images/bg-noise-home.jpg'); background-repeat: repeat; background-attachment: fixed; height: 100%}
@@ -750,7 +750,10 @@ form + .recently-topics{padding-top:18px;}
 .hall-of-fame > .collapsed {height: 15px}
 .hall-of-fame > .collapsed .hall-people {display: none}
 
-.app-body-container {padding: 120px 0 150px}
+.app-body-container {padding: 120px 0 150px;
+  @include breakpoint(phone){padding-bottom: 20px}
+}
+
 footer {position: fixed; bottom: 0; width: 100%; z-index: 990}
 footer {border-top: 1px #c9cdd0 solid;
   @include box-shadow(inset 0 1px 0 #f6f9fa);

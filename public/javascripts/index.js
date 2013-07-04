@@ -1,6 +1,13 @@
-$(function(){
-    $('.video-player .preview-video').hide();
- //    $('.video-player .preview-image > a').bind('click', function() {
- //  		$(this).parent().hide().siblings('.preview-video').show();
-	// });
+$(function() {
+    // preview video
+    var player = $('.video-player'),
+        video = player.find('.preview-video'),
+        image = player.find('.preview-image');
+
+    video.hide();
+    image.find('a').bind('click', function (ev) {
+        ev.preventDefault();
+  		image.hide();
+        video.show();
+	});
 });

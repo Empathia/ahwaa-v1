@@ -3227,9 +3227,16 @@ form + .recently-topics {
 /* line 753, sass/style.scss */
 .app-body-container {
   padding: 120px 0 150px;
+  /* Landscape phones and down */
+}
+@media (max-width: 480px) {
+  /* line 753, sass/style.scss */
+  .app-body-container {
+    padding-bottom: 20px;
+  }
 }
 
-/* line 754, sass/style.scss */
+/* line 757, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -3237,7 +3244,7 @@ footer {
   z-index: 990;
 }
 
-/* line 755, sass/style.scss */
+/* line 758, sass/style.scss */
 footer {
   border-top: 1px #c9cdd0 solid;
   -webkit-box-shadow: inset 0 1px 0 #f6f9fa;
@@ -3251,41 +3258,41 @@ footer {
   background-image: linear-gradient(top, #f2f7f9, #eaf1f4);
 }
 
-/* line 760, sass/style.scss */
+/* line 763, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
 }
 
-/* line 761, sass/style.scss */
+/* line 764, sass/style.scss */
 .footer-container > span {
   float: left;
   color: #8f9aa4;
 }
 
-/* line 762, sass/style.scss */
+/* line 765, sass/style.scss */
 .footer-container > ul {
   float: right;
 }
 
-/* line 763, sass/style.scss */
+/* line 766, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
 
-/* line 764, sass/style.scss */
+/* line 767, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 
-/* line 766, sass/style.scss */
+/* line 769, sass/style.scss */
 .hall-people > li > .honor-member-info > a {
   font-size: 12px;
 }
 
-/* line 768, sass/style.scss */
+/* line 771, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -3293,7 +3300,7 @@ footer {
   left: 50%;
 }
 
-/* line 769, sass/style.scss */
+/* line 772, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -3310,7 +3317,7 @@ footer {
   border-radius: 3px;
 }
 
-/* line 772, sass/style.scss */
+/* line 775, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -3323,7 +3330,7 @@ footer {
   border-radius: 2px;
 }
 
-/* line 775, sass/style.scss */
+/* line 778, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
@@ -3331,7 +3338,7 @@ footer {
   height: 5px;
 }
 
-/* line 777, sass/style.scss */
+/* line 780, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -3342,13 +3349,13 @@ footer {
   border-style: solid;
 }
 
-/* line 778, sass/style.scss */
+/* line 781, sass/style.scss */
 .tooltip .arrow span {
   left: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
 
-/* line 779, sass/style.scss */
+/* line 782, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -3356,7 +3363,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 781, sass/style.scss */
+/* line 784, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -3368,7 +3375,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 782, sass/style.scss */
+/* line 785, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -3388,7 +3395,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 787, sass/style.scss */
+/* line 790, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -3408,7 +3415,7 @@ footer {
   border-radius: 2px 2px 0 0;
 }
 
-/* line 791, sass/style.scss */
+/* line 794, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -3429,17 +3436,17 @@ footer {
   border-radius: 9px;
 }
 
-/* line 795, sass/style.scss */
+/* line 798, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
 
-/* line 796, sass/style.scss */
+/* line 799, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
 
-/* line 797, sass/style.scss */
+/* line 800, sass/style.scss */
 .modal .body {
   background-color: #fff;
   color: #3d464c;
@@ -3453,30 +3460,30 @@ footer {
   border-radius: 0 0 3px 3px;
 }
 
-/* line 800, sass/style.scss */
+/* line 803, sass/style.scss */
 .modal .body p {
   margin-bottom: 20px;
 }
 
-/* line 801, sass/style.scss */
+/* line 804, sass/style.scss */
 .modal .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 802, sass/style.scss */
+/* line 805, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
 
-/* line 803, sass/style.scss */
+/* line 806, sass/style.scss */
 .points-table li {
   width: 50%;
   float: left;
 }
 
-/* line 804, sass/style.scss */
+/* line 807, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -3485,7 +3492,7 @@ footer {
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
 
-/* line 805, sass/style.scss */
+/* line 808, sass/style.scss */
 .points-table .points {
   display: block;
   float: left;
@@ -3493,7 +3500,7 @@ footer {
   font-size: 14px;
 }
 
-/* line 807, sass/style.scss */
+/* line 810, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -3504,7 +3511,7 @@ footer {
   height: 0;
 }
 
-/* line 808, sass/style.scss */
+/* line 811, sass/style.scss */
 .block_user {
   background: url("../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -3515,7 +3522,7 @@ footer {
   float: right;
 }
 
-/* line 816, sass/style.scss */
+/* line 819, sass/style.scss */
 .unblock_user {
   background: url("../images/check-mark.png") no-repeat transparent;
   width: 15px;
