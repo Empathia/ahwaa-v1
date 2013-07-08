@@ -152,13 +152,54 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 }
 .logo-wrapper.light {border-top: 1px solid #97a9ba}
 .logo-wrapper.dark {border-top: 1px solid #aabac9;}
-.header-wrapper{background-color: #ffffff; border-top: 1px solid #c3d2d9; height: 39px;
+.header-wrapper {background-color: #ffffff; border-top: 1px solid #c3d2d9; height: 39px;
   @include background-image(linear-gradient(top, #ffffff, #f0f0f0));
   @include box-shadow(inset 0 3px 0 #f7f7f7);
+}
+.header-tags{height: 100%; position:relative; overflow: hidden;
+  ul {border-left: 1px solid #e0e9ee; float: left; height: 100%;
+    li {float: left; height: 100%; border-right: 1px solid #e0e9ee;
+      a {text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight: bold; text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+        &:hover {background-color: #F6F9FC}
+      }
+    }
+  }
+
+  .more {position:relative;
+    > a{padding: 0 16px 0 20px; text-decoration:none; outline:0 none;
+      &:hover {border-bottom: 1px solid #EAEEF0;
+        span {background-position: 100% -19px}
+      }
+      span{background-image: url('../images/more.png'); background-repeat: no-repeat; background-position: 100% 6px; padding-right: 12px;}
+    }
+    &:hover {background-color:#f6f9fc; border-right-color:#dfe1ed}
+  }
+
   @include breakpoint(phone) {
     border-top: none;
+    ul {
+      float: none;
+      li {
+        float: none;
+        a {
+          @include box-sizing(border-box);
+        }
+      }
+    }
   }
 }
+
+.more-tags{min-width: 130px; background-color: #f6f9fc; position: absolute; top: 39px; display: none; left: 0; z-index: -1;
+  @include box-shadow(0px 1px 2px rgba(42, 83, 110, .6));
+  > .scroller { overflow:hidden; }
+  ul > li {height: 36px; border-bottom: 1px solid #e0e9ee; padding:0 15px; line-height: 3; font-weight:bold; white-space:nowrap;}
+  ul > li:last-child{border-bottom: none;}
+  ul > li > a {display: block}
+  > .arrow {text-align:center; background-color:#fff; display: block; position: relative; overflow: hidden; text-decoration:none; padding: 6px 0;}
+  > .scroll-up {border-bottom: 1px solid #eaeef0;}
+  > .scroll-down {border-top: 1px solid #eaeef0;}
+}
+
 .header-top{height: 71px; text-align: center; position: relative; margin-top: -1px}
 .topic{background: url('../images/ahwaa-logo.png') no-repeat center 0;
   @include breakpoint(phone){background: none}
@@ -275,31 +316,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
 .empty{background-position:0 -23px !important;}
 .slogan{text-align: center;}
-.header-tags{height: 100%; position:relative; overflow: hidden}
-.header-tags > ul{border-left: 1px solid #e0e9ee; float: left; height: 100%}
-.header-tags > ul > li {float: left; height: 100%; border-right: 1px solid #e0e9ee}
-.header-tags > ul > li > a {text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight: bold; text-shadow: 0 1px 1px rgba(255, 255, 255, 1)}
-  .header-tags > ul > li > a:hover {background-color: #F6F9FC}
-.header-tags .more {position:relative;}
-.header-tags .more > a{padding: 0 16px 0 20px;}
-.more > a{text-decoration:none; outline:0 none;}
-.more:hover > a{border-bottom: 1px solid #EAEEF0}
 
-.more > a > span{background-image: url('../images/more.png'); background-repeat: no-repeat; background-position: 100% 6px; padding-right: 12px;}
-.more:hover > a > span{background-position: 100% -19px;}
-
-.more-tags{min-width: 130px; background-color: #f6f9fc; position: absolute; top: 39px; display: none; left: 0; z-index: -1;
-  @include box-shadow(0px 1px 2px rgba(42, 83, 110, .6));
-}
-.more-tags > .scroller { overflow:hidden; }
-.more-tags ul > li {height: 36px; border-bottom: 1px solid #e0e9ee; padding:0 15px; line-height: 3; font-weight:bold; white-space:nowrap;}
-.more-tags ul > li:last-child{border-bottom: none;}
-.more-tags ul > li > a {display: block}
-.more-tags > .arrow {text-align:center; background-color:#fff; display: block; position: relative; overflow: hidden; text-decoration:none; padding: 6px 0;}
-.more-tags > .scroll-up {border-bottom: 1px solid #eaeef0;}
-.more-tags > .scroll-down {border-top: 1px solid #eaeef0;}
-
-.more:hover {background-color:#f6f9fc; border-right-color:#dfe1ed}
 .request-topic-wrapper{float: right; position: relative; margin-top: 21px;
   &:hover .tooltip-wrapper {display: block}
 }
