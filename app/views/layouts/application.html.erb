@@ -34,13 +34,38 @@
   <![endif]-->
 </head>
 <body>
+
+  <div class="mobile-menu-wrapper">
+    <div class="search-wrapper">
+      <div class="search" data-hansel-component-id="search">
+        <p class="border-all">
+          <%= text_field_tag 'query', '', :placeholder => t('.header.search_topics')%>
+          <span></span>
+        </p>
+        <div class="search-results-wrapper">
+          <a href="#" class="arrow scroll-up"><div><div></div></div></a>
+          <div class="search-results-scroller">
+            <ul class='search-results'></ul>
+          </div>
+          <a href="#" class="arrow scroll-down"><div><div></div></div></a>
+        </div>
+      </div>
+    </div>
+    <ul class="menu">
+      <li><a href="#">Sign Up</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Tags</a></li>
+    </ul>
+  </div>
+
   <div class="page-wrapper <%= 'rtl'.html_safe if rtl? %>">
     <%= print_flash %>
       <header>
         <div class="rainbow"></div>
         <div class="gray <%= current_page?(root_path) ? 'light' : 'dark' %>"></div>
         <div class="logo-wrapper <%= current_page?(root_path) ? 'light' : 'dark' %>">
-        <div class="aligned">
+        <div class="container">
           <div class="header-top <%= current_page?(root_path) ? 'homepage' : 'topic' %>">
             <div class="links">
               <% if !current_page?(root_path) %>
@@ -173,7 +198,8 @@
             <div class="request-topic-wrapper">
               <a href="<%= new_topic_request_path %>" title="<%= t('.header.request_topic.button') %>" class="request-topic border-all light-button <%= 'disabled' if !logged_in? %> <%= 'active' if logged_in? %>">
                 <span class="border-all">
-                  <span><%= t('.header.request_topic.button')%></span>
+                  <span class="text"><%= t('.header.request_topic.button')%></span>
+                  <i class="icon"></i>
                 </span>
               </a>
               <span class="tooltip-wrapper">
