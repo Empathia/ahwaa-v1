@@ -155,12 +155,23 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .header-wrapper {background-color: #ffffff; border-top: 1px solid #c3d2d9; height: 39px;
   @include background-image(linear-gradient(top, #ffffff, #f0f0f0));
   @include box-shadow(inset 0 3px 0 #f7f7f7);
+
+  @include breakpoint(phone) {
+    display: none;
+    height: 100%;
+  }
 }
-.header-tags{height: 100%; position:relative; overflow: hidden;
+
+.header-tags {height: 100%; position: relative; overflow: hidden;
   ul {border-left: 1px solid #e0e9ee; float: left; height: 100%;
     li {float: left; height: 100%; border-right: 1px solid #e0e9ee;
       a {text-transform: capitalize; padding: 0 20px; height: 100%; line-height: 3; float: left; font-weight: bold; text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
         &:hover {background-color: #F6F9FC}
+      }
+      &.hide {
+        visibility: hidden;
+        position: absolute;
+        display: block;
       }
     }
   }
@@ -173,29 +184,53 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
       span{background-image: url('../images/more.png'); background-repeat: no-repeat; background-position: 100% 6px; padding-right: 12px;}
     }
     &:hover {background-color:#f6f9fc; border-right-color:#dfe1ed}
+
+    li {
+      &.hide {
+        visibility: hidden;
+        position: absolute;
+        display: block;
+      }
+    }
   }
 
   @include breakpoint(phone) {
     border-top: none;
-    ul {
-      float: none;
-      li {
-        float: none;
-        a {
+    ul {float: none;
+      li {float: none;
+        &.hide {
+          visibility: visible;
+          position: relative;
+          display: block;
+        }
+        a {width: 100%;
           @include box-sizing(border-box);
         }
       }
     }
+    .more {display: none}
   }
 }
 
-.more-tags{min-width: 130px; background-color: #f6f9fc; position: absolute; top: 39px; display: none; left: 0; z-index: -1;
+.more-tags {
+  min-width: 130px; background-color: #f6f9fc; position: absolute; top: 39px; display: none; left: 0; z-index: -1;
   @include box-shadow(0px 1px 2px rgba(42, 83, 110, .6));
   > .scroller { overflow:hidden; }
-  ul > li {height: 36px; border-bottom: 1px solid #e0e9ee; padding:0 15px; line-height: 3; font-weight:bold; white-space:nowrap;}
+  ul > li {
+    height: 36px;
+    width: 100%;
+    border-bottom: 1px solid #e0e9ee;
+    line-height: 3;
+    font-weight:bold;
+    white-space:nowrap;
+  }
   ul > li:last-child{border-bottom: none;}
-  ul > li > a {display: block}
-  > .arrow {text-align:center; background-color:#fff; display: block; position: relative; overflow: hidden; text-decoration:none; padding: 6px 0;}
+  ul > li > a {display: block; float: none}
+  > .arrow {text-align:center; background-color:#fff; display: block; position: relative; overflow: hidden; text-decoration:none; padding: 6px 0;
+    > div {position: relative; left: 50%; float: left;
+      > div{position: relative; left: -50%; float: left; border-style: solid; height: 0; width: 0}
+    }
+  }
   > .scroll-up {border-bottom: 1px solid #eaeef0;}
   > .scroll-down {border-top: 1px solid #eaeef0;}
 }
@@ -302,10 +337,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .search-results-wrapper > .arrow {text-align: center; background-color: #fbfbfb; text-decoration: none; position: relative; overflow: hidden; display: block; padding: 6px 0}
 
 .search-results-wrapper > .arrow > div,
-.more-tags > .arrow > div {position: relative; left: 50%; float: left}
-
 .search-results-wrapper > .arrow > div > div,
-.more-tags > .arrow > div > div{position: relative; left: -50%; float: left; border-style: solid; height: 0; width: 0}
 .search-results-wrapper > .scroll-up {border-bottom: 1px solid #EAEEF0}
 .search-results-wrapper > .scroll-down{border-top: 1px solid #EAEEF0}
 

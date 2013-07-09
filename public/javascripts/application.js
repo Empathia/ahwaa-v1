@@ -84,12 +84,6 @@ $(function() {
         $('.pageslide-body-wrap').addClass('jlo');
     });
 
-    $('.more').hover(function () {
-        $(this).find('.more-tags').show();
-    }, function () {
-        $(this).find('.more-tags').hide();
-    });
-
     $('.need-help').click(function (e) {
         $('.help-msg.tooltip-box').fadeIn(100);
     });
