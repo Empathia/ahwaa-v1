@@ -25,7 +25,6 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
     .article-tags {min-width: 100%;
       @include box-sizing(border-box);
     }
-    .social-bookmarkers {margin-top: 15px; height: 15px}
   }
 }
 
@@ -48,6 +47,14 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
   .flash-privacy {position: absolute; top: 12px; right: 60px; margin-top: 20px; white-space: nowrap; padding-left: 6px; display: none; z-index: 100;
     > div{padding-left: 50px}
     .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;}
+  }
+
+  @include breakpoint(phone) {
+    margin-top: 15px;
+    height: 30px;
+    // .facebook {
+    //   display: none;
+    // }
   }
 }
 
@@ -237,7 +244,11 @@ a.no_comments{
   @include opacity(0.5);
   @include background-image(linear-gradient(top, #f8fbfc, #dee5e9));
 }
-.topic-content {padding: 14px 30px 24px}
+.topic-content {padding: 14px 30px 24px;
+  @include breakpoint(phone) {
+    padding: 0 20px 20px;
+  }
+}
 .topic-content .icn{position: relative; text-decoration: none; text-align: center; z-index: 1;}
 .icn > span{position: absolute; width: 78px; height: 29px; background-color: red; display: none; left: -31px; top: -40px; color: #ffffff; font-size: 12px; font-style: normal; line-height: 2.5; background-color: #3c454f; background-color: rgba(60, 69, 79, .92); text-align: center;}
 .tta{border-style: solid; border-width: 5px 5px 0px; float: left; height: 0px; left: 34px; width: 0px; position: absolute; bottom: -5px; border-color: #3c454f transparent transparent; border-color: rgba(60, 69, 79, .92) transparent transparent;}
@@ -246,33 +257,38 @@ p:hover .icn{display: inline;}
 
 header > .right > .by-author {margin-top: 15px}
 
-#font-size-controls > span {float: right}
-#font-size-controls .increase,
-#font-size-controls .decrease {float: left; background-color: #fafafa; border: 1px solid #d5d5d5; padding: 3px 5px;
-  @include background-image(linear-gradient(top, #ffffff, #f6f6f6));
+#font-size-controls {
+  > span {float: right}
+  .increase,
+  .decrease {
+    float: left; background-color: #fafafa; border: 1px solid #d5d5d5; padding: 3px 5px;
+    @include background-image(linear-gradient(top, #ffffff, #f6f6f6));
+    &:hover {background: #ffffff}
+    &:active {
+      @include background-image(linear-gradient(top, #ececec, #fefefe));
+      @include box-shadow(inset 0 0 0 1px #fff);
+    }
+  }
+  .increase {border-right-width: 0;
+    @include border-radius(2px 0 0 2px);
+    @include box-shadow(inset 0 -1px 0 #fff, inset 1px 0 0 #fff);
+    span {background-position: 0 0}
+    &:hover span,
+    &:active span {background-position: 0 -12px}
+  }
+  .decrease {
+    @include border-radius(0 2px 2px 0);
+    @include box-shadow(inset 0 -1px 0 #fff, inset -1px 0 0 #fff);
+    span {background-position: -21px 0}
+    &:hover span,
+    &:active span {background-position: -21px -12px}
+  }
+  a > span {display: block; width: 21px; height: 12px; background-image: url('../images/font-size-controllers.png'); text-indent: -9999px; line-height: 0}
+
+  @include breakpoint(phone) {
+    display: none;
+  }
 }
-#font-size-controls .increase {border-right-width: 0;
-  @include border-radius(2px 0 0 2px);
-  @include box-shadow(inset 0 -1px 0 #fff, inset 1px 0 0 #fff);
-}
-#font-size-controls .decrease {
-  @include border-radius(0 2px 2px 0);
-  @include box-shadow(inset 0 -1px 0 #fff, inset -1px 0 0 #fff);
-}
-#font-size-controls .increase:hover,
-#font-size-controls .decrease:hover {background: #ffffff}
-#font-size-controls .increase:active,
-#font-size-controls .decrease:active {
-  @include background-image(linear-gradient(top, #ececec, #fefefe));
-  @include box-shadow(inset 0 0 0 1px #fff);
-}
-#font-size-controls a > span {display: block; width: 21px; height: 12px; background-image: url('../images/font-size-controllers.png'); text-indent: -9999px; line-height: 0}
-#font-size-controls .increase span {background-position: 0 0}
-#font-size-controls .decrease span {background-position: -21px 0}
-#font-size-controls .increase:hover span,
-#font-size-controls .increase:active span {background-position: 0 -12px}
-#font-size-controls .decrease:hover span,
-#font-size-controls .decrease:active span {background-position: -21px -12px}
 
 .related-carrousel {position: relative; margin-bottom: 17px}
 .filter-responses > li{margin-bottom: 12px; float:left; min-width: 100px;}
