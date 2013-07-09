@@ -11,15 +11,26 @@
 }
 
 body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-.article-tags{max-width: 180px; background-image: url('../images/tag.png'); width: 220px; background-repeat: no-repeat; background-position: 0 3px; padding-left: 22px; color: #468AC4; float: left;
-  > li{display: inline}
-}
 
 .left-side{float: left; width:700px;
   @include breakpoint(phone) {float: none; width: auto;}
 }
-.topic-info {overflow: hidden; float: left; width: 290px; margin-top: 15px;
+.topic-info {overflow: hidden; float: left; width: 50%; margin-top: 15px;
   &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
+  li {float: left}
+
+  @include breakpoint(phone) {
+    margin-top: 5px; width: 100%;
+    .by-author {width: 100%; margin-bottom: 10px}
+    .article-tags {min-width: 100%;
+      @include box-sizing(border-box);
+    }
+    .social-bookmarkers {margin-top: 15px; height: 15px}
+  }
+}
+
+.article-tags{max-width: 165px; background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 22px; color: #468AC4; float: left;
+  > li{display: inline}
 }
 
 .social-bookmarkers {position: relative; float: right; margin-top: 10px;

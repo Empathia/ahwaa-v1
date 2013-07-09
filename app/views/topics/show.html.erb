@@ -28,7 +28,7 @@
               <%= render :partial => 'users/card', :locals => {:user => @topic.user} %>
             <% end %>
           </div>
-          <div class="right">
+          <div class="right clearfix">
             <h1><%= @topic.title %></h1>
             <ul class="topic-info">
               <li class="by-author"><%= t '.by', :author => @topic.author_username %></li>
