@@ -132,6 +132,10 @@ body {
     &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
     > li {float: left; margin-right: 15px}
     .recently-topics > ul > li {float: none; margin-right: 0}
+
+    @include breakpoint(phone) {
+      display: none;
+    }
   }
   .avatar-wrapper {max-width: 50px;
     @include breakpoint(phone) {pointer-events: none}
