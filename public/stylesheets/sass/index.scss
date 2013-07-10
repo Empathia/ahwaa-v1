@@ -34,13 +34,22 @@ body {
 }
 .feature {background-color: #ffffff; height: 175px; border: 1px solid #a8bfcb; float: left; width: 100%; margin-top: 9px;}
 .feature-image {float: left}
-.video-player {height: 259px; background-color: rgba(0, 0, 0, .16); padding: 6px; margin: 0 28px;
+.video-player {position: relative;
+  height: 259px; padding: 6px; margin: 0 28px;
+  background-color: rgba(0, 0, 0, .16);
   @include border-radius(3px);
   @include box-shadow(0 1px 0 0 rgba(255, 255, 255, .23), inset 0 0 1px 1px rgba(0, 0, 0, .39));
-  @include breakpoint(phone) {margin: 0 15px}
+  &:before {content: "LOADING..."; position: absolute; display: inline-block; left: 50%;
+    padding: 7px 14px; margin: 110px 0 0 -51px; font-weight: bold;
+    color: #c3d0d9; background-color: rgba(0,0,0,.3); border-radius: 4px;
+  }
+
   .preview-image,
   .preview-video {height: 100%; position: relative}
-  .preview-image {background: transparent url('../images/img-video-preview.jpg') 0 0 no-repeat; background-size: cover;
+
+  .preview-image {
+    background: transparent url('../images/img-video-preview.jpg') 0 0 no-repeat;
+    background-size: cover;
     a {padding: 1px; position: absolute; z-index: 2; left: 50%; top: 50%; margin-top: -24px; margin-left: -40px;
       @include border-radius(3px);
       @include box-shadow(0 0 5px 0 rgba(0, 26, 51, .8));
@@ -56,8 +65,12 @@ body {
       @include background-image(linear-gradient(top, #f6fafc, #dcedf5));
     }
   }
-  .preview-video {display: none;
+  .preview-video {
     iframe {width: 100%; height: 100%}
+  }
+
+  @include breakpoint(phone) {
+    margin: 0 15px;
   }
 }
 

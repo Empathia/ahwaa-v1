@@ -371,12 +371,18 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   }
 }
 
-.tags > li {margin-right: 4px}
+.tags {
+  display: inline; margin-right: 10px; margin-left: 10px;
+  > li {
+    margin-right: 4px; display: inline-block; color: #bfbfbf;
+    &:first-child{background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 20px;}
+    &.last-tag {margin-right: 10px}
+  }
+}
+
 .by-author {margin-right: 14px}
 h1 + .by-author {margin-top: 10px}
-.by-author,
-.tags > li{display: inline-block; color: #bfbfbf}
-.tags{display: inline; margin-right: 5px;}
+.by-author {display: inline-block; color: #bfbfbf}
 
 .footer-shadow{display: block; margin: 0 auto; display: block; background: url("../images/bg-footer.png") repeat scroll 0 0 transparent; margin-top: 30px; height: 60px;}
 
@@ -498,9 +504,6 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 }
 
 .responses {background-color: transparent; background-image: url("../images/icn-responses.png"); background-repeat: no-repeat; background-attachment: scroll; background-position: 0 4px; padding-left:15px; display:inline-block; white-space:nowrap; font-size: 11px;}
-.tags{margin-right: 10px; margin-left: 10px}
-.tags > li:first-child{background-image: url('../images/tag.png'); background-repeat: no-repeat; background-position: 0 3px; padding-left: 20px;}
-.tags > .last-tag{margin-right: 10px;}
 .response-wrapper{border: 1px solid #daecf3; position: relative;}
 .response-wrapper > div{border: 2px solid #e9f0f3; overflow: hidden; position: relative; background-color: #ffffff;}
 .response-wrapper.new-response{border: 2px solid #f0f5f8; font-size: 11px;}
