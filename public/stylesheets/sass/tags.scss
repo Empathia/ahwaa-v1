@@ -2,7 +2,7 @@
 
 body {background-image:url("../images/bg-noise-topic.jpg")}
 
-.container {padding-top: 20px;
+.container {//padding-top: 20px;
   @include breakpoint(phone) {padding: 0}
 }
 

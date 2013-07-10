@@ -5,7 +5,6 @@ body {
 
 /* line 5, sass/tags.scss */
 .container {
-  padding-top: 20px;
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
