@@ -60,6 +60,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 
   @include breakpoint(phone) {
     margin-top: 15px;
+    margin-left: -80px;
     height: 30px;
     // .facebook {
     //   display: none;
@@ -222,7 +223,16 @@ section.need-help {padding:13px 0; text-align:center}
 
 .res-username{margin-bottom:7px; padding-top: 3px; color: #a1b6bf;}
 .res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}
-.res-flag-btns{float: right; display: none; position: absolute; right: 13px; top: 33px;}
+.res-flag-btns{float: right; display: none; position: absolute; right: 13px; top: 33px;
+  @include breakpoint(phone) {
+    display: block !important;
+    .flag {padding: 0 5px 0 10px;
+      span {display: inline-block; text-indent: -9999px;
+        background-position: 0 4px;
+      }
+    }
+  }
+}
 .res-flag-btns > a{height: 20px; padding: 0 10px; line-height: 1.5; margin-right: 10px; text-decoration: none;}
 .flag > span{background-image: url('../images/flags.png'); background-repeat: no-repeat; padding-left: 17px; background-position: 0 2px;}
 .sign-up-tt-wrapper{ position: absolute; top: 0; left: 0; display: none; z-index: 1; width: 134px; padding-bottom: 10px;}
