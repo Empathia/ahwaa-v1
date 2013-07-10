@@ -246,7 +246,11 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   > .scroll-down {border-top: 1px solid #eaeef0;}
 }
 
-.header-top{height: 71px; text-align: center; position: relative; margin-top: -1px}
+.header-top{height: 71px; text-align: center; position: relative; margin-top: -1px;
+  @include breakpoint(phone) {
+    height: 50px;
+  }
+}
 .topic{background: url('../images/ahwaa-logo.png') no-repeat center 0;
   @include breakpoint(phone){background: none}
 }
@@ -898,7 +902,7 @@ form + .recently-topics{padding-top:18px;}
 
 .app-body-container {padding: 120px 0 150px;
   @include breakpoint(phone) {
-    padding: 70px 0 0;
+    padding: 50px 0 0;
     // height: 100%;
     // overflow: auto;
   }
