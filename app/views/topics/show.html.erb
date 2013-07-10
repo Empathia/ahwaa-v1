@@ -177,7 +177,6 @@
     <% related_topics = @topic.related_topics unless current_user %>
     <%= render :partial => 'related_topics', :locals => {:related_topics => related_topics} %>
   </div>
-  <br class="clear">
 </div>
 <%= form_for Reply.new, :url => topic_replies_path(@topic), :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>
   <span class="comm-arrow"></span>

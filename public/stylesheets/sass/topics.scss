@@ -1,7 +1,7 @@
 @import "compass", "mixins";
 
 .app-body-container .container {padding-top: 20px;
-  @include breakpoint(phone){padding: 0 0 20px}
+  @include breakpoint(phone){padding: 0}
 }
 
 .content{position: relative; margin-bottom: 20px;
@@ -19,6 +19,9 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .left-side{float: left; width:700px;
   @include breakpoint(phone) {
     width: auto;
+    .container-soft-box-shadow {
+      border-radius: 0;
+    }
   }
 }
 .topic-info {overflow: hidden; float: left; width: 50%; margin-top: 15px;
