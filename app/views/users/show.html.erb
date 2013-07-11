@@ -1,6 +1,6 @@
 <% javascript 'user_panel' %>
 <% stylesheet 'user_panel' %>
-<div class="aligned panel border-all">
+<div class="container panel border-all">
   <div class="container-soft-box-shadow pm-panel border-all <%= "new-user" if current_user.profile.empty? %>">
       <section class="avatars-wrapper" data-hansel-compenent-id="profile-avatar">
         <h2 class="regular pm-panel-padding"><%= t('.content.avatars.suggested') %></h2>
@@ -95,7 +95,7 @@
                     </div>
                 </li>
               </ul>
-              <br class="clear">
+
           </section>
           <section>
               <div class="usr-sec-title">
@@ -130,12 +130,12 @@
                   </div>
                 </li>
               </ul>
-              <br class="clear">
+
           </section>
         <% end %>
       </div>
     </div>
-    <br class="clear">
+
   </aside>
-  <br class="clear">
+
 </div>
