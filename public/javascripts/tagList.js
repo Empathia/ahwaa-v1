@@ -39,7 +39,6 @@ Class('TagList')({
             $(window).bind('resize.tags', function () {
                 if ( timer ) clearTimeout( timer );
                 timer = setTimeout(function () {
-                    console.log("resize");
                     _this.filterTags();
                 }, 1000);
             });

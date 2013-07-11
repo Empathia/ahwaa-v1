@@ -1,11 +1,11 @@
 <% javascript 'include/ba-bbq', 'inbox' %>
 <% stylesheet 'messages' %>
 
-<div class="aligned">
+<div class="container">
   <div class="content messages-wrapper">
     <%= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow">
-        <section id="pm-wrapper" data-hansel-component-id="user-messages"> 
+        <section id="pm-wrapper" data-hansel-component-id="user-messages">
           <%= render :partial => 'inbox', :object => @messages %>
         </section>
     </div>

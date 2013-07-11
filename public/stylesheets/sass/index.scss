@@ -15,6 +15,10 @@ body {
   );
   background-position: 0 0, 0 0, 50% 100%, 0 0;
   background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+
+  @include breakpoint(phone) {
+    padding-bottom: 20px;
+  }
 }
 .slogan {overflow: hidden; margin-bottom: 15px;
   h1 {width: 100%; max-width: 271px; height: 58px; margin: 0 auto; text-indent: -9999px;

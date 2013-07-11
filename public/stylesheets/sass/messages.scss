@@ -1,0 +1,127 @@
+@import "compass", "mixins";
+
+.messages-wrapper {position: relative;
+  h3.pm-panel-padding {margin-top: 20px}
+  .right-side {
+    background: url("../images/bg-article.png") repeat-x scroll 0 1px #FFFFFF;
+    float: right;
+    width: 780px;
+    .messages-title h2 {
+      float: left;
+      font-family: 'GothamMediumRegular';
+      font-size: 17px;
+      font-weight: normal;
+    }
+  }
+  .delete-message .opt-delete {background-image: url('../images/icn-options-user.png'); background-position: 0 -13px; border-color: transparent; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
+
+  @include breakpoint(phone) {
+    .right-side {width: auto}
+  }
+}
+
+.message-data {
+  float: left; width: 520px; margin-left: 10px;
+  .msg a {color: #494b4c; font-size: 13px}
+  > .from > a {font-size: 13px; float: left; padding-top: 11px}
+}
+.message-title { padding-bottom: 10px; }
+
+.from {padding-bottom: 10px; overflow: hidden;
+  > a > span{float: left; margin-right: 3px;}
+  .display-pm{color: #468ac4; font-weight: bold;
+    &:hover{text-decoration: underline;}
+  }
+}
+
+.delete-message {float: right; width: 110px; position: relative; top: 22px;
+  > .date {font-size: 11px; color: #a1aab2; float: right; padding: 3px 10px 0 0}
+  > a {float: right; padding: 2px 2px 2px 3px; width: 12px; height: 12px; margin-top: -2px}
+}
+.opt-reply {height: 16px; left: -22px; top: 33px; padding: 0; position: absolute; width: 16px; text-indent: -9999px; font-size: 0; line-height: 0;
+  background: url('../images/icn-reply-drk.png') 0 0; background-repeat: no-repeat;
+  &:hover {background-position: -16px 0}
+}
+.new > .opt-reply {background-image: url('../images/icn-new-message-indicator.png'); background-repeat: no-repeat}
+
+#pm-wrapper .messages {padding: 20px 20px 40px 30px}
+.messages > li {
+  position: relative;
+  width: auto;
+  background-color: #FBFBFB;
+  border: 1px solid #dfe2e6;
+  margin-bottom: 20px;
+  padding: 10px 11px 10px 9px;
+  @include box-shadow(inset 0 0 0 1px #fff);
+  &.new {background-color: #f2f9ff; border-color: #398fe5;
+    @include box-shadow(0 0 5px rgba(76, 166, 255, .3), inset 0 0 0 1px #fff);
+  }
+}
+
+.pm-panel-padding {padding: 0 20px 20px 20px}
+
+.pm-details{font-size: 12px; padding-top: 20px}
+.pm-user{margin-bottom: 20px}
+.pm-user-response{color: #b3b8bc; padding: 20px 0 10px}
+.pm-user-response > a{color: #5e5e5e; font-weight: bold;}
+.pm-user .avatar-wrapper{margin-right: 14px; z-index: 1;}
+.pm-user-details{color: #b3b8bc; margin-top: 10px; float: left; width: 536px;}
+.pm-user-details > div{margin-bottom: 5px;}
+.pm-user-details a{color: #468ac4; font-weight: bold;}
+.pm-message{color: #3f4245; line-height: 18px; border-bottom: 1px solid #dae0e5; padding-bottom: 20px}
+
+#pm-wrapper strong{color:black}
+.hide{display: none;}
+.response-wrapper{margin: 0 0 11px 0; width: 660px; border: none;}
+.new_private_message > .btn-gradient{padding: 5px 9px; display: none;}
+
+.pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
+.pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
+
+.back-to-msgs {float: right; font-size: 12px; margin-top: -7px}
+.back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
+
+.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px; width: 646px; max-width: 646px}
+
+.replies-wrapper {float: left;
+  > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0 17px; float: left;
+    > .avatar-wrapper {margin-right: 10px}
+    > .message-data {float: left; margin-left: 0; width: 666px;
+      > .from {padding-bottom: 5px;
+        > a {float: left; font-size: 13px; font-weight: bold; padding-top: 0}
+        > .date {color: #A1AAB2; float: right; font-size: 11px}
+      }
+      > .msg {line-height: 20px; width: 550px}
+    }
+  }
+}
+
+.my-messages-reply-wrapper {float: left; padding: 20px 0;
+  > .avatar-wrapper {margin-right: 10px}
+  > form {
+    float: left;
+    > a {font-weight: bold; padding-bottom: 5px; display: block}
+  }
+}
+
+.btn-gradient {clear: left; border: 1px solid;
+  border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
+  text-align: center;
+  font-weight: bold;
+  height: 24px;
+  font-family: Arial;
+  font-size: 12px;
+  color: #2D70B3;
+  text-shadow: 0 1px 0 #fff;
+  background-color: #fafcfd;
+  @include background-image(linear-gradient(top, #fafcfd, #ecf4f9));
+  @include box-shadow(inset 0 0 1px rgba(255, 255, 255, .75));
+  @include border-radius(3px);
+}
+.btn-gradient:hover {cursor: pointer; background-color: #ecf4f9;
+  @include background-image(linear-gradient(top, #ecf4f9, #fafcfd));
+}
+.btn-gradient:active {
+  border-color: #a0b0c0 #c8d4e1 #cfdae6;
+  @include background-image(linear-gradient(top, #eaf7fd, #f9fdfe));
+}

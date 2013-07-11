@@ -1,24 +1,24 @@
 <% javascript 'user-nav' %>
 <% if @user == current_user %>
-  <aside class="panel-sub-nav">
+  <aside class="panel-sub-nav stream-user-nav">
     <ul class="sub-nav">
       <li class="<%= 'active' if current_page?(stream_path) %>">
         <%= link_to stream_path, :class => 'stream' do %>
           <span class="icon"></span>
-          <%= t '.stream' %>
+          <span class="text"><%= t '.stream' %></span>
         <% end %>
       </li>
       <li class="<%= 'active' if current_page?(inbox_user_path) %>">
         <%= link_to inbox_user_path, :class => 'messages' do %>
           <span class="icon"></span>
-          <%= t '.messages' %>
+          <span class="text"><%= t '.messages' %></span>
           <span class="badge"><%= current_user.received_messages.unread.size %></span>
         <% end %>
       </li>
       <li class="<%= 'active' if current_page?(my_topics_path) %>">
         <%= link_to my_topics_path, :class => 'my-topics' do %>
           <span class="icon"></span>
-          <%= t '.my_topics' %>
+          <span class="text"><%= t '.my_topics' %></span>
         <% end %>
       </li>
     </ul>
@@ -57,7 +57,7 @@
           </div>
         <% end %>
       </div>
-      
+
       <% end %>
   </aside>
 <% end %>
