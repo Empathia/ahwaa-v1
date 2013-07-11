@@ -3276,6 +3276,7 @@ form + .recently-topics {
     padding: 0 10px 0 0;
     vertical-align: top;
     border: none;
+    font-size: 11px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
@@ -3283,17 +3284,17 @@ form + .recently-topics {
     border-radius: 0px;
     background-color: #dce2e9;
   }
-  /* line 999, sass/style.scss */
+  /* line 1000, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li .icon {
     margin: 0 -5px 0 3px;
   }
-  /* line 1000, sass/style.scss */
+  /* line 1001, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li > a .badge {
     float: none;
     margin-left: 5px;
     margin-right: 0;
   }
-  /* line 1005, sass/style.scss */
+  /* line 1006, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li.active {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -3304,7 +3305,7 @@ form + .recently-topics {
   }
 }
 
-/* line 1015, sass/style.scss */
+/* line 1016, sass/style.scss */
 .header-title-bg {
   background-color: #FCFCFC;
   border-bottom: 1px solid #DBDFE3;
@@ -3321,7 +3322,7 @@ form + .recently-topics {
 }
 
 /* Hall of Fame */
-/* line 1021, sass/style.scss */
+/* line 1022, sass/style.scss */
 .hall-of-fame {
   position: fixed;
   bottom: 26px;
@@ -3329,16 +3330,16 @@ form + .recently-topics {
   padding: 0;
   z-index: 990;
 }
-/* line 1023, sass/style.scss */
+/* line 1024, sass/style.scss */
 .hall-of-fame > .collapsed {
   height: 15px;
 }
-/* line 1025, sass/style.scss */
+/* line 1026, sass/style.scss */
 .hall-of-fame > .collapsed .hall-people {
   display: none;
 }
 
-/* line 1029, sass/style.scss */
+/* line 1030, sass/style.scss */
 .hall-header {
   width: 196px;
   height: 31px;
@@ -3346,7 +3347,7 @@ form + .recently-topics {
   text-shadow: 0 1px 0 #ffffff;
   position: relative;
 }
-/* line 1031, sass/style.scss */
+/* line 1032, sass/style.scss */
 .hall-header > h4 {
   position: absolute;
   margin: 0;
@@ -3356,7 +3357,7 @@ form + .recently-topics {
   width: 191px;
   top: 1px;
 }
-/* line 1033, sass/style.scss */
+/* line 1034, sass/style.scss */
 .hall-header > h4 > span {
   width: 126px;
   color: #7e91a6;
@@ -3370,12 +3371,12 @@ form + .recently-topics {
   cursor: pointer;
   top: 9px;
 }
-/* line 1034, sass/style.scss */
+/* line 1035, sass/style.scss */
 .hall-header > h4.closed > span {
   background-position: 50% 100%;
 }
 
-/* line 1038, sass/style.scss */
+/* line 1039, sass/style.scss */
 .hall-footer {
   background-color: #edf2f4;
   border-top: 1px #c5cace solid;
@@ -3386,44 +3387,44 @@ form + .recently-topics {
   background-image: linear-gradient(top, #edf2f4, #e4eaed);
 }
 
-/* line 1042, sass/style.scss */
+/* line 1043, sass/style.scss */
 .hall-people {
   display: block;
   clear: both;
   height: 67px;
   padding-top: 21px;
 }
-/* line 1043, sass/style.scss */
+/* line 1044, sass/style.scss */
 .hall-people > li {
   float: left;
   width: 165px;
   margin-right: 85px;
 }
-/* line 1045, sass/style.scss */
+/* line 1046, sass/style.scss */
 .hall-people > li .avatar-wrapper {
   float: left;
 }
-/* line 1047, sass/style.scss */
+/* line 1048, sass/style.scss */
 .hall-people > li .avatar-wrapper a {
   display: block;
 }
-/* line 1050, sass/style.scss */
+/* line 1051, sass/style.scss */
 .hall-people > .last {
   margin-right: 0;
 }
-/* line 1051, sass/style.scss */
+/* line 1052, sass/style.scss */
 .hall-people .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 1052, sass/style.scss */
+/* line 1053, sass/style.scss */
 .hall-people .avatar > span {
   top: 32px;
   left: 9px;
   z-index: 2;
 }
-/* line 1053, sass/style.scss */
+/* line 1054, sass/style.scss */
 .hall-people .avatar > .honor-member {
   width: 72px;
   height: 52px;
@@ -3435,16 +3436,16 @@ form + .recently-topics {
   top: 4px;
   left: -12px;
 }
-/* line 1055, sass/style.scss */
+/* line 1056, sass/style.scss */
 .hall-people > .honor-member-info {
   margin-left: 69px;
 }
-/* line 1057, sass/style.scss */
+/* line 1058, sass/style.scss */
 .hall-people > .honor-member-info > a {
   text-transform: capitalize;
   font-size: 12px;
 }
-/* line 1058, sass/style.scss */
+/* line 1059, sass/style.scss */
 .hall-people > .honor-member-info > span {
   display: block;
   font-size: 11px;
@@ -3454,19 +3455,19 @@ form + .recently-topics {
   margin: 8px 0 3px;
 }
 
-/* line 1062, sass/style.scss */
+/* line 1063, sass/style.scss */
 .app-body-container {
   padding: 120px 0 150px;
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1062, sass/style.scss */
+  /* line 1063, sass/style.scss */
   .app-body-container {
     padding: 50px 0 0;
   }
 }
 
-/* line 1068, sass/style.scss */
+/* line 1069, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -3485,38 +3486,38 @@ footer {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1068, sass/style.scss */
+  /* line 1069, sass/style.scss */
   footer {
     position: relative;
   }
 }
 
-/* line 1080, sass/style.scss */
+/* line 1081, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
 }
-/* line 1082, sass/style.scss */
+/* line 1083, sass/style.scss */
 .footer-container > span {
   float: left;
   color: #8f9aa4;
 }
-/* line 1083, sass/style.scss */
+/* line 1084, sass/style.scss */
 .footer-container > ul {
   float: right;
 }
-/* line 1085, sass/style.scss */
+/* line 1086, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
-/* line 1086, sass/style.scss */
+/* line 1087, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 
-/* line 1091, sass/style.scss */
+/* line 1092, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -3524,7 +3525,7 @@ footer {
   left: 50%;
 }
 
-/* line 1092, sass/style.scss */
+/* line 1093, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -3540,7 +3541,7 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1094, sass/style.scss */
+/* line 1095, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -3552,14 +3553,14 @@ footer {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 1097, sass/style.scss */
+/* line 1098, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 5px;
 }
-/* line 1100, sass/style.scss */
+/* line 1101, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -3569,12 +3570,12 @@ footer {
   border-width: 4px 4px 0;
   border-style: solid;
 }
-/* line 1101, sass/style.scss */
+/* line 1102, sass/style.scss */
 .tooltip .arrow span {
   left: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
-/* line 1102, sass/style.scss */
+/* line 1103, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -3582,7 +3583,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 1106, sass/style.scss */
+/* line 1107, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -3594,7 +3595,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 1107, sass/style.scss */
+/* line 1108, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -3614,7 +3615,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1112, sass/style.scss */
+/* line 1113, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -3633,7 +3634,7 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1115, sass/style.scss */
+/* line 1116, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -3653,15 +3654,15 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1118, sass/style.scss */
+/* line 1119, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
-/* line 1119, sass/style.scss */
+/* line 1120, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
-/* line 1121, sass/style.scss */
+/* line 1122, sass/style.scss */
 .modal header .body {
   background-color: #fff;
   color: #3d464c;
@@ -3674,27 +3675,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1123, sass/style.scss */
+/* line 1124, sass/style.scss */
 .modal header .body p {
   margin-bottom: 20px;
 }
-/* line 1125, sass/style.scss */
+/* line 1126, sass/style.scss */
 .modal header .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1128, sass/style.scss */
+/* line 1129, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1129, sass/style.scss */
+/* line 1130, sass/style.scss */
 .points-table li {
   width: 50%;
   float: left;
 }
-/* line 1130, sass/style.scss */
+/* line 1131, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -3702,14 +3703,14 @@ footer {
   float: left;
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1132, sass/style.scss */
+/* line 1133, sass/style.scss */
 .points-table .points {
   display: block;
   float: left;
   padding: 5px 0 0 10px;
   font-size: 14px;
 }
-/* line 1134, sass/style.scss */
+/* line 1135, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -3720,7 +3721,7 @@ footer {
   height: 0;
 }
 
-/* line 1137, sass/style.scss */
+/* line 1138, sass/style.scss */
 .block_user {
   background: url("../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -3731,7 +3732,7 @@ footer {
   float: right;
 }
 
-/* line 1145, sass/style.scss */
+/* line 1146, sass/style.scss */
 .unblock_user {
   background: url("../images/check-mark.png") no-repeat transparent;
   width: 15px;

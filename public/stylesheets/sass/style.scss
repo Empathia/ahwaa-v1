@@ -994,6 +994,7 @@ form + .recently-topics{padding-top:18px;}
           padding: 0 10px 0 0;
           vertical-align: top;
           border: none;
+          font-size: 11px;
           @include border-radius(0px);
           background-color: darken($subnavcolor, 5);
           .icon {margin: 0 -5px 0 3px}
