@@ -2896,15 +2896,15 @@ form + .recently-topics {
 }
 
 /* line 809, sass/style.scss */
-.header-top .user-logged-info {
+.user-logged-info {
   float: left;
   text-align: left;
   width: 350px;
   margin-top: 11px;
+  /* Landscape phones and down */
 }
-
 /* line 810, sass/style.scss */
-.header-top .user-logged-info .avatar {
+.user-logged-info .avatar {
   background: #fff;
   border: 1px solid rgba(59, 64, 67, 0.25);
   float: left;
@@ -2913,20 +2913,17 @@ form + .recently-topics {
   position: relative;
   width: 42px;
 }
-
-/* line 819, sass/style.scss */
+/* line 818, sass/style.scss */
 .user-logged-info .avatar img {
   width: 42px;
   height: 42px;
 }
-
 /* line 820, sass/style.scss */
 .user-logged-info .user-data {
   float: left;
   margin-left: 10px;
 }
-
-/* line 821, sass/style.scss */
+/* line 822, sass/style.scss */
 .user-logged-info .user-data b {
   display: block;
   overflow: hidden;
@@ -2934,19 +2931,16 @@ form + .recently-topics {
   font-size: 14px;
   color: #454545;
 }
-
-/* line 822, sass/style.scss */
+/* line 824, sass/style.scss */
 .user-logged-info .user-data b span {
   float: left;
   margin-right: 7px;
 }
-
-/* line 823, sass/style.scss */
+/* line 825, sass/style.scss */
 .user-logged-info .user-data b .edit-secondary {
   margin-top: 2px;
 }
-
-/* line 826, sass/style.scss */
+/* line 829, sass/style.scss */
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
 .user-logged-info .user-data .log-out {
@@ -2954,21 +2948,6 @@ form + .recently-topics {
   margin-right: 5px;
   height: 20px;
 }
-
-/* line 828, sass/style.scss */
-.user-logged-info .points-wrapper-small > .level,
-.user-logged-info .points-wrapper-small > .points {
-  border: none;
-}
-
-/* line 829, sass/style.scss */
-.user-logged-info .points-wrapper-small > .points {
-  height: 20px;
-  line-height: 20px;
-  color: #707b8b;
-  font-weight: bold;
-}
-
 /* line 830, sass/style.scss */
 .user-logged-info .user-data .log-out {
   margin-right: 0;
@@ -2977,85 +2956,114 @@ form + .recently-topics {
   line-height: 19px;
   padding: 0 8px;
 }
-
 /* line 831, sass/style.scss */
 .user-logged-info .user-data .log-out:hover {
   text-decoration: none;
 }
-
-/* line 833, sass/style.scss */
+/* line 834, sass/style.scss */
 .user-logged-info .points-wrapper-small {
   padding: 0 8px;
   position: relative;
 }
-
-/* line 834, sass/style.scss */
-.user-logged-info .points-wrapper-small:hover .tooltip-wrapper {
-  display: block;
+/* line 837, sass/style.scss */
+.user-logged-info .points-wrapper-small > .level,
+.user-logged-info .points-wrapper-small > .points {
+  border: none;
 }
-
-/* line 835, sass/style.scss */
+/* line 838, sass/style.scss */
 .user-logged-info .points-wrapper-small > .level {
   margin-right: 4px;
 }
-
-/* line 836, sass/style.scss */
+/* line 839, sass/style.scss */
+.user-logged-info .points-wrapper-small > .points {
+  height: 20px;
+  line-height: 20px;
+  color: #707b8b;
+  font-weight: bold;
+}
+/* line 840, sass/style.scss */
+.user-logged-info .points-wrapper-small:hover .tooltip-wrapper {
+  display: block;
+}
+/* line 842, sass/style.scss */
 .user-logged-info .activity-btns li {
   width: 35px;
   height: 20px;
 }
-
-/* line 837, sass/style.scss */
-.points-wrapper-small .tooltip-wrapper {
+/* line 844, sass/style.scss */
+.user-logged-info .activity-btns li:first-child {
+  border-right-width: 0;
+}
+/* line 846, sass/style.scss */
+.user-logged-info .tooltip-wrapper {
   top: -26px;
 }
-
-/* line 838, sass/style.scss */
-.points-wrapper-small .tooltip {
+/* line 847, sass/style.scss */
+.user-logged-info .tooltip {
   border-width: 1px;
 }
+@media (max-width: 480px) {
+  /* line 809, sass/style.scss */
+  .user-logged-info {
+    width: auto;
+    margin-left: 15px;
+    margin-top: 5px;
+  }
+  /* line 853, sass/style.scss */
+  .user-logged-info .avatar {
+    width: 32px;
+    height: 32px;
+  }
+  /* line 856, sass/style.scss */
+  .user-logged-info .avatar img {
+    width: 100%;
+    height: auto;
+  }
+  /* line 861, sass/style.scss */
+  .user-logged-info .user-data b {
+    margin: 1px 0 5px;
+  }
+  /* line 863, sass/style.scss */
+  .user-logged-info .user-data b span {
+    font-size: 12px;
+  }
+  /* line 866, sass/style.scss */
+  .user-logged-info .user-data b .edit-secondary {
+    margin-top: 0;
+  }
+}
 
-/* line 839, sass/style.scss */
+/* line 874, sass/style.scss */
 .activity-btns li {
   float: left;
   width: 30px;
 }
-
-/* line 840, sass/style.scss */
-.user-logged-info .activity-btns li:first-child {
-  border-right-width: 0;
-}
-
-/* line 841, sass/style.scss */
+/* line 876, sass/style.scss */
 .activity-btns li a {
   text-indent: -999px;
 }
-
-/* line 842, sass/style.scss */
+/* line 877, sass/style.scss */
 .activity-btns li span {
   display: block;
   position: relative;
 }
-
-/* line 843, sass/style.scss */
-.activity-btns .activity {
+/* line 878, sass/style.scss */
+.activity-btns li .activity {
   width: 14px;
   height: 17px;
   left: 11px;
   top: 1px;
   background: url("../images/icn-activity.png") 0 0 no-repeat;
 }
-
-/* line 844, sass/style.scss */
-.activity-btns .messages {
+/* line 879, sass/style.scss */
+.activity-btns li .messages {
   width: 15px;
   height: 11px;
   left: 10px;
   top: 4px;
   background: url("../images/icn-messages-2.png") 0 0 no-repeat;
 }
-
-/* line 845, sass/style.scss */
+/* line 880, sass/style.scss */
 .activity-btns li .new-message-container {
   color: #fff;
   background-color: #2E8AE5;
@@ -3081,13 +3089,12 @@ form + .recently-topics {
   background-image: -o-linear-gradient(top, #40b9ef, #2e8ae5);
   background-image: linear-gradient(top, #40b9ef, #2e8ae5);
 }
-
-/* line 850, sass/style.scss */
+/* line 896, sass/style.scss */
 .activity-btns a:hover {
   text-decoration: none;
 }
 
-/* line 852, sass/style.scss */
+/* line 899, sass/style.scss */
 .edit-secondary {
   width: 13px;
   height: 14px;
@@ -3098,14 +3105,13 @@ form + .recently-topics {
   background: url("../images/icn-pencil-2.png") 0 0 no-repeat;
   float: left;
 }
-
-/* line 853, sass/style.scss */
+/* line 901, sass/style.scss */
 .edit-secondary:hover {
   text-decoration: none;
   background-position: -14px 0;
 }
 
-/* line 855, sass/style.scss */
+/* line 904, sass/style.scss */
 .panel-sub-nav {
   position: fixed;
   z-index: 99;
@@ -3113,21 +3119,21 @@ form + .recently-topics {
   margin-right: 800px;
   /* Landscape phones and down */
 }
-/* line 861, sass/style.scss */
+/* line 910, sass/style.scss */
 .panel-sub-nav .sub-nav li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-/* line 864, sass/style.scss */
+/* line 913, sass/style.scss */
 .panel-sub-nav .sub-nav li:first-child {
   border-top: 0 none;
 }
-/* line 866, sass/style.scss */
+/* line 915, sass/style.scss */
 .panel-sub-nav .sub-nav li:last-child,
 .panel-sub-nav .sub-nav li .last-child {
   border-bottom: 0 none;
 }
-/* line 867, sass/style.scss */
+/* line 916, sass/style.scss */
 .panel-sub-nav .sub-nav li > a {
   color: #394551;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
@@ -3136,25 +3142,25 @@ form + .recently-topics {
   line-height: 30px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-/* line 874, sass/style.scss */
+/* line 923, sass/style.scss */
 .panel-sub-nav .sub-nav li > a:hover {
   text-decoration: none;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 879, sass/style.scss */
+/* line 928, sass/style.scss */
 .panel-sub-nav .sub-nav li > a span {
   display: inline-block;
   vertical-align: top;
 }
-/* line 883, sass/style.scss */
+/* line 932, sass/style.scss */
 .panel-sub-nav .sub-nav li > a .icon {
   background: url("../images/logged-in-nav-icons.png") 0 0;
   width: 30px;
   height: 30px;
   margin: 0 2px 0 3px;
 }
-/* line 890, sass/style.scss */
+/* line 939, sass/style.scss */
 .panel-sub-nav .sub-nav li > a .badge {
   color: #fff;
   background-color: #61738b;
@@ -3175,19 +3181,19 @@ form + .recently-topics {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8) inset;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8) inset;
 }
-/* line 906, sass/style.scss */
+/* line 955, sass/style.scss */
 .panel-sub-nav .sub-nav a.stream > .icon {
   background-position: 0 0;
 }
-/* line 907, sass/style.scss */
+/* line 956, sass/style.scss */
 .panel-sub-nav .sub-nav a.messages > .icon {
   background-position: 0 -30px;
 }
-/* line 908, sass/style.scss */
+/* line 957, sass/style.scss */
 .panel-sub-nav .sub-nav a.my-topics > .icon {
   background-position: 0 -60px;
 }
-/* line 909, sass/style.scss */
+/* line 958, sass/style.scss */
 .panel-sub-nav .sub-nav .active {
   background-color: rgba(57, 69, 81, 0.4);
   border-top: 0;
@@ -3201,38 +3207,38 @@ form + .recently-topics {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
 }
-/* line 915, sass/style.scss */
+/* line 964, sass/style.scss */
 .panel-sub-nav .sub-nav .active a {
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
   font-weight: bold;
 }
-/* line 918, sass/style.scss */
+/* line 967, sass/style.scss */
 .panel-sub-nav .sub-nav .active a:hover {
   text-decoration: none;
 }
-/* line 919, sass/style.scss */
+/* line 968, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.stream > .icon {
   background-position: -30px 0;
 }
-/* line 920, sass/style.scss */
+/* line 969, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.messages > .icon {
   background-position: -30px -30px;
 }
-/* line 921, sass/style.scss */
+/* line 970, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.my-topics > .icon {
   background-position: -30px -60px;
 }
 @media (max-width: 480px) {
-  /* line 926, sass/style.scss */
+  /* line 976, sass/style.scss */
   .panel-sub-nav.stream-user-nav {
-    background-color: #c2daec;
+    background-color: #eceff3;
     position: relative;
     width: 100%;
     padding: 10px 0;
     text-align: center;
   }
-  /* line 932, sass/style.scss */
+  /* line 982, sass/style.scss */
   .panel-sub-nav.stream-user-nav:after {
     content: ".";
     display: block;
@@ -3241,7 +3247,7 @@ form + .recently-topics {
     line-height: 0;
     height: 0;
   }
-  /* line 933, sass/style.scss */
+  /* line 983, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav {
     padding: 0;
     width: auto;
@@ -3254,7 +3260,7 @@ form + .recently-topics {
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-  /* line 940, sass/style.scss */
+  /* line 990, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav:after {
     content: ".";
     display: block;
@@ -3263,13 +3269,8 @@ form + .recently-topics {
     line-height: 0;
     height: 0;
   }
-  /* line 941, sass/style.scss */
+  /* line 991, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
     display: inline-block;
     float: left;
     padding: 0 10px 0 0;
@@ -3280,28 +3281,30 @@ form + .recently-topics {
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
+    background-color: #dce2e9;
   }
-  /* line 949, sass/style.scss */
+  /* line 999, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li .icon {
     margin: 0 -5px 0 3px;
   }
-  /* line 950, sass/style.scss */
+  /* line 1000, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li > a .badge {
     float: none;
     margin-left: 5px;
     margin-right: 0;
   }
-  /* line 955, sass/style.scss */
-  .panel-sub-nav.stream-user-nav .sub-nav li .active {
+  /* line 1005, sass/style.scss */
+  .panel-sub-nav.stream-user-nav .sub-nav li.active {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     -ms-border-radius: 0px;
     -o-border-radius: 0px;
     border-radius: 0px;
+    background-color: #adbacc;
   }
 }
 
-/* line 964, sass/style.scss */
+/* line 1015, sass/style.scss */
 .header-title-bg {
   background-color: #FCFCFC;
   border-bottom: 1px solid #DBDFE3;
@@ -3318,7 +3321,7 @@ form + .recently-topics {
 }
 
 /* Hall of Fame */
-/* line 970, sass/style.scss */
+/* line 1021, sass/style.scss */
 .hall-of-fame {
   position: fixed;
   bottom: 26px;
@@ -3326,16 +3329,16 @@ form + .recently-topics {
   padding: 0;
   z-index: 990;
 }
-/* line 972, sass/style.scss */
+/* line 1023, sass/style.scss */
 .hall-of-fame > .collapsed {
   height: 15px;
 }
-/* line 974, sass/style.scss */
+/* line 1025, sass/style.scss */
 .hall-of-fame > .collapsed .hall-people {
   display: none;
 }
 
-/* line 978, sass/style.scss */
+/* line 1029, sass/style.scss */
 .hall-header {
   width: 196px;
   height: 31px;
@@ -3343,7 +3346,7 @@ form + .recently-topics {
   text-shadow: 0 1px 0 #ffffff;
   position: relative;
 }
-/* line 980, sass/style.scss */
+/* line 1031, sass/style.scss */
 .hall-header > h4 {
   position: absolute;
   margin: 0;
@@ -3353,7 +3356,7 @@ form + .recently-topics {
   width: 191px;
   top: 1px;
 }
-/* line 982, sass/style.scss */
+/* line 1033, sass/style.scss */
 .hall-header > h4 > span {
   width: 126px;
   color: #7e91a6;
@@ -3367,12 +3370,12 @@ form + .recently-topics {
   cursor: pointer;
   top: 9px;
 }
-/* line 983, sass/style.scss */
+/* line 1034, sass/style.scss */
 .hall-header > h4.closed > span {
   background-position: 50% 100%;
 }
 
-/* line 987, sass/style.scss */
+/* line 1038, sass/style.scss */
 .hall-footer {
   background-color: #edf2f4;
   border-top: 1px #c5cace solid;
@@ -3383,44 +3386,44 @@ form + .recently-topics {
   background-image: linear-gradient(top, #edf2f4, #e4eaed);
 }
 
-/* line 991, sass/style.scss */
+/* line 1042, sass/style.scss */
 .hall-people {
   display: block;
   clear: both;
   height: 67px;
   padding-top: 21px;
 }
-/* line 992, sass/style.scss */
+/* line 1043, sass/style.scss */
 .hall-people > li {
   float: left;
   width: 165px;
   margin-right: 85px;
 }
-/* line 994, sass/style.scss */
+/* line 1045, sass/style.scss */
 .hall-people > li .avatar-wrapper {
   float: left;
 }
-/* line 996, sass/style.scss */
+/* line 1047, sass/style.scss */
 .hall-people > li .avatar-wrapper a {
   display: block;
 }
-/* line 999, sass/style.scss */
+/* line 1050, sass/style.scss */
 .hall-people > .last {
   margin-right: 0;
 }
-/* line 1000, sass/style.scss */
+/* line 1051, sass/style.scss */
 .hall-people .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 1001, sass/style.scss */
+/* line 1052, sass/style.scss */
 .hall-people .avatar > span {
   top: 32px;
   left: 9px;
   z-index: 2;
 }
-/* line 1002, sass/style.scss */
+/* line 1053, sass/style.scss */
 .hall-people .avatar > .honor-member {
   width: 72px;
   height: 52px;
@@ -3432,16 +3435,16 @@ form + .recently-topics {
   top: 4px;
   left: -12px;
 }
-/* line 1004, sass/style.scss */
+/* line 1055, sass/style.scss */
 .hall-people > .honor-member-info {
   margin-left: 69px;
 }
-/* line 1006, sass/style.scss */
+/* line 1057, sass/style.scss */
 .hall-people > .honor-member-info > a {
   text-transform: capitalize;
   font-size: 12px;
 }
-/* line 1007, sass/style.scss */
+/* line 1058, sass/style.scss */
 .hall-people > .honor-member-info > span {
   display: block;
   font-size: 11px;
@@ -3451,19 +3454,19 @@ form + .recently-topics {
   margin: 8px 0 3px;
 }
 
-/* line 1011, sass/style.scss */
+/* line 1062, sass/style.scss */
 .app-body-container {
   padding: 120px 0 150px;
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1011, sass/style.scss */
+  /* line 1062, sass/style.scss */
   .app-body-container {
     padding: 50px 0 0;
   }
 }
 
-/* line 1017, sass/style.scss */
+/* line 1068, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -3482,38 +3485,38 @@ footer {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1017, sass/style.scss */
+  /* line 1068, sass/style.scss */
   footer {
     position: relative;
   }
 }
 
-/* line 1029, sass/style.scss */
+/* line 1080, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
 }
-/* line 1031, sass/style.scss */
+/* line 1082, sass/style.scss */
 .footer-container > span {
   float: left;
   color: #8f9aa4;
 }
-/* line 1032, sass/style.scss */
+/* line 1083, sass/style.scss */
 .footer-container > ul {
   float: right;
 }
-/* line 1034, sass/style.scss */
+/* line 1085, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
-/* line 1035, sass/style.scss */
+/* line 1086, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 
-/* line 1040, sass/style.scss */
+/* line 1091, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -3521,7 +3524,7 @@ footer {
   left: 50%;
 }
 
-/* line 1041, sass/style.scss */
+/* line 1092, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -3537,7 +3540,7 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1043, sass/style.scss */
+/* line 1094, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -3549,14 +3552,14 @@ footer {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 1046, sass/style.scss */
+/* line 1097, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 5px;
 }
-/* line 1049, sass/style.scss */
+/* line 1100, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -3566,12 +3569,12 @@ footer {
   border-width: 4px 4px 0;
   border-style: solid;
 }
-/* line 1050, sass/style.scss */
+/* line 1101, sass/style.scss */
 .tooltip .arrow span {
   left: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
-/* line 1051, sass/style.scss */
+/* line 1102, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -3579,7 +3582,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 1055, sass/style.scss */
+/* line 1106, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -3591,7 +3594,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 1056, sass/style.scss */
+/* line 1107, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -3611,7 +3614,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1061, sass/style.scss */
+/* line 1112, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -3630,7 +3633,7 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1064, sass/style.scss */
+/* line 1115, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -3650,15 +3653,15 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1067, sass/style.scss */
+/* line 1118, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
-/* line 1068, sass/style.scss */
+/* line 1119, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
-/* line 1070, sass/style.scss */
+/* line 1121, sass/style.scss */
 .modal header .body {
   background-color: #fff;
   color: #3d464c;
@@ -3671,27 +3674,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1072, sass/style.scss */
+/* line 1123, sass/style.scss */
 .modal header .body p {
   margin-bottom: 20px;
 }
-/* line 1074, sass/style.scss */
+/* line 1125, sass/style.scss */
 .modal header .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1077, sass/style.scss */
+/* line 1128, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1078, sass/style.scss */
+/* line 1129, sass/style.scss */
 .points-table li {
   width: 50%;
   float: left;
 }
-/* line 1079, sass/style.scss */
+/* line 1130, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -3699,14 +3702,14 @@ footer {
   float: left;
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1081, sass/style.scss */
+/* line 1132, sass/style.scss */
 .points-table .points {
   display: block;
   float: left;
   padding: 5px 0 0 10px;
   font-size: 14px;
 }
-/* line 1083, sass/style.scss */
+/* line 1134, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -3717,7 +3720,7 @@ footer {
   height: 0;
 }
 
-/* line 1086, sass/style.scss */
+/* line 1137, sass/style.scss */
 .block_user {
   background: url("../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -3728,7 +3731,7 @@ footer {
   float: right;
 }
 
-/* line 1094, sass/style.scss */
+/* line 1145, sass/style.scss */
 .unblock_user {
   background: url("../images/check-mark.png") no-repeat transparent;
   width: 15px;

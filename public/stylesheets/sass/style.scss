@@ -806,51 +806,100 @@ form + .recently-topics{padding-top:18px;}
 .item-data > p{color:#898f93}
 .item-data > p a + a{font-weight:bold}
 
-.header-top .user-logged-info {float: left; text-align: left; width: 350px; margin-top: 11px;}
-.header-top .user-logged-info .avatar {
-    background: #fff;
-    border: 1px solid rgba(59, 64, 67, 0.25);
-    float: left;
-    height: 42px;
-    padding: 3px;
-    position: relative;
-    width: 42px;
-}
-.user-logged-info .avatar img {width: 42px; height: 42px}
-.user-logged-info .user-data {float: left; margin-left: 10px}
-.user-logged-info .user-data b {display: block; overflow: hidden; margin: 2px 0 9px; font-size: 14px; color: #454545}
-.user-logged-info .user-data b span {float: left; margin-right: 7px}
-.user-logged-info .user-data b .edit-secondary {margin-top: 2px}
-.user-logged-info .user-data .points-wrapper-small,
-.user-logged-info .user-data ul,
-.user-logged-info .user-data .log-out {float: left; margin-right: 5px; height: 20px;}
-.user-logged-info .points-wrapper-small > .level,
-.user-logged-info .points-wrapper-small > .points {border: none}
-.user-logged-info .points-wrapper-small > .points {height: 20px; line-height: 20px; color: #707b8b; font-weight: bold}
-.user-logged-info .user-data .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px}
-.user-logged-info .user-data .log-out:hover {text-decoration: none}
+.user-logged-info {float: left; text-align: left; width: 350px; margin-top: 11px;
+    .avatar {
+        background: #fff;
+        border: 1px solid rgba(59, 64, 67, 0.25);
+        float: left;
+        height: 42px;
+        padding: 3px;
+        position: relative;
+        width: 42px;
+        img {width: 42px; height: 42px}
+    }
+    .user-data {
+        float: left; margin-left: 10px;
+        b {
+            display: block; overflow: hidden; margin: 2px 0 9px; font-size: 14px; color: #454545;
+            span {float: left; margin-right: 7px}
+            .edit-secondary {margin-top: 2px}
+        }
+        .points-wrapper-small,
+        ul,
+        .log-out {float: left; margin-right: 5px; height: 20px;}
+        .log-out {margin-right: 0; color: #8a9199; font-size: 12px; line-height: 19px; padding: 0 8px;
+            &:hover {text-decoration: none}
+        }
+    }
+    .points-wrapper-small {
+        padding: 0 8px; position: relative;
+        > .level,
+        > .points {border: none}
+        > .level {margin-right: 4px}
+        > .points {height: 20px; line-height: 20px; color: #707b8b; font-weight: bold}
+        &:hover .tooltip-wrapper {display: block}
+    }
+    .activity-btns li {
+        width: 35px; height: 20px;
+        &:first-child {border-right-width: 0}
+    }
+    .tooltip-wrapper {top: -26px}
+    .tooltip {border-width: 1px}
 
-.user-logged-info .points-wrapper-small {padding: 0 8px; position: relative}
-.user-logged-info .points-wrapper-small:hover .tooltip-wrapper {display: block}
-.user-logged-info .points-wrapper-small > .level {margin-right: 4px}
-.user-logged-info .activity-btns li {width: 35px; height: 20px}
-.points-wrapper-small .tooltip-wrapper {top: -26px}
-.points-wrapper-small .tooltip {border-width: 1px}
-.activity-btns li {float: left; width: 30px;}
-.user-logged-info .activity-btns li:first-child {border-right-width: 0}
-.activity-btns li a {text-indent: -999px}
-.activity-btns li span {display: block; position: relative}
-.activity-btns .activity {width: 14px; height: 17px; left: 11px; top: 1px; background: url("../images/icn-activity.png") 0 0 no-repeat}
-.activity-btns .messages {width: 15px; height: 11px; left: 10px; top: 4px; background: url("../images/icn-messages-2.png") 0 0 no-repeat}
-.activity-btns li .new-message-container {color: #fff; background-color: #2E8AE5; border: 1px solid #2D88E3; font-size: 12px; padding: 0 4px; display: inherit; right: -21px; top: -22px; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1); font-weight: bold;
-  @include border-radius(10px);
-  @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset);
-  @include background-image(linear-gradient(top, #40b9ef, #2e8ae5));
+    @include breakpoint(phone) {
+        width: auto;
+        margin-left: 15px;
+        margin-top: 5px;
+        .avatar {
+            width: 32px;
+            height: 32px;
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        .user-data b {
+            margin: 1px 0 5px;
+            span {
+                font-size: 12px;
+            }
+            .edit-secondary {
+                margin-top: 0;
+            }
+        }
+    }
 }
-.activity-btns a:hover {text-decoration: none}
 
-.edit-secondary {width: 13px; height: 14px; overflow: hidden; text-indent: -999px; font-size: 0; line-height: 0; background: url("../images/icn-pencil-2.png") 0 0 no-repeat; float: left}
-.edit-secondary:hover {text-decoration: none; background-position: -14px 0}
+.activity-btns {
+    li {
+        float: left; width: 30px;
+        a {text-indent: -999px}
+        span {display: block; position: relative}
+        .activity {width: 14px; height: 17px; left: 11px; top: 1px; background: url("../images/icn-activity.png") 0 0 no-repeat}
+        .messages {width: 15px; height: 11px; left: 10px; top: 4px; background: url("../images/icn-messages-2.png") 0 0 no-repeat}
+        .new-message-container {
+            color: #fff;
+            background-color: #2E8AE5;
+            border: 1px solid #2D88E3;
+            font-size: 12px;
+            padding: 0 4px;
+            display: inherit;
+            right: -21px;
+            top: -22px;
+            text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            @include border-radius(10px);
+            @include box-shadow(0 1px 3px rgba(0, 0, 0, 0.2), 0 0 1px rgba(255, 255, 255, 0.7) inset, 0 0 2px rgba(255, 255, 255, 0.3) inset);
+            @include background-image(linear-gradient(top, #40b9ef, #2e8ae5));
+        }
+    }
+    a:hover {text-decoration: none}
+}
+
+.edit-secondary {
+    width: 13px; height: 14px; overflow: hidden; text-indent: -999px; font-size: 0; line-height: 0; background: url("../images/icn-pencil-2.png") 0 0 no-repeat; float: left;
+    &:hover {text-decoration: none; background-position: -14px 0}
+}
 
 .panel-sub-nav {
   position: fixed;
@@ -923,8 +972,9 @@ form + .recently-topics{padding-top:18px;}
   }
 
   @include breakpoint(phone) {
+    $subnavcolor: #eceff3;
     &.stream-user-nav {
-      background-color: darken($bg-color, 5);
+      background-color: $subnavcolor;
       position: relative;
       width: 100%;
       padding: 10px 0;
@@ -939,21 +989,22 @@ form + .recently-topics{padding-top:18px;}
         border: 1px solid rgba(0, 0, 0, 0.2);
         &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
         li {
-          @include border-radius(3px);
           display: inline-block;
           float: left;
           padding: 0 10px 0 0;
           vertical-align: top;
           border: none;
           @include border-radius(0px);
+          background-color: darken($subnavcolor, 5);
           .icon {margin: 0 -5px 0 3px}
           > a .badge {
             float: none;
             margin-left: 5px;
             margin-right: 0;
           }
-          .active {
+          &.active {
             @include border-radius(0px);
+            background-color: darken($subnavcolor, 20);
           }
         }
       }
