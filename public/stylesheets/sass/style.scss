@@ -31,9 +31,7 @@ body {padding: 0; font-size: 13px;
   color: #61656a; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
   background-color: $bg-color;
   background-image: url('../images/noise.png');
-  // background-image: url('../images/bg-noise-home.jpg');
   background-repeat: repeat;
-  // background-attachment: fixed;
   height: 100%;
 }
 body > div {background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
@@ -263,13 +261,21 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 }
 .topic{background: url('../images/ahwaa-logo.png') no-repeat center 0;
   @include breakpoint(phone){background: none}
+  @include breakpoint(tablet-portrait){background: none}
+  @include breakpoint(tablet-landscape-desktop){background: none}
 }
 .homepage{background: url('../images/homepage.png') no-repeat center 0;
   @include breakpoint(phone) {background: none}
+  @include breakpoint(tablet-portrait){background: none}
+  @include breakpoint(tablet-landscape-desktop){background: none}
 }
 .clear{clear:both!important; float:none!important;}
+
+// lang switcher
 .links{width: 237px; height: 54px; left: 350px; position: absolute; top: 0;  text-align: center;
   @include breakpoint(phone){display: none}
+  @include breakpoint(tablet-portrait){display: none}
+  @include breakpoint(tablet-landscape-desktop){display: none}
 }
 .header-top > .links > .logo-link > a:hover {text-decoration: none}
 .topic > .links > div{height: 18px; padding-top: 2px;}
