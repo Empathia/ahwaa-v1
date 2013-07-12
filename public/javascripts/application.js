@@ -99,61 +99,90 @@ $(function() {
     });
 
     setTimeout(function() {
-   $('.avatar').hoverIntent(function (e) {
-        $('.private-msg.tooltip-box').fadeOut(100);
+        $('.avatar').hoverIntent(function (e) {
+            $('.private-msg.tooltip-box').fadeOut(100);
 
-        var rollover = $(this).siblings('.private-msg');
-        if (rollover.length) {
-            var that = $(this),
-                rollover_left = rollover.css('left') ? rollover.css('left') : 0,
-                rollover_top = ($('img', this).height() + 10),
-                rollover_bottom = (rollover.outerHeight() + 3),
-                indicator = that.siblings('.private-msg').find('.origin'),
-                ind_width = 20,
-                ind_left = (( $('img', this).width() / 2) + ind_width),
-                // pbottom = $(window).height(),
-                xtop = rollover.offset().top,
-                xleft = rollover.offset().left,
-                xright = rollover.offset().left + rollover.outerWidth();
+            var rollover = $(this).siblings('.private-msg');
+            if (rollover.length) {
+                var that = $(this),
+                    rollover_left = rollover.css('left') ? rollover.css('left') : 0,
+                    rollover_top = ($('img', this).height() + 10),
+                    rollover_bottom = (rollover.outerHeight() + 3),
+                    indicator = that.siblings('.private-msg').find('.origin'),
+                    ind_width = 20,
+                    ind_left = (( $('img', this).width() / 2) + ind_width),
+                    // pbottom = $(window).height(),
+                    xtop = rollover.offset().top,
+                    xleft = rollover.offset().left,
+                    xright = rollover.offset().left + rollover.outerWidth();
 
-                rollover.css({'top': rollover_top});
+                    rollover.css({'top': rollover_top});
 
-            if ((e.pageX + xright) > $(window).width()) {
-                rollover.addClass('inside');
-                rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
-                indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
-                if ($(rollover).parents('.footer-avatar').length) {
+                if ((e.pageX + xright) > $(window).width()) {
+                    rollover.addClass('inside');
+                    rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
+                    indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
+                    if ($(rollover).parents('.footer-avatar').length) {
+                        rollover.addClass('bottom-avatar');
+                        rollover.css({'top': -(rollover_bottom) });
+                    } else {
+                        rollover.css({'top': rollover_top});
+                    }
+                } else if ($(rollover).parents('.footer-avatar').length) {
                     rollover.addClass('bottom-avatar');
                     rollover.css({'top': -(rollover_bottom) });
                 } else {
-                    rollover.css({'top': rollover_top});
+                    if(rollover.hasClass('inside')) {
+                        rollover.removeClass('inside')
+                    } else {
+                        indicator.css({'left': ind_left});
+                    }
                 }
-            } else if ($(rollover).parents('.footer-avatar').length) {
-                rollover.addClass('bottom-avatar');
-                rollover.css({'top': -(rollover_bottom) });
-            } else {
-                if(rollover.hasClass('inside')) {
-                    rollover.removeClass('inside')
-                } else {
-                    indicator.css({'left': ind_left});
-                }
-            }
 
-            rollover.fadeIn(100)
-        }
-    }, function () {
-        var that = $(this);
-        timer1 = setTimeout(function(){
-            that.siblings('.private-msg').fadeOut(100);
-        }, 1000);
+                rollover.fadeIn(100)
+            }
+        }, function () {
+            var that = $(this);
+            timer1 = setTimeout(function(){
+                that.siblings('.private-msg').fadeOut(100);
+            }, 1000);
+        });
+        $('.private-msg').mouseover(function () {
+            clearTimeout(timer1);
+        });
+        $('.private-msg').mouseleave(function () {
+            $(this).fadeOut(100);
+        });
+    }, 2000);
+
+    /* mobile menu */
+    var mobileNav = {};
+    mobileNav.base      = $('.mobile-menu-wrapper');
+    mobileNav.button    = mobileNav.base.find('.mobile-menu-toggler');
+    mobileNav.menu      = mobileNav.base.find('.mobile-menu');
+
+    mobileNav.button.bind('click', function (ev) {
+        mobileNav.menu.toggle();
+        return false;
     });
-    $('.private-msg').mouseover(function () {
-        clearTimeout(timer1);
+
+    mobileNav.menu.find('.js-sign-up-trigger').bind('click', function (ev) {
+        mobileNav.button.trigger('click');
+        $('.auth-wrapper > #sign-up').trigger('click');
+        return false;
     });
-    $('.private-msg').mouseleave(function () {
-        $(this).fadeOut(100);
+
+    mobileNav.menu.find('.js-login-trigger').bind('click', function (ev) {
+        mobileNav.button.trigger('click');
+        $('.auth-wrapper > #login').trigger('click');
+        return false;
     });
-}, 2000);
+
+    mobileNav.menu.find('.js-taglist-trigger').bind('click', function (ev) {
+        ev.preventDefault();
+    });
+    /* mobile menu */
+
 });
 
 $(window).load(function () {

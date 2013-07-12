@@ -55,10 +55,10 @@
 
                 <div class="mobile-menu">
                   <ul class="menu">
-                    <li><a href="#">Sign Up</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Tags</a></li>
+                    <li><a href="#" class="js-sign-up-trigger">Sign Up</a></li>
+                    <li><a href="#" class="js-login-trigger">Login</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#" class="js-taglist-trigger">Tags</a></li>
                   </ul>
                 </div>
               </div>
@@ -110,9 +110,9 @@
                    </div>
                 </div>
               <% else %>
-                <div class="sign-up visible-desktop">
+                <div class="sign-up">
                   <div class="auth-wrapper" data-hansel-component-id="sign-up">
-                    <a href="#" id="sign-up" class="sign-up-lk border-all">
+                    <a href="#" id="sign-up" class="visible-desktop sign-up-lk border-all">
                       <span class="sign-up-btn border-all"><%= t('.header.auth.sign_up') %></span>
                     </a>
                     <span class="tooltip-wrapper">
@@ -150,7 +150,7 @@
                     <% end %>
                   </div>
                   <div class="auth-wrapper" data-hansel-component-id="sign-in">
-                    <a href="#" id="login" class="border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
+                    <a href="#" id="login" class="visible-desktop border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
                       <ul>
                         <li class="login">
