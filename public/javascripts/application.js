@@ -179,7 +179,9 @@ $(function() {
     });
 
     mobileNav.menu.find('.js-taglist-trigger').bind('click', function (ev) {
-        ev.preventDefault();
+        mobileNav.button.trigger('click');
+        $('.header-wrapper').toggle();
+        return false;
     });
     /* mobile menu */
 

@@ -6,6 +6,7 @@ $subtle-blue: #eff5f9;
 
 
 .mobile-menu-wrapper {
+  position: relative;
   margin-top: 21px;
   float: left;
   @include breakpoint(phone) {
@@ -43,11 +44,13 @@ $subtle-blue: #eff5f9;
 .mobile-menu {
   display: none;
   position: absolute;
-  z-index: 1;
+  top: 30px;
+  z-index: 1000;
   min-width: 120px;
   .menu {
     @include border-radius(3px);
     border: 1px solid darken($subtle-blue, 20);
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
     li {
       text-align: left;
       border-bottom: 1px solid darken($subtle-blue, 20);;
@@ -331,7 +334,10 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .sign-up {float: left; text-align: left; width: 240px;}
 .header-top .sign-up {margin-top: 21px;
   @include breakpoint(phone) {
-    margin-top: 11px; margin-left: 11px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
   }
 }
 .auth-wrapper{height: 28px; float: left; width: 92px; position: relative;}
