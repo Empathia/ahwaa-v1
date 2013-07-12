@@ -1,26 +1,76 @@
 @import "compass", "mixins";
 
 $bg-color: #d5e6f2;
+$links-color: #2d70b3;
+$subtle-blue: #eff5f9;
 
-.mobile-menu-wrapper {display: none;
-  position: absolute;
-  width: 100%;
-  background-color: #222;
-  .search-wrapper {
-    background-color: #333;
-    padding: 15px;
-    border-bottom: 1px solid #111;
+
+.mobile-menu-wrapper {
+  margin-top: 21px;
+  float: left;
+  @include breakpoint(phone) {
+    margin-top: 11px;
   }
+  @include breakpoint(tablet-portrait) {
+    // background: red;
+     margin-left: 15px;
+  }
+  @include breakpoint(tablet-landscape-desktop) {
+    // background: green;
+  }
+}
+
+.mobile-menu-toggler {
+  cursor: pointer;
+  padding: 5px 7px;
+  @include border-radius(1px);
+  &:hover,
+  &:active,
+  &:focus {
+    + .mobile-menu {
+      display: block;
+    }
+  }
+  .line-bar {
+    pointer-events: none;
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: darken($subtle-blue, 20);
+    @include border-radius(1px);
+    @include box-shadow(0 -1px 0 rgba(255, 255, 255, .25));
+    margin: 0 0 3px 0;
+    border: none;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  min-width: 120px;
   .menu {
+    @include border-radius(3px);
+    border: 1px solid darken($subtle-blue, 20);
     li {
+      text-align: left;
+      border-bottom: 1px solid darken($subtle-blue, 20);;
+      border-top: 1px solid rgba(255, 255, 255, 1);
+      background-color: $subtle-blue;
+      &:first-child {@include border-radius(3px 3px 0 0);}
+      &:last-child {
+        @include border-radius(0 0 3px 3px);
+        border-bottom: none;
+      }
       a {
         display: block;
         padding: 10px 15px;
-        font-size: 14px;
-        border-bottom: 1px solid #111;
-        border-top: 1px solid rgba(255, 255, 255, .1);
-        background-color: #333;
-        color: #fff;
+        font-size: 12px;
+        color: $links-color;
+        &:hover {text-decoration: none}
       }
     }
   }
