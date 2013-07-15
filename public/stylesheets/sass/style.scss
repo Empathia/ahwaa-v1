@@ -54,7 +54,7 @@ $subtle-blue: #eff5f9;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, .1);
     li {
       text-align: left;
-      border-bottom: 1px solid darken($subtle-blue, 20);;
+      border-bottom: 1px solid darken($subtle-blue, 20);
       border-top: 1px solid rgba(255, 255, 255, 1);
       background-color: $subtle-blue;
       &:first-child {@include border-radius(3px 3px 0 0);}
@@ -62,6 +62,20 @@ $subtle-blue: #eff5f9;
         @include border-radius(0 0 3px 3px);
         border-bottom: none;
       }
+      &.menu-label {
+        border: none;
+        span {
+          display: block;
+          padding: 3px 15px;
+          font-size: 10px;
+          text-transform: uppercase;
+          font-weight: bold;
+          background-color: transparentize(darken($subtle-blue, 50), .7);
+          color: darken($subtle-blue, 40);
+          text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+        }
+      }
+      &.menu-taglist {display: none}
       a {
         display: block;
         padding: 10px 15px;
@@ -69,6 +83,12 @@ $subtle-blue: #eff5f9;
         color: $links-color;
         &:hover {text-decoration: none}
       }
+    }
+  }
+
+  @include breakpoint(phone) {
+    .menu {
+      li.menu-taglist {display: block}
     }
   }
 }
@@ -1015,6 +1035,7 @@ form + .recently-topics{padding-top:18px;}
     .tooltip {border-width: 1px}
 
     @include breakpoint(phone) {
+        display: none;
         width: auto;
         margin-left: 15px;
         margin-top: 5px;
@@ -1035,6 +1056,12 @@ form + .recently-topics{padding-top:18px;}
                 margin-top: 0;
             }
         }
+    }
+    @include breakpoint(tablet-portrait) {
+      display: none;
+    }
+    @include breakpoint(tablet-landscape-desktop) {
+      display: none;
     }
 }
 
@@ -1164,7 +1191,8 @@ form + .recently-topics{padding-top:18px;}
           border: none;
           font-size: 11px;
           @include border-radius(0px);
-          background-color: darken($subnavcolor, 5);
+          background-color: darken($subnavcolor, 2);
+          background-color: $subtle-blue;
           .icon {margin: 0 -5px 0 3px}
           > a .badge {
             float: none;
@@ -1173,7 +1201,7 @@ form + .recently-topics{padding-top:18px;}
           }
           &.active {
             @include border-radius(0px);
-            background-color: darken($subnavcolor, 20);
+            background-color: darken($subnavcolor, 10);
           }
         }
       }

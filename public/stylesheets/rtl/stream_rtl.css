@@ -1,102 +1,371 @@
-.stream-wrapper {position: relative}
-.stream-wrapper .is-empty {color: #627583; text-shadow: 0 1px 0 rgba(255, 255, 255, .75); background-color: #e6ecf2; background-image: url('../../images/stripe.jpg'); font-size: 15px; padding: 18px 20px 16px; border-bottom: 1px solid #d4d7d9;}
-.stream-wrapper .is-empty .arrow {display: inline-block; position: relative; top: 7px; width: 14px; height: 13px; background: url('../../images/arrow-curved-down.png') 0 0 no-repeat}
-.stream-wrapper .follow-topic {font-weight: bold;}
+/* line 3, sass/stream.scss */
+.stream-wrapper {
+  position: relative;
+  /* Landscape phones and down */
+}
+/* line 5, sass/stream.scss */
+.stream-wrapper .is-empty {
+  color: #627583;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+  background-color: #e6ecf2;
+  background-image: url("../../images/stripe.jpg");
+  font-size: 15px;
+  padding: 18px 20px 16px;
+  border-bottom: 1px solid #d4d7d9;
+}
+/* line 7, sass/stream.scss */
+.stream-wrapper .is-empty .arrow {
+  display: inline-block;
+  position: relative;
+  top: 7px;
+  width: 14px;
+  height: 13px;
+  background: url("../../images/arrow-curved-down.png") 0 0 no-repeat;
+}
+/* line 9, sass/stream.scss */
+.stream-wrapper .follow-topic {
+  font-weight: bold;
+}
+/* line 13, sass/stream.scss */
+.stream-wrapper .stream-title h2 {
+  font-family: 'GothamMediumRegular';
+  font-weight: normal;
+  font-size: 17px;
+  float:right;
+}
+/* line 16, sass/stream.scss */
+.stream-wrapper .stream-title .filter {
+  float:left;
+}
+/* line 18, sass/stream.scss */
+.stream-wrapper .stream-title .filter label {
+  color: #8a9199;
+}
+/* line 20, sass/stream.scss */
+.stream-wrapper .stream-title .filter-label {
+  float:right;
+}
+/* line 22, sass/stream.scss */
+.stream-wrapper .right-side {
+  float:left;
+  width: 780px;
+  background: url("../../images/bg-article.png") repeat-x scroll 0 1px white;
+}
+/* line 24, sass/stream.scss */
+.stream-wrapper .right-side .streams {
+  float:right;
+  width: 539px;
+  min-height: 449px;
+}
+/* line 27, sass/stream.scss */
 .stream-wrapper .right-side .stream-title {
   -webkit-border-radius: 3px 0 0 0;
-     -moz-border-radius: 3px 0 0 0;
-          border-radius: 3px 0 0 0;
+  -moz-border-radius: 3px 0 0 0;
+  -ms-border-radius: 3px 0 0 0;
+  -o-border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0 0;
 }
-.stream-wrapper .stream-title h2 {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 17px; float:right}
-.stream-wrapper .stream-title .filter {float:left}
-.stream-wrapper .filter label {color: #8a9199}
-.stream-title  .filter-label {float:right}
-.stream-wrapper .recommended-topics {float:right; width: 200px; padding: 15px 20px; border-right: 1px solid #dae0e6}
-.stream-wrapper .recommended-topics h3 {font-family: 'Gotham-Light'; font-size: 16px; font-weight: normal; border-bottom: 1px solid #dae0e6; padding-bottom: 8px; margin-bottom: 10px}
-.recommended-topics h4 {margin: 0 0 15px}
+/* line 31, sass/stream.scss */
+.stream-wrapper .recommended-topics {
+  float:right;
+  width: 200px;
+  padding: 15px 20px;
+  border-right: 1px solid #dae0e6;
+}
+/* line 33, sass/stream.scss */
+.stream-wrapper .recommended-topics h3 {
+  font-family: 'Gotham-Light';
+  font-size: 16px;
+  font-weight: normal;
+  border-bottom: 1px solid #dae0e6;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+/* line 34, sass/stream.scss */
+.stream-wrapper .recommended-topics h4 {
+  margin: 0 0 15px;
+}
+/* line 37, sass/stream.scss */
 .stream-wrapper .recommended,
-.stream-wrapper .newest {margin-bottom: 30px}
+.stream-wrapper .newest {
+  margin-bottom: 30px;
+}
+/* line 39, sass/stream.scss */
 .stream-wrapper .recommended li,
-.stream-wrapper .newest li {margin-bottom: 10px; background-color: #f5f7fa; line-height: 18px; font-family: 'GothamMediumRegular';
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#f9fbfc), to(#f4f6f9));
+.stream-wrapper .newest li {
+  margin-bottom: 10px;
+  background-color: #f5f7fa;
+  line-height: 18px;
+  font-family: 'GothamMediumRegular';
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9fbfc), color-stop(100%, #f4f6f9));
   background-image: -webkit-linear-gradient(top, #f9fbfc, #f4f6f9);
-  background-image:    -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
-  background-image:     -ms-linear-gradient(top, #f9fbfc, #f4f6f9);
-  background-image:      -o-linear-gradient(top, #f9fbfc, #f4f6f9);
-  background-image:         linear-gradient(top, #f9fbfc, #f4f6f9);
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#f9fbfc', EndColorStr='#f4f6f9')";
+  background-image: -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image: -o-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image: linear-gradient(top, #f9fbfc, #f4f6f9);
 }
+/* line 43, sass/stream.scss */
 .stream-wrapper .recommended a,
-.stream-wrapper .newest a {display: block; padding: 10px}
-.streams .stream-items-wrapper {margin: 0 20px}
-.streams .stream-item {border-bottom: 1px solid #e6ecf2; padding: 20px 0 25px}
-.streams .interaction-thanks {background-color: #fffef4}
-.streams .interaction-welcome {background-color: #f8fdff}
-.stream-item-data > div {margin-top: 1px}
-.stream-item-data > div > .user-comment {color: #8a9199; float:right}
-.stream-item-data > div > .user-comment a {font-weight: bold}
-.stream-item-data .time-ago {float:left; font-size: 11px; color: #b6babf;
-  background-image: url("../../images/icn-white-bubble-talk.png"); background-position:100% 0; background-repeat: no-repeat; padding-right: 17px; margin-top: -1px; height: 14px}
-.stream-item-data .time-ago .separator {display: inline-block; margin: 0 2px}
-.stream-item-data > p.title {font-family:'GothamMediumRegular'; font-weight: normal; font-size: 16px; margin: 13px 0 8px}
-.stream-item-data > blockquote {color: #494b4c; margin: 0; line-height: 20px}
-.load-more-wrapper a {float:right}
-.load-more-wrapper .more-stream {display: block; height: 19px; padding: 5px 44px 0}
+.stream-wrapper .newest a {
+  display: block;
+  padding: 10px;
+}
+/* line 46, sass/stream.scss */
+.stream-wrapper .filter div.selector {
+  margin-top: -7px;
+  width: 140px;
+}
+/* line 48, sass/stream.scss */
+.stream-wrapper .filter div.selector span {
+  width: 108px;
+}
+@media (max-width: 480px) {
+  /* line 52, sass/stream.scss */
+  .stream-wrapper .right-side {
+    width: auto;
+  }
+  /* line 53, sass/stream.scss */
+  .stream-wrapper .right-side .streams {
+    width: 100%;
+    min-height: 100%;
+  }
+  /* line 58, sass/stream.scss */
+  .stream-wrapper .recommended-topics {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
 
-.stream-wrapper .right-side {float:left; width: 780px; background: url("../../images/bg-article.png") repeat-x scroll 0 1px #fff}
-.stream-wrapper .filter div.selector {margin-top: -7px; width: 140px}
-.stream-wrapper .filter div.selector span {width: 108px}
-.stream-wrapper .right-side .streams {float:right; width: 539px; min-height: 449px}
-.stream-item-data {float:left; width: 420px}
-.load-more-wrapper {overflow: hidden; margin:27px 183px 20px 0}
+/* line 65, sass/stream.scss */
+.streams {
+  /* Landscape phones and down */
+}
+/* line 66, sass/stream.scss */
+.streams .stream-items-wrapper {
+  margin: 0 20px;
+}
+/* line 67, sass/stream.scss */
+.streams .stream-item {
+  border-bottom: 1px solid #e6ecf2;
+  padding: 20px 0 25px;
+}
+/* line 68, sass/stream.scss */
+.streams .interaction-thanks {
+  background-color: #fffef4;
+}
+/* line 69, sass/stream.scss */
+.streams .interaction-welcome {
+  background-color: #f8fdff;
+}
+@media (max-width: 480px) {
+  /* line 72, sass/stream.scss */
+  .streams .stream-items-wrapper {
+    margin: 0;
+  }
+  /* line 73, sass/stream.scss */
+  .streams .stream-item {
+    padding: 15px 15px 0px;
+  }
+  /* line 74, sass/stream.scss */
+  .streams .avatar-wrapper {
+    position: absolute;
+  }
+  /* line 75, sass/stream.scss */
+  .streams .stream-item-data {
+    float: none;
+    margin-right: 75px;
+    width: auto;
+  }
+}
 
-.panel-sub-nav.user-info-wrapper {background-color: #fff; padding-top: 10px}
-.user-info-wrapper .user-info {margin-right: 60px}
-.user-info-wrapper .user-info .username { font-size: 13px; word-wrap: break-word}
-.user-info-wrapper .avatar {height: 34px; padding: 3px; width: 34px; margin-right: 10px}
-.user-info-wrapper .user-info .user-points {overflow: hidden; margin:5px 0 10px 0}
-.user-info-wrapper .user-info .points {font-weight: bold; font-size: 12px; float:right; margin:2px 2px 0 0}
-.user-info-wrapper > .send-msg {padding: 10px; border-top: 1px solid #cfdee6; display: block; color: #468ac4; font-size: 11px; font-weight: bold; line-height: 11px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#deeef6));
+/* line 83, sass/stream.scss */
+.stream-item-data {
+  float:left;
+  width: 420px;
+}
+/* line 85, sass/stream.scss */
+.stream-item-data > div {
+  margin-top: 1px;
+}
+/* line 87, sass/stream.scss */
+.stream-item-data > div > .user-comment {
+  color: #8a9199;
+  float:right;
+}
+/* line 89, sass/stream.scss */
+.stream-item-data > div > .user-comment a {
+  font-weight: bold;
+}
+/* line 91, sass/stream.scss */
+.stream-item-data > div .time-ago {
+  float:left;
+  font-size: 11px;
+  color: #b6babf;
+  background-image: url("../../images/icn-white-bubble-talk.png");
+  background-position:100% 0;
+  background-repeat: no-repeat;
+  padding-right: 17px;
+  margin-top: -1px;
+  height: 14px;
+}
+/* line 94, sass/stream.scss */
+.stream-item-data > div .time-ago .separator {
+  display: inline-block;
+  margin: 0 2px;
+}
+/* line 97, sass/stream.scss */
+.stream-item-data > p.title {
+  font-family: 'GothamMediumRegular';
+  font-weight: normal;
+  font-size: 16px;
+  margin: 13px 0 8px;
+}
+/* line 100, sass/stream.scss */
+.stream-item-data > blockquote {
+  color: #494b4c;
+  margin: 0;
+  line-height: 20px;
+}
+
+/* line 105, sass/stream.scss */
+.load-more-wrapper {
+  overflow: hidden;
+  margin:27px 183px 20px 0 a;
+  margin-float:right;
+}
+/* line 108, sass/stream.scss */
+.load-more-wrapper .more-stream {
+  display: block;
+  height: 19px;
+  padding: 5px 44px 0;
+}
+
+/* line 112, sass/stream.scss */
+.panel-sub-nav.user-info-wrapper {
+  background-color: #fff;
+  padding-top: 10px;
+}
+
+/* line 115, sass/stream.scss */
+.user-info-wrapper .user-info {
+  margin-right: 60px;
+}
+/* line 117, sass/stream.scss */
+.user-info-wrapper .user-info .username {
+  font-size: 13px;
+  word-wrap: break-word;
+}
+/* line 118, sass/stream.scss */
+.user-info-wrapper .user-info .user-points {
+  overflow: hidden;
+  margin:5px 0 10px 0;
+}
+/* line 119, sass/stream.scss */
+.user-info-wrapper .user-info .points {
+  font-weight: bold;
+  font-size: 12px;
+  float:right;
+  margin:2px 2px 0 0;
+}
+/* line 121, sass/stream.scss */
+.user-info-wrapper .avatar {
+  height: 34px;
+  padding: 3px;
+  width: 34px;
+  margin-right: 10px;
+}
+/* line 122, sass/stream.scss */
+.user-info-wrapper > .send-msg {
+  padding: 10px;
+  border-top: 1px solid #cfdee6;
+  display: block;
+  color: #468ac4;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 11px;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #deeef6));
   background-image: -webkit-linear-gradient(top, #ffffff, #deeef6);
-  background-image:    -moz-linear-gradient(top, #ffffff, #deeef6);
-  background-image:     -ms-linear-gradient(top, #ffffff, #deeef6);
-  background-image:      -o-linear-gradient(top, #ffffff, #deeef6);
-  background-image:         linear-gradient(top, #ffffff, #deeef6);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#deeef6');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fff', EndColorStr='#deeef6')";
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-     -moz-box-shadow: 0 1px 0 #fff inset;
-          box-shadow: 0 1px 0 #fff inset;
+  background-image: -moz-linear-gradient(top, #ffffff, #deeef6);
+  background-image: -o-linear-gradient(top, #ffffff, #deeef6);
+  background-image: linear-gradient(top, #ffffff, #deeef6);
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
 }
-.user-info-wrapper > .send-msg:hover {text-decoration: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#deeef6), to(#ffffff));
+/* line 125, sass/stream.scss */
+.user-info-wrapper > .send-msg:hover {
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
   background-image: -webkit-linear-gradient(top, #deeef6, #ffffff);
-  background-image:    -moz-linear-gradient(top, #deeef6, #ffffff);
-  background-image:     -ms-linear-gradient(top, #deeef6, #ffffff);
-  background-image:      -o-linear-gradient(top, #deeef6, #ffffff);
-  background-image:         linear-gradient(top, #deeef6, #ffffff);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#deeef6', EndColorStr='#ffffff');
-        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#deeef6', EndColorStr='#ffffff')";
-  -webkit-box-shadow: 0 1px 0 #fff inset;
-     -moz-box-shadow: 0 1px 0 #fff inset;
-          box-shadow: 0 1px 0 #fff inset;
+  background-image: -moz-linear-gradient(top, #deeef6, #ffffff);
+  background-image: -o-linear-gradient(top, #deeef6, #ffffff);
+  background-image: linear-gradient(top, #deeef6, #ffffff);
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
 }
-.user-info-wrapper > .send-msg:active {background-image: none; background-color: #deeef6;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset;
-     -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset;
-          box-shadow: 0 1px 5px rgba(0, 0, 0, .2) inset
+/* line 129, sass/stream.scss */
+.user-info-wrapper > .send-msg:active {
+  background-image: none;
+  background-color: #deeef6;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
 }
-.user-info-wrapper > .send-msg > span {float:right; background: url("../../images/icn-messages-2.png") no-repeat scroll 0 0 transparent; width: 15px; height: 11px; right: 10px; top: 4px; margin-left: 8px}
-.topic-avatars::after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
-.recommended-topics .topic-avatars {margin-bottom: 16px}
-.topic-avatars > li {float:right; width: 64px; text-align: center; font-size: 12px; position: relative; margin: 0 18px 14px}
-.topic-avatars .avatar {margin-bottom: 10px}
-.no-users-msg { background: #F7F9FA; padding: 10px; border: 1px solid #DFE2E5; border-radius: 2px;
-    -webkit-box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 1);
-     -moz-box-shadow:  inset 0 0 0 1px rgba(255, 255, 255, 1);
-          box-shadow:  inset 0 0 0 1px rgba(255, 255, 255, 1);
+/* line 132, sass/stream.scss */
+.user-info-wrapper > .send-msg > span {
+  float:right;
+  background: url("../../images/icn-messages-2.png") no-repeat scroll 0 0 transparent;
+  width: 15px;
+  height: 11px;
+  right: 10px;
+  top: 4px;
+  margin-left: 8px;
+}
+
+/* line 136, sass/stream.scss */
+.topic-avatars::after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+/* line 138, sass/stream.scss */
+.recommended-topics .topic-avatars {
+  margin-bottom: 16px;
+}
+
+/* line 139, sass/stream.scss */
+.topic-avatars > li {
+  float:right;
+  width: 64px;
+  text-align: center;
+  font-size: 12px;
+  position: relative;
+  margin: 0 18px 14px;
+}
+
+/* line 140, sass/stream.scss */
+.topic-avatars .avatar {
+  margin-bottom: 10px;
+}
+
+/* line 142, sass/stream.scss */
+.no-users-msg {
+  background: #F7F9FA;
+  padding: 10px;
+  border: 1px solid #DFE2E5;
+  border-radius: 2px;
+  -webkit-box-shadow: inset 0 0 0 1px white;
+  -moz-box-shadow: inset 0 0 0 1px white;
+  box-shadow: inset 0 0 0 1px white;
   -webkit-border-radius: 2px;
-     -moz-border-radius: 2px;
-          border-radius: 2px
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
 }
