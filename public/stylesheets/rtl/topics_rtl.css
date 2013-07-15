@@ -200,7 +200,7 @@ body > div {
   /* line 44, sass/topics.scss */
   .social-bookmarkers {
     margin-top: 15px;
-    margin-right: -80px;
+    margin-right: -100px;
     height: 30px;
   }
 }
@@ -444,7 +444,7 @@ aside section.show-hide a.hide {
   aside {
     position: relative !important;
     top: 0 !important;
-    right: 0 0!important;
+    right: 0 !important;
     width: 100%;
     border-radius: 0 !important;
     -webkit-box-sizing: border-box;

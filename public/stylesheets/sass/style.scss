@@ -1277,7 +1277,8 @@ form + .recently-topics{padding-top:18px;}
   }
 }
 
-.app-body-container {padding: 120px 0 150px;
+.app-body-container {
+  padding: 140px 0 150px;
   @include breakpoint(phone) {
     padding: 50px 0 0;
   }

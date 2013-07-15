@@ -3,10 +3,10 @@
 .page-wrapper{
     // background:url("../images/bg-topic-detail.jpg") repeat-x fixed 0 118px transparent;
     @include breakpoint(tablet-portrait) {
-        background: red;
+        // background: red;
     }
     @include breakpoint(tablet-landscape-desktop) {
-        background: blue;
+        // background: blue;
     }
 }
 aside{overflow: hidden;}

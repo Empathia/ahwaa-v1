@@ -3,18 +3,6 @@
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-@media (max-width: 767px) {
-  /* line 3, sass/user_panel.scss */
-  .page-wrapper {
-    background: red;
-  }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  /* line 3, sass/user_panel.scss */
-  .page-wrapper {
-    background: blue;
-  }
-}
 
 /* line 12, sass/user_panel.scss */
 aside {
