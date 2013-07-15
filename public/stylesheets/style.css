@@ -1360,7 +1360,7 @@ input:focus:invalid, #twitter textarea:focus:invalid {
   /* line 498, sass/style.scss */
   .search-results a {
     display: block;
-    padding: 7px;
+    padding: 10px 15px;
   }
 }
 

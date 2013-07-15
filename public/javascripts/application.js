@@ -190,7 +190,7 @@ $(function() {
     });
 
     mobileNav.search.bind('click', function (ev) {
-        search.wrapper.toggle();
+        search.wrapper.slideToggle(100);
         if ( search.wrapper.is(':visible') ) {
             search.input.focus();
         }
