@@ -135,43 +135,47 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
+  /* line 62, sass/stream.scss */
+  .stream-wrapper .is-empty {
+    background-image: none;
+  }
 }
 
-/* line 65, sass/stream.scss */
+/* line 68, sass/stream.scss */
 .streams {
   /* Landscape phones and down */
 }
-/* line 66, sass/stream.scss */
+/* line 69, sass/stream.scss */
 .streams .stream-items-wrapper {
   margin: 0 20px;
 }
-/* line 67, sass/stream.scss */
+/* line 70, sass/stream.scss */
 .streams .stream-item {
   border-bottom: 1px solid #e6ecf2;
   padding: 20px 0 25px;
 }
-/* line 68, sass/stream.scss */
+/* line 71, sass/stream.scss */
 .streams .interaction-thanks {
   background-color: #fffef4;
 }
-/* line 69, sass/stream.scss */
+/* line 72, sass/stream.scss */
 .streams .interaction-welcome {
   background-color: #f8fdff;
 }
 @media (max-width: 480px) {
-  /* line 72, sass/stream.scss */
+  /* line 75, sass/stream.scss */
   .streams .stream-items-wrapper {
     margin: 0;
   }
-  /* line 73, sass/stream.scss */
+  /* line 76, sass/stream.scss */
   .streams .stream-item {
     padding: 15px 15px 0px;
   }
-  /* line 74, sass/stream.scss */
+  /* line 77, sass/stream.scss */
   .streams .avatar-wrapper {
     position: absolute;
   }
-  /* line 75, sass/stream.scss */
+  /* line 78, sass/stream.scss */
   .streams .stream-item-data {
     float: none;
     margin-left: 75px;
@@ -179,25 +183,26 @@
   }
 }
 
-/* line 83, sass/stream.scss */
+/* line 86, sass/stream.scss */
 .stream-item-data {
   float: right;
   width: 420px;
+  /* Landscape phones and down */
 }
-/* line 85, sass/stream.scss */
+/* line 88, sass/stream.scss */
 .stream-item-data > div {
   margin-top: 1px;
 }
-/* line 87, sass/stream.scss */
+/* line 90, sass/stream.scss */
 .stream-item-data > div > .user-comment {
   color: #8a9199;
   float: left;
 }
-/* line 89, sass/stream.scss */
+/* line 92, sass/stream.scss */
 .stream-item-data > div > .user-comment a {
   font-weight: bold;
 }
-/* line 91, sass/stream.scss */
+/* line 94, sass/stream.scss */
 .stream-item-data > div .time-ago {
   float: right;
   font-size: 11px;
@@ -209,73 +214,89 @@
   margin-top: -1px;
   height: 14px;
 }
-/* line 94, sass/stream.scss */
+/* line 97, sass/stream.scss */
 .stream-item-data > div .time-ago .separator {
   display: inline-block;
   margin: 0 2px;
 }
-/* line 97, sass/stream.scss */
+/* line 100, sass/stream.scss */
 .stream-item-data > p.title {
   font-family: 'GothamMediumRegular';
   font-weight: normal;
   font-size: 16px;
   margin: 13px 0 8px;
 }
-/* line 100, sass/stream.scss */
+/* line 103, sass/stream.scss */
 .stream-item-data > blockquote {
   color: #494b4c;
   margin: 0;
   line-height: 20px;
 }
+@media (max-width: 480px) {
+  /* line 110, sass/stream.scss */
+  .stream-item-data > div > .user-comment,
+  .stream-item-data > div > .time-ago {
+    float: none;
+    display: block;
+  }
+  /* line 111, sass/stream.scss */
+  .stream-item-data > div > .time-ago {
+    margin: 15px 0 0 0;
+  }
+  /* line 115, sass/stream.scss */
+  .stream-item-data > p.title {
+    margin-top: 0;
+  }
+}
 
-/* line 105, sass/stream.scss */
+/* line 121, sass/stream.scss */
 .load-more-wrapper {
   overflow: hidden;
   margin: 27px 0 20px 183px a;
   margin-float: left;
 }
-/* line 108, sass/stream.scss */
+/* line 124, sass/stream.scss */
 .load-more-wrapper .more-stream {
   display: block;
   height: 19px;
   padding: 5px 44px 0;
 }
 
-/* line 112, sass/stream.scss */
+/* line 128, sass/stream.scss */
 .panel-sub-nav.user-info-wrapper {
   background-color: #fff;
   padding-top: 10px;
 }
 
-/* line 115, sass/stream.scss */
+/* line 131, sass/stream.scss */
 .user-info-wrapper .user-info {
   margin-left: 60px;
 }
-/* line 117, sass/stream.scss */
+/* line 133, sass/stream.scss */
 .user-info-wrapper .user-info .username {
   font-size: 13px;
   word-wrap: break-word;
 }
-/* line 118, sass/stream.scss */
+/* line 134, sass/stream.scss */
 .user-info-wrapper .user-info .user-points {
   overflow: hidden;
   margin: 5px 0 10px 0;
 }
-/* line 119, sass/stream.scss */
+/* line 135, sass/stream.scss */
 .user-info-wrapper .user-info .points {
   font-weight: bold;
   font-size: 12px;
   float: left;
   margin: 2px 0 0 2px;
 }
-/* line 121, sass/stream.scss */
+/* line 137, sass/stream.scss */
 .user-info-wrapper .avatar {
   height: 34px;
   padding: 3px;
   width: 34px;
   margin-left: 10px;
 }
-/* line 122, sass/stream.scss */
+/* line 138, sass/stream.scss */
 .user-info-wrapper > .send-msg {
   padding: 10px;
   border-top: 1px solid #cfdee6;
@@ -293,7 +314,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 125, sass/stream.scss */
+/* line 141, sass/stream.scss */
 .user-info-wrapper > .send-msg:hover {
   text-decoration: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
@@ -305,7 +326,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 129, sass/stream.scss */
+/* line 145, sass/stream.scss */
 .user-info-wrapper > .send-msg:active {
   background-image: none;
   background-color: #deeef6;
@@ -313,7 +334,7 @@
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
 }
-/* line 132, sass/stream.scss */
+/* line 148, sass/stream.scss */
 .user-info-wrapper > .send-msg > span {
   float: left;
   background: url("../images/icn-messages-2.png") no-repeat scroll 0 0 transparent;
@@ -324,7 +345,7 @@
   margin-right: 8px;
 }
 
-/* line 136, sass/stream.scss */
+/* line 152, sass/stream.scss */
 .topic-avatars::after {
   content: ".";
   display: block;
@@ -334,12 +355,12 @@
   height: 0;
 }
 
-/* line 138, sass/stream.scss */
+/* line 154, sass/stream.scss */
 .recommended-topics .topic-avatars {
   margin-bottom: 16px;
 }
 
-/* line 139, sass/stream.scss */
+/* line 155, sass/stream.scss */
 .topic-avatars > li {
   float: left;
   width: 64px;
@@ -349,12 +370,12 @@
   margin: 0 18px 14px;
 }
 
-/* line 140, sass/stream.scss */
+/* line 156, sass/stream.scss */
 .topic-avatars .avatar {
   margin-bottom: 10px;
 }
 
-/* line 142, sass/stream.scss */
+/* line 158, sass/stream.scss */
 .no-users-msg {
   background: #F7F9FA;
   padding: 10px;

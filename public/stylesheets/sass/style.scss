@@ -744,36 +744,57 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .pm-flash.error{background-color: #ffffff; border: 1px solid #E79090;}
 .pm-flash.error > p{background-image: url('../images/error-mark.png'); background-repeat: no-repeat; background-position: 0 2px; color: #D93E3E;}
 
-.request-topic-section > .header{margin-top:2px; border-bottom:1px solid #e9f2f6; overflow:hidden; padding:18px 0 19px 0;
-  @include background-image(linear-gradient(top, #EDF5F9, #F3FAFD));
-}
-.request-topic-section > .header > h2 {float:left; padding-left:30px; font-size:16px; margin-top:7px;}
-.request-topic-section > .header > a  {float:right; height:18px; width:45px; margin-right:29px; color:#8497a7; font-weight:bold; background:url("../images/back-bg.png") no-repeat scroll 0 0 transparent; line-height:1em; padding:7px 0 0 23px}
-.request-topic-section > .header > a:active{outline:0; border:0;}
-.request-topic-section > form{float:left; font-size:12px; font-family:Arial, Helvetica, sans-serif}
-.request-topic-section > form > fieldset{border:none; margin:0; padding:0 30px;}
-.request-topic-section > form label{font-size:13px; margin:21px 0 6px; line-height:1em; display:block;}
-.request-topic-section > form input[type="text"]{font-size:12px; height:37px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:100%; font-family:Arial, Helvetica, sans-serif;
-  @include border-radius(3px);
-  @include box-sizing(border-box);
-}
+.request-topic-section {
+  > .header{margin-top:2px; border-bottom:1px solid #e9f2f6; overflow:hidden; padding:18px 0 19px 0;
+    @include background-image(linear-gradient(top, #EDF5F9, #F3FAFD));
+    > h2 {float:left; padding-left:30px; font-size:16px; margin-top:7px;}
+    a  {float:right; height:18px; width:45px; margin-right:29px; color:#8497a7; font-weight:bold; background:url("../images/back-bg.png") no-repeat scroll 0 0 transparent; line-height:1em; padding:7px 0 0 23px;
+      &:active{outline:0; border:0;}
+    }
+  }
+  > form{float:left; font-size:12px; font-family:Arial, Helvetica, sans-serif;
+    > fieldset{border:none; margin:0; padding:0 30px;}
+    label{font-size:13px; margin:21px 0 6px; line-height:1em; display:block;}
+    input[type="text"]{font-size:12px; height:37px; border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:10px; line-height:1em; color:#888; margin-bottom:8px; display:block; width:100%; font-family:Arial, Helvetica, sans-serif;
+      @include border-radius(3px);
+      @include box-sizing(border-box);
+    }
+    textarea{border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:8px 10px; color:#888; margin-bottom:16px; font-family:Arial, Helvetica, sans-serif; font-size:12px; display:block; width: 100%;
+      @include border-radius(3px);
+      @include box-sizing(border-box);
+    }
+    input[type="checkbox"]{float:left; margin:10px 5px 0 0}
+    label.anonym{float:left; margin-top:10px}
+    input[type="submit"]{padding:8px 19px; line-height:1em; float:right; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; background-color:#ffffff;
+       @include border-radius(3px);
+    }
+  }
 
-.request-topic-section > form textarea{border:1px solid #D9E2E6; border-top-color:#929898; border-bottom-color:#e1eaee; padding:8px 10px; color:#888; margin-bottom:16px; font-family:Arial, Helvetica, sans-serif; font-size:12px; display:block; width: 100%;
-  @include border-radius(3px);
-  @include box-sizing(border-box);
-}
-
-.request-topic-section > form input[type="checkbox"]{float:left; margin:10px 5px 0 0}
-.request-topic-section > form label.anonym{float:left; margin-top:10px}
-.request-topic-section > form input[type="submit"]{padding:8px 19px; line-height:1em; float:right; font-family:Arial, Helvetica, sans-serif; font-weight:bold; font-size:12px; background-color:#ffffff;
-   @include border-radius(3px);
+  @include breakpoint(phone) {
+    textarea {
+      height: 100px;
+    }
+  }
 }
 
 .avatar-wrapper{float:left; position:relative}
-.avatar{width:56px; height:56px; padding:3px; float:left; position:relative; border:1px solid rgba(59, 64, 67, .25); background:#ffffff}
-.avatar img{
-  @include background-image(linear-gradient(top, #dcdfe1, #edeeef));
+.avatar{
+  width:56px;
+  height:56px;
+  padding:3px;
+  float:left;
+  position:relative;
+  border:1px solid rgba(59, 64, 67, .25);
+  background:#ffffff;
+  img {
+    @include background-image(linear-gradient(top, #dcdfe1, #edeeef));
+  }
+
+  @include breakpoint(phone) {
+    pointer-events: none;
+  }
 }
+
 .avatar.expert > img{
   @include background-image(linear-gradient(top, #c3cfbe, #dee5da));
 }

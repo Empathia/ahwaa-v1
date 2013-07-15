@@ -59,6 +59,9 @@
       width: 100%;
       @include box-sizing(border-box);
     }
+    .is-empty {
+      background-image: none;
+    }
   }
 }
 
@@ -99,6 +102,19 @@
   }
   > blockquote {
     color: #494b4c; margin: 0; line-height: 20px;
+  }
+
+  @include breakpoint(phone) {
+    > div {
+      > .user-comment,
+      > .time-ago {float: none; display: block}
+      > .time-ago {
+        margin: 15px 0 0 0;
+      }
+    }
+    > p.title {
+      margin-top: 0;
+    }
   }
 }
 
