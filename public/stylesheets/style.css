@@ -3786,6 +3786,13 @@ form + .recently-topics {
 .app-body-container {
   padding: 140px 0 150px;
   /* Landscape phones and down */
+  /* Landscape phones and down */
+}
+@media (max-width: 767px) {
+  /* line 1280, sass/style.scss */
+  .app-body-container {
+    padding: 120px 0 25px;
+  }
 }
 @media (max-width: 480px) {
   /* line 1280, sass/style.scss */
@@ -3794,7 +3801,7 @@ form + .recently-topics {
   }
 }
 
-/* line 1287, sass/style.scss */
+/* line 1290, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -3813,38 +3820,38 @@ footer {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1287, sass/style.scss */
+  /* line 1290, sass/style.scss */
   footer {
     position: relative;
   }
 }
 
-/* line 1299, sass/style.scss */
+/* line 1302, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
 }
-/* line 1301, sass/style.scss */
+/* line 1304, sass/style.scss */
 .footer-container > span {
   float: left;
   color: #8f9aa4;
 }
-/* line 1302, sass/style.scss */
+/* line 1305, sass/style.scss */
 .footer-container > ul {
   float: right;
 }
-/* line 1304, sass/style.scss */
+/* line 1307, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
-/* line 1305, sass/style.scss */
+/* line 1308, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 
-/* line 1310, sass/style.scss */
+/* line 1313, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -3852,7 +3859,7 @@ footer {
   left: 50%;
 }
 
-/* line 1311, sass/style.scss */
+/* line 1314, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -3868,7 +3875,7 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1313, sass/style.scss */
+/* line 1316, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -3880,14 +3887,14 @@ footer {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 1316, sass/style.scss */
+/* line 1319, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 5px;
 }
-/* line 1319, sass/style.scss */
+/* line 1322, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -3897,12 +3904,12 @@ footer {
   border-width: 4px 4px 0;
   border-style: solid;
 }
-/* line 1320, sass/style.scss */
+/* line 1323, sass/style.scss */
 .tooltip .arrow span {
   left: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
-/* line 1321, sass/style.scss */
+/* line 1324, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -3910,7 +3917,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 1325, sass/style.scss */
+/* line 1328, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -3922,7 +3929,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 1326, sass/style.scss */
+/* line 1329, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -3942,7 +3949,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1331, sass/style.scss */
+/* line 1334, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -3961,7 +3968,7 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1334, sass/style.scss */
+/* line 1337, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -3981,15 +3988,15 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1337, sass/style.scss */
+/* line 1340, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
-/* line 1338, sass/style.scss */
+/* line 1341, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
-/* line 1340, sass/style.scss */
+/* line 1343, sass/style.scss */
 .modal header .body {
   background-color: #fff;
   color: #3d464c;
@@ -4002,27 +4009,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1342, sass/style.scss */
+/* line 1345, sass/style.scss */
 .modal header .body p {
   margin-bottom: 20px;
 }
-/* line 1344, sass/style.scss */
+/* line 1347, sass/style.scss */
 .modal header .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1347, sass/style.scss */
+/* line 1350, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1348, sass/style.scss */
+/* line 1351, sass/style.scss */
 .points-table li {
   width: 50%;
   float: left;
 }
-/* line 1349, sass/style.scss */
+/* line 1352, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -4030,14 +4037,14 @@ footer {
   float: left;
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1351, sass/style.scss */
+/* line 1354, sass/style.scss */
 .points-table .points {
   display: block;
   float: left;
   padding: 5px 0 0 10px;
   font-size: 14px;
 }
-/* line 1353, sass/style.scss */
+/* line 1356, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -4048,7 +4055,7 @@ footer {
   height: 0;
 }
 
-/* line 1356, sass/style.scss */
+/* line 1359, sass/style.scss */
 .block_user {
   background: url("../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -4059,7 +4066,7 @@ footer {
   float: right;
 }
 
-/* line 1364, sass/style.scss */
+/* line 1367, sass/style.scss */
 .unblock_user {
   background: url("../images/check-mark.png") no-repeat transparent;
   width: 15px;
