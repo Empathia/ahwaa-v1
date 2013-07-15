@@ -160,6 +160,11 @@ $(function() {
     mobileNav.base      = $('.mobile-menu-wrapper');
     mobileNav.button    = mobileNav.base.find('.mobile-menu-toggler');
     mobileNav.menu      = mobileNav.base.find('.mobile-menu');
+    mobileNav.search    = $('.search-icon-mobile');
+
+    var search = {};
+    search.wrapper = $('.search');
+    search.input = search.wrapper.find('input');
 
     mobileNav.button.bind('click', function (ev) {
         mobileNav.menu.toggle();
@@ -182,6 +187,13 @@ $(function() {
         mobileNav.button.trigger('click');
         $('.header-wrapper').toggle();
         return false;
+    });
+
+    mobileNav.search.bind('click', function (ev) {
+        search.wrapper.toggle();
+        if ( search.wrapper.is(':visible') ) {
+            search.input.focus();
+        }
     });
     /* mobile menu */
 
