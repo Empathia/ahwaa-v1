@@ -1104,14 +1104,26 @@ form + .recently-topics{padding-top:18px;}
 
 .custom > a{text-decoration: none;}
 
-.flash{height: 45px; line-height: 3.3; color: #464646; font-weight: bold; border-bottom: 1px solid #c9c8b1; position: fixed; top: 0; left: 0; width: 100%; z-index: 1001; visibility: hidden; cursor: pointer;
+.flash{
+  min-height: 45px;
+  line-height: 1.5;
+  color: #464646;
+  font-weight: bold;
+  border-bottom: 1px solid #c9c8b1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
+  visibility: hidden;
+  cursor: pointer;
   background-color: #fefadd;
   @include background-image(linear-gradient(top, #fefce9, #fefadd));
+  > div{
+    padding: 12px 25px 9px;
+    > div{background: url('../images/icn-close.png') no-repeat 100% 50%;}
+  }
 }
-
-.flash > div{padding: 0 25px;}
-
-.flash > div > div{background: url('../images/icn-close.png') no-repeat 100% 17px;}
 
 .loading{background-image: url('../images/loading-s-gray.gif'); background-repeat: no-repeat; background-position: 0 50%; padding-left: 26px;}
 .legend.loading{padding-right: 26px; background-position: 100% 50%; padding-left: 0;}
