@@ -69,7 +69,7 @@
                         <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
                       </li>
                       <li class="menu-label">
-                        <span>Points</span>
+                        <span><%= t('.modals.about_points.words.points') %></span>
                         <p class="points-wrapper-small small-hearts">
                           <span class="level <%= level_css_class_for_user(current_user) || 'no-level' %>"></span>
                           <span class="points"><%= current_user.score_board.current_points %></span>
