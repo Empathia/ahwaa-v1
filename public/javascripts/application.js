@@ -172,14 +172,11 @@ $(function() {
         signupButton    = $('.auth-wrapper > #sign-up');
 
     var closeMenuElements = function (el) {
-        if ( search.wrapper.is(':visible') )
-            search.wrapper.hide();
+        search.wrapper.removeClass('show-on-mobile');
+        mobileNav.tagList.removeClass('show-on-mobile');
 
         if ( mobileNav.menu.is(':visible') )
             mobileNav.button.trigger('click');
-
-        if ( mobileNav.tagList.is(':visible') )
-             mobileNav.tagList.hide();
 
         AuthForms.hide();
     };
@@ -190,23 +187,17 @@ $(function() {
         if ( !mobileNav.menu.is(':visible') )
             document.documentElement.classList.remove('no-overflow');
 
-        // if ( search.wrapper.is(':visible') )
-        //     mobileNav.search.trigger('click');
-
         return false;
     });
 
     mobileNav.close.bind('click', function (ev) {
         document.documentElement.classList.remove('no-overflow');
         closeMenuElements();
-        // if ( mobileNav.menu.is(':visible') )
-        //     mobileNav.button.trigger('click');
         return false;
     });
 
     mobileNav.menu.find('.js-sign-up-trigger').bind('click', function (ev) {
         closeMenuElements();
-        mobileNav.button.trigger('click');
         document.documentElement.classList.add('no-overflow');
         signupButton.trigger('click');
         return false;
@@ -214,23 +205,26 @@ $(function() {
 
     mobileNav.menu.find('.js-login-trigger').bind('click', function (ev) {
         closeMenuElements();
-        mobileNav.button.trigger('click');
         document.documentElement.classList.add('no-overflow');
         loginButton.trigger('click');
         return false;
     });
 
     mobileNav.menu.find('.js-taglist-trigger').bind('click', function (ev) {
-        closeMenuElements();
-        // mobileNav.button.trigger('click');
+        if ( mobileNav.menu.is(':visible') )
+            mobileNav.button.trigger('click');
+
         document.documentElement.classList.add('no-overflow');
-        mobileNav.tagList.toggle();
+        mobileNav.tagList.toggleClass('show-on-mobile');
         return false;
     });
 
     mobileNav.search.bind('click', function (ev) {
-        closeMenuElements();
-        search.wrapper.slideToggle(100);
+         if ( mobileNav.menu.is(':visible') )
+            mobileNav.button.trigger('click');
+
+        search.wrapper.toggleClass('show-on-mobile');
+
         ( search.wrapper.is(':visible') )
             ? search.input.focus()
             : search.input.blur();

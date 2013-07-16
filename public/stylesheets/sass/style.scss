@@ -307,6 +307,9 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
     }
   }
   @include breakpoint(phone) {
+    &.show-on-mobile {
+      display: block;
+    }
     display: none;
     width: 100%;
     height: 100%;
@@ -571,6 +574,9 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   }
   @include breakpoint(phone) {
     display: none;
+    &.show-on-mobile {
+      display: block;
+    }
     position: absolute;
     top: 50px;
     width: 100%;
