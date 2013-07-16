@@ -1467,6 +1467,18 @@ footer {
       > a {color: #7aa4cd}
     }
   }
+
+  @include breakpoint(phone) {
+    > span,
+    > ul {
+      display: block;
+      float: none;
+      text-align: center;
+    }
+    > ul {
+      margin: 5px 0;
+    }
+  }
 }
 
 .tooltip-wrapper {display: none; position: absolute; top: -25px; left: 50%}
