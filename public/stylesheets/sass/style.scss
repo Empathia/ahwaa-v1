@@ -180,6 +180,13 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
   border-style: solid;
   border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
   outline: none;
+  &:hover {
+    background-color: #ecf4f9;
+    @include background-image(linear-gradient(top, #ecf7fd, #ffffff));
+  }
+  &:active {
+    border-color: #a0b0c0 #c8d4e1 #cfdae6;
+  }
 }
 
 .menu-bar {
@@ -654,7 +661,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   display: none;
   cursor: pointer;
   float: right;
-  width: 40px;
+  padding: 2px 6px 0px 10px;
   height: 30px;
   margin: 10px 10px 0;
   span {
@@ -693,6 +700,15 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
       outline: none;
       span {
         border-width: 0;
+        @include background-image(none);
+        background-color: transparent;
+      }
+    }
+    &:hover {
+      span {
+        border-width: 0;
+        @include background-image(none);
+        background-color: transparent;
       }
     }
   }
