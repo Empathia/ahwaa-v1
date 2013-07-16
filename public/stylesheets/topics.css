@@ -1415,17 +1415,19 @@ header > .right > .by-author {
 
 /* line 408, sass/topics.scss */
 .related-carrousel {
+  width: 660px;
+  /* Landscape phones and down */
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 409, sass/topics.scss */
+/* line 410, sass/topics.scss */
 .related-carrousel > .items {
   float: left;
   width: 100%;
 }
-/* line 411, sass/topics.scss */
+/* line 412, sass/topics.scss */
 .related-carrousel > .items > li {
-  width: 300px;
+  width: 320px;
   min-height: 85px;
   background-color: #f7f9fa;
   display: none;
@@ -1433,20 +1435,24 @@ header > .right > .by-author {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-/* line 420, sass/topics.scss */
+/* line 421, sass/topics.scss */
 .related-carrousel > .items > li:first-child, .related-carrousel > .items > li:first-child + li, .related-carrousel > .items > li:first-child + li + li, .related-carrousel > .items > li:first-child + li + li + li {
   display: block;
 }
-/* line 422, sass/topics.scss */
+/* line 423, sass/topics.scss */
 .related-carrousel > .items > .odd {
   clear: left;
 }
-/* line 423, sass/topics.scss */
+/* line 424, sass/topics.scss */
 .related-carrousel > .items > .even {
   float: right;
 }
-@media (max-width: 480px) {
-  /* line 427, sass/topics.scss */
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 408, sass/topics.scss */
+  .related-carrousel {
+    width: auto;
+  }
+  /* line 429, sass/topics.scss */
   .related-carrousel > .items > li {
     display: block;
     width: 100%;
@@ -1454,7 +1460,15 @@ header > .right > .by-author {
   }
 }
 @media (max-width: 767px) {
-  /* line 435, sass/topics.scss */
+  /* line 436, sass/topics.scss */
+  .related-carrousel > .items > li {
+    display: block;
+    width: 100%;
+    float: none !important;
+  }
+}
+@media (max-width: 480px) {
+  /* line 443, sass/topics.scss */
   .related-carrousel > .items > li {
     display: block;
     width: 100%;
@@ -1462,14 +1476,14 @@ header > .right > .by-author {
   }
 }
 
-/* line 443, sass/topics.scss */
+/* line 451, sass/topics.scss */
 .item-data {
   line-height: 20px;
   margin-left: 80px;
   float: none;
 }
 
-/* line 445, sass/topics.scss */
+/* line 453, sass/topics.scss */
 .related-content-line {
   background-color: #f4f4f5;
   border-width: 1px 0;
@@ -1482,7 +1496,7 @@ header > .right > .by-author {
   left: 0;
 }
 
-/* line 446, sass/topics.scss */
+/* line 454, sass/topics.scss */
 .view-more-wrapper {
   float: left;
   position: relative;
@@ -1490,7 +1504,7 @@ header > .right > .by-author {
   left: 50%;
 }
 
-/* line 447, sass/topics.scss */
+/* line 455, sass/topics.scss */
 .view-more-wrapper > .view-more {
   position: relative;
   float: left;
@@ -1515,18 +1529,18 @@ header > .right > .by-author {
   background-image: linear-gradient(top, #efeff0, #f4f4f5);
 }
 
-/* line 452, sass/topics.scss */
+/* line 460, sass/topics.scss */
 .view-more-wrapper > .view-more > span {
   padding-right: 15px;
   background: url("../images/view-more-bg.jpg") no-repeat 100% 3px;
 }
 
-/* line 454, sass/topics.scss */
+/* line 462, sass/topics.scss */
 .container > .aligned > .left-side {
   margin-bottom: 15px;
 }
 
-/* line 455, sass/topics.scss */
+/* line 463, sass/topics.scss */
 .help-msg {
   left: inherit;
   right: -87px;

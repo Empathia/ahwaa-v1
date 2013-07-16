@@ -155,36 +155,54 @@ $(function() {
         });
     }, 2000);
 
-    /* mobile menu */
+    /* MOBILE MENU */
     var mobileNav = {};
     mobileNav.base      = $('.mobile-menu-wrapper');
     mobileNav.button    = mobileNav.base.find('.mobile-menu-toggler');
     mobileNav.menu      = mobileNav.base.find('.mobile-menu');
     mobileNav.search    = $('.search-icon-mobile');
+    mobileNav.close     = $('.js-close-mobile-menu');
 
     var search = {};
     search.wrapper = $('.search');
     search.input = search.wrapper.find('input');
 
+    var loginButton     = $('.auth-wrapper > #login'),
+        signupButton    = $('.auth-wrapper > #sign-up');
+
     mobileNav.button.bind('click', function (ev) {
         mobileNav.menu.toggle();
+        if ( !mobileNav.menu.is(':visible') ) {
+            document.documentElement.classList.remove('no-overflow');
+        }
+        return false;
+    });
+
+    mobileNav.close.bind('click', function (ev) {
+        document.documentElement.classList.remove('no-overflow');
+        AuthForms.hide();
+        if ( mobileNav.menu.is(':visible') )
+            mobileNav.button.trigger('click');
         return false;
     });
 
     mobileNav.menu.find('.js-sign-up-trigger').bind('click', function (ev) {
         mobileNav.button.trigger('click');
-        $('.auth-wrapper > #sign-up').trigger('click');
+        document.documentElement.classList.add('no-overflow');
+        signupButton.trigger('click');
         return false;
     });
 
     mobileNav.menu.find('.js-login-trigger').bind('click', function (ev) {
         mobileNav.button.trigger('click');
-        $('.auth-wrapper > #login').trigger('click');
+        document.documentElement.classList.add('no-overflow');
+        loginButton.trigger('click');
         return false;
     });
 
     mobileNav.menu.find('.js-taglist-trigger').bind('click', function (ev) {
         mobileNav.button.trigger('click');
+        document.documentElement.classList.add('no-overflow');
         $('.header-wrapper').toggle();
         return false;
     });
@@ -195,7 +213,7 @@ $(function() {
             search.input.focus();
         }
     });
-    /* mobile menu */
+    /* MOBILE MENU END */
 
 });
 

@@ -40,14 +40,14 @@ Class('TagList')({
                 if ( timer ) clearTimeout( timer );
                 timer = setTimeout(function () {
                     _this.filterTags();
-                }, 1000);
+                }, 1500);
             });
         },
 
         filterTags : function filterTags () {
             var _this = this,
                 count = 0,
-                availableWidth = (this.headerContainer.outerWidth() - (this.moreWidth + 1));
+                availableWidth = (this.headerContainer.outerWidth() - (this.moreWidth + 5));
 
             this.headerTags.css('width', '9999em');
             this.items.removeClass('hide');

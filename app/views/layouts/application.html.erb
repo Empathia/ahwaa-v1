@@ -149,6 +149,9 @@
                       </span>
                     </span>
                     <%= form_for User.new, :html => {:class => "over-form sign-up-form ie8-hide"}, :remote => true do |f| %>
+                      <div class="close-mobile-menu-wrapper">
+                        <a href="#" class="js-close-mobile-menu">Close</a>
+                      </div>
                       <p class="form-parag"><%= t('.header.sign_up_form.legend') %></p>
                       <ul>
                         <li class="email">
@@ -175,6 +178,9 @@
                   <div class="auth-wrapper" data-hansel-component-id="sign-in">
                     <a href="#" id="login" class="visible-desktop border-all light-button"><span class="border-all"><%= t('.header.auth.login') %></span></a>
                     <%= form_tag login_path(:js), :class => "over-form login-form ie8-hide", :remote => true do %>
+                      <div class="close-mobile-menu-wrapper">
+                        <a href="#" class="js-close-mobile-menu">Close</a>
+                      </div>
                       <ul>
                         <li class="login">
                           <label><%= t('.header.login_form.login') %></label>
@@ -188,6 +194,7 @@
                       <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
                     <% end %>
                     <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
+                      <a href="#" class="js-close-mobile-menu">Close</a>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
                         <li class="login">
@@ -214,7 +221,7 @@
                   <a href="#" class="arrow scroll-down"><div><div></div></div></a>
                 </div>
               </div>
-              <button class="search-icon-mobile mobile-button visible-phone">
+              <button class="search-icon-mobile mobile-button">
                 <span></span>
               </button>
               <div class="request-topic-wrapper">

@@ -406,10 +406,11 @@ header > .right > .by-author {margin-top: 15px}
 .blue-btn .more-arrow{border-color: transparent transparent transparent #468ac4; border-style: solid; border-width: 5px 0px 5px 5px; float: right; height: 0; width: 0; margin: 7px 0 0 5px;}
 
 .related-carrousel {
+  width: 660px;
   > .items {
     float: left; width: 100%;
     > li {
-      width: 300px;
+      width: 320px;
       min-height: 85px;
       background-color: #f7f9fa;
       display: none;
@@ -423,15 +424,22 @@ header > .right > .by-author {margin-top: 15px}
     > .even {float: right}
   }
 
-  @include breakpoint(phone) {
+  @include breakpoint(tablet-landscape-desktop) {
+    width: auto;
     > .items > li {
       display: block;
       width: 100%;
       float: none !important;
     }
   }
-
   @include breakpoint(tablet-portrait) {
+    > .items > li {
+      display: block;
+      width: 100%;
+      float: none !important;
+    }
+  }
+  @include breakpoint(phone) {
     > .items > li {
       display: block;
       width: 100%;
