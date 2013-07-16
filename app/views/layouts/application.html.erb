@@ -65,8 +65,8 @@
                       <li>
                         <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
                       </li>
-                      <li><a href="#" class="js-sign-up-trigger">Sign Up</a></li>
-                      <li><a href="#" class="js-login-trigger">Login</a></li>
+                      <li><a href="#" class="js-sign-up-trigger"><%= t('.header.request_topic.sign_up') %></a></li>
+                      <li><a href="#" class="js-login-trigger"><%= t('.header.auth.login') %></a></li>
                     <% else %>
                       <li class="menu-taglist">
                         <a href="#" class="js-taglist-trigger">

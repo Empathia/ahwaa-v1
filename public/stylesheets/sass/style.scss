@@ -681,16 +681,20 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .empty{background-position:0 -23px !important;}
 .slogan{text-align: center;}
 
-.request-topic-wrapper{
-  float: right; position: relative; margin-top: 21px;
-  &:hover .tooltip-wrapper {display: block}
+.request-topic-wrapper {
+  float: right;
+  position: relative;
+  margin-top: 21px;
+  &:hover .tooltip-wrapper {
+    display: block;
+  }
 
   @include breakpoint(phone) {
     margin: 0;
     width: 40px;
     height: 100%;
     @include box-sizing(border-box);
-    a {
+    > a {
       border-width: 1px;
       border-style: solid;
       border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
@@ -708,7 +712,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
       }
     }
     &:hover {
-      span {
+      > a span {
         border-width: 0;
         @include background-image(none);
         background-color: transparent;
