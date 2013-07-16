@@ -64,7 +64,13 @@
                       <li><a href="#" class="js-sign-up-trigger">Sign Up</a></li>
                       <li><a href="#" class="js-login-trigger">Login</a></li>
                     <% else %>
-                      <li class="menu-label"><span>Account</span></li>
+                      <li class="menu-label">
+                        <span>Points</span>
+                        <p class="points-wrapper-small small-hearts">
+                          <span class="level <%= level_css_class_for_user(current_user) || 'no-level' %>"></span>
+                          <span class="points"><%= current_user.score_board.current_points %></span>
+                        </p>
+                      </li>
                       <li>
                         <%= link_to stream_path, :title => t('.header.logged_in.stream') do %>
                           <%= t('.header.logged_in.stream') %>

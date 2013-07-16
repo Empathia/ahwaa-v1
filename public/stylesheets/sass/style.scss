@@ -117,6 +117,7 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
   left: 1px;
   z-index: 1000;
   min-width: 150px;
+  background-color: $subtle-blue;
   .menu {
     @include border-radius(2px);
     border: 1px solid darken($subtle-blue, 20);
@@ -125,7 +126,6 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
       text-align: left;
       border-bottom: 1px solid darken($subtle-blue, 20);
       border-top: 1px solid rgba(255, 255, 255, 1);
-      background-color: $subtle-blue;
       &:first-child {@include border-radius(3px 3px 0 0);}
       &:last-child {
         @include border-radius(0 0 2px 2px);
@@ -133,15 +133,27 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
       }
       &.menu-label {
         border: none;
-        span {
-          display: block;
-          padding: 3px 15px;
+        background-color: transparentize(darken($subtle-blue, 50), .7);
+        color: darken($subtle-blue, 40);
+        text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+        > span {
+          display: inline-block;
+          vertical-align: top;
+          padding: 7px 5px 0 15px;
           font-size: 10px;
           text-transform: uppercase;
           font-weight: bold;
-          background-color: transparentize(darken($subtle-blue, 50), .7);
-          color: darken($subtle-blue, 40);
-          text-shadow: 0 1px 0 rgba(255, 255, 255, .7);
+        }
+        > p {
+          display: inline-block;
+          vertical-align: top;
+          padding: 3px 0 5px;
+          font-size: 11px;
+          font-weight: bold;
+          .points {
+            line-height: 18px;
+            padding-left: 5px;
+          }
         }
       }
       &.menu-taglist {display: none}
