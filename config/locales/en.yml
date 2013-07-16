@@ -168,6 +168,7 @@ en:
             learn_more: Learn More
         search_topics: Search topics
         tags_more: More
+        tag_list: Tag List
       footer:
         all_rights: "© Ahwaa - All Rights Reserved %{year}"
         about: About

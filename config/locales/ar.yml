@@ -167,6 +167,7 @@ ar:
             learn_more: تعلّم المزيد
         search_topics: إبحث عن موضوع
         tags_more: المزيد
+        tag_list: قائمة الكلمات
       footer:
         all_rights: "© %{year} أهواء - جميع الحقوق محفوظة"
         about: من نحن؟

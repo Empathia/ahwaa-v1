@@ -331,51 +331,54 @@
 /* line 172, sass/stream.scss */
 .load-more-wrapper {
   overflow: hidden;
-  margin:27px 183px 20px 0 a;
-  margin-float:right;
+  margin:27px 183px 20px 0;
 }
 /* line 175, sass/stream.scss */
+.load-more-wrapper a {
+  float:right;
+}
+/* line 176, sass/stream.scss */
 .load-more-wrapper .more-stream {
   display: block;
   height: 19px;
   padding: 5px 44px 0;
 }
 
-/* line 179, sass/stream.scss */
+/* line 180, sass/stream.scss */
 .panel-sub-nav.user-info-wrapper {
   background-color: #fff;
   padding-top: 10px;
 }
 
-/* line 182, sass/stream.scss */
+/* line 183, sass/stream.scss */
 .user-info-wrapper .user-info {
   margin-right: 60px;
 }
-/* line 184, sass/stream.scss */
+/* line 185, sass/stream.scss */
 .user-info-wrapper .user-info .username {
   font-size: 13px;
   word-wrap: break-word;
 }
-/* line 185, sass/stream.scss */
+/* line 186, sass/stream.scss */
 .user-info-wrapper .user-info .user-points {
   overflow: hidden;
   margin:5px 0 10px 0;
 }
-/* line 186, sass/stream.scss */
+/* line 187, sass/stream.scss */
 .user-info-wrapper .user-info .points {
   font-weight: bold;
   font-size: 12px;
   float:right;
   margin:2px 2px 0 0;
 }
-/* line 188, sass/stream.scss */
+/* line 189, sass/stream.scss */
 .user-info-wrapper .avatar {
   height: 34px;
   padding: 3px;
   width: 34px;
   margin-right: 10px;
 }
-/* line 189, sass/stream.scss */
+/* line 190, sass/stream.scss */
 .user-info-wrapper > .send-msg {
   padding: 10px;
   border-top: 1px solid #cfdee6;
@@ -393,7 +396,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 192, sass/stream.scss */
+/* line 193, sass/stream.scss */
 .user-info-wrapper > .send-msg:hover {
   text-decoration: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
@@ -405,7 +408,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 196, sass/stream.scss */
+/* line 197, sass/stream.scss */
 .user-info-wrapper > .send-msg:active {
   background-image: none;
   background-color: #deeef6;
@@ -413,7 +416,7 @@
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
 }
-/* line 199, sass/stream.scss */
+/* line 200, sass/stream.scss */
 .user-info-wrapper > .send-msg > span {
   float:right;
   background: url("../../images/icn-messages-2.png") no-repeat scroll 0 0 transparent;
@@ -424,7 +427,7 @@
   margin-left: 8px;
 }
 
-/* line 203, sass/stream.scss */
+/* line 204, sass/stream.scss */
 .topic-avatars::after {
   content: ".";
   display: block;
@@ -434,12 +437,12 @@
   height: 0;
 }
 
-/* line 205, sass/stream.scss */
+/* line 206, sass/stream.scss */
 .recommended-topics .topic-avatars {
   margin-bottom: 16px;
 }
 
-/* line 206, sass/stream.scss */
+/* line 207, sass/stream.scss */
 .topic-avatars > li {
   float:right;
   width: 64px;
@@ -449,12 +452,12 @@
   margin: 0 18px 14px;
 }
 
-/* line 207, sass/stream.scss */
+/* line 208, sass/stream.scss */
 .topic-avatars .avatar {
   margin-bottom: 10px;
 }
 
-/* line 209, sass/stream.scss */
+/* line 210, sass/stream.scss */
 .no-users-msg {
   background: #F7F9FA;
   padding: 10px;
