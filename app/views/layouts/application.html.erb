@@ -55,15 +55,19 @@
 
                 <div class="mobile-menu">
                   <ul class="menu">
-                    <li><a href="/">Home</a></li>
-                    <li class="menu-taglist"><a href="#" class="js-taglist-trigger">Tag List</a></li>
-                    <li>
-                      <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
-                    </li>
                     <% if !logged_in? %>
+                      <li><a href="/">Home</a></li>
+                      <li class="menu-taglist"><a href="#" class="js-taglist-trigger">Tag List</a></li>
+                      <li>
+                        <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
+                      </li>
                       <li><a href="#" class="js-sign-up-trigger">Sign Up</a></li>
                       <li><a href="#" class="js-login-trigger">Login</a></li>
                     <% else %>
+                      <li class="menu-taglist"><a href="#" class="js-taglist-trigger">Tag List</a></li>
+                      <li>
+                        <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
+                      </li>
                       <li class="menu-label">
                         <span>Points</span>
                         <p class="points-wrapper-small small-hearts">

@@ -26,19 +26,22 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 
 .left-side{
   float: left;
-  width: auto;
+  width: 700px;
   margin-right: 240px;
 
+  @include breakpoint(tablet-landscape-desktop) {
+    width: auto;
+  }
+  @include breakpoint(tablet-portrait) {
+    margin-right: 0;
+    width: 100%;
+  }
   @include breakpoint(phone) {
     width: 100%;
     margin-right: 0;
     .container-soft-box-shadow {
       border-radius: 0;
     }
-  }
-  @include breakpoint(tablet-portrait) {
-    margin-right: 0;
-    width: 100%;
   }
 }
 
