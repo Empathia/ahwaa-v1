@@ -1572,9 +1572,9 @@ input:focus:invalid, #twitter textarea:focus:invalid {
   cursor: pointer;
   float:left;
   padding-top: 2px;
-  padding-left: 10px;
+  padding-left: 12px;
   padding-bottom: 0px;
-  padding-right: 10px;
+  padding-right: 12px;
   height: 30px;
   margin: 10px 10px 0;
   /* Landscape phones and down */

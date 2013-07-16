@@ -20,7 +20,9 @@ body {
     padding-bottom: 20px;
   }
 }
-.slogan {overflow: hidden; margin-bottom: 15px;
+.slogan {
+  overflow: hidden;
+  margin-bottom: 30px;
   h1 {width: 100%; max-width: 271px; height: 58px; margin: 0 auto; text-indent: -9999px;
     background: url('../images/home/banner-logo.png') no-repeat 50% 0px; background-size: 100%;
   }
@@ -29,7 +31,10 @@ body {
   }
 }
 .features-holder {height: 277px}
-.features {overflow: hidden; margin-bottom: 27px;
+.features {
+  overflow: hidden;
+  margin-bottom: 27px;
+  margin-top: 20px;
   li:first-child {margin-left: 1px;}
   .last-feature {margin-right: 1px;}
 }
