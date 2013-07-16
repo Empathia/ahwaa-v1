@@ -47,7 +47,7 @@ Class('TagList')({
         filterTags : function filterTags () {
             var _this = this,
                 count = 0,
-                availableWidth = (this.headerContainer.outerWidth() - (this.moreWidth + 5));
+                availableWidth = (this.headerContainer.width() - (this.moreWidth + 5));
 
             this.headerTags.css('width', '9999em');
             this.items.removeClass('hide');

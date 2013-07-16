@@ -74,9 +74,9 @@ $(function() {
 
     $(".request-topic.active").pageSlide({ width: "556px", direction: I18n.locale == 'ar' ? 'right' : "left", modal: true }).click(function(){
         var sidebar = $(".article-wrapper").find('aside'),
-        nav_user = $("aside.panel-sub-nav"),
-        nav_user_top,
-        rtl = $('html').attr('dir') == 'rtl';
+            nav_user = $("aside.panel-sub-nav"),
+            nav_user_top,
+            rtl = $('html').attr('dir') == 'rtl';
         sidebar.length && sidebar.data('fixed') == true && sidebar.css({position : "absolute", bottom: "auto", right: 0, left: "auto", top: sidebar.position().top - 126}) && sidebar.data("fixed", false);
         nav_user_top = nav_user.position().top - 139;
         nav_user.css({position: 'absolute', top: nav_user_top}).fadeOut();
