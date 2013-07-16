@@ -3,85 +3,105 @@
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 3, sass/user_panel.scss */
+  .page-wrapper {
+    background: blue;
+  }
+  /* line 6, sass/user_panel.scss */
+  .page-wrapper .span8 {
+    width: 57.18232044198895%;
+  }
+  /* line 9, sass/user_panel.scss */
+  .page-wrapper .span4 {
+    width: 40.05524861878453%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 3, sass/user_panel.scss */
+  .page-wrapper {
+    background: red;
+  }
+}
 
-/* line 12, sass/user_panel.scss */
+/* line 18, sass/user_panel.scss */
 aside {
   overflow: hidden;
 }
 
-/* line 13, sass/user_panel.scss */
+/* line 19, sass/user_panel.scss */
 .inner-shadow {
   background: url("../images/inner-shadow-right.png") repeat-y right 0;
   padding: 23px;
 }
 
-/* line 14, sass/user_panel.scss */
+/* line 20, sass/user_panel.scss */
 .user-sb {
   width: 240px;
   float: right;
   /* Landscape phones and down */
 }
-/* line 16, sass/user_panel.scss */
+/* line 22, sass/user_panel.scss */
 .user-sb .edit-profile {
   text-align: center;
   padding: 13px 0;
   font-weight: bold;
 }
 @media (max-width: 480px) {
-  /* line 14, sass/user_panel.scss */
+  /* line 20, sass/user_panel.scss */
   .user-sb {
     width: 100%;
     border-top: 10px solid #ccc;
   }
 }
 
-/* line 23, sass/user_panel.scss */
+/* line 29, sass/user_panel.scss */
 .user-sb-white {
   background: white url("../images/inner-shadow-top.png") repeat-x;
   border-right: 1px solid #e5e9ed;
   /* Landscape phones and down */
 }
-/* line 25, sass/user_panel.scss */
+/* line 31, sass/user_panel.scss */
 .user-sb-white > div {
   padding: 19px;
 }
-/* line 26, sass/user_panel.scss */
+/* line 32, sass/user_panel.scss */
 .user-sb-white .user-details {
   width: 127px;
 }
 @media (max-width: 480px) {
-  /* line 23, sass/user_panel.scss */
+  /* line 29, sass/user_panel.scss */
   .user-sb-white {
     padding: 15px;
   }
 }
 
-/* line 32, sass/user_panel.scss */
+/* line 38, sass/user_panel.scss */
 .user-profile {
   overflow: hidden;
   border-bottom: 1px solid #e5e9ed;
 }
 
-/* line 33, sass/user_panel.scss */
+/* line 39, sass/user_panel.scss */
 .user-details {
   width: 134px;
   float: right;
 }
 
-/* line 35, sass/user_panel.scss */
+/* line 41, sass/user_panel.scss */
 .username {
   color: #4c5563;
   font-size: 18px;
   margin-bottom: 6px;
 }
 
-/* line 36, sass/user_panel.scss */
+/* line 42, sass/user_panel.scss */
 .usr-sec-title {
   overflow: hidden;
   margin-bottom: 15px;
   position: relative;
 }
-/* line 38, sass/user_panel.scss */
+/* line 44, sass/user_panel.scss */
 .usr-sec-title > h2 {
   color: #61656a;
   font-size: 12px;
@@ -91,7 +111,7 @@ aside {
   position: relative;
   background-color: #ffffff;
 }
-/* line 41, sass/user_panel.scss */
+/* line 47, sass/user_panel.scss */
 .usr-sec-title > .active > span {
   border-top: 1px solid #a5aab0;
   background-image: -moz-linear-gradient(top, #eaf1f5, #f8fbfc);
@@ -99,13 +119,13 @@ aside {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc');
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#eaf1f5', EndColorStr='#f8fbfc')";
 }
-/* line 48, sass/user_panel.scss */
+/* line 54, sass/user_panel.scss */
 .usr-sec-title span > span {
   display: block;
   height: 100%;
   background: url("../images/icn-pencil.png") no-repeat 0px 4px;
 }
-/* line 49, sass/user_panel.scss */
+/* line 55, sass/user_panel.scss */
 .usr-sec-title > hr {
   border: none;
   border-top: 1px solid #dddddd;
@@ -116,18 +136,18 @@ aside {
   top: 5px;
 }
 
-/* line 52, sass/user_panel.scss */
+/* line 58, sass/user_panel.scss */
 .user-edit {
   overflow: hidden;
 }
-/* line 54, sass/user_panel.scss */
+/* line 60, sass/user_panel.scss */
 .user-edit > li {
   padding-bottom: 10px;
   width: 100%;
   float: left;
 }
 
-/* line 56, sass/user_panel.scss */
+/* line 62, sass/user_panel.scss */
 .label {
   color: #aeb4bd;
   float: left;
@@ -137,24 +157,24 @@ aside {
   margin-bottom: 5px;
 }
 
-/* line 57, sass/user_panel.scss */
+/* line 63, sass/user_panel.scss */
 .field {
   float: right;
   width: 128px;
 }
 
-/* line 58, sass/user_panel.scss */
+/* line 64, sass/user_panel.scss */
 .terminate {
   color: #d56262;
   text-decoration: underline;
 }
 
-/* line 59, sass/user_panel.scss */
+/* line 65, sass/user_panel.scss */
 .user-edit .btn-gradient {
   margin-right: 10px;
 }
 
-/* line 60, sass/user_panel.scss */
+/* line 66, sass/user_panel.scss */
 .cancel {
   color: #61656a;
   background: none;
@@ -165,13 +185,13 @@ aside {
   margin-top: 5px;
 }
 
-/* line 61, sass/user_panel.scss */
+/* line 67, sass/user_panel.scss */
 .field > .auth-submit {
   float: left;
   margin-right: 10px;
 }
 
-/* line 65, sass/user_panel.scss */
+/* line 71, sass/user_panel.scss */
 .edit-form input[type=text],
 .edit-form input[type=password],
 .edit-form input[type=email],
@@ -188,12 +208,12 @@ aside {
   margin-bottom: 5px;
 }
 
-/* line 66, sass/user_panel.scss */
+/* line 72, sass/user_panel.scss */
 .edit-form select {
   width: 128px;
 }
 
-/* line 68, sass/user_panel.scss */
+/* line 74, sass/user_panel.scss */
 .pm-panel {
   background-color: #ffffff;
   width: 680px;
@@ -202,38 +222,38 @@ aside {
   min-height: 102px;
   /* Landscape phones and down */
 }
-/* line 70, sass/user_panel.scss */
+/* line 76, sass/user_panel.scss */
 .pm-panel.new-user {
   min-height: 240px;
 }
-/* line 71, sass/user_panel.scss */
+/* line 77, sass/user_panel.scss */
 .pm-panel > section > .regular {
   border-bottom: 1px solid #efeff0;
   margin-bottom: 20px;
   overflow: hidden;
 }
-/* line 72, sass/user_panel.scss */
+/* line 78, sass/user_panel.scss */
 .pm-panel > section > .messages {
   padding: 20px 40px;
 }
 @media (max-width: 480px) {
-  /* line 68, sass/user_panel.scss */
+  /* line 74, sass/user_panel.scss */
   .pm-panel {
     width: 100%;
     padding: 10px 0 0 0;
   }
-  /* line 77, sass/user_panel.scss */
+  /* line 83, sass/user_panel.scss */
   .pm-panel > section > .regular {
     margin-bottom: 0;
   }
 }
 
-/* line 83, sass/user_panel.scss */
+/* line 89, sass/user_panel.scss */
 .pm-panel-padding {
   padding: 0 30px 10px;
 }
 
-/* line 85, sass/user_panel.scss */
+/* line 91, sass/user_panel.scss */
 .bar {
   background-color: #fbfbfb;
   border-bottom: 1px solid #e1e3e5;
@@ -243,12 +263,12 @@ aside {
   position: relative;
 }
 
-/* line 87, sass/user_panel.scss */
+/* line 93, sass/user_panel.scss */
 .pagination {
   text-align: center;
   line-height: 31px;
 }
-/* line 88, sass/user_panel.scss */
+/* line 94, sass/user_panel.scss */
 .pagination .arrow {
   width: 6px;
   height: 9px;
@@ -261,38 +281,38 @@ aside {
   *display: inline;
   /* IE */
 }
-/* line 89, sass/user_panel.scss */
+/* line 95, sass/user_panel.scss */
 .pagination .arrow.left {
   background-position: 0 0;
 }
-/* line 90, sass/user_panel.scss */
+/* line 96, sass/user_panel.scss */
 .pagination .arrow.right {
   background-position: 0 100%;
 }
 
-/* line 92, sass/user_panel.scss */
+/* line 98, sass/user_panel.scss */
 .pag-numbers {
   display: inline;
 }
-/* line 93, sass/user_panel.scss */
+/* line 99, sass/user_panel.scss */
 .pag-numbers > li {
   display: inline;
   margin: 0 6px;
 }
-/* line 94, sass/user_panel.scss */
+/* line 100, sass/user_panel.scss */
 .pag-numbers > li > a {
   color: #cbcfd2;
 }
-/* line 95, sass/user_panel.scss */
+/* line 101, sass/user_panel.scss */
 .pag-numbers .active a {
   color: #808386;
 }
 
-/* line 98, sass/user_panel.scss */
+/* line 104, sass/user_panel.scss */
 .avatars-wrapper {
   display: none;
 }
-/* line 99, sass/user_panel.scss */
+/* line 105, sass/user_panel.scss */
 .avatars-wrapper > p {
   text-align: center;
   color: #a8adb4;
@@ -301,7 +321,7 @@ aside {
   margin: 60px 0 40px 0;
 }
 
-/* line 101, sass/user_panel.scss */
+/* line 107, sass/user_panel.scss */
 .avatars-list {
   display: none;
   overflow: hidden;
@@ -309,33 +329,33 @@ aside {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 101, sass/user_panel.scss */
+  /* line 107, sass/user_panel.scss */
   .avatars-list {
     padding: 0;
   }
 }
 
-/* line 107, sass/user_panel.scss */
+/* line 113, sass/user_panel.scss */
 .avatars {
   overflow: hidden;
   /* Landscape phones and down */
 }
-/* line 108, sass/user_panel.scss */
+/* line 114, sass/user_panel.scss */
 .avatars > li {
   margin: 15px;
   float: left;
   position: relative;
 }
-/* line 109, sass/user_panel.scss */
+/* line 115, sass/user_panel.scss */
 .avatars > li > .avatar > a {
   outline: 0 none;
 }
-/* line 110, sass/user_panel.scss */
+/* line 116, sass/user_panel.scss */
 .avatars > .active {
   margin: 13px;
   border: 2px solid #4082bf;
 }
-/* line 111, sass/user_panel.scss */
+/* line 117, sass/user_panel.scss */
 .avatars > .active > .avatar {
   border: 1px solid #3f71a0;
   -webkit-border-radius: 0 !important;
@@ -345,17 +365,17 @@ aside {
   border-radius: 0 !important;
 }
 @media (max-width: 480px) {
-  /* line 116, sass/user_panel.scss */
+  /* line 122, sass/user_panel.scss */
   .avatars > li {
     margin: 5px;
   }
-  /* line 117, sass/user_panel.scss */
+  /* line 123, sass/user_panel.scss */
   .avatars > .active {
     margin: 3px;
   }
 }
 
-/* line 121, sass/user_panel.scss */
+/* line 127, sass/user_panel.scss */
 .checkmark {
   position: absolute;
   right: -7px;
@@ -364,12 +384,12 @@ aside {
   display: none;
 }
 
-/* line 122, sass/user_panel.scss */
+/* line 128, sass/user_panel.scss */
 li.active > .checkmark {
   display: block;
 }
 
-/* line 124, sass/user_panel.scss */
+/* line 130, sass/user_panel.scss */
 .custom-avatar {
   padding: 15px;
   width: 119px;
@@ -391,32 +411,32 @@ li.active > .checkmark {
   box-shadow: 0px 0px 0px 3px whitesmoke;
 }
 
-/* line 129, sass/user_panel.scss */
+/* line 135, sass/user_panel.scss */
 .custom-avatar > span {
   display: block;
   height: 100%;
   background: url("../images/icn-upload.png") no-repeat left 50%;
 }
 
-/* line 130, sass/user_panel.scss */
+/* line 136, sass/user_panel.scss */
 p.error {
   clear: both;
   padding: 10px 0 2px 0;
 }
 
-/* line 132, sass/user_panel.scss */
+/* line 138, sass/user_panel.scss */
 .autocomplete {
   border: 1px solid #ccc;
   display: none;
 }
-/* line 133, sass/user_panel.scss */
+/* line 139, sass/user_panel.scss */
 .autocomplete li {
   background: #eee;
   border: 1px solid #ccc;
   padding: 3px 2px;
   cursor: pointer;
 }
-/* line 134, sass/user_panel.scss */
+/* line 140, sass/user_panel.scss */
 .autocomplete li .active {
   background: #4173CC;
   color: #fff;
