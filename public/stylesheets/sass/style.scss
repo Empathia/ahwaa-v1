@@ -1315,7 +1315,7 @@ form + .recently-topics{padding-top:18px;}
     }
   }
 
-  @include breakpoint(phone) {
+  @include breakpoint(tablet-portrait) {
     $subnavcolor: #eceff3;
     &.stream-user-nav {
       background-color: $subnavcolor;
@@ -1329,7 +1329,7 @@ form + .recently-topics{padding-top:18px;}
         width: auto;
         display: inline-block;
         vertical-align: top;
-        @include border-radius(3px);
+        @include border-radius(0px);
         border: 1px solid rgba(0, 0, 0, 0.2);
         &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
         li {
@@ -1340,17 +1340,23 @@ form + .recently-topics{padding-top:18px;}
           border: none;
           font-size: 11px;
           @include border-radius(0px);
-          background-color: darken($subnavcolor, 2);
-          background-color: $subtle-blue;
+          background-color: #e6ecf2;
           .icon {margin: 0 -5px 0 3px}
           > a .badge {
             float: none;
             margin-left: 5px;
             margin-right: 0;
           }
+          &:hover {
+              background-color: darken(#e6ecf2, 2);
+              a {
+                  color: #394551;
+                  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+              }
+          }
           &.active {
             @include border-radius(0px);
-            background-color: darken($subnavcolor, 10);
+            background-color: #627583;
           }
         }
       }

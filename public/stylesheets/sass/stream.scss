@@ -48,8 +48,49 @@
     span {width: 108px}
   }
 
+  @include breakpoint(tablet-landscape-desktop) {
+    .right-side {
+      width: auto;
+      margin-left: 150px;
+      .streams {
+        width: 70%;
+        @include box-sizing(border-box);
+        .avatar-wrapper {
+          position: absolute;
+        }
+        .stream-item-data {
+          width: auto;
+          margin-left: 80px;
+        }
+      }
+      .recommended-topics {
+        width: 30%;
+        @include box-sizing(border-box);
+      }
+      .is-empty {
+        background-image: none;
+      }
+    }
+  }
+  @include breakpoint(tablet-portrait) {
+    .right-side {
+      width: auto;
+      .streams {
+        width: 100%;
+        min-height: 100%;
+      }
+    }
+    .recommended-topics {
+      width: 100%;
+      @include box-sizing(border-box);
+    }
+    .is-empty {
+      background-image: none;
+    }
+  }
   @include breakpoint(phone) {
-    .right-side {width: auto;
+    .right-side {
+      width: auto;
       .streams {
         width: 100%;
         min-height: 100%;
@@ -71,6 +112,16 @@
   .interaction-thanks {background-color: #fffef4}
   .interaction-welcome {background-color: #f8fdff}
 
+  @include breakpoint(tablet-portrait) {
+    .stream-items-wrapper {margin: 0}
+    .stream-item {padding: 15px 15px 0px}
+    .avatar-wrapper {position: absolute;}
+    .stream-item-data {
+      float: none;
+      margin-left: 75px;
+      width: auto;
+    }
+  }
   @include breakpoint(phone) {
     .stream-items-wrapper {margin: 0}
     .stream-item {padding: 15px 15px 0px}
