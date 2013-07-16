@@ -46,8 +46,25 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
   &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
   li {float: left}
 
+  @include breakpoint(tablet-landscape-desktop) {
+    margin-top: 5px;
+    width: 100%;
+    .by-author {width: 100%; margin-bottom: 10px}
+    .article-tags {min-width: 100%;
+      @include box-sizing(border-box);
+    }
+  }
+   @include breakpoint(tablet-portrait) {
+    margin-top: 5px;
+    width: 100%;
+    .by-author {width: 100%; margin-bottom: 10px}
+    .article-tags {min-width: 100%;
+      @include box-sizing(border-box);
+    }
+  }
   @include breakpoint(phone) {
-    margin-top: 5px; width: 100%;
+    margin-top: 5px;
+    width: 100%;
     .by-author {width: 100%; margin-bottom: 10px}
     .article-tags {min-width: 100%;
       @include box-sizing(border-box);
@@ -76,10 +93,17 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
     .exclamation-center{position: absolute; top: 6px; left: 22px; width: 25px; height: 25px; float: left; background-image: url('../images/exclamation-mark.jpg'); background-position: 0 0; background-repeat: no-repeat;}
   }
 
+  @include breakpoint(tablet-landscape-desktop) {
+    width: 100%;
+  }
+  @include breakpoint(tablet-portrait) {
+    width: 100%;
+  }
   @include breakpoint(phone) {
     margin-top: 15px;
     margin-left: -100px;
     height: 30px;
+    width: auto;
     // .facebook {
     //   display: none;
     // }
@@ -109,10 +133,38 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 
 article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; display: block; min-height: 449px;
   > header {
+    display: block;
+    position: static;
+    padding: 20px 20px 15px;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #dbdfe3;
+    @include border-radius(3px 3px 0 0);
+    @include box-shadow(inset 0 1px 0 #fff);
     > div {
       &.right{margin-left: 80px}
     }
     em{display: block; clear: left; text-align: center; color: #468AC4; padding: 5px 0 15px 0;}
+  }
+  @include breakpoint(phone) {
+    .avatar {
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      > span {
+        top: 35px;
+        left: 8px;
+      }
+    }
+    > header {
+      > div {
+        &.right {
+          margin-left: 60px;
+        }
+      }
+    }
   }
 }
 
@@ -122,10 +174,6 @@ article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; disp
 .topic-content .form-welcome-buttons,
 .topic-content .welcome-btn {margin-top: 0}
 .article-wraper .by-author {margin-top: 15px}
-article > header{display: block; position: static; padding: 20px 20px 15px; background-color: #fcfcfc; border-bottom: 1px solid #dbdfe3;
-  @include border-radius(3px 3px 0 0);
-  @include box-shadow(inset 0 1px 0 #fff);
-}
 
 aside {
   font-size: 12px; float: right; width: 200px; padding: 0 10px; background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; float: right; z-index: 99;
