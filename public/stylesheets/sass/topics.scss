@@ -311,8 +311,10 @@ section.need-help {padding:13px 0; text-align:center}
 .res-username{margin-bottom:7px; padding-top: 3px; color: #a1b6bf;}
 .res-username > span{color:#468ac4; margin-top: 0; font-weight: bold;}
 .res-flag-btns{float: right; display: none; position: absolute; right: 13px; top: 33px;
+
   @include breakpoint(phone) {
     display: block !important;
+    top: 72px;
     .flag {padding: 0 5px 0 10px;
       span {display: inline-block; text-indent: -9999px;
         background-position: 0 4px;
