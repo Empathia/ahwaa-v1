@@ -194,7 +194,9 @@
                       <%= link_to t('.header.login_form.forgot_password'), '#', :id => 'forgot-pass', :class => 'action-lk'%>
                     <% end %>
                     <%= form_tag passwords_path(:js), :class => "over-form forgot-pass-form", :remote => true do %>
-                      <a href="#" class="js-close-mobile-menu">Close</a>
+                      <div class="close-mobile-menu-wrapper">
+                        <a href="#" class="js-close-mobile-menu">Close</a>
+                      </div>
                       <p class="form-parag"><%= t('.header.forgot_pass_form.legend') %></p>
                       <ul>
                         <li class="login">
@@ -252,6 +254,9 @@
           </div>
         </div>
         <div class="header-wrapper">
+          <div class="close-mobile-menu-wrapper">
+            <a href="#" class="js-close-mobile-menu">Close</a>
+          </div>
           <div class="header-tags container">
             <ul id="header-tags">
               <% Topic.by_language(I18n.locale).tag_counts.order("position ASC").each do |tag| %>

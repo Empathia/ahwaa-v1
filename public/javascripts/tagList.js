@@ -63,7 +63,7 @@ Class('TagList')({
             }
 
             if ( !this.moreTags.find('li:not(.hide)').length ) {
-                more.hide();
+                this.more.hide();
             }
 
             this.headerTags.css('width', 'auto')
