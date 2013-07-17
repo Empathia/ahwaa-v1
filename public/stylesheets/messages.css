@@ -2,6 +2,8 @@
 .messages-wrapper {
   position: relative;
   /* Landscape phones and down */
+  /* Landscape phones and down */
+  /* Landscape phones and down */
 }
 /* line 4, sass/messages.scss */
 .messages-wrapper h3.pm-panel-padding {
@@ -34,71 +36,129 @@
   padding: 0;
   display: block;
 }
-@media (max-width: 480px) {
+@media (min-width: 768px) and (max-width: 979px) {
   /* line 19, sass/messages.scss */
   .messages-wrapper .right-side {
     width: auto;
+    margin-left: 150px;
+  }
+  /* line 22, sass/messages.scss */
+  .messages-wrapper .right-side .message-data {
+    width: auto;
+    min-width: 318px;
+  }
+}
+@media (max-width: 767px) {
+  /* line 29, sass/messages.scss */
+  .messages-wrapper .right-side {
+    width: 100%;
+  }
+  /* line 31, sass/messages.scss */
+  .messages-wrapper .right-side .avatar-wrapper {
+    position: absolute;
+  }
+  /* line 34, sass/messages.scss */
+  .messages-wrapper .right-side .message-data {
+    float: none;
+    width: auto;
+    margin-left: 75px;
+  }
+  /* line 39, sass/messages.scss */
+  .messages-wrapper .right-side .delete-message {
+    position: static;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 480px) {
+  /* line 46, sass/messages.scss */
+  .messages-wrapper .right-side {
+    width: 100%;
+  }
+  /* line 49, sass/messages.scss */
+  .messages-wrapper .right-side .avatar-wrapper .avatar {
+    width: 30px;
+    height: 30px;
+    padding: 1px;
+  }
+  /* line 53, sass/messages.scss */
+  .messages-wrapper .right-side .avatar-wrapper .avatar img {
+    width: 100%;
+    height: 100%;
+  }
+  /* line 57, sass/messages.scss */
+  .messages-wrapper .right-side .avatar-wrapper .avatar > span {
+    top: 20px;
+    left: 1px;
+  }
+  /* line 64, sass/messages.scss */
+  .messages-wrapper .right-side .message-data,
+  .messages-wrapper .right-side .discussion-wrapper > .message-data {
+    margin-left: 45px;
+  }
+  /* line 67, sass/messages.scss */
+  .messages-wrapper .right-side .message-data > .from > a {
+    padding-top: 0;
   }
 }
 
-/* line 23, sass/messages.scss */
+/* line 74, sass/messages.scss */
 .message-data {
   float: left;
   width: 520px;
   margin-left: 10px;
 }
-/* line 25, sass/messages.scss */
+/* line 76, sass/messages.scss */
 .message-data .msg a {
   color: #494b4c;
   font-size: 13px;
 }
-/* line 26, sass/messages.scss */
+/* line 77, sass/messages.scss */
 .message-data > .from > a {
   font-size: 13px;
   float: left;
   padding-top: 11px;
 }
 
-/* line 28, sass/messages.scss */
+/* line 79, sass/messages.scss */
 .message-title {
   padding-bottom: 10px;
 }
 
-/* line 30, sass/messages.scss */
+/* line 81, sass/messages.scss */
 .from {
   padding-bottom: 10px;
   overflow: hidden;
 }
-/* line 31, sass/messages.scss */
+/* line 82, sass/messages.scss */
 .from > a > span {
   float: left;
   margin-right: 3px;
 }
-/* line 32, sass/messages.scss */
+/* line 83, sass/messages.scss */
 .from .display-pm {
   color: #468ac4;
   font-weight: bold;
 }
-/* line 33, sass/messages.scss */
+/* line 84, sass/messages.scss */
 .from .display-pm:hover {
   text-decoration: underline;
 }
 
-/* line 37, sass/messages.scss */
+/* line 88, sass/messages.scss */
 .delete-message {
   float: right;
   width: 110px;
   position: relative;
   top: 22px;
 }
-/* line 38, sass/messages.scss */
+/* line 89, sass/messages.scss */
 .delete-message > .date {
   font-size: 11px;
   color: #a1aab2;
   float: right;
   padding: 3px 10px 0 0;
 }
-/* line 39, sass/messages.scss */
+/* line 90, sass/messages.scss */
 .delete-message > a {
   float: right;
   padding: 2px 2px 2px 3px;
@@ -107,7 +167,7 @@
   margin-top: -2px;
 }
 
-/* line 41, sass/messages.scss */
+/* line 92, sass/messages.scss */
 .opt-reply {
   height: 16px;
   left: -22px;
@@ -121,23 +181,23 @@
   background: url("../images/icn-reply-drk.png") 0 0;
   background-repeat: no-repeat;
 }
-/* line 43, sass/messages.scss */
+/* line 94, sass/messages.scss */
 .opt-reply:hover {
   background-position: -16px 0;
 }
 
-/* line 45, sass/messages.scss */
+/* line 96, sass/messages.scss */
 .new > .opt-reply {
   background-image: url("../images/icn-new-message-indicator.png");
   background-repeat: no-repeat;
 }
 
-/* line 47, sass/messages.scss */
+/* line 98, sass/messages.scss */
 #pm-wrapper .messages {
   padding: 20px 20px 40px 30px;
 }
 
-/* line 48, sass/messages.scss */
+/* line 99, sass/messages.scss */
 .messages > li {
   position: relative;
   width: auto;
@@ -149,7 +209,7 @@
   -moz-box-shadow: inset 0 0 0 1px white;
   box-shadow: inset 0 0 0 1px white;
 }
-/* line 56, sass/messages.scss */
+/* line 107, sass/messages.scss */
 .messages > li.new {
   background-color: #f2f9ff;
   border-color: #398fe5;
@@ -158,41 +218,41 @@
   box-shadow: 0 0 5px rgba(76, 166, 255, 0.3), inset 0 0 0 1px white;
 }
 
-/* line 61, sass/messages.scss */
+/* line 112, sass/messages.scss */
 .pm-panel-padding {
   padding: 0 20px 20px 20px;
 }
 
-/* line 63, sass/messages.scss */
+/* line 114, sass/messages.scss */
 .pm-details {
   font-size: 12px;
   padding-top: 20px;
 }
 
-/* line 64, sass/messages.scss */
+/* line 115, sass/messages.scss */
 .pm-user {
   margin-bottom: 20px;
 }
 
-/* line 65, sass/messages.scss */
+/* line 116, sass/messages.scss */
 .pm-user-response {
   color: #b3b8bc;
   padding: 20px 0 10px;
 }
 
-/* line 66, sass/messages.scss */
+/* line 117, sass/messages.scss */
 .pm-user-response > a {
   color: #5e5e5e;
   font-weight: bold;
 }
 
-/* line 67, sass/messages.scss */
+/* line 118, sass/messages.scss */
 .pm-user .avatar-wrapper {
   margin-right: 14px;
   z-index: 1;
 }
 
-/* line 68, sass/messages.scss */
+/* line 119, sass/messages.scss */
 .pm-user-details {
   color: #b3b8bc;
   margin-top: 10px;
@@ -200,18 +260,18 @@
   width: 536px;
 }
 
-/* line 69, sass/messages.scss */
+/* line 120, sass/messages.scss */
 .pm-user-details > div {
   margin-bottom: 5px;
 }
 
-/* line 70, sass/messages.scss */
+/* line 121, sass/messages.scss */
 .pm-user-details a {
   color: #468ac4;
   font-weight: bold;
 }
 
-/* line 71, sass/messages.scss */
+/* line 122, sass/messages.scss */
 .pm-message {
   color: #3f4245;
   line-height: 18px;
@@ -219,130 +279,129 @@
   padding-bottom: 20px;
 }
 
-/* line 73, sass/messages.scss */
+/* line 124, sass/messages.scss */
 #pm-wrapper strong {
   color: black;
 }
 
-/* line 74, sass/messages.scss */
+/* line 125, sass/messages.scss */
 .hide {
   display: none;
 }
 
-/* line 75, sass/messages.scss */
+/* line 126, sass/messages.scss */
 .response-wrapper {
-  margin: 0 0 11px 0;
-  width: 660px;
+  margin: 5px 0 11px 75px;
   border: none;
 }
 
-/* line 76, sass/messages.scss */
+/* line 127, sass/messages.scss */
 .new_private_message > .btn-gradient {
   padding: 5px 9px;
   display: none;
 }
 
-/* line 78, sass/messages.scss */
+/* line 129, sass/messages.scss */
 .pm-flash.success {
   margin: 4px 0 20px 0;
   padding: 7px;
 }
 
-/* line 79, sass/messages.scss */
+/* line 130, sass/messages.scss */
 .pm-flash.success > p {
   font-size: 12px;
   word-spacing: -1px;
 }
 
-/* line 81, sass/messages.scss */
+/* line 132, sass/messages.scss */
 .back-to-msgs {
   float: right;
   font-size: 12px;
   margin-top: -7px;
 }
 
-/* line 82, sass/messages.scss */
+/* line 133, sass/messages.scss */
 .back-to-msgs span {
   padding: 4px 10px 0;
   height: 18px;
   display: block;
 }
 
-/* line 84, sass/messages.scss */
+/* line 135, sass/messages.scss */
 .new-response textarea {
   border: 0;
   font-family: arial;
   font-size: 13px;
   line-height: 20px;
-  min-width: 646px;
-  width: 646px;
-  max-width: 646px;
+  width: 100%;
 }
 
-/* line 86, sass/messages.scss */
-.replies-wrapper {
-  float: left;
-}
-/* line 87, sass/messages.scss */
+/* line 138, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper {
   border-bottom: 1px solid #dae0e5;
   padding: 20px 0 17px;
-  float: left;
 }
-/* line 88, sass/messages.scss */
+/* line 139, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .avatar-wrapper {
-  margin-right: 10px;
+  position: absolute;
 }
-/* line 89, sass/messages.scss */
+/* line 140, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data {
-  float: left;
-  margin-left: 0;
-  width: 666px;
+  float: none;
+  margin-left: 75px;
+  width: auto;
+  min-height: 70px;
 }
-/* line 90, sass/messages.scss */
+/* line 141, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from {
   padding-bottom: 5px;
 }
-/* line 91, sass/messages.scss */
+/* line 142, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from > a {
   float: left;
   font-size: 13px;
   font-weight: bold;
   padding-top: 0;
 }
-/* line 92, sass/messages.scss */
+/* line 143, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from > .date {
   color: #A1AAB2;
   float: right;
   font-size: 11px;
 }
-/* line 94, sass/messages.scss */
+/* line 145, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .msg {
   line-height: 20px;
-  width: 550px;
 }
 
-/* line 99, sass/messages.scss */
+/* line 156, sass/messages.scss */
 .my-messages-reply-wrapper {
-  float: left;
   padding: 20px 0;
+  /* Landscape phones and down */
 }
-/* line 100, sass/messages.scss */
+/* line 158, sass/messages.scss */
 .my-messages-reply-wrapper > .avatar-wrapper {
-  margin-right: 10px;
+  position: absolute;
 }
-/* line 101, sass/messages.scss */
-.my-messages-reply-wrapper > form {
-  float: left;
-}
-/* line 103, sass/messages.scss */
+/* line 160, sass/messages.scss */
 .my-messages-reply-wrapper > form > a {
   font-weight: bold;
   padding-bottom: 5px;
   display: block;
 }
+/* line 162, sass/messages.scss */
+.my-messages-reply-wrapper .username {
+  margin: 0 0 0 75px;
+}
+@media (max-width: 480px) {
+  /* line 168, sass/messages.scss */
+  .my-messages-reply-wrapper .response-wrapper,
+  .my-messages-reply-wrapper .username {
+    margin-left: 45px;
+  }
+}
 
-/* line 107, sass/messages.scss */
+/* line 174, sass/messages.scss */
 .btn-gradient {
   clear: left;
   border: 1px solid;
@@ -370,7 +429,7 @@
   border-radius: 3px;
 }
 
-/* line 121, sass/messages.scss */
+/* line 188, sass/messages.scss */
 .btn-gradient:hover {
   cursor: pointer;
   background-color: #ecf4f9;
@@ -381,7 +440,7 @@
   background-image: linear-gradient(top, #ecf4f9, #fafcfd);
 }
 
-/* line 124, sass/messages.scss */
+/* line 191, sass/messages.scss */
 .btn-gradient:active {
   border-color: #a0b0c0 #c8d4e1 #cfdae6;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaf7fd), color-stop(100%, #f9fdfe));

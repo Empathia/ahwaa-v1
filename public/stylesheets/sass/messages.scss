@@ -15,8 +15,59 @@
   }
   .delete-message .opt-delete {background-image: url('../images/icn-options-user.png'); background-position: 0 -13px; border-color: transparent; background-repeat: no-repeat; width: 9px; height: 11px; text-indent: -9999px; font-size: 0; line-height: 0; padding: 0; display: block}
 
+  @include breakpoint(tablet-landscape-desktop) {
+    .right-side {
+      width: auto;
+      margin-left: 150px;
+      .message-data {
+        width: auto;
+        min-width: 318px;
+      }
+    }
+  }
+   @include breakpoint(tablet-portrait) {
+    .right-side {
+      width: 100%;
+      .avatar-wrapper {
+        position: absolute;
+      }
+      .message-data {
+        float: none;
+        width: auto;
+        margin-left: 75px;
+      }
+      .delete-message {
+        position: static;
+        margin-top: 10px;
+      }
+    }
+  }
   @include breakpoint(phone) {
-    .right-side {width: auto}
+    .right-side {
+      width: 100%;
+      .avatar-wrapper {
+        .avatar {
+          width: 30px;
+          height: 30px;
+          padding: 1px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+          > span {
+            top: 20px;
+            left: 1px;
+          }
+        }
+      }
+      .message-data,
+      .discussion-wrapper > .message-data {
+        margin-left: 45px;
+      }
+      .message-data > .from > a {
+        padding-top: 0;
+      }
+    }
   }
 }
 
@@ -72,7 +123,7 @@
 
 #pm-wrapper strong{color:black}
 .hide{display: none;}
-.response-wrapper{margin: 0 0 11px 0; width: 660px; border: none;}
+.response-wrapper{margin: 5px 0 11px 75px; border: none;}
 .new_private_message > .btn-gradient{padding: 5px 9px; display: none;}
 
 .pm-flash.success{margin: 4px 0 20px 0; padding: 7px;}
@@ -81,26 +132,42 @@
 .back-to-msgs {float: right; font-size: 12px; margin-top: -7px}
 .back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
 
-.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; min-width: 646px; width: 646px; max-width: 646px}
+.new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; width: 100%}
 
-.replies-wrapper {float: left;
-  > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0 17px; float: left;
-    > .avatar-wrapper {margin-right: 10px}
-    > .message-data {float: left; margin-left: 0; width: 666px;
+.replies-wrapper {
+  > .discussion-wrapper {border-bottom: 1px solid #dae0e5; padding: 20px 0 17px;
+    > .avatar-wrapper {position: absolute}
+    > .message-data {float: none; margin-left: 75px; width: auto; min-height: 70px;
       > .from {padding-bottom: 5px;
         > a {float: left; font-size: 13px; font-weight: bold; padding-top: 0}
         > .date {color: #A1AAB2; float: right; font-size: 11px}
       }
-      > .msg {line-height: 20px; width: 550px}
+      > .msg {line-height: 20px}
     }
   }
+  // @include breakpoint(tablet-landscape-desktop) {
+  //   > .discussion-wrapper {
+  //     > .avatar-wrapper {position: absolute}
+  //     > .message-data {float: left; margin-left: 0; width: 666px;}
+  //   }
+  // }
 }
 
-.my-messages-reply-wrapper {float: left; padding: 20px 0;
-  > .avatar-wrapper {margin-right: 10px}
+.my-messages-reply-wrapper {
+  padding: 20px 0;
+  > .avatar-wrapper {position: absolute}
   > form {
-    float: left;
     > a {font-weight: bold; padding-bottom: 5px; display: block}
+  }
+  .username {
+    margin: 0 0 0 75px;
+  }
+
+  @include breakpoint(phone) {
+    .response-wrapper,
+    .username {
+      margin-left: 45px;
+    }
   }
 }
 
