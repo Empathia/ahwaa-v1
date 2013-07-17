@@ -4275,3 +4275,78 @@ footer {
   background-size: 15px;
   float:left;
 }
+
+/* PRIVATE PROFILE */
+/* line 1571, sass/style.scss */
+.private-msg-profile {
+  position: absolute;
+  top: 5px;
+  left: 1px;
+  width: 30px;
+  background-color: #f0f6fc;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: right;
+  z-index: 999;
+  font-size: 12px;
+  -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+  -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+  box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+}
+/* line 1583, sass/style.scss */
+.private-msg-profile > form {
+  display: block;
+  background: #ffffff;
+  display: none;
+  padding: 7px 16px 0;
+  margin: 0;
+}
+/* line 1589, sass/style.scss */
+.private-msg-profile > form > textarea {
+  min-width: 234px;
+  width: 234px;
+  max-width: 234px;
+  height: 112px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding: 10px;
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  color: #aeb4bd;
+}
+
+/* line 1603, sass/style.scss */
+.activity-btn-profile {
+  float:left;
+  margin: 0;
+}
+/* line 1606, sass/style.scss */
+.activity-btn-profile li {
+  float:left;
+  height: 21px;
+}
+/* line 1609, sass/style.scss */
+.activity-btn-profile li.first {
+  border-left: 0 none;
+}
+/* line 1612, sass/style.scss */
+.activity-btn-profile li a {
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+}
+/* line 1618, sass/style.scss */
+.activity-btn-profile li span {
+  display: block;
+  position: relative;
+}
+
+/* line 1624, sass/style.scss */
+.send-private-msg-profile {
+  height: 21px;
+  width: 28px;
+  background: url("../../images/icn-tooltip-send-msg.png") no-repeat;
+  right: 5px;
+  top: 0;
+}

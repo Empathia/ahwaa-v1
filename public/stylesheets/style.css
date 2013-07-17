@@ -4275,6 +4275,9 @@ footer {
   background-size: 15px;
   float: right;
 }
+
+/* PRIVATE PROFILE */
+/* line 1571, sass/style.scss */
 .private-msg-profile {
   position: absolute;
   top: 5px;
@@ -4290,40 +4293,7 @@ footer {
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
 }
-.activity-btn-profile {
-  float: right;
-  margin: 0;
-}
-
-.activity-btn-profile li {
-  float: right;
-  height: 21px;
-}
-
-
-.activity-btn-profile li.first {
-  border-right: 0 none;
-}
-
-.activity-btn-profile li a {
-  text-indent: -9999px;
-  font-size: 0;
-  line-height: 0;
-  display: block;
-}
-.activity-btn-profile li span {
-  display: block;
-  position: relative;
-}
-.send-private-msg-profile {
-  height: 21px;
-  width: 28px;
-}
-.send-private-msg-profile {
-  background: url("../images/icn-tooltip-send-msg.png") no-repeat;
-  left: 5px;
-  top: 0;
-}
+/* line 1583, sass/style.scss */
 .private-msg-profile > form {
   display: block;
   background: #ffffff;
@@ -4331,11 +4301,8 @@ footer {
   padding: 7px 16px 0;
   margin: 0;
 }
-
-/* line 1053, sass/style.scss */
-.private-msg-profile > form > textarea,
-.send-from-stream > form > textarea,
-.tooltip-box textarea {
+/* line 1589, sass/style.scss */
+.private-msg-profile > form > textarea {
   min-width: 234px;
   width: 234px;
   max-width: 234px;
@@ -4348,10 +4315,38 @@ footer {
   color: #aeb4bd;
 }
 
-/* line 1054, sass/style.scss */
-.tooltip-box textarea {
-  min-width: 244px;
-  width: 244px;
-  max-width: 244px;
-  height: 74px;
+/* line 1603, sass/style.scss */
+.activity-btn-profile {
+  float: right;
+  margin: 0;
+}
+/* line 1606, sass/style.scss */
+.activity-btn-profile li {
+  float: right;
+  height: 21px;
+}
+/* line 1609, sass/style.scss */
+.activity-btn-profile li.first {
+  border-right: 0 none;
+}
+/* line 1612, sass/style.scss */
+.activity-btn-profile li a {
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+}
+/* line 1618, sass/style.scss */
+.activity-btn-profile li span {
+  display: block;
+  position: relative;
+}
+
+/* line 1624, sass/style.scss */
+.send-private-msg-profile {
+  height: 21px;
+  width: 28px;
+  background: url("../images/icn-tooltip-send-msg.png") no-repeat;
+  left: 5px;
+  top: 0;
 }

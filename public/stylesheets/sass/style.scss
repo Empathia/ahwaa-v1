@@ -62,7 +62,7 @@ body .hidden {display: none}
 }
 
 .aligned {width: 940px; padding: 0 10px; margin: 0 auto}
-a {color: #2d70b3; outline: none}
+a {color: $links-color; outline: none}
 input:active,
 a:active {outline: none}
 button::-moz-focus-inner,
@@ -273,7 +273,7 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
 }
 
 .btn-animation-feedback,
-.btn-animation-feedback:hover {border: 1px solid; border-color: #2d70b3 #2a6bae #174a93; background-color: #2d70b3; text-shadow: none; color: #fff;
+.btn-animation-feedback:hover {border: 1px solid; border-color: $links-color #2a6bae #174a93; background-color: $links-color; text-shadow: none; color: #fff;
   @include background-image(linear-gradient(top, #67a6d4, #0c3884));
   @include box-shadow(inset 0 0 0 1px rgba(255, 255, 255, .3));
 }
@@ -576,7 +576,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   margin-top: 21px;
 
   > p {width: 188px; background-color: #fff; border: 1px solid; border-color: #7a8488 #bcc9d0 #c3d2d9; height: 21px; padding: 5px 10px 0;
-    &.focus {border-color: #2d70b3;
+    &.focus {border-color: $links-color;
       @include box-shadow(0 0 5px rgba(45, 112, 189, .5));
     }
     > input{
@@ -884,7 +884,7 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
 .response-wrapper.new-response{border: 2px solid #f0f5f8; font-size: 11px;}
 .response-wrapper.new-response > div {border: 1px solid #d6d6d6; padding: 6px 7px;}
 .comment_content{color: #61656A; width: 100%; padding: 0; height: 16px; border: none; margin-top: 4px; resize: none; font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 16px; overflow: hidden;}
-.response-wrapper.new-response > div.focus {border: 1px solid #2d70b3;
+.response-wrapper.new-response > div.focus {border: 1px solid $links-color;
   @include box-shadow(0 0 5px rgba(45, 112, 189, .5));
 }
 
@@ -1565,4 +1565,85 @@ footer {
   margin-top: 3px;
   background-size: 15px;
   float: right
+}
+
+/* PRIVATE PROFILE */
+.private-msg-profile {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+  width: 30px;
+  background-color: #f0f6fc;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: left;
+  z-index: 999;
+  font-size: 12px;
+  @include box-shadow(0px 1px 3px rgba(42, 83, 110, 0.6));
+  > form {
+    display: block;
+    background: #ffffff;
+    display: none;
+    padding: 7px 16px 0;
+    margin: 0;
+    > textarea {
+      min-width: 234px;
+      width: 234px;
+      max-width: 234px;
+      height: 112px;
+      margin-top: 0;
+      margin-bottom: 8px;
+      padding: 10px;
+      font-family: Arial, Sans-serif;
+      font-size: 12px;
+      color: #aeb4bd;
+    }
+  }
+}
+.activity-btn-profile {
+  float: right;
+  margin: 0;
+  li {
+    float: right;
+    height: 21px;
+    &.first {
+      border-right: 0 none;
+    }
+    a {
+      text-indent: -9999px;
+      font-size: 0;
+      line-height: 0;
+      display: block;
+    }
+    span {
+      display: block;
+      position: relative;
+    }
+  }
+}
+.send-private-msg-profile {
+  height: 21px;
+  width: 28px;
+  background: url("../images/icn-tooltip-send-msg.png") no-repeat;
+  left: 5px;
+  top: 0;
+  // > form {
+  //   display: block;
+  //   background: #ffffff;
+  //   display: none;
+  //   padding: 7px 16px 0;
+  //   margin: 0;
+  //   > textarea {
+  //     min-width: 234px;
+  //     width: 234px;
+  //     max-width: 234px;
+  //     height: 112px;
+  //     margin-top: 0;
+  //     margin-bottom: 8px;
+  //     padding: 10px;
+  //     font-family: Arial, Sans-serif;
+  //     font-size: 12px;
+  //     color: #aeb4bd;
+  //   }
+  // }
 }
