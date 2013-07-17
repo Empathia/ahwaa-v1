@@ -100,15 +100,19 @@ $(function() {
 
     setTimeout(function() {
         $('.avatar').hoverIntent(function (e) {
+            var _this = $(this);
+
             $('.private-msg.tooltip-box').fadeOut(100);
 
-            var rollover = $(this).siblings('.private-msg');
-            if (rollover.length) {
-                var that = $(this),
-                    rollover_left = rollover.css('left') ? rollover.css('left') : 0,
+            var rollover = ( _this.parent('a').length )
+                ? _this.parent('a').siblings('.private-msg')
+                : _this.siblings('.private-msg');
+
+            if ( rollover.length ) {
+                var rollover_left = rollover.css('left') ? rollover.css('left') : 0,
                     rollover_top = ($('img', this).height() + 10),
                     rollover_bottom = (rollover.outerHeight() + 3),
-                    indicator = that.siblings('.private-msg').find('.origin'),
+                    indicator = _this.siblings('.private-msg').find('.origin'),
                     ind_width = 20,
                     ind_left = (( $('img', this).width() / 2) + ind_width),
                     // pbottom = $(window).height(),
@@ -120,8 +124,8 @@ $(function() {
 
                 if ((e.pageX + xright) > $(window).width()) {
                     rollover.addClass('inside');
-                    rollover.css({'left': -( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) })
-                    indicator.css({'left': ( (rollover.outerWidth() - $('img', that).parent('.avatar').outerWidth()) - 25 ) + ($('img', that).parent('.avatar').outerWidth() / 2)-10 });
+                    rollover.css({'left': -( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) })
+                    indicator.css({'left': ( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) + ($('img', _this).parent('.avatar').outerWidth() / 2)-10 });
                     if ($(rollover).parents('.footer-avatar').length) {
                         rollover.addClass('bottom-avatar');
                         rollover.css({'top': -(rollover_bottom) });
