@@ -105,6 +105,7 @@ ar:
         most_topics_posted: أكثر الأعضاء نشرًا للموضوعات
         highest_points_acquired: أكثر الأعضاء نقاطًا
       header:
+        home: "الصفحة الرئيسيه"
         switch_to_english: View in English
         auth:
           sign_up: "أنشئ حسابًا جديدًا!"

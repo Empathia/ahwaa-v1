@@ -56,7 +56,7 @@
                 <div class="mobile-menu">
                   <ul class="menu">
                     <% if !logged_in? %>
-                      <li><a href="/">Home</a></li>
+                      <li><a href="/"><%= t('.header.home') %></a></li>
                       <li class="menu-taglist">
                         <a href="#" class="js-taglist-trigger">
                           <%= t('.header.tag_list') %>

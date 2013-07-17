@@ -106,6 +106,7 @@ en:
         most_topics_posted: Most Topics Posted
         highest_points_acquired: Highest Points Acquired
       header:
+        home: Home
         switch_to_english: 'النسخة العربية'
         auth:
           sign_up: Sign-Up
