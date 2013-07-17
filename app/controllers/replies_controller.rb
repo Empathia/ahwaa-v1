@@ -3,6 +3,8 @@ class RepliesController < ApplicationController
   before_filter :find_topic
 
   def create
+    params[:reply][:content].gsub!("<3", '@3')
+    params[:reply][:content].gsub!('>:O', '@:O')
     @reply = @topic.replies.build(params[:reply])
     @reply.parent = @topic.replies.find(params[:reply_to]) unless params[:reply_to].blank?
     @reply.user = current_user

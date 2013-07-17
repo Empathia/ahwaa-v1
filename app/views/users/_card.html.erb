@@ -6,7 +6,9 @@
   </span>
   <div class="user-wrapper">
     <div class="user-info">
-      <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
+      <%= link_to profile_path(user.username) do %>
+        <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
+      <% end %>
       <% unless current_user == user || !logged_in? || (logged_in? && (current_user.blocks.map{|u| u.block}.include? user)) || current_user.blocked_user?(user) %>
         <ul class="activity-btns">
            <li class="light-button border-all-2">

@@ -6,10 +6,42 @@ $(document).ready(function(){
 </script>
 <div class="container">
   <div class="content my-topics-wrapper">
-    <%= render :partial => 'shared/user_nav' %>
+    <%#= render :partial => 'shared/user_nav' %>
     <div class="right-side border-all container-soft-box-shadow" data-hansel-container-id="user-topics">
-       <div class="my-topics-title header-title-bg border-all">
-        <h2><%= t 'my_topics.title' %></h2>
+        <div class="my-topics-title header-title-bg border-all">
+          <h2><%= @user.username%> <%= t 'shared.user_topics' %></h2>
+          <p class="points-wrapper-small small-hearts">
+             <span class="level <%= level_css_class_for_user(@user) || 'no-level' %>"></span>
+             <span class="points"><%= @user.score_board.current_points %></span>
+           </p>
+
+            <div class="private-msg-profile">
+
+              <% unless current_user == @user || !logged_in? || (logged_in? && (current_user.blocks.map{|u| u.block}.include? @user)) || current_user.blocked_user?(@user) %>
+                <ul class="activity-btn-profile">
+                   <li class="light-button border-all-2">
+                      <%= link_to '#', :title => t('private_message.send_pm'), :class => "#{'disabled' unless logged_in?}" do  %>
+                        <span class="send-private-msg-profile"></span>
+                      <% end %>
+                    </li>
+                </ul>
+                <% if @user.new_user? && !current_user.already_welcomed?(@user) %>
+                  <p class="light-button border-all-2 welcome-btn">
+                    <a href="#" class="">Welcome</a>
+                  </p>
+                <% end %>
+              <% end %>
+              <%= form_for PrivateMessage.new, :url => user_private_messages_path(@user), :html => {:class => 'form-private-msg', :id => nil}, :remote => true do |f| %>
+                <%= f.text_area :content, :class => 'border-all', :placeholder => t('private_message.write_msg'), :required => true, :id => nil %>
+                <div class="private-msg-btns">
+                  <%= link_to t('private_message.cancel'), '#', :class => 'cancel' %>
+                  <%= f.submit t('private_message.submit'), :class => 'btn-gradient' %>
+                </div>
+              <% end %>
+            </div>
+
+
+
       </div>
       <% if @topics.empty? %>
         <div class="is_empty">
@@ -67,6 +99,22 @@ $(document).ready(function(){
                 <% end %>
               </div>
             </li>
+          <% end %>
+        </ul>
+         <h2><%= t('private_message.recently_participated') %></h2>
+        <ul class="topic-participation">
+          <% unless @user.recent_replies.empty? %>
+            <% @user.recent_replies.each do |reply| %>
+              <li class="border-all">
+                <div class="topic-spotlight border-top-3">
+                  <div class="item-data">
+                    <%= link_to truncate(reply.topic.title, :length => 50), reply.topic %>
+                  </div>
+                </div>
+              </li>
+            <% end %>
+          <% else %>
+            <li><%= t 'private_message.no_activity' %></li>
           <% end %>
         </ul>
       <% end %>

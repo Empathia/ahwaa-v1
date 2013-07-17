@@ -22,7 +22,7 @@ Lgbt::Application.routes.draw do
   resources :blocks, :only => [:create, :destroy] do
     post :unblock, :on => :collection
   end
-  resource :user, :path => "profile", :only => [:show, :destroy, :edit, :update] do
+  resource :user, :path => "myprofile", :only => [:show, :destroy, :edit, :update] do
     get "inbox"
   end
   resources :users, :except => [:show, :destroy, :update, :edit] do
@@ -52,6 +52,7 @@ Lgbt::Application.routes.draw do
   end
 
   get '/tag/:tag' => "topics#tag", :as => :topic_tag
+  get '/profile/:user_id' => "users#profile", :as => :profile
   post "/notifications" => "notifications#create"
   get '/stream' => "home#stream", :as => :stream
   get '/my_topics' => 'home#my_topics', :as => :my_topics
