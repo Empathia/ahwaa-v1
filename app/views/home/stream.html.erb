@@ -1,5 +1,10 @@
 <% stylesheet 'stream', 'uniform.default' %>
 <% javascript 'stream', 'include/jquery.uniform.min' %>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".recommended-topics").emotions();
+});
+</script>
 
 <div class="container">
   <div class="content stream-wrapper">
@@ -70,7 +75,11 @@
               <% next if current_user.blocks.map{|u| u.block}.include? user %>
               <li>
                 <%= avatar_span(user, user.is_expert?) %>
-                <em><%= user.username %></em>
+                <em>
+                  <%= link_to profile_path(user.username) do %>
+                    <%= user.username %>
+                  <% end %>
+                </em>
                 <%= render :partial => 'users/card', :locals => {:user => user} %>
               </li>
             <% end %>
@@ -86,7 +95,11 @@
               <% next if current_user.blocks.map{|u| u.block}.include? user %>
               <li>
                 <%= avatar_span(user, user.is_expert?) %>
-                <em><%= user.username %></em>
+                <em>
+                  <%= link_to profile_path(user.username) do %>
+                    <%= user.username %>
+                  <% end %>
+                </em>
                 <%= render :partial => 'users/card', :locals => {:user => user} %>
               </li>
             <% end %>

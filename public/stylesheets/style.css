@@ -4275,3 +4275,83 @@ footer {
   background-size: 15px;
   float: right;
 }
+.private-msg-profile {
+  position: absolute;
+  top: 5px;
+  right: 1px;
+  width: 30px;
+  background-color: #f0f6fc;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: left;
+  z-index: 999;
+  font-size: 12px;
+  -webkit-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+  -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+  box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
+}
+.activity-btn-profile {
+  float: right;
+  margin: 0;
+}
+
+.activity-btn-profile li {
+  float: right;
+  height: 21px;
+}
+
+
+.activity-btn-profile li.first {
+  border-right: 0 none;
+}
+
+.activity-btn-profile li a {
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+  display: block;
+}
+.activity-btn-profile li span {
+  display: block;
+  position: relative;
+}
+.send-private-msg-profile {
+  height: 21px;
+  width: 28px;
+}
+.send-private-msg-profile {
+  background: url("../images/icn-tooltip-send-msg.png") no-repeat;
+  left: 5px;
+  top: 0;
+}
+.private-msg-profile > form {
+  display: block;
+  background: #ffffff;
+  display: none;
+  padding: 7px 16px 0;
+  margin: 0;
+}
+
+/* line 1053, sass/style.scss */
+.private-msg-profile > form > textarea,
+.send-from-stream > form > textarea,
+.tooltip-box textarea {
+  min-width: 234px;
+  width: 234px;
+  max-width: 234px;
+  height: 112px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  padding: 10px;
+  font-family: Arial, Sans-serif;
+  font-size: 12px;
+  color: #aeb4bd;
+}
+
+/* line 1054, sass/style.scss */
+.tooltip-box textarea {
+  min-width: 244px;
+  width: 244px;
+  max-width: 244px;
+  height: 74px;
+}

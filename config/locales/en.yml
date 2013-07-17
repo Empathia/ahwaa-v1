@@ -344,6 +344,7 @@ en:
 
   shared:
     block: User Blocked
+    user_topics: Topics
     user_nav:
       messages: Messages
       my_topics: My Topics

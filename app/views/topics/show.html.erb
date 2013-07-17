@@ -1,5 +1,12 @@
-<% stylesheet 'stream', 'uniform.default' %>
-<% javascript 'stream', 'include/jquery.uniform.min', 'include/jquery-ui.min' %>
+<% stylesheet 'stream', 'vendor/uniform.default' %>
+<% javascript 'stream', 'include/jquery.uniform.min', 'include/jquery-ui.min'%>
+<script type="text/javascript">
+$(document).ready(function(){
+  $(".comm-wrap").emotions();
+  $("#title-emo").emotions();
+  $(".item-data").emotions();
+});
+</script>
 
 <% title @topic.title %>
 <% page_description @topic.content %>
@@ -44,7 +51,11 @@
           <% next if current_user && current_user.blocks.map{|u| u.block}.include?(user) %>
             <li>
               <%= avatar_span(user, user.is_expert?) %>
-              <em><%= user.username %></em>
+              <em>
+                  <%= link_to profile_path(user.username) do %>
+                    <%= user.username %>
+                  <% end %>
+              </em>
               <%= render :partial => 'users/card', :locals => {:user => user} %>
             </li>
           <% end %>
@@ -99,9 +110,13 @@
             <% end %>
           </div>
           <div class="right clearfix">
-            <h1><%= @topic.title %></h1>
+            <h1 id="title-emo"><%= @topic.title %></h1>
             <ul class="topic-info">
-              <li class="by-author"><%= t '.by', :author => @topic.author_username %></li>
+              <li class="by-author">
+                <%= link_to profile_path(@topic.author_username) do %>
+                  <%= t '.by', :author => @topic.author_username %>
+                <% end %>
+              </li>
               <li class="article-tags"><%= linked_tag_list @topic.tags %></li>
             </ul>
             <ul class="social-bookmarkers">

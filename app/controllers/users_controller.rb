@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :js, :only => [:update, :create]
-  before_filter :get_user
+  before_filter :get_user, :except =>[:profile]
   skip_before_filter :authenticate_user!, :only => [:create]
 
   def show
@@ -26,6 +26,12 @@ class UsersController < ApplicationController
     sign_out_current_user
     @user.destroy
     respond_with(@user, :location => root_path)
+  end
+
+  def profile
+    @user = User.find_by_username(params[:user_id])
+    @topics = @user.topics
+
   end
 
   protected

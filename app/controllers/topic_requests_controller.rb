@@ -6,6 +6,8 @@ class TopicRequestsController < ApplicationController
   end
 
   def create
+    params[:topic_request][:title].gsub!("<3", '@3')
+    params[:topic_request][:title].gsub!('>:O', '@:O')
     @topic_request = current_user.topic_requests.new(params[:topic_request])
 
     if @topic_request.save

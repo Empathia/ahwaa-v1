@@ -20,7 +20,9 @@
           </div>
           <div class="res-username">
             <% unless reply.anonymous? %>
-              <span><%= reply.user.username %></span>
+              <%= link_to profile_path(reply.user.username) do %>
+                <span><%= reply.user.username %></span>
+              <% end %>
             <% else %>
               <%= t(".anonymous") %>
             <% end %>
@@ -33,7 +35,7 @@
             </div>
           </div>
         </div>
-        <%= simple_format reply.content %>
+        <%= simple_format(reply.content).html_safe %>
         <% if reply.replies.size > 0 %>
           <ul class="comments-ls">
             <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.length}%>
