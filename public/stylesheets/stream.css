@@ -140,101 +140,102 @@
   /* line 61, sass/stream.scss */
   .stream-wrapper .right-side .streams .stream-item-data {
     width: auto;
+    min-width: 282px;
     margin-left: 80px;
   }
-  /* line 66, sass/stream.scss */
+  /* line 67, sass/stream.scss */
   .stream-wrapper .right-side .recommended-topics {
     width: 30%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 70, sass/stream.scss */
+  /* line 71, sass/stream.scss */
   .stream-wrapper .right-side .is-empty {
     background-image: none;
   }
 }
 @media (max-width: 767px) {
-  /* line 76, sass/stream.scss */
+  /* line 77, sass/stream.scss */
   .stream-wrapper .right-side {
     width: auto;
   }
-  /* line 78, sass/stream.scss */
+  /* line 79, sass/stream.scss */
   .stream-wrapper .right-side .streams {
     width: 100%;
     min-height: 100%;
   }
-  /* line 83, sass/stream.scss */
+  /* line 84, sass/stream.scss */
   .stream-wrapper .recommended-topics {
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 87, sass/stream.scss */
+  /* line 88, sass/stream.scss */
   .stream-wrapper .is-empty {
     background-image: none;
   }
 }
 @media (max-width: 480px) {
-  /* line 92, sass/stream.scss */
+  /* line 93, sass/stream.scss */
   .stream-wrapper .right-side {
     width: auto;
   }
-  /* line 94, sass/stream.scss */
+  /* line 95, sass/stream.scss */
   .stream-wrapper .right-side .streams {
     width: 100%;
     min-height: 100%;
   }
-  /* line 99, sass/stream.scss */
+  /* line 100, sass/stream.scss */
   .stream-wrapper .recommended-topics {
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 103, sass/stream.scss */
+  /* line 104, sass/stream.scss */
   .stream-wrapper .is-empty {
     background-image: none;
   }
 }
 
-/* line 109, sass/stream.scss */
+/* line 110, sass/stream.scss */
 .streams {
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 110, sass/stream.scss */
+/* line 111, sass/stream.scss */
 .streams .stream-items-wrapper {
   margin: 0 20px;
 }
-/* line 111, sass/stream.scss */
+/* line 112, sass/stream.scss */
 .streams .stream-item {
   border-bottom: 1px solid #e6ecf2;
   padding: 20px 0 25px;
 }
-/* line 112, sass/stream.scss */
+/* line 113, sass/stream.scss */
 .streams .interaction-thanks {
   background-color: #fffef4;
 }
-/* line 113, sass/stream.scss */
+/* line 114, sass/stream.scss */
 .streams .interaction-welcome {
   background-color: #f8fdff;
 }
 @media (max-width: 767px) {
-  /* line 116, sass/stream.scss */
+  /* line 117, sass/stream.scss */
   .streams .stream-items-wrapper {
     margin: 0;
   }
-  /* line 117, sass/stream.scss */
+  /* line 118, sass/stream.scss */
   .streams .stream-item {
     padding: 15px 15px 0px;
   }
-  /* line 118, sass/stream.scss */
+  /* line 119, sass/stream.scss */
   .streams .avatar-wrapper {
     position: absolute;
   }
-  /* line 119, sass/stream.scss */
+  /* line 120, sass/stream.scss */
   .streams .stream-item-data {
     float: none;
     margin-left: 75px;
@@ -242,19 +243,19 @@
   }
 }
 @media (max-width: 480px) {
-  /* line 126, sass/stream.scss */
+  /* line 127, sass/stream.scss */
   .streams .stream-items-wrapper {
     margin: 0;
   }
-  /* line 127, sass/stream.scss */
+  /* line 128, sass/stream.scss */
   .streams .stream-item {
     padding: 15px 15px 0px;
   }
-  /* line 128, sass/stream.scss */
+  /* line 129, sass/stream.scss */
   .streams .avatar-wrapper {
     position: absolute;
   }
-  /* line 129, sass/stream.scss */
+  /* line 130, sass/stream.scss */
   .streams .stream-item-data {
     float: none;
     margin-left: 75px;
@@ -262,26 +263,26 @@
   }
 }
 
-/* line 137, sass/stream.scss */
+/* line 138, sass/stream.scss */
 .stream-item-data {
   float: right;
   width: 420px;
   /* Landscape phones and down */
 }
-/* line 139, sass/stream.scss */
+/* line 140, sass/stream.scss */
 .stream-item-data > div {
   margin-top: 1px;
 }
-/* line 141, sass/stream.scss */
+/* line 142, sass/stream.scss */
 .stream-item-data > div > .user-comment {
   color: #8a9199;
   float: left;
 }
-/* line 143, sass/stream.scss */
+/* line 144, sass/stream.scss */
 .stream-item-data > div > .user-comment a {
   font-weight: bold;
 }
-/* line 145, sass/stream.scss */
+/* line 146, sass/stream.scss */
 .stream-item-data > div .time-ago {
   float: right;
   font-size: 11px;
@@ -293,92 +294,92 @@
   margin-top: -1px;
   height: 14px;
 }
-/* line 148, sass/stream.scss */
+/* line 149, sass/stream.scss */
 .stream-item-data > div .time-ago .separator {
   display: inline-block;
   margin: 0 2px;
 }
-/* line 151, sass/stream.scss */
+/* line 152, sass/stream.scss */
 .stream-item-data > p.title {
   font-family: 'GothamMediumRegular';
   font-weight: normal;
   font-size: 16px;
   margin: 13px 0 8px;
 }
-/* line 154, sass/stream.scss */
+/* line 155, sass/stream.scss */
 .stream-item-data > blockquote {
   color: #494b4c;
   margin: 0;
   line-height: 20px;
 }
 @media (max-width: 480px) {
-  /* line 161, sass/stream.scss */
+  /* line 162, sass/stream.scss */
   .stream-item-data > div > .user-comment,
   .stream-item-data > div > .time-ago {
     float: none;
     display: block;
   }
-  /* line 162, sass/stream.scss */
+  /* line 163, sass/stream.scss */
   .stream-item-data > div > .time-ago {
     margin: 15px 0 0 0;
   }
-  /* line 166, sass/stream.scss */
+  /* line 167, sass/stream.scss */
   .stream-item-data > p.title {
     margin-top: 0;
   }
 }
 
-/* line 172, sass/stream.scss */
+/* line 173, sass/stream.scss */
 .load-more-wrapper {
   overflow: hidden;
   margin: 27px 0 20px 183px;
 }
-/* line 175, sass/stream.scss */
+/* line 176, sass/stream.scss */
 .load-more-wrapper a {
   float: left;
 }
-/* line 176, sass/stream.scss */
+/* line 177, sass/stream.scss */
 .load-more-wrapper .more-stream {
   display: block;
   height: 19px;
   padding: 5px 44px 0;
 }
 
-/* line 180, sass/stream.scss */
+/* line 181, sass/stream.scss */
 .panel-sub-nav.user-info-wrapper {
   background-color: #fff;
   padding-top: 10px;
 }
 
-/* line 183, sass/stream.scss */
+/* line 184, sass/stream.scss */
 .user-info-wrapper .user-info {
   margin-left: 60px;
 }
-/* line 185, sass/stream.scss */
+/* line 186, sass/stream.scss */
 .user-info-wrapper .user-info .username {
   font-size: 13px;
   word-wrap: break-word;
 }
-/* line 186, sass/stream.scss */
+/* line 187, sass/stream.scss */
 .user-info-wrapper .user-info .user-points {
   overflow: hidden;
   margin: 5px 0 10px 0;
 }
-/* line 187, sass/stream.scss */
+/* line 188, sass/stream.scss */
 .user-info-wrapper .user-info .points {
   font-weight: bold;
   font-size: 12px;
   float: left;
   margin: 2px 0 0 2px;
 }
-/* line 189, sass/stream.scss */
+/* line 190, sass/stream.scss */
 .user-info-wrapper .avatar {
   height: 34px;
   padding: 3px;
   width: 34px;
   margin-left: 10px;
 }
-/* line 190, sass/stream.scss */
+/* line 191, sass/stream.scss */
 .user-info-wrapper > .send-msg {
   padding: 10px;
   border-top: 1px solid #cfdee6;
@@ -396,7 +397,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 193, sass/stream.scss */
+/* line 194, sass/stream.scss */
 .user-info-wrapper > .send-msg:hover {
   text-decoration: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
@@ -408,7 +409,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 197, sass/stream.scss */
+/* line 198, sass/stream.scss */
 .user-info-wrapper > .send-msg:active {
   background-image: none;
   background-color: #deeef6;
@@ -416,7 +417,7 @@
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
 }
-/* line 200, sass/stream.scss */
+/* line 201, sass/stream.scss */
 .user-info-wrapper > .send-msg > span {
   float: left;
   background: url("../images/icn-messages-2.png") no-repeat scroll 0 0 transparent;
@@ -427,7 +428,7 @@
   margin-right: 8px;
 }
 
-/* line 204, sass/stream.scss */
+/* line 205, sass/stream.scss */
 .topic-avatars::after {
   content: ".";
   display: block;
@@ -437,12 +438,12 @@
   height: 0;
 }
 
-/* line 206, sass/stream.scss */
+/* line 207, sass/stream.scss */
 .recommended-topics .topic-avatars {
   margin-bottom: 16px;
 }
 
-/* line 207, sass/stream.scss */
+/* line 208, sass/stream.scss */
 .topic-avatars > li {
   float: left;
   width: 64px;
@@ -452,12 +453,12 @@
   margin: 0 18px 14px;
 }
 
-/* line 208, sass/stream.scss */
+/* line 209, sass/stream.scss */
 .topic-avatars .avatar {
   margin-bottom: 10px;
 }
 
-/* line 210, sass/stream.scss */
+/* line 211, sass/stream.scss */
 .no-users-msg {
   background: #F7F9FA;
   padding: 10px;
