@@ -54,77 +54,76 @@
 
 /* line 23, sass/my_topics.scss */
 .content.my-topics-wrapper .right-side {
-  float:left;
   background: url("../../images/bg-article.png") repeat-x scroll 0 1px white;
-  width: 780px;
   min-height: 280px;
+  margin-right: 160px;
+  /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 25, sass/my_topics.scss */
+/* line 27, sass/my_topics.scss */
 .content.my-topics-wrapper .right-side h2 {
   font-family: 'GothamMediumRegular';
   font-weight: normal;
   font-size: 17px;
   float:right;
 }
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   /* line 23, sass/my_topics.scss */
   .content.my-topics-wrapper .right-side {
-    width: auto;
+    margin-right: 0;
   }
 }
 
-/* line 32, sass/my_topics.scss */
+/* line 37, sass/my_topics.scss */
 .topic-participation {
-  margin: 20px;
+  margin: 20px 20px 0;
+  padding-bottom: 10px;
 }
-/* line 33, sass/my_topics.scss */
+/* line 40, sass/my_topics.scss */
 .topic-participation > li {
-  float:right;
   margin-bottom: 20px;
   border: 1px solid #dfe2e5;
 }
-/* line 35, sass/my_topics.scss */
+/* line 42, sass/my_topics.scss */
 .topic-participation > li > .topic-spotlight,
 .topic-participation > li > .topic-recent-historial {
-  width: 720px;
-  float:right;
   padding: 10px;
 }
-/* line 36, sass/my_topics.scss */
+/* line 43, sass/my_topics.scss */
 .topic-participation > li > .topic-spotlight {
   background-color: rgba(255, 255, 255, 0.8);
   border-bottom: 1px solid #dae0e6;
 }
-/* line 37, sass/my_topics.scss */
+/* line 44, sass/my_topics.scss */
 .topic-participation > li > .topic-recent-historial {
   background-color: #f7f9fa;
 }
-/* line 39, sass/my_topics.scss */
+/* line 46, sass/my_topics.scss */
 .topic-participation .topic-spotlight .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 40, sass/my_topics.scss */
+/* line 47, sass/my_topics.scss */
 .topic-participation .topic-spotlight .avatar > span {
   top: 32px;
   right: 9px;
 }
-/* line 41, sass/my_topics.scss */
+/* line 48, sass/my_topics.scss */
 .topic-participation .topic-spotlight .avatar img {
   width: 42px;
   height: 42px;
 }
-/* line 43, sass/my_topics.scss */
+/* line 50, sass/my_topics.scss */
 .topic-participation .topic-spotlight .item-data {
   width: 100%;
+  float: none;
 }
-/* line 44, sass/my_topics.scss */
+/* line 52, sass/my_topics.scss */
 .topic-participation .topic-spotlight .item-data > div {
   margin-top: 3px;
 }
-/* line 46, sass/my_topics.scss */
+/* line 54, sass/my_topics.scss */
 .topic-participation .topic-spotlight .title {
   font-size: 18px;
   line-height: 21px;
@@ -133,30 +132,30 @@
   display: block;
   margin: 5px 0;
 }
-/* line 47, sass/my_topics.scss */
+/* line 55, sass/my_topics.scss */
 .topic-participation .topic-spotlight .by-author {
   font-size: 11px;
   margin-left: 15px;
 }
-/* line 48, sass/my_topics.scss */
+/* line 56, sass/my_topics.scss */
 .topic-participation .topic-spotlight .responses {
   margin-left: 10px;
   background-image: url("../../images/icn-responses-dark.png");
   background-position:100% 1px;
   background-repeat: no-repeat;
 }
-/* line 49, sass/my_topics.scss */
+/* line 57, sass/my_topics.scss */
 .topic-participation .topic-spotlight .tags {
   font-size: 11px;
 }
-/* line 50, sass/my_topics.scss */
+/* line 58, sass/my_topics.scss */
 .topic-participation .topic-spotlight .tags > li:first-child {
   background-image: url("../../images/tag-horizontal.png");
   background-position:100% 2px;
   background-repeat: no-repeat;
   padding-right: 20px;
 }
-/* line 52, sass/my_topics.scss */
+/* line 60, sass/my_topics.scss */
 .topic-participation .topic-recent-historial .collaborations {
   font-size: 11px;
   color: #a1aab2;
@@ -166,33 +165,33 @@
   padding-right: 17px;
   line-height: 14px;
 }
-/* line 53, sass/my_topics.scss */
+/* line 61, sass/my_topics.scss */
 .topic-participation .small-avatars {
   margin: 10px 0 5px;
   float:right;
 }
-/* line 54, sass/my_topics.scss */
+/* line 62, sass/my_topics.scss */
 .topic-participation .small-avatars > li {
   float:right;
   margin-left: 15px;
 }
-/* line 55, sass/my_topics.scss */
+/* line 63, sass/my_topics.scss */
 .topic-participation .small-avatars .recently-topics > ul > li {
   float: none;
   margin-left: 0;
 }
-/* line 56, sass/my_topics.scss */
+/* line 64, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar {
   width: 24px;
   height: 24px;
   padding: 3px;
 }
-/* line 57, sass/my_topics.scss */
+/* line 65, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar > span {
   top: 20px;
   right: 5px;
 }
-/* line 58, sass/my_topics.scss */
+/* line 66, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar img {
   width: 24px;
   height: 24px;
