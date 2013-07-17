@@ -62,19 +62,18 @@
                           <%= t('.header.tag_list') %>
                         </a>
                       </li>
+                      <li class="menu-label"></li>
+                      <li><a href="#" class="js-sign-up-trigger"><%= t('.header.request_topic.sign_up') %></a></li>
+                      <li><a href="#" class="js-login-trigger"><%= t('.header.auth.login') %></a></li>
+                      <li class="menu-label"></li>
                       <li>
                         <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
                       </li>
-                      <li><a href="#" class="js-sign-up-trigger"><%= t('.header.request_topic.sign_up') %></a></li>
-                      <li><a href="#" class="js-login-trigger"><%= t('.header.auth.login') %></a></li>
                     <% else %>
                       <li class="menu-taglist">
                         <a href="#" class="js-taglist-trigger">
                           <%= t('.header.tag_list') %>
                         </a>
-                      </li>
-                      <li>
-                        <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
                       </li>
                       <li class="menu-label">
                         <span><%= t('.modals.about_points.words.points') %></span>
@@ -96,6 +95,11 @@
                       <li>
                         <%= link_to t('.header.logged_in.edit_profile'), user_path, :title => t('.header.logged_in.edit_profile')  %>
                       </li>
+                      <li class="menu-label"></li>
+                      <li>
+                        <%= link_to t('.header.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan' %>
+                      </li>
+                      <li class="menu-label"></li>
                       <li>
                         <%= link_to t('.header.logged_in.logout'), logout_path, :title => t('.header.logged_in.logout'), :class => "log-out border-all light-button disabled"  %>
                       </li>
