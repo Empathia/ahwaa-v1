@@ -65,7 +65,16 @@ aside{overflow: hidden;}
 .edit-form input[type=text],
 .edit-form input[type=password],
 .edit-form input[type=email],
-.edit-form select{border: 1px solid #d5d5d5; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background: #ffffff; outline: none; -webkit-box-shadow: 0px 0px 0px 3px #f5f5f5; height: 23px; width: 124px; margin-bottom: 5px;}
+.edit-form select{
+    border: 1px solid #d5d5d5;
+    @include border-radius(3px);
+    background: #ffffff;
+    outline: none;
+    height: 23px;
+    width: 100%;
+    margin-bottom: 5px;
+    @include box-sizing(border-box);
+}
 .edit-form select{width: 128px;}
 
 .pm-panel{
