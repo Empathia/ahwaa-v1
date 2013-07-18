@@ -53,7 +53,7 @@ body > div {
 
 /* line 27, sass/topics.scss */
 .left-side {
-  float: left;
+  float: none;
   width: 700px;
   margin-right: 240px;
   /* Landscape phones and down */
