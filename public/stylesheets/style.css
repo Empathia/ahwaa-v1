@@ -3904,23 +3904,41 @@ form + .recently-topics {
 .hall-people > li .avatar-wrapper a {
   display: block;
 }
-/* line 1441, sass/style.scss */
+/* line 1440, sass/style.scss */
+.hall-people > li > .honor-member-info {
+  margin-left: 69px;
+}
+/* line 1442, sass/style.scss */
+.hall-people > li > .honor-member-info > a {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+/* line 1443, sass/style.scss */
+.hall-people > li > .honor-member-info > span {
+  display: block;
+  font-size: 11px;
+  color: #5d748c;
+  text-shadow: 0 1px 0 #ffffff;
+  width: 131px;
+  margin: 8px 0 3px;
+}
+/* line 1446, sass/style.scss */
 .hall-people > .last {
   margin-right: 0;
 }
-/* line 1442, sass/style.scss */
+/* line 1447, sass/style.scss */
 .hall-people .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 1443, sass/style.scss */
+/* line 1448, sass/style.scss */
 .hall-people .avatar > span {
   top: 32px;
   left: 9px;
   z-index: 2;
 }
-/* line 1444, sass/style.scss */
+/* line 1449, sass/style.scss */
 .hall-people .avatar > .honor-member {
   width: 72px;
   height: 52px;
@@ -3931,24 +3949,6 @@ form + .recently-topics {
   background-position: 0 0;
   top: 4px;
   left: -12px;
-}
-/* line 1446, sass/style.scss */
-.hall-people > .honor-member-info {
-  margin-left: 69px;
-}
-/* line 1448, sass/style.scss */
-.hall-people > .honor-member-info > a {
-  text-transform: capitalize;
-  font-size: 12px;
-}
-/* line 1449, sass/style.scss */
-.hall-people > .honor-member-info > span {
-  display: block;
-  font-size: 11px;
-  color: #5d748c;
-  text-shadow: 0 1px 0 #ffffff;
-  width: 131px;
-  margin: 8px 0 3px;
 }
 
 /* line 1453, sass/style.scss */

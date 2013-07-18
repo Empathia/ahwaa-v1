@@ -93,71 +93,64 @@ $(function() {
     $('<img />').attr('src', '/images/loading-s-white.gif');
 
     /* Avatars RollOver */
+    var privateMessageTooltips = $('.private-msg.tooltip-box');
+
     $('body').click(function(e){
       $(e.target);
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
 
-    setTimeout(function() {
-        $('.avatar').hoverIntent(function (e) {
-            var _this = $(this);
+    $('.avatar-wrapper').hoverIntent({
+        timeout : 500,
+        over : function (e) {
+            var _this = $(this),
+                rollover = _this.find('.private-msg');
 
-            $('.private-msg.tooltip-box').fadeOut(100);
-
-            var rollover = ( _this.parent('a').length )
-                ? _this.parent('a').siblings('.private-msg')
-                : _this.siblings('.private-msg');
+            privateMessageTooltips.fadeOut(100);
 
             if ( rollover.length ) {
-                var rollover_left = rollover.css('left') ? rollover.css('left') : 0,
-                    rollover_top = ($('img', this).height() + 10),
+                var rollover_left   = rollover.css('left') ? rollover.css('left') : 0,
+                    rollover_top    = ($('img', this).height() + 10),
                     rollover_bottom = (rollover.outerHeight() + 3),
-                    indicator = _this.siblings('.private-msg').find('.origin'),
-                    ind_width = 20,
-                    ind_left = (( $('img', this).width() / 2) + ind_width),
-                    // pbottom = $(window).height(),
-                    xtop = rollover.offset().top,
-                    xleft = rollover.offset().left,
-                    xright = rollover.offset().left + rollover.outerWidth();
+                    indicator       = _this.find('.private-msg').find('.origin'),
+                    ind_width       = 20,
+                    ind_left        = (( $('img', this).width() / 2) + ind_width),
+                    xtop            = rollover.offset().top,
+                    xleft           = rollover.offset().left,
+                    xright          = rollover.offset().left + rollover.outerWidth();
 
-                    rollover.css({'top': rollover_top});
+                    rollover.css('top', rollover_top);
 
-                if ((e.pageX + xright) > $(window).width()) {
+                if ( (e.pageX + xright) > $(window).width() ) {
                     rollover.addClass('inside');
-                    rollover.css({'left': -( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) })
-                    indicator.css({'left': ( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) + ($('img', _this).parent('.avatar').outerWidth() / 2)-10 });
-                    if ($(rollover).parents('.footer-avatar').length) {
+                    rollover.css('left', -( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ));
+                    indicator.css('left', ( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) + ($('img', _this).parent('.avatar').outerWidth() / 2)-10);
+
+                    if ( rollover.parents('.footer-avatar').length ) {
                         rollover.addClass('bottom-avatar');
-                        rollover.css({'top': -(rollover_bottom) });
+                        rollover.css('top', -(rollover_bottom));
                     } else {
-                        rollover.css({'top': rollover_top});
+                        rollover.css('top', rollover_top);
                     }
-                } else if ($(rollover).parents('.footer-avatar').length) {
+                } else if ( rollover.parents('.footer-avatar').length ) {
                     rollover.addClass('bottom-avatar');
-                    rollover.css({'top': -(rollover_bottom) });
+                    rollover.css('top', -(rollover_bottom));
                 } else {
-                    if(rollover.hasClass('inside')) {
+                    if ( rollover.hasClass('inside') ) {
                         rollover.removeClass('inside')
                     } else {
-                        indicator.css({'left': ind_left});
+                        indicator.css('left', ind_left);
                     }
                 }
 
-                rollover.fadeIn(100)
+                rollover.fadeIn(100);
             }
-        }, function () {
-            var that = $(this);
-            timer1 = setTimeout(function(){
-                that.siblings('.private-msg').fadeOut(100);
-            }, 1000);
-        });
-        $('.private-msg').mouseover(function () {
-            clearTimeout(timer1);
-        });
-        $('.private-msg').mouseleave(function () {
-            $(this).fadeOut(100);
-        });
-    }, 2000);
+        },
+        out : function () {
+            var _this = $(this);
+            _this.find('.private-msg').fadeOut(100);
+        }
+    });
 
     /* MOBILE MENU */
     var mobileNav = {};
