@@ -367,6 +367,7 @@ ar:
     stream: آخر المشاركات
     follow_topic: تابع هذا الموضوع
     no_following_topics: "أنت لا تتابع أي من الموضوعات حاليًا، إبدأ بمتابعة البعض الآن"
+    view_more: قراءة المزيد
     title:
       reply:
         a: ترك %{reply_type} علي

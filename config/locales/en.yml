@@ -365,6 +365,7 @@ en:
     stream: Stream
     follow_topic: Follow Topic
     no_following_topics: "Currently you don’t follow any topic. Start following some"
+    view_more: View More
     title:
       reply:
         a: left a %{reply_type} on
