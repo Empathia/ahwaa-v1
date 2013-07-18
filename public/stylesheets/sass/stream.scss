@@ -171,9 +171,9 @@
 }
 
 .load-more-wrapper {
-  overflow: hidden;
-  margin: 27px 0 20px 183px;
-  a {float: left}
+  margin: 27px 0 20px;
+  text-align: center;
+  a {display: inline-block}
   .more-stream {display: block; height: 19px; padding: 5px 44px 0}
 }
 

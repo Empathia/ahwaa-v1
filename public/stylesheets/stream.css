@@ -331,12 +331,12 @@
 
 /* line 173, sass/stream.scss */
 .load-more-wrapper {
-  overflow: hidden;
-  margin: 27px 0 20px 183px;
+  margin: 27px 0 20px;
+  text-align: center;
 }
 /* line 176, sass/stream.scss */
 .load-more-wrapper a {
-  float: left;
+  display: inline-block;
 }
 /* line 177, sass/stream.scss */
 .load-more-wrapper .more-stream {
