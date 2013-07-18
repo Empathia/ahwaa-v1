@@ -1,7 +1,9 @@
 <div class="discussion-wrapper">
   <div class="avatar-wrapper">
     <% if reply.sender %>
-      <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
+      <%= link_to profile_path(reply.sender) do %>
+        <%= avatar_span(reply.sender, reply.sender.is_expert?) %>
+      <% end %>
       <%= render :partial => 'users/card', :locals => {:user => reply.sender} %>
     <% else %>
       <span class="avatar no-level">

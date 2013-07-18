@@ -1,7 +1,9 @@
 <%= content_tag_for :li, pm, :class => ('new' if pm.conversation.unread_by?(current_user)), :style => "z-index: #{inbox.length - i}" do %>
   <div class="avatar-wrapper">
     <% if pm.conversation_replies.last.sender %>
-      <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
+      <%= link_to profile_path(pm.conversation_replies.last.sender) do %>
+        <%= avatar_span(pm.conversation_replies.last.sender, pm.conversation_replies.last.sender.is_expert?, true) %>
+      <% end %>
       <%= render :partial => 'users/card', :locals => {:user => pm.conversation_replies.last.sender} %>
     <% else %>
       <span class="avatar no-level">

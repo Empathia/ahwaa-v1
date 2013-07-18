@@ -14,7 +14,9 @@
   <% if message.sender && !current_user.blocks.map{|u| u.block}.include?(message.sender) && !current_user.blocked_user?(message.sender) && !current_user.blocks.map{|u| u.block}.include?(message.recipient) && !current_user.blocked_user?(message.recipient) %>
     <div class="my-messages-reply-wrapper">
       <div class="avatar-wrapper">
-        <%= avatar_span(current_user, current_user.is_expert?) %>
+        <%= link_to profile_path(current_user) do %>
+          <%= avatar_span(current_user, current_user.is_expert?) %>
+        <% end %>
         <%= render :partial => 'users/card', :locals => {:user => current_user} %>
       </div>
       <%= form_for PrivateMessage.new, :url => url_for_message_reply(message), :remote => true, :html => { :id => "reply-form" } do |f| %>

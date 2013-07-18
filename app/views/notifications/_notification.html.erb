@@ -1,6 +1,8 @@
 <div class="stream-item interaction-thanks">
   <div class="avatar-wrapper">
-    <%= avatar_span(notification.sender, notification.sender.is_expert?) %>
+    <%= link_to profile_path(notification.sender) do %>
+      <%= avatar_span(notification.sender, notification.sender.is_expert?) %>
+    <% end %>
     <%= render :partial => 'users/card', :locals => {:user => notification.sender} %>
   </div>
   <div class="stream-item-data">

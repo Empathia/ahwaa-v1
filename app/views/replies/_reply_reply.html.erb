@@ -1,13 +1,19 @@
 <li>
-  <% unless noArrow %>  
+  <% unless noArrow %>
     <span class="comm-arrow"></span>
   <% end %>
   <div class="comm-wrap">
-    <div>         
+    <div>
       <div class="response-user">
         <div class="avatar-wrapper">
           <% unless reply_reply.anonymous? %>
-            <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
+            <% if logged_in? %>
+              <%= link_to profile_path(reply_reply.user) do %>
+                <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
+              <% end %>
+            <% else %>
+              <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
+            <% end %>
           <% else %>
             <span class="avatar">
               <%= image_tag(reply_reply.author_avatar, :width => '56') %>
@@ -16,7 +22,7 @@
           <% unless reply_reply.anonymous? %>
             <%= render :partial => 'users/card', :locals => {:user => reply_reply.user} %>
           <% end %>
-        </div>  
+        </div>
         <div>
           <div class="res-username">
             <% unless reply_reply.anonymous? %>
@@ -37,5 +43,5 @@
       <%= simple_format reply_reply.content %>
     </div>
  </div>
- <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply_reply} %>    
+ <%= render :partial => "shared/useful_flag_buttons", :locals => {:reply => reply_reply} %>
 </li>

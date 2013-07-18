@@ -73,13 +73,11 @@ $(document).ready(function(){
           <ul class="topic-avatars">
             <% @users_similar_profile.each do |user| %>
               <% next if current_user.blocks.map{|u| u.block}.include? user %>
-              <li>
-                <%= avatar_span(user, user.is_expert?) %>
-                <em>
-                  <%= link_to profile_path(user.username) do %>
-                    <%= user.username %>
-                  <% end %>
-                </em>
+              <li class="avatar-wrapper">
+                <%= link_to profile_path(user.username) do %>
+                  <%= avatar_span(user, user.is_expert?) %>
+                <% end %>
+                <em><%= user.username %></em>
                 <%= render :partial => 'users/card', :locals => {:user => user} %>
               </li>
             <% end %>
@@ -93,13 +91,11 @@ $(document).ready(function(){
           <ul class="topic-avatars">
             <% @users_similar_interests.each do |user| %>
               <% next if current_user.blocks.map{|u| u.block}.include? user %>
-              <li>
-                <%= avatar_span(user, user.is_expert?) %>
-                <em>
-                  <%= link_to profile_path(user.username) do %>
-                    <%= user.username %>
-                  <% end %>
-                </em>
+              <li class="avatar-wrapper">
+                <%= link_to profile_path(user.username) do %>
+                  <%= avatar_span(user, user.is_expert?) %>
+                <% end %>
+                <em><%= user.username %></em>
                 <%= render :partial => 'users/card', :locals => {:user => user} %>
               </li>
             <% end %>

@@ -100,57 +100,63 @@ $(function() {
       !$(e.target).is('.private-msg *') && $('.private-msg').hide();
     });
 
-    $('.avatar-wrapper').hoverIntent({
-        timeout : 500,
-        over : function (e) {
-            var _this = $(this),
-                rollover = _this.find('.private-msg');
+    setTimeout(function(){
+        $('.avatar-wrapper').hoverIntent({
+            timeout : 500,
+            over : function (e) {
+                var _this = $(this);
 
-            privateMessageTooltips.fadeOut(100);
+                if ( _this.css('pointer-events') === "none" ) {
+                    return false;
+                }
 
-            if ( rollover.length ) {
-                var rollover_left   = rollover.css('left') ? rollover.css('left') : 0,
-                    rollover_top    = ($('img', this).height() + 10),
-                    rollover_bottom = (rollover.outerHeight() + 3),
-                    indicator       = _this.find('.private-msg').find('.origin'),
-                    ind_width       = 20,
-                    ind_left        = (( $('img', this).width() / 2) + ind_width),
-                    xtop            = rollover.offset().top,
-                    xleft           = rollover.offset().left,
-                    xright          = rollover.offset().left + rollover.outerWidth();
+                var rollover = _this.find('.private-msg');
+                privateMessageTooltips.fadeOut(100);
 
-                    rollover.css('top', rollover_top);
+                if ( rollover.length ) {
+                    var rollover_left   = rollover.css('left') ? rollover.css('left') : 0,
+                        rollover_top    = ($('img', this).height() + 10),
+                        rollover_bottom = (rollover.outerHeight() + 3),
+                        indicator       = _this.find('.private-msg').find('.origin'),
+                        ind_width       = 20,
+                        ind_left        = (( $('img', this).width() / 2) + ind_width),
+                        xtop            = rollover.offset().top,
+                        xleft           = rollover.offset().left,
+                        xright          = rollover.offset().left + rollover.outerWidth();
 
-                if ( (e.pageX + xright) > $(window).width() ) {
-                    rollover.addClass('inside');
-                    rollover.css('left', -( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ));
-                    indicator.css('left', ( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) + ($('img', _this).parent('.avatar').outerWidth() / 2)-10);
+                        rollover.css('top', rollover_top);
 
-                    if ( rollover.parents('.footer-avatar').length ) {
+                    if ( (e.pageX + xright) > $(window).width() ) {
+                        rollover.addClass('inside');
+                        rollover.css('left', -( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ));
+                        indicator.css('left', ( (rollover.outerWidth() - $('img', _this).parent('.avatar').outerWidth()) - 25 ) + ($('img', _this).parent('.avatar').outerWidth() / 2)-10);
+
+                        if ( rollover.parents('.footer-avatar').length ) {
+                            rollover.addClass('bottom-avatar');
+                            rollover.css('top', -(rollover_bottom));
+                        } else {
+                            rollover.css('top', rollover_top);
+                        }
+                    } else if ( rollover.parents('.footer-avatar').length ) {
                         rollover.addClass('bottom-avatar');
                         rollover.css('top', -(rollover_bottom));
                     } else {
-                        rollover.css('top', rollover_top);
+                        if ( rollover.hasClass('inside') ) {
+                            rollover.removeClass('inside')
+                        } else {
+                            indicator.css('left', ind_left);
+                        }
                     }
-                } else if ( rollover.parents('.footer-avatar').length ) {
-                    rollover.addClass('bottom-avatar');
-                    rollover.css('top', -(rollover_bottom));
-                } else {
-                    if ( rollover.hasClass('inside') ) {
-                        rollover.removeClass('inside')
-                    } else {
-                        indicator.css('left', ind_left);
-                    }
-                }
 
-                rollover.fadeIn(100);
+                    rollover.fadeIn(100);
+                }
+            },
+            out : function () {
+                var _this = $(this);
+                _this.find('.private-msg').fadeOut(100);
             }
-        },
-        out : function () {
-            var _this = $(this);
-            _this.find('.private-msg').fadeOut(100);
-        }
-    });
+        });
+    }, 1000);
 
     /* MOBILE MENU */
     var mobileNav = {};

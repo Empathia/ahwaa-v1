@@ -2437,10 +2437,15 @@ p.success {
 .avatar-wrapper {
   float: left;
   position: relative;
+  /* Landscape phones and down */
 }
-
-/* line 936, sass/style.scss */
-.avatar {
+/* line 938, sass/style.scss */
+.avatar-wrapper > a {
+  display: inline-block;
+  pointer-events: none;
+}
+/* line 944, sass/style.scss */
+.avatar-wrapper .avatar {
   width: 56px;
   height: 56px;
   padding: 3px;
@@ -2448,10 +2453,9 @@ p.success {
   position: relative;
   border: 1px solid rgba(59, 64, 67, 0.25);
   background: #ffffff;
-  /* Landscape phones and down */
 }
-/* line 944, sass/style.scss */
-.avatar img {
+/* line 952, sass/style.scss */
+.avatar-wrapper .avatar img {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #dcdfe1), color-stop(100%, #edeeef));
   background-image: -webkit-linear-gradient(top, #dcdfe1, #edeeef);
   background-image: -moz-linear-gradient(top, #dcdfe1, #edeeef);
@@ -2459,13 +2463,21 @@ p.success {
   background-image: linear-gradient(top, #dcdfe1, #edeeef);
 }
 @media (max-width: 480px) {
-  /* line 936, sass/style.scss */
-  .avatar {
+  /* line 935, sass/style.scss */
+  .avatar-wrapper {
+    pointer-events: none;
+  }
+  /* line 959, sass/style.scss */
+  .avatar-wrapper > a {
+    pointer-events: auto;
+  }
+  /* line 962, sass/style.scss */
+  .avatar-wrapper .avatar {
     pointer-events: none;
   }
 }
 
-/* line 953, sass/style.scss */
+/* line 968, sass/style.scss */
 .avatar.expert > img {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c3cfbe), color-stop(100%, #dee5da));
   background-image: -webkit-linear-gradient(top, #c3cfbe, #dee5da);
@@ -2474,7 +2486,7 @@ p.success {
   background-image: linear-gradient(top, #c3cfbe, #dee5da);
 }
 
-/* line 956, sass/style.scss */
+/* line 971, sass/style.scss */
 .avatar > span {
   width: 30px;
   height: 30px;
@@ -2485,81 +2497,81 @@ p.success {
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
 
-/* line 957, sass/style.scss */
+/* line 972, sass/style.scss */
 .avatar.no-level > span {
   background: none;
 }
 
-/* line 960, sass/style.scss */
+/* line 975, sass/style.scss */
 .avatar.red-heart > span,
 .points-wrapper > span.red-heart,
 .points-table .red-heart {
   background-position: 0 0;
 }
 
-/* line 963, sass/style.scss */
+/* line 978, sass/style.scss */
 .avatar.pink-heart > span,
 .points-wrapper > span.pink-heart,
 .points-table .pink-heart {
   background-position: 0 -30px;
 }
 
-/* line 966, sass/style.scss */
+/* line 981, sass/style.scss */
 .avatar.purple-heart > span,
 .points-wrapper > span.purple-heart,
 .points-table .purple-heart {
   background-position: 0 -60px;
 }
 
-/* line 969, sass/style.scss */
+/* line 984, sass/style.scss */
 .avatar.blue-heart > span,
 .points-wrapper > span.blue-heart,
 .points-table .blue-heart {
   background-position: 0 -90px;
 }
 
-/* line 972, sass/style.scss */
+/* line 987, sass/style.scss */
 .avatar.cyan-heart > span,
 .points-wrapper > span.cyan-heart,
 .points-table .cyan-heart {
   background-position: 0 -120px;
 }
 
-/* line 975, sass/style.scss */
+/* line 990, sass/style.scss */
 .avatar.green-heart > span,
 .points-wrapper > span.green-heart,
 .points-table .green-heart {
   background-position: 0 -150px;
 }
 
-/* line 978, sass/style.scss */
+/* line 993, sass/style.scss */
 .avatar.bronze-heart > span,
 .points-wrapper > span.bronze-heart,
 .points-table .bronze-heart {
   background-position: 0 -180px;
 }
 
-/* line 981, sass/style.scss */
+/* line 996, sass/style.scss */
 .avatar.silver-heart > span,
 .points-wrapper > span.silver-heart,
 .points-table .silver-heart {
   background-position: 0 -210px;
 }
 
-/* line 984, sass/style.scss */
+/* line 999, sass/style.scss */
 .avatar.gold-heart > span,
 .points-wrapper > span.gold-heart,
 .points-table .gold-heart {
   background-position: 0 -240px;
 }
 
-/* line 986, sass/style.scss */
+/* line 1001, sass/style.scss */
 .small-hearts > .level.no-level {
   background: none;
   display: none;
 }
 
-/* line 988, sass/style.scss */
+/* line 1003, sass/style.scss */
 .small-hearts > .level,
 .small-avatars .avatar > span {
   background: url("../images/heart-badges-small-sprite.png") no-repeat transparent;
@@ -2569,61 +2581,61 @@ p.success {
   float: left;
 }
 
-/* line 990, sass/style.scss */
+/* line 1005, sass/style.scss */
 .small-hearts > .level.red-heart,
 .small-avatars .avatar.red-heart > span {
   background-position: 0 0;
 }
 
-/* line 992, sass/style.scss */
+/* line 1007, sass/style.scss */
 .small-hearts > .level.pink-heart,
 .small-avatar .avatar.pink-heart > span {
   background-position: 0 -20px;
 }
 
-/* line 994, sass/style.scss */
+/* line 1009, sass/style.scss */
 .small-hearts > .level.purple-heart,
 .small-avatars > .avatar.purple-heart > span {
   background-position: 0 -40px;
 }
 
-/* line 996, sass/style.scss */
+/* line 1011, sass/style.scss */
 .small-hearts > .level.blue-heart,
 .small-avatars .avatar.blue-heart > span {
   background-position: 0 -60px;
 }
 
-/* line 998, sass/style.scss */
+/* line 1013, sass/style.scss */
 .small-hearts > .level.cyan-heart,
 .small-avatars .avatar.cyan-heart > span {
   background-position: 0 -80px;
 }
 
-/* line 1000, sass/style.scss */
+/* line 1015, sass/style.scss */
 .small-hearts > .level.green-heart,
 .small-avatars .avatar.green-heart > span {
   background-position: 0 -100px;
 }
 
-/* line 1002, sass/style.scss */
+/* line 1017, sass/style.scss */
 .small-hearts > .level.bronze-heart,
 .small-avatars .avatar.bronze-heart > span {
   background-position: 0 -120px;
 }
 
-/* line 1004, sass/style.scss */
+/* line 1019, sass/style.scss */
 .small-hearts > .level.silver-heart,
 .small-avatars .avatar.silver-heart > span {
   background-position: 0 -140px;
 }
 
-/* line 1006, sass/style.scss */
+/* line 1021, sass/style.scss */
 .small-hearts > .level.gold-heart,
 .small-avatars .avatar.gold-heart > span {
   background-position: 0 -160px;
 }
 
-/* line 1008, sass/style.scss */
+/* line 1023, sass/style.scss */
 .topic-avatars .avatar > em {
   display: none;
   position: absolute;
@@ -2637,13 +2649,13 @@ p.success {
   background-repeat: no-repeat;
 }
 
-/* line 1010, sass/style.scss */
+/* line 1025, sass/style.scss */
 .avatar-wrapper:hover .avatar > em,
 .topic-avatars li:hover em {
   display: block;
 }
 
-/* line 1011, sass/style.scss */
+/* line 1026, sass/style.scss */
 .topic-avatars em {
   color: #468AC4;
   white-space: nowrap;
@@ -2653,25 +2665,25 @@ p.success {
   text-overflow: ellipsis;
 }
 
-/* line 1013, sass/style.scss */
+/* line 1028, sass/style.scss */
 .response-user > .avatar-wrapper > .avatar {
   width: 40px;
   height: 40px;
 }
 
-/* line 1014, sass/style.scss */
+/* line 1029, sass/style.scss */
 .response-user > .avatar-wrapper > .avatar > img {
   width: 40px;
   height: 40px;
 }
 
-/* line 1015, sass/style.scss */
+/* line 1030, sass/style.scss */
 .response-user > .avatar-wrapper > .avatar > span {
   left: 8px;
   top: 29px;
 }
 
-/* line 1017, sass/style.scss */
+/* line 1032, sass/style.scss */
 .private-msg.send-from-stream {
   top: 95px;
   background-color: #F0F6FC;
@@ -2687,7 +2699,7 @@ p.success {
   z-index: 9999;
 }
 
-/* line 1018, sass/style.scss */
+/* line 1033, sass/style.scss */
 .private-msg.send-from-stream > form {
   display: block !important;
   background: #ffffff;
@@ -2695,12 +2707,12 @@ p.success {
   margin: 0;
 }
 
-/* line 1020, sass/style.scss */
+/* line 1035, sass/style.scss */
 .has-tooltip {
   position: relative;
 }
 
-/* line 1022, sass/style.scss */
+/* line 1037, sass/style.scss */
 .tooltip-box,
 .private-msg {
   display: none;
@@ -2719,22 +2731,22 @@ p.success {
   box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
 }
 
-/* line 1025, sass/style.scss */
+/* line 1040, sass/style.scss */
 .tooltip-box .left {
   float: left;
 }
 
-/* line 1026, sass/style.scss */
+/* line 1041, sass/style.scss */
 .tooltip-box .right {
   float: right;
 }
 
-/* line 1027, sass/style.scss */
+/* line 1042, sass/style.scss */
 .form-welcome-msg {
   padding-bottom: 30px!important;
 }
 
-/* line 1034, sass/style.scss */
+/* line 1049, sass/style.scss */
 .tooltip-box .origin,
 .private-msg .origin,
 .tooltip-box .origin span,
@@ -2747,7 +2759,7 @@ p.success {
   width: 0;
 }
 
-/* line 1037, sass/style.scss */
+/* line 1052, sass/style.scss */
 .tooltip-box .origin,
 .private-msg .origin,
 .send-from-stream .origin {
@@ -2756,7 +2768,7 @@ p.success {
   top: -20px;
 }
 
-/* line 1040, sass/style.scss */
+/* line 1055, sass/style.scss */
 .tooltip-box .origin > span,
 .private-msg .origin > span,
 .send-from-stream .origin > span {
@@ -2765,7 +2777,7 @@ p.success {
   top: -8px;
 }
 
-/* line 1043, sass/style.scss */
+/* line 1058, sass/style.scss */
 .tooltip-box .origin > span > span,
 .private-msg .origin > span > span,
 .send-from-stream .origin > span > span {
@@ -2774,7 +2786,7 @@ p.success {
   left: -10px;
 }
 
-/* line 1044, sass/style.scss */
+/* line 1059, sass/style.scss */
 .tooltip-box .title {
   font-size: 13px;
   line-height: 19px;
@@ -2783,7 +2795,7 @@ p.success {
 }
 
 /* Hall of Fame Origin */
-/* line 1049, sass/style.scss */
+/* line 1064, sass/style.scss */
 .private-msg.bottom-avatar .origin,
 .private-msg.bottom-avatar .origin > span,
 .private-msg.bottom-avatar .origin > span > span {
@@ -2793,26 +2805,26 @@ p.success {
   top: auto;
 }
 
-/* line 1050, sass/style.scss */
+/* line 1065, sass/style.scss */
 .private-msg.bottom-avatar .origin {
   top: auto;
   bottom: -20px;
   border-color: #cccccc transparent transparent;
 }
 
-/* line 1051, sass/style.scss */
+/* line 1066, sass/style.scss */
 .private-msg.bottom-avatar .origin > span {
   border-color: #fafcff transparent transparent;
   top: -11px;
 }
 
-/* line 1052, sass/style.scss */
+/* line 1067, sass/style.scss */
 .private-msg.bottom-avatar .origin > span > span {
   border-color: #ffffff transparent transparent;
   top: -13px;
 }
 
-/* line 1054, sass/style.scss */
+/* line 1069, sass/style.scss */
 .private-msg > form {
   display: block;
   background: #ffffff;
@@ -2821,7 +2833,7 @@ p.success {
   margin: 0;
 }
 
-/* line 1057, sass/style.scss */
+/* line 1072, sass/style.scss */
 .private-msg > form > textarea,
 .send-from-stream > form > textarea,
 .tooltip-box textarea {
@@ -2837,7 +2849,7 @@ p.success {
   color: #aeb4bd;
 }
 
-/* line 1058, sass/style.scss */
+/* line 1073, sass/style.scss */
 .tooltip-box textarea {
   min-width: 244px;
   width: 244px;
@@ -2845,12 +2857,12 @@ p.success {
   height: 74px;
 }
 
-/* line 1059, sass/style.scss */
+/* line 1074, sass/style.scss */
 .private-msg-btns {
   text-align: right;
 }
 
-/* line 1060, sass/style.scss */
+/* line 1075, sass/style.scss */
 .private-msg-btns > input {
   height: 24px;
   float: none!important;
@@ -2858,7 +2870,7 @@ p.success {
   font-size: 13px;
 }
 
-/* line 1062, sass/style.scss */
+/* line 1077, sass/style.scss */
 .private-msg-btns > a.cancel,
 .form-welcome-buttons > a.cancel {
   margin-right: 8px;
@@ -2867,54 +2879,54 @@ p.success {
   font-style: normal;
 }
 
-/* line 1063, sass/style.scss */
+/* line 1078, sass/style.scss */
 .private-msg > .avatar {
   float: right;
 }
 
-/* line 1065, sass/style.scss */
+/* line 1080, sass/style.scss */
 .form-private-msg > .flash-privacy,
 .form-welcome-msg > .flash-privacy {
   margin: 0 0 15px 0;
 }
 
-/* line 1066, sass/style.scss */
+/* line 1081, sass/style.scss */
 .form-welcome-options {
   float: left;
 }
 
-/* line 1067, sass/style.scss */
+/* line 1082, sass/style.scss */
 .form-welcome-options .chck {
   position: relative;
   left: -4px;
   top: 1px;
 }
 
-/* line 1068, sass/style.scss */
+/* line 1083, sass/style.scss */
 .form-welcome-buttons {
   float: right;
 }
 
-/* line 1069, sass/style.scss */
+/* line 1084, sass/style.scss */
 .form-welcome-buttons input {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   color: #2D70B3;
 }
 
-/* line 1070, sass/style.scss */
+/* line 1085, sass/style.scss */
 .form-welcome-msg .welcome-msg-content {
   height: 73px;
 }
 
-/* line 1073, sass/style.scss */
+/* line 1088, sass/style.scss */
 .tooltip-box-inside,
 .user-wrapper {
   background: #ffffff;
   overflow: hidden;
 }
 
-/* line 1074, sass/style.scss */
+/* line 1089, sass/style.scss */
 .tooltip-box-inside {
   padding: 9px 12px;
   -webkit-border-radius: 3px;
@@ -2924,7 +2936,7 @@ p.success {
   border-radius: 3px;
 }
 
-/* line 1077, sass/style.scss */
+/* line 1092, sass/style.scss */
 .user-wrapper {
   padding: 9px 9px 0;
   -webkit-border-radius: 3px 3px 0 0;
@@ -2934,13 +2946,13 @@ p.success {
   border-radius: 3px 3px 0 0;
 }
 
-/* line 1080, sass/style.scss */
+/* line 1095, sass/style.scss */
 .private-msg .user-info {
   float: left;
   width: 100%;
 }
 
-/* line 1081, sass/style.scss */
+/* line 1096, sass/style.scss */
 .user-wrapper .username {
   float: left;
   width: 130px;
@@ -2951,50 +2963,50 @@ p.success {
   word-wrap: break-word;
 }
 
-/* line 1084, sass/style.scss */
+/* line 1099, sass/style.scss */
 .user-wrapper .points-wrapper,
 .user-wrapper .light-button,
 .user-wrapper .points-wrapper-small {
   float: right;
 }
 
-/* line 1085, sass/style.scss */
+/* line 1100, sass/style.scss */
 .user-wrapper .points-wrapper-small .points {
   line-height: 22px;
   font-weight: bold;
 }
 
-/* line 1086, sass/style.scss */
+/* line 1101, sass/style.scss */
 .user-wrapper .points-wrapper-small {
   margin: 0 5px 0 0;
   height: 21px;
 }
 
-/* line 1087, sass/style.scss */
+/* line 1102, sass/style.scss */
 .user-wrapper .points-wrapper-small .level {
   position: relative;
   top: 2px;
   margin-right: 2px;
 }
 
-/* line 1088, sass/style.scss */
+/* line 1103, sass/style.scss */
 .user-wrapper .activity-btns {
   float: right;
   margin: 0;
 }
 
-/* line 1089, sass/style.scss */
+/* line 1104, sass/style.scss */
 .user-wrapper .activity-btns li {
   float: right;
   height: 21px;
 }
 
-/* line 1090, sass/style.scss */
+/* line 1105, sass/style.scss */
 .user-wrapper .activity-btns li.first {
   border-right: 0 none;
 }
 
-/* line 1091, sass/style.scss */
+/* line 1106, sass/style.scss */
 .user-wrapper .activity-btns li a {
   text-indent: -9999px;
   font-size: 0;
@@ -3002,28 +3014,28 @@ p.success {
   display: block;
 }
 
-/* line 1093, sass/style.scss */
+/* line 1108, sass/style.scss */
 .user-wrapper .send-private-msg,
 .user-wrapper .view-profile {
   height: 21px;
   width: 28px;
 }
 
-/* line 1094, sass/style.scss */
+/* line 1109, sass/style.scss */
 .user-wrapper .send-private-msg {
   background: url("../images/icn-tooltip-send-msg.png") no-repeat;
   left: 5px;
   top: 0;
 }
 
-/* line 1095, sass/style.scss */
+/* line 1110, sass/style.scss */
 .user-wrapper .view-profile {
   background: url("../images/icn-tooltip-view-profile.png") no-repeat;
   left: 7px;
   top: -1px;
 }
 
-/* line 1096, sass/style.scss */
+/* line 1111, sass/style.scss */
 .user-wrapper .welcome-btn {
   padding: 4px 4px 3px;
   margin: 0 5px 0 0;
@@ -3032,29 +3044,29 @@ p.success {
   line-height: 14px;
 }
 
-/* line 1097, sass/style.scss */
+/* line 1112, sass/style.scss */
 .user-wrapper .welcome-btn a {
   text-decoration: none;
   font-style: normal;
 }
 
-/* line 1099, sass/style.scss */
+/* line 1114, sass/style.scss */
 .user-wrapper .user-data .points-wrapper-small {
   padding: 0;
 }
 
-/* line 1100, sass/style.scss */
+/* line 1115, sass/style.scss */
 .recently-topics {
   padding-top: 28px;
   background: #ffffff;
 }
 
-/* line 1101, sass/style.scss */
+/* line 1116, sass/style.scss */
 form + .recently-topics {
   padding-top: 18px;
 }
 
-/* line 1102, sass/style.scss */
+/* line 1117, sass/style.scss */
 .recently-topics > p {
   line-height: 1em!important;
   margin-top: 0px !important;
@@ -3063,7 +3075,7 @@ form + .recently-topics {
   color: #a1aab2;
 }
 
-/* line 1103, sass/style.scss */
+/* line 1118, sass/style.scss */
 .recently-topics > ul {
   background: #fafcff;
   -moz-border-radius-bottomright: 3px;
@@ -3074,7 +3086,7 @@ form + .recently-topics {
   border-bottom-left-radius: 3px;
 }
 
-/* line 1107, sass/style.scss */
+/* line 1122, sass/style.scss */
 .recently-topics > ul > li {
   padding: 9px 16px 7px;
   border-top: 1px solid #cfdae6;
@@ -3082,12 +3094,12 @@ form + .recently-topics {
   font-weight: bold;
 }
 
-/* line 1109, sass/style.scss */
+/* line 1124, sass/style.scss */
 .custom > a {
   text-decoration: none;
 }
 
-/* line 1111, sass/style.scss */
+/* line 1126, sass/style.scss */
 .flash {
   min-height: 45px;
   line-height: 1.5;
@@ -3108,16 +3120,16 @@ form + .recently-topics {
   background-image: -o-linear-gradient(top, #fefce9, #fefadd);
   background-image: linear-gradient(top, #fefce9, #fefadd);
 }
-/* line 1126, sass/style.scss */
+/* line 1141, sass/style.scss */
 .flash > div {
   padding: 12px 25px 9px;
 }
-/* line 1128, sass/style.scss */
+/* line 1143, sass/style.scss */
 .flash > div > div {
   background: url("../images/icn-close.png") no-repeat 100% 50%;
 }
 
-/* line 1132, sass/style.scss */
+/* line 1147, sass/style.scss */
 .loading {
   background-image: url("../images/loading-s-gray.gif");
   background-repeat: no-repeat;
@@ -3125,21 +3137,21 @@ form + .recently-topics {
   padding-left: 26px;
 }
 
-/* line 1133, sass/style.scss */
+/* line 1148, sass/style.scss */
 .legend.loading {
   padding-right: 26px;
   background-position: 100% 50%;
   padding-left: 0;
 }
 
-/* line 1135, sass/style.scss */
+/* line 1150, sass/style.scss */
 .flash-privacy {
   position: relative;
   padding-left: 17px;
   margin-top: 21px;
 }
 
-/* line 1136, sass/style.scss */
+/* line 1151, sass/style.scss */
 .flash-privacy > div {
   font-family: Arial;
   font-size: 11px;
@@ -3151,7 +3163,7 @@ form + .recently-topics {
   font-weight: bold;
 }
 
-/* line 1137, sass/style.scss */
+/* line 1152, sass/style.scss */
 .exclamation {
   width: 29px;
   height: 33px;
@@ -3166,7 +3178,7 @@ form + .recently-topics {
   border-radius: 15px;
 }
 
-/* line 1140, sass/style.scss */
+/* line 1155, sass/style.scss */
 .icn-cross {
   width: 7px;
   height: 7px;
@@ -3178,12 +3190,12 @@ form + .recently-topics {
   cursor: pointer;
 }
 
-/* line 1142, sass/style.scss */
+/* line 1157, sass/style.scss */
 .auth-form-active > .flash-privacy {
   margin: 7px 0 15px 0;
 }
 
-/* line 1144, sass/style.scss */
+/* line 1159, sass/style.scss */
 #pageslide-slide-wrap {
   max-width: 100%;
   height: 100%;
@@ -3195,27 +3207,27 @@ form + .recently-topics {
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* line 1147, sass/style.scss */
+/* line 1162, sass/style.scss */
 #pageslide-slide-wrap > div {
   background-image: none;
 }
-/* line 1148, sass/style.scss */
+/* line 1163, sass/style.scss */
 #pageslide-slide-wrap > div > div {
   overflow: hidden;
 }
 
-/* line 1150, sass/style.scss */
+/* line 1165, sass/style.scss */
 #pageslide-content {
   max-width: 100%;
 }
 
-/* line 1151, sass/style.scss */
+/* line 1166, sass/style.scss */
 #pageslide-body-wrap {
   position: relative;
   z-index: 0;
 }
 
-/* line 1158, sass/style.scss */
+/* line 1173, sass/style.scss */
 #pageslide-blanket {
   position: absolute;
   top: 0;
@@ -3228,14 +3240,14 @@ form + .recently-topics {
   display: none;
 }
 
-/* line 1160, sass/style.scss */
+/* line 1175, sass/style.scss */
 #pageslide-iframe {
   border: none;
   width: 100%;
   height: 100%;
 }
 
-/* line 1161, sass/style.scss */
+/* line 1176, sass/style.scss */
 #pageslide-close-bar {
   position: relative;
   overflow: hidden;
@@ -3243,7 +3255,7 @@ form + .recently-topics {
   background-color: #E5E5E5;
 }
 
-/* line 1162, sass/style.scss */
+/* line 1177, sass/style.scss */
 #pageslide-close-bar > a {
   float: left;
   margin-left: 5px;
@@ -3266,24 +3278,24 @@ form + .recently-topics {
   border-radius: 3px;
 }
 
-/* line 1167, sass/style.scss */
+/* line 1182, sass/style.scss */
 #pageslide-close-bar > a:first-child {
   margin-left: 0;
 }
 
-/* line 1168, sass/style.scss */
+/* line 1183, sass/style.scss */
 .bookmarkers {
   float: right;
 }
 
-/* line 1169, sass/style.scss */
+/* line 1184, sass/style.scss */
 .bookmarkers > a {
   background-image: url("../images/icons-command.png");
   background-repeat: no-repeat;
   float: right;
 }
 
-/* line 1170, sass/style.scss */
+/* line 1185, sass/style.scss */
 .share-facebook {
   background-position: 0 -21px;
   height: 19px;
@@ -3291,7 +3303,7 @@ form + .recently-topics {
   margin: 3px 0 0 5px;
 }
 
-/* line 1171, sass/style.scss */
+/* line 1186, sass/style.scss */
 .slide-controls {
   position: absolute;
   top: 0;
@@ -3299,7 +3311,7 @@ form + .recently-topics {
   float: left;
 }
 
-/* line 1172, sass/style.scss */
+/* line 1187, sass/style.scss */
 .slide-controls > div {
   position: relative;
   top: 8px;
@@ -3307,7 +3319,7 @@ form + .recently-topics {
   float: left;
 }
 
-/* line 1173, sass/style.scss */
+/* line 1188, sass/style.scss */
 .slide-controls > div > a {
   color: #848484;
   text-decoration: none;
@@ -3316,12 +3328,12 @@ form + .recently-topics {
   line-height: 1.8;
 }
 
-/* line 1174, sass/style.scss */
+/* line 1189, sass/style.scss */
 .slide-controls > div > a:first-child {
   margin-right: 10px;
 }
 
-/* line 1175, sass/style.scss */
+/* line 1190, sass/style.scss */
 .psMessage {
   margin: 5px 0 0 5px;
   font-size: 11px;
@@ -3329,12 +3341,12 @@ form + .recently-topics {
   float: left;
 }
 
-/* line 1176, sass/style.scss */
+/* line 1191, sass/style.scss */
 #glueButton {
   position: relative;
 }
 
-/* line 1178, sass/style.scss */
+/* line 1193, sass/style.scss */
 .items > li {
   background-color: rgba(255, 255, 255, 0.4);
   padding: 10px;
@@ -3342,32 +3354,32 @@ form + .recently-topics {
   margin-bottom: 10px;
 }
 
-/* line 1179, sass/style.scss */
+/* line 1194, sass/style.scss */
 .item-data {
   float: right;
 }
 
-/* line 1180, sass/style.scss */
+/* line 1195, sass/style.scss */
 .item-data > div {
   color: #898f93;
 }
 
-/* line 1181, sass/style.scss */
+/* line 1196, sass/style.scss */
 .item-data > div > a {
   color: #bdc6cb;
 }
 
-/* line 1182, sass/style.scss */
+/* line 1197, sass/style.scss */
 .item-data > p {
   color: #898f93;
 }
 
-/* line 1183, sass/style.scss */
+/* line 1198, sass/style.scss */
 .item-data > p a + a {
   font-weight: bold;
 }
 
-/* line 1185, sass/style.scss */
+/* line 1200, sass/style.scss */
 .user-logged-info {
   float: left;
   text-align: left;
@@ -3377,7 +3389,7 @@ form + .recently-topics {
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 1186, sass/style.scss */
+/* line 1201, sass/style.scss */
 .user-logged-info .avatar {
   background: #fff;
   border: 1px solid rgba(59, 64, 67, 0.25);
@@ -3387,17 +3399,17 @@ form + .recently-topics {
   position: relative;
   width: 42px;
 }
-/* line 1194, sass/style.scss */
+/* line 1209, sass/style.scss */
 .user-logged-info .avatar img {
   width: 42px;
   height: 42px;
 }
-/* line 1196, sass/style.scss */
+/* line 1211, sass/style.scss */
 .user-logged-info .user-data {
   float: left;
   margin-left: 10px;
 }
-/* line 1198, sass/style.scss */
+/* line 1213, sass/style.scss */
 .user-logged-info .user-data b {
   display: block;
   overflow: hidden;
@@ -3405,16 +3417,16 @@ form + .recently-topics {
   font-size: 14px;
   color: #454545;
 }
-/* line 1200, sass/style.scss */
+/* line 1215, sass/style.scss */
 .user-logged-info .user-data b span {
   float: left;
   margin-right: 7px;
 }
-/* line 1201, sass/style.scss */
+/* line 1216, sass/style.scss */
 .user-logged-info .user-data b .edit-secondary {
   margin-top: 2px;
 }
-/* line 1205, sass/style.scss */
+/* line 1220, sass/style.scss */
 .user-logged-info .user-data .points-wrapper-small,
 .user-logged-info .user-data ul,
 .user-logged-info .user-data .log-out {
@@ -3422,7 +3434,7 @@ form + .recently-topics {
   margin-right: 5px;
   height: 20px;
 }
-/* line 1206, sass/style.scss */
+/* line 1221, sass/style.scss */
 .user-logged-info .user-data .log-out {
   margin-right: 0;
   color: #8a9199;
@@ -3430,111 +3442,111 @@ form + .recently-topics {
   line-height: 19px;
   padding: 0 8px;
 }
-/* line 1207, sass/style.scss */
+/* line 1222, sass/style.scss */
 .user-logged-info .user-data .log-out:hover {
   text-decoration: none;
 }
-/* line 1210, sass/style.scss */
+/* line 1225, sass/style.scss */
 .user-logged-info .points-wrapper-small {
   padding: 0 8px;
   position: relative;
 }
-/* line 1213, sass/style.scss */
+/* line 1228, sass/style.scss */
 .user-logged-info .points-wrapper-small > .level,
 .user-logged-info .points-wrapper-small > .points {
   border: none;
 }
-/* line 1214, sass/style.scss */
+/* line 1229, sass/style.scss */
 .user-logged-info .points-wrapper-small > .level {
   margin-right: 4px;
 }
-/* line 1215, sass/style.scss */
+/* line 1230, sass/style.scss */
 .user-logged-info .points-wrapper-small > .points {
   height: 20px;
   line-height: 20px;
   color: #707b8b;
   font-weight: bold;
 }
-/* line 1216, sass/style.scss */
+/* line 1231, sass/style.scss */
 .user-logged-info .points-wrapper-small:hover .tooltip-wrapper {
   display: block;
 }
-/* line 1218, sass/style.scss */
+/* line 1233, sass/style.scss */
 .user-logged-info .activity-btns li {
   width: 35px;
   height: 20px;
 }
-/* line 1220, sass/style.scss */
+/* line 1235, sass/style.scss */
 .user-logged-info .activity-btns li:first-child {
   border-right-width: 0;
 }
-/* line 1222, sass/style.scss */
+/* line 1237, sass/style.scss */
 .user-logged-info .tooltip-wrapper {
   top: -26px;
 }
-/* line 1223, sass/style.scss */
+/* line 1238, sass/style.scss */
 .user-logged-info .tooltip {
   border-width: 1px;
 }
 @media (max-width: 480px) {
-  /* line 1185, sass/style.scss */
+  /* line 1200, sass/style.scss */
   .user-logged-info {
     display: none;
     width: auto;
     margin-left: 15px;
     margin-top: 5px;
   }
-  /* line 1230, sass/style.scss */
+  /* line 1245, sass/style.scss */
   .user-logged-info .avatar {
     width: 32px;
     height: 32px;
   }
-  /* line 1233, sass/style.scss */
+  /* line 1248, sass/style.scss */
   .user-logged-info .avatar img {
     width: 100%;
     height: auto;
   }
-  /* line 1238, sass/style.scss */
+  /* line 1253, sass/style.scss */
   .user-logged-info .user-data b {
     margin: 1px 0 5px;
   }
-  /* line 1240, sass/style.scss */
+  /* line 1255, sass/style.scss */
   .user-logged-info .user-data b span {
     font-size: 12px;
   }
-  /* line 1243, sass/style.scss */
+  /* line 1258, sass/style.scss */
   .user-logged-info .user-data b .edit-secondary {
     margin-top: 0;
   }
 }
 @media (max-width: 767px) {
-  /* line 1185, sass/style.scss */
+  /* line 1200, sass/style.scss */
   .user-logged-info {
     display: none;
   }
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 1185, sass/style.scss */
+  /* line 1200, sass/style.scss */
   .user-logged-info {
     display: none;
   }
 }
 
-/* line 1257, sass/style.scss */
+/* line 1272, sass/style.scss */
 .activity-btns li {
   float: left;
   width: 30px;
 }
-/* line 1259, sass/style.scss */
+/* line 1274, sass/style.scss */
 .activity-btns li a {
   text-indent: -999px;
 }
-/* line 1260, sass/style.scss */
+/* line 1275, sass/style.scss */
 .activity-btns li span {
   display: block;
   position: relative;
 }
-/* line 1261, sass/style.scss */
+/* line 1276, sass/style.scss */
 .activity-btns li .activity {
   width: 14px;
   height: 17px;
@@ -3542,7 +3554,7 @@ form + .recently-topics {
   top: 1px;
   background: url("../images/icn-activity.png") 0 0 no-repeat;
 }
-/* line 1262, sass/style.scss */
+/* line 1277, sass/style.scss */
 .activity-btns li .messages {
   width: 15px;
   height: 11px;
@@ -3550,7 +3562,7 @@ form + .recently-topics {
   top: 4px;
   background: url("../images/icn-messages-2.png") 0 0 no-repeat;
 }
-/* line 1263, sass/style.scss */
+/* line 1278, sass/style.scss */
 .activity-btns li .new-message-container {
   color: #fff;
   background-color: #2E8AE5;
@@ -3576,12 +3588,12 @@ form + .recently-topics {
   background-image: -o-linear-gradient(top, #40b9ef, #2e8ae5);
   background-image: linear-gradient(top, #40b9ef, #2e8ae5);
 }
-/* line 1279, sass/style.scss */
+/* line 1294, sass/style.scss */
 .activity-btns a:hover {
   text-decoration: none;
 }
 
-/* line 1282, sass/style.scss */
+/* line 1297, sass/style.scss */
 .edit-secondary {
   width: 13px;
   height: 14px;
@@ -3592,13 +3604,13 @@ form + .recently-topics {
   background: url("../images/icn-pencil-2.png") 0 0 no-repeat;
   float: left;
 }
-/* line 1284, sass/style.scss */
+/* line 1299, sass/style.scss */
 .edit-secondary:hover {
   text-decoration: none;
   background-position: -14px 0;
 }
 
-/* line 1287, sass/style.scss */
+/* line 1302, sass/style.scss */
 .panel-sub-nav {
   position: fixed;
   z-index: 99;
@@ -3606,21 +3618,21 @@ form + .recently-topics {
   margin-right: 800px;
   /* Landscape phones and down */
 }
-/* line 1293, sass/style.scss */
+/* line 1308, sass/style.scss */
 .panel-sub-nav .sub-nav li {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-/* line 1296, sass/style.scss */
+/* line 1311, sass/style.scss */
 .panel-sub-nav .sub-nav li:first-child {
   border-top: 0 none;
 }
-/* line 1298, sass/style.scss */
+/* line 1313, sass/style.scss */
 .panel-sub-nav .sub-nav li:last-child,
 .panel-sub-nav .sub-nav li .last-child {
   border-bottom: 0 none;
 }
-/* line 1299, sass/style.scss */
+/* line 1314, sass/style.scss */
 .panel-sub-nav .sub-nav li > a {
   color: #394551;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
@@ -3629,25 +3641,25 @@ form + .recently-topics {
   line-height: 30px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-/* line 1306, sass/style.scss */
+/* line 1321, sass/style.scss */
 .panel-sub-nav .sub-nav li > a:hover {
   text-decoration: none;
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
 }
-/* line 1311, sass/style.scss */
+/* line 1326, sass/style.scss */
 .panel-sub-nav .sub-nav li > a span {
   display: inline-block;
   vertical-align: top;
 }
-/* line 1315, sass/style.scss */
+/* line 1330, sass/style.scss */
 .panel-sub-nav .sub-nav li > a .icon {
   background: url("../images/logged-in-nav-icons.png") 0 0;
   width: 30px;
   height: 30px;
   margin: 0 2px 0 3px;
 }
-/* line 1322, sass/style.scss */
+/* line 1337, sass/style.scss */
 .panel-sub-nav .sub-nav li > a .badge {
   color: #fff;
   background-color: #61738b;
@@ -3668,19 +3680,19 @@ form + .recently-topics {
   -moz-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8) inset;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 1px 2px rgba(0, 0, 0, 0.8) inset;
 }
-/* line 1338, sass/style.scss */
+/* line 1353, sass/style.scss */
 .panel-sub-nav .sub-nav a.stream > .icon {
   background-position: 0 0;
 }
-/* line 1339, sass/style.scss */
+/* line 1354, sass/style.scss */
 .panel-sub-nav .sub-nav a.messages > .icon {
   background-position: 0 -30px;
 }
-/* line 1340, sass/style.scss */
+/* line 1355, sass/style.scss */
 .panel-sub-nav .sub-nav a.my-topics > .icon {
   background-position: 0 -60px;
 }
-/* line 1341, sass/style.scss */
+/* line 1356, sass/style.scss */
 .panel-sub-nav .sub-nav .active {
   background-color: rgba(57, 69, 81, 0.4);
   border-top: 0;
@@ -3694,30 +3706,30 @@ form + .recently-topics {
   -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.3);
 }
-/* line 1347, sass/style.scss */
+/* line 1362, sass/style.scss */
 .panel-sub-nav .sub-nav .active a {
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
   font-weight: bold;
 }
-/* line 1350, sass/style.scss */
+/* line 1365, sass/style.scss */
 .panel-sub-nav .sub-nav .active a:hover {
   text-decoration: none;
 }
-/* line 1351, sass/style.scss */
+/* line 1366, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.stream > .icon {
   background-position: -30px 0;
 }
-/* line 1352, sass/style.scss */
+/* line 1367, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.messages > .icon {
   background-position: -30px -30px;
 }
-/* line 1353, sass/style.scss */
+/* line 1368, sass/style.scss */
 .panel-sub-nav .sub-nav .active a.my-topics > .icon {
   background-position: -30px -60px;
 }
 @media (max-width: 767px) {
-  /* line 1359, sass/style.scss */
+  /* line 1374, sass/style.scss */
   .panel-sub-nav.stream-user-nav {
     background-color: #eceff3;
     position: relative;
@@ -3725,7 +3737,7 @@ form + .recently-topics {
     padding: 10px 0;
     text-align: center;
   }
-  /* line 1365, sass/style.scss */
+  /* line 1380, sass/style.scss */
   .panel-sub-nav.stream-user-nav:after {
     content: ".";
     display: block;
@@ -3734,7 +3746,7 @@ form + .recently-topics {
     line-height: 0;
     height: 0;
   }
-  /* line 1366, sass/style.scss */
+  /* line 1381, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav {
     padding: 0;
     width: auto;
@@ -3747,7 +3759,7 @@ form + .recently-topics {
     border-radius: 0px;
     border: 1px solid rgba(0, 0, 0, 0.2);
   }
-  /* line 1373, sass/style.scss */
+  /* line 1388, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav:after {
     content: ".";
     display: block;
@@ -3756,7 +3768,7 @@ form + .recently-topics {
     line-height: 0;
     height: 0;
   }
-  /* line 1374, sass/style.scss */
+  /* line 1389, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li {
     display: inline-block;
     float: left;
@@ -3771,26 +3783,26 @@ form + .recently-topics {
     border-radius: 0px;
     background-color: #e6ecf2;
   }
-  /* line 1383, sass/style.scss */
+  /* line 1398, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li .icon {
     margin: 0 -5px 0 3px;
   }
-  /* line 1384, sass/style.scss */
+  /* line 1399, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li > a .badge {
     float: none;
     margin-left: 5px;
     margin-right: 0;
   }
-  /* line 1389, sass/style.scss */
+  /* line 1404, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li:hover {
     background-color: #dfe7ef;
   }
-  /* line 1391, sass/style.scss */
+  /* line 1406, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li:hover a {
     color: #394551;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
   }
-  /* line 1396, sass/style.scss */
+  /* line 1411, sass/style.scss */
   .panel-sub-nav.stream-user-nav .sub-nav li.active {
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
@@ -3801,7 +3813,7 @@ form + .recently-topics {
   }
 }
 
-/* line 1406, sass/style.scss */
+/* line 1421, sass/style.scss */
 .header-title-bg {
   background-color: #FCFCFC;
   border-bottom: 1px solid #DBDFE3;
@@ -3818,7 +3830,7 @@ form + .recently-topics {
 }
 
 /* Hall of Fame */
-/* line 1412, sass/style.scss */
+/* line 1427, sass/style.scss */
 .hall-of-fame {
   position: fixed;
   bottom: 26px;
@@ -3826,16 +3838,16 @@ form + .recently-topics {
   padding: 0;
   z-index: 990;
 }
-/* line 1414, sass/style.scss */
+/* line 1429, sass/style.scss */
 .hall-of-fame > .collapsed {
   height: 15px;
 }
-/* line 1416, sass/style.scss */
+/* line 1431, sass/style.scss */
 .hall-of-fame > .collapsed .hall-people {
   display: none;
 }
 
-/* line 1420, sass/style.scss */
+/* line 1435, sass/style.scss */
 .hall-header {
   width: 196px;
   height: 31px;
@@ -3843,7 +3855,7 @@ form + .recently-topics {
   text-shadow: 0 1px 0 #ffffff;
   position: relative;
 }
-/* line 1422, sass/style.scss */
+/* line 1437, sass/style.scss */
 .hall-header > h4 {
   position: absolute;
   margin: 0;
@@ -3853,7 +3865,7 @@ form + .recently-topics {
   width: 191px;
   top: 1px;
 }
-/* line 1424, sass/style.scss */
+/* line 1439, sass/style.scss */
 .hall-header > h4 > span {
   width: 126px;
   color: #7e91a6;
@@ -3867,12 +3879,12 @@ form + .recently-topics {
   cursor: pointer;
   top: 9px;
 }
-/* line 1425, sass/style.scss */
+/* line 1440, sass/style.scss */
 .hall-header > h4.closed > span {
   background-position: 50% 100%;
 }
 
-/* line 1429, sass/style.scss */
+/* line 1444, sass/style.scss */
 .hall-footer {
   background-color: #edf2f4;
   border-top: 1px #c5cace solid;
@@ -3883,37 +3895,37 @@ form + .recently-topics {
   background-image: linear-gradient(top, #edf2f4, #e4eaed);
 }
 
-/* line 1433, sass/style.scss */
+/* line 1448, sass/style.scss */
 .hall-people {
   display: block;
   clear: both;
   height: 67px;
   padding-top: 21px;
 }
-/* line 1434, sass/style.scss */
+/* line 1449, sass/style.scss */
 .hall-people > li {
   float: left;
   width: 165px;
   margin-right: 85px;
 }
-/* line 1436, sass/style.scss */
+/* line 1451, sass/style.scss */
 .hall-people > li .avatar-wrapper {
   float: left;
 }
-/* line 1438, sass/style.scss */
+/* line 1453, sass/style.scss */
 .hall-people > li .avatar-wrapper a {
   display: block;
 }
-/* line 1440, sass/style.scss */
+/* line 1455, sass/style.scss */
 .hall-people > li > .honor-member-info {
   margin-left: 69px;
 }
-/* line 1442, sass/style.scss */
+/* line 1457, sass/style.scss */
 .hall-people > li > .honor-member-info > a {
   text-transform: capitalize;
   font-size: 12px;
 }
-/* line 1443, sass/style.scss */
+/* line 1458, sass/style.scss */
 .hall-people > li > .honor-member-info > span {
   display: block;
   font-size: 11px;
@@ -3922,23 +3934,23 @@ form + .recently-topics {
   width: 131px;
   margin: 8px 0 3px;
 }
-/* line 1446, sass/style.scss */
+/* line 1461, sass/style.scss */
 .hall-people > .last {
   margin-right: 0;
 }
-/* line 1447, sass/style.scss */
+/* line 1462, sass/style.scss */
 .hall-people .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 1448, sass/style.scss */
+/* line 1463, sass/style.scss */
 .hall-people .avatar > span {
   top: 32px;
   left: 9px;
   z-index: 2;
 }
-/* line 1449, sass/style.scss */
+/* line 1464, sass/style.scss */
 .hall-people .avatar > .honor-member {
   width: 72px;
   height: 52px;
@@ -3951,26 +3963,26 @@ form + .recently-topics {
   left: -12px;
 }
 
-/* line 1453, sass/style.scss */
+/* line 1468, sass/style.scss */
 .app-body-container {
   padding: 120px 0 150px;
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 1455, sass/style.scss */
+/* line 1470, sass/style.scss */
 .app-body-container > .container {
   padding-top: 20px;
 }
 @media (max-width: 767px) {
-  /* line 1453, sass/style.scss */
+  /* line 1468, sass/style.scss */
   .app-body-container {
     padding: 120px 0 25px;
   }
-  /* line 1460, sass/style.scss */
+  /* line 1475, sass/style.scss */
   .app-body-container > .container {
     padding-top: 0;
   }
-  /* line 1462, sass/style.scss */
+  /* line 1477, sass/style.scss */
   .app-body-container > .container > div > * {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -3980,13 +3992,13 @@ form + .recently-topics {
   }
 }
 @media (max-width: 480px) {
-  /* line 1453, sass/style.scss */
+  /* line 1468, sass/style.scss */
   .app-body-container {
     padding: 50px 0 0;
   }
 }
 
-/* line 1472, sass/style.scss */
+/* line 1487, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -4005,52 +4017,52 @@ footer {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1472, sass/style.scss */
+  /* line 1487, sass/style.scss */
   footer {
     position: relative;
   }
 }
 
-/* line 1484, sass/style.scss */
+/* line 1499, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
   /* Landscape phones and down */
 }
-/* line 1486, sass/style.scss */
+/* line 1501, sass/style.scss */
 .footer-container > span {
   float: left;
   color: #8f9aa4;
 }
-/* line 1487, sass/style.scss */
+/* line 1502, sass/style.scss */
 .footer-container > ul {
   float: right;
 }
-/* line 1489, sass/style.scss */
+/* line 1504, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
-/* line 1490, sass/style.scss */
+/* line 1505, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 @media (max-width: 480px) {
-  /* line 1496, sass/style.scss */
+  /* line 1511, sass/style.scss */
   .footer-container > span,
   .footer-container > ul {
     display: block;
     float: none;
     text-align: center;
   }
-  /* line 1501, sass/style.scss */
+  /* line 1516, sass/style.scss */
   .footer-container > ul {
     margin: 5px 0;
   }
 }
 
-/* line 1507, sass/style.scss */
+/* line 1522, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -4058,7 +4070,7 @@ footer {
   left: 50%;
 }
 
-/* line 1508, sass/style.scss */
+/* line 1523, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -4074,7 +4086,7 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1510, sass/style.scss */
+/* line 1525, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -4086,14 +4098,14 @@ footer {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 1513, sass/style.scss */
+/* line 1528, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 5px;
 }
-/* line 1516, sass/style.scss */
+/* line 1531, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -4103,12 +4115,12 @@ footer {
   border-width: 4px 4px 0;
   border-style: solid;
 }
-/* line 1517, sass/style.scss */
+/* line 1532, sass/style.scss */
 .tooltip .arrow span {
   left: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
-/* line 1518, sass/style.scss */
+/* line 1533, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -4116,7 +4128,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 1522, sass/style.scss */
+/* line 1537, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -4128,7 +4140,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 1523, sass/style.scss */
+/* line 1538, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -4148,7 +4160,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1528, sass/style.scss */
+/* line 1543, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -4167,7 +4179,7 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1531, sass/style.scss */
+/* line 1546, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -4187,15 +4199,15 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1534, sass/style.scss */
+/* line 1549, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
-/* line 1535, sass/style.scss */
+/* line 1550, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
-/* line 1537, sass/style.scss */
+/* line 1552, sass/style.scss */
 .modal header .body {
   background-color: #fff;
   color: #3d464c;
@@ -4208,27 +4220,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1539, sass/style.scss */
+/* line 1554, sass/style.scss */
 .modal header .body p {
   margin-bottom: 20px;
 }
-/* line 1541, sass/style.scss */
+/* line 1556, sass/style.scss */
 .modal header .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1544, sass/style.scss */
+/* line 1559, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1545, sass/style.scss */
+/* line 1560, sass/style.scss */
 .points-table li {
   width: 50%;
   float: left;
 }
-/* line 1546, sass/style.scss */
+/* line 1561, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -4236,14 +4248,14 @@ footer {
   float: left;
   background: url("../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1548, sass/style.scss */
+/* line 1563, sass/style.scss */
 .points-table .points {
   display: block;
   float: left;
   padding: 5px 0 0 10px;
   font-size: 14px;
 }
-/* line 1550, sass/style.scss */
+/* line 1565, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -4254,7 +4266,7 @@ footer {
   height: 0;
 }
 
-/* line 1553, sass/style.scss */
+/* line 1568, sass/style.scss */
 .block_user {
   background: url("../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -4265,7 +4277,7 @@ footer {
   float: right;
 }
 
-/* line 1561, sass/style.scss */
+/* line 1576, sass/style.scss */
 .unblock_user {
   background: url("../images/check-mark.png") no-repeat transparent;
   width: 15px;
@@ -4277,7 +4289,7 @@ footer {
 }
 
 /* PRIVATE PROFILE */
-/* line 1571, sass/style.scss */
+/* line 1586, sass/style.scss */
 .private-msg-profile {
   position: absolute;
   top: 5px;
@@ -4293,7 +4305,7 @@ footer {
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
 }
-/* line 1583, sass/style.scss */
+/* line 1598, sass/style.scss */
 .private-msg-profile > form {
   display: block;
   background: #ffffff;
@@ -4301,7 +4313,7 @@ footer {
   padding: 7px 16px 0;
   margin: 0;
 }
-/* line 1589, sass/style.scss */
+/* line 1604, sass/style.scss */
 .private-msg-profile > form > textarea {
   min-width: 234px;
   width: 234px;
@@ -4315,34 +4327,34 @@ footer {
   color: #aeb4bd;
 }
 
-/* line 1603, sass/style.scss */
+/* line 1618, sass/style.scss */
 .activity-btn-profile {
   float: right;
   margin: 0;
 }
-/* line 1606, sass/style.scss */
+/* line 1621, sass/style.scss */
 .activity-btn-profile li {
   float: right;
   height: 21px;
 }
-/* line 1609, sass/style.scss */
+/* line 1624, sass/style.scss */
 .activity-btn-profile li.first {
   border-right: 0 none;
 }
-/* line 1612, sass/style.scss */
+/* line 1627, sass/style.scss */
 .activity-btn-profile li a {
   text-indent: -9999px;
   font-size: 0;
   line-height: 0;
   display: block;
 }
-/* line 1618, sass/style.scss */
+/* line 1633, sass/style.scss */
 .activity-btn-profile li span {
   display: block;
   position: relative;
 }
 
-/* line 1624, sass/style.scss */
+/* line 1639, sass/style.scss */
 .send-private-msg-profile {
   height: 21px;
   width: 28px;

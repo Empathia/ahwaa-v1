@@ -50,12 +50,14 @@ $(document).ready(function(){
           <% @topic.leaderboard.each_with_index do |user, i| %>
           <% next if current_user && current_user.blocks.map{|u| u.block}.include?(user) %>
             <li>
-              <%= avatar_span(user, user.is_expert?) %>
-              <em>
-                  <%= link_to profile_path(user.username) do %>
-                    <%= user.username %>
-                  <% end %>
-              </em>
+              <% if logged_in? %>
+                <%= link_to profile_path(user) do %>
+                  <%= avatar_span(user, user.is_expert?) %>
+                <% end %>
+              <% else %>
+                <%= avatar_span(user, user.is_expert?) %>
+              <% end %>
+              <em><%= user.username %></em>
               <%= render :partial => 'users/card', :locals => {:user => user} %>
             </li>
           <% end %>
@@ -99,7 +101,13 @@ $(document).ready(function(){
         <header>
           <div class="avatar-wrapper">
             <% unless @topic.is_anonymous %>
-              <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
+              <% if logged_in? %>
+                <%= link_to profile_path(@topic.user) do %>
+                  <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
+                <% end %>
+              <% else %>
+                <%= avatar_span(@topic.user, @topic.user.is_expert?) %>
+              <% end %>
             <% else %>
               <span class="avatar no-level">
                 <%= image_tag(@topic.author_avatar) %>

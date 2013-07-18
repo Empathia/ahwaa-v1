@@ -53,7 +53,13 @@ $(document).ready(function(){
                     <li>
                       <div class="avatar-wrapper">
                         <% if user %>
-                          <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+                          <% if logged_in? %>
+                            <%= link_to profile_path(topic.user) do %>
+                              <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+                            <% end %>
+                          <% else %>
+                            <%= avatar_span(user, user.is_expert?, true, "24x24") %>
+                          <% end %>
                           <%= render :partial => 'users/card', :locals => {:user => user} %>
                         <% else %>
                           <span class="avatar">
