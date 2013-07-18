@@ -73,7 +73,10 @@
 
 .message-data {
   float: left; width: 520px; margin-left: 10px;
-  .msg a {color: #494b4c; font-size: 13px}
+  .msg {
+    a {color: #494b4c; font-size: 13px}
+    p {word-break: break-all}
+  }
   > .from > a {font-size: 13px; float: left; padding-top: 11px}
 }
 .message-title { padding-bottom: 10px; }
@@ -142,7 +145,10 @@
         > a {float: left; font-size: 13px; font-weight: bold; padding-top: 0}
         > .date {color: #A1AAB2; float: right; font-size: 11px}
       }
-      > .msg {line-height: 20px}
+      > .msg {
+        line-height: 20px;
+        word-break: break-all;
+      }
     }
   }
   // @include breakpoint(tablet-landscape-desktop) {

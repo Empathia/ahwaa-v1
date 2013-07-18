@@ -107,58 +107,62 @@
   width: 520px;
   margin-right: 10px;
 }
-/* line 76, sass/messages.scss */
+/* line 77, sass/messages.scss */
 .message-data .msg a {
   color: #494b4c;
   font-size: 13px;
 }
-/* line 77, sass/messages.scss */
+/* line 78, sass/messages.scss */
+.message-data .msg p {
+  word-break: break-all;
+}
+/* line 80, sass/messages.scss */
 .message-data > .from > a {
   font-size: 13px;
   float:right;
   padding-top: 11px;
 }
 
-/* line 79, sass/messages.scss */
+/* line 82, sass/messages.scss */
 .message-title {
   padding-bottom: 10px;
 }
 
-/* line 81, sass/messages.scss */
+/* line 84, sass/messages.scss */
 .from {
   padding-bottom: 10px;
   overflow: hidden;
 }
-/* line 82, sass/messages.scss */
+/* line 85, sass/messages.scss */
 .from > a > span {
   float:right;
   margin-left: 3px;
 }
-/* line 83, sass/messages.scss */
+/* line 86, sass/messages.scss */
 .from .display-pm {
   color: #468ac4;
   font-weight: bold;
 }
-/* line 84, sass/messages.scss */
+/* line 87, sass/messages.scss */
 .from .display-pm:hover {
   text-decoration: underline;
 }
 
-/* line 88, sass/messages.scss */
+/* line 91, sass/messages.scss */
 .delete-message {
   float:left;
   width: 110px;
   position: relative;
   top: 22px;
 }
-/* line 89, sass/messages.scss */
+/* line 92, sass/messages.scss */
 .delete-message > .date {
   font-size: 11px;
   color: #a1aab2;
   float:left;
   padding:3px 0 0 10px;
 }
-/* line 90, sass/messages.scss */
+/* line 93, sass/messages.scss */
 .delete-message > a {
   float:left;
   padding:2px 3px 2px 2px;
@@ -167,7 +171,7 @@
   margin-top: -2px;
 }
 
-/* line 92, sass/messages.scss */
+/* line 95, sass/messages.scss */
 .opt-reply {
   height: 16px;
   right: -22px;
@@ -181,23 +185,23 @@
   background: url("../../images/icn-reply-drk.png") 0 0;
   background-repeat: no-repeat;
 }
-/* line 94, sass/messages.scss */
+/* line 97, sass/messages.scss */
 .opt-reply:hover {
   background-position: -16px 0;
 }
 
-/* line 96, sass/messages.scss */
+/* line 99, sass/messages.scss */
 .new > .opt-reply {
   background-image: url("../../images/icn-new-message-indicator.png");
   background-repeat: no-repeat;
 }
 
-/* line 98, sass/messages.scss */
+/* line 101, sass/messages.scss */
 #pm-wrapper .messages {
   padding:20px 30px 40px 20px;
 }
 
-/* line 99, sass/messages.scss */
+/* line 102, sass/messages.scss */
 .messages > li {
   position: relative;
   width: auto;
@@ -209,7 +213,7 @@
   -moz-box-shadow: inset 0 0 0 1px white;
   box-shadow: inset 0 0 0 1px white;
 }
-/* line 107, sass/messages.scss */
+/* line 110, sass/messages.scss */
 .messages > li.new {
   background-color: #f2f9ff;
   border-color: #398fe5;
@@ -218,41 +222,41 @@
   box-shadow: 0 0 5px rgba(76, 166, 255, 0.3), inset 0 0 0 1px white;
 }
 
-/* line 112, sass/messages.scss */
+/* line 115, sass/messages.scss */
 .pm-panel-padding {
   padding:0 20px 20px 20px;
 }
 
-/* line 114, sass/messages.scss */
+/* line 117, sass/messages.scss */
 .pm-details {
   font-size: 12px;
   padding-top: 20px;
 }
 
-/* line 115, sass/messages.scss */
+/* line 118, sass/messages.scss */
 .pm-user {
   margin-bottom: 20px;
 }
 
-/* line 116, sass/messages.scss */
+/* line 119, sass/messages.scss */
 .pm-user-response {
   color: #b3b8bc;
   padding: 20px 0 10px;
 }
 
-/* line 117, sass/messages.scss */
+/* line 120, sass/messages.scss */
 .pm-user-response > a {
   color: #5e5e5e;
   font-weight: bold;
 }
 
-/* line 118, sass/messages.scss */
+/* line 121, sass/messages.scss */
 .pm-user .avatar-wrapper {
   margin-left: 14px;
   z-index: 1;
 }
 
-/* line 119, sass/messages.scss */
+/* line 122, sass/messages.scss */
 .pm-user-details {
   color: #b3b8bc;
   margin-top: 10px;
@@ -260,18 +264,18 @@
   width: 536px;
 }
 
-/* line 120, sass/messages.scss */
+/* line 123, sass/messages.scss */
 .pm-user-details > div {
   margin-bottom: 5px;
 }
 
-/* line 121, sass/messages.scss */
+/* line 124, sass/messages.scss */
 .pm-user-details a {
   color: #468ac4;
   font-weight: bold;
 }
 
-/* line 122, sass/messages.scss */
+/* line 125, sass/messages.scss */
 .pm-message {
   color: #3f4245;
   line-height: 18px;
@@ -279,55 +283,55 @@
   padding-bottom: 20px;
 }
 
-/* line 124, sass/messages.scss */
+/* line 127, sass/messages.scss */
 #pm-wrapper strong {
   color: black;
 }
 
-/* line 125, sass/messages.scss */
+/* line 128, sass/messages.scss */
 .hide {
   display: none;
 }
 
-/* line 126, sass/messages.scss */
+/* line 129, sass/messages.scss */
 .response-wrapper {
   margin:5px 75px 11px 0;
   border: none;
 }
 
-/* line 127, sass/messages.scss */
+/* line 130, sass/messages.scss */
 .new_private_message > .btn-gradient {
   padding: 5px 9px;
   display: none;
 }
 
-/* line 129, sass/messages.scss */
+/* line 132, sass/messages.scss */
 .pm-flash.success {
   margin:4px 0 20px 0;
   padding: 7px;
 }
 
-/* line 130, sass/messages.scss */
+/* line 133, sass/messages.scss */
 .pm-flash.success > p {
   font-size: 12px;
   word-spacing: -1px;
 }
 
-/* line 132, sass/messages.scss */
+/* line 135, sass/messages.scss */
 .back-to-msgs {
   float:left;
   font-size: 12px;
   margin-top: -7px;
 }
 
-/* line 133, sass/messages.scss */
+/* line 136, sass/messages.scss */
 .back-to-msgs span {
   padding: 4px 10px 0;
   height: 18px;
   display: block;
 }
 
-/* line 135, sass/messages.scss */
+/* line 138, sass/messages.scss */
 .new-response textarea {
   border: 0;
   font-family: arial;
@@ -336,72 +340,73 @@
   width: 100%;
 }
 
-/* line 138, sass/messages.scss */
+/* line 141, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper {
   border-bottom: 1px solid #dae0e5;
   padding: 20px 0 17px;
 }
-/* line 139, sass/messages.scss */
+/* line 142, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .avatar-wrapper {
   position: absolute;
 }
-/* line 140, sass/messages.scss */
+/* line 143, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data {
   float: none;
   margin-right: 75px;
   width: auto;
   min-height: 70px;
 }
-/* line 141, sass/messages.scss */
+/* line 144, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from {
   padding-bottom: 5px;
 }
-/* line 142, sass/messages.scss */
+/* line 145, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from > a {
   float:right;
   font-size: 13px;
   font-weight: bold;
   padding-top: 0;
 }
-/* line 143, sass/messages.scss */
+/* line 146, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .from > .date {
   color: #A1AAB2;
   float:left;
   font-size: 11px;
 }
-/* line 145, sass/messages.scss */
+/* line 148, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .msg {
   line-height: 20px;
+  word-break: break-all;
 }
 
-/* line 156, sass/messages.scss */
+/* line 162, sass/messages.scss */
 .my-messages-reply-wrapper {
   padding: 20px 0;
   /* Landscape phones and down */
 }
-/* line 158, sass/messages.scss */
+/* line 164, sass/messages.scss */
 .my-messages-reply-wrapper > .avatar-wrapper {
   position: absolute;
 }
-/* line 160, sass/messages.scss */
+/* line 166, sass/messages.scss */
 .my-messages-reply-wrapper > form > a {
   font-weight: bold;
   padding-bottom: 5px;
   display: block;
 }
-/* line 162, sass/messages.scss */
+/* line 168, sass/messages.scss */
 .my-messages-reply-wrapper .username {
   margin:0 75px 0 0;
 }
 @media (max-width: 480px) {
-  /* line 168, sass/messages.scss */
+  /* line 174, sass/messages.scss */
   .my-messages-reply-wrapper .response-wrapper,
   .my-messages-reply-wrapper .username {
     margin-right: 45px;
   }
 }
 
-/* line 174, sass/messages.scss */
+/* line 180, sass/messages.scss */
 .btn-gradient {
   clear: right;
   border: 1px solid;
@@ -429,7 +434,7 @@
   border-radius: 3px;
 }
 
-/* line 188, sass/messages.scss */
+/* line 194, sass/messages.scss */
 .btn-gradient:hover {
   cursor: pointer;
   background-color: #ecf4f9;
@@ -440,7 +445,7 @@
   background-image: linear-gradient(top, #ecf4f9, #fafcfd);
 }
 
-/* line 191, sass/messages.scss */
+/* line 197, sass/messages.scss */
 .btn-gradient:active {
   border-color: #a0b0c0 #c8d4e1 #cfdae6;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eaf7fd), color-stop(100%, #f9fdfe));

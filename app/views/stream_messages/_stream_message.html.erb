@@ -2,7 +2,7 @@
   <div class="avatar-wrapper">
     <% unless stream_message.reply.anonymous? %>
       <% if logged_in? %>
-        <%= link_to profile_path(stream_message.user) do %>
+        <%= link_to profile_path(stream_message.reply.user) do %>
           <%= avatar_span(stream_message.reply.user, stream_message.reply.user.is_expert?) %>
         <% end %>
       <% else %>
