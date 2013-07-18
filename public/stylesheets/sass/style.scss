@@ -941,18 +941,6 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
     display: inline-block;
     pointer-events: none;
   }
-  .avatar{
-    width: 56px;
-    height: 56px;
-    padding: 3px;
-    float: left;
-    position: relative;
-    border: 1px solid rgba(59, 64, 67, .25);
-    background: #ffffff;
-    img {
-      @include background-image(linear-gradient(top, #dcdfe1, #edeeef));
-    }
-  }
 
   @include breakpoint(phone) {
     pointer-events: none;
@@ -962,6 +950,19 @@ p.success{color:#6fa677; margin: 0 0 5px 1px; font-size:11px; line-height:1em; b
     .avatar {
       pointer-events: none;
     }
+  }
+}
+
+.avatar{
+  width: 56px;
+  height: 56px;
+  padding: 3px;
+  float: left;
+  position: relative;
+  border: 1px solid rgba(59, 64, 67, .25);
+  background: #ffffff;
+  img {
+    @include background-image(linear-gradient(top, #dcdfe1, #edeeef));
   }
 }
 
