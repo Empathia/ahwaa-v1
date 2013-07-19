@@ -5,7 +5,16 @@ Class('AuthForms')({
 
     show: function(target, formName) {
         var _this = this;
+
+        if ( target.hasClass('auth-form-active') ) {
+            // if already visible, just unbind events and hide it
+            this.prototype.doc.unbind('click.closeAuthModals');
+            this.hide();
+            return false;
+        }
+
         this.hide();
+
         target.addClass('auth-form-active');
         if (!formName) {
           formName = '.' + target.attr('id') + '-form';
@@ -19,8 +28,8 @@ Class('AuthForms')({
         );
 
         this.prototype.doc.unbind('click.closeAuthModals').bind('click.closeAuthModals', function (e) {
-            var isActive = !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length
-            if ( isActive ) {
+            var notSelf = !$(e.target).closest('.auth-form-active').length;
+            if ( notSelf ) {
                 $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
                 _this.prototype.doc.unbind('click.closeAuthModals');
             }
@@ -113,10 +122,6 @@ Class('AuthForms')({
                 }
             });
 
-            // $(document).unbind('click').click(function(e){
-            //     !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
-            //     e.target.tagName != "a" && $('.search-results-wrapper').removeClass('visible');
-            // });
 
             $('.cancel-forgot').click(function(){
                 $('.auth-form-active').removeClass('auth-form-active');
