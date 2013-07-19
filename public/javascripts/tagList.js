@@ -38,10 +38,10 @@ Class('TagList')({
             });
 
             this.window.bind('resize.tags', function () {
-                // if ( timer ) clearTimeout( timer );
-                // timer = setTimeout(function () {
+                if ( timer ) clearTimeout( timer );
+                timer = setTimeout(function () {
                     _this.filterTags();
-                // }, 1500);
+                }, 1500);
             });
         },
 
