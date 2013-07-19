@@ -290,8 +290,10 @@ section.need-help {padding:13px 0; text-align:center}
 }
 
 .response-padding{padding: 10px;}
-.response-padding > .flash-privacy{margin: 15px 0; overflow: hidden;}
-.response-padding > .flash-privacy > div{width: 100%; float: left;}
+.response-padding > .flash-privacy{
+  margin: 15px 0; overflow: hidden;
+  > div{width: 100%; float: left; @include box-sizing(border-box)}
+}
 .add_comments_top{color: #468AC4; font-weight: bold}
 .cancel-comment{color: #c4c3c3; position: absolute; right: 10px; top: 10px;}
 .res-types-wrapper{border-top: 1px solid #e9eff6; padding-top: 10px; margin-top: 7px; overflow: hidden; display: none;}
