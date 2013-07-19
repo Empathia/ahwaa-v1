@@ -3839,16 +3839,20 @@ form + .recently-topics {
   padding: 0;
   z-index: 990;
 }
-/* line 1430, sass/style.scss */
-.hall-of-fame > .collapsed {
-  height: 15px;
+/* line 1431, sass/style.scss */
+.hall-of-fame.collapsed .hall-header > h4 > span {
+  background-position: 50% 100%;
 }
 /* line 1432, sass/style.scss */
-.hall-of-fame > .collapsed .hall-people {
+.hall-of-fame.collapsed .hall-footer {
+  height: 15px;
+}
+/* line 1433, sass/style.scss */
+.hall-of-fame.collapsed .hall-people {
   display: none;
 }
 
-/* line 1436, sass/style.scss */
+/* line 1437, sass/style.scss */
 .hall-header {
   width: 196px;
   height: 31px;
@@ -3856,7 +3860,7 @@ form + .recently-topics {
   text-shadow: 0 1px 0 #ffffff;
   position: relative;
 }
-/* line 1438, sass/style.scss */
+/* line 1439, sass/style.scss */
 .hall-header > h4 {
   position: absolute;
   margin: 0;
@@ -3866,7 +3870,7 @@ form + .recently-topics {
   width: 191px;
   top: 1px;
 }
-/* line 1440, sass/style.scss */
+/* line 1441, sass/style.scss */
 .hall-header > h4 > span {
   width: 126px;
   color: #7e91a6;
@@ -3879,10 +3883,6 @@ form + .recently-topics {
   text-transform: uppercase;
   cursor: pointer;
   top: 9px;
-}
-/* line 1441, sass/style.scss */
-.hall-header > h4.closed > span {
-  background-position: 50% 100%;
 }
 
 /* line 1445, sass/style.scss */
@@ -3902,12 +3902,6 @@ form + .recently-topics {
   clear: both;
   height: 67px;
   padding-top: 21px;
-}
-/* line 1450, sass/style.scss */
-.hall-people > li {
-  float:right;
-  width: 165px;
-  margin-left: 85px;
 }
 /* line 1452, sass/style.scss */
 .hall-people > li .avatar-wrapper {
@@ -3932,26 +3926,29 @@ form + .recently-topics {
   font-size: 11px;
   color: #5d748c;
   text-shadow: 0 1px 0 #ffffff;
-  width: 131px;
+  width: auto;
   margin: 8px 0 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-/* line 1462, sass/style.scss */
+/* line 1466, sass/style.scss */
 .hall-people > .last {
   margin-left: 0;
 }
-/* line 1463, sass/style.scss */
+/* line 1467, sass/style.scss */
 .hall-people .avatar {
   width: 42px;
   height: 42px;
   padding: 3px;
 }
-/* line 1464, sass/style.scss */
+/* line 1468, sass/style.scss */
 .hall-people .avatar > span {
   top: 32px;
   right: 9px;
   z-index: 2;
 }
-/* line 1465, sass/style.scss */
+/* line 1469, sass/style.scss */
 .hall-people .avatar > .honor-member {
   width: 72px;
   height: 52px;
@@ -3964,26 +3961,26 @@ form + .recently-topics {
   right: -12px;
 }
 
-/* line 1469, sass/style.scss */
+/* line 1473, sass/style.scss */
 .app-body-container {
   padding: 120px 0 150px;
   /* Landscape phones and down */
   /* Landscape phones and down */
 }
-/* line 1471, sass/style.scss */
+/* line 1475, sass/style.scss */
 .app-body-container > .container {
   padding-top: 20px;
 }
 @media (max-width: 767px) {
-  /* line 1469, sass/style.scss */
+  /* line 1473, sass/style.scss */
   .app-body-container {
     padding: 120px 0 25px;
   }
-  /* line 1476, sass/style.scss */
+  /* line 1480, sass/style.scss */
   .app-body-container > .container {
     padding-top: 0;
   }
-  /* line 1478, sass/style.scss */
+  /* line 1482, sass/style.scss */
   .app-body-container > .container > div > * {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -3993,13 +3990,13 @@ form + .recently-topics {
   }
 }
 @media (max-width: 480px) {
-  /* line 1469, sass/style.scss */
+  /* line 1473, sass/style.scss */
   .app-body-container {
     padding: 50px 0 0;
   }
 }
 
-/* line 1488, sass/style.scss */
+/* line 1492, sass/style.scss */
 footer {
   position: fixed;
   bottom: 0;
@@ -4018,52 +4015,52 @@ footer {
   /* Landscape phones and down */
 }
 @media (max-width: 480px) {
-  /* line 1488, sass/style.scss */
+  /* line 1492, sass/style.scss */
   footer {
     position: relative;
   }
 }
 
-/* line 1500, sass/style.scss */
+/* line 1504, sass/style.scss */
 .footer-container {
   overflow: hidden;
   font-size: 12px;
   padding: 6px 0 5px;
   /* Landscape phones and down */
 }
-/* line 1502, sass/style.scss */
+/* line 1506, sass/style.scss */
 .footer-container > span {
   float:right;
   color: #8f9aa4;
 }
-/* line 1503, sass/style.scss */
+/* line 1507, sass/style.scss */
 .footer-container > ul {
   float:left;
 }
-/* line 1505, sass/style.scss */
+/* line 1509, sass/style.scss */
 .footer-container > ul > li {
   display: inline;
   color: #99b9d8;
 }
-/* line 1506, sass/style.scss */
+/* line 1510, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
 }
 @media (max-width: 480px) {
-  /* line 1512, sass/style.scss */
+  /* line 1516, sass/style.scss */
   .footer-container > span,
   .footer-container > ul {
     display: block;
     float: none;
     text-align: center;
   }
-  /* line 1517, sass/style.scss */
+  /* line 1521, sass/style.scss */
   .footer-container > ul {
     margin: 5px 0;
   }
 }
 
-/* line 1523, sass/style.scss */
+/* line 1527, sass/style.scss */
 .tooltip-wrapper {
   display: none;
   position: absolute;
@@ -4071,7 +4068,7 @@ footer {
   right: 50%;
 }
 
-/* line 1524, sass/style.scss */
+/* line 1528, sass/style.scss */
 .tooltip {
   position: relative;
   display: block;
@@ -4087,7 +4084,7 @@ footer {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 1526, sass/style.scss */
+/* line 1530, sass/style.scss */
 .tooltip .msg {
   display: block;
   white-space: nowrap;
@@ -4099,14 +4096,14 @@ footer {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-/* line 1529, sass/style.scss */
+/* line 1533, sass/style.scss */
 .tooltip .arrow {
   position: absolute;
   bottom: -5px;
   width: 100%;
   height: 5px;
 }
-/* line 1532, sass/style.scss */
+/* line 1536, sass/style.scss */
 .tooltip .arrow span,
 .tooltip .arrow span::after {
   position: relative;
@@ -4116,12 +4113,12 @@ footer {
   border-width: 4px 4px 0;
   border-style: solid;
 }
-/* line 1533, sass/style.scss */
+/* line 1537, sass/style.scss */
 .tooltip .arrow span {
   right: 48%;
   border-color: #a0b0c0 transparent transparent;
 }
-/* line 1534, sass/style.scss */
+/* line 1538, sass/style.scss */
 .tooltip .arrow span::after {
   content: '';
   top: -5px;
@@ -4129,7 +4126,7 @@ footer {
   border-color: #eff5fa transparent transparent;
 }
 
-/* line 1538, sass/style.scss */
+/* line 1542, sass/style.scss */
 #modal {
   display: none;
   position: absolute;
@@ -4141,7 +4138,7 @@ footer {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* line 1539, sass/style.scss */
+/* line 1543, sass/style.scss */
 #modals-wrapper {
   position: fixed;
   top: 180px;
@@ -4161,7 +4158,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1544, sass/style.scss */
+/* line 1548, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -4180,7 +4177,7 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1547, sass/style.scss */
+/* line 1551, sass/style.scss */
 .modal header .close {
   cursor: pointer;
   width: 18px;
@@ -4200,15 +4197,15 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1550, sass/style.scss */
+/* line 1554, sass/style.scss */
 .modal header .close:hover {
   background: #afc4de;
 }
-/* line 1551, sass/style.scss */
+/* line 1555, sass/style.scss */
 .modal header .close:active {
   background: #d6e0ed;
 }
-/* line 1553, sass/style.scss */
+/* line 1557, sass/style.scss */
 .modal header .body {
   background-color: #fff;
   color: #3d464c;
@@ -4221,27 +4218,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1555, sass/style.scss */
+/* line 1559, sass/style.scss */
 .modal header .body p {
   margin-bottom: 20px;
 }
-/* line 1557, sass/style.scss */
+/* line 1561, sass/style.scss */
 .modal header .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1560, sass/style.scss */
+/* line 1564, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1561, sass/style.scss */
+/* line 1565, sass/style.scss */
 .points-table li {
   width: 50%;
   float:right;
 }
-/* line 1562, sass/style.scss */
+/* line 1566, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -4249,14 +4246,14 @@ footer {
   float:right;
   background: url("../../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1564, sass/style.scss */
+/* line 1568, sass/style.scss */
 .points-table .points {
   display: block;
   float:right;
   padding:5px 10px 0 0;
   font-size: 14px;
 }
-/* line 1566, sass/style.scss */
+/* line 1570, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -4267,7 +4264,7 @@ footer {
   height: 0;
 }
 
-/* line 1569, sass/style.scss */
+/* line 1573, sass/style.scss */
 .block_user {
   background: url("../../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -4278,7 +4275,7 @@ footer {
   float:left;
 }
 
-/* line 1577, sass/style.scss */
+/* line 1581, sass/style.scss */
 .unblock_user {
   background: url("../../images/check-mark.png") no-repeat transparent;
   width: 15px;
@@ -4290,7 +4287,7 @@ footer {
 }
 
 /* PRIVATE PROFILE */
-/* line 1587, sass/style.scss */
+/* line 1591, sass/style.scss */
 .private-msg-profile {
   position: absolute;
   top: 5px;
@@ -4306,7 +4303,7 @@ footer {
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
 }
-/* line 1599, sass/style.scss */
+/* line 1603, sass/style.scss */
 .private-msg-profile > form {
   display: block;
   background: #ffffff;
@@ -4314,7 +4311,7 @@ footer {
   padding: 7px 16px 0;
   margin: 0;
 }
-/* line 1605, sass/style.scss */
+/* line 1609, sass/style.scss */
 .private-msg-profile > form > textarea {
   min-width: 234px;
   width: 234px;
@@ -4328,34 +4325,34 @@ footer {
   color: #aeb4bd;
 }
 
-/* line 1619, sass/style.scss */
+/* line 1623, sass/style.scss */
 .activity-btn-profile {
   float:left;
   margin: 0;
 }
-/* line 1622, sass/style.scss */
+/* line 1626, sass/style.scss */
 .activity-btn-profile li {
   float:left;
   height: 21px;
 }
-/* line 1625, sass/style.scss */
+/* line 1629, sass/style.scss */
 .activity-btn-profile li.first {
   border-left: 0 none;
 }
-/* line 1628, sass/style.scss */
+/* line 1632, sass/style.scss */
 .activity-btn-profile li a {
   text-indent: -9999px;
   font-size: 0;
   line-height: 0;
   display: block;
 }
-/* line 1634, sass/style.scss */
+/* line 1638, sass/style.scss */
 .activity-btn-profile li span {
   display: block;
   position: relative;
 }
 
-/* line 1640, sass/style.scss */
+/* line 1644, sass/style.scss */
 .send-private-msg-profile {
   height: 21px;
   width: 28px;

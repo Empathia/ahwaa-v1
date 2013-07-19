@@ -2,7 +2,8 @@ Class('TagList')({
     prototype : {
         init : function () {
             var _this = this;
-            this.headerHolder = $('.header-wrapper');
+            this.window         = $(window);
+            this.headerHolder   = $('.header-wrapper');
             this.headerContainer= this.headerHolder.find('.header-tags');
             this.headerTags     = this.headerHolder.find('#header-tags');
             this.moreTagsWrap   = this.headerTags.find('.more-tags');
@@ -36,11 +37,11 @@ Class('TagList')({
                 _this.moreTagsWrap.hide();
             });
 
-            $(window).bind('resize.tags', function () {
-                if ( timer ) clearTimeout( timer );
-                timer = setTimeout(function () {
+            this.window.bind('resize.tags', function () {
+                // if ( timer ) clearTimeout( timer );
+                // timer = setTimeout(function () {
                     _this.filterTags();
-                }, 1500);
+                // }, 1500);
             });
         },
 

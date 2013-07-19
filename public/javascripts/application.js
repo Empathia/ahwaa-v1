@@ -158,6 +158,12 @@ $(function() {
         });
     }, 1000);
 
+    /* Hall of fame */
+    var hof = $('.hall-of-fame');
+    hof.find('.hall-header > h4').bind('click', function (ev) {
+        hof.toggleClass('collapsed');
+    });
+
     /* MOBILE MENU */
     var mobileNav = {};
     mobileNav.base      = $('.mobile-menu-wrapper');
@@ -249,11 +255,4 @@ $(window).load(function () {
     self.resize(function() {
         container.css('min-height', self.height() - delta);
     });
-});
-
-$('.hall-header > h4').live({
-  click: function() {
-    $(this).toggleClass('closed');
-    $(this).parents('.hall-of-fame').find('.hall-footer').toggleClass('collapsed');
-  }
 });

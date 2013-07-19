@@ -305,17 +305,17 @@
     <div class="app-body-container">
       <%= yield %>
     </div>
-    <div class="hall-of-fame hidden-phone" data-hansel-component-id="hall-of-fame">
+    <div class="hall-of-fame collapsed hidden-phone" data-hansel-component-id="hall-of-fame">
       <div class="hall-header">
-        <h4 class="closed">
+        <h4>
           <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
         </h4>
       </div>
-      <div class="hall-footer collapsed">
-        <div class="aligned">
-          <ul class="hall-people">
+      <div class="hall-footer">
+        <div class="container">
+          <ul class="hall-people row-fluid">
             <% if @fame_helpful %>
-              <li>
+              <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
                   <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
                     <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
@@ -331,7 +331,7 @@
               </li>
             <% end %>
             <% if @fame_active %>
-              <li>
+              <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
                   <span class="avatar <%= level_css_class_for_user @fame_active %>">
                     <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
@@ -347,7 +347,7 @@
               </li>
             <% end %>
             <% if @fame_topics %>
-              <li>
+              <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
                   <span class="avatar <%= level_css_class_for_user @fame_topics %>">
                     <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
@@ -363,7 +363,7 @@
               </li>
             <% end %>
             <% if @fame_points %>
-              <li class="last">
+              <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
                   <span class="avatar <%= level_css_class_for_user @fame_points %>">
                     <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>

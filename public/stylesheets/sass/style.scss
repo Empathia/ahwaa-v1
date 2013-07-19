@@ -1427,8 +1427,9 @@ form + .recently-topics{padding-top:18px;}
 /* Hall of Fame */
 .hall-of-fame {
   position: fixed; bottom: 26px; width: 100%; padding: 0; z-index: 990;
-  > .collapsed {
-    height: 15px;
+  &.collapsed {
+    .hall-header > h4 > span {background-position: 50% 100%}
+    .hall-footer {height: 15px}
     .hall-people {display: none}
   }
 }
@@ -1438,7 +1439,6 @@ form + .recently-topics{padding-top:18px;}
   > h4 {
     position: absolute; margin: 0; background: transparent url('../images/hall-of-fame-header.png') no-repeat 0 0; text-align: center; height: 31px; width: 191px; top: 1px;
     > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 0; text-align: center; padding: 6px 0 0; height: 22px; left: 36px; position: absolute; text-transform: uppercase; cursor: pointer; top: 9px}
-    &.closed > span {background-position: 50% 100%}
   }
 }
 
@@ -1446,9 +1446,9 @@ form + .recently-topics{padding-top:18px;}
   @include background-image(linear-gradient(top, #edf2f4, #e4eaed));
 }
 
-.hall-people {display: block; clear: both; height: 67px; padding-top: 21px;
+.hall-people {
+  display: block; clear: both; height: 67px; padding-top: 21px;
   > li {
-    float: left; width: 165px; margin-right: 85px;
     .avatar-wrapper {
       float: left;
       a {display: block}
@@ -1456,7 +1456,11 @@ form + .recently-topics{padding-top:18px;}
     > .honor-member-info {
       margin-left: 69px;
       > a {text-transform: capitalize; font-size: 12px}
-      > span {display: block; font-size: 11px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; width: 131px; margin: 8px 0 3px}
+      > span {display: block; font-size: 11px; color: #5d748c; text-shadow: 0 1px 0 #ffffff; width: auto; margin: 8px 0 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
   > .last {margin-right: 0}
