@@ -18,19 +18,35 @@ $(function() {
     }
 
     /* Search field bind */
-    $("#query").keyup(function(e) {
-        var val = $.trim($(this).val());
-        if(val.length > 2 && val != lastSearchValue) {
-            lastSearchValue = val;
-            $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
+    var searchField     = $("#query"),
+        searchParent    = searchField.parent(),
+        searchResults   = $('.search-results-wrapper'),
+        doc = $(document);
+
+    searchField.bind({
+        keyup : function (e) {
+            var val = $.trim(this.value);
+            if ( val.length > 2 && val != lastSearchValue ) {
+                lastSearchValue = val;
+                $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
+            }
+        },
+        click : function(ev) {
+            doc.click();
+            ev.stopPropagation();
+            searchParent.addClass("focus");
+            doc.unbind('click.closeSearchResults').bind('click.closeSearchResults', function (e) {
+                if ( e.target.tagName != "a" ) {
+                    searchResults.removeClass('visible');
+                    doc.unbind('click.closeSearchResults');
+                }
+            });
+        },
+        focusout : function() {
+            searchParent.removeClass("focus");
         }
     });
-
-    $("#query").focus(function() {
-        $(this).parent().addClass("focus");
-    }), $("#query").focusout(function() {
-        $(this).parent().removeClass("focus");
-    });
+    /* end search field */
 
     new AuthForms();
     new MessageSender();
@@ -94,11 +110,6 @@ $(function() {
 
     /* Avatars RollOver */
     var privateMessageTooltips = $('.private-msg.tooltip-box');
-
-    $('body').click(function(e){
-      $(e.target);
-      !$(e.target).is('.private-msg *') && $('.private-msg').hide();
-    });
 
     setTimeout(function(){
         $('.avatar-wrapper').hoverIntent({

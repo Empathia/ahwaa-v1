@@ -4,9 +4,10 @@ Class('AuthForms')({
     },
 
     show: function(target, formName) {
+        var _this = this;
         this.hide();
         target.addClass('auth-form-active');
-        if(!formName){
+        if (!formName) {
           formName = '.' + target.attr('id') + '-form';
         }
         var form = $(formName);
@@ -16,6 +17,14 @@ Class('AuthForms')({
             'top': target.offset().top + target.outerHeight() - 1
             }
         );
+
+        this.prototype.doc.unbind('click.closeAuthModals').bind('click.closeAuthModals', function (e) {
+            var isActive = !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length
+            if ( isActive ) {
+                $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
+                _this.prototype.doc.unbind('click.closeAuthModals');
+            }
+        });
     },
 
     removeErrors: function (form) {
@@ -23,7 +32,10 @@ Class('AuthForms')({
     },
 
     prototype: {
-        init: function() {
+
+        doc : $(document),
+
+        init : function() {
             this._binds();
             this._validations();
         },
@@ -101,10 +113,10 @@ Class('AuthForms')({
                 }
             });
 
-            $(document).unbind('click').click(function(e){
-                !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
-                e.target.tagName != "a" && $('.search-results-wrapper').removeClass('visible');
-            });
+            // $(document).unbind('click').click(function(e){
+            //     !$(e.target).hasClass('auth-form-active') && !$(e.target).closest('.auth-form-active').length && $('.auth-form-active').removeClass('auth-form-active').filter('form').addClass('hidden');
+            //     e.target.tagName != "a" && $('.search-results-wrapper').removeClass('visible');
+            // });
 
             $('.cancel-forgot').click(function(){
                 $('.auth-form-active').removeClass('auth-form-active');

@@ -635,8 +635,10 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 }
 .search-results-scroller {overflow: hidden;}
 .search-results {
-  > li {text-align: left; border-bottom: 1px solid #dae6f2; padding: 7px 0 6px; background-color: #fff;
-    &:hover {background-color: #F0F7Fb}
+  > li {text-align: left; border-bottom: 1px solid #dae6f2;
+    a {display: block; padding: 7px 0 6px 5px; background-color: #fff; text-decoration: none;
+      &:hover {background-color: #F0F7Fb}
+    }
   }
   &.last {border:none;}
 
