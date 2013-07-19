@@ -1,8 +1,8 @@
 (function ($, window) {
     $(function () {
-        
+
         var welcomeMessage, wm;
-        
+
         welcomeMessage = wm = {
             tooltip: null,
             frm: null,
@@ -14,7 +14,7 @@
             btnClassName: 'welcome-btn > a',
             speed: 250,
             placeholderFlag: false,
-            
+
             init: function () {
                 this.placeholderFlag = this.isPlaceholderSupported();
                 this.tooltip = $('.' + this.tooltipClassName);
@@ -24,15 +24,15 @@
                 this.checkbox = this.tooltip.find('.include-message');
                 this.bindEvents();
             },
-            
+
             isPlaceholderSupported: function () {
                 var test = document.createElement('input');
                 return ('placeholder' in test);
             },
-            
+
             bindEvents: function () {
                 var frm;
-                
+
                 wm.btn.live('click', function (e) {
                     e.preventDefault();
                     if (!$(this).hasClass('disabled')) {
@@ -50,9 +50,9 @@
                     var $this = $(e.target),
                         tooltip = $this.closest('.' + wm.tooltipClassName),
                         frm = tooltip.find('.' + wm.formClassName);
-                    
-                    $.uniform.update('.include-message');
-                    
+
+                    // $.uniform.update('.include-message');
+
                     if ($this.is(':checked')) {
                         frm.find('textarea').slideDown(wm.speed);
                     } else {
@@ -63,17 +63,17 @@
                     wm.sending(this);
                 });
             },
-            
+
             showForm: function (btn) {
                 var btn = $(btn),
                     tooltip = btn.closest('.' + wm.tooltipClassName),
                     frm = tooltip.find('.' + wm.formClassName);
-                
+
                 tooltip.find('form').slideUp(wm.speed);
-                tooltip.find('.send-private-msg').removeClass('disabled'); 
+                tooltip.find('.send-private-msg').removeClass('disabled');
                 btn.addClass('disabled');
                 frm.slideDown(wm.speed);
-                
+
                 if (!wm.placeholderFlag) {
                     var textarea = frm.find('textarea');
                     textarea[0].value = textarea[0].getAttribute('placeholder');
@@ -87,7 +87,7 @@
                     });
                 }
             },
-            
+
             closeForm: function (cancel_btn) {
                 var cancel_btn = $(cancel_btn),
                     tooltip = cancel_btn.closest('.' + wm.tooltipClassName),
@@ -96,7 +96,7 @@
                 frm.slideUp(wm.speed);
                 btn.removeClass('disabled');
             },
-            
+
             sending: function (frm) {
                 $(frm).find('.cancel').addClass('loading');
             },
@@ -108,9 +108,9 @@
                     textarea = frm.find('textarea'),
                     is_checked = frm.find('.include-message').is(':checked'),
                     is_textarea_empty = textarea[0].getAttribute('placeholder') === textarea[0].value || $.trim(textarea[0].value) === '';
-                
+
                 frm.find('.error').remove();
-                
+
                 if (is_checked && is_textarea_empty) {
                     frm.prepend('<div class="pm-flash error border-all"><p>' + I18n.t('private_message.message_empty') + '</p></div>');
                     e.preventDefault();
@@ -118,10 +118,10 @@
                 }
             }
         };
-        
+
         if ($('.' + wm.formClassName).length && $('.' + wm.btnClassName).length) {
             wm.init();
         }
-        
+
     });
 }(jQuery, window));

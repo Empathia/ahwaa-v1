@@ -139,8 +139,8 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
-            commentsClon.find('input:checkbox').uniform();
-            commentsClon.find('input:radio').uniform();
+            // commentsClon.find('input:checkbox').uniform();
+            // commentsClon.find('input:radio').uniform();
         }
         return false;
     });
@@ -264,7 +264,6 @@ $.fn.comments = function(options){
                             paragHTML.replace(exp, "<a href='#' class='icn level_" + level + " no_comments' title='" + I18n.t('topics.show.contextual.add_comment') + "'>$1<span><span class='tt'>" + I18n.t('topics.show.contextual.reply_here') + "</span><span class='tta'></span></span></a>$2")
                 i++;
             }
-            //paragHTML = paragHTML.replace(/([\?\!;]+) /g, "$1<a href='#' class='icn' title='" + I18n.t('topics.show.contextual.add_comment') + "'> </a>");
             parag.html(paragHTML);
        });
     };
@@ -275,25 +274,26 @@ $.fn.comments = function(options){
        $(this).attr('id', 'add_' + i);
     });
 
+    var addCommentFormBase = $('#add_comments');
+
     $('.new-response').live('click', function(e){
-        var newResponse = $(this),
-            addCommentForm = $('#add_comments').clone(true),
-            id = 'add_comment_clon' + new Date().getTime(),
+        var newResponse     = $(this),
+            addCommentForm  = addCommentFormBase.clone(true),
+            id              = 'add_comment_clon' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
-            index = newResponse.closest('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
+            index           = newResponse.closest('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
+
         newResponse.hasClass('reply-new-response') && addCommentForm.addClass('reply-new-response');
         addCommentForm.attr('id', id).addClass('clon no-arrow').find('.comm-arrow').remove();
         addCommentForm.find('.comment_content').TextAreaExpander(16);
         newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
         newResponse.replaceWith(addCommentForm);
-        addCommentForm.find('input:checkbox').uniform();
-        addCommentForm.find('input:radio').uniform();
-        $('#' + id).data('newResponse', newResponseClon).slideDown(function(){
+        // addCommentForm.find('input:checkbox').uniform();
+        // addCommentForm.find('input:radio').uniform();
+        $('#' + id).data('newResponse', newResponseClon).show(function() {
             $.browser.msie && $.browser.version == '7.0' && $(this).css('opacity', '1');
         }).find('textarea').focus();
-        // comments.find('.contextual_index').val(index);
         addCommentForm.find('.reply_to').val(addCommentForm.closest('li').attr('data-id'));
-        // addCommentForm.find('.contextual_index').val(addCommentForm.prev('p').find('a:last-child').attr('id').replace('add_', ''));
 
         e.preventDefault();
         return false;

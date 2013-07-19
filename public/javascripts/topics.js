@@ -1,5 +1,6 @@
 $(function(){
-    $("input:radio, input:visible:checkbox").uniform();
+
+    //$("input:radio, input:visible:checkbox").uniform();
 
     var fontSizeControls = {
         MAX_SIZE: 20,
@@ -42,6 +43,7 @@ $(function(){
             }
         }
     };
+
     $(window).load(function () {
         fontSizeControls.init();
     });
@@ -130,9 +132,9 @@ $(function(){
     $('.topic-content > p').comments({color: '#FFFF00'});
 
     /* The Browser Sniff is pending*/
-    $('.add_comments > div > textarea').click(function(){
-        $(this).css('color', '#6c6f74');
-    });
+    // $('.add_comments > div > textarea').click(function(){
+    //     $(this).css('color', '#6c6f74');
+    // });
 
     var article = $(".article-wrapper"),
         sidebar = article.find('aside'),
