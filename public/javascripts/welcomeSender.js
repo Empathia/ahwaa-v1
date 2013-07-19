@@ -51,7 +51,7 @@
                         tooltip = $this.closest('.' + wm.tooltipClassName),
                         frm = tooltip.find('.' + wm.formClassName);
 
-                    // $.uniform.update('.include-message');
+                    $.uniform.update('.include-message');
 
                     if ($this.is(':checked')) {
                         frm.find('textarea').slideDown(wm.speed);

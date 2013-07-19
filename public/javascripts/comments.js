@@ -139,8 +139,8 @@ $.fn.comments = function(options){
             commentsClon.find('.contextual_index').val(index);
             commentsClon.find('.reply_to').val(commentsClon.closest('li').attr('data-id'));
             commentsClon.slideDownComments(comments);
-            // commentsClon.find('input:checkbox').uniform();
-            // commentsClon.find('input:radio').uniform();
+            commentsClon.find('input:checkbox').uniform();
+            commentsClon.find('input:radio').uniform();
         }
         return false;
     });
@@ -275,7 +275,6 @@ $.fn.comments = function(options){
     });
 
     var addCommentFormBase = $('#add_comments');
-
     $('.new-response').live('click', function(e){
         var newResponse     = $(this),
             addCommentForm  = addCommentFormBase.clone(true),
@@ -288,11 +287,13 @@ $.fn.comments = function(options){
         addCommentForm.find('.comment_content').TextAreaExpander(16);
         newResponse.attr('data-type') == 'global' || addCommentForm.find('.contextual_index').val(index);
         newResponse.replaceWith(addCommentForm);
-        // addCommentForm.find('input:checkbox').uniform();
-        // addCommentForm.find('input:radio').uniform();
-        $('#' + id).data('newResponse', newResponseClon).show(function() {
+        addCommentForm.find('input:checkbox').uniform();
+        addCommentForm.find('input:radio').uniform();
+
+        $('#' + id).data('newResponse', newResponseClon).show(function(){
             $.browser.msie && $.browser.version == '7.0' && $(this).css('opacity', '1');
         }).find('textarea').focus();
+
         addCommentForm.find('.reply_to').val(addCommentForm.closest('li').attr('data-id'));
 
         e.preventDefault();
