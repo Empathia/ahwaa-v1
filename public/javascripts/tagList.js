@@ -38,17 +38,17 @@ Class('TagList')({
             });
 
             this.window.bind('resize.tags', function () {
-                // if ( timer ) clearTimeout( timer );
-                // timer = setTimeout(function () {
+                if ( timer ) clearTimeout( timer );
+                timer = setTimeout(function () {
                     _this.filterTags();
-                // }, 1500);
+                }, 1500);
             });
         },
 
         filterTags : function filterTags () {
             var _this = this,
                 count = 0,
-                availableWidth = (this.headerContainer.width() - (this.moreWidth + 5));
+                availableWidth = (this.headerContainer.width() - (this.moreWidth + 10));
 
             this.headerTags.css('width', '9999em');
             this.items.removeClass('hide');

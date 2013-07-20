@@ -1142,8 +1142,9 @@ form + .recently-topics{padding-top:18px;}
   background-color: #fefadd;
   @include background-image(linear-gradient(top, #fefce9, #fefadd));
   > div{
-    padding: 12px 25px 9px;
-    > div{background: url('../images/icn-close.png') no-repeat 100% 50%;}
+    padding: 12px 20px 9px 25px;
+    margin-right: 20px;
+    background: url('../images/icn-close.png') no-repeat 100% 50%;
   }
 }
 
