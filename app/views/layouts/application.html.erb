@@ -12,8 +12,8 @@
   <% else %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'vendor/bootstrap.min', 'vendor/bootstrap-responsive.min', 'style', :cache => true %>
   <% end %>
-
-  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'tagList', 'include/jquery.emoticons.js' , :cache => true %>
+//'include/jquery.emoticons.js'
+  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'tagList', :cache => true %>
 
   <link rel="shortcut icon" href="/favicon.ico">
   <%= csrf_meta_tag %>
@@ -436,10 +436,10 @@
     var sc_project=6758319;
     var sc_invisible=1;
     var sc_security="9423d6a1";
-    $(document).ready(function(){
-      $(".stream-item-data").emotions();
-      $(".recently-topics").emotions();
-    });
+    // $(document).ready(function(){
+    //   $(".stream-item-data").emotions();
+    //   $(".recently-topics").emotions();
+    // });
   </script>
 
   <script type="text/javascript" src="/javascripts/counter.js"></script>
