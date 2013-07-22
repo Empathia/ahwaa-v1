@@ -208,7 +208,7 @@ body > div {
   top: 3px;
   left: 3px;
   background-position: 0 -32px;
-  background-repeat: none;
+  background-repeat: no-repeat;
 }
 /* line 86, sass/topics.scss */
 .social-bookmarkers .twitter > a {

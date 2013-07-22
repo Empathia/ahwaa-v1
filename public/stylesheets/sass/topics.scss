@@ -82,7 +82,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .social-bookmarkers {position: relative; float: right; margin-top: 10px;
   li {float: left; padding-right: 5px}
   .icn-social {display: block; position: relative; width: 14px; height: 14px; background-image: url('../images/icn-social.png');}
-  .icn-social.twitter {top: 3px; left: 3px; background-position: 0 -32px; background-repeat: none;}
+  .icn-social.twitter {top: 3px; left: 3px; background-position: 0 -32px; background-repeat: no-repeat;}
   .twitter > a {display: block; height: 21px; margin-bottom: 10px; text-indent: -9999px; width: 21px; overflow: hidden;}
   .facebook:hover .flash-privacy:not(.closed-once),
   .twitter:hover .flash-privacy:not(.closed-once) {display: block}
