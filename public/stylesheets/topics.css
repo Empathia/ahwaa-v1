@@ -762,6 +762,7 @@ section.need-help {
 
 /* line 304, sass/topics.scss */
 .res-lbl {
+  white-space: nowrap;
   float: left;
   margin-right: 10px;
   line-height: 1.8;
