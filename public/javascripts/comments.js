@@ -274,9 +274,10 @@ $.fn.comments = function(options){
        $(this).attr('id', 'add_' + i);
     });
 
+    var newResponseBase = $('#add_comments');
     $('.new-response').live('click', function(e){
         var newResponse     = $(this),
-            addCommentForm  = $('#add_comments').clone(true),
+            addCommentForm  = newResponseBase.clone(true),
             id              = 'add_comment_clon' + new Date().getTime(),
             newResponseClon = newResponse.clone(true),
             index           = newResponse.closest('.comments.clon').attr('id').match(/comments_((\w|_)+)_clon/)[1];
