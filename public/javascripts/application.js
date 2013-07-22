@@ -116,7 +116,17 @@ $(function() {
     var privateMessageTooltips = $('.private-msg.tooltip-box');
 
     setTimeout(function(){
-        $('.avatar-wrapper').hoverIntent({
+        var avatarWrappers  = $('.avatar-wrapper'),
+            avatarLinks     = avatarWrappers.find('> a'),
+            avatars         = avatarWrappers.find('.avatar');
+
+        if ( is_touch_device() ) {
+            avatarWrappers.css('pointer-events', 'none');
+            avatarLinks.css('pointer-events', 'auto');
+            avatars.css('pointer-events', 'none');
+        }
+
+        avatarWrappers.hoverIntent({
             timeout : 500,
             over : function (e) {
                 var _this = $(this);
