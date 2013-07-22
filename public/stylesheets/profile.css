@@ -1,0 +1,411 @@
+/* line 3, sass/profile.scss */
+.profile-wrapper {
+  position: relative;
+  /* Landscape phones and down */
+  /* Landscape phones and down */
+}
+/* line 6, sass/profile.scss */
+.profile-wrapper .user-info-wrapper {
+  background-color: #fff;
+}
+/* line 8, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .avatar-wrapper {
+  margin: 10px 0 0 10px;
+}
+/* line 10, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .avatar-wrapper .avatar {
+  width: 34px;
+  height: 34px;
+}
+/* line 14, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .user-info {
+  margin: 10px 10px 5px 60px;
+  min-height: 50px;
+}
+/* line 17, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .user-info .username {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+/* line 23, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .user-info .level {
+  margin-right: 5px;
+}
+/* line 26, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .user-info .points {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+}
+/* line 33, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .send-msg {
+  display: block;
+  padding: 10px;
+  border-top: 1px solid #cfdee6;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  background-color: #edf6fa;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f5fafc), color-stop(100%, #deeef6));
+  background-image: -webkit-linear-gradient(top, #f5fafc, #deeef6);
+  background-image: -moz-linear-gradient(top, #f5fafc, #deeef6);
+  background-image: -o-linear-gradient(top, #f5fafc, #deeef6);
+  background-image: linear-gradient(top, #f5fafc, #deeef6);
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
+  font-weight: bold;
+  font-size: 11px;
+  color: #468ac4;
+}
+/* line 44, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .send-msg:hover {
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
+  background-image: -webkit-linear-gradient(top, #deeef6, #ffffff);
+  background-image: -moz-linear-gradient(top, #deeef6, #ffffff);
+  background-image: -o-linear-gradient(top, #deeef6, #ffffff);
+  background-image: linear-gradient(top, #deeef6, #ffffff);
+  -webkit-box-shadow: 0 1px 0 white inset;
+  -moz-box-shadow: 0 1px 0 white inset;
+  box-shadow: 0 1px 0 white inset;
+}
+/* line 49, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .send-msg:active {
+  background-image: none;
+  background-color: #deeef6;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+}
+/* line 54, sass/profile.scss */
+.profile-wrapper .user-info-wrapper .send-msg > span {
+  float: left;
+  position: relative;
+  top: 2px;
+  background: url("../images/icn-messages-2.png") no-repeat scroll 0 0 transparent;
+  width: 15px;
+  height: 11px;
+  margin-right: 8px;
+}
+/* line 66, sass/profile.scss */
+.profile-wrapper .right-side {
+  background: url("../images/bg-article.png") repeat-x scroll 0 1px white;
+  min-height: 280px;
+  margin-left: 160px;
+  /* Landscape phones and down */
+  /* Landscape phones and down */
+}
+/* line 70, sass/profile.scss */
+.profile-wrapper .right-side h2 {
+  font-family: 'GothamMediumRegular';
+  font-weight: normal;
+  font-size: 17px;
+  float: left;
+}
+/* line 71, sass/profile.scss */
+.profile-wrapper .right-side:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+@media (max-width: 767px) {
+  /* line 66, sass/profile.scss */
+  .profile-wrapper .right-side {
+    margin-left: 0;
+  }
+}
+/* line 80, sass/profile.scss */
+.profile-wrapper .topics {
+  float: left;
+  width: 539px;
+  min-height: 449px;
+}
+/* line 84, sass/profile.scss */
+.profile-wrapper .recommended-topics {
+  float: left;
+  width: 200px;
+  padding: 15px 20px;
+  border-left: 1px solid #dae0e6;
+}
+/* line 86, sass/profile.scss */
+.profile-wrapper .recommended-topics h3 {
+  font-family: 'Gotham-Light';
+  font-size: 16px;
+  font-weight: normal;
+  border-bottom: 1px solid #dae0e6;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+/* line 87, sass/profile.scss */
+.profile-wrapper .recommended-topics h4 {
+  margin: 0 0 15px;
+}
+/* line 90, sass/profile.scss */
+.profile-wrapper .is_empty {
+  border: 1px solid #dfe2e5;
+  margin: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+}
+/* line 92, sass/profile.scss */
+.profile-wrapper .is_empty .title {
+  font-size: 16px;
+  margin: 7px 0 4px;
+}
+/* line 93, sass/profile.scss */
+.profile-wrapper .is_empty div {
+  padding: 15px 12px;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+  border-color: transparent #ffffff #dae0e6;
+}
+/* line 95, sass/profile.scss */
+.profile-wrapper .is_empty div:first-child {
+  -webkit-border-radius: 2px 2px 0 0;
+  -moz-border-radius: 2px 2px 0 0;
+  -ms-border-radius: 2px 2px 0 0;
+  -o-border-radius: 2px 2px 0 0;
+  border-radius: 2px 2px 0 0;
+}
+/* line 98, sass/profile.scss */
+.profile-wrapper .is_empty div:last-child {
+  border-bottom-color: #ffffff;
+  -webkit-border-radius: 0 0 2px 2px;
+  -moz-border-radius: 0 0 2px 2px;
+  -ms-border-radius: 0 0 2px 2px;
+  -o-border-radius: 0 0 2px 2px;
+  border-radius: 0 0 2px 2px;
+}
+/* line 103, sass/profile.scss */
+.profile-wrapper .help-box {
+  background-color: #f8fafa;
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  /* line 106, sass/profile.scss */
+  .profile-wrapper .right-side {
+    width: auto;
+    margin-left: 150px;
+  }
+  /* line 109, sass/profile.scss */
+  .profile-wrapper .right-side .topics {
+    width: 70%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 113, sass/profile.scss */
+  .profile-wrapper .right-side .recommended-topics {
+    width: 30%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 767px) {
+  /* line 121, sass/profile.scss */
+  .profile-wrapper .user-info-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  /* line 124, sass/profile.scss */
+  .profile-wrapper .user-info-wrapper .user-info {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10px 10px 10px;
+    padding-top: 10px;
+  }
+  /* line 130, sass/profile.scss */
+  .profile-wrapper .user-info-wrapper .send-msg {
+    display: inline-block;
+    vertical-align: top;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #cfdee6;
+    margin-top: 15px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+  }
+  /* line 140, sass/profile.scss */
+  .profile-wrapper .right-side {
+    width: auto;
+  }
+  /* line 142, sass/profile.scss */
+  .profile-wrapper .right-side .topics {
+    width: 100%;
+    min-height: 100%;
+  }
+  /* line 147, sass/profile.scss */
+  .profile-wrapper .recommended-topics {
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 151, sass/profile.scss */
+  .profile-wrapper .private-msg.send-from-stream {
+    top: 50px;
+    left: 0;
+    width: 100%;
+  }
+  /* line 155, sass/profile.scss */
+  .profile-wrapper .private-msg.send-from-stream .origin {
+    display: none;
+  }
+}
+
+/* line 162, sass/profile.scss */
+.topic-participation {
+  margin: 20px 20px 0;
+  padding-bottom: 10px;
+}
+/* line 165, sass/profile.scss */
+.topic-participation > li {
+  margin-bottom: 20px;
+  border: 1px solid #dfe2e5;
+}
+/* line 167, sass/profile.scss */
+.topic-participation > li > .topic-spotlight,
+.topic-participation > li > .topic-recent-historial {
+  padding: 10px;
+}
+/* line 168, sass/profile.scss */
+.topic-participation > li > .topic-spotlight {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #dae0e6;
+}
+/* line 169, sass/profile.scss */
+.topic-participation > li > .topic-recent-historial {
+  background-color: #f7f9fa;
+}
+/* line 171, sass/profile.scss */
+.topic-participation .topic-spotlight .avatar {
+  width: 42px;
+  height: 42px;
+  padding: 3px;
+}
+/* line 172, sass/profile.scss */
+.topic-participation .topic-spotlight .avatar > span {
+  top: 32px;
+  left: 9px;
+}
+/* line 173, sass/profile.scss */
+.topic-participation .topic-spotlight .avatar img {
+  width: 42px;
+  height: 42px;
+}
+/* line 175, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data {
+  width: 100%;
+  float: none;
+}
+/* line 177, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data > div {
+  margin-top: 3px;
+}
+/* line 179, sass/profile.scss */
+.topic-participation .topic-spotlight .title {
+  font-size: 18px;
+  line-height: 21px;
+  font-family: 'GothamMediumRegular';
+  font-weight: lighter;
+  display: block;
+  margin: 5px 0;
+}
+/* line 180, sass/profile.scss */
+.topic-participation .topic-spotlight .by-author {
+  font-size: 11px;
+  margin-right: 15px;
+}
+/* line 181, sass/profile.scss */
+.topic-participation .topic-spotlight .responses {
+  margin-right: 10px;
+  background-image: url("../images/icn-responses-dark.png");
+  background-position: 0 1px;
+  background-repeat: no-repeat;
+}
+/* line 182, sass/profile.scss */
+.topic-participation .topic-spotlight .tags {
+  font-size: 11px;
+}
+/* line 183, sass/profile.scss */
+.topic-participation .topic-spotlight .tags > li:first-child {
+  background-image: url("../images/tag-horizontal.png");
+  background-position: 0 2px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+}
+/* line 185, sass/profile.scss */
+.topic-participation .topic-recent-historial .collaborations {
+  font-size: 11px;
+  color: #a1aab2;
+  background-image: url("../images/icn-white-bubble-talk.png");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  padding-left: 17px;
+  line-height: 14px;
+}
+/* line 186, sass/profile.scss */
+.topic-participation .small-avatars {
+  margin: 10px 0 5px;
+  float: left;
+}
+/* line 187, sass/profile.scss */
+.topic-participation .small-avatars > li {
+  float: left;
+  margin-right: 15px;
+}
+/* line 188, sass/profile.scss */
+.topic-participation .small-avatars .recently-topics > ul > li {
+  float: none;
+  margin-right: 0;
+}
+/* line 189, sass/profile.scss */
+.topic-participation .small-avatars .avatar {
+  width: 24px;
+  height: 24px;
+  padding: 3px;
+}
+/* line 190, sass/profile.scss */
+.topic-participation .small-avatars .avatar > span {
+  top: 20px;
+  left: 5px;
+}
+/* line 191, sass/profile.scss */
+.topic-participation .small-avatars .avatar img {
+  width: 24px;
+  height: 24px;
+}
+
+/* line 196, sass/profile.scss */
+.recently {
+  margin-bottom: 30px;
+}
+/* line 198, sass/profile.scss */
+.recently li {
+  margin-bottom: 10px;
+  background-color: #f5f7fa;
+  line-height: 18px;
+  font-family: 'GothamMediumRegular';
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f9fbfc), color-stop(100%, #f4f6f9));
+  background-image: -webkit-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image: -moz-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image: -o-linear-gradient(top, #f9fbfc, #f4f6f9);
+  background-image: linear-gradient(top, #f9fbfc, #f4f6f9);
+}
+/* line 202, sass/profile.scss */
+.recently a {
+  display: block;
+  padding: 10px;
+}

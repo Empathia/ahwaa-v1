@@ -27,31 +27,6 @@ Class('MessageSender')({
                 }
                 return false;
             });
-            $('.send-private-msg-profile').live('click', function() {
-                if(!$(this).hasClass('disabled')) {
-                    var private_form = $(this).addClass('disabled').closest('.private-msg-profile'),
-                        hasMoreForms = private_form.find('form').length > 1;
-
-                    if (hasMoreForms) {
-                        private_form.children('form').slideUp(250);
-                        private_form.find('.welcome-btn > a').removeClass('disabled');
-                    }
-                    private_form.css("width", 288);
-                    private_form.find('.form-private-msg').slideDown(250);
-                    if (!$.browser.webkit) {
-
-                        var textarea = private_form.find('textarea');
-                        textarea.attr('value', textarea.attr('placeholder'));
-                        textarea.focus(function() {
-                            textarea.val() == textarea.attr('placeholder') && textarea.val('');
-                            textarea.blur(function() {
-                                (textarea.val().length <= 1 || textarea.val() ==  textarea.attr('placeholder')) && textarea.attr('value', textarea.attr('placeholder'));
-                            });
-                        });
-                    }
-                }
-                return false;
-            });
 
             $('.form-private-msg').submit(function(){
                 $(this).find('.cancel').addClass('loading');
@@ -70,10 +45,19 @@ Class('MessageSender')({
                $(this).closest('.private-msg').find('form').slideUp().end().find('.send-private-msg').removeClass('disabled');
                return false;
             });
-            $('.private-msg-profile').find('.cancel').live('click', function(){
-               $(this).closest('.private-msg-profile').find('form').slideUp().end().find('.send-private-msg-profile').removeClass('disabled');
-               $(this).closest('.private-msg-profile').css("width", 30);
-               return false;
+
+            // PROFILE
+            var profileMessage      = $('.profile-wrapper .private-msg'),
+                profileMessageForm  = profileMessage.find('.form-private-msg');
+            profileMessage.find('.cancel').live('click', function(ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+                profileMessage.slideUp();
+            });
+            profileMessageForm.submit(function(ev) {
+                setTimeout(function() {
+                    profileMessage.slideUp();
+                }, 1500);
             });
         }
     }
