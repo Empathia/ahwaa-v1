@@ -28,20 +28,22 @@
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100px;
+  margin-bottom: 5px;
 }
-/* line 23, sass/profile.scss */
+/* line 24, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .user-info .level {
   margin-right: 5px;
 }
-/* line 26, sass/profile.scss */
+/* line 27, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .user-info .points {
   font-size: 12px;
   line-height: 20px;
   font-weight: bold;
 }
-/* line 33, sass/profile.scss */
+/* line 34, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .send-msg {
   display: block;
+  float: none;
   padding: 10px;
   border-top: 1px solid #cfdee6;
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
@@ -60,7 +62,7 @@
   font-size: 11px;
   color: #468ac4;
 }
-/* line 44, sass/profile.scss */
+/* line 46, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .send-msg:hover {
   text-decoration: none;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #deeef6), color-stop(100%, #ffffff));
@@ -72,7 +74,7 @@
   -moz-box-shadow: 0 1px 0 white inset;
   box-shadow: 0 1px 0 white inset;
 }
-/* line 49, sass/profile.scss */
+/* line 51, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .send-msg:active {
   background-image: none;
   background-color: #deeef6;
@@ -80,7 +82,7 @@
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
 }
-/* line 54, sass/profile.scss */
+/* line 56, sass/profile.scss */
 .profile-wrapper .user-info-wrapper .send-msg > span {
   float: left;
   position: relative;
@@ -90,22 +92,21 @@
   height: 11px;
   margin-right: 8px;
 }
-/* line 66, sass/profile.scss */
+/* line 68, sass/profile.scss */
 .profile-wrapper .right-side {
   background: url("../images/bg-article.png") repeat-x scroll 0 1px white;
   min-height: 280px;
   margin-left: 160px;
   /* Landscape phones and down */
-  /* Landscape phones and down */
 }
-/* line 70, sass/profile.scss */
+/* line 72, sass/profile.scss */
 .profile-wrapper .right-side h2 {
   font-family: 'GothamMediumRegular';
   font-weight: normal;
   font-size: 17px;
   float: left;
 }
-/* line 71, sass/profile.scss */
+/* line 73, sass/profile.scss */
 .profile-wrapper .right-side:after {
   content: ".";
   display: block;
@@ -115,25 +116,25 @@
   height: 0;
 }
 @media (max-width: 767px) {
-  /* line 66, sass/profile.scss */
+  /* line 68, sass/profile.scss */
   .profile-wrapper .right-side {
     margin-left: 0;
   }
 }
-/* line 80, sass/profile.scss */
+/* line 79, sass/profile.scss */
 .profile-wrapper .topics {
   float: left;
   width: 539px;
   min-height: 449px;
 }
-/* line 84, sass/profile.scss */
+/* line 83, sass/profile.scss */
 .profile-wrapper .recommended-topics {
   float: left;
   width: 200px;
   padding: 15px 20px;
   border-left: 1px solid #dae0e6;
 }
-/* line 86, sass/profile.scss */
+/* line 85, sass/profile.scss */
 .profile-wrapper .recommended-topics h3 {
   font-family: 'Gotham-Light';
   font-size: 16px;
@@ -142,11 +143,11 @@
   padding-bottom: 8px;
   margin-bottom: 10px;
 }
-/* line 87, sass/profile.scss */
+/* line 86, sass/profile.scss */
 .profile-wrapper .recommended-topics h4 {
   margin: 0 0 15px;
 }
-/* line 90, sass/profile.scss */
+/* line 89, sass/profile.scss */
 .profile-wrapper .is_empty {
   border: 1px solid #dfe2e5;
   margin: 20px;
@@ -156,19 +157,19 @@
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-/* line 92, sass/profile.scss */
+/* line 91, sass/profile.scss */
 .profile-wrapper .is_empty .title {
   font-size: 16px;
   margin: 7px 0 4px;
 }
-/* line 93, sass/profile.scss */
+/* line 92, sass/profile.scss */
 .profile-wrapper .is_empty div {
   padding: 15px 12px;
   border-width: 0 1px 1px 1px;
   border-style: solid;
   border-color: transparent #ffffff #dae0e6;
 }
-/* line 95, sass/profile.scss */
+/* line 94, sass/profile.scss */
 .profile-wrapper .is_empty div:first-child {
   -webkit-border-radius: 2px 2px 0 0;
   -moz-border-radius: 2px 2px 0 0;
@@ -176,7 +177,7 @@
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 98, sass/profile.scss */
+/* line 97, sass/profile.scss */
 .profile-wrapper .is_empty div:last-child {
   border-bottom-color: #ffffff;
   -webkit-border-radius: 0 0 2px 2px;
@@ -185,24 +186,24 @@
   -o-border-radius: 0 0 2px 2px;
   border-radius: 0 0 2px 2px;
 }
-/* line 103, sass/profile.scss */
+/* line 102, sass/profile.scss */
 .profile-wrapper .help-box {
   background-color: #f8fafa;
 }
 @media (min-width: 768px) and (max-width: 979px) {
-  /* line 106, sass/profile.scss */
+  /* line 105, sass/profile.scss */
   .profile-wrapper .right-side {
     width: auto;
     margin-left: 150px;
   }
-  /* line 109, sass/profile.scss */
+  /* line 108, sass/profile.scss */
   .profile-wrapper .right-side .topics {
     width: 70%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 113, sass/profile.scss */
+  /* line 112, sass/profile.scss */
   .profile-wrapper .right-side .recommended-topics {
     width: 30%;
     -webkit-box-sizing: border-box;
@@ -211,19 +212,29 @@
   }
 }
 @media (max-width: 767px) {
-  /* line 121, sass/profile.scss */
+  /* line 120, sass/profile.scss */
   .profile-wrapper .user-info-wrapper {
     position: relative;
     width: 100%;
   }
+  /* line 121, sass/profile.scss */
+  .profile-wrapper .user-info-wrapper:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
   /* line 124, sass/profile.scss */
   .profile-wrapper .user-info-wrapper .user-info {
+    float: left;
     display: inline-block;
     vertical-align: top;
     margin: 0 10px 10px 10px;
     padding-top: 10px;
   }
-  /* line 130, sass/profile.scss */
+  /* line 131, sass/profile.scss */
   .profile-wrapper .user-info-wrapper .send-msg {
     display: inline-block;
     vertical-align: top;
@@ -231,63 +242,50 @@
     border-style: solid;
     border-color: #cfdee6;
     margin-top: 15px;
+    margin-right: 15px;
+    float: right;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
     -o-border-radius: 2px;
     border-radius: 2px;
   }
-  /* line 140, sass/profile.scss */
+  /* line 143, sass/profile.scss */
   .profile-wrapper .right-side {
     width: auto;
   }
-  /* line 142, sass/profile.scss */
+  /* line 145, sass/profile.scss */
   .profile-wrapper .right-side .topics {
     width: 100%;
     min-height: 100%;
   }
-  /* line 147, sass/profile.scss */
+  /* line 150, sass/profile.scss */
   .profile-wrapper .recommended-topics {
     width: 100%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  /* line 151, sass/profile.scss */
+  /* line 154, sass/profile.scss */
   .profile-wrapper .private-msg.send-from-stream {
     top: 50px;
     left: 0;
     width: 100%;
   }
-  /* line 155, sass/profile.scss */
+  /* line 158, sass/profile.scss */
   .profile-wrapper .private-msg.send-from-stream .origin {
     display: none;
   }
 }
 
-/* line 162, sass/profile.scss */
-.topic-participation {
-  margin: 20px 20px 0;
-  padding-bottom: 10px;
-}
 /* line 165, sass/profile.scss */
-.topic-participation > li {
-  margin-bottom: 20px;
-  border: 1px solid #dfe2e5;
+.topic-participation {
+  margin: 0 20px;
 }
 /* line 167, sass/profile.scss */
-.topic-participation > li > .topic-spotlight,
-.topic-participation > li > .topic-recent-historial {
-  padding: 10px;
-}
-/* line 168, sass/profile.scss */
-.topic-participation > li > .topic-spotlight {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-bottom: 1px solid #dae0e6;
-}
-/* line 169, sass/profile.scss */
-.topic-participation > li > .topic-recent-historial {
-  background-color: #f7f9fa;
+.topic-participation > li {
+  padding: 20px 0 25px;
+  border-bottom: 1px solid #e6ecf2;
 }
 /* line 171, sass/profile.scss */
 .topic-participation .topic-spotlight .avatar {
@@ -295,26 +293,39 @@
   height: 42px;
   padding: 3px;
 }
-/* line 172, sass/profile.scss */
+/* line 173, sass/profile.scss */
 .topic-participation .topic-spotlight .avatar > span {
   top: 32px;
   left: 9px;
 }
-/* line 173, sass/profile.scss */
+/* line 174, sass/profile.scss */
 .topic-participation .topic-spotlight .avatar img {
   width: 42px;
   height: 42px;
 }
-/* line 175, sass/profile.scss */
+/* line 176, sass/profile.scss */
 .topic-participation .topic-spotlight .item-data {
-  width: 100%;
   float: none;
 }
-/* line 177, sass/profile.scss */
-.topic-participation .topic-spotlight .item-data > div {
-  margin-top: 3px;
+/* line 178, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data .topic-info {
+  margin-left: 60px;
 }
-/* line 179, sass/profile.scss */
+/* line 180, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data .topic-info a {
+  color: #2d70b3;
+}
+/* line 181, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data .topic-info > div {
+  margin: 0 0 10px;
+}
+/* line 183, sass/profile.scss */
+.topic-participation .topic-spotlight .item-data blockquote {
+  color: #494b4c;
+  margin: 0;
+  line-height: 20px;
+}
+/* line 189, sass/profile.scss */
 .topic-participation .topic-spotlight .title {
   font-size: 18px;
   line-height: 21px;
@@ -323,30 +334,30 @@
   display: block;
   margin: 5px 0;
 }
-/* line 180, sass/profile.scss */
+/* line 190, sass/profile.scss */
 .topic-participation .topic-spotlight .by-author {
   font-size: 11px;
   margin-right: 15px;
 }
-/* line 181, sass/profile.scss */
+/* line 191, sass/profile.scss */
 .topic-participation .topic-spotlight .responses {
   margin-right: 10px;
   background-image: url("../images/icn-responses-dark.png");
   background-position: 0 1px;
   background-repeat: no-repeat;
 }
-/* line 182, sass/profile.scss */
+/* line 192, sass/profile.scss */
 .topic-participation .topic-spotlight .tags {
   font-size: 11px;
 }
-/* line 183, sass/profile.scss */
+/* line 193, sass/profile.scss */
 .topic-participation .topic-spotlight .tags > li:first-child {
   background-image: url("../images/tag-horizontal.png");
   background-position: 0 2px;
   background-repeat: no-repeat;
   padding-left: 20px;
 }
-/* line 185, sass/profile.scss */
+/* line 195, sass/profile.scss */
 .topic-participation .topic-recent-historial .collaborations {
   font-size: 11px;
   color: #a1aab2;
@@ -356,43 +367,43 @@
   padding-left: 17px;
   line-height: 14px;
 }
-/* line 186, sass/profile.scss */
+/* line 196, sass/profile.scss */
 .topic-participation .small-avatars {
   margin: 10px 0 5px;
   float: left;
 }
-/* line 187, sass/profile.scss */
+/* line 197, sass/profile.scss */
 .topic-participation .small-avatars > li {
   float: left;
   margin-right: 15px;
 }
-/* line 188, sass/profile.scss */
+/* line 198, sass/profile.scss */
 .topic-participation .small-avatars .recently-topics > ul > li {
   float: none;
   margin-right: 0;
 }
-/* line 189, sass/profile.scss */
+/* line 199, sass/profile.scss */
 .topic-participation .small-avatars .avatar {
   width: 24px;
   height: 24px;
   padding: 3px;
 }
-/* line 190, sass/profile.scss */
+/* line 200, sass/profile.scss */
 .topic-participation .small-avatars .avatar > span {
   top: 20px;
   left: 5px;
 }
-/* line 191, sass/profile.scss */
+/* line 201, sass/profile.scss */
 .topic-participation .small-avatars .avatar img {
   width: 24px;
   height: 24px;
 }
 
-/* line 196, sass/profile.scss */
+/* line 206, sass/profile.scss */
 .recently {
   margin-bottom: 30px;
 }
-/* line 198, sass/profile.scss */
+/* line 208, sass/profile.scss */
 .recently li {
   margin-bottom: 10px;
   background-color: #f5f7fa;
@@ -404,7 +415,7 @@
   background-image: -o-linear-gradient(top, #f9fbfc, #f4f6f9);
   background-image: linear-gradient(top, #f9fbfc, #f4f6f9);
 }
-/* line 202, sass/profile.scss */
+/* line 212, sass/profile.scss */
 .recently a {
   display: block;
   padding: 10px;

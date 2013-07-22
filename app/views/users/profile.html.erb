@@ -34,41 +34,24 @@ $(document).ready(function(){
             <li class="border-all">
               <div class="topic-spotlight border-top-3">
                 <div class="item-data">
-                  <%= link_to topic.title, topic, :class => 'title' %>
-                  <div>
-                    <%= link_to topic.replies.size, topic, :class => 'responses' %>
-                    <ul class="tags">
-                      <% topic.tags.each_with_index do |tag, i| %>
-                        <li class="<%= "last-tag" if i == topic.tags.length-1 %>">
-                          <%= link_to tag, topic_tag_path(tag.id) %><%= ',' unless i == topic.tags.length-1 %>
-                        </li>
-                      <% end %>
-                    </ul>
+                  <%= avatar_span(topic.user, topic.user.is_expert?) %>
+                  <div class="topic-info">
+                    <%= link_to topic.title, topic, :class => 'title' %>
+                    <div>
+                      <%= link_to topic.replies.size, topic, :class => 'responses' %>
+                      <ul class="tags">
+                        <% topic.tags.each_with_index do |tag, i| %>
+                          <li class="<%= "last-tag" if i == topic.tags.length-1 %>">
+                            <%= link_to tag, topic_tag_path(tag.id) %><%= ',' unless i == topic.tags.length-1 %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    </div>
+                    <blockquote>
+                      <%= simple_format truncate(topic.content, :length => 140) %>
+                    </blockquote>
                   </div>
                 </div>
-              </div>
-              <div class="topic-recent-historial border-bottom-3">
-                <p class="collaborations"><%= t 'my_topics.grouped_topic.recent_participants', :count => topic.recent_participants.size %></p>
-                <% if topic.recent_participants.length > 0 %>
-                <ul class="small-avatars">
-                  <% topic.recent_participants.each do |user| %>
-                    <li>
-                      <div class="avatar-wrapper">
-                        <% if user %>
-                          <%= link_to profile_path(user) do %>
-                            <%= avatar_span(user, user.is_expert?, true, "24x24") %>
-                          <% end %>
-                          <%= render :partial => 'users/card', :locals => {:user => user} %>
-                        <% else %>
-                          <span class="avatar">
-                            <%= image_tag(Avatar.default.url, :width => '24') %>
-                          </span>
-                        <% end %>
-                      </div>
-                    </li>
-                  <% end %>
-                </ul>
-                <% end %>
               </div>
             </li>
           <% end %>
