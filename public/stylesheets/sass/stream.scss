@@ -75,7 +75,7 @@
   }
   @include breakpoint(tablet-portrait) {
     .right-side {
-      width: auto;
+      width: 100%;
       .streams {
         width: 100%;
         min-height: 100%;
@@ -91,7 +91,6 @@
   }
   @include breakpoint(phone) {
     .right-side {
-      width: auto;
       .streams {
         width: 100%;
         min-height: 100%;

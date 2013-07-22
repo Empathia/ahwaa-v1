@@ -133,7 +133,7 @@
 .pm-flash.success > p{font-size: 12px; word-spacing: -1px;}
 
 .back-to-msgs {float: right; font-size: 12px; margin-top: -7px}
-.back-to-msgs span {padding: 4px 10px 0; height: 18px; display: block}
+.back-to-msgs span {white-space: nowrap; padding: 4px 10px 0; height: 18px; display: block}
 
 .new-response textarea {border: 0; font-family: arial; font-size: 13px; line-height: 20px; width: 100%}
 

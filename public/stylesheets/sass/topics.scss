@@ -87,7 +87,7 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
   .facebook:hover .flash-privacy:not(.closed-once),
   .twitter:hover .flash-privacy:not(.closed-once) {display: block}
   .follow-topic-btn a,
-  .thank-btn a {padding: 4px 10px 0; margin-bottom: 15px; height: 17px; font-size: 12px; display: block;}
+  .thank-btn a {white-space: nowrap; padding: 4px 10px 0; margin-bottom: 15px; height: 17px; font-size: 12px; display: block;}
   .thank {padding-right: 0}
   .has-tooltip:not(.disabled):hover .tooltip-box {display: block}
 
@@ -204,6 +204,7 @@ aside {
       @include background-image(linear-gradient(top, #f6f9fc, #deeaf6));
       @include box-shadow(inset 0 0 0 1px #fff);
       span {
+        white-space: nowrap;
         display: inline-block;
         padding-left: 25px;
         background-image: url('../images/icn-show-hide.png');
@@ -458,9 +459,11 @@ header > .right > .by-author {margin-top: 15px}
 .sign-up-or-continue .sign-up-lk.help-sign {margin: 0 0 0 85px;}
 .topic-content .sign-up-lk{font-size: 12px; font-weight: normal; text-decoration: none;}
 .sign-up-tt .sign-up-lk{margin-left: 17px;}
-.topic-content .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
+.topic-content .sign-up-lk > .sign-up-btn{
+  white-space: nowrap; display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
 }
-.need-help .sign-up-lk > .sign-up-btn{display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
+.need-help .sign-up-lk > .sign-up-btn{
+  white-space: nowrap; display: block; font-size: 12px; padding: 0 9px; border-color: #C1DDF3 #71A8DD #507CC4 #649BD6; border-style: solid; border-width: 1px;
 }
 .continue{color: #a6a48b;}
 .legend-text{margin: 7px 5px 0 0; float: left;}
