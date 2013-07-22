@@ -7,11 +7,7 @@
       <div class="response-user">
         <div class="avatar-wrapper">
           <% unless reply_reply.anonymous? %>
-            <% if logged_in? %>
-              <%= link_to profile_path(reply_reply.user) do %>
-                <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
-              <% end %>
-            <% else %>
+            <%= link_to profile_path(reply_reply.user) do %>
               <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
             <% end %>
           <% else %>

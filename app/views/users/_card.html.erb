@@ -7,15 +7,11 @@
   <div class="user-wrapper">
     <div class="user-info">
 
-      <% if logged_in? %>
-        <p class="username">
-          <%= link_to profile_path(user.username) do %>
-            <%= user.username %> <%= t('private_message.expert') if user.is_expert? %>
-          <% end %>
-        </p>
-      <% else %>
-        <p class="username"><%= user.username %> <%= t('private_message.expert') if user.is_expert? %></p>
-      <% end %>
+      <p class="username">
+        <%= link_to profile_path(user.username) do %>
+          <%= user.username %> <%= t('private_message.expert') if user.is_expert? %>
+        <% end %>
+      </p>
 
       <% unless current_user == user || !logged_in? || (logged_in? && (current_user.blocks.map{|u| u.block}.include? user)) || current_user.blocked_user?(user) %>
         <ul class="activity-btns">

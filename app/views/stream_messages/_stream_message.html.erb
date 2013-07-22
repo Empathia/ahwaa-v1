@@ -1,11 +1,7 @@
 <div class="stream-item">
   <div class="avatar-wrapper">
     <% unless stream_message.reply.anonymous? %>
-      <% if logged_in? %>
-        <%= link_to profile_path(stream_message.reply.user) do %>
-          <%= avatar_span(stream_message.reply.user, stream_message.reply.user.is_expert?) %>
-        <% end %>
-      <% else %>
+      <%= link_to profile_path(stream_message.reply.user) do %>
         <%= avatar_span(stream_message.reply.user, stream_message.reply.user.is_expert?) %>
       <% end %>
       <%= render :partial => 'users/card', :locals => {:user => stream_message.reply.user} %>

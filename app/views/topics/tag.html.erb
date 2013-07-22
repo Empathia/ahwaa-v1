@@ -23,21 +23,11 @@ $(document).ready(function(){
                   <div class="avatar-wrapper">
 
                     <% unless topic.is_anonymous %>
-                      <% if logged_in? %>
-                        <%= link_to profile_path(topic.user) do %>
-                          <%= avatar_span(topic.user, topic.user.is_expert?) %>
-                        <% end %>
-                      <% else %>
+                      <%= link_to profile_path(topic.user) do %>
                         <%= avatar_span(topic.user, topic.user.is_expert?) %>
                       <% end %>
                     <% else %>
-                      <% if logged_in? %>
-                        <%= link_to profile_path(topic.user) do %>
-                          <span class="avatar no-level">
-                            <%= image_tag(topic.author_avatar) %>
-                          </span>
-                        <% end %>
-                      <% else %>
+                      <%= link_to profile_path(topic.user) do %>
                         <span class="avatar no-level">
                           <%= image_tag(topic.author_avatar) %>
                         </span>
