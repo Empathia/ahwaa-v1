@@ -82,7 +82,7 @@
 .message-title { padding-bottom: 10px; }
 
 .from {padding-bottom: 10px; overflow: hidden;
-  > a > span{float: left; margin-right: 3px;}
+  > a > span{white-space: nowrap; float: left; margin-right: 3px;}
   .display-pm{color: #468ac4; font-weight: bold;
     &:hover{text-decoration: underline;}
   }

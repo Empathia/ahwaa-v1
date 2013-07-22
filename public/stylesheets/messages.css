@@ -135,6 +135,7 @@
 }
 /* line 85, sass/messages.scss */
 .from > a > span {
+  white-space: nowrap;
   float: left;
   margin-right: 3px;
 }
