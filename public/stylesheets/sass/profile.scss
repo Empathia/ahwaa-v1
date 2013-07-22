@@ -102,7 +102,9 @@
             }
         }
     }
-    .help-box {background-color: #f8fafa}
+    .help-box {background-color: #f8fafa;
+        a {float: none; margin: 0; height: auto}
+    }
 
     @include breakpoint(tablet-landscape-desktop) {
         .right-side {

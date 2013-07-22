@@ -113,7 +113,11 @@ $(document).ready(function(){
             <h1 id="title-emo"><%= @topic.title %></h1>
             <ul class="topic-info">
               <li class="by-author">
-                <%= link_to profile_path(@topic.author_username) do %>
+                <% unless @topic.is_anonymous %>
+                  <%= link_to profile_path(@topic.author_username) do %>
+                    <%= t '.by', :author => @topic.author_username %>
+                  <% end %>
+                <% else %>
                   <%= t '.by', :author => @topic.author_username %>
                 <% end %>
               </li>

@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   respond_to :js, :only => [:update, :create]
   before_filter :get_user, :except =>[:profile]
-  skip_before_filter :authenticate_user!, :only => [:create]
+  skip_before_filter :authenticate_user!, :only => [:profile, :create]
 
   def show
   end

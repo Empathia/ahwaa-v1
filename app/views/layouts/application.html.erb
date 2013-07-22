@@ -385,7 +385,7 @@
     <footer>
       <div class="container">
         <div class="footer-container">
-        <% #= debug(params) if Rails.env.development? %>
+        <%= debug(params) if Rails.env.development? %>
 
           <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
           <ul>
@@ -437,8 +437,8 @@
     var sc_invisible=1;
     var sc_security="9423d6a1";
     $(document).ready(function(){
-      // $(".stream-item-data").emotions();
-      // $(".recently-topics").emotions();
+      $(".stream-item-data").emotions();
+      $(".recently-topics").emotions();
     });
   </script>
 
