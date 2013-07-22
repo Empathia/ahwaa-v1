@@ -58,7 +58,9 @@
         > li:first-child {background-image: url("../images/tag-horizontal.png"); background-position: 0 2px; background-repeat: no-repeat; padding-left: 20px}
     }
     .topic-recent-historial .collaborations {font-size: 11px; color: #a1aab2; background-image: url("../images/icn-white-bubble-talk.png"); background-position: 0 0; background-repeat: no-repeat; padding-left: 17px; line-height: 14px}
-    .small-avatars {margin: 10px 0 5px; float: left;
+    .small-avatars {
+        margin: 10px 0 5px; float: none;
+        &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
         > li {float: left; margin-right: 15px}
         .recently-topics > ul > li {float: none; margin-right: 0}
         .avatar {width: 24px; height: 24px; padding: 3px}

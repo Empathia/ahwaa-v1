@@ -168,30 +168,39 @@
 /* line 61, sass/my_topics.scss */
 .topic-participation .small-avatars {
   margin: 10px 0 5px;
-  float:right;
+  float: none;
 }
-/* line 62, sass/my_topics.scss */
+/* line 63, sass/my_topics.scss */
+.topic-participation .small-avatars:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+/* line 64, sass/my_topics.scss */
 .topic-participation .small-avatars > li {
   float:right;
   margin-left: 15px;
 }
-/* line 63, sass/my_topics.scss */
+/* line 65, sass/my_topics.scss */
 .topic-participation .small-avatars .recently-topics > ul > li {
   float: none;
   margin-left: 0;
 }
-/* line 64, sass/my_topics.scss */
+/* line 66, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar {
   width: 24px;
   height: 24px;
   padding: 3px;
 }
-/* line 65, sass/my_topics.scss */
+/* line 67, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar > span {
   top: 20px;
   right: 5px;
 }
-/* line 66, sass/my_topics.scss */
+/* line 68, sass/my_topics.scss */
 .topic-participation .small-avatars .avatar img {
   width: 24px;
   height: 24px;
