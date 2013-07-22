@@ -137,7 +137,7 @@ $(function(){
     var article = $(".article-wrapper"),
         sidebar = article.find('aside'),
         socialBookmarkers = $('.social-bookmarkers'),
-        leftSideWidth = 720,
+        leftSideWidth = $('.left-side').eq(0).width(),
         windowObj = $(window),
         rtl = $('html').attr('dir') == 'rtl';
 
@@ -185,7 +185,10 @@ $(function(){
     }
 
     function calculatePosX(fixedElement){
-        var left = fixedElement.hasClass('social-bookmarkers') ? (rtl ? article.offset().left + leftSideWidth - self.scrollLeft() : article.offset().left - 30) : (rtl ? article.offset().left : article.offset().left + leftSideWidth - windowObj.scrollLeft());
+        var leftSideWidth = $('.left-side').eq(0).width(),
+            left = fixedElement.hasClass('social-bookmarkers')
+                ? (rtl ? article.offset().left + leftSideWidth - self.scrollLeft() : article.offset().left - 30)
+                : (rtl ? article.offset().left : article.offset().left + leftSideWidth - windowObj.scrollLeft());
         return left;
     }
 
