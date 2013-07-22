@@ -67,8 +67,7 @@ Class('TagList')({
                 this.more.hide();
             }
 
-            this.headerTags.css('width', 'auto')
-                .parent().css('overflow', 'visible');
+            this.headerTags.css('width', '100%');
 
             if ( this.more.is(':visible') ) {
                 this.moreTagsWrap.show();
