@@ -30,8 +30,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = User.find_by_username(params[:user_id])
-    @topics = @user.topics
-
+    @topics = @user.topics.where('is_anonymous = false')
   end
 
   protected
