@@ -1,5 +1,9 @@
 var lastSearchValue, timer1;
 
+function is_touch_device() {
+  return !!('ontouchstart' in window);
+}
+
 $(function() {
 
     var modal = $('#modal'),
@@ -160,9 +164,19 @@ $(function() {
                     }
 
                     rollover.fadeIn(100);
+
+                    if ( is_touch_device ) {
+                        doc.bind('touchstart.outOfCard', function (ev) {
+                            var target = $(ev.target)
+                            if ( !$(ev.target).closest('.private-msg').length ) {
+                                _this.trigger('mouseleave');
+                                doc.unbind('touchstart.outOfCard');
+                            }
+                        });
+                    }
                 }
             },
-            out : function () {
+            out : function (ev) {
                 var _this = $(this);
                 _this.find('.private-msg').fadeOut(100);
             }
