@@ -46,6 +46,9 @@ Class('TagList')({
         },
 
         filterTags : function filterTags () {
+
+            this.moreWidth = this.more.outerWidth();
+
             var _this = this,
                 count = 0,
                 availableWidth = (this.headerContainer.width() - (this.moreWidth + 10));
@@ -55,8 +58,11 @@ Class('TagList')({
             this.moreItems.addClass('hide');
 
             for ( var i = 0; i < this.items.length; i += 1 ) {
-                var tag = this.items.eq(i);
-                count += tag.outerWidth();
+                var tag = this.items.eq(i),
+                    tagWidth = tag.outerWidth(true);
+
+                count += tagWidth;
+
                 if ( count >= availableWidth ) {
                     tag.addClass('hide');
                     _this.moreItems.eq(i).removeClass('hide');
@@ -67,7 +73,8 @@ Class('TagList')({
                 this.more.hide();
             }
 
-            this.headerTags.css('width', '100%');
+            this.headerTags.css('width', '100%')
+                .parent().css('overflow', 'visible');
 
             if ( this.more.is(':visible') ) {
                 this.moreTagsWrap.show();
