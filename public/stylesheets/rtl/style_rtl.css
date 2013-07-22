@@ -4173,7 +4173,7 @@ footer {
   border-radius: 4px;
 }
 
-/* line 1560, sass/style.scss */
+/* line 1561, sass/style.scss */
 .modal header {
   position: relative;
   font-size: 17px;
@@ -4192,8 +4192,8 @@ footer {
   -o-border-radius: 2px 2px 0 0;
   border-radius: 2px 2px 0 0;
 }
-/* line 1563, sass/style.scss */
-.modal header .close {
+/* line 1565, sass/style.scss */
+.modal .close {
   cursor: pointer;
   width: 18px;
   height: 18px;
@@ -4212,16 +4212,16 @@ footer {
   -o-border-radius: 9px;
   border-radius: 9px;
 }
-/* line 1566, sass/style.scss */
-.modal header .close:hover {
+/* line 1568, sass/style.scss */
+.modal .close:hover {
   background: #afc4de;
 }
-/* line 1567, sass/style.scss */
-.modal header .close:active {
+/* line 1569, sass/style.scss */
+.modal .close:active {
   background: #d6e0ed;
 }
-/* line 1569, sass/style.scss */
-.modal header .body {
+/* line 1571, sass/style.scss */
+.modal .body {
   background-color: #fff;
   color: #3d464c;
   padding: 20px;
@@ -4233,27 +4233,27 @@ footer {
   -o-border-radius: 0 0 3px 3px;
   border-radius: 0 0 3px 3px;
 }
-/* line 1571, sass/style.scss */
-.modal header .body p {
+/* line 1573, sass/style.scss */
+.modal .body p {
   margin-bottom: 20px;
 }
-/* line 1573, sass/style.scss */
-.modal header .separator {
+/* line 1575, sass/style.scss */
+.modal .separator {
   height: 1px;
   background-color: #e6ecf2;
   margin-bottom: 20px;
 }
 
-/* line 1576, sass/style.scss */
+/* line 1578, sass/style.scss */
 .points-table {
   margin-bottom: 3px;
 }
-/* line 1577, sass/style.scss */
+/* line 1579, sass/style.scss */
 .points-table li {
   width: 50%;
   float:right;
 }
-/* line 1578, sass/style.scss */
+/* line 1580, sass/style.scss */
 .points-table li > em {
   width: 30px;
   height: 30px;
@@ -4261,14 +4261,14 @@ footer {
   float:right;
   background: url("../../images/heart-badges-sprite.png") no-repeat transparent;
 }
-/* line 1580, sass/style.scss */
+/* line 1582, sass/style.scss */
 .points-table .points {
   display: block;
   float:right;
   padding:5px 10px 0 0;
   font-size: 14px;
 }
-/* line 1582, sass/style.scss */
+/* line 1584, sass/style.scss */
 .points-table::after,
 .points-table li::after {
   content: ".";
@@ -4279,7 +4279,7 @@ footer {
   height: 0;
 }
 
-/* line 1585, sass/style.scss */
+/* line 1587, sass/style.scss */
 .block_user {
   background: url("../../images/block_icon.png") no-repeat transparent;
   width: 15px;
@@ -4290,7 +4290,7 @@ footer {
   float:left;
 }
 
-/* line 1593, sass/style.scss */
+/* line 1595, sass/style.scss */
 .unblock_user {
   background: url("../../images/check-mark.png") no-repeat transparent;
   width: 15px;
@@ -4302,7 +4302,7 @@ footer {
 }
 
 /* PRIVATE PROFILE */
-/* line 1603, sass/style.scss */
+/* line 1605, sass/style.scss */
 .private-msg-profile {
   position: absolute;
   top: 5px;
@@ -4318,7 +4318,7 @@ footer {
   -moz-box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
   box-shadow: 0px 1px 3px rgba(42, 83, 110, 0.6);
 }
-/* line 1615, sass/style.scss */
+/* line 1617, sass/style.scss */
 .private-msg-profile > form {
   display: block;
   background: #ffffff;
@@ -4326,7 +4326,7 @@ footer {
   padding: 7px 16px 0;
   margin: 0;
 }
-/* line 1621, sass/style.scss */
+/* line 1623, sass/style.scss */
 .private-msg-profile > form > textarea {
   min-width: 234px;
   width: 234px;
@@ -4340,34 +4340,34 @@ footer {
   color: #aeb4bd;
 }
 
-/* line 1635, sass/style.scss */
+/* line 1637, sass/style.scss */
 .activity-btn-profile {
   float:left;
   margin: 0;
 }
-/* line 1638, sass/style.scss */
+/* line 1640, sass/style.scss */
 .activity-btn-profile li {
   float:left;
   height: 21px;
 }
-/* line 1641, sass/style.scss */
+/* line 1643, sass/style.scss */
 .activity-btn-profile li.first {
   border-left: 0 none;
 }
-/* line 1644, sass/style.scss */
+/* line 1646, sass/style.scss */
 .activity-btn-profile li a {
   text-indent: -9999px;
   font-size: 0;
   line-height: 0;
   display: block;
 }
-/* line 1650, sass/style.scss */
+/* line 1652, sass/style.scss */
 .activity-btn-profile li span {
   display: block;
   position: relative;
 }
 
-/* line 1656, sass/style.scss */
+/* line 1658, sass/style.scss */
 .send-private-msg-profile {
   height: 21px;
   width: 28px;

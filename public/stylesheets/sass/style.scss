@@ -1557,9 +1557,11 @@ footer {
   @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, .25));
   @include border-radius(4px);
 }
-.modal header {position: relative; font-size: 17px; color: #3d464c; border-bottom: 1px solid #dbdfe3; padding: 10px 20px 9px; background-color: #fcfcfc;
-  @include background-image(linear-gradient(top, #fdfdfd, #f9f9f9));
-  @include border-radius(2px 2px 0 0);
+.modal {
+  header {position: relative; font-size: 17px; color: #3d464c; border-bottom: 1px solid #dbdfe3; padding: 10px 20px 9px; background-color: #fcfcfc;
+    @include background-image(linear-gradient(top, #fdfdfd, #f9f9f9));
+    @include border-radius(2px 2px 0 0);
+  }
   .close {cursor: pointer; width: 18px; height: 18px; display: block; position: absolute; top: 8px; right: 8px;
     background: #c2d2e5; color: #fafbfb; text-align: center; font-size: 15px; line-height: 18px;
     @include border-radius(9px);
