@@ -334,6 +334,7 @@ h1 {
 /* line 82, sass/admin.scss */
 .new_topic p {
   padding-bottom: 10px;
+  position: relative;
 }
 
 /* line 84, sass/admin.scss */
