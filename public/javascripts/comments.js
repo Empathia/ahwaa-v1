@@ -60,7 +60,6 @@ function slideUpGroupComments(commentsGroup){
 $.fn.slideDownComments = function(commentsOriginal, callback){
   var commentsClon = $(this);
   commentsClon.slideDown(function(){
-      calculateArrowsPositions();
       commentsOriginal && loadState(commentsClon, commentsOriginal);
       var commentsTextarea = $('.add_comments.clon:visible textarea.comment_content');
       commentsTextarea.TextAreaExpander(16);
@@ -70,6 +69,7 @@ $.fn.slideDownComments = function(commentsOriginal, callback){
       commentsClon.css('visibility', 'visible');
       callback && callback();
   });
+  calculateArrowsPositions();
 };
 
 function collapseAllComments(){
@@ -86,7 +86,6 @@ function collapseAllComments(){
 };
 
 $.fn.filter2ndLevelComments = function(filter){
-
     $(this).children('.comments-ls').children().each(function(){
       var ndLevelComments = $(this).find('li');
           ndLevelCommentsNotUseful = ndLevelComments.filter(':not(' + filter + ')');
@@ -96,7 +95,11 @@ $.fn.filter2ndLevelComments = function(filter){
 
 $.fn.comments = function(options){
     var expandBtn = $('.expand-btn'),
-        expandBtnSpan = expandBtn.find('span');
+        expandBtnSpan = expandBtn.find('span'),
+        markers = $('.icn'),
+        flagBtns = $('.res-flag-btns'),
+        cancelComment = $('.cancel-comment');
+
     expandBtn.data('label', expandBtnSpan.text()).click(function(e){
         if(expandBtn.hasClass('hide')){
             $('.article-wrapper').find('input:checked').attr('checked', false);
@@ -113,23 +116,23 @@ $.fn.comments = function(options){
         return false;
     });
 
-    $('.icn').live('click', function(e){
+    markers.live('click', function(e){
         var link = $(this),
             parag = link.parent(),
             index = $('.topic-content .icn.' + getLevel(link.attr('class'))).index(this),
             tt = link.find('.tt'),
             parentComments = link.parents('.comments.clon');
-        if(parentComments.length) {
+        if (parentComments.length) {
             index = link.parents('.comments.clon').find('.icn.' + getLevel(link.attr('class'))).index(link);
             index = parentComments.attr('id').replace('_clon', '').replace('comments_', '') + '_' + index;
         }
+
         var comments = parag.next('#comments_' + index +'_clon');
         !comments.length && (comments = parag.next('#comments_add_' + index + '_clon'));
-        if(comments.length){
+        if (comments.length){
             comments.slideUpComments(parag, link);
             tt.text(I18n.t('topics.show.contextual.reply_here'));
-        }
-        else{
+        } else{
             tt.text(I18n.t('topics.show.contextual.hide'));
             var has_comments = link.hasClass('has_comments');
             comments = has_comments ? $('#comments_' + index) : $('#add_comments');
@@ -151,7 +154,7 @@ $.fn.comments = function(options){
 
     function getLevel(classes){
         classes = classes.split(' ');
-        for(var i=0; i<classes.length; i++){
+        for (var i=0; i<classes.length; i++){
             if(/level/.test(classes[i])){
                 return classes[i];
             }
@@ -159,14 +162,13 @@ $.fn.comments = function(options){
     }
 
 
-    $('.res-flag-btns').find('.disabled').live('click', function(e){
+    flagBtns.find('.disabled').live('click', function(e){
         var lk = $(this),
             sign_up = lk.parent().find('.sign-up-tt-wrapper');
-        if(sign_up.is(':visible') && lk.hasClass('clicked')){
+        if (sign_up.is(':visible') && lk.hasClass('clicked')){
             lk.removeClass('clicked');
             sign_up.fadeOut();
-        }
-        else{
+        } else {
             lk.siblings('.clicked').removeClass('clicked');
             lk.addClass('clicked');
             sign_up.css('left', (Math.abs(Math.floor(lk.outerWidth()/2 - sign_up.outerWidth()/2))*-1+lk.position().left)).animate({top : '-110', opacity : 'show'}, 'slow')
@@ -176,7 +178,7 @@ $.fn.comments = function(options){
     });
 
 
-    $('.cancel-comment').live('click', function(e){
+    cancelComment.live('click', function(e){
         var comments = $(this).closest('.add_comments');
         comments.slideUpComments(comments.prev());
         comments.find('.error').text('');
@@ -216,27 +218,33 @@ $.fn.comments = function(options){
         $(this).parents('.res-types-wrapper').find('.submit-reply-wrapper').addClass('loading');
     });
 
-    function expandAll(){
-        var allComments = [];
+    function expandAll() {
+        var allComments = [],
+            tooltips    = $('.has_comments .tt'),
+            hasComments = $('.topic-content .has_comments');
         $('.comments:not(.clon)').each(function(){
             var comments = $(this),
                 id = comments.attr('id').replace('comments_', '');
             $('#comments_' + id +'_clon').length == 0 && allComments.push(cloneComments($('#add_' + id), comments.outerHTML(), id, true)[0]);
         });
        $(allComments).slideDownComments();
-       $('.has_comments .tt').text(I18n.t('topics.show.contextual.hide'));
-       $('.topic-content .has_comments').addClass('minus');
+       tooltips.text(I18n.t('topics.show.contextual.hide'));
+       hasComments.addClass('minus');
     }
 
     function cloneComments(link, comments, index, has_comments){
-        if(link.length) {
-            var parag = link.parent(),
+        if (link.length) {
+            var parag   = link.parent(),
                 linkOuterHTML = link.outerHTML(),
-                chunks = parag.html().split(linkOuterHTML),
-                left = link.position().left;
-            parag.html(chunks[0] +  linkOuterHTML).after(comments + '<p>' + chunks[1] + '</p>');
+                chunks  = parag.html().split(linkOuterHTML),
+                left    = link.position().left;
+
+            parag.html( chunks[0] +  linkOuterHTML )
+                .after( comments + '<p>' + chunks[1] + '</p>' );
             comments = parag.next();
-            comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon').addClass('clon').hide();
+            comments.attr('id',  has_comments ? 'comments_' + index + '_clon' : 'comments_add_' + index + '_clon')
+                .addClass('clon')
+                .hide();
             comments.find('.comm-arrow:first').css('left', left);
             index.toString().split('_').length < 2 && comments.find('.comments-ls:first').children().find('.response-user:first').siblings('p').addMarkers();
             $('.icn.level_2').each(function() {
@@ -249,12 +257,12 @@ $.fn.comments = function(options){
     }
 
     $.fn.addMarkers = function(){
-        var i=0,
-            parags = this,
+        var i       = 0,
+            parags  = this,
             parents = parags.eq(0).parents('.comments'),
-            selector = parents.length ? parents.eq(0).attr('id').replace(/clon/, '') : 'comments_',
-            level = parents.length + 1;
-        parags.each(function(){
+            selector= parents.length ? parents.eq(0).attr('id').replace(/clon/, '') : 'comments_',
+            level   = parents.length + 1;
+        parags.each(function() {
             var parag = $(this),
                 paragHTML= parag.html(),
                 exp = /([\.\?!؟])((?: [A-Z])|\s*$)/,

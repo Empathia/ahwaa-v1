@@ -22,8 +22,6 @@
   &:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0}
 }
 
-body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119px transparent}
-
 .left-side{
   float: left;
   width: 700px;
@@ -31,7 +29,6 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
   @include breakpoint(tablet-landscape-desktop) {
     width: auto;
     max-width: 484px;
-    // margin-right: 240px;
   }
   @include breakpoint(tablet-portrait) {
     width: 100%;
