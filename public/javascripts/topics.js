@@ -145,11 +145,6 @@ $(function(){
 
     $('.topic-content > p').comments();
 
-    /* The Browser Sniff is pending*/
-    // $('.add_comments > div > textarea').click(function(){
-    //     $(this).css('color', '#6c6f74');
-    // });
-
     var resizeTimer = null;
     UI.windowObj.resize(function() {
         if ( resizeTimer ) clearTimeout( resizeTimer );

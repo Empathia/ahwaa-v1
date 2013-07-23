@@ -374,6 +374,6 @@ $.fn.comments = function(options){
     });
 
     setTimeout(function(){
-        expandBtn.trigger('click');
+        // expandBtn.trigger('click');
     }, 0);
 };
