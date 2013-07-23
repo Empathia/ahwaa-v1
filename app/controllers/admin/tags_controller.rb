@@ -9,7 +9,7 @@ class Admin::TagsController < ApplicationController
       Topic.tag_counts
     end
     if params[:format] != 'json'
-      @tags = @tags.order("position DESC")
+      @tags = @tags.order("position ASC")
     end
     respond_with @tags
   end
