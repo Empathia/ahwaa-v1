@@ -143,7 +143,7 @@ $(function(){
         }
     });
 
-    $('.topic-content > p').comments();
+    // $('.topic-content > p').comments();
 
     var resizeTimer = null;
     UI.windowObj.resize(function() {
