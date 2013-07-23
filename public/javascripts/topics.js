@@ -59,54 +59,57 @@ $(function(){
     };
     UI.windowObj.load(function () {
         fontSizeControls.init();
-        $("#title-emo").emotions();
-        $(".comm-wrap").emotions();
-        $(".item-data").emotions();
+        // $("#title-emo").emotions();
+        // $(".comm-wrap").emotions();
+        // $(".item-data").emotions();
     });
 
-    var thankMsg = {
-        speed: 250,
-        button: $('.thank-btn a'),
-        tooltip: $('.tt-thank-msg'),
-        contentWrapper: null,
-        checkbox: null,
-        init: function () {
-            this.contentWrapper = this.tooltip.find('.content-wrapper');
-            this.checkbox = this.tooltip.find('.include-message');
-            this.checkbox.is(':checked') ? this.contentWrapper.slideDown(this.speed) : this.contentWrapper.slideUp(this.speed);
-            this.bindEvents();
-        },
-        bindEvents: function () {
-            var timer;
-            this.button.click(function (e) {
-              if ($(this).closest('li').hasClass('disabled')) {
-                  UI.loginButton.trigger('click');
-                  return false;
-              }
+    var thankMsgTooltip = $('.tt-thank-msg');
+    if ( thankMsgTooltip.length ) {
+        var thankMsg = {
+            speed: 250,
+            button: $('.thank-btn a'),
+            tooltip: thankMsgTooltip,
+            contentWrapper: null,
+            checkbox: null,
+            init: function () {
+                this.contentWrapper = this.tooltip.find('.content-wrapper');
+                this.checkbox = this.tooltip.find('.include-message');
+                this.checkbox.is(':checked') ? this.contentWrapper.slideDown(this.speed) : this.contentWrapper.slideUp(this.speed);
+                this.bindEvents();
+            },
+            bindEvents: function () {
+                var timer;
+                this.button.click(function (e) {
+                  if ($(this).closest('li').hasClass('disabled')) {
+                      UI.loginButton.trigger('click');
+                      return false;
+                  }
 
-              e.preventDefault();
-            });
-            this.checkbox.change(function (e) {
-                var $this = $(e.target);
-                if ($this.is(':checked')) {
-                    thankMsg.contentWrapper.slideDown(thankMsg.speed);
-                } else {
-                    thankMsg.contentWrapper.slideUp(thankMsg.speed);
-                }
-            });
-            this.tooltip.mouseleave(function () {
-                this.style.display = 'block';
-                if (timer) {
-                    clearTimeout(timer);
-                    timer = null;
-                }
-                timer = setTimeout(function () {
-                    thankMsg.tooltip[0].style.display = '';
-                }, 1500);
-            });
-        }
-    };
-    thankMsg.tooltip.length && thankMsg.init();
+                  e.preventDefault();
+                });
+                this.checkbox.change(function (e) {
+                    var $this = $(e.target);
+                    if ($this.is(':checked')) {
+                        thankMsg.contentWrapper.slideDown(thankMsg.speed);
+                    } else {
+                        thankMsg.contentWrapper.slideUp(thankMsg.speed);
+                    }
+                });
+                this.tooltip.mouseleave(function () {
+                    this.style.display = 'block';
+                    if (timer) {
+                        clearTimeout(timer);
+                        timer = null;
+                    }
+                    timer = setTimeout(function () {
+                        thankMsg.tooltip[0].style.display = '';
+                    }, 1500);
+                });
+            }
+        };
+        thankMsg.init();
+    }
 
     UI.followTopicBtn.bind('click', function () {
         if ($(this).hasClass('disabled')) {
