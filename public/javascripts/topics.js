@@ -1,5 +1,20 @@
 $(function(){
+
     $("input:radio, input:visible:checkbox").uniform();
+
+    var UI = {
+        windowObj           : $(window),
+        loginButton         : $('#login'),
+        article             : $(".article-wrapper"),
+        followTopicBtn      : $('.follow-topic'),
+        socialBookmarkers   : $('.social-bookmarkers'),
+        mainContent         : $('.left-side').eq(0)
+    };
+    UI.sidebar = UI.article.find('aside');
+
+    var _w              = window.innerWidth,
+        leftSideWidth   = UI.mainContent.width(),
+        rtl             = $('html').attr('dir') == 'rtl';
 
     var fontSizeControls = {
         MAX_SIZE: 20,
@@ -42,8 +57,11 @@ $(function(){
             }
         }
     };
-    $(window).load(function () {
+    UI.windowObj.load(function () {
         fontSizeControls.init();
+        $("#title-emo").emotions();
+        $(".comm-wrap").emotions();
+        $(".item-data").emotions();
     });
 
     var thankMsg = {
@@ -62,7 +80,7 @@ $(function(){
             var timer;
             this.button.click(function (e) {
               if ($(this).closest('li').hasClass('disabled')) {
-                  $('#login').trigger('click');
+                  UI.loginButton.trigger('click');
                   return false;
               }
 
@@ -88,16 +106,14 @@ $(function(){
             });
         }
     };
-    thankMsg.tooltip.length ? thankMsg.init() : null;
+    thankMsg.tooltip.length && thankMsg.init();
 
-    $('.follow-topic').bind('click', function () {
+    UI.followTopicBtn.bind('click', function () {
         if ($(this).hasClass('disabled')) {
-            $('#login').trigger('click');
+            UI.loginButton.trigger('click');
             return false;
         }
-    })
-
-    $('.follow-topic').bind('ajax:success', function () {
+    }).bind('ajax:success', function () {
         var self = $(this);
         if (!self.hasClass('disabled')) {
             if (self.hasClass('following')) {
@@ -127,45 +143,37 @@ $(function(){
         }
     });
 
-    $('.topic-content > p').comments({color: '#FFFF00'});
+    $('.topic-content > p').comments();
 
     /* The Browser Sniff is pending*/
-    $('.add_comments > div > textarea').click(function(){
-        $(this).css('color', '#6c6f74');
+    // $('.add_comments > div > textarea').click(function(){
+    //     $(this).css('color', '#6c6f74');
+    // });
+
+    var resizeTimer = null;
+    UI.windowObj.resize(function() {
+        if ( resizeTimer ) clearTimeout( resizeTimer );
+        resizeTimer = setTimeout(function () {
+            _w = window.innerWidth;
+            if ( UI.socialBookmarkers.data("fixed") == true ) {
+                UI.socialBookmarkers.css('left', calculatePosX( UI.socialBookmarkers ));
+            }
+            if ( UI.sidebar.data("fixed") == true ) {
+                UI.sidebar.css('left', calculatePosX( UI.sidebar ));
+            }
+        }, 50);
     });
 
-    var article = $(".article-wrapper"),
-        sidebar = article.find('aside'),
-        socialBookmarkers = $('.social-bookmarkers'),
-        leftSideWidth = $('.left-side').eq(0).width(),
-        windowObj = $(window),
-        rtl = $('html').attr('dir') == 'rtl';
-
-    windowObj.load(function(){
-        sidebar.css({left:sidebar.offset().left, position: 'fixed', top: 139}).data('fixed', true);
-    });
-
-
-    windowObj.resize(function() {
-        socialBookmarkers.data("fixed") == true && socialBookmarkers.css('left', calculatePosX(socialBookmarkers));
-        sidebar.data("fixed") == true && sidebar.css('left', calculatePosX(sidebar));
-    });
-
-    /* Avatar span someway blocks the click to the anchor and it doesn't do the default action. */
-    $('.related-carrousel a.avatar').click(function (ev) {
-        location.href = this.href;
-        return false;
-    });
+    var carrouselWrapper = $('.related-carrousel'),
+        carrousel = carrouselWrapper.children('ul:eq(0)');
 
     $('.view-more').click(function(e){
-        var carrouselWrapper = $('.related-carrousel'),
-        carrousel = carrouselWrapper.children('ul:eq(0)');
         !($.browser.msie && $.browser.version == '7.0') && carrouselWrapper.css({
             overflow: 'hidden',
             height: carrouselWrapper.height()
         });
         carrousel.children().show();
-        if(!($.browser.msie && $.browser.version == '7.0') && carrousel.outerHeight() > carrouselWrapper.outerHeight()){
+        if ( !($.browser.msie && $.browser.version == '7.0') && carrousel.outerHeight() > carrouselWrapper.outerHeight() ) {
             $(this).hide();
             carrouselWrapper.animate({height:carrousel.outerHeight()}, function(){
                 carrouselWrapper.css('overflow', 'visible');
@@ -184,39 +192,62 @@ $(function(){
         });
     }
 
+    var mainContent = $('.left-side').eq(0);
     function calculatePosX(fixedElement){
-        var leftSideWidth = $('.left-side').eq(0).width(),
+        var leftSideWidth = mainContent.width(),
+            articleOffset = UI.article.offset(),
             left = fixedElement.hasClass('social-bookmarkers')
-                ? (rtl ? article.offset().left + leftSideWidth - self.scrollLeft() : article.offset().left - 30)
-                : (rtl ? article.offset().left : article.offset().left + leftSideWidth - windowObj.scrollLeft());
+                ? (rtl ? articleOffset.left + leftSideWidth - self.scrollLeft() : articleOffset.left - 30)
+                : (rtl ? articleOffset.left : articleOffset.left + leftSideWidth - UI.windowObj.scrollLeft());
         return left;
     }
 
-    windowObj.scroll(function(e){
-        sidebar.each(function(){
-            var selfOffset = article.offset().top-139,
-                selfHeight = article.outerHeight(),
-                windowOffset = windowObj.scrollTop(),
-                fixedElement = $(this);
-                fixedElementHeight = fixedElement.outerHeight(true),
-                fixedElementPosX = fixedElement.offset().left;
-                cssProperties = {};
-                if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight && selfOffset - windowOffset < fixedElementHeight-selfHeight){
-                    cssProperties = {position : "absolute", bottom: "0", top: "auto"};
-                    fixedElement.data("fixed", false);
-                } else if(selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight){
-                windowObj.scrollLeft() && (fixedElementPosX = calculatePosX(fixedElement));
-                cssProperties = {position: "fixed", left: fixedElementPosX, right: "auto", bottom: "auto", top: 139}
-                    fixedElement.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
-                    fixedElement.data("fixed", true);
-                } else {
-                    cssProperties = {position : "absolute", bottom: "auto", top: "0"};
-                    fixedElement.data("fixed", false);
-                }
-                if(fixedElement.data('fixed') == false){
-                    cssProperties = $.extend(fixedElement.hasClass('social-bookmarkers') ? (rtl ? {right: "-30px", left: "auto"} : {left: "-30px", right: "auto"}) : (rtl ? {left: "0", right: "auto"} : {left: "auto", right: "0"}), cssProperties);
-                }
-            fixedElement.css(cssProperties);
-        });
+    UI.windowObj.scroll(function (e) {
+        if ( window.innerWidth >= 768 ) {
+            if ( UI.sidebar ) {
+                var selfOffset = UI.article.offset().top - 139,
+                    selfHeight = UI.article.outerHeight(),
+                    windowOffset = UI.windowObj.scrollTop(),
+                    sidebarHeight = UI.sidebar.outerHeight(true),
+                    sidebarPosX = UI.sidebar.offset().left;
+                    cssProperties = {};
+
+                    if (selfOffset - windowOffset < 0 && (selfOffset - windowOffset > -selfHeight) && (selfOffset - windowOffset < sidebarHeight-selfHeight)) {
+                        cssProperties = {
+                            position : "absolute",
+                            bottom: "0",
+                            top: "auto"
+                        };
+                        UI.sidebar.data("fixed", false);
+                    } else if (selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight) {
+                        UI.windowObj.scrollLeft() && (sidebarPosX = calculatePosX( sidebar ));
+                        cssProperties = {
+                            position: "fixed",
+                            left: sidebarPosX,
+                            right: "auto",
+                            bottom: "auto",
+                            top: 139
+                        }
+                        UI.sidebar.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
+                        UI.sidebar.data("fixed", true);
+                    } else {
+                        cssProperties = {
+                            position : "absolute",
+                            bottom: "auto",
+                            top: "0"
+                        };
+                        UI.sidebar.data("fixed", false);
+                    }
+
+                    if ( UI.sidebar.data('fixed') == false ) {
+                        cssProperties = $.extend(UI.sidebar.hasClass('social-bookmarkers')
+                            ? (rtl ? {right: "-30px", left: "auto"} : {left: "-30px", right: "auto"})
+                            : (rtl ? {left: "0", right: "auto"} : {left: "auto", right: "0"}), cssProperties);
+                    }
+                UI.sidebar.css(cssProperties);
+            }
+        }
     });
+
+    UI.windowObj.scroll();
 });

@@ -27,15 +27,13 @@ body > div{background: url("../images/bg-topic-detail.jpg") repeat-x fixed 0 119
 .left-side{
   float: left;
   width: 700px;
-  // margin-right: 240px;
 
   @include breakpoint(tablet-landscape-desktop) {
-    float: none;
     width: auto;
-    margin-right: 240px;
+    max-width: 484px;
+    // margin-right: 240px;
   }
   @include breakpoint(tablet-portrait) {
-    margin-right: 0;
     width: 100%;
   }
   @include breakpoint(phone) {
@@ -189,7 +187,13 @@ article{background: #ffffff url('../images/bg-article.png') repeat-x 0 1px; disp
 .article-wraper .by-author {margin-top: 15px}
 
 aside {
-  font-size: 12px; float: right; width: 200px; padding: 0 10px; background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff; border-top: 1px solid #ffffff; float: right; z-index: 99;
+  font-size: 12px;
+  float: right;
+  width: 200px;
+  padding: 0 10px;
+  background: url('../images/bg-aside.png') repeat-x 0 0 #ffffff;
+  border-top: 1px solid #ffffff;
+  z-index: 99;
   section.show-hide {border-top: none; padding: 20px 0;
     a {
       text-align: center;
@@ -230,7 +234,7 @@ aside {
     left: 0 !important;
     width: 100%;
     border-radius: 0 !important;
-    float: none;
+    // float: none;
     @include box-sizing(border-box);
     section.filter {padding: 5px 0 0;
       ul {margin-top: 5px}
@@ -248,7 +252,7 @@ aside {
     left: 0 !important;
     width: 100%;
     border-radius: 0 !important;
-    float: none;
+    // float: none;
     @include box-sizing(border-box);
     section.filter {padding: 5px 0 0;
       ul {margin-top: 5px}
