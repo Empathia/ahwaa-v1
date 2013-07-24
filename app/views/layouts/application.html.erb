@@ -353,7 +353,7 @@
             <% if @fame_topics %>
               <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
-                  <% link_to profile_path(@fame_topics) do %>
+                  <%= link_to profile_path(@fame_topics) do %>
                     <span class="avatar <%= level_css_class_for_user @fame_topics %>">
                       <%= image_tag @fame_topics.profile.avatar.url, :size => '42x42' %>
                       <span class="honor-member"></span>
@@ -371,7 +371,7 @@
             <% if @fame_points %>
               <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
-                  <% link_to profile_path(@fame_points) do %>
+                  <%= link_to profile_path(@fame_points) do %>
                     <span class="avatar <%= level_css_class_for_user @fame_points %>">
                       <%= image_tag @fame_points.profile.avatar.url, :size => '42x42' %>
                       <span class="honor-member"></span>
@@ -393,7 +393,7 @@
     <footer>
       <div class="container">
         <div class="footer-container">
-        <% #= debug(params) if Rails.env.development? %>
+        <%#= debug(params) if Rails.env.development? %>
 
           <span><%= t('.footer.all_rights', {:year => Date.today.year}) %></span>
           <ul>
