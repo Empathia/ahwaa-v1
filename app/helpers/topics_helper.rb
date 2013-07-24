@@ -13,7 +13,7 @@ module TopicsHelper
       pluralize(size, t(key))
     end
   end
-  
+
   # Builds linked_in share url
   def linked_in_share_url(topic)
     qs = {

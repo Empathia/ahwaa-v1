@@ -19,7 +19,7 @@
   </tr>
   <% @topics.each do |topic| %>
     <tr>
-      <td><%= topic.title %></td>
+      <td><%= topic.title.html_safe %></td>
       <td class="featured">
         <%= link_to toggle_admin_featured_topic_path(topic), :method => :post, :remote => true, "data-type" => :json, :class => 'featured-link' do %>
           <%= check_box_tag 'featured[]', value = "1", topic.featured %>

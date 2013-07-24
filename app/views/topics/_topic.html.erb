@@ -12,7 +12,7 @@
     <% end %>
   </div>
   <div class="item-data">
-    <%= link_to topic.title, topic, :class => 'dark-lk' %>
+    <%= link_to topic.title.html_safe, topic, :class => 'dark-lk' %>
     <div>
       <span class="by-author"><%= t('.popular.by', :author => topic.author_username) %></span>
       <ul class="tags">

@@ -6,7 +6,7 @@
           Dear <span style="font-weight:bold;"><%= @user.username %></span>,
         </div>
         <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
-          A user has just responded to your comment on <%= link_to "#{@reply.topic.title} on Ahwaa!", topic_url(@reply.topic) %>.
+          A user has just responded to your comment on <%= link_to "#{@reply.topic.title.html_safe} on Ahwaa!", topic_url(@reply.topic) %>.
         </div>
       </td>
     </tr>

@@ -6,9 +6,9 @@
   </script>
 <% end %>
 <div class="adm-title">
-  <h1>Topic Profile Matches</h1> 
+  <h1>Topic Profile Matches</h1>
 </div>
-<h2><%= @topic.title %></h2>
+<h2><%= @topic.title.html_safe %></h2>
 <p><%= @topic.content %></p>
 <%= form_tag(list_matches_admin_topic_profile_matches_path(@topic, :format => 'js'), :id => 'profile_match_filters_form') do %>
   <ul class="profile-match-filters">
@@ -22,7 +22,7 @@
       <div><%= UserProfile.human_attribute_name(:gender_id) %></div>
       <div>
         <%= select_tag 'filters[gender_id]', options_from_collection_for_select(Gender.all_with_all_option, :id, :name) %>
-      </div> 
+      </div>
     </li>
     <li class="field">
       <div><%= UserProfile.human_attribute_name(:sexual_orientation_id) %></div>

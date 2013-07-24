@@ -6,7 +6,7 @@
           عزيزي <span style="font-weight:bold;"><%= @user.username %></span>,
         </div>
         <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
-          لقد تم اختياركم للمشاركة في <%= link_to @topic.title, topic_url(@topic), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %> الموضوع. ونقدّر الوقت الذي ستأخذونه لمشاركة آرائكم مع مستخدمي موقع أهواء.
+          لقد تم اختياركم للمشاركة في <%= link_to @topic.title.html_safes, topic_url(@topic), :style => "font-weight:bold; color:#3171b1; text-decoration:none;" %> الموضوع. ونقدّر الوقت الذي ستأخذونه لمشاركة آرائكم مع مستخدمي موقع أهواء.
         </div>
 
         <div style="font-family:Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size:17px; line-height:21px; text-decoration:none; color:#627583; padding-top:30px; padding-left:0; padding-right:0; padding-bottom:0;">
