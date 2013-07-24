@@ -168,11 +168,15 @@ textarea {border-style: solid; border-width: 1px; border-color: #a7adb0 #d9e2e6 
   border-style: solid;
   border-color: #cfdae6 #c8d4e1 #a0b0c0 #c8d4e1;
   outline: none;
+  @include border-radius(2px);
   &:hover {
     background-color: #ecf4f9;
     @include background-image(linear-gradient(top, #ecf7fd, #ffffff));
   }
-  &:active {
+  &:active,
+  &.active {
+    background-color: transparentize(#c8d4e1, .4);
+    background-image: none;
     border-color: #a0b0c0 #c8d4e1 #cfdae6;
   }
 }
@@ -616,15 +620,27 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   display:none; background-color:#f0f6fc; border: 1px solid #ffffff; width: 288px; padding:3px; width: 100%; position: absolute; left: 0; top: 31px; z-index:2;
   @include border-radius(5px);
   @include box-shadow(0 1px 3px rgba(42, 83, 110, .6), 0 0 1px rgba(0, 0, 0, .2));
+  @include box-sizing(border-box);
   &.visible {display:block;}
+
+  > .arrow {text-align: center; background-color: #fbfbfb; text-decoration: none; position: relative; overflow: hidden; display: block; padding: 6px 0}
+  > .arrow > div,
+  > .arrow > div > div,
+  > .scroll-up {border-bottom: 1px solid #EAEEF0}
+  > .scroll-down{border-top: 1px solid #EAEEF0}
 
   @include breakpoint(phone) {
     top: 40px;
-    min-height: 150px;
+    min-height: 210px;
     height: 100%;
     overflow: hidden;
     overflow-y: scroll;
+    border: none;
+    padding: 0;
     @include border-radius(0);
+    > .arrow {
+      display: none;
+    }
   }
 }
 .search-results-scroller {overflow: hidden;}
@@ -639,19 +655,13 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   @include breakpoint(phone) {
     > li {
       padding: 0;
-    }
-    a {
-      display: block;
-      padding: 10px 15px;
+      a {
+        display: block;
+        padding: 15px 10px;
+        font-size: 16px;
+      }
     }
   }
-}
-.search-results-wrapper {
-  > .arrow {text-align: center; background-color: #fbfbfb; text-decoration: none; position: relative; overflow: hidden; display: block; padding: 6px 0}
-  > .arrow > div,
-  > .arrow > div > div,
-  > .scroll-up {border-bottom: 1px solid #EAEEF0}
-  > .scroll-down{border-top: 1px solid #EAEEF0}
 }
 .scroll-up > div > div{border-color: transparent transparent #a9c8e3; border-width: 0 5px 5px}
 .scroll-up:hover > div > div{border-color: transparent transparent #468AC4}

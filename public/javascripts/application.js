@@ -229,6 +229,7 @@ $(function() {
 
     mobileNav.button.bind('click', function (ev) {
         mobileNav.menu.toggle();
+        mobileNav.button.toggleClass('active');
 
         if ( !mobileNav.menu.is(':visible') )
             document.documentElement.classList.remove('no-overflow');
@@ -270,10 +271,15 @@ $(function() {
             mobileNav.button.trigger('click');
 
         search.wrapper.toggleClass('show-on-mobile');
+        mobileNav.search.toggleClass('active');
 
-        ( search.wrapper.is(':visible') )
-            ? search.input.focus()
-            : search.input.blur();
+        if ( search.wrapper.is(':visible') ) {
+            search.input.focus();
+            document.documentElement.classList.add('no-overflow');
+        } else {
+            search.input.blur();
+            document.documentElement.classList.remove('no-overflow');
+        }
     });
     /* MOBILE MENU END */
 
