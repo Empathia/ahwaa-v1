@@ -1,3 +1,5 @@
+@import "compass";
+
 .admin{background-color: #ffffff; padding: 40px;}
 
 .container {
@@ -30,7 +32,7 @@ table td{padding: 5px 10px;}
 
 /*Related Content*/
 .related-content > li{margin-bottom: 10px; padding:5px; overflow:hidden; }
-.related-content > li > a{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;}
+.related-content > li > a{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; @include border-radius(5px); background: #fbfbfb; outline: none; @include box-shadow(inset 0px 0px 3px #efefef); width:50px; height: 50px;}
 .related-content-details > div{padding-bottom: 2px;}
 .related-content-details{float: left; margin-left: 10px; width: 802px;}
 
@@ -44,7 +46,7 @@ table td{padding: 5px 10px;}
 .pt-wrapper{width: 814px; float: left; height: 100%; overflow: hidden; position: relative;}
 .pt{float: left; position: absolute; width: 2000px; height: 100%; left: 0; top: 0;}
 .pt > li{ margin-bottom: 10px; padding:5px; overflow:hidden; float: left;}
-.pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; border-radius: 5px; moz-border-radius: 5px; -webkit-border-radius: 5px; background: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef; width:50px; height: 50px;}
+.pt > li > a > img{float:left; padding:3px; border: 1px solid #ccc; border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; @include border-radius(5px); background: #fbfbfb; outline: none; @include box-shadow(inset 0px 0px 3px #efefef); width:50px; height: 50px;}
 .pt > li > div{text-align: center;}
 
 .radio-wrapper{margin-bottom: 15px}
@@ -57,7 +59,7 @@ input[type=text],
 input[type=password],
 input[type=email],
 input[type=url],
-textarea{border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; background-color: #fbfbfb; outline: none; -webkit-box-shadow: inset 0px 0px 3px #efefef;}
+textarea{border-width: 1px; border-style: solid; border-color: #a8a8a8 #d8d8d8 #d8d8d8 #a8a8a8; @include border-radius(5px); background-color: #fbfbfb; outline: none; @include box-shadow(inset 0px 0px 3px #efefef);}
 
 input.error[type=text],
 input.error[type=password],
@@ -79,14 +81,15 @@ form > p > label{display: block;}
 form > #related_content_form_fields > p > label{display: block;}
 input[type=checkbox] + label{display: inline;}
 h1{padding-bottom: 10px;}
-.new_topic p{padding-bottom: 10px;}
+.new_topic p{padding-bottom: 10px; position: relative;}
 
-.flash{padding: 10px 10px 10px 30px; margin-bottom: 15px;}
-.flash.notice{background: #ebffee url('../images/check-mark.png') no-repeat 10px 10px; color: #6fa677; border: 1px solid #a3c9a9;}
-.flash.error{background: #fbe2e5 url('../images/error-mark.png') no-repeat 10px 12px; color: #D93E3E; border: 1px solid #E79090;}
-
+.flash{padding: 10px 10px 10px 30px; margin-bottom: 15px;
+    &.notice{background: #ebffee url('../images/check-mark.png') no-repeat 10px 10px; color: #6fa677; border: 1px solid #a3c9a9;}
+    &.error{background: #fbe2e5 url('../images/error-mark.png') no-repeat 10px 12px; color: #D93E3E; border: 1px solid #E79090;}
+}
 .flash.error > h2{font-size: 14px; font-weight: normal; margin-bottom: 10px;}
-.field{margin-bottom: 20px;}
-.field > label{margin-bottom: 3px;}
+.field{margin-bottom: 20px;
+    > label{margin-bottom: 3px;}
+}
 
 ul.holder .bit-box + .bit-input{width: 100%; margin-top: 10px;}
