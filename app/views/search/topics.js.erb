@@ -1,32 +1,40 @@
+function is_touch_device() {
+    return !!('ontouchstart' in window);
+}
+
 var searchResultsWrapper = $('.search-results-wrapper'),
     searchResultsScroller = searchResultsWrapper.children('.search-results-scroller'),
     searchResults = searchResultsScroller.children('.search-results');
+
 searchResults.html('<%= escape_javascript render(:collection => @results, :partial => 'result') %>');
+
 var searchResultsItems = searchResults.children();
 searchResultsItems.length >= 1 ? searchResultsWrapper.addClass('visible') : searchResultsWrapper.removeClass('visible');
 searchResultsItems.filter(':last-child').addClass('last');
 
-var newHeight = $(window).height() - searchResultsWrapper.offset().top - searchResultsWrapper.children('.scroll-down').outerHeight() - 40;
-if(newHeight < searchResults.height()){
-  searchResultsWrapper.children('.arrow').show();
-  searchResultsScroller.css('height', newHeight);
-   searchResultsWrapper.children('.scroll-down').hover(function () {
-      scrollerInterval = setInterval(function () {
-        searchResultsScroller.scrollTop(searchResultsScroller.scrollTop() + 3);
-      }, 1);
-  }, function () {
-      clearInterval(scrollerInterval);
-  });
+if ( !is_touch_device() ) {
+    var newHeight = $(window).height() - searchResultsWrapper.offset().top - searchResultsWrapper.children('.scroll-down').outerHeight() - 40;
 
-  searchResultsWrapper.children('.scroll-up').hover(function () {
-      scrollerInterval = setInterval(function () {
-        searchResultsScroller.scrollTop(searchResultsScroller.scrollTop() - 3);
-      }, 1);
-  }, function () {
-      clearInterval(scrollerInterval);
-  });
-}
-else{  
-  searchResultsScroller.css('height', '');
-  searchResultsWrapper.children('.arrow').hide();
+    if ( newHeight < searchResults.height() ) {
+        searchResultsWrapper.children('.arrow').show();
+        searchResultsScroller.css('height', newHeight);
+        searchResultsWrapper.children('.scroll-down').hover(function () {
+            scrollerInterval = setInterval(function () {
+                searchResultsScroller.scrollTop(searchResultsScroller.scrollTop() + 3);
+            }, 1);
+        }, function () {
+            clearInterval(scrollerInterval);
+        });
+
+        searchResultsWrapper.children('.scroll-up').hover(function () {
+            scrollerInterval = setInterval(function () {
+                searchResultsScroller.scrollTop(searchResultsScroller.scrollTop() - 3);
+            }, 1);
+        }, function () {
+            clearInterval(scrollerInterval);
+        });
+    } else{
+        searchResultsScroller.css('height', '');
+        searchResultsWrapper.children('.arrow').hide();
+    }
 }

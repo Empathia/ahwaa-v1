@@ -620,6 +620,10 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 
   @include breakpoint(phone) {
     top: 40px;
+    min-height: 150px;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
     @include border-radius(0);
   }
 }

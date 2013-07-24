@@ -1,4 +1,4 @@
-var lastSearchValue, timer1;
+var timer1;
 
 function is_touch_device() {
   return !!('ontouchstart' in window);
@@ -25,11 +25,13 @@ $(function() {
     var searchField     = $("#query"),
         searchParent    = searchField.parent(),
         searchResults   = $('.search-results-wrapper'),
-        doc = $(document);
+        doc = $(document),
+        lastSearchValue;
 
     searchField.bind({
         keyup : function (e) {
             var val = $.trim(this.value);
+
             if ( val.length > 2 && val != lastSearchValue ) {
                 lastSearchValue = val;
                 $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
