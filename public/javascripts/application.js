@@ -26,15 +26,16 @@ $(function() {
         searchParent    = searchField.parent(),
         searchResults   = $('.search-results-wrapper'),
         doc = $(document),
-        lastSearchValue;
+        searchTimer;
 
     searchField.bind({
         keyup : function (e) {
             var val = $.trim(this.value);
-
-            if ( val.length > 2 && val != lastSearchValue ) {
-                lastSearchValue = val;
-                $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
+            if ( val.length > 2 ) {
+                if ( searchTimer ) clearTimeout( searchTimer );
+                searchTimer = setTimeout(function() {
+                    $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
+                }, 100);
             }
         },
         click : function(ev) {
