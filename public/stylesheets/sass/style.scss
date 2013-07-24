@@ -629,18 +629,19 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
   > .scroll-up {border-bottom: 1px solid #EAEEF0}
   > .scroll-down{border-top: 1px solid #EAEEF0}
 
-  @include breakpoint(phone) {
-    top: 40px;
+  @include breakpoint(tablet-portrait) {
     min-height: 210px;
-    height: 100%;
     overflow: hidden;
     overflow-y: scroll;
-    border: none;
-    padding: 0;
-    @include border-radius(0);
+    height: 100%;
     > .arrow {
       display: none;
     }
+  }
+  @include breakpoint(phone) {
+    top: 40px;
+    padding: 0;
+    @include border-radius(0);
   }
 }
 .search-results-scroller {overflow: hidden;}
