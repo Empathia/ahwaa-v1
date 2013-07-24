@@ -59,9 +59,6 @@ $(function(){
     };
     UI.windowObj.load(function () {
         fontSizeControls.init();
-        // $("#title-emo").emotions();
-        // $(".comm-wrap").emotions();
-        // $(".item-data").emotions();
     });
 
     var thankMsgTooltip = $('.tt-thank-msg');
