@@ -7,6 +7,7 @@ class TopicRequestsController < ApplicationController
 
   def create
     emoticons(params[:topic_request][:title])
+    emoticons(params[:topic_request][:content])
     @topic_request = current_user.topic_requests.new(params[:topic_request])
 
     if @topic_request.save
