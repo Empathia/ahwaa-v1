@@ -2,6 +2,10 @@ $(function(){
 
     $("input:radio, input:visible:checkbox").uniform();
 
+    function is_touch_device() {
+        return !!('ontouchstart' in window);
+    }
+
     var UI = {
         windowObj           : $(window),
         loginButton         : $('#login'),
@@ -187,9 +191,8 @@ $(function(){
         });
     }
 
-    var mainContent = $('.left-side').eq(0);
     function calculatePosX(fixedElement){
-        var leftSideWidth = mainContent.width(),
+        var leftSideWidth = UI.mainContent.width(),
             articleOffset = UI.article.offset(),
             left = fixedElement.hasClass('social-bookmarkers')
                 ? (rtl ? articleOffset.left + leftSideWidth - self.scrollLeft() : articleOffset.left - 30)
@@ -197,49 +200,60 @@ $(function(){
         return left;
     }
 
+    var positioningSidebar = function positioningSidebar () {
+        var selfOffset = UI.article.offset().top - 139,
+            selfHeight = UI.article.outerHeight(),
+            windowOffset = UI.windowObj.scrollTop(),
+            sidebarHeight = UI.sidebar.outerHeight(true),
+            sidebarPosX = Math.round( (UI.mainContent.offset().left + UI.mainContent.width() + 20) ), //Math.round( UI.sidebar.offset().left );
+            cssProperties = {};
+
+            if (selfOffset - windowOffset < 0 && (selfOffset - windowOffset > -selfHeight) && (selfOffset - windowOffset < sidebarHeight-selfHeight)) {
+                cssProperties = {
+                    position : "absolute",
+                    bottom: "0",
+                    top: "auto"
+                };
+                UI.sidebar.data("fixed", false);
+            } else if (selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight) {
+                UI.windowObj.scrollLeft() && (sidebarPosX = calculatePosX( UI.sidebar ));
+                cssProperties = {
+                    position: "fixed",
+                    left: sidebarPosX,
+                    right: "auto",
+                    bottom: "auto",
+                    top: 139
+                }
+                UI.sidebar.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
+                UI.sidebar.data("fixed", true);
+                $('.rainbow').text( UI.sidebar.offset().left + " - " + sidebarPosX );
+            } else {
+                cssProperties = {
+                    position : "absolute",
+                    bottom: "auto",
+                    top: "0"
+                };
+                UI.sidebar.data("fixed", false);
+            }
+
+            if ( UI.sidebar.data('fixed') == false ) {
+                cssProperties = $.extend(UI.sidebar.hasClass('social-bookmarkers')
+                    ? (rtl ? {right: "-30px", left: "auto"} : {left: "-30px", right: "auto"})
+                    : (rtl ? {left: "0", right: "auto"} : {left: "auto", right: "0"}), cssProperties);
+            }
+        UI.sidebar.css(cssProperties);
+    };
+
+    var scrollTimer;
     UI.windowObj.scroll(function (e) {
-        if ( window.innerWidth >= 768 ) {
-            if ( UI.sidebar ) {
-                var selfOffset = UI.article.offset().top - 139,
-                    selfHeight = UI.article.outerHeight(),
-                    windowOffset = UI.windowObj.scrollTop(),
-                    sidebarHeight = UI.sidebar.outerHeight(true),
-                    sidebarPosX = UI.sidebar.offset().left;
-                    cssProperties = {};
-
-                    if (selfOffset - windowOffset < 0 && (selfOffset - windowOffset > -selfHeight) && (selfOffset - windowOffset < sidebarHeight-selfHeight)) {
-                        cssProperties = {
-                            position : "absolute",
-                            bottom: "0",
-                            top: "auto"
-                        };
-                        UI.sidebar.data("fixed", false);
-                    } else if (selfOffset - windowOffset < 0 && selfOffset - windowOffset > -selfHeight) {
-                        UI.windowObj.scrollLeft() && (sidebarPosX = calculatePosX( sidebar ));
-                        cssProperties = {
-                            position: "fixed",
-                            left: sidebarPosX,
-                            right: "auto",
-                            bottom: "auto",
-                            top: 139
-                        }
-                        UI.sidebar.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
-                        UI.sidebar.data("fixed", true);
-                    } else {
-                        cssProperties = {
-                            position : "absolute",
-                            bottom: "auto",
-                            top: "0"
-                        };
-                        UI.sidebar.data("fixed", false);
-                    }
-
-                    if ( UI.sidebar.data('fixed') == false ) {
-                        cssProperties = $.extend(UI.sidebar.hasClass('social-bookmarkers')
-                            ? (rtl ? {right: "-30px", left: "auto"} : {left: "-30px", right: "auto"})
-                            : (rtl ? {left: "0", right: "auto"} : {left: "auto", right: "0"}), cssProperties);
-                    }
-                UI.sidebar.css(cssProperties);
+        if ( _w >= 768 && UI.sidebar.length ) {
+            if ( !is_touch_device() ) {
+                positioningSidebar();
+            } else {
+                if ( scrollTimer ) clearTimeout( scrollTimer );
+                scrollTimer = setTimeout(function () {
+                    positioningSidebar();
+                }, 500);
             }
         }
     });
