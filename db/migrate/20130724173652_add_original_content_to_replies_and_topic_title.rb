@@ -8,5 +8,6 @@ class AddOriginalContentToRepliesAndTopicTitle < ActiveRecord::Migration
   def self.down
     remove_column :replies, :original_content
     remove_column :topics, :original_title
+    remove_column :topics, :original_content
   end
 end

@@ -27,7 +27,7 @@
   <% @topics.each do |topic| %>
     <tr>
       <td class="created_at"><%= l topic.created_at, :format => :short %></td>
-      <td><%= link_to topic.title.html_safe, topic %></td>
+      <td><%= link_to topic.original_title, topic %></td>
       <td><%= topic.user ? topic.user.username : '' %></td>
       <td class="profile_matches"><%= link_to 'Profile Matches', admin_topic_profile_matches_path(topic) %></td>
       <td class="edit"><%= link_to 'Edit', edit_admin_topic_path(topic) %></td>
