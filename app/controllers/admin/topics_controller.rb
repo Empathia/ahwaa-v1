@@ -12,6 +12,10 @@ class Admin::TopicsController < ApplicationController
   end
 
   def create
+    params[:topic][:original_title] = params[:topic][:title].dup
+    params[:topic][:original_content] = params[:topic][:content].dup
+    emoticons(params[:topic][:title])
+    emoticons(params[:topic][:content])
     @topic = Topic.new(params[:topic])
     @topic_tags = @topic.tags.map{|tag| {'title' => tag.name, 'value' => tag.name}}
     @topic.save

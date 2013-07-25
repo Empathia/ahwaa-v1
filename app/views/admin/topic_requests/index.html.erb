@@ -11,7 +11,7 @@
   <% @topic_requests.each do |topic_request| %>
     <tr>
       <td class="created_at"><%= l topic_request.created_at, :format => :short %></td>
-      <td><%= topic_request.title.html_safe %></td>
+      <td><%= topic_request.original_title %></td>
       <td><%= topic_request.user ? topic_request.user.username : "Deleted user" %></td>
       <td>
         <%= link_to 'Promote to topic', new_admin_topic_path(:from => topic_request.id) %>

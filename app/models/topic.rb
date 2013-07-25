@@ -97,7 +97,7 @@ class Topic < ActiveRecord::Base
   def self.build_from_request(request_id)
     topic_request = TopicRequest.find_by_id(request_id)
     return new unless topic_request
-    topic = new(topic_request.attributes.slice("title", "content", "language", "user_id"))
+    topic = new(topic_request.attributes.slice("title", "content", "language", "user_id", "original_title", "original_content"))
     topic.from_request = request_id
     topic.is_anonymous = 1 if topic_request.anonymous_post?
     topic
