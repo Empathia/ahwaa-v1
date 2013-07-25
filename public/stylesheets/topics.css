@@ -362,6 +362,7 @@
 }
 /* line 126, sass/topics.scss */
 .related-content > div > h2 > span {
+  white-space: nowrap;
   position: relative;
   left: -50%;
   float: left;

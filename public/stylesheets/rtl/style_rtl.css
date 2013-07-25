@@ -4073,6 +4073,7 @@ footer {
 .footer-container > span {
   float:right;
   color: #8f9aa4;
+  white-space: nowrap;
 }
 /* line 1520, sass/style.scss */
 .footer-container > ul {
@@ -4086,6 +4087,7 @@ footer {
 /* line 1523, sass/style.scss */
 .footer-container > ul > li > a {
   color: #7aa4cd;
+  white-space: nowrap;
 }
 @media (max-width: 480px) {
   /* line 1529, sass/style.scss */

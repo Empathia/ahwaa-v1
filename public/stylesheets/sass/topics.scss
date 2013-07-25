@@ -123,7 +123,7 @@
 .related-content {background-color: #ffffff; padding: 16px 20px 0 20px; position: relative;
   > div:first-child{position: relative; overflow: hidden; height: 25px; margin-bottom: 15px;}
   > div > h2{float: left; position: absolute; margin-left: 5px; top: 5px; left: 50%;}
-  > div > h2 > span {position: relative; left: -50%; float: left; top: 0; padding: 0 5px; background-color: #ffffff;}
+  > div > h2 > span {white-space: nowrap; position: relative; left: -50%; float: left; top: 0; padding: 0 5px; background-color: #ffffff;}
   > div > hr{position: absolute; top: 5px; width: 100%; left: 0;}
 
   @include breakpoint(phone) {

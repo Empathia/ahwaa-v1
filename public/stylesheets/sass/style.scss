@@ -1516,11 +1516,11 @@ footer {
 
 .footer-container {
   overflow: hidden; font-size: 12px; padding: 6px 0 5px;
-  > span {float: left; color: #8f9aa4}
+  > span {float: left; color: #8f9aa4; white-space: nowrap}
   > ul {
     float: right;
     > li {display: inline; color: #99b9d8;
-      > a {color: #7aa4cd}
+      > a {color: #7aa4cd; white-space: nowrap}
     }
   }
 
