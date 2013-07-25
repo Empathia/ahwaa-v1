@@ -66,7 +66,7 @@
       </div>
 
       <div class="span6">
-        <div class="video-player">
+        <div class="video-player hidden-phone">
           <div class="preview-image">
             <a href="" title="Preview">
               <span><%= image_tag 'icn-play-video.png', :width => "20", :height => "25"%></span>
@@ -75,6 +75,9 @@
           <div class="preview-video">
             <iframe width="389" height="249" data-src="<%=@video%>" frameborder="0" allowfullscreen></iframe>
           </div>
+        </div>
+        <div class="home-lang-button-wrapper visible-phone">
+          <%= link_to t('.switch_to_english'), root_url(:subdomain => (rtl? ? 'en' : 'ar')), :class => 'lan light-button' %>
         </div>
       </div>
     </div><!-- @row-fluid -->

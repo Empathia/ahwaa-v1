@@ -4,7 +4,9 @@ $bg-color: #d5e6f2;
 $links-color: #2d70b3;
 $subtle-blue: #eff5f9;
 
-html {height: 100%;
+html {
+  height: 100%;
+  -webkit-text-size-adjust: none; /* prevent font scaling in landscape */
   &.no-overflow,
   &.no-overflow body {
     overflow: hidden !important;
