@@ -47,7 +47,7 @@
             <% @recommended.each do |topic| %>
               <% next if current_user.blocks.map{|u| u.block}.include? topic.user %>
               <li class="border-all">
-                <%= link_to topic.title, topic %>
+                <%= link_to topic.title.html_safe, topic %>
               </li>
             <% end %>
           </ul>
@@ -57,7 +57,7 @@
           <% @newest.each do |topic| %>
             <% next if current_user.blocks.map{|u| u.block}.include? topic.user %>
             <li class="border-all">
-              <%= link_to topic.title, topic %>
+              <%= link_to topic.title.html_safe, topic %>
             </li>
           <% end %>
         </ul>

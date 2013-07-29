@@ -14,7 +14,7 @@
       <% end %>
     </div>
     <div class="item-data">
-      <%= link_to topic.title, topic, :class => 'title dark-lk' %>
+      <%= link_to topic.title.html_safe, topic, :class => 'title dark-lk' %>
       <div>
         <span class="by-author">
           <% unless topic.is_anonymous %>

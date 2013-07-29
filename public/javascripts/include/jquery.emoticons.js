@@ -32,11 +32,14 @@
   // Defaults
   $.fn.emotions.defaults = {
     a : "images/smileys/",     // Emotions folder
-    b : new Array("angel","colonthree","confused","cry","devil","frown","gasp","glasses","grin","grumpy","heart","kiki","kiss","pacman","smile","squint","sunglasses","tongue","unsure","upset","wink"),      // Emotions Type
+    b : new Array("angel","colonthree","confused","cry","devil","frown","gasp","glasses","grin","grumpy","heart","kiki","kiss","pacman","smile","squint","sunglasses","tongue","unsure","upset","wink"), // Emotions Type
     s : new Array("o:)",":3","o.O",":'(","3:)",":(",":O","8)",":D",">:(","@3","^_^",":*",":v",":)","-_-","8|",":p",":/","@:O",";)"),
+
+    b : new Array(,"","","","","","","","","","","","","","","","","","",""),      // Emotions Type
+    s : new Array("","","","","","","","","","","","","","","","","","","","",""),
     c : "gif"         // Emotions Image format
   };
-})(jQuery);
+})(jQuery);/images/smileys/wink.gif
 
 
 // Notes

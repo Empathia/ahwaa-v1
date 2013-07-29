@@ -1,7 +1,7 @@
 <% stylesheet 'stream', 'uniform.default' %>
 <% javascript 'stream', 'include/jquery.uniform.min', 'include/jquery-ui.min'%>
 
-<% title @topic.title %>
+<% title @topic.title.html_safe %>
 <% page_description @topic.content %>
 <% head do %>
   <script type="text/javascript">
@@ -103,7 +103,7 @@
             <% end %>
           </div>
           <div class="right clearfix">
-            <h1 id="title-emo"><%= @topic.title %></h1>
+            <h1 id="title-emo"><%= @topic.title.html_safe %></h1>
             <ul class="topic-info">
               <li class="by-author">
                 <% unless @topic.is_anonymous %>

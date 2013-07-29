@@ -28,7 +28,7 @@
             <li class="border-all">
               <div class="topic-spotlight border-top-3">
                 <div class="item-data">
-                  <%= link_to topic.title, topic, :class => 'title' %>
+                  <%= link_to topic.title.html_safe, topic, :class => 'title' %>
                   <div>
                     <%= link_to topic.replies.size, topic, :class => 'responses' %>
                     <ul class="tags">

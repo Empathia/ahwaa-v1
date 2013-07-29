@@ -19,7 +19,7 @@
         <% else %>
           <%= Reply.human_attribute_name(:anonymous) %>
         <% end %>
-        <%= stream_message.title %>
+        <%= stream_message.title.html_safe %>
       </span>
       <span class="time-ago">
         <%= t 'helpers.ago', :time => time_ago_in_words(stream_message.reply.created_at) %>
@@ -31,7 +31,7 @@
 
       <br class="clear" />
     </div>
-    <p class="title"><%= link_to stream_message.reply.topic.title, stream_message.reply.topic %></p>
+    <p class="title"><%= link_to stream_message.reply.topic.title.html_safe, stream_message.reply.topic %></p>
     <blockquote>
       <% if current_user.blocks.map{|u| u.block}.include?(stream_message.reply.user) && !stream_message.reply.anonymous? %>
         <span><i>user blocked</i></span>

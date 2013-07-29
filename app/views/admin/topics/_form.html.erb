@@ -24,14 +24,14 @@
   <%= f.hidden_field :from_request %>
   <p class="field">
     <%= f.label :title %>
-    <%= f.text_field :title, :required => "true" %>
+    <%= f.text_field :title, :required => "true", :value => @topic.original_title %>
   </p>
   <p class="field">
     <%= f.label :content %>
     <% if @topic.new_record? %>
-      <%= f.text_area :content, :required => "true" %>
+      <%= f.text_area :content, :required => "true", :value => @topic.original_content %>
     <% else %>
-      <%= @topic.content %>
+      <%= @topic.original_content %>
     <% end %>
   </p>
   <p class="field">

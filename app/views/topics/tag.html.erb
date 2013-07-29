@@ -34,7 +34,7 @@
 
                   </div>
                   <div class="tag-item-data">
-                    <%= link_to topic.title, topic, :class => 'dark-lk' %>
+                    <%= link_to topic.title.html_safe, topic, :class => 'dark-lk' %>
                     <%= t 'topics.topic.popular.by', :author => topic.author_username %>
                     <br />
                     <ul class="tags">
