@@ -114,7 +114,7 @@
 }
 /* line 78, sass/messages.scss */
 .message-data .msg p {
-  word-break: break-all;
+  word-break: break-word;
 }
 /* line 80, sass/messages.scss */
 .message-data > .from > a {
