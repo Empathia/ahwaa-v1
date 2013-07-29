@@ -1519,6 +1519,7 @@ footer {
   > span {float: left; color: #8f9aa4; white-space: nowrap}
   > ul {
     float: right;
+    white-space: nowrap;
     > li {display: inline; color: #99b9d8;
       > a {color: #7aa4cd; white-space: nowrap}
     }
