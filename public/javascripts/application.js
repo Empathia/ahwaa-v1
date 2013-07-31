@@ -35,7 +35,7 @@ $(function() {
                 if ( searchTimer ) clearTimeout( searchTimer );
                 searchTimer = setTimeout(function() {
                     $.getScript("/search/topics.js?query=" + encodeURIComponent(val));
-                }, 100);
+                }, 50);
             }
         },
         click : function(ev) {

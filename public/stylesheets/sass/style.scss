@@ -470,14 +470,22 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
     width: 0; height: 0; margin: 0; padding: 0;
   }
 }
-.auth-wrapper{height: 28px; float: left; width: 92px; position: relative;}
+.auth-wrapper{
+  z-index: 1;
+  height: 28px; float: left;
+  //width: 92px;
+  position: relative;
+}
 #sign-up:hover + .tooltip-wrapper {display: block}
-.auth-wrapper:first-child{margin-right: 2px;}
+// .auth-wrapper:first-child{margin-right: 10px;}
 .sign-up-lk {border: 1px solid #4785bf; line-height: 2; float: left;}
 .auth-wrapper > .sign-up-lk{text-decoration: none; line-height: inherit}
-.auth-wrapper > a {position: absolute; z-index: 1000; left: 0; height: 26px; text-align: center; overflow: hidden;}
+.auth-wrapper > a {
+  // position: absolute; z-index: 1000; left: 0;
+  height: 26px; text-align: center; overflow: hidden;
+}
 
-.auth-wrapper > a.auth-form-active{height: 31px; text-decoration: none; border: none; left: -3px; padding: 1px 3px 0 3px;}
+.auth-wrapper > a.auth-form-active{position: relative; height: 31px; text-decoration: none; border: none; left: -3px; padding: 1px 3px 0 3px}
 
 .auth-wrapper > #sign-up > span {float: left; /*width: 72px;*/ padding: 5px 8px 0; border: 1px solid; border-color: #c1ddf3 #71a8dd #507cc4 #649bd6; height: 19px; white-space: nowrap;}
 .sign-up-btn{font-size: 16px; color: #ffffff; text-align: center;
@@ -500,7 +508,7 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 .over-form.auth-form-active {
   outline: 0 none;
   overflow: auto;
-
+  z-index: -1;
   @include breakpoint(tablet-landscape-desktop) {
     top: 81px !important;
     position: fixed;
@@ -549,16 +557,33 @@ input:focus:invalid, #twitter textarea:focus:invalid{border: 1px solid #e79090;}
 }
 
 .auth-wrapper #sign-up.auth-form-active > span,
-.auth-wrapper #sign-up.auth-form-active > span:hover {height: 25px; background: #f6f9fb; color: #66a8d6; border-style: none; border-color: transparent; padding: 6px 9px 0;
+.auth-wrapper #sign-up.auth-form-active > span:hover {
+  height: 25px;
+  background: #f6f9fb;
+  color: #66a8d6;
+  border-style: none;
+  border-color: transparent;
+  padding: 6px 9px 0;
   @include border-radius(5px 5px 0 0);
   @include box-shadow(0 1px 3px rgba(42, 83, 110, .6));
 }
-
-.sign-up > .auth-form-active:first-child{
+.sign-up > .auth-wrapper:first-child > a {
+  margin-right: 10px;
+}
+.sign-up > .auth-wrapper:first-child > a.auth-form-active {
+  margin-right: 6px;
+}
+.sign-up > .auth-form-active:first-child {
   @include border-radius(0);
 }
 .auth-wrapper #login.auth-form-active > span,
-.auth-wrapper #login.auth-form-active > span:hover {height: 25px; background: #f6f9fb; color: #66a8d6; border-style: none; border-color: transparent; padding: 6px 10px 0;
+.auth-wrapper #login.auth-form-active > span:hover {
+  height: 25px;
+  background: #f6f9fb;
+  color: #66a8d6;
+  border-style: none;
+  border-color: transparent;
+  padding: 6px 10px 0;
   @include border-radius(5px 5px 0 0);
   @include box-shadow(0 0 3px rgba(42, 83, 110, .6), inset 0 1px 0 #fff);
 }
@@ -775,8 +800,12 @@ footer > div > div > ul{float: right;}
 footer > div > div > ul > li{display: inline;}
 footer > div > div > span{float: left; color: #667580;}
 
-.over-form{position: absolute; top: 0; left: 0; width: 280px; background-color: #f6f9fb; display: none; padding: 15px; color: #797e84; z-index: 999; border-top: none;
-  @include border-radius(0 5px 5px 5px);
+.over-form {
+  position: absolute; top: 0; left: 0; width: 280px; background-color: #f6f9fb; display: none; padding: 15px; color: #797e84; z-index: 999; border-top: none;
+  @include border-top-left-radius(0);
+  @include border-top-right-radius(5px);
+  @include border-bottom-right-radius(5px);
+  @include border-bottom-left-radius(5px);
   @include box-shadow(0 1px 3px rgba(42, 83, 110, .6));
 }
 

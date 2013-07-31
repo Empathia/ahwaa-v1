@@ -222,11 +222,11 @@ $(function(){
     }
 
     var positioningSidebar = function positioningSidebar () {
-        var selfOffset = UI.article.offset().top - 139,
-            selfHeight = UI.article.outerHeight(),
-            windowOffset = UI.windowObj.scrollTop(),
-            sidebarHeight = UI.sidebar.outerHeight(true),
-            sidebarPosX = Math.round( (UI.mainContent.offset().left + UI.mainContent.width() + 20) ), //Math.round( UI.sidebar.offset().left );
+        var selfOffset      = UI.article.offset().top - 139,
+            selfHeight      = UI.article.outerHeight(),
+            windowOffset    = UI.windowObj.scrollTop(),
+            sidebarHeight   = UI.sidebar.outerHeight(true),
+            sidebarPosX     = Math.round( UI.sidebar.offset().left ),
             cssProperties = {};
 
             if (selfOffset - windowOffset < 0 && (selfOffset - windowOffset > -selfHeight) && (selfOffset - windowOffset < sidebarHeight-selfHeight)) {
@@ -247,7 +247,6 @@ $(function(){
                 }
                 UI.sidebar.hasClass('social-bookmarkers') && (cssProperties = $.extend({top: 112},cssProperties));
                 UI.sidebar.data("fixed", true);
-                $('.rainbow').text( UI.sidebar.offset().left + " - " + sidebarPosX );
             } else {
                 cssProperties = {
                     position : "absolute",

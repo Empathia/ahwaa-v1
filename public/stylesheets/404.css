@@ -1,40 +1,63 @@
-body {                               
+@font-face {
+  font-family: 'GothamMediumRegular';
+  src:  url("../stylesheets/fonts/gotham-medium.ttf") format('truetype'),
+        url("../stylesheets/fonts/gotham-medium.eot") format('opentype'),
+        url("../stylesheets/fonts/gotham-medium.woff") format('woff'),
+        url("../stylesheets/fonts/gotham-medium.svg") format('svg');
+}
+
+body {
   padding: 0;
-  margin: 0;                                                      
+  margin: 0;
   background: #E3ECF0 url('../images/bg-gradient.jpg') repeat-x 0 0;
 }
 
-body > div{
-  height: 633px;                    
-  background-position: 50% 0; 
-  background-repeat: no-repeat;
-  background-image: url('../images/error-404-bg.png');
+.wrapper {
   position: relative;
-}
-
-body > .rtl{
-  background-image: url('../images/error-404-bg-ar.png');
-}
-
-body > .error-500{
-  background-image: url('../images/error-500-bg.png');  
-}
-
-body > .error-500-rtl{
-  background-image: url('../images/error-500-bg-ar.png');  
-}
-
-body > div > p{
-  font-family: Arial;
-  font-size: 13px;
-  color: #5d646a;  
+  max-width: 1009px;
+  margin: 0 auto;
   text-align: center;
-  position: absolute;
-  bottom: 3px; 
-  width: 100%;
+}
+
+img {
+  width:  100%;
+  height: auto;
+  max-width: 1009px;
+  margin: -1% auto -12%;
+}
+
+.title {
+  font-size: 1.500em;
+  line-height: 1.2em;
+  margin: .7em 2.5em;
+  font-family: 'GothamMediumRegular';
+  color: #fff;
+  text-shadow: 0 1px 1px #235a78, 0 -2px 8px rgba(255, 255, 255, .11);
+}
+
+.info {
+  font-family: Arial;
+  font-size: 0.813em;
+  margin: 1em 2.5em;
+  color: #5d646a;
+  text-align: center;
   line-height: 20px;
 }
 
-body > div > p > a{
+a {
   color: #468ac4;
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2em;
+    margin: 1.5em 2.5em 0;
+  }
+  .info {
+    margin: 1em 3em;
+    font-size: .75em;
+  }
+  .rtl .info {
+    font-size: 0.813em;
+  }
 }

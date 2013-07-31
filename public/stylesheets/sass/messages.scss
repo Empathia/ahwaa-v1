@@ -75,7 +75,7 @@
   float: left; width: 520px; margin-left: 10px;
   .msg {
     a {color: #494b4c; font-size: 13px}
-    p {word-break: break-all}
+    p {word-break: break-word}
   }
   > .from > a {font-size: 13px; float: left; padding-top: 11px}
 }
