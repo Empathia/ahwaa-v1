@@ -170,7 +170,6 @@ $(function(){
             type: 'GET',
             success: function(data) {
                 $(".insert-all").html(data);
-                // $(".related-carrousel").children().show();
                 if (callback) callback();
              }
         });
@@ -178,6 +177,7 @@ $(function(){
 
 
     $('.view-more').click(function(e){
+        $('.view-more > span').css("background", "url(../images/loading-s-white.gif) no-repeat 105% 1px");
         var topic_id  = $(".view-more").data("topic-id");
         getRealtedContent(topic_id, abc);
         function abc() {
