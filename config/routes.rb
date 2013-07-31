@@ -24,8 +24,12 @@ Lgbt::Application.routes.draw do
   end
   resource :user, :path => "myprofile", :only => [:show, :destroy, :edit, :update] do
     get "inbox"
+
   end
   resources :users, :except => [:show, :destroy, :update, :edit] do
+    collection do
+        get :card
+    end
     resource :private_messages, :only => [:create]
   end
 
@@ -40,6 +44,9 @@ Lgbt::Application.routes.draw do
   resources :bad_words, :only => [:index]
 
   resources :topics, :only => [:show] do
+    collection do
+        get :related_content
+    end
     resources :replies, :only => [:create] do
       member do
         post :flag

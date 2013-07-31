@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
   respond_to :js, :only => [:update, :create]
   before_filter :get_user, :except =>[:profile]
-  skip_before_filter :authenticate_user!, :only => [:profile, :create]
+  skip_before_filter :authenticate_user!, :only => [:profile, :create, :card]
 
   def show
   end
 
   def inbox
     @messages = @user.received_messages.group(:conversation_id).order('updated_at desc').paginate(:page => params[:page], :per_page => 100).all
+  end
+
+  def card
+    @user = User.find(params[:user_id])
+    render :layout => false
   end
 
   def create

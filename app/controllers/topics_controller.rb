@@ -13,6 +13,15 @@ class TopicsController < ApplicationController
     @meta_description = @topic.meta_description
     @meta_keywords = @topic.meta_keywords
     current_user.visit_topic!(@topic) if logged_in?
+    @related_topics = @topic.related_topics.reject{|k| current_user.blocks.map{|u| u.block}.include? k.user}.first(4) if logged_in?
+    @related_topics = @topic.related_topics.first(4) unless logged_in?
+  end
+
+  def related_content
+    @topic = Topic.includes(:replies).find(params[:topic_id])
+    @related_topics = @topic.related_topics.reject{|k| current_user.blocks.map{|u| u.block}.include? k.user} if logged_in?
+    @related_topics = @topic.related_topics unless logged_in?
+    render :layout => false
   end
 
   def tag

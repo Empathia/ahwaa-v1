@@ -1,23 +1,20 @@
+<% related_topics = @related_topics %>
 <% unless related_topics.blank? %>
   <section class="related-content border-all" data-hansel-component-id="related-content">
     <div>
       <hr>
       <h2 class="sec-title-med">
-        <span><%= t('.title') %></span>
+        <span><%= t('topics.related_topics.title') %></span>
       </h2>
     </div>
     <div class="related-carrousel">
-      <ul class="items">
+      <ul class="items clearfix">
         <%= render :partial => related_topics, :locals => {:leng => related_topics.count} %>
       </ul>
     </div>
     <div class="related-content-line"></div>
     <div class="view-more-wrapper">
-      <%# if related_topics.count > 4 %>
-        <a href="#" class="view-more" data-topic-id="<%=@topic.id%>">
-          <span><%= t('.view_more') %></span>
-        </a>
-      <%# end %>
+
     </div>
     <br class="clear">
   </section>

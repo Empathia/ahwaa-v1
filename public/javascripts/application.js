@@ -118,6 +118,24 @@ $(function() {
     /* Avatars RollOver */
     var privateMessageTooltips = $('.private-msg.tooltip-box');
 
+    function getUserCardInfo (user_id, card,callback) {
+        $.ajax({
+            url: '/users/card',
+            data: {user_id: user_id},
+            type: 'GET',
+            success: function(data) {
+                card.data("loaded", true);
+                card.html(data);
+                if (callback) callback();
+             }
+        });
+    }
+
+    // $(function () {
+    //     // Listen to the profile match fomr select tags to filter results dinamically
+    //     $('#profile_match_filters_form').find('select').change(getProfileTopicMatches);
+    // });
+
     setTimeout(function(){
         var avatarWrappers  = $('.avatar-wrapper'),
             avatarLinks     = avatarWrappers.find('> a'),
@@ -133,11 +151,11 @@ $(function() {
             timeout : 500,
             over : function (e) {
                 var _this = $(this);
-
+                var card = _this.find(".private-msg");
+                var user_id = card.data("user-id");
                 if ( _this.css('pointer-events') === "none" ) {
                     return false;
                 }
-
                 var rollover = _this.find('.private-msg');
                 privateMessageTooltips.fadeOut(100);
 
@@ -166,8 +184,21 @@ $(function() {
                             rollover.css('top', rollover_top);
                         }
                     } else if ( rollover.parents('.footer-avatar').length ) {
-                        rollover.addClass('bottom-avatar');
-                        rollover.css('top', -(rollover_bottom));
+                        if (card.data("loaded") === false){
+                            if (card.data("loaded") === false){
+                                getUserCardInfo(user_id, card, abc);
+                            }
+                            function abc() {
+                                var rollover = _this.find('.private-msg');
+                                var rollover_bottom = (rollover.outerHeight() + 3);
+
+                                rollover.addClass('bottom-avatar');
+                                rollover.css('top', -(rollover_bottom));
+                            }
+                        } else {
+                            rollover.addClass('bottom-avatar');
+                            rollover.css('top', -(rollover_bottom));
+                        }
                     } else {
                         if ( rollover.hasClass('inside') ) {
                             rollover.removeClass('inside')
@@ -177,6 +208,9 @@ $(function() {
                     }
 
                     rollover.fadeIn(100);
+                    if (card.data("loaded") === false){
+                        getUserCardInfo(user_id, card);
+                    }
 
                     if ( is_touch_device ) {
                         doc.bind('touchstart.outOfCard', function (ev) {

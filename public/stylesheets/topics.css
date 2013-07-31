@@ -1507,7 +1507,6 @@ header > .right > .by-author {
 }
 /* line 498, sass/topics.scss */
 .related-carrousel > .items {
-  float: left;
   width: 100%;
 }
 /* line 500, sass/topics.scss */

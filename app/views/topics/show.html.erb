@@ -1,7 +1,7 @@
 <% stylesheet 'stream', 'uniform.default' %>
 <% javascript 'stream', 'include/jquery.uniform.min', 'include/jquery-ui.min'%>
 
-<% title @topic.title.html_safe %>
+<% title @topic.original_title %>
 <% page_description @topic.content %>
 <% head do %>
   <script type="text/javascript">
@@ -20,23 +20,23 @@
         <% end %>
       </section>
       <section class="filter">
-        <h2 class="sec-title regular <%= "disabled" if @replies.length == 0 %>"><span><%= t('.sidebar.filter_responses.title') %></span></h2>
+        <h2 class="sec-title regular <%= "disabled" if @replies.count == 0 %>"><span><%= t('.sidebar.filter_responses.title') %></span></h2>
         <ul class="filter-responses">
           <% Reply::CATEGORIES.each_with_index do |category, i| %>
             <li class="<%= "even" if (i-1)%2 == 0 %>">
-              <%= check_box_tag :filter_category, category, false, :disabled => @topic.replies.by_category(category).length == 0 %>
-              <%= label_tag "filter_#{category} ", :class => "#{category} #{'disabled' if @topic.replies.by_category(category).length == 0}" do %>
-                <%= Reply.human_attribute_name(category) %> <span>(<%= @topic.all_replies.by_category(category).length %>)</span>
+              <%= check_box_tag :filter_category, category, false, :disabled => @topic.replies.by_category(category).count == 0 %>
+              <%= label_tag "filter_#{category} ", :class => "#{category} #{'disabled' if @topic.replies.by_category(category).count == 0}" do %>
+                <%= Reply.human_attribute_name(category) %> <span>(<%= @topic.all_replies.by_category(category).count %>)</span>
               <% end %>
             </li>
           <% end %>
         </ul>
       </section>
       <section class="helpful <%= "disabled" if @replies.length == 0 %>">
-        <%= check_box_tag :filter_helpful, true, false, :disabled => @replies.length == 0 %>
+        <%= check_box_tag :filter_helpful, true, false, :disabled => @replies.count == 0 %>
         <label for="" id="helpful-comms"><%= t('.sidebar.filter_helpful') %></label>
       </section>
-      <% if @topic.leaderboard.length > 0 %>
+      <% if @topic.leaderboard.count > 0 %>
       <section class="experts">
         <h2 class="sec-title regular"><span><%= t('.sidebar.experts.title') %></span></h2>
         <ul class="topic-avatars">
@@ -184,10 +184,8 @@
       </article>
     </div>
   </div>
-  <div class="left-side container-soft-box-shadow">
-    <% related_topics = @topic.related_topics.reject{|k| current_user.blocks.map{|u| u.block}.include? k.user} if current_user %>
-    <% related_topics = @topic.related_topics unless current_user %>
-    <%= render :partial => 'related_topics', :locals => {:related_topics => related_topics} %>
+  <div class="left-side container-soft-box-shadow 0">
+    <%= render :partial => 'related_topics', :locals => {:related_topics => @related_topics} %>
   </div>
 </div>
 <%= form_for Reply.new, :url => topic_replies_path(@topic), :html => { :id => 'add_comments', :class => 'add_comments border-all' }, :remote => true do |f| %>

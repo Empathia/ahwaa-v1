@@ -163,21 +163,42 @@ $(function(){
         }, 50);
     });
 
-    var carrouselWrapper = $('.related-carrousel'),
-        carrousel = carrouselWrapper.children('ul:eq(0)');
+    function getRealtedContent (topic_id, callback) {
+        $.ajax({
+            url: '/topics/related_content',
+            data: {topic_id: topic_id},
+            type: 'GET',
+            success: function(data) {
+                $(".insert-all").html(data);
+                // $(".related-carrousel").children().show();
+                if (callback) callback();
+             }
+        });
+    }
+
 
     $('.view-more').click(function(e){
-        !($.browser.msie && $.browser.version == '7.0') && carrouselWrapper.css({
-            overflow: 'hidden',
-            height: carrouselWrapper.height()
-        });
-        carrousel.children().show();
-        if ( !($.browser.msie && $.browser.version == '7.0') && carrousel.outerHeight() > carrouselWrapper.outerHeight() ) {
-            $(this).hide();
-            carrouselWrapper.animate({height:carrousel.outerHeight()}, function(){
-                carrouselWrapper.css('overflow', 'visible');
+        var topic_id  = $(".view-more").data("topic-id");
+        getRealtedContent(topic_id, abc);
+        function abc() {
+            var carrouselWrapper = $('.related-carrousel'),
+            carrousel = carrouselWrapper.children('ul:eq(0)');
+            carrousel.children().show();
+
+            !($.browser.msie && $.browser.version == '7.0') && carrouselWrapper.css({
+                overflow: 'hidden',
+                height: carrouselWrapper.height()
             });
+
+            if ( !($.browser.msie && $.browser.version == '7.0') && carrousel.outerHeight() > carrouselWrapper.outerHeight() ) {
+                console.log("SECOND")
+                $(this).hide();
+                carrouselWrapper.animate({height:carrousel.outerHeight()}, function(){
+                    carrouselWrapper.css('overflow', 'visible');
+                });
+            }
         }
+
         e.preventDefault();
         return false;
     });
