@@ -47,7 +47,7 @@
             <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.count}%>
           </ul>
         <% elsif reply.parent.nil? %>
-          <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' unless reply.user.deleted? %>
+          <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' unless (reply.user && reply.user.deleted?) %>
         <% end %>
         <% if reply.parent.nil? && (reply.user && !reply.user.deleted?)%>
           <%= render :partial => "shared/new_response", :locals => { :global => true } %>
