@@ -41,7 +41,7 @@ ar:
         anonymous_post: "إنشر هذا الموضوع كمستخدم مجهول"
       reply:
         anonymous: "مجهول"
-        deleted: "هذا العضو قد ألغى حسابه"
+        deleted: User Deleted
         deleted_comment: "هذا العضو قد ألغى حسابه"
         advice: نصيحة
         comment: تعليق

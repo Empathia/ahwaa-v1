@@ -22,6 +22,7 @@ class Admin::UsersController < ApplicationController
       @user.email = @user.old_email
       @user.save
     else
+      @user.reload.topics.map{|topic| topic.update_attribute(:is_anonymous, true)}
       old = @user.email.dup
       @user.deleted = true
       @user.email = Time.now.to_i.to_s + "@ahwaa.org"
