@@ -5,7 +5,7 @@
     <th class="email">Email</th>
     <th class="is_expert">Is Expert</th>
     <th class="actions">Actions</th>
-    <th class="delete border-right">Delete</th>    
+    <th class="delete border-right">Delete</th>
   </tr>
   <% @users.each do |user| %>
     <tr>
@@ -15,7 +15,11 @@
       <td>
         <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user.id), :method => :put %>
       </td>
-      <td><%= link_to 'Delete', admin_user_path(user.id), :method => :delete %></td>
+      <%if user.deleted? %>
+        <td><%= link_to 'activate', admin_user_path(user.id), :method => :delete %></td>
+      <% else %>
+        <td><%= link_to 'delete', admin_user_path(user.id), :method => :delete %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>

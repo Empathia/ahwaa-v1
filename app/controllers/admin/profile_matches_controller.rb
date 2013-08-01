@@ -2,8 +2,8 @@ class Admin::ProfileMatchesController < ApplicationController
   layout 'admin'
 
   before_filter :get_topic
-  
-  def index 
+
+  def index
   end
 
   def list_matches
@@ -16,7 +16,7 @@ class Admin::ProfileMatchesController < ApplicationController
     if @user.is_expert?
       @topic.experts << @user
     end
-    @user.notify_about_topic!(@topic)
+    @user.notify_about_topic!(@topic) if @user && !@user.deleted?
   end
 
 private

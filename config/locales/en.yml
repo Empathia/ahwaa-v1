@@ -41,6 +41,8 @@ en:
         anonymous_post: "Post this topic anonymously"
       reply:
         anonymous: Anonymous
+        deleted: User Deleted
+        deleted_comment: This user has deleted their account.
         advice: Advice
         comment: Comment
         experience: Experience

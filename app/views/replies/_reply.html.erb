@@ -7,24 +7,26 @@
       <div>
         <div class="response-user">
           <div class="avatar-wrapper">
-            <% unless reply.anonymous? %>
+            <% unless reply.anonymous? || reply.user.deleted? %>
               <%= avatar_span(reply.user, reply.user.is_expert?) %>
             <% else %>
               <span class="avatar">
                 <%= image_tag(reply.author_avatar, :width => '56') %>
               </span>
             <% end %>
-            <% unless reply.anonymous? %>
+            <% unless reply.anonymous? || reply.user.deleted? %>
               <%= render :partial => 'users/card', :locals => {:user => reply.user} %>
             <% end %>
           </div>
           <div class="res-username">
-            <% unless reply.anonymous? %>
+            <% if reply.anonymous?%>
+              <%= t(".anonymous") %>
+            <% elsif reply.user.deleted? %>
+              <%= t(".deleted") %>
+            <% else %>
               <%= link_to profile_path(reply.user.username) do %>
                 <span><%= reply.user.username %></span>
               <% end %>
-            <% else %>
-              <%= t(".anonymous") %>
             <% end %>
           </div>
           <div class="res-type-wrapper">
@@ -35,15 +37,19 @@
             </div>
           </div>
         </div>
-        <%= simple_format(reply.content).html_safe %>
+        <% if reply.user && reply.user.deleted? %>
+          <%= t("activerecord.attributes.reply.deleted_comment") %>
+        <% else %>
+          <%= simple_format(reply.content).html_safe %>
+        <% end %>
         <% if reply.replies.count > 0 %>
           <ul class="comments-ls">
             <%= render :partial => "replies/reply", :collection => reply.replies, :locals => {:noArrow => true, :leng => reply.replies.count}%>
           </ul>
         <% elsif reply.parent.nil? %>
-          <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' %>
+          <%= link_to t(".reply_to", :username => reply.author_username), nil, :class => 'reply-to' unless reply.user.deleted? %>
         <% end %>
-        <% if reply.parent.nil? %>
+        <% if reply.parent.nil? && (reply.user && !reply.user.deleted?)%>
           <%= render :partial => "shared/new_response", :locals => { :global => true } %>
         <% end %>
       </div>

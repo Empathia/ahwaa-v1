@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       flash[:notice] = t('flash.users.create.notice')
-      @user.notify_sign_up_confirmation!
+      @user.notify_sign_up_confirmation! if @user && !@user.deleted?
     end
   end
 

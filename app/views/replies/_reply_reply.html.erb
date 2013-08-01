@@ -6,7 +6,7 @@
     <div>
       <div class="response-user">
         <div class="avatar-wrapper">
-          <% unless reply_reply.anonymous? %>
+          <% unless reply_reply.anonymous? || reply.user.deleted? %>
             <%= link_to profile_path(reply_reply.user) do %>
               <%= avatar_span(reply_reply.user, reply_reply.user.is_expert?) %>
             <% end %>
@@ -15,13 +15,13 @@
               <%= image_tag(reply_reply.author_avatar, :width => '56') %>
             </span>
           <% end %>
-          <% unless reply_reply.anonymous? %>
+          <% unless reply_reply.anonymous? || reply.user.deleted? %>
             <%= render :partial => 'users/card', :locals => {:user => reply_reply.user} %>
           <% end %>
         </div>
         <div>
           <div class="res-username">
-            <% unless reply_reply.anonymous? %>
+            <% unless reply_reply.anonymous? || reply.user.deleted? %>
               <p><%= reply_reply.user.username %></p>
             <% else %>
               <%= t("replies.reply.anonymous") %>

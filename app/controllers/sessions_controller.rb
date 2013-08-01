@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_for_database_authentication(params[:login])
     @authenticated = @user && @user.authenticate!(params[:password])
-    session[:current_user] = @user.id if @authenticated
+    session[:current_user] = @user.id if @authenticated && !@user.deleted?
   end
 
   def destroy

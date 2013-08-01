@@ -17,7 +17,18 @@ class Admin::UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    if @user.deleted?
+      @user.deleted = false
+      @user.email = @user.old_email
+      @user.save
+    else
+      old = @user.email.dup
+      @user.deleted = true
+      @user.email = Time.now.to_i.to_s + "@ahwaa.org"
+      @user.old_email = old
+      @user.save
+    end
+    #@user.destroy
     respond_with(@user, :location => [:admin, :users])
   end
 

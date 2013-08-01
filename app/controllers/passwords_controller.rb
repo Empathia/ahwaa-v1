@@ -5,7 +5,7 @@ class PasswordsController < ApplicationController
 
   def create
     @user = User.find_for_database_authentication(params[:login])
-    @user.notify_password_reset! if @user
+    @user.notify_password_reset! if @user && !@user.deleted?
   end
 
   def edit
