@@ -42,6 +42,7 @@
         <ul class="topic-avatars">
           <% @topic.leaderboard.each_with_index do |user, i| %>
           <% next if current_user && current_user.blocks.map{|u| u.block}.include?(user) %>
+          <% next if user.deleted? %>
             <li class="avatar-wrapper">
               <%= link_to profile_path(user) do %>
                 <%= avatar_span(user, user.is_expert?) %>

@@ -46,10 +46,10 @@ class ApplicationController < ActionController::Base
   private
 
   def hall_of_fame
-    @fame_helpful = Rating.select('reply_id, user_id, sum(vote) as sum_vote').where("user_id <> 1").order('sum_vote desc').group(:reply_id).limit(1).first.try(:reply).try(:user)
-    @fame_active = Reply.select('user_id, count(user_id) as replies_count').where("user_id <> 1").group(:user_id).order('replies_count desc').limit(1).first.try(:user)
-    @fame_topics = Topic.select('user_id, count(user_id) as topics_count').where("user_id <> 1").group(:user_id).order('topics_count desc').limit(1).first.try(:user)
-    @fame_points = ScoreBoard.select('user_id').where("user_id <> 1").order("current_points DESC").limit(1).first.try(:user)
+    @fame_helpful = Rating.select('reply_id, user_id, sum(vote) as sum_vote').joins(:user).where("user_id <> 1 AND users.deleted = false").order('sum_vote desc').group(:reply_id).limit(1).first.try(:reply).try(:user)
+    @fame_active = Reply.select('user_id, count(user_id) as replies_count').joins(:user).where("user_id <> 1 AND users.deleted = false").group(:user_id).order('replies_count desc').limit(1).first.try(:user)
+    @fame_topics = Topic.select('user_id, count(user_id) as topics_count').joins(:user).where("user_id <> 1 AND users.deleted = false").group(:user_id).order('topics_count desc').limit(1).first.try(:user)
+    @fame_points = ScoreBoard.select('user_id').joins(:user).where("user_id <> 1 AND users.deleted = false").order("current_points DESC").limit(1).first.try(:user)
   end
 
   def record_not_found
