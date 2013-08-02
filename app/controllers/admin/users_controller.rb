@@ -20,14 +20,14 @@ class Admin::UsersController < ApplicationController
     if @user.deleted?
       @user.deleted = false
       @user.email = @user.old_email
-      @user.save
+      @user.save(false)
     else
       @user.reload.topics.map{|topic| topic.update_attribute(:is_anonymous, true)}
       old = @user.email.dup
       @user.deleted = true
       @user.email = Time.now.to_i.to_s + "@ahwaa.org"
       @user.old_email = old
-      @user.save
+      @user.save(false)
     end
     #@user.destroy
     respond_with(@user, :location => [:admin, :users])

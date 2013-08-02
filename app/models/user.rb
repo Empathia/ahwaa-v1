@@ -56,7 +56,6 @@ class User < ActiveRecord::Base
   scope :suggestions_with_similar_topics, lambda{ |user, topic_ids|
                 joins("LEFT OUTER JOIN subscriptions ON (subscriptions.user_id = users.id AND subscriptions.topic_id IN (#{topic_ids}))")\
                 .where("users.id != ? and subscriptions.topic_id is not NULL", user.id)\
-                .where('users.deleted = ?', false)\
                 .group('users.id')\
                 .having('count(users.id) >= 2')\
                 .order('count(users.id) desc, RAND()')\
