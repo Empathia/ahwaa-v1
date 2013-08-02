@@ -1,9 +1,13 @@
 <% head do %>
   <script type="text/javascript">
       $(function(){
+          $('.featured-link').bind('ajax:beforeSend', function (data){
+            $(this).siblings('img').show();
+          });
           $('.featured-link').bind('ajax:success', function (data){
               var checkbox = $(this).find('input');
               checkbox.attr('checked', !checkbox.attr('checked'));
+              $(this).siblings('img').hide();
           });
       });
   </script>
@@ -35,6 +39,7 @@
         <%= link_to toggle_admin_featured_topic_path(topic), :method => :post, :remote => true, "data-type" => :json, :class => 'featured-link' do %>
           <%= check_box_tag 'featured[]', value = "1", topic.featured %>
         <% end %>
+        <img src="/images/loading-s-white.gif" style="display:none">
       </td>
       <td class="delete"><%= link_to 'Delete', admin_topic_path(topic), :method => :delete, :confirm => "Are you sure?" %></td>
     </tr>
