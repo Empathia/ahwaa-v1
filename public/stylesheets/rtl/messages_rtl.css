@@ -378,7 +378,7 @@
 /* line 148, sass/messages.scss */
 .replies-wrapper > .discussion-wrapper > .message-data > .msg {
   line-height: 20px;
-  word-break: break-all;
+  word-break: break-word;
 }
 
 /* line 162, sass/messages.scss */
