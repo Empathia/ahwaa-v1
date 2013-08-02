@@ -1,5 +1,5 @@
 if($('#received_message_<%= @conversation.id %>').length === 0) {
-  location.href = <%= @loc %>;
+  location.href = "<%= @loc %>";
 } else {
   $('#received_message_<%= @conversation.id %>').fadeOut();
 }

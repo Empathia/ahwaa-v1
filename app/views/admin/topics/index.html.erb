@@ -3,8 +3,7 @@
       $(function(){
           $('.featured-link').bind('ajax:beforeSend', function (data){
             $(this).siblings('img').show();
-          });
-          $('.featured-link').bind('ajax:success', function (data){
+          }).bind('ajax:complete', function (data){
               var checkbox = $(this).find('input');
               checkbox.attr('checked', !checkbox.attr('checked'));
               $(this).siblings('img').hide();

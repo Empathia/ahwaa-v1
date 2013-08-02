@@ -12,6 +12,9 @@ class Admin::FeaturedTopicsController < ApplicationController
     @topic.featured = !@topic.featured
     @topic.save
 
-    respond_with(@topic)
+    #respond_with(@topic)
+    respond_to do |format|
+      format.json { head :ok }
+    end
   end
 end
