@@ -23,6 +23,7 @@ class PrivateMessagesController < ApplicationController
 
   def destroy
     @conversation.received_messages_thread(current_user).each(&:destroy)
+    @loc = "/profile/" + current_user.username
   end
 
   private

@@ -12,7 +12,7 @@
     <% end %>
   </div>
   <div class="message-data">
-    <div class="from">
+    <div class="from"><%= reply.sender.deleted?%>
       <%= reply.sender ? reply.sender.username : t('user_deleted') %>
       <span class="date"><%= l(reply.created_at.to_date, :format => :inbox) %></span>
     </div>
