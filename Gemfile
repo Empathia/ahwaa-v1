@@ -24,10 +24,6 @@ gem 'resque_mailer'
 gem "sass", "~> 3.2.3"
 gem "compass-rails", "~> 1.0.3"
 
-group :production do
-  gem 'rack-ssl', :require => 'rack/ssl'
-end
-
 group :development, :test do
   gem "shoulda", '~> 2.11.3'
   gem "rspec-rails", "~> 2.3.0"
