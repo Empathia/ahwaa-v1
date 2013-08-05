@@ -30,7 +30,7 @@ Lgbt::Application.configure do
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
   config.serve_static_assets = false
-
+  config.middleware.insert_before ActionDispatch::Static, "Rack::SSL"
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
@@ -43,7 +43,6 @@ Lgbt::Application.configure do
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
   config.i18n.fallbacks = true
-  config.force_ssl = true
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
