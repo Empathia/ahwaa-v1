@@ -7,7 +7,7 @@ class SubscriptionsController < ApplicationController
       subscription.destroy
       redirect_to subscription.topic, :notice => t('flash.subscriptions.unsubscribe.notice')
     else
-      redirect_to root_path, :alert => t('flash.subscriptions.unsubscribe.alert')
+      redirect_to root_path, :notice => t('flash.subscriptions.unsubscribe.alert')
     end
   end
 

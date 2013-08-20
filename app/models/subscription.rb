@@ -13,8 +13,11 @@ class Subscription < ActiveRecord::Base
   def generate_hash_key
     self.hash_key = Digest::SHA1.hexdigest([topic.id, user.email].join(Time.now.to_i.to_s))
   end
-  
+
   def clean_stream
-    topic.stream_messages.destroy_all
+    topic.stream_messages.each do |message|
+      users = message.stream_users.where(:user_id => self.user_id)
+      users.destroy_all
+    end
   end
 end
