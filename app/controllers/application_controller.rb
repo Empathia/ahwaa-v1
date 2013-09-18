@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   respond_to :html
 
   before_filter :authenticate_user!
-  before_filter :authenticate_admin!
   before_filter :set_locale
   #before_filter :secure_with_ssl
   before_filter :hall_of_fame
@@ -113,7 +112,22 @@ class ApplicationController < ActionController::Base
 
   # Validate admin authentication if route is within the /admin path
   def authenticate_admin!
-    if self.class.name =~ /Admin/ && !current_user.is_admin?
+    if self.class.name =~ /Admin/ && current_user.is_mod?
+      redirect_to admin_flagged_replies_path
+      false
+    elsif self.class.name =~ /Admin/ && !current_user.is_admin?
+      flash[:alert] = t('flash.application.should_be_admin')
+      (redirect_to :back rescue redirect_to root_path)
+      false
+    else
+      true
+    end
+  end
+  # Validate admin authentication if route is within the /admin path
+  def authenticate_mod!
+    if self.class.name =~ /Admin/ && current_user.is_admin?
+      true
+    elsif self.class.name =~ /Admin/ && !current_user.is_mod?
       flash[:alert] = t('flash.application.should_be_admin')
       (redirect_to :back rescue redirect_to root_path)
       false

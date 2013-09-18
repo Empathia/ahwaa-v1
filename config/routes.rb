@@ -73,6 +73,7 @@ Lgbt::Application.routes.draw do
     end
     resources :flagged_replies, :only => [:index, :destroy] do
       put 'unflag', :on => :member
+      post 'bulk_update', :on => :collection
     end
     resource  :bad_words, :only => [:show, :update]
     resources :topic_requests, :only => [:index, :destroy]
@@ -94,6 +95,10 @@ Lgbt::Application.routes.draw do
     resources :users, :only => [:index, :destroy, :edit, :update] do
       member do
         put :toggle_expert
+        put :toggle_mod
+      end
+      collection do
+        get :search_users
       end
     end
     root :to => 'topics#index'

@@ -1,4 +1,5 @@
 class Admin::TagsController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'admin'
   respond_to :json
 

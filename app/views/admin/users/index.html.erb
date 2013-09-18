@@ -1,9 +1,21 @@
+<script>
+$(function() {
+  return $('#search').autocomplete({
+    source: "/admin/users/search_users"
+  });
+});
+</script>
 <h1>Users</h1>
+<%= form_tag admin_users_path, :method=> :get do %>
+  <%= text_field_tag :search, params[:search], :size=> 30 %>
+  <%= submit_tag "Search", :name=> nil %>
+<% end %><br/>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
   <tr>
     <th class="username border-left">Username</th>
     <th class="email">Email</th>
     <th class="is_expert">Is Expert</th>
+    <th class="is_mod">Is Moderator</th>
     <th class="actions">Actions</th>
     <th class="delete border-right">Delete</th>
   </tr>
@@ -12,8 +24,10 @@
       <td><%= user.username %></td>
       <td><%= user.email %></td>
       <td><%= user.is_expert %></td>
+      <td><%= user.is_mod %></td>
       <td>
-        <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user.id), :method => :put %>
+        <%= link_to 'Toggle expert', toggle_expert_admin_user_path(user.id), :method => :put %> /
+        <%= link_to 'Moderator', toggle_mod_admin_user_path(user.id), :method => :put %>
       </td>
       <%if user.deleted? %>
         <td><%= link_to 'activate', admin_user_path(user.id), :method => :delete %></td>
@@ -24,4 +38,4 @@
   <% end %>
 </table>
 
-<%= will_paginate(@users) %>
+<%= will_paginate(@users) unless params[:search]%>

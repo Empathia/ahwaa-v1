@@ -1,4 +1,5 @@
 class Admin::TopicsController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'admin'
   before_filter :find_topic, :only => [:edit, :update, :destroy]
 

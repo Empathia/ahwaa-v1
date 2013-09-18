@@ -1,4 +1,5 @@
 class Admin::ProfileMatchesController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'admin'
 
   before_filter :get_topic

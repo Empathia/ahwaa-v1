@@ -1,8 +1,13 @@
 class Admin::UsersController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'admin'
 
   def index
-    @users = User.paginate(:page => params[:page])
+    if params[:search]
+      @users = User.find_all_by_username(params[:search])
+    else
+      @users = User.paginate(:page => params[:page])
+    end
   end
 
   def toggle_expert
@@ -13,6 +18,21 @@ class Admin::UsersController < ApplicationController
       flash[:error] = 'error'
     end
     redirect_to :action => "index"
+  end
+
+  def toggle_mod
+    @user = User.find(params[:id])
+    if @user.toggle!(:is_mod)
+      flash[:notice] = 'success'
+    else
+      flash[:error] = 'error'
+    end
+    redirect_to :back rescue redirect_to :action => "index"
+  end
+
+  def search_users
+    @users = User.order(:username).where("username like ?", "%#{params[:term]}%")
+    render :json => @users.map(&:username)
   end
 
   def destroy

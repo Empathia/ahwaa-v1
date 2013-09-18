@@ -1,24 +1,27 @@
 <div class="adm-title">
   <h1>Flagged Replies</h1>
 </div>
-<table border="0" cellspacing="0" cellpadding="0" width="100%">
-  <tr>
-    <th class="created_at border-left">Created at</th>
-    <th class="content">Content</th>
-    <th class="flag_count">Flag Count</th>
-    <th class="actions border-right">Actions</th>
-  </tr>
-  <% @flags.each do |reply| %>
+<%= form_tag bulk_update_admin_flagged_replies_path do %>
+  <table border="0" cellspacing="0" cellpadding="0" width="100%">
     <tr>
-      <td class="created_at"><%= l reply.created_at, :format => :short %></td>      
-      <td><%= reply.content %></td>
-      <td class="flag_count"><%= reply.flags.count %></td>
-      <td>
-        <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete, :confirm => 'Are you Sure?' %>
-        or
-        <%= link_to 'Unflag', unflag_admin_flagged_reply_path(reply), :method => :put %>
-      </td>
+      <th class="created_at border-left">Created at</th>
+      <th class="content">Content</th>
+      <th class="flag_count">Flag Count</th>
+      <th class="actions replies border-right">Actions</th>
+      <th class="bulk_update"><%= submit_tag "Unflag", :name=> "unflag" %><%= submit_tag "Delete", :name=> "delete" %></th>
     </tr>
-  <% end %>
-</table>
-
+    <% @flags.each do |reply| %>
+      <tr>
+        <td class="created_at"><%= l reply.created_at, :format => :short %></td>
+        <td><%= reply.content %></td>
+        <td class="flag_count"><%= reply.flags.count %></td>
+        <td>
+          <%= link_to 'Delete', admin_flagged_reply_path(reply), :method => :delete, :confirm => 'Are you Sure?' %>
+          or
+          <%= link_to 'Unflag', unflag_admin_flagged_reply_path(reply), :method => :put %>
+        </td>
+        <td align='center'><%= check_box_tag "replies[]", reply.id%></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>

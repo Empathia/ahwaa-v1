@@ -1,4 +1,5 @@
 class Admin::FeaturedTopicsController < ApplicationController
+  before_filter :authenticate_admin!
   layout 'admin'
 
   respond_to :json, :only => [:toggle]
