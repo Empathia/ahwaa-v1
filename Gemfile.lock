@@ -63,6 +63,7 @@ GEM
       thor (>= 0.13.6)
     fssm (0.2.10)
     hashie (0.4.0)
+    htmlentities (4.3.1)
     httparty (0.6.1)
       crack (= 0.1.8)
     i18n (0.5.0)
@@ -179,6 +180,7 @@ DEPENDENCIES
   factory_girl_rails (~> 1.0)
   fakeweb
   foreman (~> 0.37.2)
+  htmlentities
   httparty (~> 0.6.1)
   jquery-rails (~> 0.2.2)
   json (~> 1.4.6)
