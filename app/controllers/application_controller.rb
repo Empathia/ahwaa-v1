@@ -95,7 +95,7 @@ class ApplicationController < ActionController::Base
     text.gsub!("-_-", "<img src='/images/smileys/squint.gif' border='0' />")
     text.gsub!("8|", "<img src='/images/smileys/sunglasses.gif' border='0' />")
     text.gsub!(":p", "<img src='/images/smileys/tongue.gif' border='0' />")
-    text.gsub!(":/", "<img src='/images/smileys/unsure.gif' border='0' />")
+    text.gsub!(" :/ ", "<img src='/images/smileys/unsure.gif' border='0' />")
     text.gsub!("@:O", "<img src='/images/smileys/upset.gif' border='0' />")
     text.gsub!(";)", "<img src='/images/smileys/wink.gif' border='0' />")
   end

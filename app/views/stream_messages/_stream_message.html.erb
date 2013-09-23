@@ -37,7 +37,7 @@
       <% if current_user.blocks.map{|u| u.block}.include?(stream_message.reply.user) && !stream_message.reply.anonymous? %>
         <span><i>user blocked</i></span>
       <% else %>
-       <%= simple_format truncate(stream_message.reply.content, :length => 140) %>
+       <%= simple_format truncate_html(stream_message.reply.content, :length => 140) %>
       <% end %>
     </blockquote>
   </div>
