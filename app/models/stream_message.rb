@@ -5,8 +5,8 @@ class StreamMessage < ActiveRecord::Base
 
   before_save :set_topic_id
   after_create :publish_to_followers!
-  # after_create :publish_to_owners!
-  # after_create :publish_to_everyone!
+  after_create :publish_to_owners!
+  after_create :publish_to_everyone!
 
   def title
     @title ||= begin
@@ -22,16 +22,19 @@ class StreamMessage < ActiveRecord::Base
   end
 
   def publish_to_followers!
-    Resque.enqueue(Subscriber, reply.id, self.id)
+    reply.topic.subscribers.each do |user|
+      StreamUser.create(:user => user, :stream_message => self, :source => 'followed')
+    end
   end
 
   def publish_to_owners!
-    Resque.enqueue(SubscriberOwner, reply.id, self.id)
+    StreamUser.create(:user => reply.topic.user, :stream_message => self, :source => 'owned')
     true # Don't stop the world, if it's published then ignore
   end
 
   def publish_to_everyone!
-    Resque.enqueue(SubscriberEverygs
-      , self.id)
+    User.all.each do |user|
+      StreamUser.create(:user => user, :stream_message => self, :source => 'global')
+    end
   end
 end
