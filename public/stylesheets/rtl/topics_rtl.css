@@ -1220,11 +1220,11 @@ header > .right > .by-author {
 }
 /* line 427, sass/topics.scss */
 #font-size-controls .increase span {
-  background-position:100% 0;
+  background-position:0 0;
 }
 /* line 429, sass/topics.scss */
 #font-size-controls .increase:hover span, #font-size-controls .increase:active span {
-  background-position:100% -12px;
+  background-position:0 -12px;
 }
 /* line 431, sass/topics.scss */
 #font-size-controls .decrease {
