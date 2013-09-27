@@ -1,9 +1,9 @@
 class Reply < ActiveRecord::Base
   POINTS_FOR_POSTING = 5
   CATEGORIES = %w[advice comment experience]
-  
+
   # TODO: attr_accessible
-  
+
   attr_accessor :check_field
 
   belongs_to :topic, :counter_cache => true
@@ -33,7 +33,7 @@ class Reply < ActiveRecord::Base
   scope :flagged, includes(:ratings).where("ratings.vote = :flag", :flag => Rating::FLAG)
   scope :by_category, lambda {|category| where(:category => category)}
   scope :not_anonymous, where("user_id IS NOT NULL AND as_anonymous = 0")
-  
+
   # returns the amount of points granted this post produces
   def points_granted
     self.user ? POINTS_FOR_POSTING : 0
@@ -93,7 +93,7 @@ class Reply < ActiveRecord::Base
   def author_avatar
     anonymous? ? Avatar.default.url : user.profile.avatar.url
   end
-  
+
   def i18n_category
     Reply.human_attribute_name(category)
   end
