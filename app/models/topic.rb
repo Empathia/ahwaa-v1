@@ -57,7 +57,7 @@ class Topic < ActiveRecord::Base
   def notify_subscribers_about_new_response(reply)
    subscribers.each do |user|
       user.with_user_locale do
-        UserMailer.reply_notification(user.id, reply.id).deliver
+        UserMailer.reply_notification(user.id, reply.id).deliver!
       end unless user == reply.user
     end
   end
