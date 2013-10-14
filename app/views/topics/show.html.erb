@@ -213,9 +213,13 @@
           <span class="post_as_anonymous">
             <%= f.check_box :as_anonymous %><%= label_tag "reply_as_anonymous", t('.form.as_anonymous') %>
           </span>
-          <div class="flash-privacy">
-            <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
-          </div>
+          <% if current_user.score_board.current_points.to_i < 300 %>
+            <div class="flash-privacy">
+              <div class="border-all"><%= t('.form.flash_alert')%><span class="exclamation"></span><span class="icn-cross"></span></div>
+            </div>
+          <% else %>
+            <div class="flash-privacy"></div>
+          <% end %>
           <%= f.text_area :content, :id => nil, :class => 'comment_content', :placeholder => t('.form.write_response') %>
         </div>
         <div class="res-types-wrapper response-padding">

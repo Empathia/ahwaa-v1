@@ -317,7 +317,7 @@
             <% if @fame_helpful %>
               <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
-                  <% link_to profile_path(@fame_helpful) do %>
+                  <%= link_to profile_path(@fame_helpful) do %>
                     <span class="avatar <%= level_css_class_for_user @fame_helpful %>">
                       <%= image_tag @fame_helpful.profile.avatar.url, :size => '42x42' %>
                       <span class="honor-member"></span>
@@ -335,7 +335,7 @@
             <% if @fame_active %>
               <li class="span3">
                 <div class="avatar-wrapper footer-avatar">
-                  <% link_to profile_path(@fame_active) do %>
+                  <%= link_to profile_path(@fame_active) do %>
                     <span class="avatar <%= level_css_class_for_user @fame_active %>">
                       <%= image_tag @fame_active.profile.avatar.url, :size => '42x42' %>
                       <span class="honor-member"></span>
