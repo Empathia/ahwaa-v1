@@ -100,6 +100,7 @@ Class('AuthForms')({
             $('#forgot-pass').click(function(){
                 $('#forgot-pass').addClass('auth-form-active');
                 that.constructor.show($('#login'), '.forgot-pass-form');
+                that.constructor.show($('#login'), '.forgot-pass-form');
                 return false;
             });
 
