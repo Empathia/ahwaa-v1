@@ -118,9 +118,9 @@
               <li class="article-tags"><%= linked_tag_list @topic.tags %></li>
             </ul>
             <ul class="social-bookmarkers">
-              <li class="facebook">
-                <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
-              </li>
+              <!-- <li class="facebook">
+                <iframe src="//www.facebook.com/plugins/like.php?app_id=217506164969209&amp;href=<%#= CGI.escape topic_url(@topic) %>&amp;send=false&amp;layout=standard&amp;width=51&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=30&amp;locale=<%= rtl? ? 'ar_AR' : 'en_US' %>" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:51px; height:30px;" allowTransparency="true"></iframe>
+              </li> -->
               <li class="twitter">
                 <%= link_to twitter_share_url(@topic), :target => "_blank",  :class => 'secondary-button border-all-2 btn-twitter' do %>
                   <span class="icn-social twitter"><%= t('.icons.social.twitter') %></span>
