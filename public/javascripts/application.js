@@ -232,7 +232,10 @@ $(function() {
 
     /* Hall of fame */
     var hof = $('.hall-of-fame');
-    hof.find('.hall-header > h4').bind('click', function (ev) {
+    $('.hall-header > h4').bind('click', function (ev) {
+        $(this).parent().toggleClass('collapsed');
+        $('.room-chat-list').toggleClass('open_hall_fame');
+        $('.chat-wrapper--widget').toggleClass('open_hall_fame');
         hof.toggleClass('collapsed');
     });
 
@@ -326,8 +329,8 @@ $(window).load(function () {
         siblings = container.siblings(),
         header = siblings.filter('header'),
         footer = siblings.filter('footer'),
-        delta = header.outerHeight() + footer.outerHeight() + 50,
-        self = $(this);
+        delta = header.outerHeight() + footer.outerHeight() + 80,
+        self = $ (this);
     container.css('min-height', $(this).height() - delta);
 
     self.resize(function() {

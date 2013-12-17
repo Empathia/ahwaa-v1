@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_one :current_level, :through => :score_board, :class_name => "Level", :source => :level
   has_one :current_badge, :through => :score_board, :class_name => "Badge", :source => :badge
   has_one :current_prize, :through => :score_board, :class_name => "Prize", :source => :prize
+  has_one :chat_disclosure, :dependent => :destroy
   has_many :subscriptions, :dependent => :destroy
 
   has_many :ratings, :dependent => :destroy
@@ -19,6 +20,9 @@ class User < ActiveRecord::Base
   has_many :stream_users, :dependent => :destroy
   has_many :stream_messages, :through => :stream_users
   has_many :visited_topics, :dependent => :destroy
+  has_many :chat_invites, :dependent => :destroy
+  has_many :room_users, :dependent => :destroy
+  has_many :chat_rooms, :dependent => :destroy
 
   has_many :blocks
   has_many :users, :through => :blocks, :uniq => true

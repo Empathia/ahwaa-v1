@@ -1,0 +1,72 @@
+<% if is_chat_allowed_for(current_user) %>
+  <div class="chat__window room-chat-list">
+    <header class="chat__header room-chat-list__header">
+      <h3 class="chat__header--title">
+        <span class="title">Chat Rooms</span>
+        <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length %></span>)</span>
+      </h3>
+      <% if has_500_points(current_user) %>
+        <div class="chat__header--options">
+          <button class="chat__header--full-btn create-new-chatroom-button effekt-tooltip" data-tooltip-text="Create Room" data-position="top">
+            <i class="chat-icon chat-icon--create-new-chat"></i>
+          </button>
+        </div>
+      <% end %>
+    </header>
+    <div class="room-chat-list__body">
+      <ul class="room-chat-list__list custom-scrollbars" data-mod="<%= has_500_points(current_user) %>">
+        <% @chat_rooms.each do |chat| %>
+          <li data-id="<%= chat.id %>" data-title="<%= chat.label %>" data-host-id="<%= chat.user_id %>" data-is-moderator="<%= is_user_moderator_of(chat) %>" data-is-host="<%= is_user_host_of(chat) %>">
+            <div class="title">
+              <%= chat.label %>
+              <%= content_tag(:span, '[Private]', :class => 'room-chat-list__list--label') if chat.private %>
+            </div>
+            <div class="info">
+              <% if is_user_moderator_of(chat) %>
+                <div class="chat__admin-actions">
+                  <i class="chat__admin-actions--toggler chat-icon chat-icon--settings-list effekt-tooltip" data-tooltip-text="Admin Actions" data-position="top"></i>
+                  <div class="dropdown">
+                    <ul>
+                      <li class="admin-shut-down" data-room-id="<%= chat.id %>">Shutdown Room</li>
+                      <% if is_user_host_of(chat) %>
+                        <li class="admin-invite-users">Invite Users</li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+
+              <% if is_user_invited_to(chat) %>
+                <div class="info__invitation">
+                  <i data-invitation-id="<%= user_invitation(chat).id %>" class="chat-icon chat-icon--invitation-list effekt-tooltip <%= 'unread' unless is_invitation_viewed(chat) %>" data-tooltip-text="You were invited by <%= user_invitation(chat).inviter %>" data-position="top"></i>
+                </div>
+              <% end %>
+
+              <div class="info__user-count">
+                <i class="chat-icon chat-icon--user with-counter" data-count="0"></i>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      <div class="no-rooms-messages">
+        <h3 class="title">No available rooms!</h3>
+        <% if has_500_points(current_user) %>
+          <p class="message">Create a room to chat about what interests you with other users instantly!</p>
+          <i class="chat-icon chat-icon--top-arrow"></i>
+        <% else %>
+          <p class="message">Hang in there. There will be rooms soon. If you earn <b>500 points</b> you can create your own so keep on helping the community!</p>
+        <% end %>
+      </div>
+    </div> <!-- @room-chat-list__body -->
+    <span class="notification-badge circle"><%= user_invitation_counter %></span>
+  </div>
+<% else %>
+  <div class="chat__window room-chat-list active effekt-tooltip" data-tooltip-text="You need 100 points" data-position="top">
+    <header class="chat__header room-chat-list__header">
+      <h3 class="chat__header--title">Chat Rooms</h3>
+      <div class="chat__header--options">
+      </div>
+    </header>
+  </div>
+<% end %>

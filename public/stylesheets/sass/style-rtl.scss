@@ -61,5 +61,51 @@ div.selector select {left: 0; right: inherit}
 .gloabl-counter > div > ul > li {float: left !important}
 
 .feature-wrapper h2 {font-size: 16px !important}
-.hall-of-fame > .hall-header > h4 > span {font-weight: bold; right: 30px !important}
+.hall-header {
+    left: 0;
+    right: auto;
+    > h4 > span {font-weight: bold; right: 30px !important}
+}
 .honor-member-info > span {font-size: 12px !important}
+
+
+/* chat */
+.room-chat-list {
+  right: 15px;
+}
+.chat-wrapper--widget {
+    left: 0;
+    right: 310px;
+}
+.chat-widget {
+    right: 0;
+}
+.notification-badge {
+    left: 5px;
+    right: auto;
+    &.circle {
+        left: auto;
+        right: 5px;
+    }
+}
+
+/* tooltip */
+.effekt-tooltip[data-position="top"]:after,
+.effekt-tooltip[data-position="bottom"]:after {
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
+    transform: translateX(50%);
+}
+
+/* icons */
+.chat-icon--user {
+    background-position: 0 0;
+}
+.chat-icon--close-header {
+    background-position: 0 -24px;
+    &:hover {
+        background-position: 0 -36px;
+    }
+}

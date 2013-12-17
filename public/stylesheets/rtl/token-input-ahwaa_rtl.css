@@ -1,0 +1,188 @@
+/* line 3, ../../sass/ui/chat/token-input-ahwaa.scss */
+.search__results-row {
+  position: relative;
+  padding: 8px 10px;
+  min-height: 40px;
+  background: #fff;
+}
+/* line 8, ../../sass/ui/chat/token-input-ahwaa.scss */
+.search__results-row:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+/* line 10, ../../sass/ui/chat/token-input-ahwaa.scss */
+.search__results-row .results-text-wrapper {
+  padding-right: 35px;
+  font-size: 12px;
+  line-height: 17px;
+}
+/* line 14, ../../sass/ui/chat/token-input-ahwaa.scss */
+.search__results-row .results-text-wrapper .username {
+  display: block;
+  padding: 0;
+  color: #494b4d;
+  font-weight: normal;
+}
+/* line 19, ../../sass/ui/chat/token-input-ahwaa.scss */
+.search__results-row .results-text-wrapper .username b {
+  font-weight: normal;
+}
+
+/* line 26, ../../sass/ui/chat/token-input-ahwaa.scss */
+ul.token-input-list-ahwaa {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: auto;
+  max-height: 90px;
+  width: 259px;
+  border: 1px solid #999;
+  cursor: text;
+  font-size: 12px;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  list-style-type: none;
+  clear: right;
+  white-space: nowrap;
+  border-radius: 3px;
+  border-color: #6d767a #bcc9d0 #c3d2d9 #bcc9d0;
+}
+/* line 44, ../../sass/ui/chat/token-input-ahwaa.scss */
+ul.token-input-list-ahwaa.focus {
+  border-color: #2d70b3;
+  box-shadow: 0 0 5px rgba(45, 112, 179, 0.5);
+}
+
+/* line 50, ../../sass/ui/chat/token-input-ahwaa.scss */
+ul.token-input-list-ahwaa li input {
+  border: 0;
+  width: 350px;
+  padding: 3px 8px;
+  background-color: white;
+  -webkit-appearance: caret;
+}
+
+/* line 58, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-token-ahwaa {
+  float:right;
+  overflow: hidden;
+  height: auto !important;
+  margin:3px 3px 0 0;
+  padding: 2px 5px;
+  background-color: #e6ecf2;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #edf1f6), color-stop(100%, #dae2ec));
+  background-image: -webkit-linear-gradient(#edf1f6, #dae2ec);
+  background-image: -moz-linear-gradient(#edf1f6, #dae2ec);
+  background-image: -o-linear-gradient(#edf1f6, #dae2ec);
+  background-image: linear-gradient(#edf1f6, #dae2ec);
+  color: #494b4d;
+  font-weight: normal;
+  cursor: default;
+  border-radius: 3px;
+  border: 1px solid #B8C2CC;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+/* line 76, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-token-ahwaa p {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 82, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-token-ahwaa span {
+  color: #98A5B2;
+  margin-right: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: monospace;
+  line-height: 0;
+}
+
+/* line 93, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-input-token-ahwaa {
+  float:right;
+  vertical-align: top;
+  margin: 3px 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/* line 101, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-selected-token-ahwaa {
+  background: #B8C2CC;
+  color: #fff;
+}
+
+/* line 106, ../../sass/ui/chat/token-input-ahwaa.scss */
+li.token-input-selected-token-ahwaa span {
+  color: #bbb;
+}
+
+/* line 110, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa {
+  position: absolute;
+  width: 213px;
+  background: #fff!important;
+  overflow: hidden;
+  border: 1px solid #748da6;
+  cursor: default;
+  font-size: 12px;
+  font-family: Verdana;
+  z-index: 1;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 123, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 128, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa p {
+  margin: 0;
+  padding: 5px;
+  font-weight: normal;
+  color: #777;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* line 136, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 141, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa ul li {
+  background-color: #fff;
+  padding: 3px;
+  margin: 0;
+  list-style-type: none;
+}
+
+/* line 156, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa ul li em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* line 161, ../../sass/ui/chat/token-input-ahwaa.scss */
+div.token-input-dropdown-ahwaa ul li.token-input-selected-dropdown-item-ahwaa {
+  background-color: #f5f9fc;
+}

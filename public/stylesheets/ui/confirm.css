@@ -1,0 +1,94 @@
+/* line 3, ../sass/ui/confirm.scss */
+.ahwaa-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: transparent;
+}
+
+/* line 11, ../sass/ui/confirm.scss */
+.ahwaa-modal__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* line 20, ../sass/ui/confirm.scss */
+.ahwaa-modal__wrapper {
+  position: relative;
+  width: 420px;
+  margin: 100px auto 0;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* line 30, ../sass/ui/confirm.scss */
+.ahwaa-modal--close {
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 14px;
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  font-weight: normal;
+  font-family: arial;
+  color: rgba(161, 173, 178, 0.7);
+  background: none;
+  border: none;
+}
+
+/* line 45, ../sass/ui/confirm.scss */
+.ahwaa-modal__header {
+  position: relative;
+  padding: 12px 10px 10px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid #dbdfe3;
+}
+
+/* line 51, ../sass/ui/confirm.scss */
+.ahwaa-modal--title {
+  font-family: "GothamBoldRegular";
+  font-weight: normal;
+  font-size: 17px;
+  color: #3d464c;
+}
+
+/* line 58, ../sass/ui/confirm.scss */
+.ahwaa-modal__body {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 30px 10px;
+  background-color: #fff;
+  text-align: center;
+}
+/* line 65, ../sass/ui/confirm.scss */
+.ahwaa-modal__body .message {
+  margin-bottom: 20px;
+}
+
+/* line 71, ../sass/ui/confirm.scss */
+.ahwaa-modal__buttons .btn {
+  font-size: 14px;
+  vertical-align: top;
+  margin: 0 4px;
+  border-radius: 2px;
+}
+
+/* line 80, ../sass/ui/confirm.scss */
+.accept-disclosure .ahwaa-modal__wrapper {
+  width: 478px;
+}

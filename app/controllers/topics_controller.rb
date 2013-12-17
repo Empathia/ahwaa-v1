@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
     current_user.visit_topic!(@topic) if logged_in?
     @related_topics = @topic.related_topics.reject{|k| current_user.blocks.map{|u| u.block}.include? k.user}.first(4) if logged_in?
     @related_topics = @topic.related_topics.first(4) unless logged_in?
+    @chat_rooms = user_available_chats
   end
 
   def related_content
@@ -32,6 +33,9 @@ class TopicsController < ApplicationController
     else
       @topics = @topics.tagged_with(@tag).in_groups_of(2, false)
     end
+
+    @chat_rooms = user_available_chats
+
   end
 
   def follow

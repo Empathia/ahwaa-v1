@@ -1,0 +1,11 @@
+{
+  "name": "ahwaa_chat",
+  "description": "Ahwaa chat service",
+  "author": "Emmanuel Medina <emg@freshout.us>",
+  "version" : "1.0.0",
+  "private" : true,
+  "dependencies": {
+    "socket.io": "0.9.x"
+  },
+  "engine": "node"
+}

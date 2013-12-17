@@ -104,4 +104,77 @@ module ApplicationHelper
   def rexml_element_to_tag(element)
     "<#{element[0]}#{element[1].inject(""){|m,(k,v)| m << %{ #{k}="#{v}"}} unless element[1].empty?}>"
   end
+
+  def arabi_lenguage
+    if request.subdomains.first == 'ar'
+      true
+    else
+      false
+    end
+  end
+
+  def is_chat_allowed_for(user)
+    if user.score_board.current_points > 99 || user.is_mod == true
+      true
+    else
+      false
+    end
+  end
+
+  def has_500_points(user)
+    if user.score_board.current_points > 499
+      true
+    else
+      false
+    end
+  end
+
+  def is_user_invited_to(chat)
+    if chat.chat_invites.find_by_user_id(current_user.id)
+      true
+    else
+      false
+    end
+  end
+
+  def is_invitation_viewed(chat)
+    invitation = chat.chat_invites.find_by_user_id(current_user.id)
+    if invitation.checked
+      true
+    else
+      false
+    end
+  end
+
+  def user_invitation(chat)
+    invitation = chat.chat_invites.find_by_user_id(current_user.id)
+  end
+
+  def user_invitation_counter
+    current_user.chat_invites.where(:checked => nil).count
+  end
+
+  def is_user_moderator_of(chat)
+    if current_user.is_mod || chat.user == current_user
+      true
+    else
+      false
+    end
+  end
+
+  def is_user_host_of(chat)
+    if chat.user == current_user
+      true
+    else
+      false
+    end
+  end
+
+  def current_user_info
+    if current_user
+      user = {:id => current_user.id, :name => current_user.username, :user_avatar => current_user.profile.avatar.url, :user_heart => level_css_class_for_user(current_user), :is_mod  => current_user.is_mod, :disclosure => current_user.chat_disclosure ? true : false}
+    end
+    user.to_json
+  end
+
 end

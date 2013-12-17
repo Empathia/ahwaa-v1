@@ -1,0 +1,82 @@
+/* line 1, ../sass/ui/icons.scss */
+.chat-icon {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: url('/images/ui/chat-sprite.png?1386970311');
+}
+
+/* line 10, ../sass/ui/icons.scss */
+.chat-icon--user {
+  background-position: 0 0;
+}
+
+/* line 13, ../sass/ui/icons.scss */
+.chat-icon--user-lighter {
+  background-position: -96px 0;
+}
+
+/* line 16, ../sass/ui/icons.scss */
+.chat-icon--user-block {
+  width: 15px;
+  height: 15px;
+  background-position: -72px 0;
+}
+/* line 19, ../sass/ui/icons.scss */
+.chat-icon--user-block:hover {
+  background-position: -72px -15px;
+}
+
+/* line 24, ../sass/ui/icons.scss */
+.chat-icon--settings-list {
+  width: 24px;
+  background-position: -24px 0;
+}
+/* line 27, ../sass/ui/icons.scss */
+.chat-icon--settings-list:hover {
+  background-position: -24px -12px;
+}
+
+/* line 32, ../sass/ui/icons.scss */
+.chat-icon--settings-header {
+  width: 24px;
+  background-position: -24px -24px;
+}
+/* line 35, ../sass/ui/icons.scss */
+.chat-icon--settings-header:hover {
+  background-position: -24px -36px;
+}
+
+/* line 39, ../sass/ui/icons.scss */
+.chat-icon--close-header {
+  background-position: 0 -24px;
+}
+/* line 41, ../sass/ui/icons.scss */
+.chat-icon--close-header:hover {
+  background-position: 0 -36px;
+}
+
+/* line 45, ../sass/ui/icons.scss */
+.chat-icon--invitation-list {
+  background-position: -12px 0;
+}
+/* line 47, ../sass/ui/icons.scss */
+.chat-icon--invitation-list.unread {
+  background-position: -12px -12px;
+}
+
+/* line 51, ../sass/ui/icons.scss */
+.chat-icon--create-new-chat {
+  width: 21px;
+  height: 16px;
+  background-position: -48px 0;
+}
+
+/* line 56, ../sass/ui/icons.scss */
+.chat-icon--top-arrow {
+  width: 24px;
+  height: 36px;
+  background-position: -108px 0;
+}

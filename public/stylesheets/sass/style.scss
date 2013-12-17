@@ -1466,22 +1466,40 @@ form + .recently-topics{padding-top:18px;}
 
 /* Hall of Fame */
 .hall-of-fame {
-  position: fixed; bottom: 26px; width: 100%; padding: 0; z-index: 990;
-  .hall-people li > .avatar-wrapper a {display: inline-block}
+  position: fixed;
+  bottom: 22px;
+  width: 100%;
+  padding: 0;
+  z-index: 10000;
+  pointer-events:none;
+  @include transition(bottom 200ms ease);
+
+  .hall-people li > .avatar-wrapper a {
+    display: inline-block;
+  }
   &.collapsed {
-    .hall-header > h4 > span {background-position: 50% 100%}
-    .hall-footer {height: 15px}
-    .hall-people {display: none;
+    bottom: -57px;
+    .hall-header > h4 > span {
+      background-position: 50% 100%;
     }
+    // .hall-footer {height: 9px}
+    // .hall-people {
+    //   display: none;
+    // }
   }
 }
 
 .hall-header {
-  width: 196px; height: 31px; margin: 0 auto; text-shadow: 0 1px 0 #ffffff; position: relative;
+  @include transition(bottom 200ms ease);
+  font-size: 12px; width: 196px; height: 31px; margin: 0 0 0 20px; text-shadow: 0 1px 0 #ffffff; position: fixed; left: 0; bottom: 32px; z-index: 99999;
   > h4 {
-    position: absolute; margin: 0; background: transparent url('../images/hall-of-fame-header.png') no-repeat 0 0; text-align: center; height: 31px; width: 191px; top: 1px;
-    > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 0; text-align: center; padding: 6px 0 0; height: 22px; left: 36px; position: absolute; text-transform: uppercase; cursor: pointer; top: 9px}
+    position: absolute; margin: 0; background: transparent url('../images/hall-of-fame-header.png') no-repeat 0 0; text-align: center; height: 31px; width: 191px; top: 1px; pointer-events:auto;
+    > span {width: 126px; color: #7e91a6; background: transparent url('../images/hall-of-fame-h4.png') no-repeat 50% 0; text-align: center; padding: 4px 0 0; height: 22px; left: 36px; position: absolute; text-transform: uppercase; cursor: pointer; top: 9px}
   }
+}
+
+.hall-header.collapsed {
+  bottom:111px;
 }
 
 .hall-footer {background-color: #edf2f4; border-top: 1px #c5cace solid;
@@ -1513,7 +1531,7 @@ form + .recently-topics{padding-top:18px;}
 }
 
 .app-body-container {
-  padding: 120px 0 150px;
+  padding: 120px 0 80px;
   > .container {
     padding-top: 20px;
   }
@@ -1532,7 +1550,7 @@ form + .recently-topics{padding-top:18px;}
 }
 
 footer {
-  position: fixed; bottom: 0; width: 100%; z-index: 990;
+  position: fixed; bottom: 0; width: 100%; z-index: 10000;
   border-top: 1px #c9cdd0 solid;
   background-color: #eff4f6;
   @include background-image(linear-gradient(top, #f2f7f9, #eaf1f4));
@@ -1544,13 +1562,13 @@ footer {
 }
 
 .footer-container {
-  overflow: hidden; font-size: 12px; padding: 6px 0 5px;
-  > span {float: left; color: #8f9aa4; white-space: nowrap}
+  overflow: hidden; font-size: 11px; padding: 5px 20px 4px;
+  > span {float: left; color: rgba(#364759, .7); white-space: nowrap}
   > ul {
     float: right;
     white-space: nowrap;
     > li {display: inline; color: #99b9d8;
-      > a {color: #7aa4cd; white-space: nowrap}
+      > a {color: rgba(#2d70b3, .8); white-space: nowrap}
     }
   }
 

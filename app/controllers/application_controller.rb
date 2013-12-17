@@ -110,6 +110,23 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def user_available_chats
+    @available_chats = []
+    ChatRoom.all.each do |chat|
+      if chat.private == false || chat.private == nil
+        unless chat.room_users.find_by_user_id(current_user.id)
+          @available_chats << chat
+        end
+      else
+        if chat.room_users.find_by_user_id(current_user.id)
+          @available_chats << chat
+        end
+      end
+    end
+
+    return @available_chats
+  end
+
   # Validate admin authentication if route is within the /admin path
   def authenticate_admin!
     if self.class.name =~ /Admin/ && current_user.is_mod?

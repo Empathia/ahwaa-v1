@@ -1,0 +1,224 @@
+/* line 3, sass/chat_general.scss */
+.custom-scrollbars {
+  overflow: auto;
+}
+/* line 5, sass/chat_general.scss */
+.custom-scrollbars::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* line 9, sass/chat_general.scss */
+.custom-scrollbars::-webkit-scrollbar-track {
+  background-color: #d8d8d8;
+}
+/* line 12, sass/chat_general.scss */
+.custom-scrollbars::-webkit-scrollbar-thumb {
+  background-color: #bfbfbf;
+  border-radius: 3px;
+}
+
+/* line 19, sass/chat_general.scss */
+input[type="text"].text-input-styled,
+.text-input-styled {
+  height: 25px;
+  padding: 5px;
+  resize: none;
+  font-family: inherit;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  border-color: #6d767a #bcc9d0 #c3d2d9 #bcc9d0;
+  resize: none;
+}
+/* line 29, sass/chat_general.scss */
+input[type="text"].text-input-styled:focus,
+.text-input-styled:focus {
+  border-color: #2d70b3;
+  box-shadow: 0 0 5px rgba(45, 112, 179, 0.5);
+}
+/* line 33, sass/chat_general.scss */
+input[type="text"].text-input-styled.error,
+.text-input-styled.error {
+  background-position: 100% -5px;
+  border-color: #D93E3E;
+}
+
+/* line 39, sass/chat_general.scss */
+.btn {
+  cursor: pointer;
+  position: relative;
+  height: 28px;
+  margin: 0;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: bold;
+  border-style: solid;
+  border-width: 1px;
+  font-family: inherit;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+/* line 52, sass/chat_general.scss */
+.btn:active {
+  top: 1px;
+}
+
+/* line 56, sass/chat_general.scss */
+.btn-clean {
+  background-color: #fafbfc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fefefe), color-stop(100%, #f6f8f9));
+  background-image: -webkit-linear-gradient(#fefefe, #f6f8f9);
+  background-image: -moz-linear-gradient(#fefefe, #f6f8f9);
+  background-image: -o-linear-gradient(#fefefe, #f6f8f9);
+  background-image: linear-gradient(#fefefe, #f6f8f9);
+  box-shadow: inset 0 0 0 1px white;
+  color: #2d70b3;
+  text-shadow: 0 1px 0 #fff;
+  border-color: #cfdae6 #c8d4e1 #97a8b9;
+}
+/* line 63, sass/chat_general.scss */
+.btn-clean:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #fefefe));
+  background-image: -webkit-linear-gradient(#ffffff, #fefefe);
+  background-image: -moz-linear-gradient(#ffffff, #fefefe);
+  background-image: -o-linear-gradient(#ffffff, #fefefe);
+  background-image: linear-gradient(#ffffff, #fefefe);
+  color: #4389d0;
+}
+/* line 67, sass/chat_general.scss */
+.btn-clean:active {
+  background-color: #f5f9fc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ebf3f9), color-stop(100%, #fafcfd));
+  background-image: -webkit-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: -moz-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: -o-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: linear-gradient(#ebf3f9, #fafcfd);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+  border-color: #cfdae6 #c8d4e1 #97a8b9;
+}
+
+/* line 74, sass/chat_general.scss */
+.btn-info {
+  background-color: #dfebf7;
+  color: #2d70b3;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
+  border-color: #cfdae6 #c8d4e1 #97a8b9;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #edf5fb), color-stop(100%, #c5dbf0));
+  background-image: -webkit-linear-gradient(#edf5fb, #c5dbf0);
+  background-image: -moz-linear-gradient(#edf5fb, #c5dbf0);
+  background-image: -o-linear-gradient(#edf5fb, #c5dbf0);
+  background-image: linear-gradient(#edf5fb, #c5dbf0);
+}
+/* line 81, sass/chat_general.scss */
+.btn-info:hover {
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fafcfe), color-stop(100%, #d1e3f3));
+  background-image: -webkit-linear-gradient(#fafcfe, #d1e3f3);
+  background-image: -moz-linear-gradient(#fafcfe, #d1e3f3);
+  background-image: -o-linear-gradient(#fafcfe, #d1e3f3);
+  background-image: linear-gradient(#fafcfe, #d1e3f3);
+  color: #4389d0;
+}
+/* line 85, sass/chat_general.scss */
+.btn-info:active {
+  background-color: #f5f9fc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ebf3f9), color-stop(100%, #fafcfd));
+  background-image: -webkit-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: -moz-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: -o-linear-gradient(#ebf3f9, #fafcfd);
+  background-image: linear-gradient(#ebf3f9, #fafcfd);
+}
+
+/* line 90, sass/chat_general.scss */
+.btn-ok {
+  background-color: #3d90cc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #5da9d8), color-stop(100%, #2772b8));
+  background-image: -webkit-linear-gradient(#5da9d8, #2772b8);
+  background-image: -moz-linear-gradient(#5da9d8, #2772b8);
+  background-image: -o-linear-gradient(#5da9d8, #2772b8);
+  background-image: linear-gradient(#5da9d8, #2772b8);
+  color: #fff;
+  text-shadow: none;
+  box-shadow: none;
+  border-color: #5da9d8 #3d91cc #004a80;
+}
+
+/* line 98, sass/chat_general.scss */
+.btn-success {
+  background-color: rgba(0, 255, 255, 0.1);
+}
+
+/* line 101, sass/chat_general.scss */
+.btn-error {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* line 105, sass/chat_general.scss */
+.disclaimer {
+  font-size: 11px;
+  line-height: 15px;
+  padding: 8px 15px 8px 8px;
+  margin-bottom: 15px;
+  border-width: 1px;
+  border-style: solid;
+  color: #a5a07f;
+  background-color: #fefbe6;
+  border-color: #dfd26c;
+  border-radius: 4px;
+}
+/* line 117, sass/chat_general.scss */
+.disclaimer .input-checkbox-wrapper .label-text {
+  font-size: 11px;
+  line-height: 15px;
+  color: #a5a07f;
+}
+/* line 122, sass/chat_general.scss */
+.disclaimer .input-checkbox-wrapper {
+  margin-bottom: 0;
+}
+/* line 125, sass/chat_general.scss */
+.disclaimer.error {
+  border-color: #D93E3E;
+}
+
+/* line 131, sass/chat_general.scss */
+.form-wrapper h3 {
+  font-size: 18px;
+  line-height: 1em;
+  color: #3d454c;
+  margin: 10px 0 15px;
+}
+/* line 138, sass/chat_general.scss */
+.form-wrapper .input-text-wrapper input[type="text"] {
+  width: 100%;
+}
+
+/* line 145, sass/chat_general.scss */
+.input-checkbox-wrapper,
+.input-text-wrapper {
+  display: block;
+  margin: 0 0 15px 0;
+}
+
+/* line 151, sass/chat_general.scss */
+.input-text-wrapper .label-text {
+  display: block;
+  margin: 0 0 5px 0;
+  font-size: 12px;
+  line-height: 1em;
+  color: #737980;
+}
+
+/* line 161, sass/chat_general.scss */
+.input-checkbox-wrapper input[type="checkbox"] {
+  position: absolute;
+}
+/* line 164, sass/chat_general.scss */
+.input-checkbox-wrapper .label-text {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 0 20px;
+  font-size: 12px;
+  line-height: 1em;
+  color: #737980;
+}

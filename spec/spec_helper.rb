@@ -40,6 +40,7 @@ def current_user
 end
 
 def sign_in(user)
+  debugger
   session[:current_user] = user.id
 end
 

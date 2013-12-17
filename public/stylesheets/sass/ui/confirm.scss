@@ -1,0 +1,83 @@
+@import "compass";
+
+.ahwaa-modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: transparent;
+}
+.ahwaa-modal__background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(#000, .1);
+}
+
+.ahwaa-modal__wrapper {
+    position: relative;
+    width: 420px;
+    margin: 100px auto 0;
+    border: 1px solid rgba(0,0,0,.3);
+    overflow: hidden;
+    @include border-radius(5px);
+    @include box-shadow(0 5px 20px rgba(0,0,0,.4));
+}
+
+.ahwaa-modal--close {
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 14px;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    font-weight: normal;
+    font-family: arial;
+    color: rgba(#a1adb2, .7);
+    background: none;
+    border: none;
+}
+
+.ahwaa-modal__header {
+    position: relative;
+    padding: 12px 10px 10px;
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #dbdfe3;
+}
+.ahwaa-modal--title {
+    font-family: "GothamBoldRegular";
+    font-weight: normal;
+    font-size: 17px;
+    color: #3d464c;
+}
+
+.ahwaa-modal__body {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 30px 10px;
+    background-color: #fff;
+    text-align: center;
+
+    .message {
+        margin-bottom: 20px;
+    }
+}
+
+.ahwaa-modal__buttons {
+    .btn {
+        font-size: 14px;
+        vertical-align: top;
+        margin: 0 4px;
+        border-radius: 2px;
+    }
+}
+
+.accept-disclosure {
+    .ahwaa-modal__wrapper {
+        width: 478px;
+    }
+}

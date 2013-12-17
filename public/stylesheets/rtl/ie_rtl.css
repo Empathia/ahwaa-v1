@@ -30,3 +30,7 @@ input.placeimg.error{background: #ffffff url('../../images/pass_placeholder_erro
 .auth-wrapper #login.auth-form-active > span:hover,
 .auth-wrapper #sign-up.auth-form-active > span,
 .auth-wrapper #sign-up.auth-form-active > span:hover {border: 1px solid; border-color: #d4dce2 #d4dce2 transparent #d4dce2; margin-top: -1px}
+.room-chat-list__list {overflow-x: hidden !important}
+.logo-wrapper {background: #f2f7fa !important}
+.room-chat-list__header:before {background: url('../../images/rainbow.jpg') repeat-x; !important}
+.auth-submit {background: #1e4d88 !important}

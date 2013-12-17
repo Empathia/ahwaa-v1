@@ -16,4 +16,6 @@ public/system/**/*
 tags
 coverage/**
 .rspec
+.ruby-version
+.ruby-gemset
 

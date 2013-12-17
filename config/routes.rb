@@ -6,6 +6,18 @@ Lgbt::Application.routes.draw do
   end
   mount Resque::Server.new, :at => "/resque"
 
+  resources :chat_rooms do
+    collection do
+      post :mark_as_read
+      post :is_user_allow
+      post :create_invite
+      post :chat_disclosure
+    end
+    member do
+      post :destroy_chat
+    end
+  end
+
   resources :subscriptions, :only => [] do
     get 'unsubscribe', :on => :member
     get 'unsubscribe_author', :on => :member
@@ -29,6 +41,7 @@ Lgbt::Application.routes.draw do
   resources :users, :except => [:show, :destroy, :update, :edit] do
     collection do
         get :card
+        get :user_search 
     end
     resource :private_messages, :only => [:create]
   end
@@ -63,6 +76,7 @@ Lgbt::Application.routes.draw do
   post "/notifications" => "notifications#create"
   get '/stream' => "home#stream", :as => :stream
   get '/my_topics' => 'home#my_topics', :as => :my_topics
+  get '/chat' => "home#chat", :as => :chat
 
   root :to => "home#index"
 

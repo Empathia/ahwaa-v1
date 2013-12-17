@@ -59,7 +59,7 @@ input {
 }
 
 /*a*/
-/* line 26, sass/fonts.scss */
+/* line 30, sass/fonts.scss */
 .sign-up-btn,
 .sec-title-med,
 #pageslide-slide-wrap > div h2,
@@ -67,13 +67,17 @@ input {
 .my-topics-wrapper .is_empty .title,
 .stream-wrapper .is-empty,
 .modal header,
-.related-content > div > h2 {
+.related-content > div > h2,
+.room-chat-list__header h3,
+.chat-widget__title,
+#create-new-chatroom-form h3,
+#create-new-chatroom-form .sending-message {
   font-family: 'GothamMediumRegular';
   font-weight: normal;
 }
 
 /*b*/
-/* line 31, sass/fonts.scss */
+/* line 35, sass/fonts.scss */
 .sec-title,
 .h2,
 #join > a {
@@ -82,21 +86,21 @@ input {
 }
 
 /*c*/
-/* line 34, sass/fonts.scss */
+/* line 38, sass/fonts.scss */
 h1 {
   font-family: 'Gotham-Light';
   font-weight: normal;
 }
 
 /*d*/
-/* line 37, sass/fonts.scss */
+/* line 41, sass/fonts.scss */
 .feature-wrapper > h2 > span {
   font-family: 'Museo500-Light';
   font-weight: normal;
 }
 
 /*e*/
-/* line 41, sass/fonts.scss */
+/* line 45, sass/fonts.scss */
 .gloabl-counter > div > span,
 .gloabl-counter > div > ul > li {
   font-family: 'Museo700-Sans';
@@ -104,7 +108,7 @@ h1 {
 }
 
 /*f*/
-/* line 45, sass/fonts.scss */
+/* line 49, sass/fonts.scss */
 .banner .slogan h2,
 .items-frontpage .topic-spotlight .title {
   font-family: 'Museo500-Regular', Helvetica, Arial;
@@ -112,7 +116,7 @@ h1 {
 }
 
 /*g*/
-/* line 50, sass/fonts.scss */
+/* line 54, sass/fonts.scss */
 .honor-member-info > span,
 .items-wrapper > section > h2,
 .hall-of-fame > .hall-header > h4 > span {
@@ -121,18 +125,18 @@ h1 {
 }
 
 /*h*/
-/* line 53, sass/fonts.scss */
+/* line 57, sass/fonts.scss */
 .feature-wrapper > h2 {
   font-family: 'Museo900-Bold';
   font-weight: normal;
 }
 
-/* line 55, sass/fonts.scss */
+/* line 59, sass/fonts.scss */
 .feature-wrapper > h2 {
   font-weight: bold;
 }
 
-/* line 58, sass/fonts.scss */
+/* line 62, sass/fonts.scss */
 .feature-wrapper > h2 > span,
 .items-wrapper > section > h2,
 .hall-of-fame > .hall-header > h4 {
@@ -140,7 +144,7 @@ h1 {
 }
 
 @-moz-document url-prefix() {
-  /* line 62, sass/fonts.scss */
+  /* line 66, sass/fonts.scss */
   .feature-wrapper > h2,
   .feature-wrapper > h2 > span {
     font-weight: 100;

@@ -6,14 +6,18 @@
   <meta name="description" content="<%= @meta_description.present? ? @meta_description : 'A safe space to debate LGBTQ-related issues in the Middle East' %>">
   <meta name="keywords" content="<%= @meta_keywords.present? ? @meta_keywords : 'gay,lesbian,lgbt,middle,east,discuss,forum,homosexual' %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-
+  <script type="text/javascript">
+    var current_user = <%= current_user_info.to_s.html_safe %>
+  </script>
   <% if rtl? %>
+    <%= stylesheet_link_tag 'rtl/chat_general_rtl', 'rtl/icons_rtl', 'rtl/tooltip_rtl', 'rtl/confirm_rtl', 'rtl/chat_rtl', 'rtl/chat_room_rtl', 'rtl/chat_room_list_rtl', 'rtl/chat_invite_form_rtl', 'rtl/token-input-ahwaa_rtl' %>
     <%= stylesheet_link_tag 'rtl/reset_rtl', 'rtl/fonts_rtl', 'vendor/bootstrap.min', 'vendor/bootstrap-responsive.min', 'rtl/style_rtl', 'style-rtl', :cache => 'all_rtl' %>
   <% else %>
+    <%= stylesheet_link_tag 'chat_general', 'ui/icons', 'ui/tooltip', 'ui/confirm', 'ui/chat/chat', 'ui/chat/chat_room', 'ui/chat/chat_room_list', 'ui/chat/chat_invite_form', 'ui/chat/token-input-ahwaa' %>
     <%= stylesheet_link_tag 'reset', 'fonts', 'vendor/bootstrap.min', 'vendor/bootstrap-responsive.min', 'style', :cache => true %>
   <% end %>
 
-  <%= javascript_include_tag :defaults, 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'tagList', :cache => true %>
+  <%= javascript_include_tag :defaults, 'include/jquery.titlealert', 'include/form_validator', 'include/jquery.pageslide', 'include/jquery.hoverIntent.minified', 'include/neon', 'authForms', 'messageSender', 'welcomeSender', 'tagList', :cache => true %>
 
   <link rel="shortcut icon" href="/favicon.ico">
   <%= csrf_meta_tag %>
@@ -34,6 +38,36 @@
   <!--[if IE 8]>
     <%= stylesheet_link_tag 'ie8' %>
   <![endif]-->
+
+  <% if current_user && current_user.score_board.current_points > 99 || current_user && current_user.is_mod %>
+    <script src="<%= request.protocol + request.host + ':8080/socket.io/socket.io.js' %>"></script>
+    <script src="/javascripts/ui/ui.js"></script>
+    <script src="/javascripts/include/jquery.tokeninput.js"></script>
+    <script src="/javascripts/include/custom_event.js"></script>
+    <script src="/javascripts/include/custom_event_support.js"></script>
+    <script src="/javascripts/include/node_support.js"></script>
+    <script src="/javascripts/utils.js"></script>
+    <script src="/javascripts/ui/widget.js"></script>
+    <script src="/javascripts/ui/cripta.js"></script>
+    <script src="/javascripts/ui/Confirm.js"></script>
+    <script src="/javascripts/ui/Toggler.js"></script>
+    <script src="/javascripts/chat/User.js"></script>
+    <script src="/javascripts/ui/OverlayMessage.js"></script>
+    <script src="/javascripts/chat/chatHelperModule.js"></script>
+    <script src="/javascripts/ui/chatRoomUsersList.js"></script>
+    <script src="/javascripts/ui/chatRoom.js"></script>
+    <script src="/javascripts/ui/chatRoomsList.js"></script>
+    <script src="/javascripts/ui/createChatRoomForm.js"></script>
+    <script src="/javascripts/ui/chatRoomInviteForm.js"></script>
+    <script src="/javascripts/ui/chatRoomsUIManager.js"></script>
+    <script src="/javascripts/ChatRoomsController.js"></script>
+    <script>
+      window.onload = function() {
+          console.log("...");
+          new ChatRoomsController();
+      };
+    </script>
+  <% end %>
 </head>
 <body>
   <div class="page-wrapper <%= 'rtl'.html_safe if rtl? %>">
@@ -305,12 +339,15 @@
     <div class="app-body-container">
       <%= yield %>
     </div>
+    <% if current_user %>
+      <%= render :partial => 'shared/chat_list' %>
+    <% end %>
+    <div class="hall-header hidden-phone">
+      <h4>
+        <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
+      </h4>
+    </div>
     <div class="hall-of-fame collapsed hidden-phone" data-hansel-component-id="hall-of-fame">
-      <div class="hall-header">
-        <h4>
-          <span title="<%= t '.hall_of_fame.tab' %>"><%= t '.hall_of_fame.tab' %></span>
-        </h4>
-      </div>
       <div class="hall-footer">
         <div class="container">
           <ul class="hall-people row-fluid">
@@ -391,7 +428,7 @@
       </div>
     </div>
     <footer>
-      <div class="container">
+      <div>
         <div class="footer-container">
         <%#= debug(params) if Rails.env.development? %>
 

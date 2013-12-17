@@ -1,0 +1,42 @@
+.panel-invite-room {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 4px;
+  background-color: #f8f9fb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+
+  .token-input-list-ahwaa,
+  .panel-invite-room__input {
+    width: 213px;
+    float: left;
+    margin-right: 4px;
+
+    min-height: 28px;
+    font-family: inherit;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 4px;
+    border-color: #6d767a #bcc9d0 #c3d2d9 #bcc9d0;
+
+    li.token-input-token-ahwaa {
+      margin: 3px 0 0 3px;
+    }
+  }
+  .panel-invite-room__submit {
+    width: 55px;
+  }
+}
+
+.panel-invite-room__label {
+  font-size: 13px;
+  line-height: 1.3em;
+  padding: 3px 5px 5px;
+  color: #737980;
+  font-family: inherit;
+
+  &:empty {
+    padding: 0;
+  }
+}

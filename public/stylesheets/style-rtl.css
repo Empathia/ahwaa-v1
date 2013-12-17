@@ -202,12 +202,71 @@ div.selector select {
 }
 
 /* line 64, sass/style-rtl.scss */
-.hall-of-fame > .hall-header > h4 > span {
+.hall-header {
+  left: 0;
+  right: auto;
+}
+/* line 67, sass/style-rtl.scss */
+.hall-header > h4 > span {
   font-weight: bold;
   right: 30px !important;
 }
 
-/* line 65, sass/style-rtl.scss */
+/* line 69, sass/style-rtl.scss */
 .honor-member-info > span {
   font-size: 12px !important;
+}
+
+/* chat */
+/* line 73, sass/style-rtl.scss */
+.room-chat-list {
+  right: 15px;
+}
+
+/* line 76, sass/style-rtl.scss */
+.chat-wrapper--widget {
+  left: 0;
+  right: 310px;
+}
+
+/* line 80, sass/style-rtl.scss */
+.chat-widget {
+  right: 0;
+}
+
+/* line 83, sass/style-rtl.scss */
+.notification-badge {
+  left: 5px;
+  right: auto;
+}
+/* line 86, sass/style-rtl.scss */
+.notification-badge.circle {
+  left: auto;
+  right: 5px;
+}
+
+/* tooltip */
+/* line 94, sass/style-rtl.scss */
+.effekt-tooltip[data-position="top"]:after,
+.effekt-tooltip[data-position="bottom"]:after {
+  -webkit-transform: translateX(50%);
+  -moz-transform: translateX(50%);
+  -ms-transform: translateX(50%);
+  -o-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+/* icons */
+/* line 103, sass/style-rtl.scss */
+.chat-icon--user {
+  background-position: 0 0;
+}
+
+/* line 106, sass/style-rtl.scss */
+.chat-icon--close-header {
+  background-position: 0 -24px;
+}
+/* line 108, sass/style-rtl.scss */
+.chat-icon--close-header:hover {
+  background-position: 0 -36px;
 }

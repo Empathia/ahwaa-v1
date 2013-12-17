@@ -1,0 +1,299 @@
+/* line 3, ../../sass/ui/chat/chat.scss */
+.chat__window {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  border-width: 1px 1px 0 1px;
+  background-color: #fff;
+  border-style: solid solid none solid;
+  border-color: #748da6;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 4px 4px 0 0;
+  -webkit-transition: -webkit-transform 200ms ease, bottom 200ms ease;
+  -webkit-transition-delay: 100ms, 0s;
+  -moz-transition: -moz-transform 200ms ease 100ms, bottom 200ms ease;
+  -o-transition: -o-transform 200ms ease 100ms, bottom 200ms ease;
+  transition: transform 200ms ease 100ms, bottom 200ms ease;
+}
+
+/* line 19, ../../sass/ui/chat/chat.scss */
+.chat-widget__notifications {
+  z-index: 9999;
+  display: none;
+}
+/* line 22, ../../sass/ui/chat/chat.scss */
+.chat-widget__notifications .chat__header {
+  font-style: italic;
+}
+
+/* line 27, ../../sass/ui/chat/chat.scss */
+.chat__header {
+  position: relative;
+  display: table;
+  width: 100%;
+  padding: 0;
+  height: 28px;
+  cursor: pointer;
+  background-color: #99b2cc;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #abc1d6), color-stop(100%, #85a2be));
+  background-image: -webkit-linear-gradient(#abc1d6, #85a2be);
+  background-image: -moz-linear-gradient(#abc1d6, #85a2be);
+  background-image: -o-linear-gradient(#abc1d6, #85a2be);
+  background-image: linear-gradient(#abc1d6, #85a2be);
+  box-shadow: inset 0 1px 0 #dae6f2;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid #5c7a99;
+}
+/* line 41, ../../sass/ui/chat/chat.scss */
+.chat__header.hover {
+  background-color: #adc3d9;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bccee0), color-stop(100%, #9bb4cf));
+  background-image: -webkit-linear-gradient(#bccee0, #9bb4cf);
+  background-image: -moz-linear-gradient(#bccee0, #9bb4cf);
+  background-image: -o-linear-gradient(#bccee0, #9bb4cf);
+  background-image: linear-gradient(#bccee0, #9bb4cf);
+}
+/* line 44, ../../sass/ui/chat/chat.scss */
+.chat__header.hover:active {
+  background-color: #adc3d9;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #a2bad3), color-stop(100%, #b3c8dc));
+  background-image: -webkit-linear-gradient(#a2bad3, #b3c8dc);
+  background-image: -moz-linear-gradient(#a2bad3, #b3c8dc);
+  background-image: -o-linear-gradient(#a2bad3, #b3c8dc);
+  background-image: linear-gradient(#a2bad3, #b3c8dc);
+}
+/* line 50, ../../sass/ui/chat/chat.scss */
+.chat__header i:active {
+  position: relative;
+  top: 1px;
+}
+
+/* line 56, ../../sass/ui/chat/chat.scss */
+.chat__header--close {
+  margin-right: 10px;
+}
+
+/* line 60, ../../sass/ui/chat/chat.scss */
+.chat__header--full-btn {
+  height: 28px;
+  padding: 0 8px;
+  margin: 0;
+  color: #fff;
+  background-color: rgba(51, 76, 102, 0.2);
+  box-shadow: inset 0 1px 0 #dae6f2;
+  -moz-border-radius-topleft: 0;
+  -webkit-border-top-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-top-right-radius: 3px;
+  -moz-border-radius-bottomright: 0;
+  -webkit-border-bottom-right-radius: 0;
+  border-bottom-right-radius: 0;
+  -moz-border-radius-bottomleft: 0;
+  -webkit-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-width: 0;
+}
+/* line 72, ../../sass/ui/chat/chat.scss */
+.chat__header--full-btn:hover {
+  background-color: rgba(51, 76, 102, 0.35);
+}
+
+/* line 80, ../../sass/ui/chat/chat.scss */
+.create-new-chatroom-button .effekt-tooltip[data-position="top"]:after,
+.create-new-chatroom-button .effekt-tooltip[data-position="bottom"]:after {
+  left: 7%;
+}
+
+/* line 86, ../../sass/ui/chat/chat.scss */
+.chat__header--title {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 220px;
+  white-space: nowrap;
+  font-size: 12px;
+  padding-top: 4px;
+  line-height: 0;
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(89, 108, 128, 0.7);
+  text-align: left;
+}
+
+/* line 103, ../../sass/ui/chat/chat.scss */
+.chat__header--options {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+/* line 107, ../../sass/ui/chat/chat.scss */
+.chat__header--options > * {
+  display: inline-block;
+}
+
+/* line 114, ../../sass/ui/chat/chat.scss */
+.chat__header--options .chat__admin-actions .dropdown {
+  right: 3px;
+  top: 20px;
+}
+
+/* line 121, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions {
+  position: relative;
+}
+/* line 123, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown {
+  display: none;
+  position: absolute;
+  right: 6px;
+  top: 22px;
+  z-index: 1;
+  border: 1px solid #748da6;
+  border-radius: 4px;
+  background-color: #fff;
+  text-align: left;
+}
+/* line 133, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown ul {
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
+}
+/* line 138, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown li {
+  cursor: pointer;
+  width: 100%;
+  font-size: 12px;
+  padding: 3px 15px 3px 10px;
+  white-space: nowrap;
+  border-bottom: 1px solid #d0d9e1;
+  background-color: #fff;
+  color: #494b4d;
+}
+/* line 148, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown li:hover {
+  background-color: #f5f9fc;
+}
+/* line 151, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown li:last-child {
+  border-bottom-width: 0;
+}
+/* line 156, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown:before, .chat__admin-actions .dropdown:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: 4px solid #fff;
+}
+/* line 167, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown:before {
+  margin-top: -5px;
+  border-bottom: 4px solid #2d70b3;
+}
+/* line 171, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .dropdown:after {
+  margin-top: -4px;
+}
+/* line 178, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .effekt-tooltip[data-position="top"]:after,
+.chat__admin-actions .effekt-tooltip[data-position="bottom"]:after {
+  left: 35%;
+}
+/* line 181, ../../sass/ui/chat/chat.scss */
+.chat__admin-actions .effekt-tooltip[data-position="top"]:before,
+.chat__admin-actions .effekt-tooltip[data-position="bottom"]:before {
+  left: 20%;
+}
+
+/* line 190, ../../sass/ui/chat/chat.scss */
+.chat__header--options .effekt-tooltip[data-position="top"]:before,
+.chat__header--options .effekt-tooltip[data-position="bottom"]:before {
+  left: 45%;
+}
+/* line 193, ../../sass/ui/chat/chat.scss */
+.chat__header--options .effekt-tooltip[data-position="top"]:after,
+.chat__header--options .effekt-tooltip[data-position="bottom"]:after {
+  left: 0%;
+}
+
+/* line 201, ../../sass/ui/chat/chat.scss */
+.chat-icon--user.with-counter,
+.chat-icon--user-lighter.with-counter {
+  position: relative;
+  margin-right: 15px;
+}
+/* line 204, ../../sass/ui/chat/chat.scss */
+.chat-icon--user.with-counter:before,
+.chat-icon--user-lighter.with-counter:before {
+  content: attr(data-count);
+  position: absolute;
+  width: 100%;
+  right: -15px;
+  top: 2px;
+  font-size: 9px;
+  line-height: 1em;
+  color: #8fa1b2;
+  font-style: normal;
+}
+
+/* line 219, ../../sass/ui/chat/chat.scss */
+.chat-icon--user-lighter.with-counter::before {
+  color: #e5f2ff;
+  text-shadow: 0 1px 2px rgba(89, 108, 128, 0.7);
+  text-align: left;
+  line-height: 0.6em;
+}
+
+/* line 228, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(237, 242, 247, 0.85);
+  text-align: center;
+  z-index: 1;
+}
+/* line 239, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .chat__overlay-message--wrapper {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+/* line 244, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .chat__overlay-message--inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 248, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .loader {
+  background-color: white;
+  padding: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border-radius: 3px;
+}
+/* line 254, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .loader img {
+  display: inline-block;
+  vertical-align: top;
+}
+/* line 259, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .chat__overlay-message--title {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 263, ../../sass/ui/chat/chat.scss */
+.chat__overlay-message .chat__overlay-message--message {
+  font-size: 12px;
+  line-height: 20px;
+}

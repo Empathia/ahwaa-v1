@@ -1220,11 +1220,11 @@ header > .right > .by-author {
 }
 /* line 427, sass/topics.scss */
 #font-size-controls .increase span {
-  background-position:0 0;
+  background-position:100% 0;
 }
 /* line 429, sass/topics.scss */
 #font-size-controls .increase:hover span, #font-size-controls .increase:active span {
-  background-position:0 -12px;
+  background-position:100% -12px;
 }
 /* line 431, sass/topics.scss */
 #font-size-controls .decrease {
@@ -1264,7 +1264,6 @@ header > .right > .by-author {
 /* line 445, sass/topics.scss */
 .related-carrousel {
   position: relative;
-  margin-bottom: 17px;
 }
 
 /* line 446, sass/topics.scss */
@@ -1506,7 +1505,6 @@ header > .right > .by-author {
 }
 /* line 497, sass/topics.scss */
 .related-carrousel > .items {
-  float:right;
   width: 100%;
 }
 /* line 499, sass/topics.scss */

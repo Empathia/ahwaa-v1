@@ -8,6 +8,15 @@ class HomeController < ApplicationController
     @video = I18n.locale == :ar ? "https://www.youtube.com/embed/2rHrZEHf2uM?wmode=opaque&rel=0" : "https://www.youtube.com/embed/GWEt2zCV0sk?wmode=opaque&rel=0"
   end
 
+  def chat
+    @chat_rooms = user_available_chats
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def stream
     redirect_to stream_path and return if current_user && params[:username] == current_user.username
     @user = params[:username] ? User.find_by_username(params[:username]) : current_user
@@ -42,6 +51,8 @@ class HomeController < ApplicationController
       @stream_for_new_users = [@recommended, @newest].flatten.compact.map{|t| t.stream_messages.last }.compact.sort{|a,b| b.created_at <=> a.created_at }
     end
 
+    @chat_rooms = user_available_chats
+
     respond_to do |format|
       format.html
       format.js
@@ -51,6 +62,7 @@ class HomeController < ApplicationController
   def my_topics
     @topics = current_user.topics
     @user = current_user
+    @chat_rooms = user_available_chats
   end
 
   def privacy_policy
