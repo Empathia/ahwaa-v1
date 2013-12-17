@@ -40,7 +40,7 @@
   <![endif]-->
 
   <% if current_user && current_user.score_board.current_points > 99 || current_user && current_user.is_mod %>
-    <script src="<%= request.protocol + request.host + ':8080/socket.io/socket.io.js' %>"></script>
+    <script src="<%= request.protocol + request.host + '/socket.io.js' %>"></script>
     <script src="/javascripts/ui/ui.js"></script>
     <script src="/javascripts/include/jquery.tokeninput.js"></script>
     <script src="/javascripts/include/custom_event.js"></script>
