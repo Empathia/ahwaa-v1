@@ -21,7 +21,7 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return null;
             }
 
-            this.socket = io.connect(this.url + ':' + this.port);
+            this.socket = io.connect(this.url + ':' + this.port, {secure: true});
 
             Ahwaa.Model.User = new User({
                 id          : window.current_user.id,
