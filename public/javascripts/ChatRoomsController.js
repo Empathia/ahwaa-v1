@@ -2,7 +2,7 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
     prototype : {
 
         socket  : null,
-        url     : location.protocol + '//'+ location.hostname,
+        url     : location.hostname,
         port    : '8080',
         connected: false,
 
