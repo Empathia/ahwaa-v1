@@ -1,21 +1,4 @@
-// var fs = require('fs');
-
-// var options = {
-//   key : fs.readFileSync('/data/nginx/apps/ssl/ahwaa_173_203_92_230_ssl.key'),
-//   cert: fs.readFileSync('/data/nginx/apps/ssl/ahwaa_173_203_92_230_ssl.crt')
-//   // ca: fs.readFileSync('/etc/ssl/ebscerts/bundle.crt')
-// };
-
-// var app = require('https').createServer(options),
-    // io  = require('socket.io').listen(app.listen(8080));
-
 var io = require('socket.io').listen(8080);
-
-// io.configure(function () {
-//     io.set("transports", ["xhr-polling"]);
-//     io.set("polling duration", 10);
-// });
-
 var _users = {};
 
 io.sockets.on('connection', function(client) {

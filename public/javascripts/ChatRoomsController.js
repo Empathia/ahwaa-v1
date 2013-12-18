@@ -2,7 +2,7 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
     prototype : {
 
         socket  : null,
-        url     : 'http://' + location.hostname,
+        url     : location.hostname,
         port    : '8080',
         connected: false,
 
@@ -21,7 +21,13 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return null;
             }
 
-            this.socket = io.connect(this.url + ':' + this.port);
+            if (location.port === '') {
+                // prod
+                this.socket = io.connect(this.url);
+            } else {
+                // dev
+                this.socket = io.connect(this.url + ':' + this.port);
+            }
 
             Ahwaa.Model.User = new User({
                 id          : window.current_user.id,
