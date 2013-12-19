@@ -173,80 +173,91 @@
   margin-top: 0;
 }
 
-/* UNIFORM */
+/* topics */
 /* line 57, sass/style-rtl.scss */
+#font-size-controls .increase {
+  border-right-width: 1px !important;
+  border-left-width: 0 !important;
+}
+/* line 60, sass/style-rtl.scss */
+#font-size-controls .increase span {
+  background-position: 0 0 !important;
+}
+
+/* UNIFORM */
+/* line 66, sass/style-rtl.scss */
 div.checker span {
   background-position: 0px -260px;
 }
 
-/* line 58, sass/style-rtl.scss */
+/* line 67, sass/style-rtl.scss */
 div.selector span {
   padding: 0 25px 0 2px !important;
   text-align: right;
 }
 
-/* line 59, sass/style-rtl.scss */
+/* line 68, sass/style-rtl.scss */
 div.selector select {
   left: 0;
   right: inherit;
 }
 
-/* line 61, sass/style-rtl.scss */
+/* line 70, sass/style-rtl.scss */
 .gloabl-counter > div > ul > li {
   float: left !important;
 }
 
-/* line 63, sass/style-rtl.scss */
+/* line 72, sass/style-rtl.scss */
 .feature-wrapper h2 {
   font-size: 16px !important;
 }
 
-/* line 64, sass/style-rtl.scss */
+/* line 73, sass/style-rtl.scss */
 .hall-header {
   left: 0;
   right: auto;
 }
-/* line 67, sass/style-rtl.scss */
+/* line 76, sass/style-rtl.scss */
 .hall-header > h4 > span {
   font-weight: bold;
   right: 30px !important;
 }
 
-/* line 69, sass/style-rtl.scss */
+/* line 78, sass/style-rtl.scss */
 .honor-member-info > span {
   font-size: 12px !important;
 }
 
 /* chat */
-/* line 73, sass/style-rtl.scss */
+/* line 82, sass/style-rtl.scss */
 .room-chat-list {
   right: 15px;
 }
 
-/* line 76, sass/style-rtl.scss */
+/* line 85, sass/style-rtl.scss */
 .chat-wrapper--widget {
   left: 0;
   right: 310px;
 }
 
-/* line 80, sass/style-rtl.scss */
+/* line 89, sass/style-rtl.scss */
 .chat-widget {
   right: 0;
 }
 
-/* line 83, sass/style-rtl.scss */
+/* line 92, sass/style-rtl.scss */
 .notification-badge {
   left: 5px;
   right: auto;
 }
-/* line 86, sass/style-rtl.scss */
+/* line 95, sass/style-rtl.scss */
 .notification-badge.circle {
   left: auto;
   right: 5px;
 }
 
 /* tooltip */
-/* line 94, sass/style-rtl.scss */
+/* line 103, sass/style-rtl.scss */
 .effekt-tooltip[data-position="top"]:after,
 .effekt-tooltip[data-position="bottom"]:after {
   -webkit-transform: translateX(50%);
@@ -257,16 +268,16 @@ div.selector select {
 }
 
 /* icons */
-/* line 103, sass/style-rtl.scss */
+/* line 112, sass/style-rtl.scss */
 .chat-icon--user {
   background-position: 0 0;
 }
 
-/* line 106, sass/style-rtl.scss */
+/* line 115, sass/style-rtl.scss */
 .chat-icon--close-header {
   background-position: 0 -24px;
 }
-/* line 108, sass/style-rtl.scss */
+/* line 117, sass/style-rtl.scss */
 .chat-icon--close-header:hover {
   background-position: 0 -36px;
 }
