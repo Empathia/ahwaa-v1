@@ -8,6 +8,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <script type="text/javascript">
     var current_user = <%= current_user_info.to_s.html_safe %>
+    var app = {
+      env: "<%= Rails.env.production? ? 'production' : 'dev' %>"
+    };
   </script>
   <% if rtl? %>
     <%= stylesheet_link_tag 'rtl/chat_general_rtl', 'rtl/icons_rtl', 'rtl/tooltip_rtl', 'rtl/confirm_rtl', 'rtl/chat_rtl', 'rtl/chat_room_rtl', 'rtl/chat_room_list_rtl', 'rtl/chat_invite_form_rtl', 'rtl/token-input-ahwaa_rtl' %>

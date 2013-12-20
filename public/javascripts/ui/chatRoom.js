@@ -2,12 +2,12 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
     elementClass: 'chat-widget',
     html: '\
         <div class="chat__window">\
-            <header class="chat__header">\
+            <div class="chat__header">\
                 <h3 class="chat__header--title chat-widget__title">Chat Title</h3>\
                 <div class="chat__header--options">\
                     <i class="chat__header--close chat-widget__leave chat-icon chat-icon--close-header effekt-tooltip" data-tooltip-text="Leave Conversation" data-position="top"></i>\
                 </div>\
-            </header>\
+            </div>\
             <div class="chat-widget__list custom-scrollbars small-avatars"></div>\
             <footer>\
                 <form class="chat-widget__form">\

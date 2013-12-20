@@ -1,6 +1,6 @@
 <% if is_chat_allowed_for(current_user) %>
-  <div class="chat__window room-chat-list">
-    <header class="chat__header room-chat-list__header">
+  <div class="chat__window room-chat-list" data-pageslide="closed">
+    <div class="chat__header room-chat-list__header">
       <h3 class="chat__header--title">
         <span class="title">Chat Rooms</span>
         <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length %></span>)</span>
@@ -12,7 +12,7 @@
           </button>
         </div>
       <% end %>
-    </header>
+    </div>
     <div class="room-chat-list__body">
       <ul class="room-chat-list__list custom-scrollbars" data-mod="<%= has_500_points(current_user) %>">
         <% @chat_rooms.each do |chat| %>
@@ -62,11 +62,11 @@
     <span class="notification-badge circle"><%= user_invitation_counter %></span>
   </div>
 <% else %>
-  <div class="chat__window room-chat-list active effekt-tooltip" data-tooltip-text="You need 100 points" data-position="top">
-    <header class="chat__header room-chat-list__header">
+  <div class="chat__window room-chat-list active effekt-tooltip" data-tooltip-text="You need 100 points" data-position="top" data-pageslide="closed">
+    <div class="chat__header room-chat-list__header">
       <h3 class="chat__header--title">Chat Rooms</h3>
       <div class="chat__header--options">
       </div>
-    </header>
+    </div>
   </div>
 <% end %>

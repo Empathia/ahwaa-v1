@@ -256,8 +256,18 @@ div.selector select {
   right: 5px;
 }
 
+/* line 101, sass/style-rtl.scss */
+.chat-wrapper--widget[data-pageslide=open] {
+  right: -866px;
+}
+
+/* line 104, sass/style-rtl.scss */
+.room-chat-list[data-pageslide=open] {
+  right: -571px;
+}
+
 /* tooltip */
-/* line 103, sass/style-rtl.scss */
+/* line 110, sass/style-rtl.scss */
 .effekt-tooltip[data-position="top"]:after,
 .effekt-tooltip[data-position="bottom"]:after {
   -webkit-transform: translateX(50%);
@@ -268,16 +278,16 @@ div.selector select {
 }
 
 /* icons */
-/* line 112, sass/style-rtl.scss */
+/* line 119, sass/style-rtl.scss */
 .chat-icon--user {
   background-position: 0 0;
 }
 
-/* line 115, sass/style-rtl.scss */
+/* line 122, sass/style-rtl.scss */
 .chat-icon--close-header {
   background-position: 0 -24px;
 }
-/* line 117, sass/style-rtl.scss */
+/* line 124, sass/style-rtl.scss */
 .chat-icon--close-header:hover {
   background-position: 0 -36px;
 }

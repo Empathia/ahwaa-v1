@@ -1,11 +1,14 @@
+var form = $('.sign-up-form');
+form.find('.loading').removeClass('loading').end().find('p.error').remove();
+
 <% if @user.valid? %>
-location.reload();
+    location.reload();
 <% else %>
-  <% @user.errors.each do |attr, msg| %>
-    if($('.sign-up-form .<%= attr %>').length) {  
-      $('.sign-up-form .<%= attr %>').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
-    } else {
-      $('.sign-up-form .errors').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
-    }
-  <% end %>
+    <% @user.errors.each do |attr, msg| %>
+        if(form.find('.<%= attr %>').length) {
+            form.find('.<%= attr %>').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
+        } else {
+            form.find('.errors').append('<p class="error"><%= escape_javascript "#{attr} #{@user.errors[attr].first}" %></p>');
+        }
+    <% end %>
 <% end %>

@@ -21,11 +21,9 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return null;
             }
 
-            if (location.port === '') {
-                // prod
+            if (window.app.env === "production") {
                 this.socket = io.connect(this.url);
             } else {
-                // dev
                 this.socket = io.connect(this.url + ':' + this.port);
             }
 

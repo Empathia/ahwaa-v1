@@ -34,6 +34,10 @@ $gf-blue: #4b5ddf;
   .chat-widget__panel-users-list {
     top: 3px;
   }
+
+  &[data-pageslide=open] {
+    right: 571px; // (15: default right position) + (556 : pageslider width)
+  }
 }
 
 .room-chat-list__header {

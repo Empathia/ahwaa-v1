@@ -1,13 +1,13 @@
 Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
     elementClass: 'chat-wrapper--widget',
     html: '\
-        <div>\
+        <div data-pageslide="closed">\
             <div class="chat__window chat-widget chat-widget__notifications visible">\
-                <header class="chat__header">\
+                <div class="chat__header">\
                     <h3 class="chat__header--title chat-widget__title">\
                         <span>0</span> active rooms\
                     </h3>\
-                </header>\
+                </div>\
                 <span class="notification-badge">0</span>\
         </div>\
     ',

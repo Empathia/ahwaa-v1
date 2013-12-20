@@ -35,8 +35,12 @@
 .room-chat-list .chat-widget__panel-users-list {
   top: 3px;
 }
+/* line 38, ../../sass/ui/chat/chat_room_list.scss */
+.room-chat-list[data-pageslide=open] {
+  left: 571px;
+}
 
-/* line 40, ../../sass/ui/chat/chat_room_list.scss */
+/* line 44, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__header:before {
   content: '';
   width: 100%;
@@ -53,22 +57,22 @@
   background-image: linear-gradient(left, #b920df, #e10f00, #ffa200, #ffd900, #3dab5b, #56a2ed, #4b5ddf, #b920df, #e10f00, #ffa200);
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
-/* line 56, ../../sass/ui/chat/chat_room_list.scss */
+/* line 60, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__header .chat__header--title span {
   display: inline-block;
 }
-/* line 58, ../../sass/ui/chat/chat_room_list.scss */
+/* line 62, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__header .chat__header--title span.counter {
   color: #e5f2ff;
 }
 
-/* line 63, ../../sass/ui/chat/chat_room_list.scss */
+/* line 67, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__body {
   height: 370px;
   position: relative;
 }
 
-/* line 67, ../../sass/ui/chat/chat_room_list.scss */
+/* line 71, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list {
   margin: 0;
   padding: 0;
@@ -77,7 +81,7 @@
   height: 100%;
   overflow: auto;
 }
-/* line 75, ../../sass/ui/chat/chat_room_list.scss */
+/* line 79, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list li {
   cursor: pointer;
   display: table;
@@ -88,11 +92,11 @@
   background-color: inherit;
   color: #494b4c;
 }
-/* line 84, ../../sass/ui/chat/chat_room_list.scss */
+/* line 88, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list li:hover {
   background-color: #f5f9fc;
 }
-/* line 88, ../../sass/ui/chat/chat_room_list.scss */
+/* line 92, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list li.active:before {
   content: "";
   width: 0;
@@ -105,37 +109,37 @@
   border-bottom: 4px solid transparent;
   margin-top: -4px;
 }
-/* line 101, ../../sass/ui/chat/chat_room_list.scss */
+/* line 105, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list li.new {
   font-weight: bold;
 }
-/* line 105, ../../sass/ui/chat/chat_room_list.scss */
+/* line 109, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .title {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
 }
-/* line 110, ../../sass/ui/chat/chat_room_list.scss */
+/* line 114, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .info {
   display: table-cell;
   vertical-align: middle;
   width: 100%;
   padding-right: 10px;
 }
-/* line 115, ../../sass/ui/chat/chat_room_list.scss */
+/* line 119, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .info > * {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 121, ../../sass/ui/chat/chat_room_list.scss */
+/* line 125, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .chat__admin-actions .chat-icon--settings-list {
   margin-left: 3px;
 }
-/* line 126, ../../sass/ui/chat/chat_room_list.scss */
+/* line 130, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .info__invitation .chat-icon--invitation-list {
   margin-left: 10px;
 }
-/* line 129, ../../sass/ui/chat/chat_room_list.scss */
+/* line 133, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list .info__invitation .effekt-tooltip:after {
   width: 80px;
   white-space: normal;
@@ -143,12 +147,12 @@
   overflow: hidden;
 }
 
-/* line 138, ../../sass/ui/chat/chat_room_list.scss */
+/* line 142, ../../sass/ui/chat/chat_room_list.scss */
 .room-chat-list__list--label {
   color: #9da2a6;
 }
 
-/* line 142, ../../sass/ui/chat/chat_room_list.scss */
+/* line 146, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form {
   display: none;
   position: absolute;
@@ -159,29 +163,29 @@
   background-color: #edf2f7;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
-/* line 151, ../../sass/ui/chat/chat_room_list.scss */
+/* line 155, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form a {
   font-size: 12px;
   color: #8fa1b2;
 }
-/* line 155, ../../sass/ui/chat/chat_room_list.scss */
+/* line 159, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form button[type="submit"] {
   margin-left: 5px;
 }
-/* line 159, ../../sass/ui/chat/chat_room_list.scss */
+/* line 163, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form li.token-input-token-ahwaa {
   padding: 1px 5px;
 }
-/* line 162, ../../sass/ui/chat/chat_room_list.scss */
+/* line 166, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form li.token-input-input-token-ahwaa {
   margin-top: 1px;
 }
-/* line 165, ../../sass/ui/chat/chat_room_list.scss */
+/* line 169, ../../sass/ui/chat/chat_room_list.scss */
 #create-new-chatroom-form div.token-input-dropdown-ahwaa {
   width: 259px !important;
 }
 
-/* line 170, ../../sass/ui/chat/chat_room_list.scss */
+/* line 174, ../../sass/ui/chat/chat_room_list.scss */
 .no-rooms-messages {
   display: none;
   position: absolute;
@@ -191,16 +195,16 @@
   text-align: center;
   color: #5c6166;
 }
-/* line 179, ../../sass/ui/chat/chat_room_list.scss */
+/* line 183, ../../sass/ui/chat/chat_room_list.scss */
 .no-rooms-messages .title {
   line-height: 26px;
   margin-bottom: 5px;
 }
-/* line 183, ../../sass/ui/chat/chat_room_list.scss */
+/* line 187, ../../sass/ui/chat/chat_room_list.scss */
 .no-rooms-messages .message {
   line-height: 19px;
 }
-/* line 186, ../../sass/ui/chat/chat_room_list.scss */
+/* line 190, ../../sass/ui/chat/chat_room_list.scss */
 .no-rooms-messages .chat-icon--top-arrow {
   position: absolute;
   top: 10px;

@@ -98,6 +98,13 @@ div.selector select {left: 0; right: inherit}
     }
 }
 
+.chat-wrapper--widget[data-pageslide=open] {
+    right: -866px;
+}
+.room-chat-list[data-pageslide=open] {
+    right: -571px;
+}
+
 /* tooltip */
 .effekt-tooltip[data-position="top"]:after,
 .effekt-tooltip[data-position="bottom"]:after {
