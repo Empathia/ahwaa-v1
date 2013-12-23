@@ -564,15 +564,6 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
         updateCounter : function updateCounter(total) {
             this.$cl_refcount[0].setAttribute('data-count', total);
             if (this.$headerCounter) this.$headerCounter[0].setAttribute('data-count', total);
-
-            // if it gets empty, delete it
-            // if (total === 0) {
-            //     this.constructor.dispatch('delete:room', this);
-            // }
-        },
-
-        forceReconnection : function forceReconnection() {
-            this.constructor.dispatch('rejoin:room', this);
         },
 
         markAsUnread : function markAsUnread(data) {

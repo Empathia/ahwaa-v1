@@ -53,11 +53,6 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
                 console.warn('Cannot join, the user is already in the room! ' + data.id);
             });
 
-            Ahwaa.UI.ChatRoom.bind('rejoin:room', function(ev, data) {
-                console.log('%c' + Ahwaa.Model.User.name + ' wants to connected to ----- ' + data.id, 'color: blue; font-weight: bold');
-                _this.dispatch('check:before:join', data);
-            });
-
             Ahwaa.UI.ChatRoom.bind('leave:room', function(ev, data) {
                 console.log('%c' + Ahwaa.Model.User.name + ' wants to leave ----- ' + data.id, 'color: blue; font-weight: bold');
                 _this.dispatch('leave:room', data);
@@ -86,22 +81,25 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
             });
         },
 
-        addChat : function addChatRoom(roomChatInstance) {
-            console.log('%c' + Ahwaa.Model.User.name + ' connected to ----- ' + roomChatInstance.id, 'color: green; font-weight: bold');
+        addChat : function addChat(roomChatInstance) {
+            if (this.activeChatRooms.indexOf(roomChatInstance) < 0) {
+                console.log('%c' + Ahwaa.Model.User.name + ' connected to ----- ' + roomChatInstance.id, 'color: green; font-weight: bold');
+                this.activeChatRooms.push(roomChatInstance);
+                this.appendChild(roomChatInstance).render(this.element);
 
-            this.activeChatRooms.push(roomChatInstance);
-            this.appendChild(roomChatInstance).render(this.element);
+                if (this.activated === false) {
+                    this.toggleChats();
+                }
 
-            if (this.activated === false) {
-                this.toggleChats();
+                this.setChatUpfront(roomChatInstance);
+                this.updateActiveRooms();
+
+                roomChatInstance.inView();
+                roomChatInstance.$chatListReference.addClass('active');
+                roomChatInstance.bindEvents();
+                return this;
             }
-
-            this.setChatUpfront(roomChatInstance);
-            this.updateActiveRooms();
-
-            roomChatInstance.inView();
-            roomChatInstance.$chatListReference.addClass('active');
-            roomChatInstance.bindEvents();
+            console.log('chat already rendered');
         },
 
         removeChatRoom : function removeChatRoom(roomChatInstance) {

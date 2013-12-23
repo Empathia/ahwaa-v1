@@ -4,10 +4,8 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
         socket  : null,
         url     : location.hostname,
         port    : '8080',
-        connected: false,
 
         init : function() {
-            var _this = this;
 
             if (typeof io === 'undefined') {
                 throw('The remote server is not available. Please try again later.');
@@ -21,12 +19,18 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return null;
             }
 
-            if (window.app.env === "production") {
-                this.socket = io.connect(this.url);
-            } else {
-                this.socket = io.connect(this.url + ':' + this.port);
-            }
+            if (!this.socket) {
+                this.socket = (window.app.env === "production")
+                    ? io.connect(this.url)
+                    : io.connect(this.url + ':' + this.port);
 
+                this.start();
+            }
+        },
+
+        start : function start() {
+            var _this = this;
+            console.log('start')
             Ahwaa.Model.User = new User({
                 id          : window.current_user.id,
                 name        : window.current_user.name,
@@ -42,20 +46,19 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 new Ahwaa.UI.ChatRoomsUIManager({
                     name: 'CRUIM'
                 })
-            ).render( $('.page-wrapper ') );
+            ).render( $('.page-wrapper ') ).activate();
 
-            _this.CRUIM.activate();
-
-            _this.bindings();
-            _this.serverBinds();
+            _this.bindings().serverBinds();
 
             this.socket.on('connect', function() {
+                console.log( _this.socket.socket.sessionid )
                 _this.socket.emit('set:userdata', Ahwaa.Model.User, function(data, users, is_new) {
                     console.log('USERDATA SET: ', data.name);
                     console.log(users, 'is new: ', is_new)
 
                     if (!is_new) {
-                        _this.CRUIM.checkStorage();
+                        _this.loadPreviousState();
+                        // _this.CRUIM.checkStorage();
                     }
 
                     Ahwaa.Collection.Rooms.forEach(function(room) {
@@ -99,18 +102,22 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 deactivatedRoomsCounter = 0,
                 activaRoomsLength       = this.CRUIM.activeChatRooms.length;
 
-            this.CRUIM.activeChatRooms.forEach(function(room) {
-                _this.socket.emit('leave:room', {
-                    id: room.id,
-                    removeFromStorage: false
-                }, function() {
-                    deactivatedRoomsCounter += 1;
-                    _this.CRUIM.removeChatRoom(room);
-                    if (deactivatedRoomsCounter === activaRoomsLength) {
-                        _this.CRUIM.checkStorage();
-                    }
+            if (!this.CRUIM.activeChatRooms.length) {
+                _this.CRUIM.checkStorage();
+            } else {
+                this.CRUIM.activeChatRooms.forEach(function(room) {
+                    _this.socket.emit('leave:room', {
+                        id: room.id,
+                        removeFromStorage: false
+                    }, function() {
+                        deactivatedRoomsCounter += 1;
+                        _this.CRUIM.removeChatRoom(room);
+                        if (deactivatedRoomsCounter === activaRoomsLength) {
+                            _this.CRUIM.checkStorage();
+                        }
+                    });
                 });
-            });
+            }
         },
 
         bindings : function() {
@@ -206,6 +213,8 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
             Ahwaa.UI.CreateChatRoomForm.bind('new:room', function(ev, data) {
                 _this.socket.emit('new:room', data);
             });
+
+            return this;
         },
 
         serverBinds : function serverBinds() {
