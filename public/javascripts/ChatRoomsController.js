@@ -12,6 +12,11 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return null;
             }
 
+            if (Ahwaa.utils.is_touch_device() || window.innerWidth < 768) {
+                // disable for touch devices or if window is less than 980
+                return false;
+            }
+
             this.storage = new Cripta('ChatRooms', {type: sessionStorage, values: []});
 
             if (window.current_user === null) {

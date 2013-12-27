@@ -1,4 +1,10 @@
-@import "compass";
+@import "compass", "mixins";
+
+@include breakpoint(768) {
+  .chat__window {
+    display: none;
+  }
+}
 
 .chat__window {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

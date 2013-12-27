@@ -11,6 +11,8 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
 
             Ahwaa.Collection.Rooms = this.collection;
 
+            this.element.show();
+
             this.$mainContent       = this.element.find('.room-chat-list__body');
             this.$list              = $('.room-chat-list__list');
             this.$header            = $('.room-chat-list__header');
