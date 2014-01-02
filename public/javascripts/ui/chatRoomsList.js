@@ -109,7 +109,14 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
             this.$header.bind({
                 click : function chatListHeaderClick(event) {
                     event.preventDefault();
-                    (_this.activated === true) ? _this.deactivate() : _this.activate();
+                    if (_this.activated === true) {
+                        _this.deactivate();
+                        _this.parent.parent.storage.values.listStatus.open = false;
+                    } else {
+                        _this.activate();
+                        _this.parent.parent.storage.values.listStatus.open = true;
+                    }
+                    _this.parent.parent.storage.save();
                 },
                 mouseover : function chatListHeaderEnter(ev) {
                     _this.$header.addClass('hover');

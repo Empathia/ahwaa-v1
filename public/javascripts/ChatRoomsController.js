@@ -17,7 +17,14 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 return false;
             }
 
-            this.storage = new Cripta('ChatRooms', {type: sessionStorage, values: []});
+            this.storage = new Cripta('ChatRooms', {
+                type    : sessionStorage,
+                values  : {
+                    'rooms': [],
+                    'listStatus': {open: true},
+                    'chatStatus': {open: true}
+                }
+            });
 
             if (window.current_user === null) {
                 this.storage.remove();
@@ -53,6 +60,8 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
                 })
             ).render( $('.page-wrapper ') ).activate();
 
+            this.CRUIM.checkListStatus();
+
             _this.bindings().serverBinds();
 
             this.socket.on('connect', function() {
@@ -63,7 +72,6 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
 
                     if (!is_new) {
                         _this.loadPreviousState();
-                        // _this.CRUIM.checkStorage();
                     }
 
                     Ahwaa.Collection.Rooms.forEach(function(room) {
@@ -374,8 +382,8 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
             this.socket.on('me:joined', function(data) {
                 Ahwaa.Collection.Rooms.forEach(function(room) {
                     if (data.id === room.id) {
-                        _this.storage.find('id', room.id, function(result) {
-                            if (!result) this.add({id: room.id, name: room.name, messages: []}).save();
+                        _this.storage.find('rooms.id', room.id, function(result) {
+                            if (!result) this.add('rooms', {id: room.id, name: room.name, messages: []}).save();
                         });
                     }
                 });
@@ -386,8 +394,8 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
 
                 _this.CRUIM.activeChatRooms.forEach(function(room) {
                     if (data.id === room.id) {
-                        _this.storage.find('id', room.id, function(result) {
-                            if (result) this.remove(result);
+                        _this.storage.find('rooms.id', room.id, function(result) {
+                            if (result) this.remove('rooms', result);
                         }).save();
                     }
                 });

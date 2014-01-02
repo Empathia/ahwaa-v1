@@ -130,6 +130,10 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
             this.bindingsListRefence();
         },
 
+        collapse : function collapse() {
+            this.element.addClass('collapse');
+        },
+
         resetBubbleCounter: function resetBubbleCounter() {
             this.activityCounter = 0;
             this.$bubble.removeClass('on').text(this.activityCounter);
@@ -507,8 +511,12 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
             //     }
             // }
 
-            this.parent.parent.storage.find('id', _this.id, function(result) {
-                result.messages.push({type: 'user', userdata: data.userdata, message: message});
+            this.parent.parent.storage.find('rooms.id', _this.id, function(result) {
+                result.messages.push({
+                    type    : 'user',
+                    userdata: data.userdata,
+                    message : message
+                });
             }).save();
 
             this.scrollDown();
@@ -544,8 +552,14 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
                     </div>';
             }
 
-            this.parent.parent.storage.find('id', this.id, function(result) {
-                if (result) result.messages.push({type: 'sys', userdata: data.userdata, message: message});
+            this.parent.parent.storage.find('rooms.id', this.id, function(result) {
+                if (result) {
+                    result.messages.push({
+                        type    : 'sys',
+                        userdata: data.userdata,
+                        message : message
+                    });
+                }
             }).save();
 
             this.updateBubble();

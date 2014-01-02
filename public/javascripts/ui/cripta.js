@@ -49,7 +49,7 @@ Class('Cripta')({
             return JSON.parse(this.type.getItem(this.name));
         },
 
-        remove : function remove(value) {
+        remove : function remove(key, value) {
             if (value === undefined) {
                 this.type.removeItem(this.name);
                 this.values = (this.is_array_based) ? [] : {};
@@ -61,7 +61,8 @@ Class('Cripta')({
                 return this;
             }
 
-            delete this.values[value];
+            this.values[key].splice(this.values[key].indexOf(value), 1);
+            // delete this.values[value];
 
             return this;
         },

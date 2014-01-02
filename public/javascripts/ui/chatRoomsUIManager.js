@@ -31,8 +31,26 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
                     element: $('.room-chat-list')
                 })
             );
-            this.chatRoomsList.activate();
+
             this.bindings();
+        },
+
+        checkListStatus : function checkListStatus() {
+            if (this.parent.storage.values.listStatus == undefined) {
+                // temportal fix for migration
+                console.log('sessionStorage rewrited');
+                var saved_rooms = this.parent.storage.get();
+
+                this.parent.storage.rewrite({
+                    'rooms': saved_rooms,
+                    'listStatus': {open: true},
+                    'chatStatus': {open: true}
+                }).save();
+            } else {
+                if (this.parent.storage.values.listStatus.open) {
+                    this.chatRoomsList.activate();
+                }
+            }
         },
 
         bindings : function bindings() {
@@ -49,7 +67,12 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
                     return true;
                 }
 
+                if (_this.activated === false) {
+                    _this.toggleChats();
+                }
+
                 _this.setChatUpfront(data);
+
                 console.warn('Cannot join, the user is already in the room! ' + data.id);
             });
 
@@ -82,23 +105,30 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
         },
 
         addChat : function addChat(roomChatInstance) {
+            if (this.activated === false && !roomChatInstance.fromStorage) {
+                this.toggleChats();
+            }
+
             if (this.activeChatRooms.indexOf(roomChatInstance) < 0) {
                 console.log('%c' + Ahwaa.Model.User.name + ' connected to ----- ' + roomChatInstance.id, 'color: green; font-weight: bold');
                 this.activeChatRooms.push(roomChatInstance);
                 this.appendChild(roomChatInstance).render(this.element);
 
-                if (this.activated === false) {
-                    this.toggleChats();
-                }
-
                 this.setChatUpfront(roomChatInstance);
                 this.updateActiveRooms();
+
+                if (roomChatInstance.fromStorage) {
+                    if (this.parent.storage.values.chatStatus.open === false) {
+                        this.collapseChats();
+                    }
+                }
 
                 roomChatInstance.inView();
                 roomChatInstance.$chatListReference.addClass('active');
                 roomChatInstance.bindEvents();
                 return this;
             }
+
             console.log('chat already rendered');
         },
 
@@ -184,8 +214,9 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
                 chatRoomsStorage = this.parent.storage.get();
             if (chatRoomsStorage) {
                 this.chatRoomsList.collection.forEach(function(roomInstance, i) {
-                    chatRoomsStorage.forEach(function(room, j) {
+                    chatRoomsStorage.rooms.forEach(function(room, j) {
                         if (roomInstance.id === room.id) {
+                            roomInstance.fromStorage = true;
                             Ahwaa.UI.ChatRoom.dispatch('join:room', roomInstance);
                             room.messages.forEach(function(message, i) {
                                 roomInstance.loadMessage(message);
@@ -199,8 +230,23 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
                     });
                 });
             } else {
-                this.parent.storage.rewrite([]).save();
+                this.parent.storage.rewrite({
+                    'rooms': [],
+                    'listStatus': {open: true},
+                    'chatStatus': {open: true}
+                }).save();
             }
+        },
+
+        collapseChats : function collapseChats() {
+            this.activeChatRooms.forEach(function(chat, i){
+                console.log(chat)
+                chat.collapse();
+            });
+            this.deactivate();
+            this.$chatsFeedback.delay(350).fadeIn(400);
+            this.parent.storage.values.chatStatus.open = false;
+            this.parent.storage.save();
         },
 
         toggleChats : function toggleChats() {
@@ -211,11 +257,15 @@ Class(Ahwaa.UI, 'ChatRoomsUIManager').inherits(Ahwaa.UI.Widget)({
             if (this.activeChatRooms[0].element.hasClass('collapse')) {
                 this.deactivate();
                 this.$chatsFeedback.delay(350).fadeIn(400);
+                this.parent.storage.values.chatStatus.open = false;
             } else {
                 this.activate();
                 this.resetGlobalActivity();
                 this.$chatsFeedback.hide();
+                this.parent.storage.values.chatStatus.open = true;
             }
+
+            this.parent.storage.save();
         },
 
         setChatUpfront : function setChatUpfront(chatRoom) {

@@ -3,7 +3,7 @@
     <div class="chat__header room-chat-list__header">
       <h3 class="chat__header--title">
         <span class="title">Chat Rooms</span>
-        <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length %></span>)</span>
+        <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length if @chat_rooms %></span>)</span>
       </h3>
       <% if has_500_points(current_user) %>
         <div class="chat__header--options">
@@ -47,17 +47,20 @@
               </div>
             </div>
           </li>
-        <% end %>
+        <% end if @chat_rooms %>
       </ul>
+
       <div class="no-rooms-messages">
-        <h3 class="title">No available rooms!</h3>
         <% if has_500_points(current_user) %>
+          <h3 class="title">Want to have your own room?</h3>
           <p class="message">Create a room to chat about what interests you with other users instantly!</p>
           <i class="chat-icon chat-icon--top-arrow"></i>
         <% else %>
+          <h3 class="title">No available rooms!</h3>
           <p class="message">Hang in there. There will be rooms soon. If you earn <b>500 points</b> you can create your own so keep on helping the community!</p>
         <% end %>
       </div>
+
     </div> <!-- @room-chat-list__body -->
     <span class="notification-badge circle"><%= user_invitation_counter %></span>
   </div>
