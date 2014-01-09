@@ -59,22 +59,26 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
 
             // caching chatRooms based on DOM rendered items
             this.getUIRoomItems().each(function(i, el) {
-                var id      = parseInt(el.getAttribute('data-id'), 10),
-                    title   = el.getAttribute('data-title').trim(),
-                    is_mod  = el.getAttribute('data-is-moderator') === "true" ? true : false,
-                    is_host = el.getAttribute('data-is-host') === "true" ? true : false,
-                    host_id = parseInt(el.getAttribute('data-host-id'), 10),
-                    listRef= $(el);
+                var id              = parseInt(el.getAttribute('data-id'), 10),
+                    title           = el.getAttribute('data-title').trim(),
+                    is_mod          = el.getAttribute('data-is-moderator') === "true" ? true : false,
+                    is_host         = el.getAttribute('data-is-host') === "true" ? true : false,
+                    host_id         = parseInt(el.getAttribute('data-host-id'), 10),
+                    is_permanent    = el.getAttribute('data-is-permanent') === "true" ? true : false,
+                    is_private      = el.getAttribute('data-is-private') === "true" ? true : false,
+                    listRef         = $(el);
 
                 var chat = new Ahwaa.UI.ChatRoom({
-                        id      : id,
-                        name    : title.toLowerCase().replace(/\s/g, '_'),
-                        label   : title,
-                        listRef : listRef,
-                        chatList: _this,
-                        is_mod  : is_mod,
-                        is_host : is_host,
-                        host_id : host_id
+                        id              : id,
+                        name            : title.toLowerCase().replace(/\s/g, '_'),
+                        label           : title,
+                        listRef         : listRef,
+                        chatList        : _this,
+                        is_mod          : is_mod,
+                        is_host         : is_host,
+                        host_id         : host_id,
+                        is_permanent    : is_permanent,
+                        is_private      : is_private
                     });
 
                 _this.collection.push(chat);
@@ -234,14 +238,16 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
 
             this.collection.push(
                 new Ahwaa.UI.ChatRoom({
-                    id      : data.id,
-                    name    : data.name.toString().toLowerCase().replace(/\s/g, '_'),
-                    label   : data.name,
-                    listRef : $(listItem),
-                    chatList: _this,
-                    is_mod  : is_mod,
-                    is_host : is_host,
-                    host_id : data.user.id
+                    id              : data.id,
+                    name            : data.name.toString().toLowerCase().replace(/\s/g, '_'),
+                    label           : data.name,
+                    listRef         : $(listItem),
+                    chatList        : _this,
+                    is_mod          : is_mod,
+                    is_host         : is_host,
+                    host_id         : data.user.id,
+                    is_permanent    : false,
+                    is_private      : data.is_private
                 })
             );
 

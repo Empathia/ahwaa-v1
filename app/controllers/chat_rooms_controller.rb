@@ -39,8 +39,12 @@ class ChatRoomsController < ApplicationController
     @chat_room = ChatRoom.find(params[:id])
 
     if current_user == @chat_room.user || current_user.is_mod = true
-      @chat_room.destroy
-      @response = true
+      unless @chat_room.permanent
+        @chat_room.destroy
+        @response = true
+      else
+        @response = false
+      end
     else
       @response = false
     end
@@ -52,8 +56,13 @@ class ChatRoomsController < ApplicationController
 
   def destroy_chat
     @chat_room = ChatRoom.find(params[:id])
-    @chat_room.destroy
-    @response = true
+
+    unless @chat_room.permanent
+      @chat_room.destroy
+      @response = true
+    else
+      @response = false
+    end
 
     respond_to do |format|
       format.json { render :json => @response }

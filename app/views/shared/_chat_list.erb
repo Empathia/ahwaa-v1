@@ -16,7 +16,14 @@
     <div class="room-chat-list__body">
       <ul class="room-chat-list__list custom-scrollbars" data-mod="<%= has_500_points(current_user) %>">
         <% @chat_rooms.each do |chat| %>
-          <li data-id="<%= chat.id %>" data-title="<%= chat.label %>" data-host-id="<%= chat.user_id %>" data-is-moderator="<%= is_user_moderator_of(chat) %>" data-is-host="<%= is_user_host_of(chat) %>">
+          <li data-id="<%= chat.id %>"
+              data-title="<%= chat.label %>"
+              data-host-id="<%= chat.user_id %>"
+              data-is-moderator="<%= is_user_moderator_of(chat) %>"
+              data-is-host="<%= is_user_host_of(chat) %>"
+              data-is-permanent="<%= chat.permanent %>"
+              data-is-private="<%= chat.private %>"
+            >
             <div class="title">
               <%= chat.label %>
               <%= content_tag(:span, '[Private]', :class => 'room-chat-list__list--label') if chat.private %>
@@ -27,7 +34,9 @@
                   <i class="chat__admin-actions--toggler chat-icon chat-icon--settings-list effekt-tooltip" data-tooltip-text="Admin Actions" data-position="top"></i>
                   <div class="dropdown">
                     <ul>
-                      <li class="admin-shut-down" data-room-id="<%= chat.id %>">Shutdown Room</li>
+                      <% unless chat.permanent %>
+                        <li class="admin-shut-down" data-room-id="<%= chat.id %>">Shutdown Room</li>
+                      <% end %>
                       <% if is_user_host_of(chat) %>
                         <li class="admin-invite-users">Invite Users</li>
                       <% end %>

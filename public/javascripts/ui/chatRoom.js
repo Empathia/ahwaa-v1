@@ -80,7 +80,8 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
             this.$bubble    = this.element.find('.notification-badge');
 
             this.$title[0].title = this.label;
-            this.$title[0].textContent = this.label;
+            if (this.is_private) this.$title[0].textContent = this.label + " [Private]";
+            else this.$title[0].textContent = this.label;
 
             if (!this.is_host) this.is_host = this.isHostOf(Ahwaa.Model.User.id, this.id);
 
@@ -154,16 +155,15 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
                         <i class="chat__admin-actions--toggler chat-icon chat-icon--settings-header effekt-tooltip" data-tooltip-text="Admin Actions" data-position="top"></i>\
                         <div class="dropdown">\
                             <ul>\
-                                <li class="chat-widget__shutdown">Shutdown Room</li>\
                                 <li class="chat-widget__view-user-list">View Users in Room</li>\
                             </ul>\
                         </div>\
                     </div>');
 
             this.$adminOptions      = this.$options.find('.chat__admin-actions .chat__admin-actions--toggler');
-            this.optionsToggler     = new Toggler(this.$adminOptions, this.$adminOptions.next('.dropdown'));
+            this.$dropdown          = this.$adminOptions.next('.dropdown');
+            this.optionsToggler     = new Toggler(this.$adminOptions, this.$dropdown);
             this.$optionsViewList   = this.$options.find(this.prefix + '__view-user-list');
-            this.$optionsShutdown   = this.element.find(this.prefix + '__shutdown');
 
             this.$optionsViewList.bind('click', function(ev) {
                 ev.stopPropagation();
@@ -171,32 +171,36 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
                 _this.$usersList.show();
             });
 
-            this.$optionsShutdown.bind({
-                click : function(ev) {
-                    ev.stopPropagation();
-                    var totalUsers = _this.getTotalUser();
-                    new Ahwaa.UI.Confirm({
-                        title   : 'Close room',
-                        message : '<p><b>Are you sure you want to close this chat room?</b></p>\
-                                   <p>There ' + Ahwaa.utils.pluralize(totalUsers, "is/are") + '\
-                                   ' + totalUsers + '\
-                                    ' + Ahwaa.utils.pluralize(totalUsers, 'user/users') + '\
-                                   still chatting in it.</p>',
-                        cancelButton : {
-                            text : 'No, Don\'t Close Room'
-                        },
-                        okButton : {
-                            text : 'Yes, Close Room',
-                            callback : function() {
-                                _this.optionsToggler.hide();
-                                _this.constructor.dispatch('shutdown:room', {
-                                    id: _this.id
-                                });
+            if (this.is_permanent === false) {
+                this.$optionsShutdown = $('<li class="chat-widget__shutdown">Shutdown Room</li>');
+                this.$dropdown.find('ul').prepend(this.$optionsShutdown);
+                this.$optionsShutdown.bind({
+                    click : function(ev) {
+                        ev.stopPropagation();
+                        var totalUsers = _this.getTotalUser();
+                        new Ahwaa.UI.Confirm({
+                            title   : 'Close room',
+                            message : '<p><b>Are you sure you want to close this chat room?</b></p>\
+                                       <p>There ' + Ahwaa.utils.pluralize(totalUsers, "is/are") + '\
+                                       ' + totalUsers + '\
+                                        ' + Ahwaa.utils.pluralize(totalUsers, 'user/users') + '\
+                                       still chatting in it.</p>',
+                            cancelButton : {
+                                text : 'No, Don\'t Close Room'
+                            },
+                            okButton : {
+                                text : 'Yes, Close Room',
+                                callback : function() {
+                                    _this.optionsToggler.hide();
+                                    _this.constructor.dispatch('shutdown:room', {
+                                        id: _this.id
+                                    });
+                                }
                             }
-                        }
-                    }).render($('body'));
-                }
-            });
+                        }).render($('body'));
+                    }
+                });
+            }
         },
 
         addHostOptions : function addHostOptions() {
@@ -423,10 +427,12 @@ Class(Ahwaa.UI, 'ChatRoom').inherits(Ahwaa.UI.Widget)({
 
         deleteIfEmpty : function deleteIfEmpty() {
             var _this = this;
-            this.chatList.parent.parent.socket.emit('get:totalUsers', this.id, function(total) {
-                console.log(_this.name, 'online users: ', total)
-                if (total === 0) _this.constructor.dispatch('delete:room', _this);
-            });
+            if (this.is_permanent === false) {
+                this.chatList.parent.parent.socket.emit('get:totalUsers', this.id, function(total) {
+                    console.log(_this.name, 'online users: ', total);
+                    if (total === 0) _this.constructor.dispatch('delete:room', _this);
+                });
+            }
         },
 
         checkAutoGrow : function checkAutoGrow() {
