@@ -1,5 +1,5 @@
 <% if is_chat_allowed_for(current_user) %>
-  <div class="chat__window room-chat-list" data-pageslide="closed" style="display: none;">
+  <div class="chat__window room-chat-list" data-pageslide="closed">
     <div class="chat__header room-chat-list__header">
       <h3 class="chat__header--title">
         <span class="title">Chat Rooms</span>
@@ -58,7 +58,6 @@
           </li>
         <% end if @chat_rooms %>
       </ul>
-
       <div class="no-rooms-messages">
         <% if has_500_points(current_user) %>
           <h3 class="title">Want to have your own room?</h3>
@@ -69,15 +68,33 @@
           <p class="message">Hang in there. There will be rooms soon. If you earn <b>500 points</b> you can create your own so keep on helping the community!</p>
         <% end %>
       </div>
-
+      <div class="onboarding-create-room">
+        <p><strong>Do you want to have your own room?</strong></p>
+        <p>Create it to chat about what interests you with other users instantly! <span>|</span> <a href="#">Ok, got it!</a></p>
+        <i class="chat-icon chat-icon--top-arrow-small"></i>
+      </div>
     </div> <!-- @room-chat-list__body -->
     <span class="notification-badge circle"><%= user_invitation_counter %></span>
   </div>
 <% else %>
-  <div class="chat__window room-chat-list active effekt-tooltip" data-tooltip-text="You need 100 points" data-position="top" data-pageslide="closed" style="display: none;">
+  <div class="chat__window room-chat-list active" data-pageslide="closed">
     <div class="chat__header room-chat-list__header">
-      <h3 class="chat__header--title">Chat Rooms</h3>
-      <div class="chat__header--options">
+      <h3 class="chat__header--title">
+        <span class="title">Chat Rooms</span>
+        <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length if @chat_rooms %></span>)</span>
+      </h3>
+      <div class="onboarding-tooltip">
+        <p>You have less than 100 points! You need:</p>
+        <ul class="points-table">
+          <li class="small-hearts">
+            <em class="level gold-heart"></em>
+            <span class="desc"><strong>100 points</strong> to join chat rooms</span>
+          </li>
+          <li class="small-hearts">
+            <em class="level green-heart"></em>
+            <span class="desc"><strong>500 points</strong> to create your own rooms</span>
+          </li>
+        </ul>
       </div>
     </div>
   </div>

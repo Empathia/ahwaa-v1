@@ -5,7 +5,7 @@
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
-  background-image: url('/images/ui/chat-sprite.png?1386970311');
+  background-image: url('/images/ui/chat-sprite.png?1389817956');
 }
 
 /* line 10, ../sass/ui/icons.scss */
@@ -79,4 +79,11 @@
   width: 24px;
   height: 36px;
   background-position: -108px 0;
+}
+
+/* line 61, ../sass/ui/icons.scss */
+.chat-icon--top-arrow-small {
+  width: 16px;
+  height: 14px;
+  background-position: -132px 0;
 }

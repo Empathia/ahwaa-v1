@@ -72,13 +72,18 @@
   position: relative;
   top: 1px;
 }
-
 /* line 64, ../../sass/ui/chat/chat.scss */
+.chat__header:hover .onboarding-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* line 71, ../../sass/ui/chat/chat.scss */
 .chat__header--close {
   margin-right: 10px;
 }
 
-/* line 68, ../../sass/ui/chat/chat.scss */
+/* line 75, ../../sass/ui/chat/chat.scss */
 .chat__header--full-btn {
   height: 28px;
   padding: 0 8px;
@@ -100,18 +105,18 @@
   border-bottom-left-radius: 0;
   border-width: 0;
 }
-/* line 80, ../../sass/ui/chat/chat.scss */
+/* line 87, ../../sass/ui/chat/chat.scss */
 .chat__header--full-btn:hover {
   background-color: rgba(51, 76, 102, 0.35);
 }
 
-/* line 88, ../../sass/ui/chat/chat.scss */
+/* line 95, ../../sass/ui/chat/chat.scss */
 .create-new-chatroom-button .effekt-tooltip[data-position="top"]:after,
 .create-new-chatroom-button .effekt-tooltip[data-position="bottom"]:after {
   left: 7%;
 }
 
-/* line 94, ../../sass/ui/chat/chat.scss */
+/* line 101, ../../sass/ui/chat/chat.scss */
 .chat__header--title {
   display: table-cell;
   vertical-align: middle;
@@ -129,28 +134,28 @@
   text-align: left;
 }
 
-/* line 111, ../../sass/ui/chat/chat.scss */
+/* line 118, ../../sass/ui/chat/chat.scss */
 .chat__header--options {
   display: table-cell;
   vertical-align: middle;
   text-align: right;
 }
-/* line 115, ../../sass/ui/chat/chat.scss */
+/* line 122, ../../sass/ui/chat/chat.scss */
 .chat__header--options > * {
   display: inline-block;
 }
 
-/* line 122, ../../sass/ui/chat/chat.scss */
+/* line 129, ../../sass/ui/chat/chat.scss */
 .chat__header--options .chat__admin-actions .dropdown {
   right: 3px;
   top: 20px;
 }
 
-/* line 129, ../../sass/ui/chat/chat.scss */
+/* line 136, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions {
   position: relative;
 }
-/* line 131, ../../sass/ui/chat/chat.scss */
+/* line 138, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown {
   display: none;
   position: absolute;
@@ -162,13 +167,13 @@
   background-color: #fff;
   text-align: left;
 }
-/* line 141, ../../sass/ui/chat/chat.scss */
+/* line 148, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown ul {
   margin: 0;
   padding: 5px 0;
   list-style: none;
 }
-/* line 146, ../../sass/ui/chat/chat.scss */
+/* line 153, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown li {
   cursor: pointer;
   width: 100%;
@@ -179,15 +184,15 @@
   background-color: #fff;
   color: #494b4d;
 }
-/* line 156, ../../sass/ui/chat/chat.scss */
+/* line 163, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown li:hover {
   background-color: #f5f9fc;
 }
-/* line 159, ../../sass/ui/chat/chat.scss */
+/* line 166, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown li:last-child {
   border-bottom-width: 0;
 }
-/* line 164, ../../sass/ui/chat/chat.scss */
+/* line 171, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown:before, .chat__admin-actions .dropdown:after {
   content: "";
   width: 0;
@@ -199,44 +204,44 @@
   border-left: 4px solid transparent;
   border-bottom: 4px solid #fff;
 }
-/* line 175, ../../sass/ui/chat/chat.scss */
+/* line 182, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown:before {
   margin-top: -5px;
   border-bottom: 4px solid #2d70b3;
 }
-/* line 179, ../../sass/ui/chat/chat.scss */
+/* line 186, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .dropdown:after {
   margin-top: -4px;
 }
-/* line 186, ../../sass/ui/chat/chat.scss */
+/* line 193, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .effekt-tooltip[data-position="top"]:after,
 .chat__admin-actions .effekt-tooltip[data-position="bottom"]:after {
   left: 35%;
 }
-/* line 189, ../../sass/ui/chat/chat.scss */
+/* line 196, ../../sass/ui/chat/chat.scss */
 .chat__admin-actions .effekt-tooltip[data-position="top"]:before,
 .chat__admin-actions .effekt-tooltip[data-position="bottom"]:before {
   left: 20%;
 }
 
-/* line 198, ../../sass/ui/chat/chat.scss */
+/* line 205, ../../sass/ui/chat/chat.scss */
 .chat__header--options .effekt-tooltip[data-position="top"]:before,
 .chat__header--options .effekt-tooltip[data-position="bottom"]:before {
   left: 45%;
 }
-/* line 201, ../../sass/ui/chat/chat.scss */
+/* line 208, ../../sass/ui/chat/chat.scss */
 .chat__header--options .effekt-tooltip[data-position="top"]:after,
 .chat__header--options .effekt-tooltip[data-position="bottom"]:after {
   left: 0%;
 }
 
-/* line 209, ../../sass/ui/chat/chat.scss */
+/* line 216, ../../sass/ui/chat/chat.scss */
 .chat-icon--user.with-counter,
 .chat-icon--user-lighter.with-counter {
   position: relative;
   margin-right: 15px;
 }
-/* line 212, ../../sass/ui/chat/chat.scss */
+/* line 219, ../../sass/ui/chat/chat.scss */
 .chat-icon--user.with-counter:before,
 .chat-icon--user-lighter.with-counter:before {
   content: attr(data-count);
@@ -250,7 +255,7 @@
   font-style: normal;
 }
 
-/* line 227, ../../sass/ui/chat/chat.scss */
+/* line 234, ../../sass/ui/chat/chat.scss */
 .chat-icon--user-lighter.with-counter::before {
   color: #e5f2ff;
   text-shadow: 0 1px 2px rgba(89, 108, 128, 0.7);
@@ -258,7 +263,7 @@
   line-height: 0.6em;
 }
 
-/* line 236, ../../sass/ui/chat/chat.scss */
+/* line 243, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message {
   display: none;
   position: absolute;
@@ -270,18 +275,18 @@
   text-align: center;
   z-index: 1;
 }
-/* line 247, ../../sass/ui/chat/chat.scss */
+/* line 254, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--wrapper {
   display: table;
   width: 100%;
   height: 100%;
 }
-/* line 252, ../../sass/ui/chat/chat.scss */
+/* line 259, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--inner {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 256, ../../sass/ui/chat/chat.scss */
+/* line 263, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .loader {
   background-color: white;
   padding: 5px;
@@ -289,18 +294,115 @@
   margin-bottom: 10px;
   border-radius: 3px;
 }
-/* line 262, ../../sass/ui/chat/chat.scss */
+/* line 269, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .loader img {
   display: inline-block;
   vertical-align: top;
 }
-/* line 267, ../../sass/ui/chat/chat.scss */
+/* line 274, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--title {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 271, ../../sass/ui/chat/chat.scss */
+/* line 278, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--message {
   font-size: 12px;
   line-height: 20px;
+}
+
+/* line 284, ../../sass/ui/chat/chat.scss */
+.onboarding-create-room {
+  display: none;
+  position: absolute;
+  top: 0;
+  padding: 12px 15px;
+  font-size: 12px;
+  line-height: 1.5em;
+  border-bottom: 1px solid #609dda;
+  color: #596c80;
+  background-color: #f2f8ff;
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent 100%), -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #f3f9ff), color-stop(100%, #e5f2ff));
+  background-image: -webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent 100%), -webkit-linear-gradient(#f3f9ff, #e5f2ff);
+  background-image: -moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent 100%), -moz-linear-gradient(#f3f9ff, #e5f2ff);
+  background-image: -o-linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent 100%), -o-linear-gradient(#f3f9ff, #e5f2ff);
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent 100%), linear-gradient(#f3f9ff, #e5f2ff);
+  background-size: 20px 20px, 100%;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+/* line 308, ../../sass/ui/chat/chat.scss */
+.onboarding-create-room a {
+  text-decoration: underline;
+}
+/* line 311, ../../sass/ui/chat/chat.scss */
+.onboarding-create-room span {
+  margin: 0 5px;
+}
+/* line 315, ../../sass/ui/chat/chat.scss */
+.onboarding-create-room .chat-icon--top-arrow-small {
+  position: absolute;
+  top: 9px;
+  right: 25px;
+}
+
+/* line 322, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 33px;
+  left: 8px;
+  right: 8px;
+  padding: 17px 15px;
+  font-size: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  -webkit-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
+  -moz-box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: all 100ms;
+  -moz-transition: all 100ms;
+  -o-transition: all 100ms;
+  transition: all 100ms;
+}
+/* line 341, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip:before, .onboarding-tooltip:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+/* line 347, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip:before {
+  bottom: -25px;
+  left: 39px;
+  border: 12px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.2);
+}
+/* line 353, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip:after {
+  bottom: -22px;
+  left: 40px;
+  border: 11px solid transparent;
+  border-top-color: #fff;
+}
+/* line 360, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip > p {
+  margin: 0 0 15px;
+}
+/* line 364, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip .points-table li {
+  float: none;
+  width: 100%;
+}
+/* line 367, ../../sass/ui/chat/chat.scss */
+.onboarding-tooltip .points-table li .desc {
+  display: inline-block;
+  margin: 1px 0 0 5px;
 }

@@ -48,33 +48,34 @@
     <% else %>
       <script src="<%= request.protocol + request.host + ':8080' + '/socket.io/socket.io.js' %>"></script>
     <% end %>
-    <script src="/javascripts/ui/ui.js"></script>
-    <script src="/javascripts/include/jquery.tokeninput.js"></script>
-    <script src="/javascripts/include/custom_event.js"></script>
-    <script src="/javascripts/include/custom_event_support.js"></script>
-    <script src="/javascripts/include/node_support.js"></script>
-    <script src="/javascripts/utils.js"></script>
-    <script src="/javascripts/ui/widget.js"></script>
-    <script src="/javascripts/ui/cripta.js"></script>
-    <script src="/javascripts/ui/Confirm.js"></script>
-    <script src="/javascripts/ui/Toggler.js"></script>
-    <script src="/javascripts/chat/User.js"></script>
-    <script src="/javascripts/ui/OverlayMessage.js"></script>
-    <script src="/javascripts/chat/chatHelperModule.js"></script>
-    <script src="/javascripts/ui/chatRoomUsersList.js"></script>
-    <script src="/javascripts/ui/chatRoom.js"></script>
-    <script src="/javascripts/ui/chatRoomsList.js"></script>
-    <script src="/javascripts/ui/createChatRoomForm.js"></script>
-    <script src="/javascripts/ui/chatRoomInviteForm.js"></script>
-    <script src="/javascripts/ui/chatRoomsUIManager.js"></script>
-    <script src="/javascripts/ChatRoomsController.js"></script>
-    <script>
-      window.onload = function() {
-          console.log("...");
-          new ChatRoomsController();
-      };
-    </script>
   <% end %>
+  <script src="/javascripts/ui/ui.js"></script>
+  <script src="/javascripts/include/jquery.cookie.js"></script>
+  <script src="/javascripts/include/jquery.tokeninput.js"></script>
+  <script src="/javascripts/include/custom_event.js"></script>
+  <script src="/javascripts/include/custom_event_support.js"></script>
+  <script src="/javascripts/include/node_support.js"></script>
+  <script src="/javascripts/utils.js"></script>
+  <script src="/javascripts/ui/widget.js"></script>
+  <script src="/javascripts/ui/cripta.js"></script>
+  <script src="/javascripts/ui/Confirm.js"></script>
+  <script src="/javascripts/ui/Toggler.js"></script>
+  <script src="/javascripts/chat/User.js"></script>
+  <script src="/javascripts/ui/OverlayMessage.js"></script>
+  <script src="/javascripts/chat/chatHelperModule.js"></script>
+  <script src="/javascripts/ui/chatRoomUsersList.js"></script>
+  <script src="/javascripts/ui/chatRoom.js"></script>
+  <script src="/javascripts/ui/chatRoomsList.js"></script>
+  <script src="/javascripts/ui/createChatRoomForm.js"></script>
+  <script src="/javascripts/ui/chatRoomInviteForm.js"></script>
+  <script src="/javascripts/ui/chatRoomsUIManager.js"></script>
+  <script src="/javascripts/ChatRoomsController.js"></script>
+  <script>
+    window.onload = function() {
+        console.log("...");
+        new ChatRoomsController();
+    };
+  </script>
 </head>
 <body>
   <div class="page-wrapper <%= 'rtl'.html_safe if rtl? %>">
@@ -453,7 +454,7 @@
         <div id="modals-wrapper">
 
           <div class="modal about-points">
-            <header><%= t('.modals.about_points.title') %> <span class="close">&times;</span></header>
+            <div class="header"><%= t('.modals.about_points.title') %> <span class="close">&times;</span></div>
             <div class="body">
               <p><%= t('.modals.about_points.body') %></p>
               <div class="separator"></div>

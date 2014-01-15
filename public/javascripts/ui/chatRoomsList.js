@@ -5,13 +5,23 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
         activityCounter : 0,
         roomsCounter : 0,
 
+        _showOnboardingHost : function() {
+            var _this = this;
+            this.$onboarding_host.find('a').bind('click', function(event) {
+                _this._setOnboardingHostCookie();
+                return false;
+            }).end().slideDown();
+        },
+        _setOnboardingHostCookie : function() {
+            if (this.$onboarding_host.length) this.$onboarding_host.slideUp(200);
+            $.cookie('onboarding_host', true, {expire: 20*256, path: '/'});
+        },
+
         init : function init(attributes) {
             var _this = this;
             Ahwaa.UI.Widget.prototype.init.apply(this, [attributes]);
 
             Ahwaa.Collection.Rooms = this.collection;
-
-            this.element.show();
 
             this.$mainContent       = this.element.find('.room-chat-list__body');
             this.$list              = $('.room-chat-list__list');
@@ -22,6 +32,13 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
             this.$noRooms           = this.element.find('.no-rooms-messages');
 
             this.is_mod             = this.$list.length && this.$list[0].getAttribute('data-mod') === "true" ? true : false;
+
+            // onboarding message
+            // for users with more than 500 points
+            this.$onboarding_host = this.element.find('.onboarding-create-room');
+            if ($.cookie('onboarding_host') === undefined && this.$onboarding_host.length) {
+                this._showOnboardingHost();
+            }
 
             this.activityCounter = parseInt(this.$bubble.text(), 10);
             if (this.activityCounter > 0) {
@@ -133,6 +150,9 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
             this.$createNewChatBtn.bind({
                 click : function newChatCLick(ev) {
                     ev.stopPropagation();
+                    if ($.cookie('onboarding_host') === undefined) {
+                        _this._setOnboardingHostCookie();
+                    }
 
                     if (_this.parent.verifyDisclosure()) {
                         if (_this.activated === false) {

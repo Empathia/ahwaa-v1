@@ -6,14 +6,16 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
         port    : '8080',
 
         init : function() {
+            var is_production = (window.app.env === "production");
 
             if (typeof io === 'undefined') {
-                throw('The remote server is not available. Please try again later.');
+                console.log('The remote server is not available. Please try again later.');
                 return null;
             }
 
             if (Ahwaa.utils.is_touch_device() || window.innerWidth < 768) {
                 // disable for touch devices or if window is less than 980
+                $('.room-chat-list').hide();
                 return false;
             }
 
@@ -32,7 +34,7 @@ Class('ChatRoomsController').includes(CustomEventSupport, NodeSupport)({
             }
 
             if (!this.socket) {
-                this.socket = (window.app.env === "production")
+                this.socket = is_production
                     ? io.connect(this.url)
                     : io.connect(this.url + ':' + this.port);
 

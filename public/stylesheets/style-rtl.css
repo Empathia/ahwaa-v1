@@ -291,3 +291,8 @@ div.selector select {
 .chat-icon--close-header:hover {
   background-position: 0 -36px;
 }
+
+/* line 129, sass/style-rtl.scss */
+.onboarding-create-room .chat-icon--top-arrow-small {
+  left: 5px;
+}

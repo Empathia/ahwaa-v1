@@ -1607,7 +1607,7 @@ footer {
   @include border-radius(4px);
 }
 .modal {
-  header {position: relative; font-size: 17px; color: #3d464c; border-bottom: 1px solid #dbdfe3; padding: 10px 20px 9px; background-color: #fcfcfc;
+  .header {position: relative; font-size: 17px; color: #3d464c; border-bottom: 1px solid #dbdfe3; padding: 10px 20px 9px; background-color: #fcfcfc;
     @include background-image(linear-gradient(top, #fdfdfd, #f9f9f9));
     @include border-radius(2px 2px 0 0);
   }

@@ -4229,7 +4229,7 @@ footer {
 }
 
 /* line 1610, sass/style.scss */
-.modal header {
+.modal .header {
   position: relative;
   font-size: 17px;
   color: #3d464c;
