@@ -224,24 +224,25 @@
   left: 20%;
 }
 
-/* line 205, ../../sass/ui/chat/chat.scss */
-.chat__header--options .effekt-tooltip[data-position="top"]:before,
-.chat__header--options .effekt-tooltip[data-position="bottom"]:before {
-  left: 45%;
-}
 /* line 208, ../../sass/ui/chat/chat.scss */
 .chat__header--options .effekt-tooltip[data-position="top"]:after,
 .chat__header--options .effekt-tooltip[data-position="bottom"]:after {
-  left: 0%;
+  left: auto;
+  right: 0%;
+  -webkit-transform: none;
+  -moz-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
 }
 
-/* line 216, ../../sass/ui/chat/chat.scss */
+/* line 219, ../../sass/ui/chat/chat.scss */
 .chat-icon--user.with-counter,
 .chat-icon--user-lighter.with-counter {
   position: relative;
   margin-right: 15px;
 }
-/* line 219, ../../sass/ui/chat/chat.scss */
+/* line 222, ../../sass/ui/chat/chat.scss */
 .chat-icon--user.with-counter:before,
 .chat-icon--user-lighter.with-counter:before {
   content: attr(data-count);
@@ -255,7 +256,7 @@
   font-style: normal;
 }
 
-/* line 234, ../../sass/ui/chat/chat.scss */
+/* line 237, ../../sass/ui/chat/chat.scss */
 .chat-icon--user-lighter.with-counter::before {
   color: #e5f2ff;
   text-shadow: 0 1px 2px rgba(89, 108, 128, 0.7);
@@ -263,7 +264,7 @@
   line-height: 0.6em;
 }
 
-/* line 243, ../../sass/ui/chat/chat.scss */
+/* line 246, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message {
   display: none;
   position: absolute;
@@ -275,18 +276,18 @@
   text-align: center;
   z-index: 1;
 }
-/* line 254, ../../sass/ui/chat/chat.scss */
+/* line 257, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--wrapper {
   display: table;
   width: 100%;
   height: 100%;
 }
-/* line 259, ../../sass/ui/chat/chat.scss */
+/* line 262, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--inner {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 263, ../../sass/ui/chat/chat.scss */
+/* line 266, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .loader {
   background-color: white;
   padding: 5px;
@@ -294,23 +295,23 @@
   margin-bottom: 10px;
   border-radius: 3px;
 }
-/* line 269, ../../sass/ui/chat/chat.scss */
+/* line 272, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .loader img {
   display: inline-block;
   vertical-align: top;
 }
-/* line 274, ../../sass/ui/chat/chat.scss */
+/* line 277, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--title {
   font-size: 16px;
   font-weight: bold;
 }
-/* line 278, ../../sass/ui/chat/chat.scss */
+/* line 281, ../../sass/ui/chat/chat.scss */
 .chat__overlay-message .chat__overlay-message--message {
   font-size: 12px;
   line-height: 20px;
 }
 
-/* line 284, ../../sass/ui/chat/chat.scss */
+/* line 287, ../../sass/ui/chat/chat.scss */
 .onboarding-create-room {
   display: none;
   position: absolute;
@@ -331,22 +332,22 @@
   -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
 }
-/* line 308, ../../sass/ui/chat/chat.scss */
+/* line 311, ../../sass/ui/chat/chat.scss */
 .onboarding-create-room a {
   text-decoration: underline;
 }
-/* line 311, ../../sass/ui/chat/chat.scss */
+/* line 314, ../../sass/ui/chat/chat.scss */
 .onboarding-create-room span {
   margin: 0 5px;
 }
-/* line 315, ../../sass/ui/chat/chat.scss */
+/* line 318, ../../sass/ui/chat/chat.scss */
 .onboarding-create-room .chat-icon--top-arrow-small {
   position: absolute;
   top: 9px;
   right: 25px;
 }
 
-/* line 322, ../../sass/ui/chat/chat.scss */
+/* line 325, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip {
   visibility: hidden;
   opacity: 0;
@@ -371,37 +372,37 @@
   -o-transition: all 100ms;
   transition: all 100ms;
 }
-/* line 341, ../../sass/ui/chat/chat.scss */
+/* line 344, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip:before, .onboarding-tooltip:after {
   content: '';
   position: absolute;
   width: 0;
   height: 0;
 }
-/* line 347, ../../sass/ui/chat/chat.scss */
+/* line 350, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip:before {
   bottom: -25px;
   left: 39px;
   border: 12px solid transparent;
   border-top-color: rgba(0, 0, 0, 0.2);
 }
-/* line 353, ../../sass/ui/chat/chat.scss */
+/* line 356, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip:after {
   bottom: -22px;
   left: 40px;
   border: 11px solid transparent;
   border-top-color: #fff;
 }
-/* line 360, ../../sass/ui/chat/chat.scss */
+/* line 363, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip > p {
   margin: 0 0 15px;
 }
-/* line 364, ../../sass/ui/chat/chat.scss */
+/* line 367, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip .points-table li {
   float: none;
   width: 100%;
 }
-/* line 367, ../../sass/ui/chat/chat.scss */
+/* line 370, ../../sass/ui/chat/chat.scss */
 .onboarding-tooltip .points-table li .desc {
   display: inline-block;
   margin: 1px 0 0 5px;

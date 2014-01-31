@@ -5,13 +5,12 @@
         <span class="title">Chat Rooms</span>
         <span class="counter">(<span class="total-room-chats"><%= @chat_rooms.length if @chat_rooms %></span>)</span>
       </h3>
-      <% if has_500_points(current_user) %>
-        <div class="chat__header--options">
-          <button class="chat__header--full-btn create-new-chatroom-button effekt-tooltip" data-tooltip-text="Create Room" data-position="top">
-            <i class="chat-icon chat-icon--create-new-chat"></i>
-          </button>
-        </div>
-      <% end %>
+      <div class="chat__header--options">
+        <% $createRoomMessage = has_500_points(current_user) ? "Create Room" : "You need 500 points to create a chat room!" %>
+        <button class="chat__header--full-btn create-new-chatroom-button effekt-tooltip" data-tooltip-text="<%= $createRoomMessage %>" data-position="top">
+          <i class="chat-icon chat-icon--create-new-chat"></i>
+        </button>
+      </div>
     </div>
     <div class="room-chat-list__body">
       <ul class="room-chat-list__list custom-scrollbars" data-mod="<%= has_500_points(current_user) %>">

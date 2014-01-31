@@ -150,15 +150,12 @@ Class(Ahwaa.UI, 'ChatRoomsList').inherits(Ahwaa.UI.Widget).includes(ChatHelpers)
             this.$createNewChatBtn.bind({
                 click : function newChatCLick(ev) {
                     ev.stopPropagation();
-                    if ($.cookie('onboarding_host') === undefined) {
-                        _this._setOnboardingHostCookie();
-                    }
-
-                    if (_this.parent.verifyDisclosure()) {
-                        if (_this.activated === false) {
-                            _this.activate();
+                    if ($.cookie('onboarding_host') === undefined) _this._setOnboardingHostCookie();
+                    if (_this.is_mod) {
+                        if (_this.parent.verifyDisclosure()) {
+                            if (_this.activated === false) _this.activate();
+                            _this.createChatRoomForm.toggle();
                         }
-                        _this.createChatRoomForm.toggle();
                     }
                 },
                 mouseover : function newChatEnter(ev) {

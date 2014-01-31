@@ -202,11 +202,14 @@
 .chat__header--options {
   .effekt-tooltip[data-position="top"],
   .effekt-tooltip[data-position="bottom"] {
-    &:before {
-      left: 45%;
-    }
+    // &:before {
+    //   left: 45%;
+    // }
     &:after {
-      left: 0%;
+      // left: 0%;
+      left: auto;
+      right: 0%;
+      @include transform(none);
     }
   }
 }
