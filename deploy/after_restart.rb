@@ -73,19 +73,19 @@ end
 
 # Node server, left in two steps to commit start command
 
-execute 'stop node server' do
-  always_run true
-  owner app[:user]
-  path current_path
-  command "daemon -n node_server --stop"
-end
+# execute 'stop node server' do
+#   always_run true
+#   owner app[:user]
+#   path current_path
+#   command "daemon -n node_server --stop"
+# end
 
-execute 'start node server' do
-  always_run true
-  owner app[:user]
-  path current_path
-  command "daemon -n node_server -e 'NODE_ENV=#{node.environment.framework_env}' -- node #{current_path}/chat_server.js"
-end
+# execute 'start node server' do
+#   always_run true
+#   owner app[:user]
+#   path current_path
+#   command "daemon -n node_server -e 'NODE_ENV=#{node.environment.framework_env}' -- node #{current_path}/chat_server.js"
+# end
 
 # Delayed job is used to send emails in background for subscribers
 # execute "Start delayed jobs." do
